@@ -30,13 +30,13 @@ import (
 
 // FakeAwsConfigDeliveryChannels implements AwsConfigDeliveryChannelInterface
 type FakeAwsConfigDeliveryChannels struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsconfigdeliverychannelsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsconfigdeliverychannels"}
+var awsconfigdeliverychannelsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsconfigdeliverychannels"}
 
-var awsconfigdeliverychannelsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsConfigDeliveryChannel"}
+var awsconfigdeliverychannelsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsConfigDeliveryChannel"}
 
 // Get takes name of the awsConfigDeliveryChannel, and returns the corresponding awsConfigDeliveryChannel object, and an error if there is any.
 func (c *FakeAwsConfigDeliveryChannels) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsConfigDeliveryChannel, err error) {

@@ -61,13 +61,13 @@ func NewFilteredAwsSesDomainIdentityVerificationInformer(client versioned.Interf
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsSesDomainIdentityVerifications(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsSesDomainIdentityVerifications(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsSesDomainIdentityVerifications(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsSesDomainIdentityVerifications(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsSesDomainIdentityVerification{},

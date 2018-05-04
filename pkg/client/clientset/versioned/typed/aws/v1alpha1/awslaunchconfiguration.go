@@ -53,7 +53,7 @@ type awsLaunchConfigurations struct {
 }
 
 // newAwsLaunchConfigurations returns a AwsLaunchConfigurations
-func newAwsLaunchConfigurations(c *AwsV1alpha1Client, namespace string) *awsLaunchConfigurations {
+func newAwsLaunchConfigurations(c *ChronojamV1alpha1Client, namespace string) *awsLaunchConfigurations {
 	return &awsLaunchConfigurations{
 		client: c.RESTClient(),
 		ns:     namespace,

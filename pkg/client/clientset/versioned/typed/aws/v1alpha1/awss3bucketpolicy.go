@@ -53,7 +53,7 @@ type awsS3BucketPolicies struct {
 }
 
 // newAwsS3BucketPolicies returns a AwsS3BucketPolicies
-func newAwsS3BucketPolicies(c *AwsV1alpha1Client, namespace string) *awsS3BucketPolicies {
+func newAwsS3BucketPolicies(c *ChronojamV1alpha1Client, namespace string) *awsS3BucketPolicies {
 	return &awsS3BucketPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsSimpledbDomains struct {
 }
 
 // newAwsSimpledbDomains returns a AwsSimpledbDomains
-func newAwsSimpledbDomains(c *AwsV1alpha1Client, namespace string) *awsSimpledbDomains {
+func newAwsSimpledbDomains(c *ChronojamV1alpha1Client, namespace string) *awsSimpledbDomains {
 	return &awsSimpledbDomains{
 		client: c.RESTClient(),
 		ns:     namespace,

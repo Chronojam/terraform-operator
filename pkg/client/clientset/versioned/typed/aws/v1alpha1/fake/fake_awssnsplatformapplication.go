@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSnsPlatformApplications implements AwsSnsPlatformApplicationInterface
 type FakeAwsSnsPlatformApplications struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssnsplatformapplicationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssnsplatformapplications"}
+var awssnsplatformapplicationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssnsplatformapplications"}
 
-var awssnsplatformapplicationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSnsPlatformApplication"}
+var awssnsplatformapplicationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSnsPlatformApplication"}
 
 // Get takes name of the awsSnsPlatformApplication, and returns the corresponding awsSnsPlatformApplication object, and an error if there is any.
 func (c *FakeAwsSnsPlatformApplications) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSnsPlatformApplication, err error) {

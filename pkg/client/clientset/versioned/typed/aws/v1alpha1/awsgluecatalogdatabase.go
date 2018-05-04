@@ -53,7 +53,7 @@ type awsGlueCatalogDatabases struct {
 }
 
 // newAwsGlueCatalogDatabases returns a AwsGlueCatalogDatabases
-func newAwsGlueCatalogDatabases(c *AwsV1alpha1Client, namespace string) *awsGlueCatalogDatabases {
+func newAwsGlueCatalogDatabases(c *ChronojamV1alpha1Client, namespace string) *awsGlueCatalogDatabases {
 	return &awsGlueCatalogDatabases{
 		client: c.RESTClient(),
 		ns:     namespace,

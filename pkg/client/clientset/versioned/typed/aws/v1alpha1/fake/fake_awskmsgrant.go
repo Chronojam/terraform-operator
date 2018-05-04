@@ -30,13 +30,13 @@ import (
 
 // FakeAwsKmsGrants implements AwsKmsGrantInterface
 type FakeAwsKmsGrants struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awskmsgrantsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awskmsgrants"}
+var awskmsgrantsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awskmsgrants"}
 
-var awskmsgrantsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsKmsGrant"}
+var awskmsgrantsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsKmsGrant"}
 
 // Get takes name of the awsKmsGrant, and returns the corresponding awsKmsGrant object, and an error if there is any.
 func (c *FakeAwsKmsGrants) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsKmsGrant, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayVpcLinks implements AwsApiGatewayVpcLinkInterface
 type FakeAwsApiGatewayVpcLinks struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewayvpclinksResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewayvpclinks"}
+var awsapigatewayvpclinksResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewayvpclinks"}
 
-var awsapigatewayvpclinksKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayVpcLink"}
+var awsapigatewayvpclinksKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayVpcLink"}
 
 // Get takes name of the awsApiGatewayVpcLink, and returns the corresponding awsApiGatewayVpcLink object, and an error if there is any.
 func (c *FakeAwsApiGatewayVpcLinks) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayVpcLink, err error) {

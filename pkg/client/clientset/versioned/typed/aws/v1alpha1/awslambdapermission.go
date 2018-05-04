@@ -53,7 +53,7 @@ type awsLambdaPermissions struct {
 }
 
 // newAwsLambdaPermissions returns a AwsLambdaPermissions
-func newAwsLambdaPermissions(c *AwsV1alpha1Client, namespace string) *awsLambdaPermissions {
+func newAwsLambdaPermissions(c *ChronojamV1alpha1Client, namespace string) *awsLambdaPermissions {
 	return &awsLambdaPermissions{
 		client: c.RESTClient(),
 		ns:     namespace,

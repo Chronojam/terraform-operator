@@ -53,7 +53,7 @@ type awsAlbs struct {
 }
 
 // newAwsAlbs returns a AwsAlbs
-func newAwsAlbs(c *AwsV1alpha1Client, namespace string) *awsAlbs {
+func newAwsAlbs(c *ChronojamV1alpha1Client, namespace string) *awsAlbs {
 	return &awsAlbs{
 		client: c.RESTClient(),
 		ns:     namespace,

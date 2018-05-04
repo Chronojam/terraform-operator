@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSsmPatchGroups implements AwsSsmPatchGroupInterface
 type FakeAwsSsmPatchGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsssmpatchgroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsssmpatchgroups"}
+var awsssmpatchgroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsssmpatchgroups"}
 
-var awsssmpatchgroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSsmPatchGroup"}
+var awsssmpatchgroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSsmPatchGroup"}
 
 // Get takes name of the awsSsmPatchGroup, and returns the corresponding awsSsmPatchGroup object, and an error if there is any.
 func (c *FakeAwsSsmPatchGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSsmPatchGroup, err error) {

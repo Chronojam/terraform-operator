@@ -53,7 +53,7 @@ type awsCloudfrontOriginAccessIdentities struct {
 }
 
 // newAwsCloudfrontOriginAccessIdentities returns a AwsCloudfrontOriginAccessIdentities
-func newAwsCloudfrontOriginAccessIdentities(c *AwsV1alpha1Client, namespace string) *awsCloudfrontOriginAccessIdentities {
+func newAwsCloudfrontOriginAccessIdentities(c *ChronojamV1alpha1Client, namespace string) *awsCloudfrontOriginAccessIdentities {
 	return &awsCloudfrontOriginAccessIdentities{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudformationStacks implements AwsCloudformationStackInterface
 type FakeAwsCloudformationStacks struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudformationstacksResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudformationstacks"}
+var awscloudformationstacksResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudformationstacks"}
 
-var awscloudformationstacksKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudformationStack"}
+var awscloudformationstacksKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudformationStack"}
 
 // Get takes name of the awsCloudformationStack, and returns the corresponding awsCloudformationStack object, and an error if there is any.
 func (c *FakeAwsCloudformationStacks) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudformationStack, err error) {

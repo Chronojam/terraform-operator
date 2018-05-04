@@ -30,13 +30,13 @@ import (
 
 // FakeAwsRoute53HealthChecks implements AwsRoute53HealthCheckInterface
 type FakeAwsRoute53HealthChecks struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsroute53healthchecksResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsroute53healthchecks"}
+var awsroute53healthchecksResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsroute53healthchecks"}
 
-var awsroute53healthchecksKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsRoute53HealthCheck"}
+var awsroute53healthchecksKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsRoute53HealthCheck"}
 
 // Get takes name of the awsRoute53HealthCheck, and returns the corresponding awsRoute53HealthCheck object, and an error if there is any.
 func (c *FakeAwsRoute53HealthChecks) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsRoute53HealthCheck, err error) {

@@ -53,7 +53,7 @@ type awsCloudfrontDistributions struct {
 }
 
 // newAwsCloudfrontDistributions returns a AwsCloudfrontDistributions
-func newAwsCloudfrontDistributions(c *AwsV1alpha1Client, namespace string) *awsCloudfrontDistributions {
+func newAwsCloudfrontDistributions(c *ChronojamV1alpha1Client, namespace string) *awsCloudfrontDistributions {
 	return &awsCloudfrontDistributions{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLbTargetGroups implements AwsLbTargetGroupInterface
 type FakeAwsLbTargetGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslbtargetgroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslbtargetgroups"}
+var awslbtargetgroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslbtargetgroups"}
 
-var awslbtargetgroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLbTargetGroup"}
+var awslbtargetgroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLbTargetGroup"}
 
 // Get takes name of the awsLbTargetGroup, and returns the corresponding awsLbTargetGroup object, and an error if there is any.
 func (c *FakeAwsLbTargetGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLbTargetGroup, err error) {

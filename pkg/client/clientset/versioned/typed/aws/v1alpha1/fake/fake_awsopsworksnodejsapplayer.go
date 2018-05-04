@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksNodejsAppLayers implements AwsOpsworksNodejsAppLayerInterface
 type FakeAwsOpsworksNodejsAppLayers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworksnodejsapplayersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworksnodejsapplayers"}
+var awsopsworksnodejsapplayersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworksnodejsapplayers"}
 
-var awsopsworksnodejsapplayersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksNodejsAppLayer"}
+var awsopsworksnodejsapplayersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksNodejsAppLayer"}
 
 // Get takes name of the awsOpsworksNodejsAppLayer, and returns the corresponding awsOpsworksNodejsAppLayer object, and an error if there is any.
 func (c *FakeAwsOpsworksNodejsAppLayers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksNodejsAppLayer, err error) {

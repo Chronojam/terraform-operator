@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIotTopicRules implements AwsIotTopicRuleInterface
 type FakeAwsIotTopicRules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiottopicrulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiottopicrules"}
+var awsiottopicrulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiottopicrules"}
 
-var awsiottopicrulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIotTopicRule"}
+var awsiottopicrulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIotTopicRule"}
 
 // Get takes name of the awsIotTopicRule, and returns the corresponding awsIotTopicRule object, and an error if there is any.
 func (c *FakeAwsIotTopicRules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIotTopicRule, err error) {

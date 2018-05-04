@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudwatchLogDestinationPolicies implements AwsCloudwatchLogDestinationPolicyInterface
 type FakeAwsCloudwatchLogDestinationPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudwatchlogdestinationpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudwatchlogdestinationpolicies"}
+var awscloudwatchlogdestinationpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudwatchlogdestinationpolicies"}
 
-var awscloudwatchlogdestinationpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudwatchLogDestinationPolicy"}
+var awscloudwatchlogdestinationpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudwatchLogDestinationPolicy"}
 
 // Get takes name of the awsCloudwatchLogDestinationPolicy, and returns the corresponding awsCloudwatchLogDestinationPolicy object, and an error if there is any.
 func (c *FakeAwsCloudwatchLogDestinationPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudwatchLogDestinationPolicy, err error) {

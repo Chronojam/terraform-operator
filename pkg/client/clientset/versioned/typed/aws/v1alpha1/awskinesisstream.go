@@ -53,7 +53,7 @@ type awsKinesisStreams struct {
 }
 
 // newAwsKinesisStreams returns a AwsKinesisStreams
-func newAwsKinesisStreams(c *AwsV1alpha1Client, namespace string) *awsKinesisStreams {
+func newAwsKinesisStreams(c *ChronojamV1alpha1Client, namespace string) *awsKinesisStreams {
 	return &awsKinesisStreams{
 		client: c.RESTClient(),
 		ns:     namespace,

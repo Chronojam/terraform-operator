@@ -53,7 +53,7 @@ type awsCodecommitRepositories struct {
 }
 
 // newAwsCodecommitRepositories returns a AwsCodecommitRepositories
-func newAwsCodecommitRepositories(c *AwsV1alpha1Client, namespace string) *awsCodecommitRepositories {
+func newAwsCodecommitRepositories(c *ChronojamV1alpha1Client, namespace string) *awsCodecommitRepositories {
 	return &awsCodecommitRepositories{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDefaultRouteTables implements AwsDefaultRouteTableInterface
 type FakeAwsDefaultRouteTables struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdefaultroutetablesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdefaultroutetables"}
+var awsdefaultroutetablesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdefaultroutetables"}
 
-var awsdefaultroutetablesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDefaultRouteTable"}
+var awsdefaultroutetablesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDefaultRouteTable"}
 
 // Get takes name of the awsDefaultRouteTable, and returns the corresponding awsDefaultRouteTable object, and an error if there is any.
 func (c *FakeAwsDefaultRouteTables) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDefaultRouteTable, err error) {

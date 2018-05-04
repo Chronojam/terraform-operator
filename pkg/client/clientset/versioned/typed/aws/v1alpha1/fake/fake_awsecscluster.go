@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEcsClusters implements AwsEcsClusterInterface
 type FakeAwsEcsClusters struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsecsclustersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsecsclusters"}
+var awsecsclustersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsecsclusters"}
 
-var awsecsclustersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEcsCluster"}
+var awsecsclustersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEcsCluster"}
 
 // Get takes name of the awsEcsCluster, and returns the corresponding awsEcsCluster object, and an error if there is any.
 func (c *FakeAwsEcsClusters) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEcsCluster, err error) {

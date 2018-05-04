@@ -53,7 +53,7 @@ type awsApiGatewayStages struct {
 }
 
 // newAwsApiGatewayStages returns a AwsApiGatewayStages
-func newAwsApiGatewayStages(c *AwsV1alpha1Client, namespace string) *awsApiGatewayStages {
+func newAwsApiGatewayStages(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayStages {
 	return &awsApiGatewayStages{
 		client: c.RESTClient(),
 		ns:     namespace,

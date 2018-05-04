@@ -53,7 +53,7 @@ type awsConfigConfigurationRecorderStatuses struct {
 }
 
 // newAwsConfigConfigurationRecorderStatuses returns a AwsConfigConfigurationRecorderStatuses
-func newAwsConfigConfigurationRecorderStatuses(c *AwsV1alpha1Client, namespace string) *awsConfigConfigurationRecorderStatuses {
+func newAwsConfigConfigurationRecorderStatuses(c *ChronojamV1alpha1Client, namespace string) *awsConfigConfigurationRecorderStatuses {
 	return &awsConfigConfigurationRecorderStatuses{
 		client: c.RESTClient(),
 		ns:     namespace,

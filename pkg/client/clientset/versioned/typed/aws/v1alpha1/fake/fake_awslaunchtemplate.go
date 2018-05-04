@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLaunchTemplates implements AwsLaunchTemplateInterface
 type FakeAwsLaunchTemplates struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslaunchtemplatesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslaunchtemplates"}
+var awslaunchtemplatesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslaunchtemplates"}
 
-var awslaunchtemplatesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLaunchTemplate"}
+var awslaunchtemplatesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLaunchTemplate"}
 
 // Get takes name of the awsLaunchTemplate, and returns the corresponding awsLaunchTemplate object, and an error if there is any.
 func (c *FakeAwsLaunchTemplates) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLaunchTemplate, err error) {

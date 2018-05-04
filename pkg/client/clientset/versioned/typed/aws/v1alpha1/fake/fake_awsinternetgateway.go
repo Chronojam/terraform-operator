@@ -30,13 +30,13 @@ import (
 
 // FakeAwsInternetGateways implements AwsInternetGatewayInterface
 type FakeAwsInternetGateways struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsinternetgatewaysResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsinternetgateways"}
+var awsinternetgatewaysResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsinternetgateways"}
 
-var awsinternetgatewaysKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsInternetGateway"}
+var awsinternetgatewaysKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsInternetGateway"}
 
 // Get takes name of the awsInternetGateway, and returns the corresponding awsInternetGateway object, and an error if there is any.
 func (c *FakeAwsInternetGateways) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsInternetGateway, err error) {

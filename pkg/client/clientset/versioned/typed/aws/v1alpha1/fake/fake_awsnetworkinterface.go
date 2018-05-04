@@ -30,13 +30,13 @@ import (
 
 // FakeAwsNetworkInterfaces implements AwsNetworkInterfaceInterface
 type FakeAwsNetworkInterfaces struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsnetworkinterfacesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsnetworkinterfaces"}
+var awsnetworkinterfacesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsnetworkinterfaces"}
 
-var awsnetworkinterfacesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsNetworkInterface"}
+var awsnetworkinterfacesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsNetworkInterface"}
 
 // Get takes name of the awsNetworkInterface, and returns the corresponding awsNetworkInterface object, and an error if there is any.
 func (c *FakeAwsNetworkInterfaces) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsNetworkInterface, err error) {

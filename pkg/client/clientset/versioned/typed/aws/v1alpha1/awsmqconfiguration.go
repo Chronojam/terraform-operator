@@ -53,7 +53,7 @@ type awsMqConfigurations struct {
 }
 
 // newAwsMqConfigurations returns a AwsMqConfigurations
-func newAwsMqConfigurations(c *AwsV1alpha1Client, namespace string) *awsMqConfigurations {
+func newAwsMqConfigurations(c *ChronojamV1alpha1Client, namespace string) *awsMqConfigurations {
 	return &awsMqConfigurations{
 		client: c.RESTClient(),
 		ns:     namespace,

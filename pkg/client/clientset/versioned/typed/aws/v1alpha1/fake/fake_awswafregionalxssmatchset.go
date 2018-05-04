@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafregionalXssMatchSets implements AwsWafregionalXssMatchSetInterface
 type FakeAwsWafregionalXssMatchSets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafregionalxssmatchsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafregionalxssmatchsets"}
+var awswafregionalxssmatchsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafregionalxssmatchsets"}
 
-var awswafregionalxssmatchsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafregionalXssMatchSet"}
+var awswafregionalxssmatchsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafregionalXssMatchSet"}
 
 // Get takes name of the awsWafregionalXssMatchSet, and returns the corresponding awsWafregionalXssMatchSet object, and an error if there is any.
 func (c *FakeAwsWafregionalXssMatchSets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafregionalXssMatchSet, err error) {

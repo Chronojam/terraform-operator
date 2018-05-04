@@ -53,7 +53,7 @@ type awsEmrSecurityConfigurations struct {
 }
 
 // newAwsEmrSecurityConfigurations returns a AwsEmrSecurityConfigurations
-func newAwsEmrSecurityConfigurations(c *AwsV1alpha1Client, namespace string) *awsEmrSecurityConfigurations {
+func newAwsEmrSecurityConfigurations(c *ChronojamV1alpha1Client, namespace string) *awsEmrSecurityConfigurations {
 	return &awsEmrSecurityConfigurations{
 		client: c.RESTClient(),
 		ns:     namespace,

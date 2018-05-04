@@ -53,7 +53,7 @@ type awsSesTemplates struct {
 }
 
 // newAwsSesTemplates returns a AwsSesTemplates
-func newAwsSesTemplates(c *AwsV1alpha1Client, namespace string) *awsSesTemplates {
+func newAwsSesTemplates(c *ChronojamV1alpha1Client, namespace string) *awsSesTemplates {
 	return &awsSesTemplates{
 		client: c.RESTClient(),
 		ns:     namespace,

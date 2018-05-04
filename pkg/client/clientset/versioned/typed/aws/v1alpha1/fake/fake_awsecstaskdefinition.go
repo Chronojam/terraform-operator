@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEcsTaskDefinitions implements AwsEcsTaskDefinitionInterface
 type FakeAwsEcsTaskDefinitions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsecstaskdefinitionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsecstaskdefinitions"}
+var awsecstaskdefinitionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsecstaskdefinitions"}
 
-var awsecstaskdefinitionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEcsTaskDefinition"}
+var awsecstaskdefinitionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEcsTaskDefinition"}
 
 // Get takes name of the awsEcsTaskDefinition, and returns the corresponding awsEcsTaskDefinition object, and an error if there is any.
 func (c *FakeAwsEcsTaskDefinitions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEcsTaskDefinition, err error) {

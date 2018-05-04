@@ -53,7 +53,7 @@ type awsSesReceiptRuleSets struct {
 }
 
 // newAwsSesReceiptRuleSets returns a AwsSesReceiptRuleSets
-func newAwsSesReceiptRuleSets(c *AwsV1alpha1Client, namespace string) *awsSesReceiptRuleSets {
+func newAwsSesReceiptRuleSets(c *ChronojamV1alpha1Client, namespace string) *awsSesReceiptRuleSets {
 	return &awsSesReceiptRuleSets{
 		client: c.RESTClient(),
 		ns:     namespace,

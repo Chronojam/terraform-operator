@@ -53,7 +53,7 @@ type awsAlbListeners struct {
 }
 
 // newAwsAlbListeners returns a AwsAlbListeners
-func newAwsAlbListeners(c *AwsV1alpha1Client, namespace string) *awsAlbListeners {
+func newAwsAlbListeners(c *ChronojamV1alpha1Client, namespace string) *awsAlbListeners {
 	return &awsAlbListeners{
 		client: c.RESTClient(),
 		ns:     namespace,

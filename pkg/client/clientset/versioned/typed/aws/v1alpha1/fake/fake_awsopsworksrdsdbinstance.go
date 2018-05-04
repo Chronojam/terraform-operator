@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksRdsDbInstances implements AwsOpsworksRdsDbInstanceInterface
 type FakeAwsOpsworksRdsDbInstances struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworksrdsdbinstancesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworksrdsdbinstances"}
+var awsopsworksrdsdbinstancesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworksrdsdbinstances"}
 
-var awsopsworksrdsdbinstancesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksRdsDbInstance"}
+var awsopsworksrdsdbinstancesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksRdsDbInstance"}
 
 // Get takes name of the awsOpsworksRdsDbInstance, and returns the corresponding awsOpsworksRdsDbInstance object, and an error if there is any.
 func (c *FakeAwsOpsworksRdsDbInstances) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksRdsDbInstance, err error) {

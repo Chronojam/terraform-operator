@@ -53,7 +53,7 @@ type awsElasticacheClusters struct {
 }
 
 // newAwsElasticacheClusters returns a AwsElasticacheClusters
-func newAwsElasticacheClusters(c *AwsV1alpha1Client, namespace string) *awsElasticacheClusters {
+func newAwsElasticacheClusters(c *ChronojamV1alpha1Client, namespace string) *awsElasticacheClusters {
 	return &awsElasticacheClusters{
 		client: c.RESTClient(),
 		ns:     namespace,

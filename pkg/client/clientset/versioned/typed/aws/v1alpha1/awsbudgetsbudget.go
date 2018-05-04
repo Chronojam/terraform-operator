@@ -53,7 +53,7 @@ type awsBudgetsBudgets struct {
 }
 
 // newAwsBudgetsBudgets returns a AwsBudgetsBudgets
-func newAwsBudgetsBudgets(c *AwsV1alpha1Client, namespace string) *awsBudgetsBudgets {
+func newAwsBudgetsBudgets(c *ChronojamV1alpha1Client, namespace string) *awsBudgetsBudgets {
 	return &awsBudgetsBudgets{
 		client: c.RESTClient(),
 		ns:     namespace,

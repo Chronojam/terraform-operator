@@ -53,7 +53,7 @@ type awsWafregionalRules struct {
 }
 
 // newAwsWafregionalRules returns a AwsWafregionalRules
-func newAwsWafregionalRules(c *AwsV1alpha1Client, namespace string) *awsWafregionalRules {
+func newAwsWafregionalRules(c *ChronojamV1alpha1Client, namespace string) *awsWafregionalRules {
 	return &awsWafregionalRules{
 		client: c.RESTClient(),
 		ns:     namespace,

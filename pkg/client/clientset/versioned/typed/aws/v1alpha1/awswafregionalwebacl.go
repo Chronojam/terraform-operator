@@ -53,7 +53,7 @@ type awsWafregionalWebAcls struct {
 }
 
 // newAwsWafregionalWebAcls returns a AwsWafregionalWebAcls
-func newAwsWafregionalWebAcls(c *AwsV1alpha1Client, namespace string) *awsWafregionalWebAcls {
+func newAwsWafregionalWebAcls(c *ChronojamV1alpha1Client, namespace string) *awsWafregionalWebAcls {
 	return &awsWafregionalWebAcls{
 		client: c.RESTClient(),
 		ns:     namespace,

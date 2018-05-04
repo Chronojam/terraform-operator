@@ -53,7 +53,7 @@ type awsAmiLaunchPermissions struct {
 }
 
 // newAwsAmiLaunchPermissions returns a AwsAmiLaunchPermissions
-func newAwsAmiLaunchPermissions(c *AwsV1alpha1Client, namespace string) *awsAmiLaunchPermissions {
+func newAwsAmiLaunchPermissions(c *ChronojamV1alpha1Client, namespace string) *awsAmiLaunchPermissions {
 	return &awsAmiLaunchPermissions{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksPermissions implements AwsOpsworksPermissionInterface
 type FakeAwsOpsworksPermissions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworkspermissionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworkspermissions"}
+var awsopsworkspermissionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworkspermissions"}
 
-var awsopsworkspermissionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksPermission"}
+var awsopsworkspermissionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksPermission"}
 
 // Get takes name of the awsOpsworksPermission, and returns the corresponding awsOpsworksPermission object, and an error if there is any.
 func (c *FakeAwsOpsworksPermissions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksPermission, err error) {

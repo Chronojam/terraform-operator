@@ -53,7 +53,7 @@ type awsNetworkInterfaceAttachments struct {
 }
 
 // newAwsNetworkInterfaceAttachments returns a AwsNetworkInterfaceAttachments
-func newAwsNetworkInterfaceAttachments(c *AwsV1alpha1Client, namespace string) *awsNetworkInterfaceAttachments {
+func newAwsNetworkInterfaceAttachments(c *ChronojamV1alpha1Client, namespace string) *awsNetworkInterfaceAttachments {
 	return &awsNetworkInterfaceAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

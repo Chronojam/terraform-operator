@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCodecommitRepositories implements AwsCodecommitRepositoryInterface
 type FakeAwsCodecommitRepositories struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscodecommitrepositoriesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscodecommitrepositories"}
+var awscodecommitrepositoriesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscodecommitrepositories"}
 
-var awscodecommitrepositoriesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCodecommitRepository"}
+var awscodecommitrepositoriesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCodecommitRepository"}
 
 // Get takes name of the awsCodecommitRepository, and returns the corresponding awsCodecommitRepository object, and an error if there is any.
 func (c *FakeAwsCodecommitRepositories) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCodecommitRepository, err error) {

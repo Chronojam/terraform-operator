@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDmsReplicationTasks implements AwsDmsReplicationTaskInterface
 type FakeAwsDmsReplicationTasks struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdmsreplicationtasksResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdmsreplicationtasks"}
+var awsdmsreplicationtasksResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdmsreplicationtasks"}
 
-var awsdmsreplicationtasksKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDmsReplicationTask"}
+var awsdmsreplicationtasksKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDmsReplicationTask"}
 
 // Get takes name of the awsDmsReplicationTask, and returns the corresponding awsDmsReplicationTask object, and an error if there is any.
 func (c *FakeAwsDmsReplicationTasks) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDmsReplicationTask, err error) {

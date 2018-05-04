@@ -53,7 +53,7 @@ type awsSesIdentityNotificationTopics struct {
 }
 
 // newAwsSesIdentityNotificationTopics returns a AwsSesIdentityNotificationTopics
-func newAwsSesIdentityNotificationTopics(c *AwsV1alpha1Client, namespace string) *awsSesIdentityNotificationTopics {
+func newAwsSesIdentityNotificationTopics(c *ChronojamV1alpha1Client, namespace string) *awsSesIdentityNotificationTopics {
 	return &awsSesIdentityNotificationTopics{
 		client: c.RESTClient(),
 		ns:     namespace,

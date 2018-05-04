@@ -53,7 +53,7 @@ type awsServiceDiscoveryServices struct {
 }
 
 // newAwsServiceDiscoveryServices returns a AwsServiceDiscoveryServices
-func newAwsServiceDiscoveryServices(c *AwsV1alpha1Client, namespace string) *awsServiceDiscoveryServices {
+func newAwsServiceDiscoveryServices(c *ChronojamV1alpha1Client, namespace string) *awsServiceDiscoveryServices {
 	return &awsServiceDiscoveryServices{
 		client: c.RESTClient(),
 		ns:     namespace,

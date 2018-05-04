@@ -53,7 +53,7 @@ type awsCodebuildProjects struct {
 }
 
 // newAwsCodebuildProjects returns a AwsCodebuildProjects
-func newAwsCodebuildProjects(c *AwsV1alpha1Client, namespace string) *awsCodebuildProjects {
+func newAwsCodebuildProjects(c *ChronojamV1alpha1Client, namespace string) *awsCodebuildProjects {
 	return &awsCodebuildProjects{
 		client: c.RESTClient(),
 		ns:     namespace,

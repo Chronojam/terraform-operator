@@ -53,7 +53,7 @@ type awsAutoscalingLifecycleHooks struct {
 }
 
 // newAwsAutoscalingLifecycleHooks returns a AwsAutoscalingLifecycleHooks
-func newAwsAutoscalingLifecycleHooks(c *AwsV1alpha1Client, namespace string) *awsAutoscalingLifecycleHooks {
+func newAwsAutoscalingLifecycleHooks(c *ChronojamV1alpha1Client, namespace string) *awsAutoscalingLifecycleHooks {
 	return &awsAutoscalingLifecycleHooks{
 		client: c.RESTClient(),
 		ns:     namespace,

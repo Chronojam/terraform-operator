@@ -53,7 +53,7 @@ type awsWafregionalSizeConstraintSets struct {
 }
 
 // newAwsWafregionalSizeConstraintSets returns a AwsWafregionalSizeConstraintSets
-func newAwsWafregionalSizeConstraintSets(c *AwsV1alpha1Client, namespace string) *awsWafregionalSizeConstraintSets {
+func newAwsWafregionalSizeConstraintSets(c *ChronojamV1alpha1Client, namespace string) *awsWafregionalSizeConstraintSets {
 	return &awsWafregionalSizeConstraintSets{
 		client: c.RESTClient(),
 		ns:     namespace,

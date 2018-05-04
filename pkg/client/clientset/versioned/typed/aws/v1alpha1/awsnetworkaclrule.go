@@ -53,7 +53,7 @@ type awsNetworkAclRules struct {
 }
 
 // newAwsNetworkAclRules returns a AwsNetworkAclRules
-func newAwsNetworkAclRules(c *AwsV1alpha1Client, namespace string) *awsNetworkAclRules {
+func newAwsNetworkAclRules(c *ChronojamV1alpha1Client, namespace string) *awsNetworkAclRules {
 	return &awsNetworkAclRules{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsAppsyncGraphqlApis struct {
 }
 
 // newAwsAppsyncGraphqlApis returns a AwsAppsyncGraphqlApis
-func newAwsAppsyncGraphqlApis(c *AwsV1alpha1Client, namespace string) *awsAppsyncGraphqlApis {
+func newAwsAppsyncGraphqlApis(c *ChronojamV1alpha1Client, namespace string) *awsAppsyncGraphqlApis {
 	return &awsAppsyncGraphqlApis{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAmiLaunchPermissions implements AwsAmiLaunchPermissionInterface
 type FakeAwsAmiLaunchPermissions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsamilaunchpermissionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsamilaunchpermissions"}
+var awsamilaunchpermissionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsamilaunchpermissions"}
 
-var awsamilaunchpermissionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAmiLaunchPermission"}
+var awsamilaunchpermissionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAmiLaunchPermission"}
 
 // Get takes name of the awsAmiLaunchPermission, and returns the corresponding awsAmiLaunchPermission object, and an error if there is any.
 func (c *FakeAwsAmiLaunchPermissions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAmiLaunchPermission, err error) {

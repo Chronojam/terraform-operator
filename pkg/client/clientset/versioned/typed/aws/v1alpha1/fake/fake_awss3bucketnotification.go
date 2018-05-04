@@ -30,13 +30,13 @@ import (
 
 // FakeAwsS3BucketNotifications implements AwsS3BucketNotificationInterface
 type FakeAwsS3BucketNotifications struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awss3bucketnotificationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awss3bucketnotifications"}
+var awss3bucketnotificationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awss3bucketnotifications"}
 
-var awss3bucketnotificationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsS3BucketNotification"}
+var awss3bucketnotificationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsS3BucketNotification"}
 
 // Get takes name of the awsS3BucketNotification, and returns the corresponding awsS3BucketNotification object, and an error if there is any.
 func (c *FakeAwsS3BucketNotifications) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsS3BucketNotification, err error) {

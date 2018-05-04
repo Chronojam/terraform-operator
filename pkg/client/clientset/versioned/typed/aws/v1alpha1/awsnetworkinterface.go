@@ -53,7 +53,7 @@ type awsNetworkInterfaces struct {
 }
 
 // newAwsNetworkInterfaces returns a AwsNetworkInterfaces
-func newAwsNetworkInterfaces(c *AwsV1alpha1Client, namespace string) *awsNetworkInterfaces {
+func newAwsNetworkInterfaces(c *ChronojamV1alpha1Client, namespace string) *awsNetworkInterfaces {
 	return &awsNetworkInterfaces{
 		client: c.RESTClient(),
 		ns:     namespace,

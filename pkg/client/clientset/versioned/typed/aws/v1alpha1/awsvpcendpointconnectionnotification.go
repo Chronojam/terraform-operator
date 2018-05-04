@@ -53,7 +53,7 @@ type awsVpcEndpointConnectionNotifications struct {
 }
 
 // newAwsVpcEndpointConnectionNotifications returns a AwsVpcEndpointConnectionNotifications
-func newAwsVpcEndpointConnectionNotifications(c *AwsV1alpha1Client, namespace string) *awsVpcEndpointConnectionNotifications {
+func newAwsVpcEndpointConnectionNotifications(c *ChronojamV1alpha1Client, namespace string) *awsVpcEndpointConnectionNotifications {
 	return &awsVpcEndpointConnectionNotifications{
 		client: c.RESTClient(),
 		ns:     namespace,

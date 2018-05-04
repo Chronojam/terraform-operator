@@ -53,7 +53,7 @@ type awsLightsailKeyPairs struct {
 }
 
 // newAwsLightsailKeyPairs returns a AwsLightsailKeyPairs
-func newAwsLightsailKeyPairs(c *AwsV1alpha1Client, namespace string) *awsLightsailKeyPairs {
+func newAwsLightsailKeyPairs(c *ChronojamV1alpha1Client, namespace string) *awsLightsailKeyPairs {
 	return &awsLightsailKeyPairs{
 		client: c.RESTClient(),
 		ns:     namespace,

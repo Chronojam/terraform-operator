@@ -53,7 +53,7 @@ type awsWafIpsets struct {
 }
 
 // newAwsWafIpsets returns a AwsWafIpsets
-func newAwsWafIpsets(c *AwsV1alpha1Client, namespace string) *awsWafIpsets {
+func newAwsWafIpsets(c *ChronojamV1alpha1Client, namespace string) *awsWafIpsets {
 	return &awsWafIpsets{
 		client: c.RESTClient(),
 		ns:     namespace,

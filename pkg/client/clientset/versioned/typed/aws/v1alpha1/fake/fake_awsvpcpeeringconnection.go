@@ -30,13 +30,13 @@ import (
 
 // FakeAwsVpcPeeringConnections implements AwsVpcPeeringConnectionInterface
 type FakeAwsVpcPeeringConnections struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsvpcpeeringconnectionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsvpcpeeringconnections"}
+var awsvpcpeeringconnectionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsvpcpeeringconnections"}
 
-var awsvpcpeeringconnectionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsVpcPeeringConnection"}
+var awsvpcpeeringconnectionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsVpcPeeringConnection"}
 
 // Get takes name of the awsVpcPeeringConnection, and returns the corresponding awsVpcPeeringConnection object, and an error if there is any.
 func (c *FakeAwsVpcPeeringConnections) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsVpcPeeringConnection, err error) {

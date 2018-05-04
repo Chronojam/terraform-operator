@@ -53,7 +53,7 @@ type awsSesDomainIdentities struct {
 }
 
 // newAwsSesDomainIdentities returns a AwsSesDomainIdentities
-func newAwsSesDomainIdentities(c *AwsV1alpha1Client, namespace string) *awsSesDomainIdentities {
+func newAwsSesDomainIdentities(c *ChronojamV1alpha1Client, namespace string) *awsSesDomainIdentities {
 	return &awsSesDomainIdentities{
 		client: c.RESTClient(),
 		ns:     namespace,

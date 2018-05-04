@@ -30,13 +30,13 @@ import (
 
 // FakeAwsRedshiftClusters implements AwsRedshiftClusterInterface
 type FakeAwsRedshiftClusters struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsredshiftclustersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsredshiftclusters"}
+var awsredshiftclustersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsredshiftclusters"}
 
-var awsredshiftclustersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsRedshiftCluster"}
+var awsredshiftclustersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsRedshiftCluster"}
 
 // Get takes name of the awsRedshiftCluster, and returns the corresponding awsRedshiftCluster object, and an error if there is any.
 func (c *FakeAwsRedshiftClusters) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsRedshiftCluster, err error) {

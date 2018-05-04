@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSnsTopicPolicies implements AwsSnsTopicPolicyInterface
 type FakeAwsSnsTopicPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssnstopicpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssnstopicpolicies"}
+var awssnstopicpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssnstopicpolicies"}
 
-var awssnstopicpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSnsTopicPolicy"}
+var awssnstopicpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSnsTopicPolicy"}
 
 // Get takes name of the awsSnsTopicPolicy, and returns the corresponding awsSnsTopicPolicy object, and an error if there is any.
 func (c *FakeAwsSnsTopicPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSnsTopicPolicy, err error) {

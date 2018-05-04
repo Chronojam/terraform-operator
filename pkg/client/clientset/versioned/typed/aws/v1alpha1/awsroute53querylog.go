@@ -53,7 +53,7 @@ type awsRoute53QueryLogs struct {
 }
 
 // newAwsRoute53QueryLogs returns a AwsRoute53QueryLogs
-func newAwsRoute53QueryLogs(c *AwsV1alpha1Client, namespace string) *awsRoute53QueryLogs {
+func newAwsRoute53QueryLogs(c *ChronojamV1alpha1Client, namespace string) *awsRoute53QueryLogs {
 	return &awsRoute53QueryLogs{
 		client: c.RESTClient(),
 		ns:     namespace,

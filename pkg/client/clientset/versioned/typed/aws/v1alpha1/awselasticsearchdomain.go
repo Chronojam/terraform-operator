@@ -53,7 +53,7 @@ type awsElasticsearchDomains struct {
 }
 
 // newAwsElasticsearchDomains returns a AwsElasticsearchDomains
-func newAwsElasticsearchDomains(c *AwsV1alpha1Client, namespace string) *awsElasticsearchDomains {
+func newAwsElasticsearchDomains(c *ChronojamV1alpha1Client, namespace string) *awsElasticsearchDomains {
 	return &awsElasticsearchDomains{
 		client: c.RESTClient(),
 		ns:     namespace,

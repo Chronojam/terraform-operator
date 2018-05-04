@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayClientCertificates implements AwsApiGatewayClientCertificateInterface
 type FakeAwsApiGatewayClientCertificates struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewayclientcertificatesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewayclientcertificates"}
+var awsapigatewayclientcertificatesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewayclientcertificates"}
 
-var awsapigatewayclientcertificatesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayClientCertificate"}
+var awsapigatewayclientcertificatesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayClientCertificate"}
 
 // Get takes name of the awsApiGatewayClientCertificate, and returns the corresponding awsApiGatewayClientCertificate object, and an error if there is any.
 func (c *FakeAwsApiGatewayClientCertificates) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayClientCertificate, err error) {

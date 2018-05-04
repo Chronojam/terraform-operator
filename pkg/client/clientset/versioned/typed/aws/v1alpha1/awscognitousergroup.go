@@ -53,7 +53,7 @@ type awsCognitoUserGroups struct {
 }
 
 // newAwsCognitoUserGroups returns a AwsCognitoUserGroups
-func newAwsCognitoUserGroups(c *AwsV1alpha1Client, namespace string) *awsCognitoUserGroups {
+func newAwsCognitoUserGroups(c *ChronojamV1alpha1Client, namespace string) *awsCognitoUserGroups {
 	return &awsCognitoUserGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

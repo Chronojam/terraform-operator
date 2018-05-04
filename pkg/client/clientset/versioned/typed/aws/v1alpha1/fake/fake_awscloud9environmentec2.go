@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloud9EnvironmentEc2s implements AwsCloud9EnvironmentEc2Interface
 type FakeAwsCloud9EnvironmentEc2s struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloud9environmentec2sResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloud9environmentec2s"}
+var awscloud9environmentec2sResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloud9environmentec2s"}
 
-var awscloud9environmentec2sKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloud9EnvironmentEc2"}
+var awscloud9environmentec2sKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloud9EnvironmentEc2"}
 
 // Get takes name of the awsCloud9EnvironmentEc2, and returns the corresponding awsCloud9EnvironmentEc2 object, and an error if there is any.
 func (c *FakeAwsCloud9EnvironmentEc2s) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloud9EnvironmentEc2, err error) {

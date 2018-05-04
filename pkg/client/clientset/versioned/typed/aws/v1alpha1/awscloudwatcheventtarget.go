@@ -53,7 +53,7 @@ type awsCloudwatchEventTargets struct {
 }
 
 // newAwsCloudwatchEventTargets returns a AwsCloudwatchEventTargets
-func newAwsCloudwatchEventTargets(c *AwsV1alpha1Client, namespace string) *awsCloudwatchEventTargets {
+func newAwsCloudwatchEventTargets(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchEventTargets {
 	return &awsCloudwatchEventTargets{
 		client: c.RESTClient(),
 		ns:     namespace,

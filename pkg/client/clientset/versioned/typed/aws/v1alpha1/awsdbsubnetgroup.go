@@ -53,7 +53,7 @@ type awsDbSubnetGroups struct {
 }
 
 // newAwsDbSubnetGroups returns a AwsDbSubnetGroups
-func newAwsDbSubnetGroups(c *AwsV1alpha1Client, namespace string) *awsDbSubnetGroups {
+func newAwsDbSubnetGroups(c *ChronojamV1alpha1Client, namespace string) *awsDbSubnetGroups {
 	return &awsDbSubnetGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

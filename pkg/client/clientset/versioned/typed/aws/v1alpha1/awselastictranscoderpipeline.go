@@ -53,7 +53,7 @@ type awsElastictranscoderPipelines struct {
 }
 
 // newAwsElastictranscoderPipelines returns a AwsElastictranscoderPipelines
-func newAwsElastictranscoderPipelines(c *AwsV1alpha1Client, namespace string) *awsElastictranscoderPipelines {
+func newAwsElastictranscoderPipelines(c *ChronojamV1alpha1Client, namespace string) *awsElastictranscoderPipelines {
 	return &awsElastictranscoderPipelines{
 		client: c.RESTClient(),
 		ns:     namespace,

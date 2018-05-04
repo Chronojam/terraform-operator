@@ -53,7 +53,7 @@ type awsDbParameterGroups struct {
 }
 
 // newAwsDbParameterGroups returns a AwsDbParameterGroups
-func newAwsDbParameterGroups(c *AwsV1alpha1Client, namespace string) *awsDbParameterGroups {
+func newAwsDbParameterGroups(c *ChronojamV1alpha1Client, namespace string) *awsDbParameterGroups {
 	return &awsDbParameterGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

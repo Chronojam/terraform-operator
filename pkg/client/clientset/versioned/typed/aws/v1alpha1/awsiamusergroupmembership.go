@@ -53,7 +53,7 @@ type awsIamUserGroupMemberships struct {
 }
 
 // newAwsIamUserGroupMemberships returns a AwsIamUserGroupMemberships
-func newAwsIamUserGroupMemberships(c *AwsV1alpha1Client, namespace string) *awsIamUserGroupMemberships {
+func newAwsIamUserGroupMemberships(c *ChronojamV1alpha1Client, namespace string) *awsIamUserGroupMemberships {
 	return &awsIamUserGroupMemberships{
 		client: c.RESTClient(),
 		ns:     namespace,

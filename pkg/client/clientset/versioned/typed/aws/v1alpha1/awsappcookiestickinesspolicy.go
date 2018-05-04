@@ -53,7 +53,7 @@ type awsAppCookieStickinessPolicies struct {
 }
 
 // newAwsAppCookieStickinessPolicies returns a AwsAppCookieStickinessPolicies
-func newAwsAppCookieStickinessPolicies(c *AwsV1alpha1Client, namespace string) *awsAppCookieStickinessPolicies {
+func newAwsAppCookieStickinessPolicies(c *ChronojamV1alpha1Client, namespace string) *awsAppCookieStickinessPolicies {
 	return &awsAppCookieStickinessPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

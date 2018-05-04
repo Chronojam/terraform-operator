@@ -53,7 +53,7 @@ type awsConfigDeliveryChannels struct {
 }
 
 // newAwsConfigDeliveryChannels returns a AwsConfigDeliveryChannels
-func newAwsConfigDeliveryChannels(c *AwsV1alpha1Client, namespace string) *awsConfigDeliveryChannels {
+func newAwsConfigDeliveryChannels(c *ChronojamV1alpha1Client, namespace string) *awsConfigDeliveryChannels {
 	return &awsConfigDeliveryChannels{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDaxSubnetGroups implements AwsDaxSubnetGroupInterface
 type FakeAwsDaxSubnetGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdaxsubnetgroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdaxsubnetgroups"}
+var awsdaxsubnetgroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdaxsubnetgroups"}
 
-var awsdaxsubnetgroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDaxSubnetGroup"}
+var awsdaxsubnetgroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDaxSubnetGroup"}
 
 // Get takes name of the awsDaxSubnetGroup, and returns the corresponding awsDaxSubnetGroup object, and an error if there is any.
 func (c *FakeAwsDaxSubnetGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDaxSubnetGroup, err error) {

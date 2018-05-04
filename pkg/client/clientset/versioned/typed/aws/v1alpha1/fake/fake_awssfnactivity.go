@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSfnActivities implements AwsSfnActivityInterface
 type FakeAwsSfnActivities struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssfnactivitiesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssfnactivities"}
+var awssfnactivitiesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssfnactivities"}
 
-var awssfnactivitiesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSfnActivity"}
+var awssfnactivitiesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSfnActivity"}
 
 // Get takes name of the awsSfnActivity, and returns the corresponding awsSfnActivity object, and an error if there is any.
 func (c *FakeAwsSfnActivities) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSfnActivity, err error) {

@@ -53,7 +53,7 @@ type awsWafRegexPatternSets struct {
 }
 
 // newAwsWafRegexPatternSets returns a AwsWafRegexPatternSets
-func newAwsWafRegexPatternSets(c *AwsV1alpha1Client, namespace string) *awsWafRegexPatternSets {
+func newAwsWafRegexPatternSets(c *ChronojamV1alpha1Client, namespace string) *awsWafRegexPatternSets {
 	return &awsWafRegexPatternSets{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsEcrLifecyclePolicies struct {
 }
 
 // newAwsEcrLifecyclePolicies returns a AwsEcrLifecyclePolicies
-func newAwsEcrLifecyclePolicies(c *AwsV1alpha1Client, namespace string) *awsEcrLifecyclePolicies {
+func newAwsEcrLifecyclePolicies(c *ChronojamV1alpha1Client, namespace string) *awsEcrLifecyclePolicies {
 	return &awsEcrLifecyclePolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsMediaStoreContainers implements AwsMediaStoreContainerInterface
 type FakeAwsMediaStoreContainers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsmediastorecontainersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsmediastorecontainers"}
+var awsmediastorecontainersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsmediastorecontainers"}
 
-var awsmediastorecontainersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsMediaStoreContainer"}
+var awsmediastorecontainersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsMediaStoreContainer"}
 
 // Get takes name of the awsMediaStoreContainer, and returns the corresponding awsMediaStoreContainer object, and an error if there is any.
 func (c *FakeAwsMediaStoreContainers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsMediaStoreContainer, err error) {

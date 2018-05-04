@@ -53,7 +53,7 @@ type awsAutoscalingNotifications struct {
 }
 
 // newAwsAutoscalingNotifications returns a AwsAutoscalingNotifications
-func newAwsAutoscalingNotifications(c *AwsV1alpha1Client, namespace string) *awsAutoscalingNotifications {
+func newAwsAutoscalingNotifications(c *ChronojamV1alpha1Client, namespace string) *awsAutoscalingNotifications {
 	return &awsAutoscalingNotifications{
 		client: c.RESTClient(),
 		ns:     namespace,

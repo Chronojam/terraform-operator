@@ -53,7 +53,7 @@ type awsBatchJobQueues struct {
 }
 
 // newAwsBatchJobQueues returns a AwsBatchJobQueues
-func newAwsBatchJobQueues(c *AwsV1alpha1Client, namespace string) *awsBatchJobQueues {
+func newAwsBatchJobQueues(c *ChronojamV1alpha1Client, namespace string) *awsBatchJobQueues {
 	return &awsBatchJobQueues{
 		client: c.RESTClient(),
 		ns:     namespace,

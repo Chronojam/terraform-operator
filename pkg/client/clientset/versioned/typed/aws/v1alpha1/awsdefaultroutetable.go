@@ -53,7 +53,7 @@ type awsDefaultRouteTables struct {
 }
 
 // newAwsDefaultRouteTables returns a AwsDefaultRouteTables
-func newAwsDefaultRouteTables(c *AwsV1alpha1Client, namespace string) *awsDefaultRouteTables {
+func newAwsDefaultRouteTables(c *ChronojamV1alpha1Client, namespace string) *awsDefaultRouteTables {
 	return &awsDefaultRouteTables{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOrganizationsAccounts implements AwsOrganizationsAccountInterface
 type FakeAwsOrganizationsAccounts struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsorganizationsaccountsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsorganizationsaccounts"}
+var awsorganizationsaccountsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsorganizationsaccounts"}
 
-var awsorganizationsaccountsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOrganizationsAccount"}
+var awsorganizationsaccountsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOrganizationsAccount"}
 
 // Get takes name of the awsOrganizationsAccount, and returns the corresponding awsOrganizationsAccount object, and an error if there is any.
 func (c *FakeAwsOrganizationsAccounts) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOrganizationsAccount, err error) {

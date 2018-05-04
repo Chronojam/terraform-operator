@@ -53,7 +53,7 @@ type awsGuarddutyDetectors struct {
 }
 
 // newAwsGuarddutyDetectors returns a AwsGuarddutyDetectors
-func newAwsGuarddutyDetectors(c *AwsV1alpha1Client, namespace string) *awsGuarddutyDetectors {
+func newAwsGuarddutyDetectors(c *ChronojamV1alpha1Client, namespace string) *awsGuarddutyDetectors {
 	return &awsGuarddutyDetectors{
 		client: c.RESTClient(),
 		ns:     namespace,

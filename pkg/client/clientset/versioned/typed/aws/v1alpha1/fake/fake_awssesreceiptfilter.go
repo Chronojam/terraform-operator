@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSesReceiptFilters implements AwsSesReceiptFilterInterface
 type FakeAwsSesReceiptFilters struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssesreceiptfiltersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssesreceiptfilters"}
+var awssesreceiptfiltersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssesreceiptfilters"}
 
-var awssesreceiptfiltersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSesReceiptFilter"}
+var awssesreceiptfiltersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSesReceiptFilter"}
 
 // Get takes name of the awsSesReceiptFilter, and returns the corresponding awsSesReceiptFilter object, and an error if there is any.
 func (c *FakeAwsSesReceiptFilters) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSesReceiptFilter, err error) {

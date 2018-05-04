@@ -53,7 +53,7 @@ type awsSecretsmanagerSecrets struct {
 }
 
 // newAwsSecretsmanagerSecrets returns a AwsSecretsmanagerSecrets
-func newAwsSecretsmanagerSecrets(c *AwsV1alpha1Client, namespace string) *awsSecretsmanagerSecrets {
+func newAwsSecretsmanagerSecrets(c *ChronojamV1alpha1Client, namespace string) *awsSecretsmanagerSecrets {
 	return &awsSecretsmanagerSecrets{
 		client: c.RESTClient(),
 		ns:     namespace,

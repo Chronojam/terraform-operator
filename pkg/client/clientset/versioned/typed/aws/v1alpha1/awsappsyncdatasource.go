@@ -53,7 +53,7 @@ type awsAppsyncDatasources struct {
 }
 
 // newAwsAppsyncDatasources returns a AwsAppsyncDatasources
-func newAwsAppsyncDatasources(c *AwsV1alpha1Client, namespace string) *awsAppsyncDatasources {
+func newAwsAppsyncDatasources(c *ChronojamV1alpha1Client, namespace string) *awsAppsyncDatasources {
 	return &awsAppsyncDatasources{
 		client: c.RESTClient(),
 		ns:     namespace,

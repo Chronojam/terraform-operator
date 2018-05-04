@@ -53,7 +53,7 @@ type awsDbSecurityGroups struct {
 }
 
 // newAwsDbSecurityGroups returns a AwsDbSecurityGroups
-func newAwsDbSecurityGroups(c *AwsV1alpha1Client, namespace string) *awsDbSecurityGroups {
+func newAwsDbSecurityGroups(c *ChronojamV1alpha1Client, namespace string) *awsDbSecurityGroups {
 	return &awsDbSecurityGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

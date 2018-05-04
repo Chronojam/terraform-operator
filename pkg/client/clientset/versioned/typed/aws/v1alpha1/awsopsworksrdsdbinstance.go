@@ -53,7 +53,7 @@ type awsOpsworksRdsDbInstances struct {
 }
 
 // newAwsOpsworksRdsDbInstances returns a AwsOpsworksRdsDbInstances
-func newAwsOpsworksRdsDbInstances(c *AwsV1alpha1Client, namespace string) *awsOpsworksRdsDbInstances {
+func newAwsOpsworksRdsDbInstances(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksRdsDbInstances {
 	return &awsOpsworksRdsDbInstances{
 		client: c.RESTClient(),
 		ns:     namespace,

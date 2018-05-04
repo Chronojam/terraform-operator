@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafRules implements AwsWafRuleInterface
 type FakeAwsWafRules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafrulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafrules"}
+var awswafrulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafrules"}
 
-var awswafrulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafRule"}
+var awswafrulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafRule"}
 
 // Get takes name of the awsWafRule, and returns the corresponding awsWafRule object, and an error if there is any.
 func (c *FakeAwsWafRules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafRule, err error) {

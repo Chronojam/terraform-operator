@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDefaultVpcs implements AwsDefaultVpcInterface
 type FakeAwsDefaultVpcs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdefaultvpcsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdefaultvpcs"}
+var awsdefaultvpcsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdefaultvpcs"}
 
-var awsdefaultvpcsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDefaultVpc"}
+var awsdefaultvpcsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDefaultVpc"}
 
 // Get takes name of the awsDefaultVpc, and returns the corresponding awsDefaultVpc object, and an error if there is any.
 func (c *FakeAwsDefaultVpcs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDefaultVpc, err error) {

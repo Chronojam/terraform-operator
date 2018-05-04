@@ -53,7 +53,7 @@ type awsIamAccountPasswordPolicies struct {
 }
 
 // newAwsIamAccountPasswordPolicies returns a AwsIamAccountPasswordPolicies
-func newAwsIamAccountPasswordPolicies(c *AwsV1alpha1Client, namespace string) *awsIamAccountPasswordPolicies {
+func newAwsIamAccountPasswordPolicies(c *ChronojamV1alpha1Client, namespace string) *awsIamAccountPasswordPolicies {
 	return &awsIamAccountPasswordPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

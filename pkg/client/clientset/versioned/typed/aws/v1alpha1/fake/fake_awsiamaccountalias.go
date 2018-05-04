@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIamAccountAliases implements AwsIamAccountAliasInterface
 type FakeAwsIamAccountAliases struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiamaccountaliasesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiamaccountaliases"}
+var awsiamaccountaliasesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiamaccountaliases"}
 
-var awsiamaccountaliasesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIamAccountAlias"}
+var awsiamaccountaliasesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIamAccountAlias"}
 
 // Get takes name of the awsIamAccountAlias, and returns the corresponding awsIamAccountAlias object, and an error if there is any.
 func (c *FakeAwsIamAccountAliases) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIamAccountAlias, err error) {

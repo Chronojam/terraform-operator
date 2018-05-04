@@ -30,13 +30,13 @@ import (
 
 // FakeAwsPlacementGroups implements AwsPlacementGroupInterface
 type FakeAwsPlacementGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsplacementgroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsplacementgroups"}
+var awsplacementgroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsplacementgroups"}
 
-var awsplacementgroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsPlacementGroup"}
+var awsplacementgroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsPlacementGroup"}
 
 // Get takes name of the awsPlacementGroup, and returns the corresponding awsPlacementGroup object, and an error if there is any.
 func (c *FakeAwsPlacementGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsPlacementGroup, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayDomainNames implements AwsApiGatewayDomainNameInterface
 type FakeAwsApiGatewayDomainNames struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewaydomainnamesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewaydomainnames"}
+var awsapigatewaydomainnamesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewaydomainnames"}
 
-var awsapigatewaydomainnamesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayDomainName"}
+var awsapigatewaydomainnamesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayDomainName"}
 
 // Get takes name of the awsApiGatewayDomainName, and returns the corresponding awsApiGatewayDomainName object, and an error if there is any.
 func (c *FakeAwsApiGatewayDomainNames) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayDomainName, err error) {

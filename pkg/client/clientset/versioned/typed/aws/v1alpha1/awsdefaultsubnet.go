@@ -53,7 +53,7 @@ type awsDefaultSubnets struct {
 }
 
 // newAwsDefaultSubnets returns a AwsDefaultSubnets
-func newAwsDefaultSubnets(c *AwsV1alpha1Client, namespace string) *awsDefaultSubnets {
+func newAwsDefaultSubnets(c *ChronojamV1alpha1Client, namespace string) *awsDefaultSubnets {
 	return &awsDefaultSubnets{
 		client: c.RESTClient(),
 		ns:     namespace,

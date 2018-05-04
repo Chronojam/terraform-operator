@@ -53,7 +53,7 @@ type awsElasticBeanstalkApplications struct {
 }
 
 // newAwsElasticBeanstalkApplications returns a AwsElasticBeanstalkApplications
-func newAwsElasticBeanstalkApplications(c *AwsV1alpha1Client, namespace string) *awsElasticBeanstalkApplications {
+func newAwsElasticBeanstalkApplications(c *ChronojamV1alpha1Client, namespace string) *awsElasticBeanstalkApplications {
 	return &awsElasticBeanstalkApplications{
 		client: c.RESTClient(),
 		ns:     namespace,

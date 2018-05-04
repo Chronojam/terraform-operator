@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksMemcachedLayers implements AwsOpsworksMemcachedLayerInterface
 type FakeAwsOpsworksMemcachedLayers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworksmemcachedlayersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworksmemcachedlayers"}
+var awsopsworksmemcachedlayersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworksmemcachedlayers"}
 
-var awsopsworksmemcachedlayersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksMemcachedLayer"}
+var awsopsworksmemcachedlayersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksMemcachedLayer"}
 
 // Get takes name of the awsOpsworksMemcachedLayer, and returns the corresponding awsOpsworksMemcachedLayer object, and an error if there is any.
 func (c *FakeAwsOpsworksMemcachedLayers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksMemcachedLayer, err error) {

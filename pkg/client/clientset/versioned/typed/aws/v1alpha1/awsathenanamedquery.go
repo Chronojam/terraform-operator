@@ -53,7 +53,7 @@ type awsAthenaNamedQueries struct {
 }
 
 // newAwsAthenaNamedQueries returns a AwsAthenaNamedQueries
-func newAwsAthenaNamedQueries(c *AwsV1alpha1Client, namespace string) *awsAthenaNamedQueries {
+func newAwsAthenaNamedQueries(c *ChronojamV1alpha1Client, namespace string) *awsAthenaNamedQueries {
 	return &awsAthenaNamedQueries{
 		client: c.RESTClient(),
 		ns:     namespace,

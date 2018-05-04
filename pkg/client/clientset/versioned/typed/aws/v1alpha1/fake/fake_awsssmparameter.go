@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSsmParameters implements AwsSsmParameterInterface
 type FakeAwsSsmParameters struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsssmparametersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsssmparameters"}
+var awsssmparametersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsssmparameters"}
 
-var awsssmparametersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSsmParameter"}
+var awsssmparametersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSsmParameter"}
 
 // Get takes name of the awsSsmParameter, and returns the corresponding awsSsmParameter object, and an error if there is any.
 func (c *FakeAwsSsmParameters) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSsmParameter, err error) {

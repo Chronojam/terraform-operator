@@ -52,731 +52,731 @@ func (f *genericInformer) Lister() cache.GenericLister {
 // TODO extend this to unknown resources with a client pool
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
 	switch resource {
-	// Group=aws, Version=v1alpha1
+	// Group=chronojam.co.uk, Version=v1alpha1
 	case v1alpha1.SchemeGroupVersion.WithResource("awsacmcertificates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAcmCertificates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAcmCertificates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsacmcertificatevalidations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAcmCertificateValidations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAcmCertificateValidations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsalbs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAlbs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAlbs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsalblisteners"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAlbListeners().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAlbListeners().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsalblistenercertificates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAlbListenerCertificates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAlbListenerCertificates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsalblistenerrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAlbListenerRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAlbListenerRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsalbtargetgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAlbTargetGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAlbTargetGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsalbtargetgroupattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAlbTargetGroupAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAlbTargetGroupAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsamis"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAmis().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAmis().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsamicopies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAmiCopies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAmiCopies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsamifrominstances"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAmiFromInstances().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAmiFromInstances().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsamilaunchpermissions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAmiLaunchPermissions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAmiLaunchPermissions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayaccounts"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayAccounts().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayAccounts().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayapikeys"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayApiKeys().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayApiKeys().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayauthorizers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayAuthorizers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayAuthorizers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaybasepathmappings"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayBasePathMappings().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayBasePathMappings().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayclientcertificates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayClientCertificates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayClientCertificates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaydeployments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayDeployments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayDeployments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaydocumentationparts"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayDocumentationParts().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayDocumentationParts().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaydocumentationversions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayDocumentationVersions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayDocumentationVersions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaydomainnames"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayDomainNames().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayDomainNames().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaygatewayresponses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayGatewayResponses().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayGatewayResponses().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayintegrations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayIntegrations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayIntegrations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayintegrationresponses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayIntegrationResponses().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayIntegrationResponses().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaymethods"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayMethods().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayMethods().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaymethodresponses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayMethodResponses().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayMethodResponses().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaymethodsettingses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayMethodSettingses().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayMethodSettingses().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaymodels"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayModels().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayModels().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayrequestvalidators"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayRequestValidators().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayRequestValidators().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayresources"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayResources().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayResources().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayrestapis"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayRestApis().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayRestApis().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewaystages"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayStages().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayStages().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayusageplans"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayUsagePlans().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayUsagePlans().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayusageplankeys"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayUsagePlanKeys().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayUsagePlanKeys().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsapigatewayvpclinks"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsApiGatewayVpcLinks().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsApiGatewayVpcLinks().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsappcookiestickinesspolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAppCookieStickinessPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAppCookieStickinessPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsappautoscalingpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAppautoscalingPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAppautoscalingPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsappautoscalingscheduledactions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAppautoscalingScheduledActions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAppautoscalingScheduledActions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsappautoscalingtargets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAppautoscalingTargets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAppautoscalingTargets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsappsyncdatasources"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAppsyncDatasources().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAppsyncDatasources().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsappsyncgraphqlapis"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAppsyncGraphqlApis().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAppsyncGraphqlApis().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsathenadatabases"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAthenaDatabases().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAthenaDatabases().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsathenanamedqueries"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAthenaNamedQueries().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAthenaNamedQueries().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsautoscalingattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAutoscalingAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAutoscalingAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsautoscalinggroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAutoscalingGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAutoscalingGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsautoscalinglifecyclehooks"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAutoscalingLifecycleHooks().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAutoscalingLifecycleHooks().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsautoscalingnotifications"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAutoscalingNotifications().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAutoscalingNotifications().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsautoscalingpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAutoscalingPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAutoscalingPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsautoscalingschedules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsAutoscalingSchedules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAutoscalingSchedules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsbatchcomputeenvironments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsBatchComputeEnvironments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsBatchComputeEnvironments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsbatchjobdefinitions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsBatchJobDefinitions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsBatchJobDefinitions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsbatchjobqueues"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsBatchJobQueues().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsBatchJobQueues().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsbudgetsbudgets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsBudgetsBudgets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsBudgetsBudgets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloud9environmentec2s"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloud9EnvironmentEc2s().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloud9EnvironmentEc2s().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudformationstacks"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudformationStacks().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudformationStacks().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudfrontdistributions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudfrontDistributions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudfrontDistributions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudfrontoriginaccessidentities"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudfrontOriginAccessIdentities().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudfrontOriginAccessIdentities().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudtrails"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudtrails().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudtrails().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatchdashboards"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchDashboards().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchDashboards().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatcheventpermissions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchEventPermissions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchEventPermissions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatcheventrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchEventRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchEventRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatcheventtargets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchEventTargets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchEventTargets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatchlogdestinations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchLogDestinations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchLogDestinations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatchlogdestinationpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchLogDestinationPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchLogDestinationPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatchloggroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchLogGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchLogGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatchlogmetricfilters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchLogMetricFilters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchLogMetricFilters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatchlogresourcepolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchLogResourcePolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchLogResourcePolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatchlogstreams"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchLogStreams().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchLogStreams().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatchlogsubscriptionfilters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchLogSubscriptionFilters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchLogSubscriptionFilters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscloudwatchmetricalarms"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCloudwatchMetricAlarms().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCloudwatchMetricAlarms().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscodebuildprojects"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCodebuildProjects().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCodebuildProjects().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscodecommitrepositories"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCodecommitRepositories().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCodecommitRepositories().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscodecommittriggers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCodecommitTriggers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCodecommitTriggers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscodedeployapps"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCodedeployApps().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCodedeployApps().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscodedeploydeploymentconfigs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCodedeployDeploymentConfigs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCodedeployDeploymentConfigs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscodedeploydeploymentgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCodedeployDeploymentGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCodedeployDeploymentGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscodepipelines"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCodepipelines().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCodepipelines().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscognitoidentitypools"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCognitoIdentityPools().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCognitoIdentityPools().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscognitoidentitypoolrolesattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCognitoIdentityPoolRolesAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCognitoIdentityPoolRolesAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscognitousergroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCognitoUserGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCognitoUserGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscognitouserpools"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCognitoUserPools().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCognitoUserPools().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscognitouserpoolclients"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCognitoUserPoolClients().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCognitoUserPoolClients().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscognitouserpooldomains"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCognitoUserPoolDomains().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCognitoUserPoolDomains().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsconfigconfigrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsConfigConfigRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsConfigConfigRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsconfigconfigurationrecorders"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsConfigConfigurationRecorders().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsConfigConfigurationRecorders().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsconfigconfigurationrecorderstatuses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsConfigConfigurationRecorderStatuses().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsConfigConfigurationRecorderStatuses().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsconfigdeliverychannels"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsConfigDeliveryChannels().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsConfigDeliveryChannels().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awscustomergateways"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsCustomerGateways().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsCustomerGateways().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdaxclusters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDaxClusters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDaxClusters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdaxparametergroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDaxParameterGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDaxParameterGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdaxsubnetgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDaxSubnetGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDaxSubnetGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdbeventsubscriptions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDbEventSubscriptions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDbEventSubscriptions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdbinstances"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDbInstances().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDbInstances().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdboptiongroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDbOptionGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDbOptionGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdbparametergroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDbParameterGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDbParameterGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdbsecuritygroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDbSecurityGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDbSecurityGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdbsnapshots"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDbSnapshots().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDbSnapshots().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdbsubnetgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDbSubnetGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDbSubnetGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdefaultnetworkacls"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDefaultNetworkAcls().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDefaultNetworkAcls().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdefaultroutetables"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDefaultRouteTables().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDefaultRouteTables().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdefaultsecuritygroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDefaultSecurityGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDefaultSecurityGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdefaultsubnets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDefaultSubnets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDefaultSubnets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdefaultvpcs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDefaultVpcs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDefaultVpcs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdefaultvpcdhcpoptionses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDefaultVpcDhcpOptionses().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDefaultVpcDhcpOptionses().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdevicefarmprojects"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDevicefarmProjects().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDevicefarmProjects().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdirectoryserviceconditionalforwarders"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDirectoryServiceConditionalForwarders().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDirectoryServiceConditionalForwarders().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdirectoryservicedirectories"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDirectoryServiceDirectories().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDirectoryServiceDirectories().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdmscertificates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDmsCertificates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDmsCertificates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdmsendpoints"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDmsEndpoints().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDmsEndpoints().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdmsreplicationinstances"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDmsReplicationInstances().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDmsReplicationInstances().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdmsreplicationsubnetgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDmsReplicationSubnetGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDmsReplicationSubnetGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdmsreplicationtasks"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDmsReplicationTasks().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDmsReplicationTasks().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdxconnections"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDxConnections().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDxConnections().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdxconnectionassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDxConnectionAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDxConnectionAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdxlags"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDxLags().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDxLags().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdynamodbglobaltables"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDynamodbGlobalTables().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDynamodbGlobalTables().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdynamodbtables"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDynamodbTables().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDynamodbTables().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsdynamodbtableitems"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsDynamodbTableItems().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsDynamodbTableItems().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsebssnapshots"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEbsSnapshots().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEbsSnapshots().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsebsvolumes"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEbsVolumes().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEbsVolumes().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsecrlifecyclepolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEcrLifecyclePolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEcrLifecyclePolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsecrrepositories"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEcrRepositories().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEcrRepositories().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsecrrepositorypolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEcrRepositoryPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEcrRepositoryPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsecsclusters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEcsClusters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEcsClusters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsecsservices"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEcsServices().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEcsServices().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsecstaskdefinitions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEcsTaskDefinitions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEcsTaskDefinitions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsefsfilesystems"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEfsFileSystems().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEfsFileSystems().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsefsmounttargets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEfsMountTargets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEfsMountTargets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsegressonlyinternetgateways"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEgressOnlyInternetGateways().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEgressOnlyInternetGateways().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awseips"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEips().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEips().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awseipassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEipAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEipAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticbeanstalkapplications"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticBeanstalkApplications().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticBeanstalkApplications().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticbeanstalkapplicationversions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticBeanstalkApplicationVersions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticBeanstalkApplicationVersions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticbeanstalkconfigurationtemplates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticBeanstalkConfigurationTemplates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticBeanstalkConfigurationTemplates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticbeanstalkenvironments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticBeanstalkEnvironments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticBeanstalkEnvironments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticacheclusters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticacheClusters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticacheClusters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticacheparametergroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticacheParameterGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticacheParameterGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticachereplicationgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticacheReplicationGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticacheReplicationGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticachesecuritygroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticacheSecurityGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticacheSecurityGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticachesubnetgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticacheSubnetGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticacheSubnetGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticsearchdomains"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticsearchDomains().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticsearchDomains().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselasticsearchdomainpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElasticsearchDomainPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElasticsearchDomainPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselastictranscoderpipelines"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElastictranscoderPipelines().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElastictranscoderPipelines().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselastictranscoderpresets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElastictranscoderPresets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElastictranscoderPresets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselbs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElbs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElbs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awselbattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsElbAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsElbAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsemrclusters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEmrClusters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEmrClusters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsemrinstancegroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEmrInstanceGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEmrInstanceGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsemrsecurityconfigurations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsEmrSecurityConfigurations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsEmrSecurityConfigurations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsflowlogs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsFlowLogs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsFlowLogs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsgameliftaliases"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGameliftAliases().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGameliftAliases().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsgameliftbuilds"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGameliftBuilds().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGameliftBuilds().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsgameliftfleets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGameliftFleets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGameliftFleets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsglaciervaults"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGlacierVaults().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGlacierVaults().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsgluecatalogdatabases"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGlueCatalogDatabases().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGlueCatalogDatabases().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsglueconnections"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGlueConnections().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGlueConnections().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsgluejobs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGlueJobs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGlueJobs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsguarddutydetectors"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGuarddutyDetectors().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGuarddutyDetectors().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsguarddutyipsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGuarddutyIpsets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGuarddutyIpsets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsguarddutymembers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGuarddutyMembers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGuarddutyMembers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsguarddutythreatintelsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsGuarddutyThreatintelsets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGuarddutyThreatintelsets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamaccesskeys"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamAccessKeys().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamAccessKeys().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamaccountaliases"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamAccountAliases().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamAccountAliases().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamaccountpasswordpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamAccountPasswordPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamAccountPasswordPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamgroupmemberships"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamGroupMemberships().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamGroupMemberships().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamgrouppolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamGroupPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamGroupPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamgrouppolicyattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamGroupPolicyAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamGroupPolicyAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiaminstanceprofiles"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamInstanceProfiles().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamInstanceProfiles().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamopenidconnectproviders"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamOpenidConnectProviders().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamOpenidConnectProviders().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiampolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiampolicyattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamPolicyAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamPolicyAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamroles"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamRoles().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamRoles().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamrolepolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamRolePolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamRolePolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamrolepolicyattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamRolePolicyAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamRolePolicyAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamsamlproviders"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamSamlProviders().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamSamlProviders().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamservercertificates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamServerCertificates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamServerCertificates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamservicelinkedroles"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamServiceLinkedRoles().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamServiceLinkedRoles().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamusers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamUsers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamUsers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamusergroupmemberships"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamUserGroupMemberships().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamUserGroupMemberships().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamuserloginprofiles"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamUserLoginProfiles().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamUserLoginProfiles().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamuserpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamUserPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamUserPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamuserpolicyattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamUserPolicyAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamUserPolicyAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiamusersshkeys"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIamUserSshKeys().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIamUserSshKeys().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsinspectorassessmenttargets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsInspectorAssessmentTargets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsInspectorAssessmentTargets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsinspectorassessmenttemplates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsInspectorAssessmentTemplates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsInspectorAssessmentTemplates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsinspectorresourcegroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsInspectorResourceGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsInspectorResourceGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsinstances"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsInstances().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsInstances().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsinternetgateways"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsInternetGateways().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsInternetGateways().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiotcertificates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIotCertificates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIotCertificates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiotpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIotPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIotPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiotthings"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIotThings().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIotThings().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiotthingtypes"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIotThingTypes().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIotThingTypes().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsiottopicrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsIotTopicRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsIotTopicRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awskeypairs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsKeyPairs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsKeyPairs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awskinesisfirehosedeliverystreams"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsKinesisFirehoseDeliveryStreams().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsKinesisFirehoseDeliveryStreams().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awskinesisstreams"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsKinesisStreams().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsKinesisStreams().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awskmsaliases"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsKmsAliases().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsKmsAliases().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awskmsgrants"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsKmsGrants().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsKmsGrants().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awskmskeys"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsKmsKeys().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsKmsKeys().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslambdaaliases"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLambdaAliases().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLambdaAliases().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslambdaeventsourcemappings"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLambdaEventSourceMappings().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLambdaEventSourceMappings().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslambdafunctions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLambdaFunctions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLambdaFunctions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslambdapermissions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLambdaPermissions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLambdaPermissions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslaunchconfigurations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLaunchConfigurations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLaunchConfigurations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslaunchtemplates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLaunchTemplates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLaunchTemplates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslbs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLbs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLbs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslbcookiestickinesspolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLbCookieStickinessPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLbCookieStickinessPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslblisteners"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLbListeners().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLbListeners().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslblistenercertificates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLbListenerCertificates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLbListenerCertificates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslblistenerrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLbListenerRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLbListenerRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslbsslnegotiationpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLbSslNegotiationPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLbSslNegotiationPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslbtargetgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLbTargetGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLbTargetGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslbtargetgroupattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLbTargetGroupAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLbTargetGroupAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslightsaildomains"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLightsailDomains().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLightsailDomains().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslightsailinstances"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLightsailInstances().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLightsailInstances().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslightsailkeypairs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLightsailKeyPairs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLightsailKeyPairs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslightsailstaticips"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLightsailStaticIps().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLightsailStaticIps().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awslightsailstaticipattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLightsailStaticIpAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLightsailStaticIpAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsloadbalancerbackendserverpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLoadBalancerBackendServerPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLoadBalancerBackendServerPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsloadbalancerlistenerpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLoadBalancerListenerPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLoadBalancerListenerPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsloadbalancerpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsLoadBalancerPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsLoadBalancerPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsmainroutetableassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsMainRouteTableAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsMainRouteTableAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsmediastorecontainers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsMediaStoreContainers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsMediaStoreContainers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsmqbrokers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsMqBrokers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsMqBrokers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsmqconfigurations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsMqConfigurations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsMqConfigurations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsnatgateways"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsNatGateways().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsNatGateways().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsnetworkacls"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsNetworkAcls().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsNetworkAcls().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsnetworkaclrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsNetworkAclRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsNetworkAclRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsnetworkinterfaces"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsNetworkInterfaces().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsNetworkInterfaces().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsnetworkinterfaceattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsNetworkInterfaceAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsNetworkInterfaceAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsnetworkinterfacesgattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsNetworkInterfaceSgAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsNetworkInterfaceSgAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksapplications"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksApplications().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksApplications().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworkscustomlayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksCustomLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksCustomLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksganglialayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksGangliaLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksGangliaLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworkshaproxylayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksHaproxyLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksHaproxyLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksinstances"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksInstances().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksInstances().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksjavaapplayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksJavaAppLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksJavaAppLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksmemcachedlayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksMemcachedLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksMemcachedLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksmysqllayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksMysqlLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksMysqlLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksnodejsapplayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksNodejsAppLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksNodejsAppLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworkspermissions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksPermissions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksPermissions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksphpapplayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksPhpAppLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksPhpAppLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksrailsapplayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksRailsAppLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksRailsAppLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksrdsdbinstances"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksRdsDbInstances().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksRdsDbInstances().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksstacks"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksStacks().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksStacks().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksstaticweblayers"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksStaticWebLayers().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksStaticWebLayers().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsopsworksuserprofiles"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOpsworksUserProfiles().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOpsworksUserProfiles().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsorganizationsaccounts"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOrganizationsAccounts().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOrganizationsAccounts().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsorganizationsorganizations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOrganizationsOrganizations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOrganizationsOrganizations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsorganizationspolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOrganizationsPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOrganizationsPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsorganizationspolicyattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsOrganizationsPolicyAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsOrganizationsPolicyAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsplacementgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsPlacementGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsPlacementGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsproxyprotocolpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsProxyProtocolPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsProxyProtocolPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsrdsclusters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRdsClusters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRdsClusters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsrdsclusterinstances"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRdsClusterInstances().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRdsClusterInstances().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsrdsclusterparametergroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRdsClusterParameterGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRdsClusterParameterGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsredshiftclusters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRedshiftClusters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRedshiftClusters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsredshiftparametergroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRedshiftParameterGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRedshiftParameterGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsredshiftsecuritygroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRedshiftSecurityGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRedshiftSecurityGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsredshiftsubnetgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRedshiftSubnetGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRedshiftSubnetGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsroutes"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRoutes().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRoutes().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsroute53delegationsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRoute53DelegationSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRoute53DelegationSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsroute53healthchecks"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRoute53HealthChecks().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRoute53HealthChecks().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsroute53querylogs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRoute53QueryLogs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRoute53QueryLogs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsroute53records"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRoute53Records().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRoute53Records().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsroute53zones"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRoute53Zones().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRoute53Zones().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsroute53zoneassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRoute53ZoneAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRoute53ZoneAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsroutetables"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRouteTables().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRouteTables().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsroutetableassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsRouteTableAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsRouteTableAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awss3buckets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsS3Buckets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsS3Buckets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awss3bucketmetrics"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsS3BucketMetrics().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsS3BucketMetrics().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awss3bucketnotifications"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsS3BucketNotifications().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsS3BucketNotifications().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awss3bucketobjects"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsS3BucketObjects().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsS3BucketObjects().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awss3bucketpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsS3BucketPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsS3BucketPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssecretsmanagersecrets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSecretsmanagerSecrets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSecretsmanagerSecrets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssecretsmanagersecretversions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSecretsmanagerSecretVersions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSecretsmanagerSecretVersions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssecuritygroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSecurityGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSecurityGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssecuritygrouprules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSecurityGroupRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSecurityGroupRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsservicediscoveryprivatednsnamespaces"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsServiceDiscoveryPrivateDnsNamespaces().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsServiceDiscoveryPrivateDnsNamespaces().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsservicediscoverypublicdnsnamespaces"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsServiceDiscoveryPublicDnsNamespaces().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsServiceDiscoveryPublicDnsNamespaces().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsservicediscoveryservices"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsServiceDiscoveryServices().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsServiceDiscoveryServices().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsservicecatalogportfolios"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsServicecatalogPortfolios().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsServicecatalogPortfolios().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesactivereceiptrulesets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesActiveReceiptRuleSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesActiveReceiptRuleSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesconfigurationsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesConfigurationSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesConfigurationSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesdomaindkims"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesDomainDkims().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesDomainDkims().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesdomainidentities"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesDomainIdentities().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesDomainIdentities().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesdomainidentityverifications"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesDomainIdentityVerifications().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesDomainIdentityVerifications().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesdomainmailfroms"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesDomainMailFroms().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesDomainMailFroms().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsseseventdestinations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesEventDestinations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesEventDestinations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesidentitynotificationtopics"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesIdentityNotificationTopics().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesIdentityNotificationTopics().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesreceiptfilters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesReceiptFilters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesReceiptFilters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesreceiptrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesReceiptRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesReceiptRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssesreceiptrulesets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesReceiptRuleSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesReceiptRuleSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssestemplates"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSesTemplates().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSesTemplates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssfnactivities"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSfnActivities().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSfnActivities().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssfnstatemachines"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSfnStateMachines().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSfnStateMachines().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssimpledbdomains"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSimpledbDomains().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSimpledbDomains().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssnapshotcreatevolumepermissions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSnapshotCreateVolumePermissions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSnapshotCreateVolumePermissions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssnsplatformapplications"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSnsPlatformApplications().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSnsPlatformApplications().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssnstopics"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSnsTopics().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSnsTopics().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssnstopicpolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSnsTopicPolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSnsTopicPolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssnstopicsubscriptions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSnsTopicSubscriptions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSnsTopicSubscriptions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsspotdatafeedsubscriptions"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSpotDatafeedSubscriptions().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSpotDatafeedSubscriptions().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsspotfleetrequests"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSpotFleetRequests().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSpotFleetRequests().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsspotinstancerequests"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSpotInstanceRequests().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSpotInstanceRequests().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssqsqueues"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSqsQueues().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSqsQueues().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssqsqueuepolicies"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSqsQueuePolicies().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSqsQueuePolicies().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmactivations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmActivations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmActivations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmdocuments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmDocuments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmDocuments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmmaintenancewindows"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmMaintenanceWindows().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmMaintenanceWindows().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmmaintenancewindowtargets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmMaintenanceWindowTargets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmMaintenanceWindowTargets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmmaintenancewindowtasks"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmMaintenanceWindowTasks().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmMaintenanceWindowTasks().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmparameters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmParameters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmParameters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmpatchbaselines"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmPatchBaselines().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmPatchBaselines().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmpatchgroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmPatchGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmPatchGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsssmresourcedatasyncs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSsmResourceDataSyncs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSsmResourceDataSyncs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awssubnets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsSubnets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsSubnets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvolumeattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVolumeAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVolumeAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcs"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcs().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcdhcpoptionses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcDhcpOptionses().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcDhcpOptionses().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcdhcpoptionsassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcDhcpOptionsAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcDhcpOptionsAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcendpoints"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcEndpoints().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcEndpoints().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcendpointconnectionnotifications"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcEndpointConnectionNotifications().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcEndpointConnectionNotifications().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcendpointroutetableassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcEndpointRouteTableAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcEndpointRouteTableAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcendpointservices"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcEndpointServices().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcEndpointServices().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcendpointserviceallowedprincipals"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcEndpointServiceAllowedPrincipals().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcEndpointServiceAllowedPrincipals().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcendpointsubnetassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcEndpointSubnetAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcEndpointSubnetAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcpeeringconnections"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcPeeringConnections().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcPeeringConnections().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcpeeringconnectionaccepters"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcPeeringConnectionAccepters().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcPeeringConnectionAccepters().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpcpeeringconnectionoptionses"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpcPeeringConnectionOptionses().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpcPeeringConnectionOptionses().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpnconnections"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpnConnections().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpnConnections().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpnconnectionroutes"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpnConnectionRoutes().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpnConnectionRoutes().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpngateways"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpnGateways().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpnGateways().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpngatewayattachments"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpnGatewayAttachments().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpnGatewayAttachments().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsvpngatewayroutepropagations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsVpnGatewayRoutePropagations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsVpnGatewayRoutePropagations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafbytematchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafByteMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafByteMatchSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafgeomatchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafGeoMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafGeoMatchSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafipsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafIpsets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafIpsets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafratebasedrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafRateBasedRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafRateBasedRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregexmatchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafRegexMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafRegexMatchSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregexpatternsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafRegexPatternSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafRegexPatternSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafrulegroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafRuleGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafRuleGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafsizeconstraintsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafSizeConstraintSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafSizeConstraintSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafsqlinjectionmatchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafSqlInjectionMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafSqlInjectionMatchSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafwebacls"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafWebAcls().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafWebAcls().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafxssmatchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafXssMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafXssMatchSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalbytematchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalByteMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalByteMatchSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalgeomatchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalGeoMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalGeoMatchSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalipsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalIpsets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalIpsets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalratebasedrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalRateBasedRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalRateBasedRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalregexmatchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalRegexMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalRegexMatchSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalregexpatternsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalRegexPatternSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalRegexPatternSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalrules"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalRules().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalRules().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalrulegroups"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalRuleGroups().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalRuleGroups().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalsizeconstraintsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalSizeConstraintSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalSizeConstraintSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalsqlinjectionmatchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalSqlInjectionMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalSqlInjectionMatchSets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalwebacls"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalWebAcls().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalWebAcls().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalwebaclassociations"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalWebAclAssociations().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalWebAclAssociations().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awswafregionalxssmatchsets"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Aws().V1alpha1().AwsWafregionalXssMatchSets().Informer()}, nil
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsWafregionalXssMatchSets().Informer()}, nil
 
 	}
 

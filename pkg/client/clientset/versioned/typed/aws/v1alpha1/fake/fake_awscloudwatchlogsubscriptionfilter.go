@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudwatchLogSubscriptionFilters implements AwsCloudwatchLogSubscriptionFilterInterface
 type FakeAwsCloudwatchLogSubscriptionFilters struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudwatchlogsubscriptionfiltersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudwatchlogsubscriptionfilters"}
+var awscloudwatchlogsubscriptionfiltersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudwatchlogsubscriptionfilters"}
 
-var awscloudwatchlogsubscriptionfiltersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudwatchLogSubscriptionFilter"}
+var awscloudwatchlogsubscriptionfiltersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudwatchLogSubscriptionFilter"}
 
 // Get takes name of the awsCloudwatchLogSubscriptionFilter, and returns the corresponding awsCloudwatchLogSubscriptionFilter object, and an error if there is any.
 func (c *FakeAwsCloudwatchLogSubscriptionFilters) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudwatchLogSubscriptionFilter, err error) {

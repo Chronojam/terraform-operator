@@ -53,7 +53,7 @@ type awsIamPolicies struct {
 }
 
 // newAwsIamPolicies returns a AwsIamPolicies
-func newAwsIamPolicies(c *AwsV1alpha1Client, namespace string) *awsIamPolicies {
+func newAwsIamPolicies(c *ChronojamV1alpha1Client, namespace string) *awsIamPolicies {
 	return &awsIamPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

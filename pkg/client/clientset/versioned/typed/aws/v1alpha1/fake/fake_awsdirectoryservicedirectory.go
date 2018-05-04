@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDirectoryServiceDirectories implements AwsDirectoryServiceDirectoryInterface
 type FakeAwsDirectoryServiceDirectories struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdirectoryservicedirectoriesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdirectoryservicedirectories"}
+var awsdirectoryservicedirectoriesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdirectoryservicedirectories"}
 
-var awsdirectoryservicedirectoriesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDirectoryServiceDirectory"}
+var awsdirectoryservicedirectoriesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDirectoryServiceDirectory"}
 
 // Get takes name of the awsDirectoryServiceDirectory, and returns the corresponding awsDirectoryServiceDirectory object, and an error if there is any.
 func (c *FakeAwsDirectoryServiceDirectories) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDirectoryServiceDirectory, err error) {

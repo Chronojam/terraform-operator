@@ -53,7 +53,7 @@ type awsWafRegexMatchSets struct {
 }
 
 // newAwsWafRegexMatchSets returns a AwsWafRegexMatchSets
-func newAwsWafRegexMatchSets(c *AwsV1alpha1Client, namespace string) *awsWafRegexMatchSets {
+func newAwsWafRegexMatchSets(c *ChronojamV1alpha1Client, namespace string) *awsWafRegexMatchSets {
 	return &awsWafRegexMatchSets{
 		client: c.RESTClient(),
 		ns:     namespace,

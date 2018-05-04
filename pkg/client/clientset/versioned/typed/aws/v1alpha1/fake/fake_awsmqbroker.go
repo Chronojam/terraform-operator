@@ -30,13 +30,13 @@ import (
 
 // FakeAwsMqBrokers implements AwsMqBrokerInterface
 type FakeAwsMqBrokers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsmqbrokersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsmqbrokers"}
+var awsmqbrokersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsmqbrokers"}
 
-var awsmqbrokersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsMqBroker"}
+var awsmqbrokersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsMqBroker"}
 
 // Get takes name of the awsMqBroker, and returns the corresponding awsMqBroker object, and an error if there is any.
 func (c *FakeAwsMqBrokers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsMqBroker, err error) {

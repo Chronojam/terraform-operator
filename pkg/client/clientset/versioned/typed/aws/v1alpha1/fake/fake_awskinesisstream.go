@@ -30,13 +30,13 @@ import (
 
 // FakeAwsKinesisStreams implements AwsKinesisStreamInterface
 type FakeAwsKinesisStreams struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awskinesisstreamsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awskinesisstreams"}
+var awskinesisstreamsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awskinesisstreams"}
 
-var awskinesisstreamsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsKinesisStream"}
+var awskinesisstreamsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsKinesisStream"}
 
 // Get takes name of the awsKinesisStream, and returns the corresponding awsKinesisStream object, and an error if there is any.
 func (c *FakeAwsKinesisStreams) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsKinesisStream, err error) {

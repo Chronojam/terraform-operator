@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIamAccountPasswordPolicies implements AwsIamAccountPasswordPolicyInterface
 type FakeAwsIamAccountPasswordPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiamaccountpasswordpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiamaccountpasswordpolicies"}
+var awsiamaccountpasswordpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiamaccountpasswordpolicies"}
 
-var awsiamaccountpasswordpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIamAccountPasswordPolicy"}
+var awsiamaccountpasswordpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIamAccountPasswordPolicy"}
 
 // Get takes name of the awsIamAccountPasswordPolicy, and returns the corresponding awsIamAccountPasswordPolicy object, and an error if there is any.
 func (c *FakeAwsIamAccountPasswordPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIamAccountPasswordPolicy, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCognitoIdentityPools implements AwsCognitoIdentityPoolInterface
 type FakeAwsCognitoIdentityPools struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscognitoidentitypoolsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscognitoidentitypools"}
+var awscognitoidentitypoolsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscognitoidentitypools"}
 
-var awscognitoidentitypoolsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCognitoIdentityPool"}
+var awscognitoidentitypoolsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCognitoIdentityPool"}
 
 // Get takes name of the awsCognitoIdentityPool, and returns the corresponding awsCognitoIdentityPool object, and an error if there is any.
 func (c *FakeAwsCognitoIdentityPools) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCognitoIdentityPool, err error) {

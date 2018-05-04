@@ -53,7 +53,7 @@ type awsAmiCopies struct {
 }
 
 // newAwsAmiCopies returns a AwsAmiCopies
-func newAwsAmiCopies(c *AwsV1alpha1Client, namespace string) *awsAmiCopies {
+func newAwsAmiCopies(c *ChronojamV1alpha1Client, namespace string) *awsAmiCopies {
 	return &awsAmiCopies{
 		client: c.RESTClient(),
 		ns:     namespace,

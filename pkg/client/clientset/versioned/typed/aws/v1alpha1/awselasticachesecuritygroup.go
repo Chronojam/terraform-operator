@@ -53,7 +53,7 @@ type awsElasticacheSecurityGroups struct {
 }
 
 // newAwsElasticacheSecurityGroups returns a AwsElasticacheSecurityGroups
-func newAwsElasticacheSecurityGroups(c *AwsV1alpha1Client, namespace string) *awsElasticacheSecurityGroups {
+func newAwsElasticacheSecurityGroups(c *ChronojamV1alpha1Client, namespace string) *awsElasticacheSecurityGroups {
 	return &awsElasticacheSecurityGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

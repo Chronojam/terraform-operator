@@ -53,7 +53,7 @@ type awsEcsTaskDefinitions struct {
 }
 
 // newAwsEcsTaskDefinitions returns a AwsEcsTaskDefinitions
-func newAwsEcsTaskDefinitions(c *AwsV1alpha1Client, namespace string) *awsEcsTaskDefinitions {
+func newAwsEcsTaskDefinitions(c *ChronojamV1alpha1Client, namespace string) *awsEcsTaskDefinitions {
 	return &awsEcsTaskDefinitions{
 		client: c.RESTClient(),
 		ns:     namespace,

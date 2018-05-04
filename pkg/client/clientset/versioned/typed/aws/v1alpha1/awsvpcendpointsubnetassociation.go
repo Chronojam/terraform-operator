@@ -53,7 +53,7 @@ type awsVpcEndpointSubnetAssociations struct {
 }
 
 // newAwsVpcEndpointSubnetAssociations returns a AwsVpcEndpointSubnetAssociations
-func newAwsVpcEndpointSubnetAssociations(c *AwsV1alpha1Client, namespace string) *awsVpcEndpointSubnetAssociations {
+func newAwsVpcEndpointSubnetAssociations(c *ChronojamV1alpha1Client, namespace string) *awsVpcEndpointSubnetAssociations {
 	return &awsVpcEndpointSubnetAssociations{
 		client: c.RESTClient(),
 		ns:     namespace,

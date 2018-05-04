@@ -53,7 +53,7 @@ type awsCloudwatchEventRules struct {
 }
 
 // newAwsCloudwatchEventRules returns a AwsCloudwatchEventRules
-func newAwsCloudwatchEventRules(c *AwsV1alpha1Client, namespace string) *awsCloudwatchEventRules {
+func newAwsCloudwatchEventRules(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchEventRules {
 	return &awsCloudwatchEventRules{
 		client: c.RESTClient(),
 		ns:     namespace,

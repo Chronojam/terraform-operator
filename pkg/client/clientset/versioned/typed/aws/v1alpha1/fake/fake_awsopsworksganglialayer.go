@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksGangliaLayers implements AwsOpsworksGangliaLayerInterface
 type FakeAwsOpsworksGangliaLayers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworksganglialayersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworksganglialayers"}
+var awsopsworksganglialayersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworksganglialayers"}
 
-var awsopsworksganglialayersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksGangliaLayer"}
+var awsopsworksganglialayersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksGangliaLayer"}
 
 // Get takes name of the awsOpsworksGangliaLayer, and returns the corresponding awsOpsworksGangliaLayer object, and an error if there is any.
 func (c *FakeAwsOpsworksGangliaLayers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksGangliaLayer, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIamPolicyAttachments implements AwsIamPolicyAttachmentInterface
 type FakeAwsIamPolicyAttachments struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiampolicyattachmentsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiampolicyattachments"}
+var awsiampolicyattachmentsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiampolicyattachments"}
 
-var awsiampolicyattachmentsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIamPolicyAttachment"}
+var awsiampolicyattachmentsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIamPolicyAttachment"}
 
 // Get takes name of the awsIamPolicyAttachment, and returns the corresponding awsIamPolicyAttachment object, and an error if there is any.
 func (c *FakeAwsIamPolicyAttachments) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIamPolicyAttachment, err error) {

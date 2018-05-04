@@ -53,7 +53,7 @@ type awsPlacementGroups struct {
 }
 
 // newAwsPlacementGroups returns a AwsPlacementGroups
-func newAwsPlacementGroups(c *AwsV1alpha1Client, namespace string) *awsPlacementGroups {
+func newAwsPlacementGroups(c *ChronojamV1alpha1Client, namespace string) *awsPlacementGroups {
 	return &awsPlacementGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

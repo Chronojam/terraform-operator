@@ -53,7 +53,7 @@ type awsGuarddutyIpsets struct {
 }
 
 // newAwsGuarddutyIpsets returns a AwsGuarddutyIpsets
-func newAwsGuarddutyIpsets(c *AwsV1alpha1Client, namespace string) *awsGuarddutyIpsets {
+func newAwsGuarddutyIpsets(c *ChronojamV1alpha1Client, namespace string) *awsGuarddutyIpsets {
 	return &awsGuarddutyIpsets{
 		client: c.RESTClient(),
 		ns:     namespace,

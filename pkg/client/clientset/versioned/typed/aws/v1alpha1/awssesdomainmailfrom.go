@@ -53,7 +53,7 @@ type awsSesDomainMailFroms struct {
 }
 
 // newAwsSesDomainMailFroms returns a AwsSesDomainMailFroms
-func newAwsSesDomainMailFroms(c *AwsV1alpha1Client, namespace string) *awsSesDomainMailFroms {
+func newAwsSesDomainMailFroms(c *ChronojamV1alpha1Client, namespace string) *awsSesDomainMailFroms {
 	return &awsSesDomainMailFroms{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsCloudtrails struct {
 }
 
 // newAwsCloudtrails returns a AwsCloudtrails
-func newAwsCloudtrails(c *AwsV1alpha1Client, namespace string) *awsCloudtrails {
+func newAwsCloudtrails(c *ChronojamV1alpha1Client, namespace string) *awsCloudtrails {
 	return &awsCloudtrails{
 		client: c.RESTClient(),
 		ns:     namespace,

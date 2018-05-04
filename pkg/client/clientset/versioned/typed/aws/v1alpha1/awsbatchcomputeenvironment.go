@@ -53,7 +53,7 @@ type awsBatchComputeEnvironments struct {
 }
 
 // newAwsBatchComputeEnvironments returns a AwsBatchComputeEnvironments
-func newAwsBatchComputeEnvironments(c *AwsV1alpha1Client, namespace string) *awsBatchComputeEnvironments {
+func newAwsBatchComputeEnvironments(c *ChronojamV1alpha1Client, namespace string) *awsBatchComputeEnvironments {
 	return &awsBatchComputeEnvironments{
 		client: c.RESTClient(),
 		ns:     namespace,

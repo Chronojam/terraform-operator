@@ -53,7 +53,7 @@ type awsAutoscalingAttachments struct {
 }
 
 // newAwsAutoscalingAttachments returns a AwsAutoscalingAttachments
-func newAwsAutoscalingAttachments(c *AwsV1alpha1Client, namespace string) *awsAutoscalingAttachments {
+func newAwsAutoscalingAttachments(c *ChronojamV1alpha1Client, namespace string) *awsAutoscalingAttachments {
 	return &awsAutoscalingAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

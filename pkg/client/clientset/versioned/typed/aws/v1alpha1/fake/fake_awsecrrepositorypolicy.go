@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEcrRepositoryPolicies implements AwsEcrRepositoryPolicyInterface
 type FakeAwsEcrRepositoryPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsecrrepositorypoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsecrrepositorypolicies"}
+var awsecrrepositorypoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsecrrepositorypolicies"}
 
-var awsecrrepositorypoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEcrRepositoryPolicy"}
+var awsecrrepositorypoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEcrRepositoryPolicy"}
 
 // Get takes name of the awsEcrRepositoryPolicy, and returns the corresponding awsEcrRepositoryPolicy object, and an error if there is any.
 func (c *FakeAwsEcrRepositoryPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEcrRepositoryPolicy, err error) {

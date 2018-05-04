@@ -53,7 +53,7 @@ type awsApiGatewayUsagePlanKeys struct {
 }
 
 // newAwsApiGatewayUsagePlanKeys returns a AwsApiGatewayUsagePlanKeys
-func newAwsApiGatewayUsagePlanKeys(c *AwsV1alpha1Client, namespace string) *awsApiGatewayUsagePlanKeys {
+func newAwsApiGatewayUsagePlanKeys(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayUsagePlanKeys {
 	return &awsApiGatewayUsagePlanKeys{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsS3Buckets implements AwsS3BucketInterface
 type FakeAwsS3Buckets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awss3bucketsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awss3buckets"}
+var awss3bucketsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awss3buckets"}
 
-var awss3bucketsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsS3Bucket"}
+var awss3bucketsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsS3Bucket"}
 
 // Get takes name of the awsS3Bucket, and returns the corresponding awsS3Bucket object, and an error if there is any.
 func (c *FakeAwsS3Buckets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsS3Bucket, err error) {

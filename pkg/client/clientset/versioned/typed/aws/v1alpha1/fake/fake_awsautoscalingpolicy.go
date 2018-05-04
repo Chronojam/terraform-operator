@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAutoscalingPolicies implements AwsAutoscalingPolicyInterface
 type FakeAwsAutoscalingPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsautoscalingpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsautoscalingpolicies"}
+var awsautoscalingpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsautoscalingpolicies"}
 
-var awsautoscalingpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAutoscalingPolicy"}
+var awsautoscalingpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAutoscalingPolicy"}
 
 // Get takes name of the awsAutoscalingPolicy, and returns the corresponding awsAutoscalingPolicy object, and an error if there is any.
 func (c *FakeAwsAutoscalingPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAutoscalingPolicy, err error) {

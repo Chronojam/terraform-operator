@@ -53,7 +53,7 @@ type awsOpsworksMemcachedLayers struct {
 }
 
 // newAwsOpsworksMemcachedLayers returns a AwsOpsworksMemcachedLayers
-func newAwsOpsworksMemcachedLayers(c *AwsV1alpha1Client, namespace string) *awsOpsworksMemcachedLayers {
+func newAwsOpsworksMemcachedLayers(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksMemcachedLayers {
 	return &awsOpsworksMemcachedLayers{
 		client: c.RESTClient(),
 		ns:     namespace,

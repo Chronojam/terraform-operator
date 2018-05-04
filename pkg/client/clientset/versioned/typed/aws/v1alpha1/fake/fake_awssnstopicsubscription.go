@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSnsTopicSubscriptions implements AwsSnsTopicSubscriptionInterface
 type FakeAwsSnsTopicSubscriptions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssnstopicsubscriptionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssnstopicsubscriptions"}
+var awssnstopicsubscriptionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssnstopicsubscriptions"}
 
-var awssnstopicsubscriptionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSnsTopicSubscription"}
+var awssnstopicsubscriptionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSnsTopicSubscription"}
 
 // Get takes name of the awsSnsTopicSubscription, and returns the corresponding awsSnsTopicSubscription object, and an error if there is any.
 func (c *FakeAwsSnsTopicSubscriptions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSnsTopicSubscription, err error) {

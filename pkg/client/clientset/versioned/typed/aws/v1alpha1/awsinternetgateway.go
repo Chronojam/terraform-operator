@@ -53,7 +53,7 @@ type awsInternetGateways struct {
 }
 
 // newAwsInternetGateways returns a AwsInternetGateways
-func newAwsInternetGateways(c *AwsV1alpha1Client, namespace string) *awsInternetGateways {
+func newAwsInternetGateways(c *ChronojamV1alpha1Client, namespace string) *awsInternetGateways {
 	return &awsInternetGateways{
 		client: c.RESTClient(),
 		ns:     namespace,

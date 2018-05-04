@@ -53,7 +53,7 @@ type awsCloudwatchLogGroups struct {
 }
 
 // newAwsCloudwatchLogGroups returns a AwsCloudwatchLogGroups
-func newAwsCloudwatchLogGroups(c *AwsV1alpha1Client, namespace string) *awsCloudwatchLogGroups {
+func newAwsCloudwatchLogGroups(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchLogGroups {
 	return &awsCloudwatchLogGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

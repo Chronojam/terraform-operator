@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGuarddutyDetectors implements AwsGuarddutyDetectorInterface
 type FakeAwsGuarddutyDetectors struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsguarddutydetectorsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsguarddutydetectors"}
+var awsguarddutydetectorsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsguarddutydetectors"}
 
-var awsguarddutydetectorsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGuarddutyDetector"}
+var awsguarddutydetectorsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGuarddutyDetector"}
 
 // Get takes name of the awsGuarddutyDetector, and returns the corresponding awsGuarddutyDetector object, and an error if there is any.
 func (c *FakeAwsGuarddutyDetectors) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGuarddutyDetector, err error) {

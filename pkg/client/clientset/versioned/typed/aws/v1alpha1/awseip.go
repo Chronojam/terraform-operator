@@ -53,7 +53,7 @@ type awsEips struct {
 }
 
 // newAwsEips returns a AwsEips
-func newAwsEips(c *AwsV1alpha1Client, namespace string) *awsEips {
+func newAwsEips(c *ChronojamV1alpha1Client, namespace string) *awsEips {
 	return &awsEips{
 		client: c.RESTClient(),
 		ns:     namespace,

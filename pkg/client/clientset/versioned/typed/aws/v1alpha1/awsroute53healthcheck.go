@@ -53,7 +53,7 @@ type awsRoute53HealthChecks struct {
 }
 
 // newAwsRoute53HealthChecks returns a AwsRoute53HealthChecks
-func newAwsRoute53HealthChecks(c *AwsV1alpha1Client, namespace string) *awsRoute53HealthChecks {
+func newAwsRoute53HealthChecks(c *ChronojamV1alpha1Client, namespace string) *awsRoute53HealthChecks {
 	return &awsRoute53HealthChecks{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLbSslNegotiationPolicies implements AwsLbSslNegotiationPolicyInterface
 type FakeAwsLbSslNegotiationPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslbsslnegotiationpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslbsslnegotiationpolicies"}
+var awslbsslnegotiationpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslbsslnegotiationpolicies"}
 
-var awslbsslnegotiationpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLbSslNegotiationPolicy"}
+var awslbsslnegotiationpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLbSslNegotiationPolicy"}
 
 // Get takes name of the awsLbSslNegotiationPolicy, and returns the corresponding awsLbSslNegotiationPolicy object, and an error if there is any.
 func (c *FakeAwsLbSslNegotiationPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLbSslNegotiationPolicy, err error) {

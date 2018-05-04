@@ -53,7 +53,7 @@ type awsVpnConnectionRoutes struct {
 }
 
 // newAwsVpnConnectionRoutes returns a AwsVpnConnectionRoutes
-func newAwsVpnConnectionRoutes(c *AwsV1alpha1Client, namespace string) *awsVpnConnectionRoutes {
+func newAwsVpnConnectionRoutes(c *ChronojamV1alpha1Client, namespace string) *awsVpnConnectionRoutes {
 	return &awsVpnConnectionRoutes{
 		client: c.RESTClient(),
 		ns:     namespace,

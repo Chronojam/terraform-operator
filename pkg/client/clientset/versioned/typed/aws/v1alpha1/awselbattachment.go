@@ -53,7 +53,7 @@ type awsElbAttachments struct {
 }
 
 // newAwsElbAttachments returns a AwsElbAttachments
-func newAwsElbAttachments(c *AwsV1alpha1Client, namespace string) *awsElbAttachments {
+func newAwsElbAttachments(c *ChronojamV1alpha1Client, namespace string) *awsElbAttachments {
 	return &awsElbAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

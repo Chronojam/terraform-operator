@@ -53,7 +53,7 @@ type awsVpcPeeringConnectionAccepters struct {
 }
 
 // newAwsVpcPeeringConnectionAccepters returns a AwsVpcPeeringConnectionAccepters
-func newAwsVpcPeeringConnectionAccepters(c *AwsV1alpha1Client, namespace string) *awsVpcPeeringConnectionAccepters {
+func newAwsVpcPeeringConnectionAccepters(c *ChronojamV1alpha1Client, namespace string) *awsVpcPeeringConnectionAccepters {
 	return &awsVpcPeeringConnectionAccepters{
 		client: c.RESTClient(),
 		ns:     namespace,

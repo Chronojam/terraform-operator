@@ -53,7 +53,7 @@ type awsApiGatewayRequestValidators struct {
 }
 
 // newAwsApiGatewayRequestValidators returns a AwsApiGatewayRequestValidators
-func newAwsApiGatewayRequestValidators(c *AwsV1alpha1Client, namespace string) *awsApiGatewayRequestValidators {
+func newAwsApiGatewayRequestValidators(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayRequestValidators {
 	return &awsApiGatewayRequestValidators{
 		client: c.RESTClient(),
 		ns:     namespace,

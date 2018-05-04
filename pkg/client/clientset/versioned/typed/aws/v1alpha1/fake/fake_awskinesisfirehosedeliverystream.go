@@ -30,13 +30,13 @@ import (
 
 // FakeAwsKinesisFirehoseDeliveryStreams implements AwsKinesisFirehoseDeliveryStreamInterface
 type FakeAwsKinesisFirehoseDeliveryStreams struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awskinesisfirehosedeliverystreamsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awskinesisfirehosedeliverystreams"}
+var awskinesisfirehosedeliverystreamsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awskinesisfirehosedeliverystreams"}
 
-var awskinesisfirehosedeliverystreamsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsKinesisFirehoseDeliveryStream"}
+var awskinesisfirehosedeliverystreamsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsKinesisFirehoseDeliveryStream"}
 
 // Get takes name of the awsKinesisFirehoseDeliveryStream, and returns the corresponding awsKinesisFirehoseDeliveryStream object, and an error if there is any.
 func (c *FakeAwsKinesisFirehoseDeliveryStreams) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsKinesisFirehoseDeliveryStream, err error) {

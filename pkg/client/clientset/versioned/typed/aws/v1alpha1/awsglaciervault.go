@@ -53,7 +53,7 @@ type awsGlacierVaults struct {
 }
 
 // newAwsGlacierVaults returns a AwsGlacierVaults
-func newAwsGlacierVaults(c *AwsV1alpha1Client, namespace string) *awsGlacierVaults {
+func newAwsGlacierVaults(c *ChronojamV1alpha1Client, namespace string) *awsGlacierVaults {
 	return &awsGlacierVaults{
 		client: c.RESTClient(),
 		ns:     namespace,

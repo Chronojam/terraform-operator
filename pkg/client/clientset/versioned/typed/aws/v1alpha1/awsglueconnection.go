@@ -53,7 +53,7 @@ type awsGlueConnections struct {
 }
 
 // newAwsGlueConnections returns a AwsGlueConnections
-func newAwsGlueConnections(c *AwsV1alpha1Client, namespace string) *awsGlueConnections {
+func newAwsGlueConnections(c *ChronojamV1alpha1Client, namespace string) *awsGlueConnections {
 	return &awsGlueConnections{
 		client: c.RESTClient(),
 		ns:     namespace,

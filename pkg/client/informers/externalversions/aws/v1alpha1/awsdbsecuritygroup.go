@@ -61,13 +61,13 @@ func NewFilteredAwsDbSecurityGroupInformer(client versioned.Interface, namespace
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsDbSecurityGroups(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsDbSecurityGroups(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsDbSecurityGroups(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsDbSecurityGroups(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsDbSecurityGroup{},

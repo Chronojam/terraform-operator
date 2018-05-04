@@ -53,7 +53,7 @@ type awsApiGatewayDeployments struct {
 }
 
 // newAwsApiGatewayDeployments returns a AwsApiGatewayDeployments
-func newAwsApiGatewayDeployments(c *AwsV1alpha1Client, namespace string) *awsApiGatewayDeployments {
+func newAwsApiGatewayDeployments(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayDeployments {
 	return &awsApiGatewayDeployments{
 		client: c.RESTClient(),
 		ns:     namespace,

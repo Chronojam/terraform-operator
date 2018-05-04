@@ -53,7 +53,7 @@ type awsSesConfigurationSets struct {
 }
 
 // newAwsSesConfigurationSets returns a AwsSesConfigurationSets
-func newAwsSesConfigurationSets(c *AwsV1alpha1Client, namespace string) *awsSesConfigurationSets {
+func newAwsSesConfigurationSets(c *ChronojamV1alpha1Client, namespace string) *awsSesConfigurationSets {
 	return &awsSesConfigurationSets{
 		client: c.RESTClient(),
 		ns:     namespace,

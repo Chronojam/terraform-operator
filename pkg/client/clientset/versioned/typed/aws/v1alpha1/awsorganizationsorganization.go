@@ -53,7 +53,7 @@ type awsOrganizationsOrganizations struct {
 }
 
 // newAwsOrganizationsOrganizations returns a AwsOrganizationsOrganizations
-func newAwsOrganizationsOrganizations(c *AwsV1alpha1Client, namespace string) *awsOrganizationsOrganizations {
+func newAwsOrganizationsOrganizations(c *ChronojamV1alpha1Client, namespace string) *awsOrganizationsOrganizations {
 	return &awsOrganizationsOrganizations{
 		client: c.RESTClient(),
 		ns:     namespace,

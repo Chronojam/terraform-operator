@@ -53,7 +53,7 @@ type awsSsmMaintenanceWindows struct {
 }
 
 // newAwsSsmMaintenanceWindows returns a AwsSsmMaintenanceWindows
-func newAwsSsmMaintenanceWindows(c *AwsV1alpha1Client, namespace string) *awsSsmMaintenanceWindows {
+func newAwsSsmMaintenanceWindows(c *ChronojamV1alpha1Client, namespace string) *awsSsmMaintenanceWindows {
 	return &awsSsmMaintenanceWindows{
 		client: c.RESTClient(),
 		ns:     namespace,

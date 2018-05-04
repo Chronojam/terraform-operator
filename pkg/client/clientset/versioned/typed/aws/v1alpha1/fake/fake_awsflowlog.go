@@ -30,13 +30,13 @@ import (
 
 // FakeAwsFlowLogs implements AwsFlowLogInterface
 type FakeAwsFlowLogs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsflowlogsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsflowlogs"}
+var awsflowlogsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsflowlogs"}
 
-var awsflowlogsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsFlowLog"}
+var awsflowlogsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsFlowLog"}
 
 // Get takes name of the awsFlowLog, and returns the corresponding awsFlowLog object, and an error if there is any.
 func (c *FakeAwsFlowLogs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsFlowLog, err error) {

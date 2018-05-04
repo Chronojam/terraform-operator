@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLightsailStaticIps implements AwsLightsailStaticIpInterface
 type FakeAwsLightsailStaticIps struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslightsailstaticipsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslightsailstaticips"}
+var awslightsailstaticipsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslightsailstaticips"}
 
-var awslightsailstaticipsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLightsailStaticIp"}
+var awslightsailstaticipsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLightsailStaticIp"}
 
 // Get takes name of the awsLightsailStaticIp, and returns the corresponding awsLightsailStaticIp object, and an error if there is any.
 func (c *FakeAwsLightsailStaticIps) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLightsailStaticIp, err error) {

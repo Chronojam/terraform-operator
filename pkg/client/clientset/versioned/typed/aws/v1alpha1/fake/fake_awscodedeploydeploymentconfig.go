@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCodedeployDeploymentConfigs implements AwsCodedeployDeploymentConfigInterface
 type FakeAwsCodedeployDeploymentConfigs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscodedeploydeploymentconfigsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscodedeploydeploymentconfigs"}
+var awscodedeploydeploymentconfigsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscodedeploydeploymentconfigs"}
 
-var awscodedeploydeploymentconfigsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCodedeployDeploymentConfig"}
+var awscodedeploydeploymentconfigsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCodedeployDeploymentConfig"}
 
 // Get takes name of the awsCodedeployDeploymentConfig, and returns the corresponding awsCodedeployDeploymentConfig object, and an error if there is any.
 func (c *FakeAwsCodedeployDeploymentConfigs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCodedeployDeploymentConfig, err error) {

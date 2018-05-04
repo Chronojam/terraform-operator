@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOrganizationsPolicies implements AwsOrganizationsPolicyInterface
 type FakeAwsOrganizationsPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsorganizationspoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsorganizationspolicies"}
+var awsorganizationspoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsorganizationspolicies"}
 
-var awsorganizationspoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOrganizationsPolicy"}
+var awsorganizationspoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOrganizationsPolicy"}
 
 // Get takes name of the awsOrganizationsPolicy, and returns the corresponding awsOrganizationsPolicy object, and an error if there is any.
 func (c *FakeAwsOrganizationsPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOrganizationsPolicy, err error) {

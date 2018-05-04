@@ -53,7 +53,7 @@ type awsEcrRepositories struct {
 }
 
 // newAwsEcrRepositories returns a AwsEcrRepositories
-func newAwsEcrRepositories(c *AwsV1alpha1Client, namespace string) *awsEcrRepositories {
+func newAwsEcrRepositories(c *ChronojamV1alpha1Client, namespace string) *awsEcrRepositories {
 	return &awsEcrRepositories{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafregionalRateBasedRules implements AwsWafregionalRateBasedRuleInterface
 type FakeAwsWafregionalRateBasedRules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafregionalratebasedrulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafregionalratebasedrules"}
+var awswafregionalratebasedrulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafregionalratebasedrules"}
 
-var awswafregionalratebasedrulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafregionalRateBasedRule"}
+var awswafregionalratebasedrulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafregionalRateBasedRule"}
 
 // Get takes name of the awsWafregionalRateBasedRule, and returns the corresponding awsWafregionalRateBasedRule object, and an error if there is any.
 func (c *FakeAwsWafregionalRateBasedRules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafregionalRateBasedRule, err error) {

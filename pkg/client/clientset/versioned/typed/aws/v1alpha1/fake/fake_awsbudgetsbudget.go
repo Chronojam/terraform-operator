@@ -30,13 +30,13 @@ import (
 
 // FakeAwsBudgetsBudgets implements AwsBudgetsBudgetInterface
 type FakeAwsBudgetsBudgets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsbudgetsbudgetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsbudgetsbudgets"}
+var awsbudgetsbudgetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsbudgetsbudgets"}
 
-var awsbudgetsbudgetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsBudgetsBudget"}
+var awsbudgetsbudgetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsBudgetsBudget"}
 
 // Get takes name of the awsBudgetsBudget, and returns the corresponding awsBudgetsBudget object, and an error if there is any.
 func (c *FakeAwsBudgetsBudgets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsBudgetsBudget, err error) {

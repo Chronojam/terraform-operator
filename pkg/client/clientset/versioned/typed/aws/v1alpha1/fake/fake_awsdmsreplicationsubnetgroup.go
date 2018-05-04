@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDmsReplicationSubnetGroups implements AwsDmsReplicationSubnetGroupInterface
 type FakeAwsDmsReplicationSubnetGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdmsreplicationsubnetgroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdmsreplicationsubnetgroups"}
+var awsdmsreplicationsubnetgroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdmsreplicationsubnetgroups"}
 
-var awsdmsreplicationsubnetgroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDmsReplicationSubnetGroup"}
+var awsdmsreplicationsubnetgroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDmsReplicationSubnetGroup"}
 
 // Get takes name of the awsDmsReplicationSubnetGroup, and returns the corresponding awsDmsReplicationSubnetGroup object, and an error if there is any.
 func (c *FakeAwsDmsReplicationSubnetGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDmsReplicationSubnetGroup, err error) {

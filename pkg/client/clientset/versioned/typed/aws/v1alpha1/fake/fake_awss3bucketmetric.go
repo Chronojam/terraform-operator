@@ -30,13 +30,13 @@ import (
 
 // FakeAwsS3BucketMetrics implements AwsS3BucketMetricInterface
 type FakeAwsS3BucketMetrics struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awss3bucketmetricsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awss3bucketmetrics"}
+var awss3bucketmetricsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awss3bucketmetrics"}
 
-var awss3bucketmetricsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsS3BucketMetric"}
+var awss3bucketmetricsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsS3BucketMetric"}
 
 // Get takes name of the awsS3BucketMetric, and returns the corresponding awsS3BucketMetric object, and an error if there is any.
 func (c *FakeAwsS3BucketMetrics) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsS3BucketMetric, err error) {

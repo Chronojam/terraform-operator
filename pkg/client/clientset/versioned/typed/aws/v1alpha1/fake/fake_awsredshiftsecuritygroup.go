@@ -30,13 +30,13 @@ import (
 
 // FakeAwsRedshiftSecurityGroups implements AwsRedshiftSecurityGroupInterface
 type FakeAwsRedshiftSecurityGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsredshiftsecuritygroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsredshiftsecuritygroups"}
+var awsredshiftsecuritygroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsredshiftsecuritygroups"}
 
-var awsredshiftsecuritygroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsRedshiftSecurityGroup"}
+var awsredshiftsecuritygroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsRedshiftSecurityGroup"}
 
 // Get takes name of the awsRedshiftSecurityGroup, and returns the corresponding awsRedshiftSecurityGroup object, and an error if there is any.
 func (c *FakeAwsRedshiftSecurityGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsRedshiftSecurityGroup, err error) {

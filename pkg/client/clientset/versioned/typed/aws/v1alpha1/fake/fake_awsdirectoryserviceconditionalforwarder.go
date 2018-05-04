@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDirectoryServiceConditionalForwarders implements AwsDirectoryServiceConditionalForwarderInterface
 type FakeAwsDirectoryServiceConditionalForwarders struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdirectoryserviceconditionalforwardersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdirectoryserviceconditionalforwarders"}
+var awsdirectoryserviceconditionalforwardersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdirectoryserviceconditionalforwarders"}
 
-var awsdirectoryserviceconditionalforwardersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDirectoryServiceConditionalForwarder"}
+var awsdirectoryserviceconditionalforwardersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDirectoryServiceConditionalForwarder"}
 
 // Get takes name of the awsDirectoryServiceConditionalForwarder, and returns the corresponding awsDirectoryServiceConditionalForwarder object, and an error if there is any.
 func (c *FakeAwsDirectoryServiceConditionalForwarders) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDirectoryServiceConditionalForwarder, err error) {

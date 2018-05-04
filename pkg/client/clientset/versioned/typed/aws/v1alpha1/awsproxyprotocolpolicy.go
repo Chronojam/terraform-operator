@@ -53,7 +53,7 @@ type awsProxyProtocolPolicies struct {
 }
 
 // newAwsProxyProtocolPolicies returns a AwsProxyProtocolPolicies
-func newAwsProxyProtocolPolicies(c *AwsV1alpha1Client, namespace string) *awsProxyProtocolPolicies {
+func newAwsProxyProtocolPolicies(c *ChronojamV1alpha1Client, namespace string) *awsProxyProtocolPolicies {
 	return &awsProxyProtocolPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

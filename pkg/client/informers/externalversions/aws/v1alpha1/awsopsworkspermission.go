@@ -61,13 +61,13 @@ func NewFilteredAwsOpsworksPermissionInformer(client versioned.Interface, namesp
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsOpsworksPermissions(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsOpsworksPermissions(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsOpsworksPermissions(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsOpsworksPermissions(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsOpsworksPermission{},

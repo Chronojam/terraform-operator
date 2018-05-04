@@ -53,7 +53,7 @@ type awsEipAssociations struct {
 }
 
 // newAwsEipAssociations returns a AwsEipAssociations
-func newAwsEipAssociations(c *AwsV1alpha1Client, namespace string) *awsEipAssociations {
+func newAwsEipAssociations(c *ChronojamV1alpha1Client, namespace string) *awsEipAssociations {
 	return &awsEipAssociations{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGuarddutyMembers implements AwsGuarddutyMemberInterface
 type FakeAwsGuarddutyMembers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsguarddutymembersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsguarddutymembers"}
+var awsguarddutymembersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsguarddutymembers"}
 
-var awsguarddutymembersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGuarddutyMember"}
+var awsguarddutymembersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGuarddutyMember"}
 
 // Get takes name of the awsGuarddutyMember, and returns the corresponding awsGuarddutyMember object, and an error if there is any.
 func (c *FakeAwsGuarddutyMembers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGuarddutyMember, err error) {

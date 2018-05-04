@@ -30,13 +30,13 @@ import (
 
 // FakeAwsServiceDiscoveryServices implements AwsServiceDiscoveryServiceInterface
 type FakeAwsServiceDiscoveryServices struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsservicediscoveryservicesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsservicediscoveryservices"}
+var awsservicediscoveryservicesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsservicediscoveryservices"}
 
-var awsservicediscoveryservicesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsServiceDiscoveryService"}
+var awsservicediscoveryservicesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsServiceDiscoveryService"}
 
 // Get takes name of the awsServiceDiscoveryService, and returns the corresponding awsServiceDiscoveryService object, and an error if there is any.
 func (c *FakeAwsServiceDiscoveryServices) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsServiceDiscoveryService, err error) {

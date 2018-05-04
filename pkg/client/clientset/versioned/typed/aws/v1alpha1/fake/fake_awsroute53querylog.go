@@ -30,13 +30,13 @@ import (
 
 // FakeAwsRoute53QueryLogs implements AwsRoute53QueryLogInterface
 type FakeAwsRoute53QueryLogs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsroute53querylogsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsroute53querylogs"}
+var awsroute53querylogsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsroute53querylogs"}
 
-var awsroute53querylogsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsRoute53QueryLog"}
+var awsroute53querylogsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsRoute53QueryLog"}
 
 // Get takes name of the awsRoute53QueryLog, and returns the corresponding awsRoute53QueryLog object, and an error if there is any.
 func (c *FakeAwsRoute53QueryLogs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsRoute53QueryLog, err error) {

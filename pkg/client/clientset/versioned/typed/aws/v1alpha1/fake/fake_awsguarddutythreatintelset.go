@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGuarddutyThreatintelsets implements AwsGuarddutyThreatintelsetInterface
 type FakeAwsGuarddutyThreatintelsets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsguarddutythreatintelsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsguarddutythreatintelsets"}
+var awsguarddutythreatintelsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsguarddutythreatintelsets"}
 
-var awsguarddutythreatintelsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGuarddutyThreatintelset"}
+var awsguarddutythreatintelsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGuarddutyThreatintelset"}
 
 // Get takes name of the awsGuarddutyThreatintelset, and returns the corresponding awsGuarddutyThreatintelset object, and an error if there is any.
 func (c *FakeAwsGuarddutyThreatintelsets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGuarddutyThreatintelset, err error) {

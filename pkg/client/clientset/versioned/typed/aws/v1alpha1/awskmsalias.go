@@ -53,7 +53,7 @@ type awsKmsAliases struct {
 }
 
 // newAwsKmsAliases returns a AwsKmsAliases
-func newAwsKmsAliases(c *AwsV1alpha1Client, namespace string) *awsKmsAliases {
+func newAwsKmsAliases(c *ChronojamV1alpha1Client, namespace string) *awsKmsAliases {
 	return &awsKmsAliases{
 		client: c.RESTClient(),
 		ns:     namespace,

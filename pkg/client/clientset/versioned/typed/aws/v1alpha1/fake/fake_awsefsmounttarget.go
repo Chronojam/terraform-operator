@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEfsMountTargets implements AwsEfsMountTargetInterface
 type FakeAwsEfsMountTargets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsefsmounttargetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsefsmounttargets"}
+var awsefsmounttargetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsefsmounttargets"}
 
-var awsefsmounttargetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEfsMountTarget"}
+var awsefsmounttargetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEfsMountTarget"}
 
 // Get takes name of the awsEfsMountTarget, and returns the corresponding awsEfsMountTarget object, and an error if there is any.
 func (c *FakeAwsEfsMountTargets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEfsMountTarget, err error) {

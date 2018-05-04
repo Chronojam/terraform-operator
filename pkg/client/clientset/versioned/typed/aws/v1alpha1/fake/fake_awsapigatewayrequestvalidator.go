@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayRequestValidators implements AwsApiGatewayRequestValidatorInterface
 type FakeAwsApiGatewayRequestValidators struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewayrequestvalidatorsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewayrequestvalidators"}
+var awsapigatewayrequestvalidatorsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewayrequestvalidators"}
 
-var awsapigatewayrequestvalidatorsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayRequestValidator"}
+var awsapigatewayrequestvalidatorsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayRequestValidator"}
 
 // Get takes name of the awsApiGatewayRequestValidator, and returns the corresponding awsApiGatewayRequestValidator object, and an error if there is any.
 func (c *FakeAwsApiGatewayRequestValidators) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayRequestValidator, err error) {

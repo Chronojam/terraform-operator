@@ -53,7 +53,7 @@ type awsSfnActivities struct {
 }
 
 // newAwsSfnActivities returns a AwsSfnActivities
-func newAwsSfnActivities(c *AwsV1alpha1Client, namespace string) *awsSfnActivities {
+func newAwsSfnActivities(c *ChronojamV1alpha1Client, namespace string) *awsSfnActivities {
 	return &awsSfnActivities{
 		client: c.RESTClient(),
 		ns:     namespace,

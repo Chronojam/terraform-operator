@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSesDomainMailFroms implements AwsSesDomainMailFromInterface
 type FakeAwsSesDomainMailFroms struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssesdomainmailfromsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssesdomainmailfroms"}
+var awssesdomainmailfromsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssesdomainmailfroms"}
 
-var awssesdomainmailfromsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSesDomainMailFrom"}
+var awssesdomainmailfromsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSesDomainMailFrom"}
 
 // Get takes name of the awsSesDomainMailFrom, and returns the corresponding awsSesDomainMailFrom object, and an error if there is any.
 func (c *FakeAwsSesDomainMailFroms) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSesDomainMailFrom, err error) {

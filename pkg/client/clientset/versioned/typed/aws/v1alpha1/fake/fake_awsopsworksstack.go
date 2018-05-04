@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksStacks implements AwsOpsworksStackInterface
 type FakeAwsOpsworksStacks struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworksstacksResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworksstacks"}
+var awsopsworksstacksResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworksstacks"}
 
-var awsopsworksstacksKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksStack"}
+var awsopsworksstacksKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksStack"}
 
 // Get takes name of the awsOpsworksStack, and returns the corresponding awsOpsworksStack object, and an error if there is any.
 func (c *FakeAwsOpsworksStacks) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksStack, err error) {

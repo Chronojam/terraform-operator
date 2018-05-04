@@ -53,7 +53,7 @@ type awsVpcEndpointServices struct {
 }
 
 // newAwsVpcEndpointServices returns a AwsVpcEndpointServices
-func newAwsVpcEndpointServices(c *AwsV1alpha1Client, namespace string) *awsVpcEndpointServices {
+func newAwsVpcEndpointServices(c *ChronojamV1alpha1Client, namespace string) *awsVpcEndpointServices {
 	return &awsVpcEndpointServices{
 		client: c.RESTClient(),
 		ns:     namespace,

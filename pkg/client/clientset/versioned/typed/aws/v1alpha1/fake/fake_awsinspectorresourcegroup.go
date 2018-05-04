@@ -30,13 +30,13 @@ import (
 
 // FakeAwsInspectorResourceGroups implements AwsInspectorResourceGroupInterface
 type FakeAwsInspectorResourceGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsinspectorresourcegroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsinspectorresourcegroups"}
+var awsinspectorresourcegroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsinspectorresourcegroups"}
 
-var awsinspectorresourcegroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsInspectorResourceGroup"}
+var awsinspectorresourcegroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsInspectorResourceGroup"}
 
 // Get takes name of the awsInspectorResourceGroup, and returns the corresponding awsInspectorResourceGroup object, and an error if there is any.
 func (c *FakeAwsInspectorResourceGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsInspectorResourceGroup, err error) {

@@ -53,7 +53,7 @@ type awsWafregionalGeoMatchSets struct {
 }
 
 // newAwsWafregionalGeoMatchSets returns a AwsWafregionalGeoMatchSets
-func newAwsWafregionalGeoMatchSets(c *AwsV1alpha1Client, namespace string) *awsWafregionalGeoMatchSets {
+func newAwsWafregionalGeoMatchSets(c *ChronojamV1alpha1Client, namespace string) *awsWafregionalGeoMatchSets {
 	return &awsWafregionalGeoMatchSets{
 		client: c.RESTClient(),
 		ns:     namespace,

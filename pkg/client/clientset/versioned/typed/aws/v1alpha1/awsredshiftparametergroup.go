@@ -53,7 +53,7 @@ type awsRedshiftParameterGroups struct {
 }
 
 // newAwsRedshiftParameterGroups returns a AwsRedshiftParameterGroups
-func newAwsRedshiftParameterGroups(c *AwsV1alpha1Client, namespace string) *awsRedshiftParameterGroups {
+func newAwsRedshiftParameterGroups(c *ChronojamV1alpha1Client, namespace string) *awsRedshiftParameterGroups {
 	return &awsRedshiftParameterGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

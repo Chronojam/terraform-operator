@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAutoscalingNotifications implements AwsAutoscalingNotificationInterface
 type FakeAwsAutoscalingNotifications struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsautoscalingnotificationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsautoscalingnotifications"}
+var awsautoscalingnotificationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsautoscalingnotifications"}
 
-var awsautoscalingnotificationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAutoscalingNotification"}
+var awsautoscalingnotificationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAutoscalingNotification"}
 
 // Get takes name of the awsAutoscalingNotification, and returns the corresponding awsAutoscalingNotification object, and an error if there is any.
 func (c *FakeAwsAutoscalingNotifications) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAutoscalingNotification, err error) {

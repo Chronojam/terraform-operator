@@ -53,7 +53,7 @@ type awsKmsGrants struct {
 }
 
 // newAwsKmsGrants returns a AwsKmsGrants
-func newAwsKmsGrants(c *AwsV1alpha1Client, namespace string) *awsKmsGrants {
+func newAwsKmsGrants(c *ChronojamV1alpha1Client, namespace string) *awsKmsGrants {
 	return &awsKmsGrants{
 		client: c.RESTClient(),
 		ns:     namespace,

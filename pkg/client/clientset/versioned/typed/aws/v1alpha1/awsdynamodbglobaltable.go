@@ -53,7 +53,7 @@ type awsDynamodbGlobalTables struct {
 }
 
 // newAwsDynamodbGlobalTables returns a AwsDynamodbGlobalTables
-func newAwsDynamodbGlobalTables(c *AwsV1alpha1Client, namespace string) *awsDynamodbGlobalTables {
+func newAwsDynamodbGlobalTables(c *ChronojamV1alpha1Client, namespace string) *awsDynamodbGlobalTables {
 	return &awsDynamodbGlobalTables{
 		client: c.RESTClient(),
 		ns:     namespace,

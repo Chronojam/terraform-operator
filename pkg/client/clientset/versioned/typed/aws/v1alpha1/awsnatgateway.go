@@ -53,7 +53,7 @@ type awsNatGateways struct {
 }
 
 // newAwsNatGateways returns a AwsNatGateways
-func newAwsNatGateways(c *AwsV1alpha1Client, namespace string) *awsNatGateways {
+func newAwsNatGateways(c *ChronojamV1alpha1Client, namespace string) *awsNatGateways {
 	return &awsNatGateways{
 		client: c.RESTClient(),
 		ns:     namespace,

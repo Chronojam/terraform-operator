@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSesDomainDkims implements AwsSesDomainDkimInterface
 type FakeAwsSesDomainDkims struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssesdomaindkimsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssesdomaindkims"}
+var awssesdomaindkimsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssesdomaindkims"}
 
-var awssesdomaindkimsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSesDomainDkim"}
+var awssesdomaindkimsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSesDomainDkim"}
 
 // Get takes name of the awsSesDomainDkim, and returns the corresponding awsSesDomainDkim object, and an error if there is any.
 func (c *FakeAwsSesDomainDkims) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSesDomainDkim, err error) {

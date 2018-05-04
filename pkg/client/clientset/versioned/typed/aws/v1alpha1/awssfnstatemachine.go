@@ -53,7 +53,7 @@ type awsSfnStateMachines struct {
 }
 
 // newAwsSfnStateMachines returns a AwsSfnStateMachines
-func newAwsSfnStateMachines(c *AwsV1alpha1Client, namespace string) *awsSfnStateMachines {
+func newAwsSfnStateMachines(c *ChronojamV1alpha1Client, namespace string) *awsSfnStateMachines {
 	return &awsSfnStateMachines{
 		client: c.RESTClient(),
 		ns:     namespace,

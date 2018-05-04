@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDynamodbTableItems implements AwsDynamodbTableItemInterface
 type FakeAwsDynamodbTableItems struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdynamodbtableitemsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdynamodbtableitems"}
+var awsdynamodbtableitemsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdynamodbtableitems"}
 
-var awsdynamodbtableitemsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDynamodbTableItem"}
+var awsdynamodbtableitemsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDynamodbTableItem"}
 
 // Get takes name of the awsDynamodbTableItem, and returns the corresponding awsDynamodbTableItem object, and an error if there is any.
 func (c *FakeAwsDynamodbTableItems) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDynamodbTableItem, err error) {

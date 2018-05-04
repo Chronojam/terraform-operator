@@ -53,7 +53,7 @@ type awsRdsClusterInstances struct {
 }
 
 // newAwsRdsClusterInstances returns a AwsRdsClusterInstances
-func newAwsRdsClusterInstances(c *AwsV1alpha1Client, namespace string) *awsRdsClusterInstances {
+func newAwsRdsClusterInstances(c *ChronojamV1alpha1Client, namespace string) *awsRdsClusterInstances {
 	return &awsRdsClusterInstances{
 		client: c.RESTClient(),
 		ns:     namespace,

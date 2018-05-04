@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIamOpenidConnectProviders implements AwsIamOpenidConnectProviderInterface
 type FakeAwsIamOpenidConnectProviders struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiamopenidconnectprovidersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiamopenidconnectproviders"}
+var awsiamopenidconnectprovidersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiamopenidconnectproviders"}
 
-var awsiamopenidconnectprovidersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIamOpenidConnectProvider"}
+var awsiamopenidconnectprovidersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIamOpenidConnectProvider"}
 
 // Get takes name of the awsIamOpenidConnectProvider, and returns the corresponding awsIamOpenidConnectProvider object, and an error if there is any.
 func (c *FakeAwsIamOpenidConnectProviders) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIamOpenidConnectProvider, err error) {

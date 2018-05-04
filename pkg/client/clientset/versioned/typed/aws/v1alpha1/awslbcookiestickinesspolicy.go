@@ -53,7 +53,7 @@ type awsLbCookieStickinessPolicies struct {
 }
 
 // newAwsLbCookieStickinessPolicies returns a AwsLbCookieStickinessPolicies
-func newAwsLbCookieStickinessPolicies(c *AwsV1alpha1Client, namespace string) *awsLbCookieStickinessPolicies {
+func newAwsLbCookieStickinessPolicies(c *ChronojamV1alpha1Client, namespace string) *awsLbCookieStickinessPolicies {
 	return &awsLbCookieStickinessPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

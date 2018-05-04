@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSimpledbDomains implements AwsSimpledbDomainInterface
 type FakeAwsSimpledbDomains struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssimpledbdomainsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssimpledbdomains"}
+var awssimpledbdomainsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssimpledbdomains"}
 
-var awssimpledbdomainsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSimpledbDomain"}
+var awssimpledbdomainsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSimpledbDomain"}
 
 // Get takes name of the awsSimpledbDomain, and returns the corresponding awsSimpledbDomain object, and an error if there is any.
 func (c *FakeAwsSimpledbDomains) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSimpledbDomain, err error) {

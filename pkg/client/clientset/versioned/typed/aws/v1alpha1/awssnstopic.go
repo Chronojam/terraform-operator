@@ -53,7 +53,7 @@ type awsSnsTopics struct {
 }
 
 // newAwsSnsTopics returns a AwsSnsTopics
-func newAwsSnsTopics(c *AwsV1alpha1Client, namespace string) *awsSnsTopics {
+func newAwsSnsTopics(c *ChronojamV1alpha1Client, namespace string) *awsSnsTopics {
 	return &awsSnsTopics{
 		client: c.RESTClient(),
 		ns:     namespace,

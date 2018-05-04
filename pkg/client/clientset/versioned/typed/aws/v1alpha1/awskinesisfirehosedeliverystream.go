@@ -53,7 +53,7 @@ type awsKinesisFirehoseDeliveryStreams struct {
 }
 
 // newAwsKinesisFirehoseDeliveryStreams returns a AwsKinesisFirehoseDeliveryStreams
-func newAwsKinesisFirehoseDeliveryStreams(c *AwsV1alpha1Client, namespace string) *awsKinesisFirehoseDeliveryStreams {
+func newAwsKinesisFirehoseDeliveryStreams(c *ChronojamV1alpha1Client, namespace string) *awsKinesisFirehoseDeliveryStreams {
 	return &awsKinesisFirehoseDeliveryStreams{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsRoutes struct {
 }
 
 // newAwsRoutes returns a AwsRoutes
-func newAwsRoutes(c *AwsV1alpha1Client, namespace string) *awsRoutes {
+func newAwsRoutes(c *ChronojamV1alpha1Client, namespace string) *awsRoutes {
 	return &awsRoutes{
 		client: c.RESTClient(),
 		ns:     namespace,

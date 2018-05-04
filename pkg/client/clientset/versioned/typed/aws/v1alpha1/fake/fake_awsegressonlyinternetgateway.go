@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEgressOnlyInternetGateways implements AwsEgressOnlyInternetGatewayInterface
 type FakeAwsEgressOnlyInternetGateways struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsegressonlyinternetgatewaysResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsegressonlyinternetgateways"}
+var awsegressonlyinternetgatewaysResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsegressonlyinternetgateways"}
 
-var awsegressonlyinternetgatewaysKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEgressOnlyInternetGateway"}
+var awsegressonlyinternetgatewaysKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEgressOnlyInternetGateway"}
 
 // Get takes name of the awsEgressOnlyInternetGateway, and returns the corresponding awsEgressOnlyInternetGateway object, and an error if there is any.
 func (c *FakeAwsEgressOnlyInternetGateways) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEgressOnlyInternetGateway, err error) {

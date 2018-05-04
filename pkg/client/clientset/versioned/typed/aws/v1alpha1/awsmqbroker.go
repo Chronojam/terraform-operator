@@ -53,7 +53,7 @@ type awsMqBrokers struct {
 }
 
 // newAwsMqBrokers returns a AwsMqBrokers
-func newAwsMqBrokers(c *AwsV1alpha1Client, namespace string) *awsMqBrokers {
+func newAwsMqBrokers(c *ChronojamV1alpha1Client, namespace string) *awsMqBrokers {
 	return &awsMqBrokers{
 		client: c.RESTClient(),
 		ns:     namespace,

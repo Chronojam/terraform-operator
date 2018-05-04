@@ -53,7 +53,7 @@ type awsAutoscalingGroups struct {
 }
 
 // newAwsAutoscalingGroups returns a AwsAutoscalingGroups
-func newAwsAutoscalingGroups(c *AwsV1alpha1Client, namespace string) *awsAutoscalingGroups {
+func newAwsAutoscalingGroups(c *ChronojamV1alpha1Client, namespace string) *awsAutoscalingGroups {
 	return &awsAutoscalingGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

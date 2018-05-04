@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCognitoUserPoolDomains implements AwsCognitoUserPoolDomainInterface
 type FakeAwsCognitoUserPoolDomains struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscognitouserpooldomainsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscognitouserpooldomains"}
+var awscognitouserpooldomainsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscognitouserpooldomains"}
 
-var awscognitouserpooldomainsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCognitoUserPoolDomain"}
+var awscognitouserpooldomainsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCognitoUserPoolDomain"}
 
 // Get takes name of the awsCognitoUserPoolDomain, and returns the corresponding awsCognitoUserPoolDomain object, and an error if there is any.
 func (c *FakeAwsCognitoUserPoolDomains) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCognitoUserPoolDomain, err error) {

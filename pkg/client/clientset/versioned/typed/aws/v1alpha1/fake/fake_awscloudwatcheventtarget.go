@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudwatchEventTargets implements AwsCloudwatchEventTargetInterface
 type FakeAwsCloudwatchEventTargets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudwatcheventtargetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudwatcheventtargets"}
+var awscloudwatcheventtargetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudwatcheventtargets"}
 
-var awscloudwatcheventtargetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudwatchEventTarget"}
+var awscloudwatcheventtargetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudwatchEventTarget"}
 
 // Get takes name of the awsCloudwatchEventTarget, and returns the corresponding awsCloudwatchEventTarget object, and an error if there is any.
 func (c *FakeAwsCloudwatchEventTargets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudwatchEventTarget, err error) {

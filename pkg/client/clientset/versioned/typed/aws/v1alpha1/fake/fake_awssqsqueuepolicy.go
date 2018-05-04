@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSqsQueuePolicies implements AwsSqsQueuePolicyInterface
 type FakeAwsSqsQueuePolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssqsqueuepoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssqsqueuepolicies"}
+var awssqsqueuepoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssqsqueuepolicies"}
 
-var awssqsqueuepoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSqsQueuePolicy"}
+var awssqsqueuepoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSqsQueuePolicy"}
 
 // Get takes name of the awsSqsQueuePolicy, and returns the corresponding awsSqsQueuePolicy object, and an error if there is any.
 func (c *FakeAwsSqsQueuePolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSqsQueuePolicy, err error) {

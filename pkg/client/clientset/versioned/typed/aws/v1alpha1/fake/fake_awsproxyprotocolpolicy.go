@@ -30,13 +30,13 @@ import (
 
 // FakeAwsProxyProtocolPolicies implements AwsProxyProtocolPolicyInterface
 type FakeAwsProxyProtocolPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsproxyprotocolpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsproxyprotocolpolicies"}
+var awsproxyprotocolpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsproxyprotocolpolicies"}
 
-var awsproxyprotocolpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsProxyProtocolPolicy"}
+var awsproxyprotocolpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsProxyProtocolPolicy"}
 
 // Get takes name of the awsProxyProtocolPolicy, and returns the corresponding awsProxyProtocolPolicy object, and an error if there is any.
 func (c *FakeAwsProxyProtocolPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsProxyProtocolPolicy, err error) {

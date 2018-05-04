@@ -53,7 +53,7 @@ type awsInspectorResourceGroups struct {
 }
 
 // newAwsInspectorResourceGroups returns a AwsInspectorResourceGroups
-func newAwsInspectorResourceGroups(c *AwsV1alpha1Client, namespace string) *awsInspectorResourceGroups {
+func newAwsInspectorResourceGroups(c *ChronojamV1alpha1Client, namespace string) *awsInspectorResourceGroups {
 	return &awsInspectorResourceGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsLambdaEventSourceMappings struct {
 }
 
 // newAwsLambdaEventSourceMappings returns a AwsLambdaEventSourceMappings
-func newAwsLambdaEventSourceMappings(c *AwsV1alpha1Client, namespace string) *awsLambdaEventSourceMappings {
+func newAwsLambdaEventSourceMappings(c *ChronojamV1alpha1Client, namespace string) *awsLambdaEventSourceMappings {
 	return &awsLambdaEventSourceMappings{
 		client: c.RESTClient(),
 		ns:     namespace,

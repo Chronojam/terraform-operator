@@ -53,7 +53,7 @@ type awsSsmResourceDataSyncs struct {
 }
 
 // newAwsSsmResourceDataSyncs returns a AwsSsmResourceDataSyncs
-func newAwsSsmResourceDataSyncs(c *AwsV1alpha1Client, namespace string) *awsSsmResourceDataSyncs {
+func newAwsSsmResourceDataSyncs(c *ChronojamV1alpha1Client, namespace string) *awsSsmResourceDataSyncs {
 	return &awsSsmResourceDataSyncs{
 		client: c.RESTClient(),
 		ns:     namespace,

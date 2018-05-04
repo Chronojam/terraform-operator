@@ -53,7 +53,7 @@ type awsSpotDatafeedSubscriptions struct {
 }
 
 // newAwsSpotDatafeedSubscriptions returns a AwsSpotDatafeedSubscriptions
-func newAwsSpotDatafeedSubscriptions(c *AwsV1alpha1Client, namespace string) *awsSpotDatafeedSubscriptions {
+func newAwsSpotDatafeedSubscriptions(c *ChronojamV1alpha1Client, namespace string) *awsSpotDatafeedSubscriptions {
 	return &awsSpotDatafeedSubscriptions{
 		client: c.RESTClient(),
 		ns:     namespace,

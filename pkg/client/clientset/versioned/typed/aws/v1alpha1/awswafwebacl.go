@@ -53,7 +53,7 @@ type awsWafWebAcls struct {
 }
 
 // newAwsWafWebAcls returns a AwsWafWebAcls
-func newAwsWafWebAcls(c *AwsV1alpha1Client, namespace string) *awsWafWebAcls {
+func newAwsWafWebAcls(c *ChronojamV1alpha1Client, namespace string) *awsWafWebAcls {
 	return &awsWafWebAcls{
 		client: c.RESTClient(),
 		ns:     namespace,

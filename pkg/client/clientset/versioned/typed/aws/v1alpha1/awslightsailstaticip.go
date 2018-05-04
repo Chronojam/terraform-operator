@@ -53,7 +53,7 @@ type awsLightsailStaticIps struct {
 }
 
 // newAwsLightsailStaticIps returns a AwsLightsailStaticIps
-func newAwsLightsailStaticIps(c *AwsV1alpha1Client, namespace string) *awsLightsailStaticIps {
+func newAwsLightsailStaticIps(c *ChronojamV1alpha1Client, namespace string) *awsLightsailStaticIps {
 	return &awsLightsailStaticIps{
 		client: c.RESTClient(),
 		ns:     namespace,

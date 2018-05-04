@@ -53,7 +53,7 @@ type awsCognitoIdentityPoolRolesAttachments struct {
 }
 
 // newAwsCognitoIdentityPoolRolesAttachments returns a AwsCognitoIdentityPoolRolesAttachments
-func newAwsCognitoIdentityPoolRolesAttachments(c *AwsV1alpha1Client, namespace string) *awsCognitoIdentityPoolRolesAttachments {
+func newAwsCognitoIdentityPoolRolesAttachments(c *ChronojamV1alpha1Client, namespace string) *awsCognitoIdentityPoolRolesAttachments {
 	return &awsCognitoIdentityPoolRolesAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

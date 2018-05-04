@@ -53,7 +53,7 @@ type awsCloudwatchEventPermissions struct {
 }
 
 // newAwsCloudwatchEventPermissions returns a AwsCloudwatchEventPermissions
-func newAwsCloudwatchEventPermissions(c *AwsV1alpha1Client, namespace string) *awsCloudwatchEventPermissions {
+func newAwsCloudwatchEventPermissions(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchEventPermissions {
 	return &awsCloudwatchEventPermissions{
 		client: c.RESTClient(),
 		ns:     namespace,

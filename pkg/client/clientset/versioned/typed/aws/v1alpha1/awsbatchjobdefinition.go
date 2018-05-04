@@ -53,7 +53,7 @@ type awsBatchJobDefinitions struct {
 }
 
 // newAwsBatchJobDefinitions returns a AwsBatchJobDefinitions
-func newAwsBatchJobDefinitions(c *AwsV1alpha1Client, namespace string) *awsBatchJobDefinitions {
+func newAwsBatchJobDefinitions(c *ChronojamV1alpha1Client, namespace string) *awsBatchJobDefinitions {
 	return &awsBatchJobDefinitions{
 		client: c.RESTClient(),
 		ns:     namespace,

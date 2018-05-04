@@ -53,7 +53,7 @@ type awsIamUserSshKeys struct {
 }
 
 // newAwsIamUserSshKeys returns a AwsIamUserSshKeys
-func newAwsIamUserSshKeys(c *AwsV1alpha1Client, namespace string) *awsIamUserSshKeys {
+func newAwsIamUserSshKeys(c *ChronojamV1alpha1Client, namespace string) *awsIamUserSshKeys {
 	return &awsIamUserSshKeys{
 		client: c.RESTClient(),
 		ns:     namespace,

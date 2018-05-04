@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCognitoIdentityPoolRolesAttachments implements AwsCognitoIdentityPoolRolesAttachmentInterface
 type FakeAwsCognitoIdentityPoolRolesAttachments struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscognitoidentitypoolrolesattachmentsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscognitoidentitypoolrolesattachments"}
+var awscognitoidentitypoolrolesattachmentsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscognitoidentitypoolrolesattachments"}
 
-var awscognitoidentitypoolrolesattachmentsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCognitoIdentityPoolRolesAttachment"}
+var awscognitoidentitypoolrolesattachmentsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCognitoIdentityPoolRolesAttachment"}
 
 // Get takes name of the awsCognitoIdentityPoolRolesAttachment, and returns the corresponding awsCognitoIdentityPoolRolesAttachment object, and an error if there is any.
 func (c *FakeAwsCognitoIdentityPoolRolesAttachments) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCognitoIdentityPoolRolesAttachment, err error) {

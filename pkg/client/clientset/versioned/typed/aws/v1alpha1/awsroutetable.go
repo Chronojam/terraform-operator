@@ -53,7 +53,7 @@ type awsRouteTables struct {
 }
 
 // newAwsRouteTables returns a AwsRouteTables
-func newAwsRouteTables(c *AwsV1alpha1Client, namespace string) *awsRouteTables {
+func newAwsRouteTables(c *ChronojamV1alpha1Client, namespace string) *awsRouteTables {
 	return &awsRouteTables{
 		client: c.RESTClient(),
 		ns:     namespace,

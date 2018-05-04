@@ -24,1461 +24,1461 @@ import (
 	testing "k8s.io/client-go/testing"
 )
 
-type FakeAwsV1alpha1 struct {
+type FakeChronojamV1alpha1 struct {
 	*testing.Fake
 }
 
-func (c *FakeAwsV1alpha1) AwsAcmCertificates(namespace string) v1alpha1.AwsAcmCertificateInterface {
+func (c *FakeChronojamV1alpha1) AwsAcmCertificates(namespace string) v1alpha1.AwsAcmCertificateInterface {
 	return &FakeAwsAcmCertificates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAcmCertificateValidations(namespace string) v1alpha1.AwsAcmCertificateValidationInterface {
+func (c *FakeChronojamV1alpha1) AwsAcmCertificateValidations(namespace string) v1alpha1.AwsAcmCertificateValidationInterface {
 	return &FakeAwsAcmCertificateValidations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAlbs(namespace string) v1alpha1.AwsAlbInterface {
+func (c *FakeChronojamV1alpha1) AwsAlbs(namespace string) v1alpha1.AwsAlbInterface {
 	return &FakeAwsAlbs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAlbListeners(namespace string) v1alpha1.AwsAlbListenerInterface {
+func (c *FakeChronojamV1alpha1) AwsAlbListeners(namespace string) v1alpha1.AwsAlbListenerInterface {
 	return &FakeAwsAlbListeners{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAlbListenerCertificates(namespace string) v1alpha1.AwsAlbListenerCertificateInterface {
+func (c *FakeChronojamV1alpha1) AwsAlbListenerCertificates(namespace string) v1alpha1.AwsAlbListenerCertificateInterface {
 	return &FakeAwsAlbListenerCertificates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAlbListenerRules(namespace string) v1alpha1.AwsAlbListenerRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsAlbListenerRules(namespace string) v1alpha1.AwsAlbListenerRuleInterface {
 	return &FakeAwsAlbListenerRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAlbTargetGroups(namespace string) v1alpha1.AwsAlbTargetGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsAlbTargetGroups(namespace string) v1alpha1.AwsAlbTargetGroupInterface {
 	return &FakeAwsAlbTargetGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAlbTargetGroupAttachments(namespace string) v1alpha1.AwsAlbTargetGroupAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsAlbTargetGroupAttachments(namespace string) v1alpha1.AwsAlbTargetGroupAttachmentInterface {
 	return &FakeAwsAlbTargetGroupAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAmis(namespace string) v1alpha1.AwsAmiInterface {
+func (c *FakeChronojamV1alpha1) AwsAmis(namespace string) v1alpha1.AwsAmiInterface {
 	return &FakeAwsAmis{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAmiCopies(namespace string) v1alpha1.AwsAmiCopyInterface {
+func (c *FakeChronojamV1alpha1) AwsAmiCopies(namespace string) v1alpha1.AwsAmiCopyInterface {
 	return &FakeAwsAmiCopies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAmiFromInstances(namespace string) v1alpha1.AwsAmiFromInstanceInterface {
+func (c *FakeChronojamV1alpha1) AwsAmiFromInstances(namespace string) v1alpha1.AwsAmiFromInstanceInterface {
 	return &FakeAwsAmiFromInstances{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAmiLaunchPermissions(namespace string) v1alpha1.AwsAmiLaunchPermissionInterface {
+func (c *FakeChronojamV1alpha1) AwsAmiLaunchPermissions(namespace string) v1alpha1.AwsAmiLaunchPermissionInterface {
 	return &FakeAwsAmiLaunchPermissions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayAccounts(namespace string) v1alpha1.AwsApiGatewayAccountInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayAccounts(namespace string) v1alpha1.AwsApiGatewayAccountInterface {
 	return &FakeAwsApiGatewayAccounts{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayApiKeys(namespace string) v1alpha1.AwsApiGatewayApiKeyInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayApiKeys(namespace string) v1alpha1.AwsApiGatewayApiKeyInterface {
 	return &FakeAwsApiGatewayApiKeys{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayAuthorizers(namespace string) v1alpha1.AwsApiGatewayAuthorizerInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayAuthorizers(namespace string) v1alpha1.AwsApiGatewayAuthorizerInterface {
 	return &FakeAwsApiGatewayAuthorizers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayBasePathMappings(namespace string) v1alpha1.AwsApiGatewayBasePathMappingInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayBasePathMappings(namespace string) v1alpha1.AwsApiGatewayBasePathMappingInterface {
 	return &FakeAwsApiGatewayBasePathMappings{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayClientCertificates(namespace string) v1alpha1.AwsApiGatewayClientCertificateInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayClientCertificates(namespace string) v1alpha1.AwsApiGatewayClientCertificateInterface {
 	return &FakeAwsApiGatewayClientCertificates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayDeployments(namespace string) v1alpha1.AwsApiGatewayDeploymentInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayDeployments(namespace string) v1alpha1.AwsApiGatewayDeploymentInterface {
 	return &FakeAwsApiGatewayDeployments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayDocumentationParts(namespace string) v1alpha1.AwsApiGatewayDocumentationPartInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayDocumentationParts(namespace string) v1alpha1.AwsApiGatewayDocumentationPartInterface {
 	return &FakeAwsApiGatewayDocumentationParts{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayDocumentationVersions(namespace string) v1alpha1.AwsApiGatewayDocumentationVersionInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayDocumentationVersions(namespace string) v1alpha1.AwsApiGatewayDocumentationVersionInterface {
 	return &FakeAwsApiGatewayDocumentationVersions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayDomainNames(namespace string) v1alpha1.AwsApiGatewayDomainNameInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayDomainNames(namespace string) v1alpha1.AwsApiGatewayDomainNameInterface {
 	return &FakeAwsApiGatewayDomainNames{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayGatewayResponses(namespace string) v1alpha1.AwsApiGatewayGatewayResponseInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayGatewayResponses(namespace string) v1alpha1.AwsApiGatewayGatewayResponseInterface {
 	return &FakeAwsApiGatewayGatewayResponses{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayIntegrations(namespace string) v1alpha1.AwsApiGatewayIntegrationInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayIntegrations(namespace string) v1alpha1.AwsApiGatewayIntegrationInterface {
 	return &FakeAwsApiGatewayIntegrations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayIntegrationResponses(namespace string) v1alpha1.AwsApiGatewayIntegrationResponseInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayIntegrationResponses(namespace string) v1alpha1.AwsApiGatewayIntegrationResponseInterface {
 	return &FakeAwsApiGatewayIntegrationResponses{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayMethods(namespace string) v1alpha1.AwsApiGatewayMethodInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayMethods(namespace string) v1alpha1.AwsApiGatewayMethodInterface {
 	return &FakeAwsApiGatewayMethods{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayMethodResponses(namespace string) v1alpha1.AwsApiGatewayMethodResponseInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayMethodResponses(namespace string) v1alpha1.AwsApiGatewayMethodResponseInterface {
 	return &FakeAwsApiGatewayMethodResponses{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayMethodSettingses(namespace string) v1alpha1.AwsApiGatewayMethodSettingsInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayMethodSettingses(namespace string) v1alpha1.AwsApiGatewayMethodSettingsInterface {
 	return &FakeAwsApiGatewayMethodSettingses{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayModels(namespace string) v1alpha1.AwsApiGatewayModelInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayModels(namespace string) v1alpha1.AwsApiGatewayModelInterface {
 	return &FakeAwsApiGatewayModels{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayRequestValidators(namespace string) v1alpha1.AwsApiGatewayRequestValidatorInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayRequestValidators(namespace string) v1alpha1.AwsApiGatewayRequestValidatorInterface {
 	return &FakeAwsApiGatewayRequestValidators{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayResources(namespace string) v1alpha1.AwsApiGatewayResourceInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayResources(namespace string) v1alpha1.AwsApiGatewayResourceInterface {
 	return &FakeAwsApiGatewayResources{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayRestApis(namespace string) v1alpha1.AwsApiGatewayRestApiInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayRestApis(namespace string) v1alpha1.AwsApiGatewayRestApiInterface {
 	return &FakeAwsApiGatewayRestApis{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayStages(namespace string) v1alpha1.AwsApiGatewayStageInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayStages(namespace string) v1alpha1.AwsApiGatewayStageInterface {
 	return &FakeAwsApiGatewayStages{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayUsagePlans(namespace string) v1alpha1.AwsApiGatewayUsagePlanInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayUsagePlans(namespace string) v1alpha1.AwsApiGatewayUsagePlanInterface {
 	return &FakeAwsApiGatewayUsagePlans{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayUsagePlanKeys(namespace string) v1alpha1.AwsApiGatewayUsagePlanKeyInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayUsagePlanKeys(namespace string) v1alpha1.AwsApiGatewayUsagePlanKeyInterface {
 	return &FakeAwsApiGatewayUsagePlanKeys{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsApiGatewayVpcLinks(namespace string) v1alpha1.AwsApiGatewayVpcLinkInterface {
+func (c *FakeChronojamV1alpha1) AwsApiGatewayVpcLinks(namespace string) v1alpha1.AwsApiGatewayVpcLinkInterface {
 	return &FakeAwsApiGatewayVpcLinks{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAppCookieStickinessPolicies(namespace string) v1alpha1.AwsAppCookieStickinessPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsAppCookieStickinessPolicies(namespace string) v1alpha1.AwsAppCookieStickinessPolicyInterface {
 	return &FakeAwsAppCookieStickinessPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAppautoscalingPolicies(namespace string) v1alpha1.AwsAppautoscalingPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsAppautoscalingPolicies(namespace string) v1alpha1.AwsAppautoscalingPolicyInterface {
 	return &FakeAwsAppautoscalingPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAppautoscalingScheduledActions(namespace string) v1alpha1.AwsAppautoscalingScheduledActionInterface {
+func (c *FakeChronojamV1alpha1) AwsAppautoscalingScheduledActions(namespace string) v1alpha1.AwsAppautoscalingScheduledActionInterface {
 	return &FakeAwsAppautoscalingScheduledActions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAppautoscalingTargets(namespace string) v1alpha1.AwsAppautoscalingTargetInterface {
+func (c *FakeChronojamV1alpha1) AwsAppautoscalingTargets(namespace string) v1alpha1.AwsAppautoscalingTargetInterface {
 	return &FakeAwsAppautoscalingTargets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAppsyncDatasources(namespace string) v1alpha1.AwsAppsyncDatasourceInterface {
+func (c *FakeChronojamV1alpha1) AwsAppsyncDatasources(namespace string) v1alpha1.AwsAppsyncDatasourceInterface {
 	return &FakeAwsAppsyncDatasources{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAppsyncGraphqlApis(namespace string) v1alpha1.AwsAppsyncGraphqlApiInterface {
+func (c *FakeChronojamV1alpha1) AwsAppsyncGraphqlApis(namespace string) v1alpha1.AwsAppsyncGraphqlApiInterface {
 	return &FakeAwsAppsyncGraphqlApis{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAthenaDatabases(namespace string) v1alpha1.AwsAthenaDatabaseInterface {
+func (c *FakeChronojamV1alpha1) AwsAthenaDatabases(namespace string) v1alpha1.AwsAthenaDatabaseInterface {
 	return &FakeAwsAthenaDatabases{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAthenaNamedQueries(namespace string) v1alpha1.AwsAthenaNamedQueryInterface {
+func (c *FakeChronojamV1alpha1) AwsAthenaNamedQueries(namespace string) v1alpha1.AwsAthenaNamedQueryInterface {
 	return &FakeAwsAthenaNamedQueries{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAutoscalingAttachments(namespace string) v1alpha1.AwsAutoscalingAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsAutoscalingAttachments(namespace string) v1alpha1.AwsAutoscalingAttachmentInterface {
 	return &FakeAwsAutoscalingAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAutoscalingGroups(namespace string) v1alpha1.AwsAutoscalingGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsAutoscalingGroups(namespace string) v1alpha1.AwsAutoscalingGroupInterface {
 	return &FakeAwsAutoscalingGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAutoscalingLifecycleHooks(namespace string) v1alpha1.AwsAutoscalingLifecycleHookInterface {
+func (c *FakeChronojamV1alpha1) AwsAutoscalingLifecycleHooks(namespace string) v1alpha1.AwsAutoscalingLifecycleHookInterface {
 	return &FakeAwsAutoscalingLifecycleHooks{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAutoscalingNotifications(namespace string) v1alpha1.AwsAutoscalingNotificationInterface {
+func (c *FakeChronojamV1alpha1) AwsAutoscalingNotifications(namespace string) v1alpha1.AwsAutoscalingNotificationInterface {
 	return &FakeAwsAutoscalingNotifications{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAutoscalingPolicies(namespace string) v1alpha1.AwsAutoscalingPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsAutoscalingPolicies(namespace string) v1alpha1.AwsAutoscalingPolicyInterface {
 	return &FakeAwsAutoscalingPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsAutoscalingSchedules(namespace string) v1alpha1.AwsAutoscalingScheduleInterface {
+func (c *FakeChronojamV1alpha1) AwsAutoscalingSchedules(namespace string) v1alpha1.AwsAutoscalingScheduleInterface {
 	return &FakeAwsAutoscalingSchedules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsBatchComputeEnvironments(namespace string) v1alpha1.AwsBatchComputeEnvironmentInterface {
+func (c *FakeChronojamV1alpha1) AwsBatchComputeEnvironments(namespace string) v1alpha1.AwsBatchComputeEnvironmentInterface {
 	return &FakeAwsBatchComputeEnvironments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsBatchJobDefinitions(namespace string) v1alpha1.AwsBatchJobDefinitionInterface {
+func (c *FakeChronojamV1alpha1) AwsBatchJobDefinitions(namespace string) v1alpha1.AwsBatchJobDefinitionInterface {
 	return &FakeAwsBatchJobDefinitions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsBatchJobQueues(namespace string) v1alpha1.AwsBatchJobQueueInterface {
+func (c *FakeChronojamV1alpha1) AwsBatchJobQueues(namespace string) v1alpha1.AwsBatchJobQueueInterface {
 	return &FakeAwsBatchJobQueues{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsBudgetsBudgets(namespace string) v1alpha1.AwsBudgetsBudgetInterface {
+func (c *FakeChronojamV1alpha1) AwsBudgetsBudgets(namespace string) v1alpha1.AwsBudgetsBudgetInterface {
 	return &FakeAwsBudgetsBudgets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloud9EnvironmentEc2s(namespace string) v1alpha1.AwsCloud9EnvironmentEc2Interface {
+func (c *FakeChronojamV1alpha1) AwsCloud9EnvironmentEc2s(namespace string) v1alpha1.AwsCloud9EnvironmentEc2Interface {
 	return &FakeAwsCloud9EnvironmentEc2s{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudformationStacks(namespace string) v1alpha1.AwsCloudformationStackInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudformationStacks(namespace string) v1alpha1.AwsCloudformationStackInterface {
 	return &FakeAwsCloudformationStacks{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudfrontDistributions(namespace string) v1alpha1.AwsCloudfrontDistributionInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudfrontDistributions(namespace string) v1alpha1.AwsCloudfrontDistributionInterface {
 	return &FakeAwsCloudfrontDistributions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudfrontOriginAccessIdentities(namespace string) v1alpha1.AwsCloudfrontOriginAccessIdentityInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudfrontOriginAccessIdentities(namespace string) v1alpha1.AwsCloudfrontOriginAccessIdentityInterface {
 	return &FakeAwsCloudfrontOriginAccessIdentities{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudtrails(namespace string) v1alpha1.AwsCloudtrailInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudtrails(namespace string) v1alpha1.AwsCloudtrailInterface {
 	return &FakeAwsCloudtrails{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchDashboards(namespace string) v1alpha1.AwsCloudwatchDashboardInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchDashboards(namespace string) v1alpha1.AwsCloudwatchDashboardInterface {
 	return &FakeAwsCloudwatchDashboards{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchEventPermissions(namespace string) v1alpha1.AwsCloudwatchEventPermissionInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchEventPermissions(namespace string) v1alpha1.AwsCloudwatchEventPermissionInterface {
 	return &FakeAwsCloudwatchEventPermissions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchEventRules(namespace string) v1alpha1.AwsCloudwatchEventRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchEventRules(namespace string) v1alpha1.AwsCloudwatchEventRuleInterface {
 	return &FakeAwsCloudwatchEventRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchEventTargets(namespace string) v1alpha1.AwsCloudwatchEventTargetInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchEventTargets(namespace string) v1alpha1.AwsCloudwatchEventTargetInterface {
 	return &FakeAwsCloudwatchEventTargets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchLogDestinations(namespace string) v1alpha1.AwsCloudwatchLogDestinationInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchLogDestinations(namespace string) v1alpha1.AwsCloudwatchLogDestinationInterface {
 	return &FakeAwsCloudwatchLogDestinations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchLogDestinationPolicies(namespace string) v1alpha1.AwsCloudwatchLogDestinationPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchLogDestinationPolicies(namespace string) v1alpha1.AwsCloudwatchLogDestinationPolicyInterface {
 	return &FakeAwsCloudwatchLogDestinationPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchLogGroups(namespace string) v1alpha1.AwsCloudwatchLogGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchLogGroups(namespace string) v1alpha1.AwsCloudwatchLogGroupInterface {
 	return &FakeAwsCloudwatchLogGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchLogMetricFilters(namespace string) v1alpha1.AwsCloudwatchLogMetricFilterInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchLogMetricFilters(namespace string) v1alpha1.AwsCloudwatchLogMetricFilterInterface {
 	return &FakeAwsCloudwatchLogMetricFilters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchLogResourcePolicies(namespace string) v1alpha1.AwsCloudwatchLogResourcePolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchLogResourcePolicies(namespace string) v1alpha1.AwsCloudwatchLogResourcePolicyInterface {
 	return &FakeAwsCloudwatchLogResourcePolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchLogStreams(namespace string) v1alpha1.AwsCloudwatchLogStreamInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchLogStreams(namespace string) v1alpha1.AwsCloudwatchLogStreamInterface {
 	return &FakeAwsCloudwatchLogStreams{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchLogSubscriptionFilters(namespace string) v1alpha1.AwsCloudwatchLogSubscriptionFilterInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchLogSubscriptionFilters(namespace string) v1alpha1.AwsCloudwatchLogSubscriptionFilterInterface {
 	return &FakeAwsCloudwatchLogSubscriptionFilters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCloudwatchMetricAlarms(namespace string) v1alpha1.AwsCloudwatchMetricAlarmInterface {
+func (c *FakeChronojamV1alpha1) AwsCloudwatchMetricAlarms(namespace string) v1alpha1.AwsCloudwatchMetricAlarmInterface {
 	return &FakeAwsCloudwatchMetricAlarms{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCodebuildProjects(namespace string) v1alpha1.AwsCodebuildProjectInterface {
+func (c *FakeChronojamV1alpha1) AwsCodebuildProjects(namespace string) v1alpha1.AwsCodebuildProjectInterface {
 	return &FakeAwsCodebuildProjects{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCodecommitRepositories(namespace string) v1alpha1.AwsCodecommitRepositoryInterface {
+func (c *FakeChronojamV1alpha1) AwsCodecommitRepositories(namespace string) v1alpha1.AwsCodecommitRepositoryInterface {
 	return &FakeAwsCodecommitRepositories{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCodecommitTriggers(namespace string) v1alpha1.AwsCodecommitTriggerInterface {
+func (c *FakeChronojamV1alpha1) AwsCodecommitTriggers(namespace string) v1alpha1.AwsCodecommitTriggerInterface {
 	return &FakeAwsCodecommitTriggers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCodedeployApps(namespace string) v1alpha1.AwsCodedeployAppInterface {
+func (c *FakeChronojamV1alpha1) AwsCodedeployApps(namespace string) v1alpha1.AwsCodedeployAppInterface {
 	return &FakeAwsCodedeployApps{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCodedeployDeploymentConfigs(namespace string) v1alpha1.AwsCodedeployDeploymentConfigInterface {
+func (c *FakeChronojamV1alpha1) AwsCodedeployDeploymentConfigs(namespace string) v1alpha1.AwsCodedeployDeploymentConfigInterface {
 	return &FakeAwsCodedeployDeploymentConfigs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCodedeployDeploymentGroups(namespace string) v1alpha1.AwsCodedeployDeploymentGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsCodedeployDeploymentGroups(namespace string) v1alpha1.AwsCodedeployDeploymentGroupInterface {
 	return &FakeAwsCodedeployDeploymentGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCodepipelines(namespace string) v1alpha1.AwsCodepipelineInterface {
+func (c *FakeChronojamV1alpha1) AwsCodepipelines(namespace string) v1alpha1.AwsCodepipelineInterface {
 	return &FakeAwsCodepipelines{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCognitoIdentityPools(namespace string) v1alpha1.AwsCognitoIdentityPoolInterface {
+func (c *FakeChronojamV1alpha1) AwsCognitoIdentityPools(namespace string) v1alpha1.AwsCognitoIdentityPoolInterface {
 	return &FakeAwsCognitoIdentityPools{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCognitoIdentityPoolRolesAttachments(namespace string) v1alpha1.AwsCognitoIdentityPoolRolesAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsCognitoIdentityPoolRolesAttachments(namespace string) v1alpha1.AwsCognitoIdentityPoolRolesAttachmentInterface {
 	return &FakeAwsCognitoIdentityPoolRolesAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCognitoUserGroups(namespace string) v1alpha1.AwsCognitoUserGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsCognitoUserGroups(namespace string) v1alpha1.AwsCognitoUserGroupInterface {
 	return &FakeAwsCognitoUserGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCognitoUserPools(namespace string) v1alpha1.AwsCognitoUserPoolInterface {
+func (c *FakeChronojamV1alpha1) AwsCognitoUserPools(namespace string) v1alpha1.AwsCognitoUserPoolInterface {
 	return &FakeAwsCognitoUserPools{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCognitoUserPoolClients(namespace string) v1alpha1.AwsCognitoUserPoolClientInterface {
+func (c *FakeChronojamV1alpha1) AwsCognitoUserPoolClients(namespace string) v1alpha1.AwsCognitoUserPoolClientInterface {
 	return &FakeAwsCognitoUserPoolClients{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCognitoUserPoolDomains(namespace string) v1alpha1.AwsCognitoUserPoolDomainInterface {
+func (c *FakeChronojamV1alpha1) AwsCognitoUserPoolDomains(namespace string) v1alpha1.AwsCognitoUserPoolDomainInterface {
 	return &FakeAwsCognitoUserPoolDomains{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsConfigConfigRules(namespace string) v1alpha1.AwsConfigConfigRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsConfigConfigRules(namespace string) v1alpha1.AwsConfigConfigRuleInterface {
 	return &FakeAwsConfigConfigRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsConfigConfigurationRecorders(namespace string) v1alpha1.AwsConfigConfigurationRecorderInterface {
+func (c *FakeChronojamV1alpha1) AwsConfigConfigurationRecorders(namespace string) v1alpha1.AwsConfigConfigurationRecorderInterface {
 	return &FakeAwsConfigConfigurationRecorders{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsConfigConfigurationRecorderStatuses(namespace string) v1alpha1.AwsConfigConfigurationRecorderStatusInterface {
+func (c *FakeChronojamV1alpha1) AwsConfigConfigurationRecorderStatuses(namespace string) v1alpha1.AwsConfigConfigurationRecorderStatusInterface {
 	return &FakeAwsConfigConfigurationRecorderStatuses{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsConfigDeliveryChannels(namespace string) v1alpha1.AwsConfigDeliveryChannelInterface {
+func (c *FakeChronojamV1alpha1) AwsConfigDeliveryChannels(namespace string) v1alpha1.AwsConfigDeliveryChannelInterface {
 	return &FakeAwsConfigDeliveryChannels{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsCustomerGateways(namespace string) v1alpha1.AwsCustomerGatewayInterface {
+func (c *FakeChronojamV1alpha1) AwsCustomerGateways(namespace string) v1alpha1.AwsCustomerGatewayInterface {
 	return &FakeAwsCustomerGateways{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDaxClusters(namespace string) v1alpha1.AwsDaxClusterInterface {
+func (c *FakeChronojamV1alpha1) AwsDaxClusters(namespace string) v1alpha1.AwsDaxClusterInterface {
 	return &FakeAwsDaxClusters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDaxParameterGroups(namespace string) v1alpha1.AwsDaxParameterGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsDaxParameterGroups(namespace string) v1alpha1.AwsDaxParameterGroupInterface {
 	return &FakeAwsDaxParameterGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDaxSubnetGroups(namespace string) v1alpha1.AwsDaxSubnetGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsDaxSubnetGroups(namespace string) v1alpha1.AwsDaxSubnetGroupInterface {
 	return &FakeAwsDaxSubnetGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDbEventSubscriptions(namespace string) v1alpha1.AwsDbEventSubscriptionInterface {
+func (c *FakeChronojamV1alpha1) AwsDbEventSubscriptions(namespace string) v1alpha1.AwsDbEventSubscriptionInterface {
 	return &FakeAwsDbEventSubscriptions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDbInstances(namespace string) v1alpha1.AwsDbInstanceInterface {
+func (c *FakeChronojamV1alpha1) AwsDbInstances(namespace string) v1alpha1.AwsDbInstanceInterface {
 	return &FakeAwsDbInstances{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDbOptionGroups(namespace string) v1alpha1.AwsDbOptionGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsDbOptionGroups(namespace string) v1alpha1.AwsDbOptionGroupInterface {
 	return &FakeAwsDbOptionGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDbParameterGroups(namespace string) v1alpha1.AwsDbParameterGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsDbParameterGroups(namespace string) v1alpha1.AwsDbParameterGroupInterface {
 	return &FakeAwsDbParameterGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDbSecurityGroups(namespace string) v1alpha1.AwsDbSecurityGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsDbSecurityGroups(namespace string) v1alpha1.AwsDbSecurityGroupInterface {
 	return &FakeAwsDbSecurityGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDbSnapshots(namespace string) v1alpha1.AwsDbSnapshotInterface {
+func (c *FakeChronojamV1alpha1) AwsDbSnapshots(namespace string) v1alpha1.AwsDbSnapshotInterface {
 	return &FakeAwsDbSnapshots{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDbSubnetGroups(namespace string) v1alpha1.AwsDbSubnetGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsDbSubnetGroups(namespace string) v1alpha1.AwsDbSubnetGroupInterface {
 	return &FakeAwsDbSubnetGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDefaultNetworkAcls(namespace string) v1alpha1.AwsDefaultNetworkAclInterface {
+func (c *FakeChronojamV1alpha1) AwsDefaultNetworkAcls(namespace string) v1alpha1.AwsDefaultNetworkAclInterface {
 	return &FakeAwsDefaultNetworkAcls{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDefaultRouteTables(namespace string) v1alpha1.AwsDefaultRouteTableInterface {
+func (c *FakeChronojamV1alpha1) AwsDefaultRouteTables(namespace string) v1alpha1.AwsDefaultRouteTableInterface {
 	return &FakeAwsDefaultRouteTables{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDefaultSecurityGroups(namespace string) v1alpha1.AwsDefaultSecurityGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsDefaultSecurityGroups(namespace string) v1alpha1.AwsDefaultSecurityGroupInterface {
 	return &FakeAwsDefaultSecurityGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDefaultSubnets(namespace string) v1alpha1.AwsDefaultSubnetInterface {
+func (c *FakeChronojamV1alpha1) AwsDefaultSubnets(namespace string) v1alpha1.AwsDefaultSubnetInterface {
 	return &FakeAwsDefaultSubnets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDefaultVpcs(namespace string) v1alpha1.AwsDefaultVpcInterface {
+func (c *FakeChronojamV1alpha1) AwsDefaultVpcs(namespace string) v1alpha1.AwsDefaultVpcInterface {
 	return &FakeAwsDefaultVpcs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDefaultVpcDhcpOptionses(namespace string) v1alpha1.AwsDefaultVpcDhcpOptionsInterface {
+func (c *FakeChronojamV1alpha1) AwsDefaultVpcDhcpOptionses(namespace string) v1alpha1.AwsDefaultVpcDhcpOptionsInterface {
 	return &FakeAwsDefaultVpcDhcpOptionses{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDevicefarmProjects(namespace string) v1alpha1.AwsDevicefarmProjectInterface {
+func (c *FakeChronojamV1alpha1) AwsDevicefarmProjects(namespace string) v1alpha1.AwsDevicefarmProjectInterface {
 	return &FakeAwsDevicefarmProjects{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDirectoryServiceConditionalForwarders(namespace string) v1alpha1.AwsDirectoryServiceConditionalForwarderInterface {
+func (c *FakeChronojamV1alpha1) AwsDirectoryServiceConditionalForwarders(namespace string) v1alpha1.AwsDirectoryServiceConditionalForwarderInterface {
 	return &FakeAwsDirectoryServiceConditionalForwarders{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDirectoryServiceDirectories(namespace string) v1alpha1.AwsDirectoryServiceDirectoryInterface {
+func (c *FakeChronojamV1alpha1) AwsDirectoryServiceDirectories(namespace string) v1alpha1.AwsDirectoryServiceDirectoryInterface {
 	return &FakeAwsDirectoryServiceDirectories{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDmsCertificates(namespace string) v1alpha1.AwsDmsCertificateInterface {
+func (c *FakeChronojamV1alpha1) AwsDmsCertificates(namespace string) v1alpha1.AwsDmsCertificateInterface {
 	return &FakeAwsDmsCertificates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDmsEndpoints(namespace string) v1alpha1.AwsDmsEndpointInterface {
+func (c *FakeChronojamV1alpha1) AwsDmsEndpoints(namespace string) v1alpha1.AwsDmsEndpointInterface {
 	return &FakeAwsDmsEndpoints{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDmsReplicationInstances(namespace string) v1alpha1.AwsDmsReplicationInstanceInterface {
+func (c *FakeChronojamV1alpha1) AwsDmsReplicationInstances(namespace string) v1alpha1.AwsDmsReplicationInstanceInterface {
 	return &FakeAwsDmsReplicationInstances{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDmsReplicationSubnetGroups(namespace string) v1alpha1.AwsDmsReplicationSubnetGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsDmsReplicationSubnetGroups(namespace string) v1alpha1.AwsDmsReplicationSubnetGroupInterface {
 	return &FakeAwsDmsReplicationSubnetGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDmsReplicationTasks(namespace string) v1alpha1.AwsDmsReplicationTaskInterface {
+func (c *FakeChronojamV1alpha1) AwsDmsReplicationTasks(namespace string) v1alpha1.AwsDmsReplicationTaskInterface {
 	return &FakeAwsDmsReplicationTasks{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDxConnections(namespace string) v1alpha1.AwsDxConnectionInterface {
+func (c *FakeChronojamV1alpha1) AwsDxConnections(namespace string) v1alpha1.AwsDxConnectionInterface {
 	return &FakeAwsDxConnections{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDxConnectionAssociations(namespace string) v1alpha1.AwsDxConnectionAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsDxConnectionAssociations(namespace string) v1alpha1.AwsDxConnectionAssociationInterface {
 	return &FakeAwsDxConnectionAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDxLags(namespace string) v1alpha1.AwsDxLagInterface {
+func (c *FakeChronojamV1alpha1) AwsDxLags(namespace string) v1alpha1.AwsDxLagInterface {
 	return &FakeAwsDxLags{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDynamodbGlobalTables(namespace string) v1alpha1.AwsDynamodbGlobalTableInterface {
+func (c *FakeChronojamV1alpha1) AwsDynamodbGlobalTables(namespace string) v1alpha1.AwsDynamodbGlobalTableInterface {
 	return &FakeAwsDynamodbGlobalTables{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDynamodbTables(namespace string) v1alpha1.AwsDynamodbTableInterface {
+func (c *FakeChronojamV1alpha1) AwsDynamodbTables(namespace string) v1alpha1.AwsDynamodbTableInterface {
 	return &FakeAwsDynamodbTables{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsDynamodbTableItems(namespace string) v1alpha1.AwsDynamodbTableItemInterface {
+func (c *FakeChronojamV1alpha1) AwsDynamodbTableItems(namespace string) v1alpha1.AwsDynamodbTableItemInterface {
 	return &FakeAwsDynamodbTableItems{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEbsSnapshots(namespace string) v1alpha1.AwsEbsSnapshotInterface {
+func (c *FakeChronojamV1alpha1) AwsEbsSnapshots(namespace string) v1alpha1.AwsEbsSnapshotInterface {
 	return &FakeAwsEbsSnapshots{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEbsVolumes(namespace string) v1alpha1.AwsEbsVolumeInterface {
+func (c *FakeChronojamV1alpha1) AwsEbsVolumes(namespace string) v1alpha1.AwsEbsVolumeInterface {
 	return &FakeAwsEbsVolumes{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEcrLifecyclePolicies(namespace string) v1alpha1.AwsEcrLifecyclePolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsEcrLifecyclePolicies(namespace string) v1alpha1.AwsEcrLifecyclePolicyInterface {
 	return &FakeAwsEcrLifecyclePolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEcrRepositories(namespace string) v1alpha1.AwsEcrRepositoryInterface {
+func (c *FakeChronojamV1alpha1) AwsEcrRepositories(namespace string) v1alpha1.AwsEcrRepositoryInterface {
 	return &FakeAwsEcrRepositories{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEcrRepositoryPolicies(namespace string) v1alpha1.AwsEcrRepositoryPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsEcrRepositoryPolicies(namespace string) v1alpha1.AwsEcrRepositoryPolicyInterface {
 	return &FakeAwsEcrRepositoryPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEcsClusters(namespace string) v1alpha1.AwsEcsClusterInterface {
+func (c *FakeChronojamV1alpha1) AwsEcsClusters(namespace string) v1alpha1.AwsEcsClusterInterface {
 	return &FakeAwsEcsClusters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEcsServices(namespace string) v1alpha1.AwsEcsServiceInterface {
+func (c *FakeChronojamV1alpha1) AwsEcsServices(namespace string) v1alpha1.AwsEcsServiceInterface {
 	return &FakeAwsEcsServices{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEcsTaskDefinitions(namespace string) v1alpha1.AwsEcsTaskDefinitionInterface {
+func (c *FakeChronojamV1alpha1) AwsEcsTaskDefinitions(namespace string) v1alpha1.AwsEcsTaskDefinitionInterface {
 	return &FakeAwsEcsTaskDefinitions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEfsFileSystems(namespace string) v1alpha1.AwsEfsFileSystemInterface {
+func (c *FakeChronojamV1alpha1) AwsEfsFileSystems(namespace string) v1alpha1.AwsEfsFileSystemInterface {
 	return &FakeAwsEfsFileSystems{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEfsMountTargets(namespace string) v1alpha1.AwsEfsMountTargetInterface {
+func (c *FakeChronojamV1alpha1) AwsEfsMountTargets(namespace string) v1alpha1.AwsEfsMountTargetInterface {
 	return &FakeAwsEfsMountTargets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEgressOnlyInternetGateways(namespace string) v1alpha1.AwsEgressOnlyInternetGatewayInterface {
+func (c *FakeChronojamV1alpha1) AwsEgressOnlyInternetGateways(namespace string) v1alpha1.AwsEgressOnlyInternetGatewayInterface {
 	return &FakeAwsEgressOnlyInternetGateways{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEips(namespace string) v1alpha1.AwsEipInterface {
+func (c *FakeChronojamV1alpha1) AwsEips(namespace string) v1alpha1.AwsEipInterface {
 	return &FakeAwsEips{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEipAssociations(namespace string) v1alpha1.AwsEipAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsEipAssociations(namespace string) v1alpha1.AwsEipAssociationInterface {
 	return &FakeAwsEipAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticBeanstalkApplications(namespace string) v1alpha1.AwsElasticBeanstalkApplicationInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticBeanstalkApplications(namespace string) v1alpha1.AwsElasticBeanstalkApplicationInterface {
 	return &FakeAwsElasticBeanstalkApplications{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticBeanstalkApplicationVersions(namespace string) v1alpha1.AwsElasticBeanstalkApplicationVersionInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticBeanstalkApplicationVersions(namespace string) v1alpha1.AwsElasticBeanstalkApplicationVersionInterface {
 	return &FakeAwsElasticBeanstalkApplicationVersions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticBeanstalkConfigurationTemplates(namespace string) v1alpha1.AwsElasticBeanstalkConfigurationTemplateInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticBeanstalkConfigurationTemplates(namespace string) v1alpha1.AwsElasticBeanstalkConfigurationTemplateInterface {
 	return &FakeAwsElasticBeanstalkConfigurationTemplates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticBeanstalkEnvironments(namespace string) v1alpha1.AwsElasticBeanstalkEnvironmentInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticBeanstalkEnvironments(namespace string) v1alpha1.AwsElasticBeanstalkEnvironmentInterface {
 	return &FakeAwsElasticBeanstalkEnvironments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticacheClusters(namespace string) v1alpha1.AwsElasticacheClusterInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticacheClusters(namespace string) v1alpha1.AwsElasticacheClusterInterface {
 	return &FakeAwsElasticacheClusters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticacheParameterGroups(namespace string) v1alpha1.AwsElasticacheParameterGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticacheParameterGroups(namespace string) v1alpha1.AwsElasticacheParameterGroupInterface {
 	return &FakeAwsElasticacheParameterGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticacheReplicationGroups(namespace string) v1alpha1.AwsElasticacheReplicationGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticacheReplicationGroups(namespace string) v1alpha1.AwsElasticacheReplicationGroupInterface {
 	return &FakeAwsElasticacheReplicationGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticacheSecurityGroups(namespace string) v1alpha1.AwsElasticacheSecurityGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticacheSecurityGroups(namespace string) v1alpha1.AwsElasticacheSecurityGroupInterface {
 	return &FakeAwsElasticacheSecurityGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticacheSubnetGroups(namespace string) v1alpha1.AwsElasticacheSubnetGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticacheSubnetGroups(namespace string) v1alpha1.AwsElasticacheSubnetGroupInterface {
 	return &FakeAwsElasticacheSubnetGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticsearchDomains(namespace string) v1alpha1.AwsElasticsearchDomainInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticsearchDomains(namespace string) v1alpha1.AwsElasticsearchDomainInterface {
 	return &FakeAwsElasticsearchDomains{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElasticsearchDomainPolicies(namespace string) v1alpha1.AwsElasticsearchDomainPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsElasticsearchDomainPolicies(namespace string) v1alpha1.AwsElasticsearchDomainPolicyInterface {
 	return &FakeAwsElasticsearchDomainPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElastictranscoderPipelines(namespace string) v1alpha1.AwsElastictranscoderPipelineInterface {
+func (c *FakeChronojamV1alpha1) AwsElastictranscoderPipelines(namespace string) v1alpha1.AwsElastictranscoderPipelineInterface {
 	return &FakeAwsElastictranscoderPipelines{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElastictranscoderPresets(namespace string) v1alpha1.AwsElastictranscoderPresetInterface {
+func (c *FakeChronojamV1alpha1) AwsElastictranscoderPresets(namespace string) v1alpha1.AwsElastictranscoderPresetInterface {
 	return &FakeAwsElastictranscoderPresets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElbs(namespace string) v1alpha1.AwsElbInterface {
+func (c *FakeChronojamV1alpha1) AwsElbs(namespace string) v1alpha1.AwsElbInterface {
 	return &FakeAwsElbs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsElbAttachments(namespace string) v1alpha1.AwsElbAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsElbAttachments(namespace string) v1alpha1.AwsElbAttachmentInterface {
 	return &FakeAwsElbAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEmrClusters(namespace string) v1alpha1.AwsEmrClusterInterface {
+func (c *FakeChronojamV1alpha1) AwsEmrClusters(namespace string) v1alpha1.AwsEmrClusterInterface {
 	return &FakeAwsEmrClusters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEmrInstanceGroups(namespace string) v1alpha1.AwsEmrInstanceGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsEmrInstanceGroups(namespace string) v1alpha1.AwsEmrInstanceGroupInterface {
 	return &FakeAwsEmrInstanceGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsEmrSecurityConfigurations(namespace string) v1alpha1.AwsEmrSecurityConfigurationInterface {
+func (c *FakeChronojamV1alpha1) AwsEmrSecurityConfigurations(namespace string) v1alpha1.AwsEmrSecurityConfigurationInterface {
 	return &FakeAwsEmrSecurityConfigurations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsFlowLogs(namespace string) v1alpha1.AwsFlowLogInterface {
+func (c *FakeChronojamV1alpha1) AwsFlowLogs(namespace string) v1alpha1.AwsFlowLogInterface {
 	return &FakeAwsFlowLogs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGameliftAliases(namespace string) v1alpha1.AwsGameliftAliasInterface {
+func (c *FakeChronojamV1alpha1) AwsGameliftAliases(namespace string) v1alpha1.AwsGameliftAliasInterface {
 	return &FakeAwsGameliftAliases{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGameliftBuilds(namespace string) v1alpha1.AwsGameliftBuildInterface {
+func (c *FakeChronojamV1alpha1) AwsGameliftBuilds(namespace string) v1alpha1.AwsGameliftBuildInterface {
 	return &FakeAwsGameliftBuilds{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGameliftFleets(namespace string) v1alpha1.AwsGameliftFleetInterface {
+func (c *FakeChronojamV1alpha1) AwsGameliftFleets(namespace string) v1alpha1.AwsGameliftFleetInterface {
 	return &FakeAwsGameliftFleets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGlacierVaults(namespace string) v1alpha1.AwsGlacierVaultInterface {
+func (c *FakeChronojamV1alpha1) AwsGlacierVaults(namespace string) v1alpha1.AwsGlacierVaultInterface {
 	return &FakeAwsGlacierVaults{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGlueCatalogDatabases(namespace string) v1alpha1.AwsGlueCatalogDatabaseInterface {
+func (c *FakeChronojamV1alpha1) AwsGlueCatalogDatabases(namespace string) v1alpha1.AwsGlueCatalogDatabaseInterface {
 	return &FakeAwsGlueCatalogDatabases{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGlueConnections(namespace string) v1alpha1.AwsGlueConnectionInterface {
+func (c *FakeChronojamV1alpha1) AwsGlueConnections(namespace string) v1alpha1.AwsGlueConnectionInterface {
 	return &FakeAwsGlueConnections{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGlueJobs(namespace string) v1alpha1.AwsGlueJobInterface {
+func (c *FakeChronojamV1alpha1) AwsGlueJobs(namespace string) v1alpha1.AwsGlueJobInterface {
 	return &FakeAwsGlueJobs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGuarddutyDetectors(namespace string) v1alpha1.AwsGuarddutyDetectorInterface {
+func (c *FakeChronojamV1alpha1) AwsGuarddutyDetectors(namespace string) v1alpha1.AwsGuarddutyDetectorInterface {
 	return &FakeAwsGuarddutyDetectors{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGuarddutyIpsets(namespace string) v1alpha1.AwsGuarddutyIpsetInterface {
+func (c *FakeChronojamV1alpha1) AwsGuarddutyIpsets(namespace string) v1alpha1.AwsGuarddutyIpsetInterface {
 	return &FakeAwsGuarddutyIpsets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGuarddutyMembers(namespace string) v1alpha1.AwsGuarddutyMemberInterface {
+func (c *FakeChronojamV1alpha1) AwsGuarddutyMembers(namespace string) v1alpha1.AwsGuarddutyMemberInterface {
 	return &FakeAwsGuarddutyMembers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsGuarddutyThreatintelsets(namespace string) v1alpha1.AwsGuarddutyThreatintelsetInterface {
+func (c *FakeChronojamV1alpha1) AwsGuarddutyThreatintelsets(namespace string) v1alpha1.AwsGuarddutyThreatintelsetInterface {
 	return &FakeAwsGuarddutyThreatintelsets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamAccessKeys(namespace string) v1alpha1.AwsIamAccessKeyInterface {
+func (c *FakeChronojamV1alpha1) AwsIamAccessKeys(namespace string) v1alpha1.AwsIamAccessKeyInterface {
 	return &FakeAwsIamAccessKeys{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamAccountAliases(namespace string) v1alpha1.AwsIamAccountAliasInterface {
+func (c *FakeChronojamV1alpha1) AwsIamAccountAliases(namespace string) v1alpha1.AwsIamAccountAliasInterface {
 	return &FakeAwsIamAccountAliases{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamAccountPasswordPolicies(namespace string) v1alpha1.AwsIamAccountPasswordPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsIamAccountPasswordPolicies(namespace string) v1alpha1.AwsIamAccountPasswordPolicyInterface {
 	return &FakeAwsIamAccountPasswordPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamGroups(namespace string) v1alpha1.AwsIamGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsIamGroups(namespace string) v1alpha1.AwsIamGroupInterface {
 	return &FakeAwsIamGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamGroupMemberships(namespace string) v1alpha1.AwsIamGroupMembershipInterface {
+func (c *FakeChronojamV1alpha1) AwsIamGroupMemberships(namespace string) v1alpha1.AwsIamGroupMembershipInterface {
 	return &FakeAwsIamGroupMemberships{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamGroupPolicies(namespace string) v1alpha1.AwsIamGroupPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsIamGroupPolicies(namespace string) v1alpha1.AwsIamGroupPolicyInterface {
 	return &FakeAwsIamGroupPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamGroupPolicyAttachments(namespace string) v1alpha1.AwsIamGroupPolicyAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsIamGroupPolicyAttachments(namespace string) v1alpha1.AwsIamGroupPolicyAttachmentInterface {
 	return &FakeAwsIamGroupPolicyAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamInstanceProfiles(namespace string) v1alpha1.AwsIamInstanceProfileInterface {
+func (c *FakeChronojamV1alpha1) AwsIamInstanceProfiles(namespace string) v1alpha1.AwsIamInstanceProfileInterface {
 	return &FakeAwsIamInstanceProfiles{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamOpenidConnectProviders(namespace string) v1alpha1.AwsIamOpenidConnectProviderInterface {
+func (c *FakeChronojamV1alpha1) AwsIamOpenidConnectProviders(namespace string) v1alpha1.AwsIamOpenidConnectProviderInterface {
 	return &FakeAwsIamOpenidConnectProviders{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamPolicies(namespace string) v1alpha1.AwsIamPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsIamPolicies(namespace string) v1alpha1.AwsIamPolicyInterface {
 	return &FakeAwsIamPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamPolicyAttachments(namespace string) v1alpha1.AwsIamPolicyAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsIamPolicyAttachments(namespace string) v1alpha1.AwsIamPolicyAttachmentInterface {
 	return &FakeAwsIamPolicyAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamRoles(namespace string) v1alpha1.AwsIamRoleInterface {
+func (c *FakeChronojamV1alpha1) AwsIamRoles(namespace string) v1alpha1.AwsIamRoleInterface {
 	return &FakeAwsIamRoles{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamRolePolicies(namespace string) v1alpha1.AwsIamRolePolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsIamRolePolicies(namespace string) v1alpha1.AwsIamRolePolicyInterface {
 	return &FakeAwsIamRolePolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamRolePolicyAttachments(namespace string) v1alpha1.AwsIamRolePolicyAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsIamRolePolicyAttachments(namespace string) v1alpha1.AwsIamRolePolicyAttachmentInterface {
 	return &FakeAwsIamRolePolicyAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamSamlProviders(namespace string) v1alpha1.AwsIamSamlProviderInterface {
+func (c *FakeChronojamV1alpha1) AwsIamSamlProviders(namespace string) v1alpha1.AwsIamSamlProviderInterface {
 	return &FakeAwsIamSamlProviders{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamServerCertificates(namespace string) v1alpha1.AwsIamServerCertificateInterface {
+func (c *FakeChronojamV1alpha1) AwsIamServerCertificates(namespace string) v1alpha1.AwsIamServerCertificateInterface {
 	return &FakeAwsIamServerCertificates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamServiceLinkedRoles(namespace string) v1alpha1.AwsIamServiceLinkedRoleInterface {
+func (c *FakeChronojamV1alpha1) AwsIamServiceLinkedRoles(namespace string) v1alpha1.AwsIamServiceLinkedRoleInterface {
 	return &FakeAwsIamServiceLinkedRoles{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamUsers(namespace string) v1alpha1.AwsIamUserInterface {
+func (c *FakeChronojamV1alpha1) AwsIamUsers(namespace string) v1alpha1.AwsIamUserInterface {
 	return &FakeAwsIamUsers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamUserGroupMemberships(namespace string) v1alpha1.AwsIamUserGroupMembershipInterface {
+func (c *FakeChronojamV1alpha1) AwsIamUserGroupMemberships(namespace string) v1alpha1.AwsIamUserGroupMembershipInterface {
 	return &FakeAwsIamUserGroupMemberships{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamUserLoginProfiles(namespace string) v1alpha1.AwsIamUserLoginProfileInterface {
+func (c *FakeChronojamV1alpha1) AwsIamUserLoginProfiles(namespace string) v1alpha1.AwsIamUserLoginProfileInterface {
 	return &FakeAwsIamUserLoginProfiles{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamUserPolicies(namespace string) v1alpha1.AwsIamUserPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsIamUserPolicies(namespace string) v1alpha1.AwsIamUserPolicyInterface {
 	return &FakeAwsIamUserPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamUserPolicyAttachments(namespace string) v1alpha1.AwsIamUserPolicyAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsIamUserPolicyAttachments(namespace string) v1alpha1.AwsIamUserPolicyAttachmentInterface {
 	return &FakeAwsIamUserPolicyAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIamUserSshKeys(namespace string) v1alpha1.AwsIamUserSshKeyInterface {
+func (c *FakeChronojamV1alpha1) AwsIamUserSshKeys(namespace string) v1alpha1.AwsIamUserSshKeyInterface {
 	return &FakeAwsIamUserSshKeys{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsInspectorAssessmentTargets(namespace string) v1alpha1.AwsInspectorAssessmentTargetInterface {
+func (c *FakeChronojamV1alpha1) AwsInspectorAssessmentTargets(namespace string) v1alpha1.AwsInspectorAssessmentTargetInterface {
 	return &FakeAwsInspectorAssessmentTargets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsInspectorAssessmentTemplates(namespace string) v1alpha1.AwsInspectorAssessmentTemplateInterface {
+func (c *FakeChronojamV1alpha1) AwsInspectorAssessmentTemplates(namespace string) v1alpha1.AwsInspectorAssessmentTemplateInterface {
 	return &FakeAwsInspectorAssessmentTemplates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsInspectorResourceGroups(namespace string) v1alpha1.AwsInspectorResourceGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsInspectorResourceGroups(namespace string) v1alpha1.AwsInspectorResourceGroupInterface {
 	return &FakeAwsInspectorResourceGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsInstances(namespace string) v1alpha1.AwsInstanceInterface {
+func (c *FakeChronojamV1alpha1) AwsInstances(namespace string) v1alpha1.AwsInstanceInterface {
 	return &FakeAwsInstances{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsInternetGateways(namespace string) v1alpha1.AwsInternetGatewayInterface {
+func (c *FakeChronojamV1alpha1) AwsInternetGateways(namespace string) v1alpha1.AwsInternetGatewayInterface {
 	return &FakeAwsInternetGateways{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIotCertificates(namespace string) v1alpha1.AwsIotCertificateInterface {
+func (c *FakeChronojamV1alpha1) AwsIotCertificates(namespace string) v1alpha1.AwsIotCertificateInterface {
 	return &FakeAwsIotCertificates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIotPolicies(namespace string) v1alpha1.AwsIotPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsIotPolicies(namespace string) v1alpha1.AwsIotPolicyInterface {
 	return &FakeAwsIotPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIotThings(namespace string) v1alpha1.AwsIotThingInterface {
+func (c *FakeChronojamV1alpha1) AwsIotThings(namespace string) v1alpha1.AwsIotThingInterface {
 	return &FakeAwsIotThings{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIotThingTypes(namespace string) v1alpha1.AwsIotThingTypeInterface {
+func (c *FakeChronojamV1alpha1) AwsIotThingTypes(namespace string) v1alpha1.AwsIotThingTypeInterface {
 	return &FakeAwsIotThingTypes{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsIotTopicRules(namespace string) v1alpha1.AwsIotTopicRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsIotTopicRules(namespace string) v1alpha1.AwsIotTopicRuleInterface {
 	return &FakeAwsIotTopicRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsKeyPairs(namespace string) v1alpha1.AwsKeyPairInterface {
+func (c *FakeChronojamV1alpha1) AwsKeyPairs(namespace string) v1alpha1.AwsKeyPairInterface {
 	return &FakeAwsKeyPairs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsKinesisFirehoseDeliveryStreams(namespace string) v1alpha1.AwsKinesisFirehoseDeliveryStreamInterface {
+func (c *FakeChronojamV1alpha1) AwsKinesisFirehoseDeliveryStreams(namespace string) v1alpha1.AwsKinesisFirehoseDeliveryStreamInterface {
 	return &FakeAwsKinesisFirehoseDeliveryStreams{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsKinesisStreams(namespace string) v1alpha1.AwsKinesisStreamInterface {
+func (c *FakeChronojamV1alpha1) AwsKinesisStreams(namespace string) v1alpha1.AwsKinesisStreamInterface {
 	return &FakeAwsKinesisStreams{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsKmsAliases(namespace string) v1alpha1.AwsKmsAliasInterface {
+func (c *FakeChronojamV1alpha1) AwsKmsAliases(namespace string) v1alpha1.AwsKmsAliasInterface {
 	return &FakeAwsKmsAliases{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsKmsGrants(namespace string) v1alpha1.AwsKmsGrantInterface {
+func (c *FakeChronojamV1alpha1) AwsKmsGrants(namespace string) v1alpha1.AwsKmsGrantInterface {
 	return &FakeAwsKmsGrants{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsKmsKeys(namespace string) v1alpha1.AwsKmsKeyInterface {
+func (c *FakeChronojamV1alpha1) AwsKmsKeys(namespace string) v1alpha1.AwsKmsKeyInterface {
 	return &FakeAwsKmsKeys{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLambdaAliases(namespace string) v1alpha1.AwsLambdaAliasInterface {
+func (c *FakeChronojamV1alpha1) AwsLambdaAliases(namespace string) v1alpha1.AwsLambdaAliasInterface {
 	return &FakeAwsLambdaAliases{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLambdaEventSourceMappings(namespace string) v1alpha1.AwsLambdaEventSourceMappingInterface {
+func (c *FakeChronojamV1alpha1) AwsLambdaEventSourceMappings(namespace string) v1alpha1.AwsLambdaEventSourceMappingInterface {
 	return &FakeAwsLambdaEventSourceMappings{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLambdaFunctions(namespace string) v1alpha1.AwsLambdaFunctionInterface {
+func (c *FakeChronojamV1alpha1) AwsLambdaFunctions(namespace string) v1alpha1.AwsLambdaFunctionInterface {
 	return &FakeAwsLambdaFunctions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLambdaPermissions(namespace string) v1alpha1.AwsLambdaPermissionInterface {
+func (c *FakeChronojamV1alpha1) AwsLambdaPermissions(namespace string) v1alpha1.AwsLambdaPermissionInterface {
 	return &FakeAwsLambdaPermissions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLaunchConfigurations(namespace string) v1alpha1.AwsLaunchConfigurationInterface {
+func (c *FakeChronojamV1alpha1) AwsLaunchConfigurations(namespace string) v1alpha1.AwsLaunchConfigurationInterface {
 	return &FakeAwsLaunchConfigurations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLaunchTemplates(namespace string) v1alpha1.AwsLaunchTemplateInterface {
+func (c *FakeChronojamV1alpha1) AwsLaunchTemplates(namespace string) v1alpha1.AwsLaunchTemplateInterface {
 	return &FakeAwsLaunchTemplates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLbs(namespace string) v1alpha1.AwsLbInterface {
+func (c *FakeChronojamV1alpha1) AwsLbs(namespace string) v1alpha1.AwsLbInterface {
 	return &FakeAwsLbs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLbCookieStickinessPolicies(namespace string) v1alpha1.AwsLbCookieStickinessPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsLbCookieStickinessPolicies(namespace string) v1alpha1.AwsLbCookieStickinessPolicyInterface {
 	return &FakeAwsLbCookieStickinessPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLbListeners(namespace string) v1alpha1.AwsLbListenerInterface {
+func (c *FakeChronojamV1alpha1) AwsLbListeners(namespace string) v1alpha1.AwsLbListenerInterface {
 	return &FakeAwsLbListeners{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLbListenerCertificates(namespace string) v1alpha1.AwsLbListenerCertificateInterface {
+func (c *FakeChronojamV1alpha1) AwsLbListenerCertificates(namespace string) v1alpha1.AwsLbListenerCertificateInterface {
 	return &FakeAwsLbListenerCertificates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLbListenerRules(namespace string) v1alpha1.AwsLbListenerRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsLbListenerRules(namespace string) v1alpha1.AwsLbListenerRuleInterface {
 	return &FakeAwsLbListenerRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLbSslNegotiationPolicies(namespace string) v1alpha1.AwsLbSslNegotiationPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsLbSslNegotiationPolicies(namespace string) v1alpha1.AwsLbSslNegotiationPolicyInterface {
 	return &FakeAwsLbSslNegotiationPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLbTargetGroups(namespace string) v1alpha1.AwsLbTargetGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsLbTargetGroups(namespace string) v1alpha1.AwsLbTargetGroupInterface {
 	return &FakeAwsLbTargetGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLbTargetGroupAttachments(namespace string) v1alpha1.AwsLbTargetGroupAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsLbTargetGroupAttachments(namespace string) v1alpha1.AwsLbTargetGroupAttachmentInterface {
 	return &FakeAwsLbTargetGroupAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLightsailDomains(namespace string) v1alpha1.AwsLightsailDomainInterface {
+func (c *FakeChronojamV1alpha1) AwsLightsailDomains(namespace string) v1alpha1.AwsLightsailDomainInterface {
 	return &FakeAwsLightsailDomains{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLightsailInstances(namespace string) v1alpha1.AwsLightsailInstanceInterface {
+func (c *FakeChronojamV1alpha1) AwsLightsailInstances(namespace string) v1alpha1.AwsLightsailInstanceInterface {
 	return &FakeAwsLightsailInstances{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLightsailKeyPairs(namespace string) v1alpha1.AwsLightsailKeyPairInterface {
+func (c *FakeChronojamV1alpha1) AwsLightsailKeyPairs(namespace string) v1alpha1.AwsLightsailKeyPairInterface {
 	return &FakeAwsLightsailKeyPairs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLightsailStaticIps(namespace string) v1alpha1.AwsLightsailStaticIpInterface {
+func (c *FakeChronojamV1alpha1) AwsLightsailStaticIps(namespace string) v1alpha1.AwsLightsailStaticIpInterface {
 	return &FakeAwsLightsailStaticIps{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLightsailStaticIpAttachments(namespace string) v1alpha1.AwsLightsailStaticIpAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsLightsailStaticIpAttachments(namespace string) v1alpha1.AwsLightsailStaticIpAttachmentInterface {
 	return &FakeAwsLightsailStaticIpAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLoadBalancerBackendServerPolicies(namespace string) v1alpha1.AwsLoadBalancerBackendServerPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsLoadBalancerBackendServerPolicies(namespace string) v1alpha1.AwsLoadBalancerBackendServerPolicyInterface {
 	return &FakeAwsLoadBalancerBackendServerPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLoadBalancerListenerPolicies(namespace string) v1alpha1.AwsLoadBalancerListenerPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsLoadBalancerListenerPolicies(namespace string) v1alpha1.AwsLoadBalancerListenerPolicyInterface {
 	return &FakeAwsLoadBalancerListenerPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsLoadBalancerPolicies(namespace string) v1alpha1.AwsLoadBalancerPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsLoadBalancerPolicies(namespace string) v1alpha1.AwsLoadBalancerPolicyInterface {
 	return &FakeAwsLoadBalancerPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsMainRouteTableAssociations(namespace string) v1alpha1.AwsMainRouteTableAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsMainRouteTableAssociations(namespace string) v1alpha1.AwsMainRouteTableAssociationInterface {
 	return &FakeAwsMainRouteTableAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsMediaStoreContainers(namespace string) v1alpha1.AwsMediaStoreContainerInterface {
+func (c *FakeChronojamV1alpha1) AwsMediaStoreContainers(namespace string) v1alpha1.AwsMediaStoreContainerInterface {
 	return &FakeAwsMediaStoreContainers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsMqBrokers(namespace string) v1alpha1.AwsMqBrokerInterface {
+func (c *FakeChronojamV1alpha1) AwsMqBrokers(namespace string) v1alpha1.AwsMqBrokerInterface {
 	return &FakeAwsMqBrokers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsMqConfigurations(namespace string) v1alpha1.AwsMqConfigurationInterface {
+func (c *FakeChronojamV1alpha1) AwsMqConfigurations(namespace string) v1alpha1.AwsMqConfigurationInterface {
 	return &FakeAwsMqConfigurations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsNatGateways(namespace string) v1alpha1.AwsNatGatewayInterface {
+func (c *FakeChronojamV1alpha1) AwsNatGateways(namespace string) v1alpha1.AwsNatGatewayInterface {
 	return &FakeAwsNatGateways{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsNetworkAcls(namespace string) v1alpha1.AwsNetworkAclInterface {
+func (c *FakeChronojamV1alpha1) AwsNetworkAcls(namespace string) v1alpha1.AwsNetworkAclInterface {
 	return &FakeAwsNetworkAcls{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsNetworkAclRules(namespace string) v1alpha1.AwsNetworkAclRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsNetworkAclRules(namespace string) v1alpha1.AwsNetworkAclRuleInterface {
 	return &FakeAwsNetworkAclRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsNetworkInterfaces(namespace string) v1alpha1.AwsNetworkInterfaceInterface {
+func (c *FakeChronojamV1alpha1) AwsNetworkInterfaces(namespace string) v1alpha1.AwsNetworkInterfaceInterface {
 	return &FakeAwsNetworkInterfaces{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsNetworkInterfaceAttachments(namespace string) v1alpha1.AwsNetworkInterfaceAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsNetworkInterfaceAttachments(namespace string) v1alpha1.AwsNetworkInterfaceAttachmentInterface {
 	return &FakeAwsNetworkInterfaceAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsNetworkInterfaceSgAttachments(namespace string) v1alpha1.AwsNetworkInterfaceSgAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsNetworkInterfaceSgAttachments(namespace string) v1alpha1.AwsNetworkInterfaceSgAttachmentInterface {
 	return &FakeAwsNetworkInterfaceSgAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksApplications(namespace string) v1alpha1.AwsOpsworksApplicationInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksApplications(namespace string) v1alpha1.AwsOpsworksApplicationInterface {
 	return &FakeAwsOpsworksApplications{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksCustomLayers(namespace string) v1alpha1.AwsOpsworksCustomLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksCustomLayers(namespace string) v1alpha1.AwsOpsworksCustomLayerInterface {
 	return &FakeAwsOpsworksCustomLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksGangliaLayers(namespace string) v1alpha1.AwsOpsworksGangliaLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksGangliaLayers(namespace string) v1alpha1.AwsOpsworksGangliaLayerInterface {
 	return &FakeAwsOpsworksGangliaLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksHaproxyLayers(namespace string) v1alpha1.AwsOpsworksHaproxyLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksHaproxyLayers(namespace string) v1alpha1.AwsOpsworksHaproxyLayerInterface {
 	return &FakeAwsOpsworksHaproxyLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksInstances(namespace string) v1alpha1.AwsOpsworksInstanceInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksInstances(namespace string) v1alpha1.AwsOpsworksInstanceInterface {
 	return &FakeAwsOpsworksInstances{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksJavaAppLayers(namespace string) v1alpha1.AwsOpsworksJavaAppLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksJavaAppLayers(namespace string) v1alpha1.AwsOpsworksJavaAppLayerInterface {
 	return &FakeAwsOpsworksJavaAppLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksMemcachedLayers(namespace string) v1alpha1.AwsOpsworksMemcachedLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksMemcachedLayers(namespace string) v1alpha1.AwsOpsworksMemcachedLayerInterface {
 	return &FakeAwsOpsworksMemcachedLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksMysqlLayers(namespace string) v1alpha1.AwsOpsworksMysqlLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksMysqlLayers(namespace string) v1alpha1.AwsOpsworksMysqlLayerInterface {
 	return &FakeAwsOpsworksMysqlLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksNodejsAppLayers(namespace string) v1alpha1.AwsOpsworksNodejsAppLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksNodejsAppLayers(namespace string) v1alpha1.AwsOpsworksNodejsAppLayerInterface {
 	return &FakeAwsOpsworksNodejsAppLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksPermissions(namespace string) v1alpha1.AwsOpsworksPermissionInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksPermissions(namespace string) v1alpha1.AwsOpsworksPermissionInterface {
 	return &FakeAwsOpsworksPermissions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksPhpAppLayers(namespace string) v1alpha1.AwsOpsworksPhpAppLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksPhpAppLayers(namespace string) v1alpha1.AwsOpsworksPhpAppLayerInterface {
 	return &FakeAwsOpsworksPhpAppLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksRailsAppLayers(namespace string) v1alpha1.AwsOpsworksRailsAppLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksRailsAppLayers(namespace string) v1alpha1.AwsOpsworksRailsAppLayerInterface {
 	return &FakeAwsOpsworksRailsAppLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksRdsDbInstances(namespace string) v1alpha1.AwsOpsworksRdsDbInstanceInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksRdsDbInstances(namespace string) v1alpha1.AwsOpsworksRdsDbInstanceInterface {
 	return &FakeAwsOpsworksRdsDbInstances{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksStacks(namespace string) v1alpha1.AwsOpsworksStackInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksStacks(namespace string) v1alpha1.AwsOpsworksStackInterface {
 	return &FakeAwsOpsworksStacks{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksStaticWebLayers(namespace string) v1alpha1.AwsOpsworksStaticWebLayerInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksStaticWebLayers(namespace string) v1alpha1.AwsOpsworksStaticWebLayerInterface {
 	return &FakeAwsOpsworksStaticWebLayers{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOpsworksUserProfiles(namespace string) v1alpha1.AwsOpsworksUserProfileInterface {
+func (c *FakeChronojamV1alpha1) AwsOpsworksUserProfiles(namespace string) v1alpha1.AwsOpsworksUserProfileInterface {
 	return &FakeAwsOpsworksUserProfiles{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOrganizationsAccounts(namespace string) v1alpha1.AwsOrganizationsAccountInterface {
+func (c *FakeChronojamV1alpha1) AwsOrganizationsAccounts(namespace string) v1alpha1.AwsOrganizationsAccountInterface {
 	return &FakeAwsOrganizationsAccounts{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOrganizationsOrganizations(namespace string) v1alpha1.AwsOrganizationsOrganizationInterface {
+func (c *FakeChronojamV1alpha1) AwsOrganizationsOrganizations(namespace string) v1alpha1.AwsOrganizationsOrganizationInterface {
 	return &FakeAwsOrganizationsOrganizations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOrganizationsPolicies(namespace string) v1alpha1.AwsOrganizationsPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsOrganizationsPolicies(namespace string) v1alpha1.AwsOrganizationsPolicyInterface {
 	return &FakeAwsOrganizationsPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsOrganizationsPolicyAttachments(namespace string) v1alpha1.AwsOrganizationsPolicyAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsOrganizationsPolicyAttachments(namespace string) v1alpha1.AwsOrganizationsPolicyAttachmentInterface {
 	return &FakeAwsOrganizationsPolicyAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsPlacementGroups(namespace string) v1alpha1.AwsPlacementGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsPlacementGroups(namespace string) v1alpha1.AwsPlacementGroupInterface {
 	return &FakeAwsPlacementGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsProxyProtocolPolicies(namespace string) v1alpha1.AwsProxyProtocolPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsProxyProtocolPolicies(namespace string) v1alpha1.AwsProxyProtocolPolicyInterface {
 	return &FakeAwsProxyProtocolPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRdsClusters(namespace string) v1alpha1.AwsRdsClusterInterface {
+func (c *FakeChronojamV1alpha1) AwsRdsClusters(namespace string) v1alpha1.AwsRdsClusterInterface {
 	return &FakeAwsRdsClusters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRdsClusterInstances(namespace string) v1alpha1.AwsRdsClusterInstanceInterface {
+func (c *FakeChronojamV1alpha1) AwsRdsClusterInstances(namespace string) v1alpha1.AwsRdsClusterInstanceInterface {
 	return &FakeAwsRdsClusterInstances{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRdsClusterParameterGroups(namespace string) v1alpha1.AwsRdsClusterParameterGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsRdsClusterParameterGroups(namespace string) v1alpha1.AwsRdsClusterParameterGroupInterface {
 	return &FakeAwsRdsClusterParameterGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRedshiftClusters(namespace string) v1alpha1.AwsRedshiftClusterInterface {
+func (c *FakeChronojamV1alpha1) AwsRedshiftClusters(namespace string) v1alpha1.AwsRedshiftClusterInterface {
 	return &FakeAwsRedshiftClusters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRedshiftParameterGroups(namespace string) v1alpha1.AwsRedshiftParameterGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsRedshiftParameterGroups(namespace string) v1alpha1.AwsRedshiftParameterGroupInterface {
 	return &FakeAwsRedshiftParameterGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRedshiftSecurityGroups(namespace string) v1alpha1.AwsRedshiftSecurityGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsRedshiftSecurityGroups(namespace string) v1alpha1.AwsRedshiftSecurityGroupInterface {
 	return &FakeAwsRedshiftSecurityGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRedshiftSubnetGroups(namespace string) v1alpha1.AwsRedshiftSubnetGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsRedshiftSubnetGroups(namespace string) v1alpha1.AwsRedshiftSubnetGroupInterface {
 	return &FakeAwsRedshiftSubnetGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRoutes(namespace string) v1alpha1.AwsRouteInterface {
+func (c *FakeChronojamV1alpha1) AwsRoutes(namespace string) v1alpha1.AwsRouteInterface {
 	return &FakeAwsRoutes{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRoute53DelegationSets(namespace string) v1alpha1.AwsRoute53DelegationSetInterface {
+func (c *FakeChronojamV1alpha1) AwsRoute53DelegationSets(namespace string) v1alpha1.AwsRoute53DelegationSetInterface {
 	return &FakeAwsRoute53DelegationSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRoute53HealthChecks(namespace string) v1alpha1.AwsRoute53HealthCheckInterface {
+func (c *FakeChronojamV1alpha1) AwsRoute53HealthChecks(namespace string) v1alpha1.AwsRoute53HealthCheckInterface {
 	return &FakeAwsRoute53HealthChecks{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRoute53QueryLogs(namespace string) v1alpha1.AwsRoute53QueryLogInterface {
+func (c *FakeChronojamV1alpha1) AwsRoute53QueryLogs(namespace string) v1alpha1.AwsRoute53QueryLogInterface {
 	return &FakeAwsRoute53QueryLogs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRoute53Records(namespace string) v1alpha1.AwsRoute53RecordInterface {
+func (c *FakeChronojamV1alpha1) AwsRoute53Records(namespace string) v1alpha1.AwsRoute53RecordInterface {
 	return &FakeAwsRoute53Records{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRoute53Zones(namespace string) v1alpha1.AwsRoute53ZoneInterface {
+func (c *FakeChronojamV1alpha1) AwsRoute53Zones(namespace string) v1alpha1.AwsRoute53ZoneInterface {
 	return &FakeAwsRoute53Zones{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRoute53ZoneAssociations(namespace string) v1alpha1.AwsRoute53ZoneAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsRoute53ZoneAssociations(namespace string) v1alpha1.AwsRoute53ZoneAssociationInterface {
 	return &FakeAwsRoute53ZoneAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRouteTables(namespace string) v1alpha1.AwsRouteTableInterface {
+func (c *FakeChronojamV1alpha1) AwsRouteTables(namespace string) v1alpha1.AwsRouteTableInterface {
 	return &FakeAwsRouteTables{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsRouteTableAssociations(namespace string) v1alpha1.AwsRouteTableAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsRouteTableAssociations(namespace string) v1alpha1.AwsRouteTableAssociationInterface {
 	return &FakeAwsRouteTableAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsS3Buckets(namespace string) v1alpha1.AwsS3BucketInterface {
+func (c *FakeChronojamV1alpha1) AwsS3Buckets(namespace string) v1alpha1.AwsS3BucketInterface {
 	return &FakeAwsS3Buckets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsS3BucketMetrics(namespace string) v1alpha1.AwsS3BucketMetricInterface {
+func (c *FakeChronojamV1alpha1) AwsS3BucketMetrics(namespace string) v1alpha1.AwsS3BucketMetricInterface {
 	return &FakeAwsS3BucketMetrics{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsS3BucketNotifications(namespace string) v1alpha1.AwsS3BucketNotificationInterface {
+func (c *FakeChronojamV1alpha1) AwsS3BucketNotifications(namespace string) v1alpha1.AwsS3BucketNotificationInterface {
 	return &FakeAwsS3BucketNotifications{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsS3BucketObjects(namespace string) v1alpha1.AwsS3BucketObjectInterface {
+func (c *FakeChronojamV1alpha1) AwsS3BucketObjects(namespace string) v1alpha1.AwsS3BucketObjectInterface {
 	return &FakeAwsS3BucketObjects{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsS3BucketPolicies(namespace string) v1alpha1.AwsS3BucketPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsS3BucketPolicies(namespace string) v1alpha1.AwsS3BucketPolicyInterface {
 	return &FakeAwsS3BucketPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSecretsmanagerSecrets(namespace string) v1alpha1.AwsSecretsmanagerSecretInterface {
+func (c *FakeChronojamV1alpha1) AwsSecretsmanagerSecrets(namespace string) v1alpha1.AwsSecretsmanagerSecretInterface {
 	return &FakeAwsSecretsmanagerSecrets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSecretsmanagerSecretVersions(namespace string) v1alpha1.AwsSecretsmanagerSecretVersionInterface {
+func (c *FakeChronojamV1alpha1) AwsSecretsmanagerSecretVersions(namespace string) v1alpha1.AwsSecretsmanagerSecretVersionInterface {
 	return &FakeAwsSecretsmanagerSecretVersions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSecurityGroups(namespace string) v1alpha1.AwsSecurityGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsSecurityGroups(namespace string) v1alpha1.AwsSecurityGroupInterface {
 	return &FakeAwsSecurityGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSecurityGroupRules(namespace string) v1alpha1.AwsSecurityGroupRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsSecurityGroupRules(namespace string) v1alpha1.AwsSecurityGroupRuleInterface {
 	return &FakeAwsSecurityGroupRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsServiceDiscoveryPrivateDnsNamespaces(namespace string) v1alpha1.AwsServiceDiscoveryPrivateDnsNamespaceInterface {
+func (c *FakeChronojamV1alpha1) AwsServiceDiscoveryPrivateDnsNamespaces(namespace string) v1alpha1.AwsServiceDiscoveryPrivateDnsNamespaceInterface {
 	return &FakeAwsServiceDiscoveryPrivateDnsNamespaces{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsServiceDiscoveryPublicDnsNamespaces(namespace string) v1alpha1.AwsServiceDiscoveryPublicDnsNamespaceInterface {
+func (c *FakeChronojamV1alpha1) AwsServiceDiscoveryPublicDnsNamespaces(namespace string) v1alpha1.AwsServiceDiscoveryPublicDnsNamespaceInterface {
 	return &FakeAwsServiceDiscoveryPublicDnsNamespaces{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsServiceDiscoveryServices(namespace string) v1alpha1.AwsServiceDiscoveryServiceInterface {
+func (c *FakeChronojamV1alpha1) AwsServiceDiscoveryServices(namespace string) v1alpha1.AwsServiceDiscoveryServiceInterface {
 	return &FakeAwsServiceDiscoveryServices{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsServicecatalogPortfolios(namespace string) v1alpha1.AwsServicecatalogPortfolioInterface {
+func (c *FakeChronojamV1alpha1) AwsServicecatalogPortfolios(namespace string) v1alpha1.AwsServicecatalogPortfolioInterface {
 	return &FakeAwsServicecatalogPortfolios{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesActiveReceiptRuleSets(namespace string) v1alpha1.AwsSesActiveReceiptRuleSetInterface {
+func (c *FakeChronojamV1alpha1) AwsSesActiveReceiptRuleSets(namespace string) v1alpha1.AwsSesActiveReceiptRuleSetInterface {
 	return &FakeAwsSesActiveReceiptRuleSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesConfigurationSets(namespace string) v1alpha1.AwsSesConfigurationSetInterface {
+func (c *FakeChronojamV1alpha1) AwsSesConfigurationSets(namespace string) v1alpha1.AwsSesConfigurationSetInterface {
 	return &FakeAwsSesConfigurationSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesDomainDkims(namespace string) v1alpha1.AwsSesDomainDkimInterface {
+func (c *FakeChronojamV1alpha1) AwsSesDomainDkims(namespace string) v1alpha1.AwsSesDomainDkimInterface {
 	return &FakeAwsSesDomainDkims{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesDomainIdentities(namespace string) v1alpha1.AwsSesDomainIdentityInterface {
+func (c *FakeChronojamV1alpha1) AwsSesDomainIdentities(namespace string) v1alpha1.AwsSesDomainIdentityInterface {
 	return &FakeAwsSesDomainIdentities{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesDomainIdentityVerifications(namespace string) v1alpha1.AwsSesDomainIdentityVerificationInterface {
+func (c *FakeChronojamV1alpha1) AwsSesDomainIdentityVerifications(namespace string) v1alpha1.AwsSesDomainIdentityVerificationInterface {
 	return &FakeAwsSesDomainIdentityVerifications{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesDomainMailFroms(namespace string) v1alpha1.AwsSesDomainMailFromInterface {
+func (c *FakeChronojamV1alpha1) AwsSesDomainMailFroms(namespace string) v1alpha1.AwsSesDomainMailFromInterface {
 	return &FakeAwsSesDomainMailFroms{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesEventDestinations(namespace string) v1alpha1.AwsSesEventDestinationInterface {
+func (c *FakeChronojamV1alpha1) AwsSesEventDestinations(namespace string) v1alpha1.AwsSesEventDestinationInterface {
 	return &FakeAwsSesEventDestinations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesIdentityNotificationTopics(namespace string) v1alpha1.AwsSesIdentityNotificationTopicInterface {
+func (c *FakeChronojamV1alpha1) AwsSesIdentityNotificationTopics(namespace string) v1alpha1.AwsSesIdentityNotificationTopicInterface {
 	return &FakeAwsSesIdentityNotificationTopics{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesReceiptFilters(namespace string) v1alpha1.AwsSesReceiptFilterInterface {
+func (c *FakeChronojamV1alpha1) AwsSesReceiptFilters(namespace string) v1alpha1.AwsSesReceiptFilterInterface {
 	return &FakeAwsSesReceiptFilters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesReceiptRules(namespace string) v1alpha1.AwsSesReceiptRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsSesReceiptRules(namespace string) v1alpha1.AwsSesReceiptRuleInterface {
 	return &FakeAwsSesReceiptRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesReceiptRuleSets(namespace string) v1alpha1.AwsSesReceiptRuleSetInterface {
+func (c *FakeChronojamV1alpha1) AwsSesReceiptRuleSets(namespace string) v1alpha1.AwsSesReceiptRuleSetInterface {
 	return &FakeAwsSesReceiptRuleSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSesTemplates(namespace string) v1alpha1.AwsSesTemplateInterface {
+func (c *FakeChronojamV1alpha1) AwsSesTemplates(namespace string) v1alpha1.AwsSesTemplateInterface {
 	return &FakeAwsSesTemplates{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSfnActivities(namespace string) v1alpha1.AwsSfnActivityInterface {
+func (c *FakeChronojamV1alpha1) AwsSfnActivities(namespace string) v1alpha1.AwsSfnActivityInterface {
 	return &FakeAwsSfnActivities{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSfnStateMachines(namespace string) v1alpha1.AwsSfnStateMachineInterface {
+func (c *FakeChronojamV1alpha1) AwsSfnStateMachines(namespace string) v1alpha1.AwsSfnStateMachineInterface {
 	return &FakeAwsSfnStateMachines{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSimpledbDomains(namespace string) v1alpha1.AwsSimpledbDomainInterface {
+func (c *FakeChronojamV1alpha1) AwsSimpledbDomains(namespace string) v1alpha1.AwsSimpledbDomainInterface {
 	return &FakeAwsSimpledbDomains{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSnapshotCreateVolumePermissions(namespace string) v1alpha1.AwsSnapshotCreateVolumePermissionInterface {
+func (c *FakeChronojamV1alpha1) AwsSnapshotCreateVolumePermissions(namespace string) v1alpha1.AwsSnapshotCreateVolumePermissionInterface {
 	return &FakeAwsSnapshotCreateVolumePermissions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSnsPlatformApplications(namespace string) v1alpha1.AwsSnsPlatformApplicationInterface {
+func (c *FakeChronojamV1alpha1) AwsSnsPlatformApplications(namespace string) v1alpha1.AwsSnsPlatformApplicationInterface {
 	return &FakeAwsSnsPlatformApplications{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSnsTopics(namespace string) v1alpha1.AwsSnsTopicInterface {
+func (c *FakeChronojamV1alpha1) AwsSnsTopics(namespace string) v1alpha1.AwsSnsTopicInterface {
 	return &FakeAwsSnsTopics{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSnsTopicPolicies(namespace string) v1alpha1.AwsSnsTopicPolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsSnsTopicPolicies(namespace string) v1alpha1.AwsSnsTopicPolicyInterface {
 	return &FakeAwsSnsTopicPolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSnsTopicSubscriptions(namespace string) v1alpha1.AwsSnsTopicSubscriptionInterface {
+func (c *FakeChronojamV1alpha1) AwsSnsTopicSubscriptions(namespace string) v1alpha1.AwsSnsTopicSubscriptionInterface {
 	return &FakeAwsSnsTopicSubscriptions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSpotDatafeedSubscriptions(namespace string) v1alpha1.AwsSpotDatafeedSubscriptionInterface {
+func (c *FakeChronojamV1alpha1) AwsSpotDatafeedSubscriptions(namespace string) v1alpha1.AwsSpotDatafeedSubscriptionInterface {
 	return &FakeAwsSpotDatafeedSubscriptions{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSpotFleetRequests(namespace string) v1alpha1.AwsSpotFleetRequestInterface {
+func (c *FakeChronojamV1alpha1) AwsSpotFleetRequests(namespace string) v1alpha1.AwsSpotFleetRequestInterface {
 	return &FakeAwsSpotFleetRequests{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSpotInstanceRequests(namespace string) v1alpha1.AwsSpotInstanceRequestInterface {
+func (c *FakeChronojamV1alpha1) AwsSpotInstanceRequests(namespace string) v1alpha1.AwsSpotInstanceRequestInterface {
 	return &FakeAwsSpotInstanceRequests{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSqsQueues(namespace string) v1alpha1.AwsSqsQueueInterface {
+func (c *FakeChronojamV1alpha1) AwsSqsQueues(namespace string) v1alpha1.AwsSqsQueueInterface {
 	return &FakeAwsSqsQueues{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSqsQueuePolicies(namespace string) v1alpha1.AwsSqsQueuePolicyInterface {
+func (c *FakeChronojamV1alpha1) AwsSqsQueuePolicies(namespace string) v1alpha1.AwsSqsQueuePolicyInterface {
 	return &FakeAwsSqsQueuePolicies{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmActivations(namespace string) v1alpha1.AwsSsmActivationInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmActivations(namespace string) v1alpha1.AwsSsmActivationInterface {
 	return &FakeAwsSsmActivations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmAssociations(namespace string) v1alpha1.AwsSsmAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmAssociations(namespace string) v1alpha1.AwsSsmAssociationInterface {
 	return &FakeAwsSsmAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmDocuments(namespace string) v1alpha1.AwsSsmDocumentInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmDocuments(namespace string) v1alpha1.AwsSsmDocumentInterface {
 	return &FakeAwsSsmDocuments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmMaintenanceWindows(namespace string) v1alpha1.AwsSsmMaintenanceWindowInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmMaintenanceWindows(namespace string) v1alpha1.AwsSsmMaintenanceWindowInterface {
 	return &FakeAwsSsmMaintenanceWindows{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmMaintenanceWindowTargets(namespace string) v1alpha1.AwsSsmMaintenanceWindowTargetInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmMaintenanceWindowTargets(namespace string) v1alpha1.AwsSsmMaintenanceWindowTargetInterface {
 	return &FakeAwsSsmMaintenanceWindowTargets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmMaintenanceWindowTasks(namespace string) v1alpha1.AwsSsmMaintenanceWindowTaskInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmMaintenanceWindowTasks(namespace string) v1alpha1.AwsSsmMaintenanceWindowTaskInterface {
 	return &FakeAwsSsmMaintenanceWindowTasks{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmParameters(namespace string) v1alpha1.AwsSsmParameterInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmParameters(namespace string) v1alpha1.AwsSsmParameterInterface {
 	return &FakeAwsSsmParameters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmPatchBaselines(namespace string) v1alpha1.AwsSsmPatchBaselineInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmPatchBaselines(namespace string) v1alpha1.AwsSsmPatchBaselineInterface {
 	return &FakeAwsSsmPatchBaselines{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmPatchGroups(namespace string) v1alpha1.AwsSsmPatchGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmPatchGroups(namespace string) v1alpha1.AwsSsmPatchGroupInterface {
 	return &FakeAwsSsmPatchGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSsmResourceDataSyncs(namespace string) v1alpha1.AwsSsmResourceDataSyncInterface {
+func (c *FakeChronojamV1alpha1) AwsSsmResourceDataSyncs(namespace string) v1alpha1.AwsSsmResourceDataSyncInterface {
 	return &FakeAwsSsmResourceDataSyncs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsSubnets(namespace string) v1alpha1.AwsSubnetInterface {
+func (c *FakeChronojamV1alpha1) AwsSubnets(namespace string) v1alpha1.AwsSubnetInterface {
 	return &FakeAwsSubnets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVolumeAttachments(namespace string) v1alpha1.AwsVolumeAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsVolumeAttachments(namespace string) v1alpha1.AwsVolumeAttachmentInterface {
 	return &FakeAwsVolumeAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcs(namespace string) v1alpha1.AwsVpcInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcs(namespace string) v1alpha1.AwsVpcInterface {
 	return &FakeAwsVpcs{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcDhcpOptionses(namespace string) v1alpha1.AwsVpcDhcpOptionsInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcDhcpOptionses(namespace string) v1alpha1.AwsVpcDhcpOptionsInterface {
 	return &FakeAwsVpcDhcpOptionses{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcDhcpOptionsAssociations(namespace string) v1alpha1.AwsVpcDhcpOptionsAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcDhcpOptionsAssociations(namespace string) v1alpha1.AwsVpcDhcpOptionsAssociationInterface {
 	return &FakeAwsVpcDhcpOptionsAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcEndpoints(namespace string) v1alpha1.AwsVpcEndpointInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcEndpoints(namespace string) v1alpha1.AwsVpcEndpointInterface {
 	return &FakeAwsVpcEndpoints{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcEndpointConnectionNotifications(namespace string) v1alpha1.AwsVpcEndpointConnectionNotificationInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcEndpointConnectionNotifications(namespace string) v1alpha1.AwsVpcEndpointConnectionNotificationInterface {
 	return &FakeAwsVpcEndpointConnectionNotifications{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcEndpointRouteTableAssociations(namespace string) v1alpha1.AwsVpcEndpointRouteTableAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcEndpointRouteTableAssociations(namespace string) v1alpha1.AwsVpcEndpointRouteTableAssociationInterface {
 	return &FakeAwsVpcEndpointRouteTableAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcEndpointServices(namespace string) v1alpha1.AwsVpcEndpointServiceInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcEndpointServices(namespace string) v1alpha1.AwsVpcEndpointServiceInterface {
 	return &FakeAwsVpcEndpointServices{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcEndpointServiceAllowedPrincipals(namespace string) v1alpha1.AwsVpcEndpointServiceAllowedPrincipalInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcEndpointServiceAllowedPrincipals(namespace string) v1alpha1.AwsVpcEndpointServiceAllowedPrincipalInterface {
 	return &FakeAwsVpcEndpointServiceAllowedPrincipals{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcEndpointSubnetAssociations(namespace string) v1alpha1.AwsVpcEndpointSubnetAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcEndpointSubnetAssociations(namespace string) v1alpha1.AwsVpcEndpointSubnetAssociationInterface {
 	return &FakeAwsVpcEndpointSubnetAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcPeeringConnections(namespace string) v1alpha1.AwsVpcPeeringConnectionInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcPeeringConnections(namespace string) v1alpha1.AwsVpcPeeringConnectionInterface {
 	return &FakeAwsVpcPeeringConnections{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcPeeringConnectionAccepters(namespace string) v1alpha1.AwsVpcPeeringConnectionAccepterInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcPeeringConnectionAccepters(namespace string) v1alpha1.AwsVpcPeeringConnectionAccepterInterface {
 	return &FakeAwsVpcPeeringConnectionAccepters{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpcPeeringConnectionOptionses(namespace string) v1alpha1.AwsVpcPeeringConnectionOptionsInterface {
+func (c *FakeChronojamV1alpha1) AwsVpcPeeringConnectionOptionses(namespace string) v1alpha1.AwsVpcPeeringConnectionOptionsInterface {
 	return &FakeAwsVpcPeeringConnectionOptionses{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpnConnections(namespace string) v1alpha1.AwsVpnConnectionInterface {
+func (c *FakeChronojamV1alpha1) AwsVpnConnections(namespace string) v1alpha1.AwsVpnConnectionInterface {
 	return &FakeAwsVpnConnections{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpnConnectionRoutes(namespace string) v1alpha1.AwsVpnConnectionRouteInterface {
+func (c *FakeChronojamV1alpha1) AwsVpnConnectionRoutes(namespace string) v1alpha1.AwsVpnConnectionRouteInterface {
 	return &FakeAwsVpnConnectionRoutes{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpnGateways(namespace string) v1alpha1.AwsVpnGatewayInterface {
+func (c *FakeChronojamV1alpha1) AwsVpnGateways(namespace string) v1alpha1.AwsVpnGatewayInterface {
 	return &FakeAwsVpnGateways{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpnGatewayAttachments(namespace string) v1alpha1.AwsVpnGatewayAttachmentInterface {
+func (c *FakeChronojamV1alpha1) AwsVpnGatewayAttachments(namespace string) v1alpha1.AwsVpnGatewayAttachmentInterface {
 	return &FakeAwsVpnGatewayAttachments{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsVpnGatewayRoutePropagations(namespace string) v1alpha1.AwsVpnGatewayRoutePropagationInterface {
+func (c *FakeChronojamV1alpha1) AwsVpnGatewayRoutePropagations(namespace string) v1alpha1.AwsVpnGatewayRoutePropagationInterface {
 	return &FakeAwsVpnGatewayRoutePropagations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafByteMatchSets(namespace string) v1alpha1.AwsWafByteMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafByteMatchSets(namespace string) v1alpha1.AwsWafByteMatchSetInterface {
 	return &FakeAwsWafByteMatchSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafGeoMatchSets(namespace string) v1alpha1.AwsWafGeoMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafGeoMatchSets(namespace string) v1alpha1.AwsWafGeoMatchSetInterface {
 	return &FakeAwsWafGeoMatchSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafIpsets(namespace string) v1alpha1.AwsWafIpsetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafIpsets(namespace string) v1alpha1.AwsWafIpsetInterface {
 	return &FakeAwsWafIpsets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafRateBasedRules(namespace string) v1alpha1.AwsWafRateBasedRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsWafRateBasedRules(namespace string) v1alpha1.AwsWafRateBasedRuleInterface {
 	return &FakeAwsWafRateBasedRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafRegexMatchSets(namespace string) v1alpha1.AwsWafRegexMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafRegexMatchSets(namespace string) v1alpha1.AwsWafRegexMatchSetInterface {
 	return &FakeAwsWafRegexMatchSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafRegexPatternSets(namespace string) v1alpha1.AwsWafRegexPatternSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafRegexPatternSets(namespace string) v1alpha1.AwsWafRegexPatternSetInterface {
 	return &FakeAwsWafRegexPatternSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafRules(namespace string) v1alpha1.AwsWafRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsWafRules(namespace string) v1alpha1.AwsWafRuleInterface {
 	return &FakeAwsWafRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafRuleGroups(namespace string) v1alpha1.AwsWafRuleGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsWafRuleGroups(namespace string) v1alpha1.AwsWafRuleGroupInterface {
 	return &FakeAwsWafRuleGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafSizeConstraintSets(namespace string) v1alpha1.AwsWafSizeConstraintSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafSizeConstraintSets(namespace string) v1alpha1.AwsWafSizeConstraintSetInterface {
 	return &FakeAwsWafSizeConstraintSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafSqlInjectionMatchSets(namespace string) v1alpha1.AwsWafSqlInjectionMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafSqlInjectionMatchSets(namespace string) v1alpha1.AwsWafSqlInjectionMatchSetInterface {
 	return &FakeAwsWafSqlInjectionMatchSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafWebAcls(namespace string) v1alpha1.AwsWafWebAclInterface {
+func (c *FakeChronojamV1alpha1) AwsWafWebAcls(namespace string) v1alpha1.AwsWafWebAclInterface {
 	return &FakeAwsWafWebAcls{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafXssMatchSets(namespace string) v1alpha1.AwsWafXssMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafXssMatchSets(namespace string) v1alpha1.AwsWafXssMatchSetInterface {
 	return &FakeAwsWafXssMatchSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalByteMatchSets(namespace string) v1alpha1.AwsWafregionalByteMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalByteMatchSets(namespace string) v1alpha1.AwsWafregionalByteMatchSetInterface {
 	return &FakeAwsWafregionalByteMatchSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalGeoMatchSets(namespace string) v1alpha1.AwsWafregionalGeoMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalGeoMatchSets(namespace string) v1alpha1.AwsWafregionalGeoMatchSetInterface {
 	return &FakeAwsWafregionalGeoMatchSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalIpsets(namespace string) v1alpha1.AwsWafregionalIpsetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalIpsets(namespace string) v1alpha1.AwsWafregionalIpsetInterface {
 	return &FakeAwsWafregionalIpsets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalRateBasedRules(namespace string) v1alpha1.AwsWafregionalRateBasedRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalRateBasedRules(namespace string) v1alpha1.AwsWafregionalRateBasedRuleInterface {
 	return &FakeAwsWafregionalRateBasedRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalRegexMatchSets(namespace string) v1alpha1.AwsWafregionalRegexMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalRegexMatchSets(namespace string) v1alpha1.AwsWafregionalRegexMatchSetInterface {
 	return &FakeAwsWafregionalRegexMatchSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalRegexPatternSets(namespace string) v1alpha1.AwsWafregionalRegexPatternSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalRegexPatternSets(namespace string) v1alpha1.AwsWafregionalRegexPatternSetInterface {
 	return &FakeAwsWafregionalRegexPatternSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalRules(namespace string) v1alpha1.AwsWafregionalRuleInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalRules(namespace string) v1alpha1.AwsWafregionalRuleInterface {
 	return &FakeAwsWafregionalRules{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalRuleGroups(namespace string) v1alpha1.AwsWafregionalRuleGroupInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalRuleGroups(namespace string) v1alpha1.AwsWafregionalRuleGroupInterface {
 	return &FakeAwsWafregionalRuleGroups{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalSizeConstraintSets(namespace string) v1alpha1.AwsWafregionalSizeConstraintSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalSizeConstraintSets(namespace string) v1alpha1.AwsWafregionalSizeConstraintSetInterface {
 	return &FakeAwsWafregionalSizeConstraintSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalSqlInjectionMatchSets(namespace string) v1alpha1.AwsWafregionalSqlInjectionMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalSqlInjectionMatchSets(namespace string) v1alpha1.AwsWafregionalSqlInjectionMatchSetInterface {
 	return &FakeAwsWafregionalSqlInjectionMatchSets{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalWebAcls(namespace string) v1alpha1.AwsWafregionalWebAclInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalWebAcls(namespace string) v1alpha1.AwsWafregionalWebAclInterface {
 	return &FakeAwsWafregionalWebAcls{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalWebAclAssociations(namespace string) v1alpha1.AwsWafregionalWebAclAssociationInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalWebAclAssociations(namespace string) v1alpha1.AwsWafregionalWebAclAssociationInterface {
 	return &FakeAwsWafregionalWebAclAssociations{c, namespace}
 }
 
-func (c *FakeAwsV1alpha1) AwsWafregionalXssMatchSets(namespace string) v1alpha1.AwsWafregionalXssMatchSetInterface {
+func (c *FakeChronojamV1alpha1) AwsWafregionalXssMatchSets(namespace string) v1alpha1.AwsWafregionalXssMatchSetInterface {
 	return &FakeAwsWafregionalXssMatchSets{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *FakeAwsV1alpha1) RESTClient() rest.Interface {
+func (c *FakeChronojamV1alpha1) RESTClient() rest.Interface {
 	var ret *rest.RESTClient
 	return ret
 }

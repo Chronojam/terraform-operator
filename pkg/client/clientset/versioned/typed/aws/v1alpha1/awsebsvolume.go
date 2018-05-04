@@ -53,7 +53,7 @@ type awsEbsVolumes struct {
 }
 
 // newAwsEbsVolumes returns a AwsEbsVolumes
-func newAwsEbsVolumes(c *AwsV1alpha1Client, namespace string) *awsEbsVolumes {
+func newAwsEbsVolumes(c *ChronojamV1alpha1Client, namespace string) *awsEbsVolumes {
 	return &awsEbsVolumes{
 		client: c.RESTClient(),
 		ns:     namespace,

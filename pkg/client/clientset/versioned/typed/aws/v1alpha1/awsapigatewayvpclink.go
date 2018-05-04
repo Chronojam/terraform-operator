@@ -53,7 +53,7 @@ type awsApiGatewayVpcLinks struct {
 }
 
 // newAwsApiGatewayVpcLinks returns a AwsApiGatewayVpcLinks
-func newAwsApiGatewayVpcLinks(c *AwsV1alpha1Client, namespace string) *awsApiGatewayVpcLinks {
+func newAwsApiGatewayVpcLinks(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayVpcLinks {
 	return &awsApiGatewayVpcLinks{
 		client: c.RESTClient(),
 		ns:     namespace,

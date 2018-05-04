@@ -30,13 +30,13 @@ import (
 
 // FakeAwsInstances implements AwsInstanceInterface
 type FakeAwsInstances struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsinstancesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsinstances"}
+var awsinstancesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsinstances"}
 
-var awsinstancesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsInstance"}
+var awsinstancesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsInstance"}
 
 // Get takes name of the awsInstance, and returns the corresponding awsInstance object, and an error if there is any.
 func (c *FakeAwsInstances) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsInstance, err error) {

@@ -53,7 +53,7 @@ type awsRdsClusterParameterGroups struct {
 }
 
 // newAwsRdsClusterParameterGroups returns a AwsRdsClusterParameterGroups
-func newAwsRdsClusterParameterGroups(c *AwsV1alpha1Client, namespace string) *awsRdsClusterParameterGroups {
+func newAwsRdsClusterParameterGroups(c *ChronojamV1alpha1Client, namespace string) *awsRdsClusterParameterGroups {
 	return &awsRdsClusterParameterGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

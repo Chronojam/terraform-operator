@@ -61,13 +61,13 @@ func NewFilteredAwsApiGatewayDomainNameInformer(client versioned.Interface, name
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsApiGatewayDomainNames(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsApiGatewayDomainNames(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsApiGatewayDomainNames(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsApiGatewayDomainNames(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsApiGatewayDomainName{},

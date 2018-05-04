@@ -53,7 +53,7 @@ type awsSubnets struct {
 }
 
 // newAwsSubnets returns a AwsSubnets
-func newAwsSubnets(c *AwsV1alpha1Client, namespace string) *awsSubnets {
+func newAwsSubnets(c *ChronojamV1alpha1Client, namespace string) *awsSubnets {
 	return &awsSubnets{
 		client: c.RESTClient(),
 		ns:     namespace,

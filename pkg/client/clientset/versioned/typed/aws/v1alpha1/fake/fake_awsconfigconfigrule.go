@@ -30,13 +30,13 @@ import (
 
 // FakeAwsConfigConfigRules implements AwsConfigConfigRuleInterface
 type FakeAwsConfigConfigRules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsconfigconfigrulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsconfigconfigrules"}
+var awsconfigconfigrulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsconfigconfigrules"}
 
-var awsconfigconfigrulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsConfigConfigRule"}
+var awsconfigconfigrulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsConfigConfigRule"}
 
 // Get takes name of the awsConfigConfigRule, and returns the corresponding awsConfigConfigRule object, and an error if there is any.
 func (c *FakeAwsConfigConfigRules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsConfigConfigRule, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSesDomainIdentityVerifications implements AwsSesDomainIdentityVerificationInterface
 type FakeAwsSesDomainIdentityVerifications struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssesdomainidentityverificationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssesdomainidentityverifications"}
+var awssesdomainidentityverificationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssesdomainidentityverifications"}
 
-var awssesdomainidentityverificationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSesDomainIdentityVerification"}
+var awssesdomainidentityverificationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSesDomainIdentityVerification"}
 
 // Get takes name of the awsSesDomainIdentityVerification, and returns the corresponding awsSesDomainIdentityVerification object, and an error if there is any.
 func (c *FakeAwsSesDomainIdentityVerifications) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSesDomainIdentityVerification, err error) {

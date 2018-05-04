@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEbsVolumes implements AwsEbsVolumeInterface
 type FakeAwsEbsVolumes struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsebsvolumesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsebsvolumes"}
+var awsebsvolumesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsebsvolumes"}
 
-var awsebsvolumesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEbsVolume"}
+var awsebsvolumesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEbsVolume"}
 
 // Get takes name of the awsEbsVolume, and returns the corresponding awsEbsVolume object, and an error if there is any.
 func (c *FakeAwsEbsVolumes) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEbsVolume, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafRateBasedRules implements AwsWafRateBasedRuleInterface
 type FakeAwsWafRateBasedRules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafratebasedrulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafratebasedrules"}
+var awswafratebasedrulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafratebasedrules"}
 
-var awswafratebasedrulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafRateBasedRule"}
+var awswafratebasedrulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafRateBasedRule"}
 
 // Get takes name of the awsWafRateBasedRule, and returns the corresponding awsWafRateBasedRule object, and an error if there is any.
 func (c *FakeAwsWafRateBasedRules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafRateBasedRule, err error) {

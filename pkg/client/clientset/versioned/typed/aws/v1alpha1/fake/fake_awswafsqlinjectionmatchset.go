@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafSqlInjectionMatchSets implements AwsWafSqlInjectionMatchSetInterface
 type FakeAwsWafSqlInjectionMatchSets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafsqlinjectionmatchsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafsqlinjectionmatchsets"}
+var awswafsqlinjectionmatchsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafsqlinjectionmatchsets"}
 
-var awswafsqlinjectionmatchsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafSqlInjectionMatchSet"}
+var awswafsqlinjectionmatchsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafSqlInjectionMatchSet"}
 
 // Get takes name of the awsWafSqlInjectionMatchSet, and returns the corresponding awsWafSqlInjectionMatchSet object, and an error if there is any.
 func (c *FakeAwsWafSqlInjectionMatchSets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafSqlInjectionMatchSet, err error) {

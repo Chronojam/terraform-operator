@@ -53,7 +53,7 @@ type awsEbsSnapshots struct {
 }
 
 // newAwsEbsSnapshots returns a AwsEbsSnapshots
-func newAwsEbsSnapshots(c *AwsV1alpha1Client, namespace string) *awsEbsSnapshots {
+func newAwsEbsSnapshots(c *ChronojamV1alpha1Client, namespace string) *awsEbsSnapshots {
 	return &awsEbsSnapshots{
 		client: c.RESTClient(),
 		ns:     namespace,

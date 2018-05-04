@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIotPolicies implements AwsIotPolicyInterface
 type FakeAwsIotPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiotpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiotpolicies"}
+var awsiotpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiotpolicies"}
 
-var awsiotpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIotPolicy"}
+var awsiotpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIotPolicy"}
 
 // Get takes name of the awsIotPolicy, and returns the corresponding awsIotPolicy object, and an error if there is any.
 func (c *FakeAwsIotPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIotPolicy, err error) {

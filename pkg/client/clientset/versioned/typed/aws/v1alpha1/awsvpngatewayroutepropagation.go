@@ -53,7 +53,7 @@ type awsVpnGatewayRoutePropagations struct {
 }
 
 // newAwsVpnGatewayRoutePropagations returns a AwsVpnGatewayRoutePropagations
-func newAwsVpnGatewayRoutePropagations(c *AwsV1alpha1Client, namespace string) *awsVpnGatewayRoutePropagations {
+func newAwsVpnGatewayRoutePropagations(c *ChronojamV1alpha1Client, namespace string) *awsVpnGatewayRoutePropagations {
 	return &awsVpnGatewayRoutePropagations{
 		client: c.RESTClient(),
 		ns:     namespace,

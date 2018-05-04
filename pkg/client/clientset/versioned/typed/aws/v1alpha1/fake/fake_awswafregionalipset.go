@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafregionalIpsets implements AwsWafregionalIpsetInterface
 type FakeAwsWafregionalIpsets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafregionalipsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafregionalipsets"}
+var awswafregionalipsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafregionalipsets"}
 
-var awswafregionalipsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafregionalIpset"}
+var awswafregionalipsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafregionalIpset"}
 
 // Get takes name of the awsWafregionalIpset, and returns the corresponding awsWafregionalIpset object, and an error if there is any.
 func (c *FakeAwsWafregionalIpsets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafregionalIpset, err error) {

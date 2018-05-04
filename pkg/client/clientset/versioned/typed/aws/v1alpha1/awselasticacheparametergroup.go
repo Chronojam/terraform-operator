@@ -53,7 +53,7 @@ type awsElasticacheParameterGroups struct {
 }
 
 // newAwsElasticacheParameterGroups returns a AwsElasticacheParameterGroups
-func newAwsElasticacheParameterGroups(c *AwsV1alpha1Client, namespace string) *awsElasticacheParameterGroups {
+func newAwsElasticacheParameterGroups(c *ChronojamV1alpha1Client, namespace string) *awsElasticacheParameterGroups {
 	return &awsElasticacheParameterGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

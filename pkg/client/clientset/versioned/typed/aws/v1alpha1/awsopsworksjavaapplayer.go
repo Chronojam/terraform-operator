@@ -53,7 +53,7 @@ type awsOpsworksJavaAppLayers struct {
 }
 
 // newAwsOpsworksJavaAppLayers returns a AwsOpsworksJavaAppLayers
-func newAwsOpsworksJavaAppLayers(c *AwsV1alpha1Client, namespace string) *awsOpsworksJavaAppLayers {
+func newAwsOpsworksJavaAppLayers(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksJavaAppLayers {
 	return &awsOpsworksJavaAppLayers{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsKeyPairs implements AwsKeyPairInterface
 type FakeAwsKeyPairs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awskeypairsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awskeypairs"}
+var awskeypairsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awskeypairs"}
 
-var awskeypairsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsKeyPair"}
+var awskeypairsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsKeyPair"}
 
 // Get takes name of the awsKeyPair, and returns the corresponding awsKeyPair object, and an error if there is any.
 func (c *FakeAwsKeyPairs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsKeyPair, err error) {

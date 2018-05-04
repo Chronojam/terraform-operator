@@ -53,7 +53,7 @@ type awsAutoscalingPolicies struct {
 }
 
 // newAwsAutoscalingPolicies returns a AwsAutoscalingPolicies
-func newAwsAutoscalingPolicies(c *AwsV1alpha1Client, namespace string) *awsAutoscalingPolicies {
+func newAwsAutoscalingPolicies(c *ChronojamV1alpha1Client, namespace string) *awsAutoscalingPolicies {
 	return &awsAutoscalingPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

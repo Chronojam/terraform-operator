@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEmrClusters implements AwsEmrClusterInterface
 type FakeAwsEmrClusters struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsemrclustersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsemrclusters"}
+var awsemrclustersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsemrclusters"}
 
-var awsemrclustersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEmrCluster"}
+var awsemrclustersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEmrCluster"}
 
 // Get takes name of the awsEmrCluster, and returns the corresponding awsEmrCluster object, and an error if there is any.
 func (c *FakeAwsEmrClusters) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEmrCluster, err error) {

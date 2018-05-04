@@ -53,7 +53,7 @@ type awsIamPolicyAttachments struct {
 }
 
 // newAwsIamPolicyAttachments returns a AwsIamPolicyAttachments
-func newAwsIamPolicyAttachments(c *AwsV1alpha1Client, namespace string) *awsIamPolicyAttachments {
+func newAwsIamPolicyAttachments(c *ChronojamV1alpha1Client, namespace string) *awsIamPolicyAttachments {
 	return &awsIamPolicyAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

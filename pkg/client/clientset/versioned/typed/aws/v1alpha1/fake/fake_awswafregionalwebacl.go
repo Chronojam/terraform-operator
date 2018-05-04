@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafregionalWebAcls implements AwsWafregionalWebAclInterface
 type FakeAwsWafregionalWebAcls struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafregionalwebaclsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafregionalwebacls"}
+var awswafregionalwebaclsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafregionalwebacls"}
 
-var awswafregionalwebaclsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafregionalWebAcl"}
+var awswafregionalwebaclsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafregionalWebAcl"}
 
 // Get takes name of the awsWafregionalWebAcl, and returns the corresponding awsWafregionalWebAcl object, and an error if there is any.
 func (c *FakeAwsWafregionalWebAcls) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafregionalWebAcl, err error) {

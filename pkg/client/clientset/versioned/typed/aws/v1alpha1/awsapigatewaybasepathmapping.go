@@ -53,7 +53,7 @@ type awsApiGatewayBasePathMappings struct {
 }
 
 // newAwsApiGatewayBasePathMappings returns a AwsApiGatewayBasePathMappings
-func newAwsApiGatewayBasePathMappings(c *AwsV1alpha1Client, namespace string) *awsApiGatewayBasePathMappings {
+func newAwsApiGatewayBasePathMappings(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayBasePathMappings {
 	return &awsApiGatewayBasePathMappings{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsDynamodbTableItems struct {
 }
 
 // newAwsDynamodbTableItems returns a AwsDynamodbTableItems
-func newAwsDynamodbTableItems(c *AwsV1alpha1Client, namespace string) *awsDynamodbTableItems {
+func newAwsDynamodbTableItems(c *ChronojamV1alpha1Client, namespace string) *awsDynamodbTableItems {
 	return &awsDynamodbTableItems{
 		client: c.RESTClient(),
 		ns:     namespace,

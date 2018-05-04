@@ -30,13 +30,13 @@ import (
 
 // FakeAwsElasticacheSecurityGroups implements AwsElasticacheSecurityGroupInterface
 type FakeAwsElasticacheSecurityGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awselasticachesecuritygroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awselasticachesecuritygroups"}
+var awselasticachesecuritygroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awselasticachesecuritygroups"}
 
-var awselasticachesecuritygroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsElasticacheSecurityGroup"}
+var awselasticachesecuritygroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsElasticacheSecurityGroup"}
 
 // Get takes name of the awsElasticacheSecurityGroup, and returns the corresponding awsElasticacheSecurityGroup object, and an error if there is any.
 func (c *FakeAwsElasticacheSecurityGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsElasticacheSecurityGroup, err error) {

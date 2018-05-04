@@ -53,7 +53,7 @@ type awsSsmDocuments struct {
 }
 
 // newAwsSsmDocuments returns a AwsSsmDocuments
-func newAwsSsmDocuments(c *AwsV1alpha1Client, namespace string) *awsSsmDocuments {
+func newAwsSsmDocuments(c *ChronojamV1alpha1Client, namespace string) *awsSsmDocuments {
 	return &awsSsmDocuments{
 		client: c.RESTClient(),
 		ns:     namespace,

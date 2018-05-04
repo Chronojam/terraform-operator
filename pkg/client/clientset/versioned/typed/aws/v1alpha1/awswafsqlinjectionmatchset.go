@@ -53,7 +53,7 @@ type awsWafSqlInjectionMatchSets struct {
 }
 
 // newAwsWafSqlInjectionMatchSets returns a AwsWafSqlInjectionMatchSets
-func newAwsWafSqlInjectionMatchSets(c *AwsV1alpha1Client, namespace string) *awsWafSqlInjectionMatchSets {
+func newAwsWafSqlInjectionMatchSets(c *ChronojamV1alpha1Client, namespace string) *awsWafSqlInjectionMatchSets {
 	return &awsWafSqlInjectionMatchSets{
 		client: c.RESTClient(),
 		ns:     namespace,

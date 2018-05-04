@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCognitoUserGroups implements AwsCognitoUserGroupInterface
 type FakeAwsCognitoUserGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscognitousergroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscognitousergroups"}
+var awscognitousergroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscognitousergroups"}
 
-var awscognitousergroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCognitoUserGroup"}
+var awscognitousergroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCognitoUserGroup"}
 
 // Get takes name of the awsCognitoUserGroup, and returns the corresponding awsCognitoUserGroup object, and an error if there is any.
 func (c *FakeAwsCognitoUserGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCognitoUserGroup, err error) {

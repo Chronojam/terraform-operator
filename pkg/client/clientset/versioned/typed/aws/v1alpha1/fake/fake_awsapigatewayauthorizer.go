@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayAuthorizers implements AwsApiGatewayAuthorizerInterface
 type FakeAwsApiGatewayAuthorizers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewayauthorizersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewayauthorizers"}
+var awsapigatewayauthorizersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewayauthorizers"}
 
-var awsapigatewayauthorizersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayAuthorizer"}
+var awsapigatewayauthorizersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayAuthorizer"}
 
 // Get takes name of the awsApiGatewayAuthorizer, and returns the corresponding awsApiGatewayAuthorizer object, and an error if there is any.
 func (c *FakeAwsApiGatewayAuthorizers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayAuthorizer, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsMqConfigurations implements AwsMqConfigurationInterface
 type FakeAwsMqConfigurations struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsmqconfigurationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsmqconfigurations"}
+var awsmqconfigurationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsmqconfigurations"}
 
-var awsmqconfigurationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsMqConfiguration"}
+var awsmqconfigurationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsMqConfiguration"}
 
 // Get takes name of the awsMqConfiguration, and returns the corresponding awsMqConfiguration object, and an error if there is any.
 func (c *FakeAwsMqConfigurations) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsMqConfiguration, err error) {

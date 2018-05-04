@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSnapshotCreateVolumePermissions implements AwsSnapshotCreateVolumePermissionInterface
 type FakeAwsSnapshotCreateVolumePermissions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssnapshotcreatevolumepermissionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssnapshotcreatevolumepermissions"}
+var awssnapshotcreatevolumepermissionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssnapshotcreatevolumepermissions"}
 
-var awssnapshotcreatevolumepermissionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSnapshotCreateVolumePermission"}
+var awssnapshotcreatevolumepermissionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSnapshotCreateVolumePermission"}
 
 // Get takes name of the awsSnapshotCreateVolumePermission, and returns the corresponding awsSnapshotCreateVolumePermission object, and an error if there is any.
 func (c *FakeAwsSnapshotCreateVolumePermissions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSnapshotCreateVolumePermission, err error) {

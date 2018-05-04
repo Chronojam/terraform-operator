@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayDocumentationParts implements AwsApiGatewayDocumentationPartInterface
 type FakeAwsApiGatewayDocumentationParts struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewaydocumentationpartsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewaydocumentationparts"}
+var awsapigatewaydocumentationpartsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewaydocumentationparts"}
 
-var awsapigatewaydocumentationpartsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayDocumentationPart"}
+var awsapigatewaydocumentationpartsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayDocumentationPart"}
 
 // Get takes name of the awsApiGatewayDocumentationPart, and returns the corresponding awsApiGatewayDocumentationPart object, and an error if there is any.
 func (c *FakeAwsApiGatewayDocumentationParts) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayDocumentationPart, err error) {

@@ -53,7 +53,7 @@ type awsCloudwatchLogResourcePolicies struct {
 }
 
 // newAwsCloudwatchLogResourcePolicies returns a AwsCloudwatchLogResourcePolicies
-func newAwsCloudwatchLogResourcePolicies(c *AwsV1alpha1Client, namespace string) *awsCloudwatchLogResourcePolicies {
+func newAwsCloudwatchLogResourcePolicies(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchLogResourcePolicies {
 	return &awsCloudwatchLogResourcePolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

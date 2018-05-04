@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAmiFromInstances implements AwsAmiFromInstanceInterface
 type FakeAwsAmiFromInstances struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsamifrominstancesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsamifrominstances"}
+var awsamifrominstancesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsamifrominstances"}
 
-var awsamifrominstancesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAmiFromInstance"}
+var awsamifrominstancesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAmiFromInstance"}
 
 // Get takes name of the awsAmiFromInstance, and returns the corresponding awsAmiFromInstance object, and an error if there is any.
 func (c *FakeAwsAmiFromInstances) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAmiFromInstance, err error) {

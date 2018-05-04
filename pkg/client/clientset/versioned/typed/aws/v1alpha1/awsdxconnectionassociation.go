@@ -53,7 +53,7 @@ type awsDxConnectionAssociations struct {
 }
 
 // newAwsDxConnectionAssociations returns a AwsDxConnectionAssociations
-func newAwsDxConnectionAssociations(c *AwsV1alpha1Client, namespace string) *awsDxConnectionAssociations {
+func newAwsDxConnectionAssociations(c *ChronojamV1alpha1Client, namespace string) *awsDxConnectionAssociations {
 	return &awsDxConnectionAssociations{
 		client: c.RESTClient(),
 		ns:     namespace,

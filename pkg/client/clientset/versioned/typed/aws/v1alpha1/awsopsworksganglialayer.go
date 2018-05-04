@@ -53,7 +53,7 @@ type awsOpsworksGangliaLayers struct {
 }
 
 // newAwsOpsworksGangliaLayers returns a AwsOpsworksGangliaLayers
-func newAwsOpsworksGangliaLayers(c *AwsV1alpha1Client, namespace string) *awsOpsworksGangliaLayers {
+func newAwsOpsworksGangliaLayers(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksGangliaLayers {
 	return &awsOpsworksGangliaLayers{
 		client: c.RESTClient(),
 		ns:     namespace,

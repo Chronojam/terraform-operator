@@ -53,7 +53,7 @@ type awsLbSslNegotiationPolicies struct {
 }
 
 // newAwsLbSslNegotiationPolicies returns a AwsLbSslNegotiationPolicies
-func newAwsLbSslNegotiationPolicies(c *AwsV1alpha1Client, namespace string) *awsLbSslNegotiationPolicies {
+func newAwsLbSslNegotiationPolicies(c *ChronojamV1alpha1Client, namespace string) *awsLbSslNegotiationPolicies {
 	return &awsLbSslNegotiationPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

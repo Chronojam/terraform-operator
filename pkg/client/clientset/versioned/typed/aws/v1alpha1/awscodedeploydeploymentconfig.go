@@ -53,7 +53,7 @@ type awsCodedeployDeploymentConfigs struct {
 }
 
 // newAwsCodedeployDeploymentConfigs returns a AwsCodedeployDeploymentConfigs
-func newAwsCodedeployDeploymentConfigs(c *AwsV1alpha1Client, namespace string) *awsCodedeployDeploymentConfigs {
+func newAwsCodedeployDeploymentConfigs(c *ChronojamV1alpha1Client, namespace string) *awsCodedeployDeploymentConfigs {
 	return &awsCodedeployDeploymentConfigs{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGuarddutyIpsets implements AwsGuarddutyIpsetInterface
 type FakeAwsGuarddutyIpsets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsguarddutyipsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsguarddutyipsets"}
+var awsguarddutyipsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsguarddutyipsets"}
 
-var awsguarddutyipsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGuarddutyIpset"}
+var awsguarddutyipsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGuarddutyIpset"}
 
 // Get takes name of the awsGuarddutyIpset, and returns the corresponding awsGuarddutyIpset object, and an error if there is any.
 func (c *FakeAwsGuarddutyIpsets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGuarddutyIpset, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsVpcEndpointSubnetAssociations implements AwsVpcEndpointSubnetAssociationInterface
 type FakeAwsVpcEndpointSubnetAssociations struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsvpcendpointsubnetassociationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsvpcendpointsubnetassociations"}
+var awsvpcendpointsubnetassociationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsvpcendpointsubnetassociations"}
 
-var awsvpcendpointsubnetassociationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsVpcEndpointSubnetAssociation"}
+var awsvpcendpointsubnetassociationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsVpcEndpointSubnetAssociation"}
 
 // Get takes name of the awsVpcEndpointSubnetAssociation, and returns the corresponding awsVpcEndpointSubnetAssociation object, and an error if there is any.
 func (c *FakeAwsVpcEndpointSubnetAssociations) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsVpcEndpointSubnetAssociation, err error) {

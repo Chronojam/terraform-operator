@@ -30,13 +30,13 @@ import (
 
 // FakeAwsNatGateways implements AwsNatGatewayInterface
 type FakeAwsNatGateways struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsnatgatewaysResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsnatgateways"}
+var awsnatgatewaysResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsnatgateways"}
 
-var awsnatgatewaysKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsNatGateway"}
+var awsnatgatewaysKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsNatGateway"}
 
 // Get takes name of the awsNatGateway, and returns the corresponding awsNatGateway object, and an error if there is any.
 func (c *FakeAwsNatGateways) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsNatGateway, err error) {

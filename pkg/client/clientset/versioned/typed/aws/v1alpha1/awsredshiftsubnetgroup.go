@@ -53,7 +53,7 @@ type awsRedshiftSubnetGroups struct {
 }
 
 // newAwsRedshiftSubnetGroups returns a AwsRedshiftSubnetGroups
-func newAwsRedshiftSubnetGroups(c *AwsV1alpha1Client, namespace string) *awsRedshiftSubnetGroups {
+func newAwsRedshiftSubnetGroups(c *ChronojamV1alpha1Client, namespace string) *awsRedshiftSubnetGroups {
 	return &awsRedshiftSubnetGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

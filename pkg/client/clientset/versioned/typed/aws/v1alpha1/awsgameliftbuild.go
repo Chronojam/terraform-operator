@@ -53,7 +53,7 @@ type awsGameliftBuilds struct {
 }
 
 // newAwsGameliftBuilds returns a AwsGameliftBuilds
-func newAwsGameliftBuilds(c *AwsV1alpha1Client, namespace string) *awsGameliftBuilds {
+func newAwsGameliftBuilds(c *ChronojamV1alpha1Client, namespace string) *awsGameliftBuilds {
 	return &awsGameliftBuilds{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLbListenerCertificates implements AwsLbListenerCertificateInterface
 type FakeAwsLbListenerCertificates struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslblistenercertificatesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslblistenercertificates"}
+var awslblistenercertificatesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslblistenercertificates"}
 
-var awslblistenercertificatesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLbListenerCertificate"}
+var awslblistenercertificatesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLbListenerCertificate"}
 
 // Get takes name of the awsLbListenerCertificate, and returns the corresponding awsLbListenerCertificate object, and an error if there is any.
 func (c *FakeAwsLbListenerCertificates) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLbListenerCertificate, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsElbs implements AwsElbInterface
 type FakeAwsElbs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awselbsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awselbs"}
+var awselbsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awselbs"}
 
-var awselbsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsElb"}
+var awselbsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsElb"}
 
 // Get takes name of the awsElb, and returns the corresponding awsElb object, and an error if there is any.
 func (c *FakeAwsElbs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsElb, err error) {

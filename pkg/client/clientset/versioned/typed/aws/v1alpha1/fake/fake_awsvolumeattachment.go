@@ -30,13 +30,13 @@ import (
 
 // FakeAwsVolumeAttachments implements AwsVolumeAttachmentInterface
 type FakeAwsVolumeAttachments struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsvolumeattachmentsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsvolumeattachments"}
+var awsvolumeattachmentsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsvolumeattachments"}
 
-var awsvolumeattachmentsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsVolumeAttachment"}
+var awsvolumeattachmentsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsVolumeAttachment"}
 
 // Get takes name of the awsVolumeAttachment, and returns the corresponding awsVolumeAttachment object, and an error if there is any.
 func (c *FakeAwsVolumeAttachments) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsVolumeAttachment, err error) {

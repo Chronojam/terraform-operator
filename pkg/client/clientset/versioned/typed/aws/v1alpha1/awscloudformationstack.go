@@ -53,7 +53,7 @@ type awsCloudformationStacks struct {
 }
 
 // newAwsCloudformationStacks returns a AwsCloudformationStacks
-func newAwsCloudformationStacks(c *AwsV1alpha1Client, namespace string) *awsCloudformationStacks {
+func newAwsCloudformationStacks(c *ChronojamV1alpha1Client, namespace string) *awsCloudformationStacks {
 	return &awsCloudformationStacks{
 		client: c.RESTClient(),
 		ns:     namespace,

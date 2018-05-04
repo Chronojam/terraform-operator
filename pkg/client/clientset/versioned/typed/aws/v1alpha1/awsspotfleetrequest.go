@@ -53,7 +53,7 @@ type awsSpotFleetRequests struct {
 }
 
 // newAwsSpotFleetRequests returns a AwsSpotFleetRequests
-func newAwsSpotFleetRequests(c *AwsV1alpha1Client, namespace string) *awsSpotFleetRequests {
+func newAwsSpotFleetRequests(c *ChronojamV1alpha1Client, namespace string) *awsSpotFleetRequests {
 	return &awsSpotFleetRequests{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsServiceDiscoveryPublicDnsNamespaces implements AwsServiceDiscoveryPublicDnsNamespaceInterface
 type FakeAwsServiceDiscoveryPublicDnsNamespaces struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsservicediscoverypublicdnsnamespacesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsservicediscoverypublicdnsnamespaces"}
+var awsservicediscoverypublicdnsnamespacesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsservicediscoverypublicdnsnamespaces"}
 
-var awsservicediscoverypublicdnsnamespacesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsServiceDiscoveryPublicDnsNamespace"}
+var awsservicediscoverypublicdnsnamespacesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsServiceDiscoveryPublicDnsNamespace"}
 
 // Get takes name of the awsServiceDiscoveryPublicDnsNamespace, and returns the corresponding awsServiceDiscoveryPublicDnsNamespace object, and an error if there is any.
 func (c *FakeAwsServiceDiscoveryPublicDnsNamespaces) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsServiceDiscoveryPublicDnsNamespace, err error) {

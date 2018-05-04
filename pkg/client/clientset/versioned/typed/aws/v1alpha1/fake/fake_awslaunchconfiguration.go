@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLaunchConfigurations implements AwsLaunchConfigurationInterface
 type FakeAwsLaunchConfigurations struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslaunchconfigurationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslaunchconfigurations"}
+var awslaunchconfigurationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslaunchconfigurations"}
 
-var awslaunchconfigurationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLaunchConfiguration"}
+var awslaunchconfigurationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLaunchConfiguration"}
 
 // Get takes name of the awsLaunchConfiguration, and returns the corresponding awsLaunchConfiguration object, and an error if there is any.
 func (c *FakeAwsLaunchConfigurations) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLaunchConfiguration, err error) {

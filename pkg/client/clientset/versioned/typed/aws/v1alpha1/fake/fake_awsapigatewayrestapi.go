@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayRestApis implements AwsApiGatewayRestApiInterface
 type FakeAwsApiGatewayRestApis struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewayrestapisResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewayrestapis"}
+var awsapigatewayrestapisResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewayrestapis"}
 
-var awsapigatewayrestapisKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayRestApi"}
+var awsapigatewayrestapisKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayRestApi"}
 
 // Get takes name of the awsApiGatewayRestApi, and returns the corresponding awsApiGatewayRestApi object, and an error if there is any.
 func (c *FakeAwsApiGatewayRestApis) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayRestApi, err error) {

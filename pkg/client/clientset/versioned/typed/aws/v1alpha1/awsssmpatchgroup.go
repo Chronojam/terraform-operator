@@ -53,7 +53,7 @@ type awsSsmPatchGroups struct {
 }
 
 // newAwsSsmPatchGroups returns a AwsSsmPatchGroups
-func newAwsSsmPatchGroups(c *AwsV1alpha1Client, namespace string) *awsSsmPatchGroups {
+func newAwsSsmPatchGroups(c *ChronojamV1alpha1Client, namespace string) *awsSsmPatchGroups {
 	return &awsSsmPatchGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

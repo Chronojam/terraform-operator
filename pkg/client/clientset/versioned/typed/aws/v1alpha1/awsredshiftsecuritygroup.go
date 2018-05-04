@@ -53,7 +53,7 @@ type awsRedshiftSecurityGroups struct {
 }
 
 // newAwsRedshiftSecurityGroups returns a AwsRedshiftSecurityGroups
-func newAwsRedshiftSecurityGroups(c *AwsV1alpha1Client, namespace string) *awsRedshiftSecurityGroups {
+func newAwsRedshiftSecurityGroups(c *ChronojamV1alpha1Client, namespace string) *awsRedshiftSecurityGroups {
 	return &awsRedshiftSecurityGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

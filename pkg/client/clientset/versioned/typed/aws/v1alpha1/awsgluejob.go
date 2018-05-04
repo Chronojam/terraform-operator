@@ -53,7 +53,7 @@ type awsGlueJobs struct {
 }
 
 // newAwsGlueJobs returns a AwsGlueJobs
-func newAwsGlueJobs(c *AwsV1alpha1Client, namespace string) *awsGlueJobs {
+func newAwsGlueJobs(c *ChronojamV1alpha1Client, namespace string) *awsGlueJobs {
 	return &awsGlueJobs{
 		client: c.RESTClient(),
 		ns:     namespace,

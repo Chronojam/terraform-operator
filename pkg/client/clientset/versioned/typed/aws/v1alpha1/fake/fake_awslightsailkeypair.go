@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLightsailKeyPairs implements AwsLightsailKeyPairInterface
 type FakeAwsLightsailKeyPairs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslightsailkeypairsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslightsailkeypairs"}
+var awslightsailkeypairsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslightsailkeypairs"}
 
-var awslightsailkeypairsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLightsailKeyPair"}
+var awslightsailkeypairsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLightsailKeyPair"}
 
 // Get takes name of the awsLightsailKeyPair, and returns the corresponding awsLightsailKeyPair object, and an error if there is any.
 func (c *FakeAwsLightsailKeyPairs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLightsailKeyPair, err error) {

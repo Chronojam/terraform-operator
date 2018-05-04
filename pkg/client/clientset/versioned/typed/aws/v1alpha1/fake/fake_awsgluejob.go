@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGlueJobs implements AwsGlueJobInterface
 type FakeAwsGlueJobs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsgluejobsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsgluejobs"}
+var awsgluejobsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsgluejobs"}
 
-var awsgluejobsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGlueJob"}
+var awsgluejobsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGlueJob"}
 
 // Get takes name of the awsGlueJob, and returns the corresponding awsGlueJob object, and an error if there is any.
 func (c *FakeAwsGlueJobs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGlueJob, err error) {

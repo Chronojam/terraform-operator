@@ -30,13 +30,13 @@ import (
 
 // FakeAwsElasticacheSubnetGroups implements AwsElasticacheSubnetGroupInterface
 type FakeAwsElasticacheSubnetGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awselasticachesubnetgroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awselasticachesubnetgroups"}
+var awselasticachesubnetgroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awselasticachesubnetgroups"}
 
-var awselasticachesubnetgroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsElasticacheSubnetGroup"}
+var awselasticachesubnetgroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsElasticacheSubnetGroup"}
 
 // Get takes name of the awsElasticacheSubnetGroup, and returns the corresponding awsElasticacheSubnetGroup object, and an error if there is any.
 func (c *FakeAwsElasticacheSubnetGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsElasticacheSubnetGroup, err error) {

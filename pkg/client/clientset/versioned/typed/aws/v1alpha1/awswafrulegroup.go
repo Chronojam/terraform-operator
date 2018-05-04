@@ -53,7 +53,7 @@ type awsWafRuleGroups struct {
 }
 
 // newAwsWafRuleGroups returns a AwsWafRuleGroups
-func newAwsWafRuleGroups(c *AwsV1alpha1Client, namespace string) *awsWafRuleGroups {
+func newAwsWafRuleGroups(c *ChronojamV1alpha1Client, namespace string) *awsWafRuleGroups {
 	return &awsWafRuleGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

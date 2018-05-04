@@ -30,13 +30,13 @@ import (
 
 // FakeAwsElasticsearchDomainPolicies implements AwsElasticsearchDomainPolicyInterface
 type FakeAwsElasticsearchDomainPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awselasticsearchdomainpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awselasticsearchdomainpolicies"}
+var awselasticsearchdomainpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awselasticsearchdomainpolicies"}
 
-var awselasticsearchdomainpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsElasticsearchDomainPolicy"}
+var awselasticsearchdomainpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsElasticsearchDomainPolicy"}
 
 // Get takes name of the awsElasticsearchDomainPolicy, and returns the corresponding awsElasticsearchDomainPolicy object, and an error if there is any.
 func (c *FakeAwsElasticsearchDomainPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsElasticsearchDomainPolicy, err error) {

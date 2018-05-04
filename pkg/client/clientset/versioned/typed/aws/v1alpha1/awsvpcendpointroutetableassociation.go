@@ -53,7 +53,7 @@ type awsVpcEndpointRouteTableAssociations struct {
 }
 
 // newAwsVpcEndpointRouteTableAssociations returns a AwsVpcEndpointRouteTableAssociations
-func newAwsVpcEndpointRouteTableAssociations(c *AwsV1alpha1Client, namespace string) *awsVpcEndpointRouteTableAssociations {
+func newAwsVpcEndpointRouteTableAssociations(c *ChronojamV1alpha1Client, namespace string) *awsVpcEndpointRouteTableAssociations {
 	return &awsVpcEndpointRouteTableAssociations{
 		client: c.RESTClient(),
 		ns:     namespace,

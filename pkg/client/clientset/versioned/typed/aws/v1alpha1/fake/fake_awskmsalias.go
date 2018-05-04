@@ -30,13 +30,13 @@ import (
 
 // FakeAwsKmsAliases implements AwsKmsAliasInterface
 type FakeAwsKmsAliases struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awskmsaliasesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awskmsaliases"}
+var awskmsaliasesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awskmsaliases"}
 
-var awskmsaliasesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsKmsAlias"}
+var awskmsaliasesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsKmsAlias"}
 
 // Get takes name of the awsKmsAlias, and returns the corresponding awsKmsAlias object, and an error if there is any.
 func (c *FakeAwsKmsAliases) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsKmsAlias, err error) {

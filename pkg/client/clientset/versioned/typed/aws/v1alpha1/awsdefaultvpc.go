@@ -53,7 +53,7 @@ type awsDefaultVpcs struct {
 }
 
 // newAwsDefaultVpcs returns a AwsDefaultVpcs
-func newAwsDefaultVpcs(c *AwsV1alpha1Client, namespace string) *awsDefaultVpcs {
+func newAwsDefaultVpcs(c *ChronojamV1alpha1Client, namespace string) *awsDefaultVpcs {
 	return &awsDefaultVpcs{
 		client: c.RESTClient(),
 		ns:     namespace,

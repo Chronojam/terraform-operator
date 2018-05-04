@@ -53,7 +53,7 @@ type awsAthenaDatabases struct {
 }
 
 // newAwsAthenaDatabases returns a AwsAthenaDatabases
-func newAwsAthenaDatabases(c *AwsV1alpha1Client, namespace string) *awsAthenaDatabases {
+func newAwsAthenaDatabases(c *ChronojamV1alpha1Client, namespace string) *awsAthenaDatabases {
 	return &awsAthenaDatabases{
 		client: c.RESTClient(),
 		ns:     namespace,

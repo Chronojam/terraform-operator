@@ -53,7 +53,7 @@ type awsGuarddutyThreatintelsets struct {
 }
 
 // newAwsGuarddutyThreatintelsets returns a AwsGuarddutyThreatintelsets
-func newAwsGuarddutyThreatintelsets(c *AwsV1alpha1Client, namespace string) *awsGuarddutyThreatintelsets {
+func newAwsGuarddutyThreatintelsets(c *ChronojamV1alpha1Client, namespace string) *awsGuarddutyThreatintelsets {
 	return &awsGuarddutyThreatintelsets{
 		client: c.RESTClient(),
 		ns:     namespace,

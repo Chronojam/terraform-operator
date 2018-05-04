@@ -53,7 +53,7 @@ type awsKeyPairs struct {
 }
 
 // newAwsKeyPairs returns a AwsKeyPairs
-func newAwsKeyPairs(c *AwsV1alpha1Client, namespace string) *awsKeyPairs {
+func newAwsKeyPairs(c *ChronojamV1alpha1Client, namespace string) *awsKeyPairs {
 	return &awsKeyPairs{
 		client: c.RESTClient(),
 		ns:     namespace,

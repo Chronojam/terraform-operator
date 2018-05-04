@@ -53,7 +53,7 @@ type awsEfsFileSystems struct {
 }
 
 // newAwsEfsFileSystems returns a AwsEfsFileSystems
-func newAwsEfsFileSystems(c *AwsV1alpha1Client, namespace string) *awsEfsFileSystems {
+func newAwsEfsFileSystems(c *ChronojamV1alpha1Client, namespace string) *awsEfsFileSystems {
 	return &awsEfsFileSystems{
 		client: c.RESTClient(),
 		ns:     namespace,

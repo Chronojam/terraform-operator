@@ -53,7 +53,7 @@ type awsSnapshotCreateVolumePermissions struct {
 }
 
 // newAwsSnapshotCreateVolumePermissions returns a AwsSnapshotCreateVolumePermissions
-func newAwsSnapshotCreateVolumePermissions(c *AwsV1alpha1Client, namespace string) *awsSnapshotCreateVolumePermissions {
+func newAwsSnapshotCreateVolumePermissions(c *ChronojamV1alpha1Client, namespace string) *awsSnapshotCreateVolumePermissions {
 	return &awsSnapshotCreateVolumePermissions{
 		client: c.RESTClient(),
 		ns:     namespace,

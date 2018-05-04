@@ -53,7 +53,7 @@ type awsDaxParameterGroups struct {
 }
 
 // newAwsDaxParameterGroups returns a AwsDaxParameterGroups
-func newAwsDaxParameterGroups(c *AwsV1alpha1Client, namespace string) *awsDaxParameterGroups {
+func newAwsDaxParameterGroups(c *ChronojamV1alpha1Client, namespace string) *awsDaxParameterGroups {
 	return &awsDaxParameterGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

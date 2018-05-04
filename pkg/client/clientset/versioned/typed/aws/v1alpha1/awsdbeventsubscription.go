@@ -53,7 +53,7 @@ type awsDbEventSubscriptions struct {
 }
 
 // newAwsDbEventSubscriptions returns a AwsDbEventSubscriptions
-func newAwsDbEventSubscriptions(c *AwsV1alpha1Client, namespace string) *awsDbEventSubscriptions {
+func newAwsDbEventSubscriptions(c *ChronojamV1alpha1Client, namespace string) *awsDbEventSubscriptions {
 	return &awsDbEventSubscriptions{
 		client: c.RESTClient(),
 		ns:     namespace,

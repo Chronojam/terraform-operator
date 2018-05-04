@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDaxParameterGroups implements AwsDaxParameterGroupInterface
 type FakeAwsDaxParameterGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdaxparametergroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdaxparametergroups"}
+var awsdaxparametergroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdaxparametergroups"}
 
-var awsdaxparametergroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDaxParameterGroup"}
+var awsdaxparametergroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDaxParameterGroup"}
 
 // Get takes name of the awsDaxParameterGroup, and returns the corresponding awsDaxParameterGroup object, and an error if there is any.
 func (c *FakeAwsDaxParameterGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDaxParameterGroup, err error) {

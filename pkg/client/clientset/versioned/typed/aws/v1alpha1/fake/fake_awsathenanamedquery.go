@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAthenaNamedQueries implements AwsAthenaNamedQueryInterface
 type FakeAwsAthenaNamedQueries struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsathenanamedqueriesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsathenanamedqueries"}
+var awsathenanamedqueriesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsathenanamedqueries"}
 
-var awsathenanamedqueriesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAthenaNamedQuery"}
+var awsathenanamedqueriesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAthenaNamedQuery"}
 
 // Get takes name of the awsAthenaNamedQuery, and returns the corresponding awsAthenaNamedQuery object, and an error if there is any.
 func (c *FakeAwsAthenaNamedQueries) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAthenaNamedQuery, err error) {

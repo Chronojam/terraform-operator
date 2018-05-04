@@ -53,7 +53,7 @@ type awsWafregionalXssMatchSets struct {
 }
 
 // newAwsWafregionalXssMatchSets returns a AwsWafregionalXssMatchSets
-func newAwsWafregionalXssMatchSets(c *AwsV1alpha1Client, namespace string) *awsWafregionalXssMatchSets {
+func newAwsWafregionalXssMatchSets(c *ChronojamV1alpha1Client, namespace string) *awsWafregionalXssMatchSets {
 	return &awsWafregionalXssMatchSets{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsSqsQueues struct {
 }
 
 // newAwsSqsQueues returns a AwsSqsQueues
-func newAwsSqsQueues(c *AwsV1alpha1Client, namespace string) *awsSqsQueues {
+func newAwsSqsQueues(c *ChronojamV1alpha1Client, namespace string) *awsSqsQueues {
 	return &awsSqsQueues{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsS3BucketNotifications struct {
 }
 
 // newAwsS3BucketNotifications returns a AwsS3BucketNotifications
-func newAwsS3BucketNotifications(c *AwsV1alpha1Client, namespace string) *awsS3BucketNotifications {
+func newAwsS3BucketNotifications(c *ChronojamV1alpha1Client, namespace string) *awsS3BucketNotifications {
 	return &awsS3BucketNotifications{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsDirectoryServiceDirectories struct {
 }
 
 // newAwsDirectoryServiceDirectories returns a AwsDirectoryServiceDirectories
-func newAwsDirectoryServiceDirectories(c *AwsV1alpha1Client, namespace string) *awsDirectoryServiceDirectories {
+func newAwsDirectoryServiceDirectories(c *ChronojamV1alpha1Client, namespace string) *awsDirectoryServiceDirectories {
 	return &awsDirectoryServiceDirectories{
 		client: c.RESTClient(),
 		ns:     namespace,

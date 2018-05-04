@@ -53,7 +53,7 @@ type awsIamServiceLinkedRoles struct {
 }
 
 // newAwsIamServiceLinkedRoles returns a AwsIamServiceLinkedRoles
-func newAwsIamServiceLinkedRoles(c *AwsV1alpha1Client, namespace string) *awsIamServiceLinkedRoles {
+func newAwsIamServiceLinkedRoles(c *ChronojamV1alpha1Client, namespace string) *awsIamServiceLinkedRoles {
 	return &awsIamServiceLinkedRoles{
 		client: c.RESTClient(),
 		ns:     namespace,

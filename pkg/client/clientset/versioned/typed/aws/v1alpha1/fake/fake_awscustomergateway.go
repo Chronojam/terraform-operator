@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCustomerGateways implements AwsCustomerGatewayInterface
 type FakeAwsCustomerGateways struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscustomergatewaysResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscustomergateways"}
+var awscustomergatewaysResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscustomergateways"}
 
-var awscustomergatewaysKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCustomerGateway"}
+var awscustomergatewaysKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCustomerGateway"}
 
 // Get takes name of the awsCustomerGateway, and returns the corresponding awsCustomerGateway object, and an error if there is any.
 func (c *FakeAwsCustomerGateways) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCustomerGateway, err error) {

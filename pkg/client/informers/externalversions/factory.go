@@ -172,9 +172,9 @@ type SharedInformerFactory interface {
 	ForResource(resource schema.GroupVersionResource) (GenericInformer, error)
 	WaitForCacheSync(stopCh <-chan struct{}) map[reflect.Type]bool
 
-	Aws() aws.Interface
+	Chronojam() aws.Interface
 }
 
-func (f *sharedInformerFactory) Aws() aws.Interface {
+func (f *sharedInformerFactory) Chronojam() aws.Interface {
 	return aws.New(f, f.namespace, f.tweakListOptions)
 }

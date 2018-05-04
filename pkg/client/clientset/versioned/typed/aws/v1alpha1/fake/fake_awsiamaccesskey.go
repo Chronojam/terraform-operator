@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIamAccessKeys implements AwsIamAccessKeyInterface
 type FakeAwsIamAccessKeys struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiamaccesskeysResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiamaccesskeys"}
+var awsiamaccesskeysResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiamaccesskeys"}
 
-var awsiamaccesskeysKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIamAccessKey"}
+var awsiamaccesskeysKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIamAccessKey"}
 
 // Get takes name of the awsIamAccessKey, and returns the corresponding awsIamAccessKey object, and an error if there is any.
 func (c *FakeAwsIamAccessKeys) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIamAccessKey, err error) {

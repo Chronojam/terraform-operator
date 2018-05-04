@@ -53,7 +53,7 @@ type awsAutoscalingSchedules struct {
 }
 
 // newAwsAutoscalingSchedules returns a AwsAutoscalingSchedules
-func newAwsAutoscalingSchedules(c *AwsV1alpha1Client, namespace string) *awsAutoscalingSchedules {
+func newAwsAutoscalingSchedules(c *ChronojamV1alpha1Client, namespace string) *awsAutoscalingSchedules {
 	return &awsAutoscalingSchedules{
 		client: c.RESTClient(),
 		ns:     namespace,

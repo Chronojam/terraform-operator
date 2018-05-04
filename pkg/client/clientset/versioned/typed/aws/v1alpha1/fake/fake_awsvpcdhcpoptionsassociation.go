@@ -30,13 +30,13 @@ import (
 
 // FakeAwsVpcDhcpOptionsAssociations implements AwsVpcDhcpOptionsAssociationInterface
 type FakeAwsVpcDhcpOptionsAssociations struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsvpcdhcpoptionsassociationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsvpcdhcpoptionsassociations"}
+var awsvpcdhcpoptionsassociationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsvpcdhcpoptionsassociations"}
 
-var awsvpcdhcpoptionsassociationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsVpcDhcpOptionsAssociation"}
+var awsvpcdhcpoptionsassociationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsVpcDhcpOptionsAssociation"}
 
 // Get takes name of the awsVpcDhcpOptionsAssociation, and returns the corresponding awsVpcDhcpOptionsAssociation object, and an error if there is any.
 func (c *FakeAwsVpcDhcpOptionsAssociations) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsVpcDhcpOptionsAssociation, err error) {

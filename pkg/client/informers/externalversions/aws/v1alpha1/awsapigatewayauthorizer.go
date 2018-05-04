@@ -61,13 +61,13 @@ func NewFilteredAwsApiGatewayAuthorizerInformer(client versioned.Interface, name
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsApiGatewayAuthorizers(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsApiGatewayAuthorizers(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsApiGatewayAuthorizers(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsApiGatewayAuthorizers(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsApiGatewayAuthorizer{},

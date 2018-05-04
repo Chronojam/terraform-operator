@@ -53,7 +53,7 @@ type awsIamAccessKeys struct {
 }
 
 // newAwsIamAccessKeys returns a AwsIamAccessKeys
-func newAwsIamAccessKeys(c *AwsV1alpha1Client, namespace string) *awsIamAccessKeys {
+func newAwsIamAccessKeys(c *ChronojamV1alpha1Client, namespace string) *awsIamAccessKeys {
 	return &awsIamAccessKeys{
 		client: c.RESTClient(),
 		ns:     namespace,

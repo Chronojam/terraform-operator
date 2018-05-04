@@ -53,7 +53,7 @@ type awsSsmAssociations struct {
 }
 
 // newAwsSsmAssociations returns a AwsSsmAssociations
-func newAwsSsmAssociations(c *AwsV1alpha1Client, namespace string) *awsSsmAssociations {
+func newAwsSsmAssociations(c *ChronojamV1alpha1Client, namespace string) *awsSsmAssociations {
 	return &awsSsmAssociations{
 		client: c.RESTClient(),
 		ns:     namespace,

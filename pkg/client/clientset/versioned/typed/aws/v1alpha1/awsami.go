@@ -53,7 +53,7 @@ type awsAmis struct {
 }
 
 // newAwsAmis returns a AwsAmis
-func newAwsAmis(c *AwsV1alpha1Client, namespace string) *awsAmis {
+func newAwsAmis(c *ChronojamV1alpha1Client, namespace string) *awsAmis {
 	return &awsAmis{
 		client: c.RESTClient(),
 		ns:     namespace,

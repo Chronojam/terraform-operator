@@ -53,7 +53,7 @@ type awsNetworkInterfaceSgAttachments struct {
 }
 
 // newAwsNetworkInterfaceSgAttachments returns a AwsNetworkInterfaceSgAttachments
-func newAwsNetworkInterfaceSgAttachments(c *AwsV1alpha1Client, namespace string) *awsNetworkInterfaceSgAttachments {
+func newAwsNetworkInterfaceSgAttachments(c *ChronojamV1alpha1Client, namespace string) *awsNetworkInterfaceSgAttachments {
 	return &awsNetworkInterfaceSgAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

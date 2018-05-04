@@ -61,13 +61,13 @@ func NewFilteredAwsDmsReplicationInstanceInformer(client versioned.Interface, na
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsDmsReplicationInstances(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsDmsReplicationInstances(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsDmsReplicationInstances(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsDmsReplicationInstances(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsDmsReplicationInstance{},

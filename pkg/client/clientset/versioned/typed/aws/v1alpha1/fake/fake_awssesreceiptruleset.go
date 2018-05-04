@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSesReceiptRuleSets implements AwsSesReceiptRuleSetInterface
 type FakeAwsSesReceiptRuleSets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssesreceiptrulesetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssesreceiptrulesets"}
+var awssesreceiptrulesetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssesreceiptrulesets"}
 
-var awssesreceiptrulesetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSesReceiptRuleSet"}
+var awssesreceiptrulesetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSesReceiptRuleSet"}
 
 // Get takes name of the awsSesReceiptRuleSet, and returns the corresponding awsSesReceiptRuleSet object, and an error if there is any.
 func (c *FakeAwsSesReceiptRuleSets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSesReceiptRuleSet, err error) {

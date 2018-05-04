@@ -53,7 +53,7 @@ type awsOpsworksStacks struct {
 }
 
 // newAwsOpsworksStacks returns a AwsOpsworksStacks
-func newAwsOpsworksStacks(c *AwsV1alpha1Client, namespace string) *awsOpsworksStacks {
+func newAwsOpsworksStacks(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksStacks {
 	return &awsOpsworksStacks{
 		client: c.RESTClient(),
 		ns:     namespace,

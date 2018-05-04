@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGlueConnections implements AwsGlueConnectionInterface
 type FakeAwsGlueConnections struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsglueconnectionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsglueconnections"}
+var awsglueconnectionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsglueconnections"}
 
-var awsglueconnectionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGlueConnection"}
+var awsglueconnectionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGlueConnection"}
 
 // Get takes name of the awsGlueConnection, and returns the corresponding awsGlueConnection object, and an error if there is any.
 func (c *FakeAwsGlueConnections) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGlueConnection, err error) {

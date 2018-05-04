@@ -53,7 +53,7 @@ type awsRedshiftClusters struct {
 }
 
 // newAwsRedshiftClusters returns a AwsRedshiftClusters
-func newAwsRedshiftClusters(c *AwsV1alpha1Client, namespace string) *awsRedshiftClusters {
+func newAwsRedshiftClusters(c *ChronojamV1alpha1Client, namespace string) *awsRedshiftClusters {
 	return &awsRedshiftClusters{
 		client: c.RESTClient(),
 		ns:     namespace,

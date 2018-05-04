@@ -30,13 +30,13 @@ import (
 
 // FakeAwsElbAttachments implements AwsElbAttachmentInterface
 type FakeAwsElbAttachments struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awselbattachmentsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awselbattachments"}
+var awselbattachmentsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awselbattachments"}
 
-var awselbattachmentsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsElbAttachment"}
+var awselbattachmentsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsElbAttachment"}
 
 // Get takes name of the awsElbAttachment, and returns the corresponding awsElbAttachment object, and an error if there is any.
 func (c *FakeAwsElbAttachments) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsElbAttachment, err error) {

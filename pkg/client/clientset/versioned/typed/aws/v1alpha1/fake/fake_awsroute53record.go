@@ -30,13 +30,13 @@ import (
 
 // FakeAwsRoute53Records implements AwsRoute53RecordInterface
 type FakeAwsRoute53Records struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsroute53recordsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsroute53records"}
+var awsroute53recordsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsroute53records"}
 
-var awsroute53recordsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsRoute53Record"}
+var awsroute53recordsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsRoute53Record"}
 
 // Get takes name of the awsRoute53Record, and returns the corresponding awsRoute53Record object, and an error if there is any.
 func (c *FakeAwsRoute53Records) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsRoute53Record, err error) {

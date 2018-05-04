@@ -53,7 +53,7 @@ type awsSesEventDestinations struct {
 }
 
 // newAwsSesEventDestinations returns a AwsSesEventDestinations
-func newAwsSesEventDestinations(c *AwsV1alpha1Client, namespace string) *awsSesEventDestinations {
+func newAwsSesEventDestinations(c *ChronojamV1alpha1Client, namespace string) *awsSesEventDestinations {
 	return &awsSesEventDestinations{
 		client: c.RESTClient(),
 		ns:     namespace,

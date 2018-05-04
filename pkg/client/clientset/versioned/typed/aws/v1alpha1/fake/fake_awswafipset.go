@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafIpsets implements AwsWafIpsetInterface
 type FakeAwsWafIpsets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafipsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafipsets"}
+var awswafipsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafipsets"}
 
-var awswafipsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafIpset"}
+var awswafipsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafIpset"}
 
 // Get takes name of the awsWafIpset, and returns the corresponding awsWafIpset object, and an error if there is any.
 func (c *FakeAwsWafIpsets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafIpset, err error) {

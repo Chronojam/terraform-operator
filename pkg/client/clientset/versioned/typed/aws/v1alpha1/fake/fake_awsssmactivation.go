@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSsmActivations implements AwsSsmActivationInterface
 type FakeAwsSsmActivations struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsssmactivationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsssmactivations"}
+var awsssmactivationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsssmactivations"}
 
-var awsssmactivationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSsmActivation"}
+var awsssmactivationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSsmActivation"}
 
 // Get takes name of the awsSsmActivation, and returns the corresponding awsSsmActivation object, and an error if there is any.
 func (c *FakeAwsSsmActivations) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSsmActivation, err error) {

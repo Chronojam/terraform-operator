@@ -53,7 +53,7 @@ type awsLambdaFunctions struct {
 }
 
 // newAwsLambdaFunctions returns a AwsLambdaFunctions
-func newAwsLambdaFunctions(c *AwsV1alpha1Client, namespace string) *awsLambdaFunctions {
+func newAwsLambdaFunctions(c *ChronojamV1alpha1Client, namespace string) *awsLambdaFunctions {
 	return &awsLambdaFunctions{
 		client: c.RESTClient(),
 		ns:     namespace,

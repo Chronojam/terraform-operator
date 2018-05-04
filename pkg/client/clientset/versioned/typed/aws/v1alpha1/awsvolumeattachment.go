@@ -53,7 +53,7 @@ type awsVolumeAttachments struct {
 }
 
 // newAwsVolumeAttachments returns a AwsVolumeAttachments
-func newAwsVolumeAttachments(c *AwsV1alpha1Client, namespace string) *awsVolumeAttachments {
+func newAwsVolumeAttachments(c *ChronojamV1alpha1Client, namespace string) *awsVolumeAttachments {
 	return &awsVolumeAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsOpsworksCustomLayers struct {
 }
 
 // newAwsOpsworksCustomLayers returns a AwsOpsworksCustomLayers
-func newAwsOpsworksCustomLayers(c *AwsV1alpha1Client, namespace string) *awsOpsworksCustomLayers {
+func newAwsOpsworksCustomLayers(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksCustomLayers {
 	return &awsOpsworksCustomLayers{
 		client: c.RESTClient(),
 		ns:     namespace,

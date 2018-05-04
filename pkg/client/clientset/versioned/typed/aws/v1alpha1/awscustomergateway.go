@@ -53,7 +53,7 @@ type awsCustomerGateways struct {
 }
 
 // newAwsCustomerGateways returns a AwsCustomerGateways
-func newAwsCustomerGateways(c *AwsV1alpha1Client, namespace string) *awsCustomerGateways {
+func newAwsCustomerGateways(c *ChronojamV1alpha1Client, namespace string) *awsCustomerGateways {
 	return &awsCustomerGateways{
 		client: c.RESTClient(),
 		ns:     namespace,

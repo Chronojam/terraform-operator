@@ -53,7 +53,7 @@ type awsLoadBalancerBackendServerPolicies struct {
 }
 
 // newAwsLoadBalancerBackendServerPolicies returns a AwsLoadBalancerBackendServerPolicies
-func newAwsLoadBalancerBackendServerPolicies(c *AwsV1alpha1Client, namespace string) *awsLoadBalancerBackendServerPolicies {
+func newAwsLoadBalancerBackendServerPolicies(c *ChronojamV1alpha1Client, namespace string) *awsLoadBalancerBackendServerPolicies {
 	return &awsLoadBalancerBackendServerPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

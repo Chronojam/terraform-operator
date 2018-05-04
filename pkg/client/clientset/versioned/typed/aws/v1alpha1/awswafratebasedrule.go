@@ -53,7 +53,7 @@ type awsWafRateBasedRules struct {
 }
 
 // newAwsWafRateBasedRules returns a AwsWafRateBasedRules
-func newAwsWafRateBasedRules(c *AwsV1alpha1Client, namespace string) *awsWafRateBasedRules {
+func newAwsWafRateBasedRules(c *ChronojamV1alpha1Client, namespace string) *awsWafRateBasedRules {
 	return &awsWafRateBasedRules{
 		client: c.RESTClient(),
 		ns:     namespace,

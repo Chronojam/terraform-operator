@@ -53,7 +53,7 @@ type awsRoute53DelegationSets struct {
 }
 
 // newAwsRoute53DelegationSets returns a AwsRoute53DelegationSets
-func newAwsRoute53DelegationSets(c *AwsV1alpha1Client, namespace string) *awsRoute53DelegationSets {
+func newAwsRoute53DelegationSets(c *ChronojamV1alpha1Client, namespace string) *awsRoute53DelegationSets {
 	return &awsRoute53DelegationSets{
 		client: c.RESTClient(),
 		ns:     namespace,

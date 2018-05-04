@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSsmResourceDataSyncs implements AwsSsmResourceDataSyncInterface
 type FakeAwsSsmResourceDataSyncs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsssmresourcedatasyncsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsssmresourcedatasyncs"}
+var awsssmresourcedatasyncsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsssmresourcedatasyncs"}
 
-var awsssmresourcedatasyncsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSsmResourceDataSync"}
+var awsssmresourcedatasyncsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSsmResourceDataSync"}
 
 // Get takes name of the awsSsmResourceDataSync, and returns the corresponding awsSsmResourceDataSync object, and an error if there is any.
 func (c *FakeAwsSsmResourceDataSyncs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSsmResourceDataSync, err error) {

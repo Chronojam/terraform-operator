@@ -53,7 +53,7 @@ type awsServiceDiscoveryPrivateDnsNamespaces struct {
 }
 
 // newAwsServiceDiscoveryPrivateDnsNamespaces returns a AwsServiceDiscoveryPrivateDnsNamespaces
-func newAwsServiceDiscoveryPrivateDnsNamespaces(c *AwsV1alpha1Client, namespace string) *awsServiceDiscoveryPrivateDnsNamespaces {
+func newAwsServiceDiscoveryPrivateDnsNamespaces(c *ChronojamV1alpha1Client, namespace string) *awsServiceDiscoveryPrivateDnsNamespaces {
 	return &awsServiceDiscoveryPrivateDnsNamespaces{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDbOptionGroups implements AwsDbOptionGroupInterface
 type FakeAwsDbOptionGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdboptiongroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdboptiongroups"}
+var awsdboptiongroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdboptiongroups"}
 
-var awsdboptiongroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDbOptionGroup"}
+var awsdboptiongroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDbOptionGroup"}
 
 // Get takes name of the awsDbOptionGroup, and returns the corresponding awsDbOptionGroup object, and an error if there is any.
 func (c *FakeAwsDbOptionGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDbOptionGroup, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSpotFleetRequests implements AwsSpotFleetRequestInterface
 type FakeAwsSpotFleetRequests struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsspotfleetrequestsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsspotfleetrequests"}
+var awsspotfleetrequestsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsspotfleetrequests"}
 
-var awsspotfleetrequestsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSpotFleetRequest"}
+var awsspotfleetrequestsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSpotFleetRequest"}
 
 // Get takes name of the awsSpotFleetRequest, and returns the corresponding awsSpotFleetRequest object, and an error if there is any.
 func (c *FakeAwsSpotFleetRequests) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSpotFleetRequest, err error) {

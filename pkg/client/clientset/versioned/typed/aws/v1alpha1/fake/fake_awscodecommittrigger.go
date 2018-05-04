@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCodecommitTriggers implements AwsCodecommitTriggerInterface
 type FakeAwsCodecommitTriggers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscodecommittriggersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscodecommittriggers"}
+var awscodecommittriggersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscodecommittriggers"}
 
-var awscodecommittriggersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCodecommitTrigger"}
+var awscodecommittriggersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCodecommitTrigger"}
 
 // Get takes name of the awsCodecommitTrigger, and returns the corresponding awsCodecommitTrigger object, and an error if there is any.
 func (c *FakeAwsCodecommitTriggers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCodecommitTrigger, err error) {

@@ -53,7 +53,7 @@ type awsLightsailStaticIpAttachments struct {
 }
 
 // newAwsLightsailStaticIpAttachments returns a AwsLightsailStaticIpAttachments
-func newAwsLightsailStaticIpAttachments(c *AwsV1alpha1Client, namespace string) *awsLightsailStaticIpAttachments {
+func newAwsLightsailStaticIpAttachments(c *ChronojamV1alpha1Client, namespace string) *awsLightsailStaticIpAttachments {
 	return &awsLightsailStaticIpAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

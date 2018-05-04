@@ -53,7 +53,7 @@ type awsCloudwatchMetricAlarms struct {
 }
 
 // newAwsCloudwatchMetricAlarms returns a AwsCloudwatchMetricAlarms
-func newAwsCloudwatchMetricAlarms(c *AwsV1alpha1Client, namespace string) *awsCloudwatchMetricAlarms {
+func newAwsCloudwatchMetricAlarms(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchMetricAlarms {
 	return &awsCloudwatchMetricAlarms{
 		client: c.RESTClient(),
 		ns:     namespace,

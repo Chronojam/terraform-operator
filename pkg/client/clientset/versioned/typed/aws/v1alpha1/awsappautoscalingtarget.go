@@ -53,7 +53,7 @@ type awsAppautoscalingTargets struct {
 }
 
 // newAwsAppautoscalingTargets returns a AwsAppautoscalingTargets
-func newAwsAppautoscalingTargets(c *AwsV1alpha1Client, namespace string) *awsAppautoscalingTargets {
+func newAwsAppautoscalingTargets(c *ChronojamV1alpha1Client, namespace string) *awsAppautoscalingTargets {
 	return &awsAppautoscalingTargets{
 		client: c.RESTClient(),
 		ns:     namespace,

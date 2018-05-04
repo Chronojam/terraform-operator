@@ -53,7 +53,7 @@ type awsIotTopicRules struct {
 }
 
 // newAwsIotTopicRules returns a AwsIotTopicRules
-func newAwsIotTopicRules(c *AwsV1alpha1Client, namespace string) *awsIotTopicRules {
+func newAwsIotTopicRules(c *ChronojamV1alpha1Client, namespace string) *awsIotTopicRules {
 	return &awsIotTopicRules{
 		client: c.RESTClient(),
 		ns:     namespace,

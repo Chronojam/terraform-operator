@@ -53,7 +53,7 @@ type awsAlbListenerCertificates struct {
 }
 
 // newAwsAlbListenerCertificates returns a AwsAlbListenerCertificates
-func newAwsAlbListenerCertificates(c *AwsV1alpha1Client, namespace string) *awsAlbListenerCertificates {
+func newAwsAlbListenerCertificates(c *ChronojamV1alpha1Client, namespace string) *awsAlbListenerCertificates {
 	return &awsAlbListenerCertificates{
 		client: c.RESTClient(),
 		ns:     namespace,

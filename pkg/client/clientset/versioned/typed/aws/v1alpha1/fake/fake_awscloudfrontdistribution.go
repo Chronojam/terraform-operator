@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudfrontDistributions implements AwsCloudfrontDistributionInterface
 type FakeAwsCloudfrontDistributions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudfrontdistributionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudfrontdistributions"}
+var awscloudfrontdistributionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudfrontdistributions"}
 
-var awscloudfrontdistributionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudfrontDistribution"}
+var awscloudfrontdistributionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudfrontDistribution"}
 
 // Get takes name of the awsCloudfrontDistribution, and returns the corresponding awsCloudfrontDistribution object, and an error if there is any.
 func (c *FakeAwsCloudfrontDistributions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudfrontDistribution, err error) {

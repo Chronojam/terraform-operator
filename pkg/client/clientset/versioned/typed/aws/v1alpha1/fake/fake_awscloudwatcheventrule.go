@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudwatchEventRules implements AwsCloudwatchEventRuleInterface
 type FakeAwsCloudwatchEventRules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudwatcheventrulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudwatcheventrules"}
+var awscloudwatcheventrulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudwatcheventrules"}
 
-var awscloudwatcheventrulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudwatchEventRule"}
+var awscloudwatcheventrulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudwatchEventRule"}
 
 // Get takes name of the awsCloudwatchEventRule, and returns the corresponding awsCloudwatchEventRule object, and an error if there is any.
 func (c *FakeAwsCloudwatchEventRules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudwatchEventRule, err error) {

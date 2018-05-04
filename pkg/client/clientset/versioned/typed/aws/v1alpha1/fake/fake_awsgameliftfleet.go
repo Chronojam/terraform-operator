@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGameliftFleets implements AwsGameliftFleetInterface
 type FakeAwsGameliftFleets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsgameliftfleetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsgameliftfleets"}
+var awsgameliftfleetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsgameliftfleets"}
 
-var awsgameliftfleetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGameliftFleet"}
+var awsgameliftfleetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGameliftFleet"}
 
 // Get takes name of the awsGameliftFleet, and returns the corresponding awsGameliftFleet object, and an error if there is any.
 func (c *FakeAwsGameliftFleets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGameliftFleet, err error) {

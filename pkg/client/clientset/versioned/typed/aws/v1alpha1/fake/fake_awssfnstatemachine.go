@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSfnStateMachines implements AwsSfnStateMachineInterface
 type FakeAwsSfnStateMachines struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssfnstatemachinesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssfnstatemachines"}
+var awssfnstatemachinesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssfnstatemachines"}
 
-var awssfnstatemachinesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSfnStateMachine"}
+var awssfnstatemachinesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSfnStateMachine"}
 
 // Get takes name of the awsSfnStateMachine, and returns the corresponding awsSfnStateMachine object, and an error if there is any.
 func (c *FakeAwsSfnStateMachines) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSfnStateMachine, err error) {

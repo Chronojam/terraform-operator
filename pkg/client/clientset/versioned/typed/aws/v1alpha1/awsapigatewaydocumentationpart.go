@@ -53,7 +53,7 @@ type awsApiGatewayDocumentationParts struct {
 }
 
 // newAwsApiGatewayDocumentationParts returns a AwsApiGatewayDocumentationParts
-func newAwsApiGatewayDocumentationParts(c *AwsV1alpha1Client, namespace string) *awsApiGatewayDocumentationParts {
+func newAwsApiGatewayDocumentationParts(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayDocumentationParts {
 	return &awsApiGatewayDocumentationParts{
 		client: c.RESTClient(),
 		ns:     namespace,

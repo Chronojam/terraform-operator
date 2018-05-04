@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAutoscalingGroups implements AwsAutoscalingGroupInterface
 type FakeAwsAutoscalingGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsautoscalinggroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsautoscalinggroups"}
+var awsautoscalinggroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsautoscalinggroups"}
 
-var awsautoscalinggroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAutoscalingGroup"}
+var awsautoscalinggroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAutoscalingGroup"}
 
 // Get takes name of the awsAutoscalingGroup, and returns the corresponding awsAutoscalingGroup object, and an error if there is any.
 func (c *FakeAwsAutoscalingGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAutoscalingGroup, err error) {

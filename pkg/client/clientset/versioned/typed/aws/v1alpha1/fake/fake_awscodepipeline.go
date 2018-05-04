@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCodepipelines implements AwsCodepipelineInterface
 type FakeAwsCodepipelines struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscodepipelinesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscodepipelines"}
+var awscodepipelinesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscodepipelines"}
 
-var awscodepipelinesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCodepipeline"}
+var awscodepipelinesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCodepipeline"}
 
 // Get takes name of the awsCodepipeline, and returns the corresponding awsCodepipeline object, and an error if there is any.
 func (c *FakeAwsCodepipelines) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCodepipeline, err error) {

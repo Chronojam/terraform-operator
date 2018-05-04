@@ -53,7 +53,7 @@ type awsDmsEndpoints struct {
 }
 
 // newAwsDmsEndpoints returns a AwsDmsEndpoints
-func newAwsDmsEndpoints(c *AwsV1alpha1Client, namespace string) *awsDmsEndpoints {
+func newAwsDmsEndpoints(c *ChronojamV1alpha1Client, namespace string) *awsDmsEndpoints {
 	return &awsDmsEndpoints{
 		client: c.RESTClient(),
 		ns:     namespace,

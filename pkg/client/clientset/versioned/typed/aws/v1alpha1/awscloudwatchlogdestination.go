@@ -53,7 +53,7 @@ type awsCloudwatchLogDestinations struct {
 }
 
 // newAwsCloudwatchLogDestinations returns a AwsCloudwatchLogDestinations
-func newAwsCloudwatchLogDestinations(c *AwsV1alpha1Client, namespace string) *awsCloudwatchLogDestinations {
+func newAwsCloudwatchLogDestinations(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchLogDestinations {
 	return &awsCloudwatchLogDestinations{
 		client: c.RESTClient(),
 		ns:     namespace,

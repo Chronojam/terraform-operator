@@ -53,7 +53,7 @@ type awsVpnGatewayAttachments struct {
 }
 
 // newAwsVpnGatewayAttachments returns a AwsVpnGatewayAttachments
-func newAwsVpnGatewayAttachments(c *AwsV1alpha1Client, namespace string) *awsVpnGatewayAttachments {
+func newAwsVpnGatewayAttachments(c *ChronojamV1alpha1Client, namespace string) *awsVpnGatewayAttachments {
 	return &awsVpnGatewayAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

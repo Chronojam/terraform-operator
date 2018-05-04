@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCodebuildProjects implements AwsCodebuildProjectInterface
 type FakeAwsCodebuildProjects struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscodebuildprojectsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscodebuildprojects"}
+var awscodebuildprojectsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscodebuildprojects"}
 
-var awscodebuildprojectsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCodebuildProject"}
+var awscodebuildprojectsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCodebuildProject"}
 
 // Get takes name of the awsCodebuildProject, and returns the corresponding awsCodebuildProject object, and an error if there is any.
 func (c *FakeAwsCodebuildProjects) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCodebuildProject, err error) {

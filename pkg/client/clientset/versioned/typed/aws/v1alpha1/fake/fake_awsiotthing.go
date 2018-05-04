@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIotThings implements AwsIotThingInterface
 type FakeAwsIotThings struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiotthingsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiotthings"}
+var awsiotthingsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiotthings"}
 
-var awsiotthingsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIotThing"}
+var awsiotthingsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIotThing"}
 
 // Get takes name of the awsIotThing, and returns the corresponding awsIotThing object, and an error if there is any.
 func (c *FakeAwsIotThings) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIotThing, err error) {

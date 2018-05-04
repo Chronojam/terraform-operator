@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudwatchEventPermissions implements AwsCloudwatchEventPermissionInterface
 type FakeAwsCloudwatchEventPermissions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudwatcheventpermissionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudwatcheventpermissions"}
+var awscloudwatcheventpermissionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudwatcheventpermissions"}
 
-var awscloudwatcheventpermissionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudwatchEventPermission"}
+var awscloudwatcheventpermissionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudwatchEventPermission"}
 
 // Get takes name of the awsCloudwatchEventPermission, and returns the corresponding awsCloudwatchEventPermission object, and an error if there is any.
 func (c *FakeAwsCloudwatchEventPermissions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudwatchEventPermission, err error) {

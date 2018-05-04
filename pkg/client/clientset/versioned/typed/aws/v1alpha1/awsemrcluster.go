@@ -53,7 +53,7 @@ type awsEmrClusters struct {
 }
 
 // newAwsEmrClusters returns a AwsEmrClusters
-func newAwsEmrClusters(c *AwsV1alpha1Client, namespace string) *awsEmrClusters {
+func newAwsEmrClusters(c *ChronojamV1alpha1Client, namespace string) *awsEmrClusters {
 	return &awsEmrClusters{
 		client: c.RESTClient(),
 		ns:     namespace,

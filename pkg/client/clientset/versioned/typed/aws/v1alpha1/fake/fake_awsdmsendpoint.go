@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDmsEndpoints implements AwsDmsEndpointInterface
 type FakeAwsDmsEndpoints struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdmsendpointsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdmsendpoints"}
+var awsdmsendpointsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdmsendpoints"}
 
-var awsdmsendpointsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDmsEndpoint"}
+var awsdmsendpointsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDmsEndpoint"}
 
 // Get takes name of the awsDmsEndpoint, and returns the corresponding awsDmsEndpoint object, and an error if there is any.
 func (c *FakeAwsDmsEndpoints) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDmsEndpoint, err error) {

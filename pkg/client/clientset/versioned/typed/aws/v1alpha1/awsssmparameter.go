@@ -53,7 +53,7 @@ type awsSsmParameters struct {
 }
 
 // newAwsSsmParameters returns a AwsSsmParameters
-func newAwsSsmParameters(c *AwsV1alpha1Client, namespace string) *awsSsmParameters {
+func newAwsSsmParameters(c *ChronojamV1alpha1Client, namespace string) *awsSsmParameters {
 	return &awsSsmParameters{
 		client: c.RESTClient(),
 		ns:     namespace,

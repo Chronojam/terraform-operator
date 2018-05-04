@@ -53,7 +53,7 @@ type awsOpsworksPermissions struct {
 }
 
 // newAwsOpsworksPermissions returns a AwsOpsworksPermissions
-func newAwsOpsworksPermissions(c *AwsV1alpha1Client, namespace string) *awsOpsworksPermissions {
+func newAwsOpsworksPermissions(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksPermissions {
 	return &awsOpsworksPermissions{
 		client: c.RESTClient(),
 		ns:     namespace,

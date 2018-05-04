@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudwatchDashboards implements AwsCloudwatchDashboardInterface
 type FakeAwsCloudwatchDashboards struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudwatchdashboardsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudwatchdashboards"}
+var awscloudwatchdashboardsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudwatchdashboards"}
 
-var awscloudwatchdashboardsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudwatchDashboard"}
+var awscloudwatchdashboardsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudwatchDashboard"}
 
 // Get takes name of the awsCloudwatchDashboard, and returns the corresponding awsCloudwatchDashboard object, and an error if there is any.
 func (c *FakeAwsCloudwatchDashboards) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudwatchDashboard, err error) {

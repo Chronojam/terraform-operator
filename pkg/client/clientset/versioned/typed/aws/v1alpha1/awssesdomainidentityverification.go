@@ -53,7 +53,7 @@ type awsSesDomainIdentityVerifications struct {
 }
 
 // newAwsSesDomainIdentityVerifications returns a AwsSesDomainIdentityVerifications
-func newAwsSesDomainIdentityVerifications(c *AwsV1alpha1Client, namespace string) *awsSesDomainIdentityVerifications {
+func newAwsSesDomainIdentityVerifications(c *ChronojamV1alpha1Client, namespace string) *awsSesDomainIdentityVerifications {
 	return &awsSesDomainIdentityVerifications{
 		client: c.RESTClient(),
 		ns:     namespace,

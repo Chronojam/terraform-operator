@@ -53,7 +53,7 @@ type awsWafregionalIpsets struct {
 }
 
 // newAwsWafregionalIpsets returns a AwsWafregionalIpsets
-func newAwsWafregionalIpsets(c *AwsV1alpha1Client, namespace string) *awsWafregionalIpsets {
+func newAwsWafregionalIpsets(c *ChronojamV1alpha1Client, namespace string) *awsWafregionalIpsets {
 	return &awsWafregionalIpsets{
 		client: c.RESTClient(),
 		ns:     namespace,

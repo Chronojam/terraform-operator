@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksUserProfiles implements AwsOpsworksUserProfileInterface
 type FakeAwsOpsworksUserProfiles struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworksuserprofilesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworksuserprofiles"}
+var awsopsworksuserprofilesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworksuserprofiles"}
 
-var awsopsworksuserprofilesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksUserProfile"}
+var awsopsworksuserprofilesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksUserProfile"}
 
 // Get takes name of the awsOpsworksUserProfile, and returns the corresponding awsOpsworksUserProfile object, and an error if there is any.
 func (c *FakeAwsOpsworksUserProfiles) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksUserProfile, err error) {

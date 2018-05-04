@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIamInstanceProfiles implements AwsIamInstanceProfileInterface
 type FakeAwsIamInstanceProfiles struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiaminstanceprofilesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiaminstanceprofiles"}
+var awsiaminstanceprofilesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiaminstanceprofiles"}
 
-var awsiaminstanceprofilesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIamInstanceProfile"}
+var awsiaminstanceprofilesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIamInstanceProfile"}
 
 // Get takes name of the awsIamInstanceProfile, and returns the corresponding awsIamInstanceProfile object, and an error if there is any.
 func (c *FakeAwsIamInstanceProfiles) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIamInstanceProfile, err error) {

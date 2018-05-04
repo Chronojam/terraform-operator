@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayModels implements AwsApiGatewayModelInterface
 type FakeAwsApiGatewayModels struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewaymodelsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewaymodels"}
+var awsapigatewaymodelsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewaymodels"}
 
-var awsapigatewaymodelsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayModel"}
+var awsapigatewaymodelsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayModel"}
 
 // Get takes name of the awsApiGatewayModel, and returns the corresponding awsApiGatewayModel object, and an error if there is any.
 func (c *FakeAwsApiGatewayModels) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayModel, err error) {

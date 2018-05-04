@@ -20,8 +20,8 @@ package fake
 
 import (
 	clientset "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned"
-	awsv1alpha1 "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned/typed/aws/v1alpha1"
-	fakeawsv1alpha1 "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned/typed/aws/v1alpha1/fake"
+	chronojamv1alpha1 "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned/typed/aws/v1alpha1"
+	fakechronojamv1alpha1 "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned/typed/aws/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
@@ -71,12 +71,12 @@ func (c *Clientset) Discovery() discovery.DiscoveryInterface {
 
 var _ clientset.Interface = &Clientset{}
 
-// AwsV1alpha1 retrieves the AwsV1alpha1Client
-func (c *Clientset) AwsV1alpha1() awsv1alpha1.AwsV1alpha1Interface {
-	return &fakeawsv1alpha1.FakeAwsV1alpha1{Fake: &c.Fake}
+// ChronojamV1alpha1 retrieves the ChronojamV1alpha1Client
+func (c *Clientset) ChronojamV1alpha1() chronojamv1alpha1.ChronojamV1alpha1Interface {
+	return &fakechronojamv1alpha1.FakeChronojamV1alpha1{Fake: &c.Fake}
 }
 
-// Aws retrieves the AwsV1alpha1Client
-func (c *Clientset) Aws() awsv1alpha1.AwsV1alpha1Interface {
-	return &fakeawsv1alpha1.FakeAwsV1alpha1{Fake: &c.Fake}
+// Chronojam retrieves the ChronojamV1alpha1Client
+func (c *Clientset) Chronojam() chronojamv1alpha1.ChronojamV1alpha1Interface {
+	return &fakechronojamv1alpha1.FakeChronojamV1alpha1{Fake: &c.Fake}
 }

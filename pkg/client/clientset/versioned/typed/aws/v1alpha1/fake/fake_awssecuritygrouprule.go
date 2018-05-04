@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSecurityGroupRules implements AwsSecurityGroupRuleInterface
 type FakeAwsSecurityGroupRules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssecuritygrouprulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssecuritygrouprules"}
+var awssecuritygrouprulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssecuritygrouprules"}
 
-var awssecuritygrouprulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSecurityGroupRule"}
+var awssecuritygrouprulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSecurityGroupRule"}
 
 // Get takes name of the awsSecurityGroupRule, and returns the corresponding awsSecurityGroupRule object, and an error if there is any.
 func (c *FakeAwsSecurityGroupRules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSecurityGroupRule, err error) {

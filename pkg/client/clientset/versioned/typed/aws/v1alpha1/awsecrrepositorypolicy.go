@@ -53,7 +53,7 @@ type awsEcrRepositoryPolicies struct {
 }
 
 // newAwsEcrRepositoryPolicies returns a AwsEcrRepositoryPolicies
-func newAwsEcrRepositoryPolicies(c *AwsV1alpha1Client, namespace string) *awsEcrRepositoryPolicies {
+func newAwsEcrRepositoryPolicies(c *ChronojamV1alpha1Client, namespace string) *awsEcrRepositoryPolicies {
 	return &awsEcrRepositoryPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

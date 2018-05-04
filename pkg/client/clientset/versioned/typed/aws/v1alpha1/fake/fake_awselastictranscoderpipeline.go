@@ -30,13 +30,13 @@ import (
 
 // FakeAwsElastictranscoderPipelines implements AwsElastictranscoderPipelineInterface
 type FakeAwsElastictranscoderPipelines struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awselastictranscoderpipelinesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awselastictranscoderpipelines"}
+var awselastictranscoderpipelinesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awselastictranscoderpipelines"}
 
-var awselastictranscoderpipelinesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsElastictranscoderPipeline"}
+var awselastictranscoderpipelinesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsElastictranscoderPipeline"}
 
 // Get takes name of the awsElastictranscoderPipeline, and returns the corresponding awsElastictranscoderPipeline object, and an error if there is any.
 func (c *FakeAwsElastictranscoderPipelines) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsElastictranscoderPipeline, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGameliftAliases implements AwsGameliftAliasInterface
 type FakeAwsGameliftAliases struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsgameliftaliasesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsgameliftaliases"}
+var awsgameliftaliasesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsgameliftaliases"}
 
-var awsgameliftaliasesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGameliftAlias"}
+var awsgameliftaliasesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGameliftAlias"}
 
 // Get takes name of the awsGameliftAlias, and returns the corresponding awsGameliftAlias object, and an error if there is any.
 func (c *FakeAwsGameliftAliases) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGameliftAlias, err error) {

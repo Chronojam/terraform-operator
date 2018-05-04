@@ -61,13 +61,13 @@ func NewFilteredAwsAmiCopyInformer(client versioned.Interface, namespace string,
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsAmiCopies(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsAmiCopies(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsAmiCopies(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsAmiCopies(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsAmiCopy{},

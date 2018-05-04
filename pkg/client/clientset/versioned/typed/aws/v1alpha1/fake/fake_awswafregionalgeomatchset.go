@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafregionalGeoMatchSets implements AwsWafregionalGeoMatchSetInterface
 type FakeAwsWafregionalGeoMatchSets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafregionalgeomatchsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafregionalgeomatchsets"}
+var awswafregionalgeomatchsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafregionalgeomatchsets"}
 
-var awswafregionalgeomatchsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafregionalGeoMatchSet"}
+var awswafregionalgeomatchsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafregionalGeoMatchSet"}
 
 // Get takes name of the awsWafregionalGeoMatchSet, and returns the corresponding awsWafregionalGeoMatchSet object, and an error if there is any.
 func (c *FakeAwsWafregionalGeoMatchSets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafregionalGeoMatchSet, err error) {

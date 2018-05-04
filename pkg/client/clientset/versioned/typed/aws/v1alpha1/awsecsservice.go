@@ -53,7 +53,7 @@ type awsEcsServices struct {
 }
 
 // newAwsEcsServices returns a AwsEcsServices
-func newAwsEcsServices(c *AwsV1alpha1Client, namespace string) *awsEcsServices {
+func newAwsEcsServices(c *ChronojamV1alpha1Client, namespace string) *awsEcsServices {
 	return &awsEcsServices{
 		client: c.RESTClient(),
 		ns:     namespace,

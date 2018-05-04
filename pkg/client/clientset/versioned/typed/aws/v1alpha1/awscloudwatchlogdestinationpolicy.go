@@ -53,7 +53,7 @@ type awsCloudwatchLogDestinationPolicies struct {
 }
 
 // newAwsCloudwatchLogDestinationPolicies returns a AwsCloudwatchLogDestinationPolicies
-func newAwsCloudwatchLogDestinationPolicies(c *AwsV1alpha1Client, namespace string) *awsCloudwatchLogDestinationPolicies {
+func newAwsCloudwatchLogDestinationPolicies(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchLogDestinationPolicies {
 	return &awsCloudwatchLogDestinationPolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAcmCertificates implements AwsAcmCertificateInterface
 type FakeAwsAcmCertificates struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsacmcertificatesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsacmcertificates"}
+var awsacmcertificatesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsacmcertificates"}
 
-var awsacmcertificatesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAcmCertificate"}
+var awsacmcertificatesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAcmCertificate"}
 
 // Get takes name of the awsAcmCertificate, and returns the corresponding awsAcmCertificate object, and an error if there is any.
 func (c *FakeAwsAcmCertificates) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAcmCertificate, err error) {

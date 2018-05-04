@@ -53,7 +53,7 @@ type awsVpnGateways struct {
 }
 
 // newAwsVpnGateways returns a AwsVpnGateways
-func newAwsVpnGateways(c *AwsV1alpha1Client, namespace string) *awsVpnGateways {
+func newAwsVpnGateways(c *ChronojamV1alpha1Client, namespace string) *awsVpnGateways {
 	return &awsVpnGateways{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsOpsworksMysqlLayers struct {
 }
 
 // newAwsOpsworksMysqlLayers returns a AwsOpsworksMysqlLayers
-func newAwsOpsworksMysqlLayers(c *AwsV1alpha1Client, namespace string) *awsOpsworksMysqlLayers {
+func newAwsOpsworksMysqlLayers(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksMysqlLayers {
 	return &awsOpsworksMysqlLayers{
 		client: c.RESTClient(),
 		ns:     namespace,

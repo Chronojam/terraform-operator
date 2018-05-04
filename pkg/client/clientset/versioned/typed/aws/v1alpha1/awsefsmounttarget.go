@@ -53,7 +53,7 @@ type awsEfsMountTargets struct {
 }
 
 // newAwsEfsMountTargets returns a AwsEfsMountTargets
-func newAwsEfsMountTargets(c *AwsV1alpha1Client, namespace string) *awsEfsMountTargets {
+func newAwsEfsMountTargets(c *ChronojamV1alpha1Client, namespace string) *awsEfsMountTargets {
 	return &awsEfsMountTargets{
 		client: c.RESTClient(),
 		ns:     namespace,

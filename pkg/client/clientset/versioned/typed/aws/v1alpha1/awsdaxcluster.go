@@ -53,7 +53,7 @@ type awsDaxClusters struct {
 }
 
 // newAwsDaxClusters returns a AwsDaxClusters
-func newAwsDaxClusters(c *AwsV1alpha1Client, namespace string) *awsDaxClusters {
+func newAwsDaxClusters(c *ChronojamV1alpha1Client, namespace string) *awsDaxClusters {
 	return &awsDaxClusters{
 		client: c.RESTClient(),
 		ns:     namespace,

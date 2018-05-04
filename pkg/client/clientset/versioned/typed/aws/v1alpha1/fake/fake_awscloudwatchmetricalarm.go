@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudwatchMetricAlarms implements AwsCloudwatchMetricAlarmInterface
 type FakeAwsCloudwatchMetricAlarms struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudwatchmetricalarmsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudwatchmetricalarms"}
+var awscloudwatchmetricalarmsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudwatchmetricalarms"}
 
-var awscloudwatchmetricalarmsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudwatchMetricAlarm"}
+var awscloudwatchmetricalarmsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudwatchMetricAlarm"}
 
 // Get takes name of the awsCloudwatchMetricAlarm, and returns the corresponding awsCloudwatchMetricAlarm object, and an error if there is any.
 func (c *FakeAwsCloudwatchMetricAlarms) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudwatchMetricAlarm, err error) {

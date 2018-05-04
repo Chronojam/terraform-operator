@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLbListeners implements AwsLbListenerInterface
 type FakeAwsLbListeners struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslblistenersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslblisteners"}
+var awslblistenersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslblisteners"}
 
-var awslblistenersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLbListener"}
+var awslblistenersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLbListener"}
 
 // Get takes name of the awsLbListener, and returns the corresponding awsLbListener object, and an error if there is any.
 func (c *FakeAwsLbListeners) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLbListener, err error) {

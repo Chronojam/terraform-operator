@@ -53,7 +53,7 @@ type awsIamRolePolicyAttachments struct {
 }
 
 // newAwsIamRolePolicyAttachments returns a AwsIamRolePolicyAttachments
-func newAwsIamRolePolicyAttachments(c *AwsV1alpha1Client, namespace string) *awsIamRolePolicyAttachments {
+func newAwsIamRolePolicyAttachments(c *ChronojamV1alpha1Client, namespace string) *awsIamRolePolicyAttachments {
 	return &awsIamRolePolicyAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

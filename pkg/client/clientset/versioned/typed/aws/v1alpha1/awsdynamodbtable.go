@@ -53,7 +53,7 @@ type awsDynamodbTables struct {
 }
 
 // newAwsDynamodbTables returns a AwsDynamodbTables
-func newAwsDynamodbTables(c *AwsV1alpha1Client, namespace string) *awsDynamodbTables {
+func newAwsDynamodbTables(c *ChronojamV1alpha1Client, namespace string) *awsDynamodbTables {
 	return &awsDynamodbTables{
 		client: c.RESTClient(),
 		ns:     namespace,

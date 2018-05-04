@@ -53,7 +53,7 @@ type awsCloud9EnvironmentEc2s struct {
 }
 
 // newAwsCloud9EnvironmentEc2s returns a AwsCloud9EnvironmentEc2s
-func newAwsCloud9EnvironmentEc2s(c *AwsV1alpha1Client, namespace string) *awsCloud9EnvironmentEc2s {
+func newAwsCloud9EnvironmentEc2s(c *ChronojamV1alpha1Client, namespace string) *awsCloud9EnvironmentEc2s {
 	return &awsCloud9EnvironmentEc2s{
 		client: c.RESTClient(),
 		ns:     namespace,

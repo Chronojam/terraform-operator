@@ -53,7 +53,7 @@ type awsEmrInstanceGroups struct {
 }
 
 // newAwsEmrInstanceGroups returns a AwsEmrInstanceGroups
-func newAwsEmrInstanceGroups(c *AwsV1alpha1Client, namespace string) *awsEmrInstanceGroups {
+func newAwsEmrInstanceGroups(c *ChronojamV1alpha1Client, namespace string) *awsEmrInstanceGroups {
 	return &awsEmrInstanceGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLightsailStaticIpAttachments implements AwsLightsailStaticIpAttachmentInterface
 type FakeAwsLightsailStaticIpAttachments struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslightsailstaticipattachmentsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslightsailstaticipattachments"}
+var awslightsailstaticipattachmentsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslightsailstaticipattachments"}
 
-var awslightsailstaticipattachmentsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLightsailStaticIpAttachment"}
+var awslightsailstaticipattachmentsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLightsailStaticIpAttachment"}
 
 // Get takes name of the awsLightsailStaticIpAttachment, and returns the corresponding awsLightsailStaticIpAttachment object, and an error if there is any.
 func (c *FakeAwsLightsailStaticIpAttachments) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLightsailStaticIpAttachment, err error) {

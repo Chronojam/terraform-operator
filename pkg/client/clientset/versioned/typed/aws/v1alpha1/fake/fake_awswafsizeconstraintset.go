@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafSizeConstraintSets implements AwsWafSizeConstraintSetInterface
 type FakeAwsWafSizeConstraintSets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafsizeconstraintsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafsizeconstraintsets"}
+var awswafsizeconstraintsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafsizeconstraintsets"}
 
-var awswafsizeconstraintsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafSizeConstraintSet"}
+var awswafsizeconstraintsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafSizeConstraintSet"}
 
 // Get takes name of the awsWafSizeConstraintSet, and returns the corresponding awsWafSizeConstraintSet object, and an error if there is any.
 func (c *FakeAwsWafSizeConstraintSets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafSizeConstraintSet, err error) {

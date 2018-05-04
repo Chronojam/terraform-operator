@@ -53,7 +53,7 @@ type awsApiGatewayDocumentationVersions struct {
 }
 
 // newAwsApiGatewayDocumentationVersions returns a AwsApiGatewayDocumentationVersions
-func newAwsApiGatewayDocumentationVersions(c *AwsV1alpha1Client, namespace string) *awsApiGatewayDocumentationVersions {
+func newAwsApiGatewayDocumentationVersions(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayDocumentationVersions {
 	return &awsApiGatewayDocumentationVersions{
 		client: c.RESTClient(),
 		ns:     namespace,

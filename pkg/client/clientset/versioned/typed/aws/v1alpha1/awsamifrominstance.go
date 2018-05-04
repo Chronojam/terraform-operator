@@ -53,7 +53,7 @@ type awsAmiFromInstances struct {
 }
 
 // newAwsAmiFromInstances returns a AwsAmiFromInstances
-func newAwsAmiFromInstances(c *AwsV1alpha1Client, namespace string) *awsAmiFromInstances {
+func newAwsAmiFromInstances(c *ChronojamV1alpha1Client, namespace string) *awsAmiFromInstances {
 	return &awsAmiFromInstances{
 		client: c.RESTClient(),
 		ns:     namespace,

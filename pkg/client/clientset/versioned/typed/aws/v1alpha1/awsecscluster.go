@@ -53,7 +53,7 @@ type awsEcsClusters struct {
 }
 
 // newAwsEcsClusters returns a AwsEcsClusters
-func newAwsEcsClusters(c *AwsV1alpha1Client, namespace string) *awsEcsClusters {
+func newAwsEcsClusters(c *ChronojamV1alpha1Client, namespace string) *awsEcsClusters {
 	return &awsEcsClusters{
 		client: c.RESTClient(),
 		ns:     namespace,

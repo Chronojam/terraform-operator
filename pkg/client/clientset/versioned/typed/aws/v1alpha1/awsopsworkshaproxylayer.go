@@ -53,7 +53,7 @@ type awsOpsworksHaproxyLayers struct {
 }
 
 // newAwsOpsworksHaproxyLayers returns a AwsOpsworksHaproxyLayers
-func newAwsOpsworksHaproxyLayers(c *AwsV1alpha1Client, namespace string) *awsOpsworksHaproxyLayers {
+func newAwsOpsworksHaproxyLayers(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksHaproxyLayers {
 	return &awsOpsworksHaproxyLayers{
 		client: c.RESTClient(),
 		ns:     namespace,

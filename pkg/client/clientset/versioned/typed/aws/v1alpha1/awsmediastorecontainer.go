@@ -53,7 +53,7 @@ type awsMediaStoreContainers struct {
 }
 
 // newAwsMediaStoreContainers returns a AwsMediaStoreContainers
-func newAwsMediaStoreContainers(c *AwsV1alpha1Client, namespace string) *awsMediaStoreContainers {
+func newAwsMediaStoreContainers(c *ChronojamV1alpha1Client, namespace string) *awsMediaStoreContainers {
 	return &awsMediaStoreContainers{
 		client: c.RESTClient(),
 		ns:     namespace,

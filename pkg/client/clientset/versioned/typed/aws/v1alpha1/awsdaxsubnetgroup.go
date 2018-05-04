@@ -53,7 +53,7 @@ type awsDaxSubnetGroups struct {
 }
 
 // newAwsDaxSubnetGroups returns a AwsDaxSubnetGroups
-func newAwsDaxSubnetGroups(c *AwsV1alpha1Client, namespace string) *awsDaxSubnetGroups {
+func newAwsDaxSubnetGroups(c *ChronojamV1alpha1Client, namespace string) *awsDaxSubnetGroups {
 	return &awsDaxSubnetGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

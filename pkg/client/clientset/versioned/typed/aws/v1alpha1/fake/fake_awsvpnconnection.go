@@ -30,13 +30,13 @@ import (
 
 // FakeAwsVpnConnections implements AwsVpnConnectionInterface
 type FakeAwsVpnConnections struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsvpnconnectionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsvpnconnections"}
+var awsvpnconnectionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsvpnconnections"}
 
-var awsvpnconnectionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsVpnConnection"}
+var awsvpnconnectionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsVpnConnection"}
 
 // Get takes name of the awsVpnConnection, and returns the corresponding awsVpnConnection object, and an error if there is any.
 func (c *FakeAwsVpnConnections) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsVpnConnection, err error) {

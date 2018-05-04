@@ -53,7 +53,7 @@ type awsCloudwatchLogMetricFilters struct {
 }
 
 // newAwsCloudwatchLogMetricFilters returns a AwsCloudwatchLogMetricFilters
-func newAwsCloudwatchLogMetricFilters(c *AwsV1alpha1Client, namespace string) *awsCloudwatchLogMetricFilters {
+func newAwsCloudwatchLogMetricFilters(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchLogMetricFilters {
 	return &awsCloudwatchLogMetricFilters{
 		client: c.RESTClient(),
 		ns:     namespace,

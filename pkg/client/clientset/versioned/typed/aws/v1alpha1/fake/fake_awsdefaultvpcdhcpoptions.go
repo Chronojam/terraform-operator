@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDefaultVpcDhcpOptionses implements AwsDefaultVpcDhcpOptionsInterface
 type FakeAwsDefaultVpcDhcpOptionses struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdefaultvpcdhcpoptionsesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdefaultvpcdhcpoptionses"}
+var awsdefaultvpcdhcpoptionsesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdefaultvpcdhcpoptionses"}
 
-var awsdefaultvpcdhcpoptionsesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDefaultVpcDhcpOptions"}
+var awsdefaultvpcdhcpoptionsesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDefaultVpcDhcpOptions"}
 
 // Get takes name of the awsDefaultVpcDhcpOptions, and returns the corresponding awsDefaultVpcDhcpOptions object, and an error if there is any.
 func (c *FakeAwsDefaultVpcDhcpOptionses) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDefaultVpcDhcpOptions, err error) {

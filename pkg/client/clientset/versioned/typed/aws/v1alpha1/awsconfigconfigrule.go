@@ -53,7 +53,7 @@ type awsConfigConfigRules struct {
 }
 
 // newAwsConfigConfigRules returns a AwsConfigConfigRules
-func newAwsConfigConfigRules(c *AwsV1alpha1Client, namespace string) *awsConfigConfigRules {
+func newAwsConfigConfigRules(c *ChronojamV1alpha1Client, namespace string) *awsConfigConfigRules {
 	return &awsConfigConfigRules{
 		client: c.RESTClient(),
 		ns:     namespace,

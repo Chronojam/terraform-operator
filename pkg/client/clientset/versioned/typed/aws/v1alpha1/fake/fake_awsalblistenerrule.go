@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAlbListenerRules implements AwsAlbListenerRuleInterface
 type FakeAwsAlbListenerRules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsalblistenerrulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsalblistenerrules"}
+var awsalblistenerrulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsalblistenerrules"}
 
-var awsalblistenerrulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAlbListenerRule"}
+var awsalblistenerrulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAlbListenerRule"}
 
 // Get takes name of the awsAlbListenerRule, and returns the corresponding awsAlbListenerRule object, and an error if there is any.
 func (c *FakeAwsAlbListenerRules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAlbListenerRule, err error) {

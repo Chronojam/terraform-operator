@@ -53,7 +53,7 @@ type awsApiGatewayApiKeys struct {
 }
 
 // newAwsApiGatewayApiKeys returns a AwsApiGatewayApiKeys
-func newAwsApiGatewayApiKeys(c *AwsV1alpha1Client, namespace string) *awsApiGatewayApiKeys {
+func newAwsApiGatewayApiKeys(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayApiKeys {
 	return &awsApiGatewayApiKeys{
 		client: c.RESTClient(),
 		ns:     namespace,

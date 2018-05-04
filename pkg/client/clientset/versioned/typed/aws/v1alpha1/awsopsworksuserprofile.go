@@ -53,7 +53,7 @@ type awsOpsworksUserProfiles struct {
 }
 
 // newAwsOpsworksUserProfiles returns a AwsOpsworksUserProfiles
-func newAwsOpsworksUserProfiles(c *AwsV1alpha1Client, namespace string) *awsOpsworksUserProfiles {
+func newAwsOpsworksUserProfiles(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksUserProfiles {
 	return &awsOpsworksUserProfiles{
 		client: c.RESTClient(),
 		ns:     namespace,

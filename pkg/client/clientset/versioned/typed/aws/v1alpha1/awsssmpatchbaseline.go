@@ -53,7 +53,7 @@ type awsSsmPatchBaselines struct {
 }
 
 // newAwsSsmPatchBaselines returns a AwsSsmPatchBaselines
-func newAwsSsmPatchBaselines(c *AwsV1alpha1Client, namespace string) *awsSsmPatchBaselines {
+func newAwsSsmPatchBaselines(c *ChronojamV1alpha1Client, namespace string) *awsSsmPatchBaselines {
 	return &awsSsmPatchBaselines{
 		client: c.RESTClient(),
 		ns:     namespace,

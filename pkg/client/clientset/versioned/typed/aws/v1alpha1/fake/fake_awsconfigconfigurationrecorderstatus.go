@@ -30,13 +30,13 @@ import (
 
 // FakeAwsConfigConfigurationRecorderStatuses implements AwsConfigConfigurationRecorderStatusInterface
 type FakeAwsConfigConfigurationRecorderStatuses struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsconfigconfigurationrecorderstatusesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsconfigconfigurationrecorderstatuses"}
+var awsconfigconfigurationrecorderstatusesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsconfigconfigurationrecorderstatuses"}
 
-var awsconfigconfigurationrecorderstatusesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsConfigConfigurationRecorderStatus"}
+var awsconfigconfigurationrecorderstatusesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsConfigConfigurationRecorderStatus"}
 
 // Get takes name of the awsConfigConfigurationRecorderStatus, and returns the corresponding awsConfigConfigurationRecorderStatus object, and an error if there is any.
 func (c *FakeAwsConfigConfigurationRecorderStatuses) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsConfigConfigurationRecorderStatus, err error) {

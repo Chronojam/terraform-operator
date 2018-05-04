@@ -53,7 +53,7 @@ type awsIotThings struct {
 }
 
 // newAwsIotThings returns a AwsIotThings
-func newAwsIotThings(c *AwsV1alpha1Client, namespace string) *awsIotThings {
+func newAwsIotThings(c *ChronojamV1alpha1Client, namespace string) *awsIotThings {
 	return &awsIotThings{
 		client: c.RESTClient(),
 		ns:     namespace,

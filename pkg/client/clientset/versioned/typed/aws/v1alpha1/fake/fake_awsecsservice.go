@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEcsServices implements AwsEcsServiceInterface
 type FakeAwsEcsServices struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsecsservicesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsecsservices"}
+var awsecsservicesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsecsservices"}
 
-var awsecsservicesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEcsService"}
+var awsecsservicesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEcsService"}
 
 // Get takes name of the awsEcsService, and returns the corresponding awsEcsService object, and an error if there is any.
 func (c *FakeAwsEcsServices) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEcsService, err error) {

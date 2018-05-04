@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAutoscalingAttachments implements AwsAutoscalingAttachmentInterface
 type FakeAwsAutoscalingAttachments struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsautoscalingattachmentsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsautoscalingattachments"}
+var awsautoscalingattachmentsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsautoscalingattachments"}
 
-var awsautoscalingattachmentsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAutoscalingAttachment"}
+var awsautoscalingattachmentsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAutoscalingAttachment"}
 
 // Get takes name of the awsAutoscalingAttachment, and returns the corresponding awsAutoscalingAttachment object, and an error if there is any.
 func (c *FakeAwsAutoscalingAttachments) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAutoscalingAttachment, err error) {

@@ -53,7 +53,7 @@ type awsDirectoryServiceConditionalForwarders struct {
 }
 
 // newAwsDirectoryServiceConditionalForwarders returns a AwsDirectoryServiceConditionalForwarders
-func newAwsDirectoryServiceConditionalForwarders(c *AwsV1alpha1Client, namespace string) *awsDirectoryServiceConditionalForwarders {
+func newAwsDirectoryServiceConditionalForwarders(c *ChronojamV1alpha1Client, namespace string) *awsDirectoryServiceConditionalForwarders {
 	return &awsDirectoryServiceConditionalForwarders{
 		client: c.RESTClient(),
 		ns:     namespace,

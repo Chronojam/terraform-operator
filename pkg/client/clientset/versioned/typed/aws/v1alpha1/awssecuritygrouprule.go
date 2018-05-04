@@ -53,7 +53,7 @@ type awsSecurityGroupRules struct {
 }
 
 // newAwsSecurityGroupRules returns a AwsSecurityGroupRules
-func newAwsSecurityGroupRules(c *AwsV1alpha1Client, namespace string) *awsSecurityGroupRules {
+func newAwsSecurityGroupRules(c *ChronojamV1alpha1Client, namespace string) *awsSecurityGroupRules {
 	return &awsSecurityGroupRules{
 		client: c.RESTClient(),
 		ns:     namespace,

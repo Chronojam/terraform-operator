@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEmrSecurityConfigurations implements AwsEmrSecurityConfigurationInterface
 type FakeAwsEmrSecurityConfigurations struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsemrsecurityconfigurationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsemrsecurityconfigurations"}
+var awsemrsecurityconfigurationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsemrsecurityconfigurations"}
 
-var awsemrsecurityconfigurationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEmrSecurityConfiguration"}
+var awsemrsecurityconfigurationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEmrSecurityConfiguration"}
 
 // Get takes name of the awsEmrSecurityConfiguration, and returns the corresponding awsEmrSecurityConfiguration object, and an error if there is any.
 func (c *FakeAwsEmrSecurityConfigurations) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEmrSecurityConfiguration, err error) {

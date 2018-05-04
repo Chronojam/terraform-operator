@@ -30,13 +30,13 @@ import (
 
 // FakeAwsRdsClusters implements AwsRdsClusterInterface
 type FakeAwsRdsClusters struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsrdsclustersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsrdsclusters"}
+var awsrdsclustersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsrdsclusters"}
 
-var awsrdsclustersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsRdsCluster"}
+var awsrdsclustersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsRdsCluster"}
 
 // Get takes name of the awsRdsCluster, and returns the corresponding awsRdsCluster object, and an error if there is any.
 func (c *FakeAwsRdsClusters) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsRdsCluster, err error) {

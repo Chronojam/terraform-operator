@@ -53,7 +53,7 @@ type awsElasticBeanstalkEnvironments struct {
 }
 
 // newAwsElasticBeanstalkEnvironments returns a AwsElasticBeanstalkEnvironments
-func newAwsElasticBeanstalkEnvironments(c *AwsV1alpha1Client, namespace string) *awsElasticBeanstalkEnvironments {
+func newAwsElasticBeanstalkEnvironments(c *ChronojamV1alpha1Client, namespace string) *awsElasticBeanstalkEnvironments {
 	return &awsElasticBeanstalkEnvironments{
 		client: c.RESTClient(),
 		ns:     namespace,

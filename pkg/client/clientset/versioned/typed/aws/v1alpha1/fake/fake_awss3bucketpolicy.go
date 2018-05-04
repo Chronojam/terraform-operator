@@ -30,13 +30,13 @@ import (
 
 // FakeAwsS3BucketPolicies implements AwsS3BucketPolicyInterface
 type FakeAwsS3BucketPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awss3bucketpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awss3bucketpolicies"}
+var awss3bucketpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awss3bucketpolicies"}
 
-var awss3bucketpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsS3BucketPolicy"}
+var awss3bucketpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsS3BucketPolicy"}
 
 // Get takes name of the awsS3BucketPolicy, and returns the corresponding awsS3BucketPolicy object, and an error if there is any.
 func (c *FakeAwsS3BucketPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsS3BucketPolicy, err error) {

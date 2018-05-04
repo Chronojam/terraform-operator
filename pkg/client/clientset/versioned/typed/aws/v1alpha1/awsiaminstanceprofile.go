@@ -53,7 +53,7 @@ type awsIamInstanceProfiles struct {
 }
 
 // newAwsIamInstanceProfiles returns a AwsIamInstanceProfiles
-func newAwsIamInstanceProfiles(c *AwsV1alpha1Client, namespace string) *awsIamInstanceProfiles {
+func newAwsIamInstanceProfiles(c *ChronojamV1alpha1Client, namespace string) *awsIamInstanceProfiles {
 	return &awsIamInstanceProfiles{
 		client: c.RESTClient(),
 		ns:     namespace,

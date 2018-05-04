@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudwatchLogResourcePolicies implements AwsCloudwatchLogResourcePolicyInterface
 type FakeAwsCloudwatchLogResourcePolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudwatchlogresourcepoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudwatchlogresourcepolicies"}
+var awscloudwatchlogresourcepoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudwatchlogresourcepolicies"}
 
-var awscloudwatchlogresourcepoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudwatchLogResourcePolicy"}
+var awscloudwatchlogresourcepoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudwatchLogResourcePolicy"}
 
 // Get takes name of the awsCloudwatchLogResourcePolicy, and returns the corresponding awsCloudwatchLogResourcePolicy object, and an error if there is any.
 func (c *FakeAwsCloudwatchLogResourcePolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudwatchLogResourcePolicy, err error) {

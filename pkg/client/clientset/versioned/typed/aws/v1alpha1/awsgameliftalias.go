@@ -53,7 +53,7 @@ type awsGameliftAliases struct {
 }
 
 // newAwsGameliftAliases returns a AwsGameliftAliases
-func newAwsGameliftAliases(c *AwsV1alpha1Client, namespace string) *awsGameliftAliases {
+func newAwsGameliftAliases(c *ChronojamV1alpha1Client, namespace string) *awsGameliftAliases {
 	return &awsGameliftAliases{
 		client: c.RESTClient(),
 		ns:     namespace,

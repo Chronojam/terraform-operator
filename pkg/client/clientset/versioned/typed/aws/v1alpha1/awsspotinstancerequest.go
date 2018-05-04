@@ -53,7 +53,7 @@ type awsSpotInstanceRequests struct {
 }
 
 // newAwsSpotInstanceRequests returns a AwsSpotInstanceRequests
-func newAwsSpotInstanceRequests(c *AwsV1alpha1Client, namespace string) *awsSpotInstanceRequests {
+func newAwsSpotInstanceRequests(c *ChronojamV1alpha1Client, namespace string) *awsSpotInstanceRequests {
 	return &awsSpotInstanceRequests{
 		client: c.RESTClient(),
 		ns:     namespace,

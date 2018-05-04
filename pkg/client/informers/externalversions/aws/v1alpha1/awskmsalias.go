@@ -61,13 +61,13 @@ func NewFilteredAwsKmsAliasInformer(client versioned.Interface, namespace string
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsKmsAliases(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsKmsAliases(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsKmsAliases(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsKmsAliases(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsKmsAlias{},

@@ -53,7 +53,7 @@ type awsLightsailInstances struct {
 }
 
 // newAwsLightsailInstances returns a AwsLightsailInstances
-func newAwsLightsailInstances(c *AwsV1alpha1Client, namespace string) *awsLightsailInstances {
+func newAwsLightsailInstances(c *ChronojamV1alpha1Client, namespace string) *awsLightsailInstances {
 	return &awsLightsailInstances{
 		client: c.RESTClient(),
 		ns:     namespace,

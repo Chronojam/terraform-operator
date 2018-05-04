@@ -61,13 +61,13 @@ func NewFilteredAwsIamRoleInformer(client versioned.Interface, namespace string,
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsIamRoles(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsIamRoles(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsIamRoles(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsIamRoles(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsIamRole{},

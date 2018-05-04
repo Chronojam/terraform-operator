@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSsmMaintenanceWindows implements AwsSsmMaintenanceWindowInterface
 type FakeAwsSsmMaintenanceWindows struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsssmmaintenancewindowsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsssmmaintenancewindows"}
+var awsssmmaintenancewindowsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsssmmaintenancewindows"}
 
-var awsssmmaintenancewindowsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSsmMaintenanceWindow"}
+var awsssmmaintenancewindowsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSsmMaintenanceWindow"}
 
 // Get takes name of the awsSsmMaintenanceWindow, and returns the corresponding awsSsmMaintenanceWindow object, and an error if there is any.
 func (c *FakeAwsSsmMaintenanceWindows) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSsmMaintenanceWindow, err error) {

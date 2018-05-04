@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDbSecurityGroups implements AwsDbSecurityGroupInterface
 type FakeAwsDbSecurityGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdbsecuritygroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdbsecuritygroups"}
+var awsdbsecuritygroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdbsecuritygroups"}
 
-var awsdbsecuritygroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDbSecurityGroup"}
+var awsdbsecuritygroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDbSecurityGroup"}
 
 // Get takes name of the awsDbSecurityGroup, and returns the corresponding awsDbSecurityGroup object, and an error if there is any.
 func (c *FakeAwsDbSecurityGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDbSecurityGroup, err error) {

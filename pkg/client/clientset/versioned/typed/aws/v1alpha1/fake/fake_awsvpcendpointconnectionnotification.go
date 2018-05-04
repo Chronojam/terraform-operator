@@ -30,13 +30,13 @@ import (
 
 // FakeAwsVpcEndpointConnectionNotifications implements AwsVpcEndpointConnectionNotificationInterface
 type FakeAwsVpcEndpointConnectionNotifications struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsvpcendpointconnectionnotificationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsvpcendpointconnectionnotifications"}
+var awsvpcendpointconnectionnotificationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsvpcendpointconnectionnotifications"}
 
-var awsvpcendpointconnectionnotificationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsVpcEndpointConnectionNotification"}
+var awsvpcendpointconnectionnotificationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsVpcEndpointConnectionNotification"}
 
 // Get takes name of the awsVpcEndpointConnectionNotification, and returns the corresponding awsVpcEndpointConnectionNotification object, and an error if there is any.
 func (c *FakeAwsVpcEndpointConnectionNotifications) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsVpcEndpointConnectionNotification, err error) {

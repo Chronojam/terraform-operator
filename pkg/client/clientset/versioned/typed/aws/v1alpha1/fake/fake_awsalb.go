@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAlbs implements AwsAlbInterface
 type FakeAwsAlbs struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsalbsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsalbs"}
+var awsalbsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsalbs"}
 
-var awsalbsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAlb"}
+var awsalbsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAlb"}
 
 // Get takes name of the awsAlb, and returns the corresponding awsAlb object, and an error if there is any.
 func (c *FakeAwsAlbs) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAlb, err error) {

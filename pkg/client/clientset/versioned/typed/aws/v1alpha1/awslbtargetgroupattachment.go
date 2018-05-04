@@ -53,7 +53,7 @@ type awsLbTargetGroupAttachments struct {
 }
 
 // newAwsLbTargetGroupAttachments returns a AwsLbTargetGroupAttachments
-func newAwsLbTargetGroupAttachments(c *AwsV1alpha1Client, namespace string) *awsLbTargetGroupAttachments {
+func newAwsLbTargetGroupAttachments(c *ChronojamV1alpha1Client, namespace string) *awsLbTargetGroupAttachments {
 	return &awsLbTargetGroupAttachments{
 		client: c.RESTClient(),
 		ns:     namespace,

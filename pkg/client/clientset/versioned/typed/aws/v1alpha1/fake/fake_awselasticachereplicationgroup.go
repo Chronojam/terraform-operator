@@ -30,13 +30,13 @@ import (
 
 // FakeAwsElasticacheReplicationGroups implements AwsElasticacheReplicationGroupInterface
 type FakeAwsElasticacheReplicationGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awselasticachereplicationgroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awselasticachereplicationgroups"}
+var awselasticachereplicationgroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awselasticachereplicationgroups"}
 
-var awselasticachereplicationgroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsElasticacheReplicationGroup"}
+var awselasticachereplicationgroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsElasticacheReplicationGroup"}
 
 // Get takes name of the awsElasticacheReplicationGroup, and returns the corresponding awsElasticacheReplicationGroup object, and an error if there is any.
 func (c *FakeAwsElasticacheReplicationGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsElasticacheReplicationGroup, err error) {

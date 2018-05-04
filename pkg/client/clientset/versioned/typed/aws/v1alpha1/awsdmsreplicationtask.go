@@ -53,7 +53,7 @@ type awsDmsReplicationTasks struct {
 }
 
 // newAwsDmsReplicationTasks returns a AwsDmsReplicationTasks
-func newAwsDmsReplicationTasks(c *AwsV1alpha1Client, namespace string) *awsDmsReplicationTasks {
+func newAwsDmsReplicationTasks(c *ChronojamV1alpha1Client, namespace string) *awsDmsReplicationTasks {
 	return &awsDmsReplicationTasks{
 		client: c.RESTClient(),
 		ns:     namespace,

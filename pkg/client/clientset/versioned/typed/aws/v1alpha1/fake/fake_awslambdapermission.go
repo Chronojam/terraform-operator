@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLambdaPermissions implements AwsLambdaPermissionInterface
 type FakeAwsLambdaPermissions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslambdapermissionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslambdapermissions"}
+var awslambdapermissionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslambdapermissions"}
 
-var awslambdapermissionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLambdaPermission"}
+var awslambdapermissionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLambdaPermission"}
 
 // Get takes name of the awsLambdaPermission, and returns the corresponding awsLambdaPermission object, and an error if there is any.
 func (c *FakeAwsLambdaPermissions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLambdaPermission, err error) {

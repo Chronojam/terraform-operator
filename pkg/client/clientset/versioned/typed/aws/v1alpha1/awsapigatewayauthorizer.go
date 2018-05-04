@@ -53,7 +53,7 @@ type awsApiGatewayAuthorizers struct {
 }
 
 // newAwsApiGatewayAuthorizers returns a AwsApiGatewayAuthorizers
-func newAwsApiGatewayAuthorizers(c *AwsV1alpha1Client, namespace string) *awsApiGatewayAuthorizers {
+func newAwsApiGatewayAuthorizers(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayAuthorizers {
 	return &awsApiGatewayAuthorizers{
 		client: c.RESTClient(),
 		ns:     namespace,

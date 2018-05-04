@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAmiCopies implements AwsAmiCopyInterface
 type FakeAwsAmiCopies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsamicopiesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsamicopies"}
+var awsamicopiesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsamicopies"}
 
-var awsamicopiesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAmiCopy"}
+var awsamicopiesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAmiCopy"}
 
 // Get takes name of the awsAmiCopy, and returns the corresponding awsAmiCopy object, and an error if there is any.
 func (c *FakeAwsAmiCopies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAmiCopy, err error) {

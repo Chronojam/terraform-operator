@@ -53,7 +53,7 @@ type awsSesDomainDkims struct {
 }
 
 // newAwsSesDomainDkims returns a AwsSesDomainDkims
-func newAwsSesDomainDkims(c *AwsV1alpha1Client, namespace string) *awsSesDomainDkims {
+func newAwsSesDomainDkims(c *ChronojamV1alpha1Client, namespace string) *awsSesDomainDkims {
 	return &awsSesDomainDkims{
 		client: c.RESTClient(),
 		ns:     namespace,

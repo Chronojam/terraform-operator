@@ -53,7 +53,7 @@ type awsElastictranscoderPresets struct {
 }
 
 // newAwsElastictranscoderPresets returns a AwsElastictranscoderPresets
-func newAwsElastictranscoderPresets(c *AwsV1alpha1Client, namespace string) *awsElastictranscoderPresets {
+func newAwsElastictranscoderPresets(c *ChronojamV1alpha1Client, namespace string) *awsElastictranscoderPresets {
 	return &awsElastictranscoderPresets{
 		client: c.RESTClient(),
 		ns:     namespace,

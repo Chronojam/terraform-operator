@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAutoscalingSchedules implements AwsAutoscalingScheduleInterface
 type FakeAwsAutoscalingSchedules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsautoscalingschedulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsautoscalingschedules"}
+var awsautoscalingschedulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsautoscalingschedules"}
 
-var awsautoscalingschedulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAutoscalingSchedule"}
+var awsautoscalingschedulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAutoscalingSchedule"}
 
 // Get takes name of the awsAutoscalingSchedule, and returns the corresponding awsAutoscalingSchedule object, and an error if there is any.
 func (c *FakeAwsAutoscalingSchedules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAutoscalingSchedule, err error) {

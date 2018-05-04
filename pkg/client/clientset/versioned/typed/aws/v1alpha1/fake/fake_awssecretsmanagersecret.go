@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSecretsmanagerSecrets implements AwsSecretsmanagerSecretInterface
 type FakeAwsSecretsmanagerSecrets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssecretsmanagersecretsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssecretsmanagersecrets"}
+var awssecretsmanagersecretsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssecretsmanagersecrets"}
 
-var awssecretsmanagersecretsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSecretsmanagerSecret"}
+var awssecretsmanagersecretsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSecretsmanagerSecret"}
 
 // Get takes name of the awsSecretsmanagerSecret, and returns the corresponding awsSecretsmanagerSecret object, and an error if there is any.
 func (c *FakeAwsSecretsmanagerSecrets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSecretsmanagerSecret, err error) {

@@ -53,7 +53,7 @@ type awsSqsQueuePolicies struct {
 }
 
 // newAwsSqsQueuePolicies returns a AwsSqsQueuePolicies
-func newAwsSqsQueuePolicies(c *AwsV1alpha1Client, namespace string) *awsSqsQueuePolicies {
+func newAwsSqsQueuePolicies(c *ChronojamV1alpha1Client, namespace string) *awsSqsQueuePolicies {
 	return &awsSqsQueuePolicies{
 		client: c.RESTClient(),
 		ns:     namespace,

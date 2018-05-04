@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGameliftBuilds implements AwsGameliftBuildInterface
 type FakeAwsGameliftBuilds struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsgameliftbuildsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsgameliftbuilds"}
+var awsgameliftbuildsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsgameliftbuilds"}
 
-var awsgameliftbuildsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGameliftBuild"}
+var awsgameliftbuildsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGameliftBuild"}
 
 // Get takes name of the awsGameliftBuild, and returns the corresponding awsGameliftBuild object, and an error if there is any.
 func (c *FakeAwsGameliftBuilds) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGameliftBuild, err error) {

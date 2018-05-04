@@ -53,7 +53,7 @@ type awsLightsailDomains struct {
 }
 
 // newAwsLightsailDomains returns a AwsLightsailDomains
-func newAwsLightsailDomains(c *AwsV1alpha1Client, namespace string) *awsLightsailDomains {
+func newAwsLightsailDomains(c *ChronojamV1alpha1Client, namespace string) *awsLightsailDomains {
 	return &awsLightsailDomains{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsS3BucketMetrics struct {
 }
 
 // newAwsS3BucketMetrics returns a AwsS3BucketMetrics
-func newAwsS3BucketMetrics(c *AwsV1alpha1Client, namespace string) *awsS3BucketMetrics {
+func newAwsS3BucketMetrics(c *ChronojamV1alpha1Client, namespace string) *awsS3BucketMetrics {
 	return &awsS3BucketMetrics{
 		client: c.RESTClient(),
 		ns:     namespace,

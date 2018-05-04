@@ -53,7 +53,7 @@ type awsOpsworksStaticWebLayers struct {
 }
 
 // newAwsOpsworksStaticWebLayers returns a AwsOpsworksStaticWebLayers
-func newAwsOpsworksStaticWebLayers(c *AwsV1alpha1Client, namespace string) *awsOpsworksStaticWebLayers {
+func newAwsOpsworksStaticWebLayers(c *ChronojamV1alpha1Client, namespace string) *awsOpsworksStaticWebLayers {
 	return &awsOpsworksStaticWebLayers{
 		client: c.RESTClient(),
 		ns:     namespace,

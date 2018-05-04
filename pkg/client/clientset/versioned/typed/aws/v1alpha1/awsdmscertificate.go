@@ -53,7 +53,7 @@ type awsDmsCertificates struct {
 }
 
 // newAwsDmsCertificates returns a AwsDmsCertificates
-func newAwsDmsCertificates(c *AwsV1alpha1Client, namespace string) *awsDmsCertificates {
+func newAwsDmsCertificates(c *ChronojamV1alpha1Client, namespace string) *awsDmsCertificates {
 	return &awsDmsCertificates{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsVpcDhcpOptionses struct {
 }
 
 // newAwsVpcDhcpOptionses returns a AwsVpcDhcpOptionses
-func newAwsVpcDhcpOptionses(c *AwsV1alpha1Client, namespace string) *awsVpcDhcpOptionses {
+func newAwsVpcDhcpOptionses(c *ChronojamV1alpha1Client, namespace string) *awsVpcDhcpOptionses {
 	return &awsVpcDhcpOptionses{
 		client: c.RESTClient(),
 		ns:     namespace,

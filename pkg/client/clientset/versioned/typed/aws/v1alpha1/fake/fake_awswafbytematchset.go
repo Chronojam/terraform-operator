@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafByteMatchSets implements AwsWafByteMatchSetInterface
 type FakeAwsWafByteMatchSets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafbytematchsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafbytematchsets"}
+var awswafbytematchsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafbytematchsets"}
 
-var awswafbytematchsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafByteMatchSet"}
+var awswafbytematchsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafByteMatchSet"}
 
 // Get takes name of the awsWafByteMatchSet, and returns the corresponding awsWafByteMatchSet object, and an error if there is any.
 func (c *FakeAwsWafByteMatchSets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafByteMatchSet, err error) {

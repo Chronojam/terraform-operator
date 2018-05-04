@@ -30,13 +30,13 @@ import (
 
 // FakeAwsInspectorAssessmentTargets implements AwsInspectorAssessmentTargetInterface
 type FakeAwsInspectorAssessmentTargets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsinspectorassessmenttargetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsinspectorassessmenttargets"}
+var awsinspectorassessmenttargetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsinspectorassessmenttargets"}
 
-var awsinspectorassessmenttargetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsInspectorAssessmentTarget"}
+var awsinspectorassessmenttargetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsInspectorAssessmentTarget"}
 
 // Get takes name of the awsInspectorAssessmentTarget, and returns the corresponding awsInspectorAssessmentTarget object, and an error if there is any.
 func (c *FakeAwsInspectorAssessmentTargets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsInspectorAssessmentTarget, err error) {

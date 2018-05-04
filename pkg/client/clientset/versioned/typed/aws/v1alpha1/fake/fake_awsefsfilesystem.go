@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEfsFileSystems implements AwsEfsFileSystemInterface
 type FakeAwsEfsFileSystems struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsefsfilesystemsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsefsfilesystems"}
+var awsefsfilesystemsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsefsfilesystems"}
 
-var awsefsfilesystemsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEfsFileSystem"}
+var awsefsfilesystemsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEfsFileSystem"}
 
 // Get takes name of the awsEfsFileSystem, and returns the corresponding awsEfsFileSystem object, and an error if there is any.
 func (c *FakeAwsEfsFileSystems) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEfsFileSystem, err error) {

@@ -53,7 +53,7 @@ type awsInspectorAssessmentTemplates struct {
 }
 
 // newAwsInspectorAssessmentTemplates returns a AwsInspectorAssessmentTemplates
-func newAwsInspectorAssessmentTemplates(c *AwsV1alpha1Client, namespace string) *awsInspectorAssessmentTemplates {
+func newAwsInspectorAssessmentTemplates(c *ChronojamV1alpha1Client, namespace string) *awsInspectorAssessmentTemplates {
 	return &awsInspectorAssessmentTemplates{
 		client: c.RESTClient(),
 		ns:     namespace,

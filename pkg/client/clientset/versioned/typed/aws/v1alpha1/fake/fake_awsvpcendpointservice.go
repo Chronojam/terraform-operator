@@ -30,13 +30,13 @@ import (
 
 // FakeAwsVpcEndpointServices implements AwsVpcEndpointServiceInterface
 type FakeAwsVpcEndpointServices struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsvpcendpointservicesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsvpcendpointservices"}
+var awsvpcendpointservicesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsvpcendpointservices"}
 
-var awsvpcendpointservicesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsVpcEndpointService"}
+var awsvpcendpointservicesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsVpcEndpointService"}
 
 // Get takes name of the awsVpcEndpointService, and returns the corresponding awsVpcEndpointService object, and an error if there is any.
 func (c *FakeAwsVpcEndpointServices) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsVpcEndpointService, err error) {

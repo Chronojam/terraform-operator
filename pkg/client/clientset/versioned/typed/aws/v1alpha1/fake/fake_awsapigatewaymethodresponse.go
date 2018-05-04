@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayMethodResponses implements AwsApiGatewayMethodResponseInterface
 type FakeAwsApiGatewayMethodResponses struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewaymethodresponsesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewaymethodresponses"}
+var awsapigatewaymethodresponsesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewaymethodresponses"}
 
-var awsapigatewaymethodresponsesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayMethodResponse"}
+var awsapigatewaymethodresponsesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayMethodResponse"}
 
 // Get takes name of the awsApiGatewayMethodResponse, and returns the corresponding awsApiGatewayMethodResponse object, and an error if there is any.
 func (c *FakeAwsApiGatewayMethodResponses) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayMethodResponse, err error) {

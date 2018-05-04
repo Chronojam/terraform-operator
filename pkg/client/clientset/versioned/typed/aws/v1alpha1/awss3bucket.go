@@ -53,7 +53,7 @@ type awsS3Buckets struct {
 }
 
 // newAwsS3Buckets returns a AwsS3Buckets
-func newAwsS3Buckets(c *AwsV1alpha1Client, namespace string) *awsS3Buckets {
+func newAwsS3Buckets(c *ChronojamV1alpha1Client, namespace string) *awsS3Buckets {
 	return &awsS3Buckets{
 		client: c.RESTClient(),
 		ns:     namespace,

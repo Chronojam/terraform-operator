@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafregionalRegexPatternSets implements AwsWafregionalRegexPatternSetInterface
 type FakeAwsWafregionalRegexPatternSets struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafregionalregexpatternsetsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafregionalregexpatternsets"}
+var awswafregionalregexpatternsetsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafregionalregexpatternsets"}
 
-var awswafregionalregexpatternsetsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafregionalRegexPatternSet"}
+var awswafregionalregexpatternsetsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafregionalRegexPatternSet"}
 
 // Get takes name of the awsWafregionalRegexPatternSet, and returns the corresponding awsWafregionalRegexPatternSet object, and an error if there is any.
 func (c *FakeAwsWafregionalRegexPatternSets) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafregionalRegexPatternSet, err error) {

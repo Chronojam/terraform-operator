@@ -53,7 +53,7 @@ type awsSnsPlatformApplications struct {
 }
 
 // newAwsSnsPlatformApplications returns a AwsSnsPlatformApplications
-func newAwsSnsPlatformApplications(c *AwsV1alpha1Client, namespace string) *awsSnsPlatformApplications {
+func newAwsSnsPlatformApplications(c *ChronojamV1alpha1Client, namespace string) *awsSnsPlatformApplications {
 	return &awsSnsPlatformApplications{
 		client: c.RESTClient(),
 		ns:     namespace,

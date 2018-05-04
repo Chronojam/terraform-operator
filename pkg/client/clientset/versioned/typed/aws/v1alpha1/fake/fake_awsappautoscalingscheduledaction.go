@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAppautoscalingScheduledActions implements AwsAppautoscalingScheduledActionInterface
 type FakeAwsAppautoscalingScheduledActions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsappautoscalingscheduledactionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsappautoscalingscheduledactions"}
+var awsappautoscalingscheduledactionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsappautoscalingscheduledactions"}
 
-var awsappautoscalingscheduledactionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAppautoscalingScheduledAction"}
+var awsappautoscalingscheduledactionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAppautoscalingScheduledAction"}
 
 // Get takes name of the awsAppautoscalingScheduledAction, and returns the corresponding awsAppautoscalingScheduledAction object, and an error if there is any.
 func (c *FakeAwsAppautoscalingScheduledActions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAppautoscalingScheduledAction, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsGlueCatalogDatabases implements AwsGlueCatalogDatabaseInterface
 type FakeAwsGlueCatalogDatabases struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsgluecatalogdatabasesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsgluecatalogdatabases"}
+var awsgluecatalogdatabasesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsgluecatalogdatabases"}
 
-var awsgluecatalogdatabasesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsGlueCatalogDatabase"}
+var awsgluecatalogdatabasesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsGlueCatalogDatabase"}
 
 // Get takes name of the awsGlueCatalogDatabase, and returns the corresponding awsGlueCatalogDatabase object, and an error if there is any.
 func (c *FakeAwsGlueCatalogDatabases) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsGlueCatalogDatabase, err error) {

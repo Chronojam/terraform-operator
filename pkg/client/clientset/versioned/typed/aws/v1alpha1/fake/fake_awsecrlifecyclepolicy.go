@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEcrLifecyclePolicies implements AwsEcrLifecyclePolicyInterface
 type FakeAwsEcrLifecyclePolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsecrlifecyclepoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsecrlifecyclepolicies"}
+var awsecrlifecyclepoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsecrlifecyclepolicies"}
 
-var awsecrlifecyclepoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEcrLifecyclePolicy"}
+var awsecrlifecyclepoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEcrLifecyclePolicy"}
 
 // Get takes name of the awsEcrLifecyclePolicy, and returns the corresponding awsEcrLifecyclePolicy object, and an error if there is any.
 func (c *FakeAwsEcrLifecyclePolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEcrLifecyclePolicy, err error) {

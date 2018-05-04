@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayBasePathMappings implements AwsApiGatewayBasePathMappingInterface
 type FakeAwsApiGatewayBasePathMappings struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewaybasepathmappingsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewaybasepathmappings"}
+var awsapigatewaybasepathmappingsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewaybasepathmappings"}
 
-var awsapigatewaybasepathmappingsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayBasePathMapping"}
+var awsapigatewaybasepathmappingsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayBasePathMapping"}
 
 // Get takes name of the awsApiGatewayBasePathMapping, and returns the corresponding awsApiGatewayBasePathMapping object, and an error if there is any.
 func (c *FakeAwsApiGatewayBasePathMappings) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayBasePathMapping, err error) {

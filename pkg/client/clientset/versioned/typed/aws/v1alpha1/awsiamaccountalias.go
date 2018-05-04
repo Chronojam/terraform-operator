@@ -53,7 +53,7 @@ type awsIamAccountAliases struct {
 }
 
 // newAwsIamAccountAliases returns a AwsIamAccountAliases
-func newAwsIamAccountAliases(c *AwsV1alpha1Client, namespace string) *awsIamAccountAliases {
+func newAwsIamAccountAliases(c *ChronojamV1alpha1Client, namespace string) *awsIamAccountAliases {
 	return &awsIamAccountAliases{
 		client: c.RESTClient(),
 		ns:     namespace,

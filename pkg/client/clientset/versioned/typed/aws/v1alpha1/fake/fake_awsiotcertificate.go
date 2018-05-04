@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIotCertificates implements AwsIotCertificateInterface
 type FakeAwsIotCertificates struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiotcertificatesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiotcertificates"}
+var awsiotcertificatesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiotcertificates"}
 
-var awsiotcertificatesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIotCertificate"}
+var awsiotcertificatesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIotCertificate"}
 
 // Get takes name of the awsIotCertificate, and returns the corresponding awsIotCertificate object, and an error if there is any.
 func (c *FakeAwsIotCertificates) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIotCertificate, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsElasticBeanstalkApplications implements AwsElasticBeanstalkApplicationInterface
 type FakeAwsElasticBeanstalkApplications struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awselasticbeanstalkapplicationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awselasticbeanstalkapplications"}
+var awselasticbeanstalkapplicationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awselasticbeanstalkapplications"}
 
-var awselasticbeanstalkapplicationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsElasticBeanstalkApplication"}
+var awselasticbeanstalkapplicationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsElasticBeanstalkApplication"}
 
 // Get takes name of the awsElasticBeanstalkApplication, and returns the corresponding awsElasticBeanstalkApplication object, and an error if there is any.
 func (c *FakeAwsElasticBeanstalkApplications) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsElasticBeanstalkApplication, err error) {

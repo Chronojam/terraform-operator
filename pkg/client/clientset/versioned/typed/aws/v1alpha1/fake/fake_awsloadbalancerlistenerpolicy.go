@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLoadBalancerListenerPolicies implements AwsLoadBalancerListenerPolicyInterface
 type FakeAwsLoadBalancerListenerPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsloadbalancerlistenerpoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsloadbalancerlistenerpolicies"}
+var awsloadbalancerlistenerpoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsloadbalancerlistenerpolicies"}
 
-var awsloadbalancerlistenerpoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLoadBalancerListenerPolicy"}
+var awsloadbalancerlistenerpoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLoadBalancerListenerPolicy"}
 
 // Get takes name of the awsLoadBalancerListenerPolicy, and returns the corresponding awsLoadBalancerListenerPolicy object, and an error if there is any.
 func (c *FakeAwsLoadBalancerListenerPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLoadBalancerListenerPolicy, err error) {

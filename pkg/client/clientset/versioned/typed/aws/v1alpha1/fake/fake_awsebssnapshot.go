@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEbsSnapshots implements AwsEbsSnapshotInterface
 type FakeAwsEbsSnapshots struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsebssnapshotsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsebssnapshots"}
+var awsebssnapshotsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsebssnapshots"}
 
-var awsebssnapshotsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEbsSnapshot"}
+var awsebssnapshotsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEbsSnapshot"}
 
 // Get takes name of the awsEbsSnapshot, and returns the corresponding awsEbsSnapshot object, and an error if there is any.
 func (c *FakeAwsEbsSnapshots) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEbsSnapshot, err error) {

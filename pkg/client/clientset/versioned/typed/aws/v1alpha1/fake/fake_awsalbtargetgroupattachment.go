@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAlbTargetGroupAttachments implements AwsAlbTargetGroupAttachmentInterface
 type FakeAwsAlbTargetGroupAttachments struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsalbtargetgroupattachmentsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsalbtargetgroupattachments"}
+var awsalbtargetgroupattachmentsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsalbtargetgroupattachments"}
 
-var awsalbtargetgroupattachmentsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAlbTargetGroupAttachment"}
+var awsalbtargetgroupattachmentsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAlbTargetGroupAttachment"}
 
 // Get takes name of the awsAlbTargetGroupAttachment, and returns the corresponding awsAlbTargetGroupAttachment object, and an error if there is any.
 func (c *FakeAwsAlbTargetGroupAttachments) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAlbTargetGroupAttachment, err error) {

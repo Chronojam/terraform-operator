@@ -53,7 +53,7 @@ type awsFlowLogs struct {
 }
 
 // newAwsFlowLogs returns a AwsFlowLogs
-func newAwsFlowLogs(c *AwsV1alpha1Client, namespace string) *awsFlowLogs {
+func newAwsFlowLogs(c *ChronojamV1alpha1Client, namespace string) *awsFlowLogs {
 	return &awsFlowLogs{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsSesReceiptFilters struct {
 }
 
 // newAwsSesReceiptFilters returns a AwsSesReceiptFilters
-func newAwsSesReceiptFilters(c *AwsV1alpha1Client, namespace string) *awsSesReceiptFilters {
+func newAwsSesReceiptFilters(c *ChronojamV1alpha1Client, namespace string) *awsSesReceiptFilters {
 	return &awsSesReceiptFilters{
 		client: c.RESTClient(),
 		ns:     namespace,

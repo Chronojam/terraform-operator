@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudwatchLogGroups implements AwsCloudwatchLogGroupInterface
 type FakeAwsCloudwatchLogGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudwatchloggroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudwatchloggroups"}
+var awscloudwatchloggroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudwatchloggroups"}
 
-var awscloudwatchloggroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudwatchLogGroup"}
+var awscloudwatchloggroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudwatchLogGroup"}
 
 // Get takes name of the awsCloudwatchLogGroup, and returns the corresponding awsCloudwatchLogGroup object, and an error if there is any.
 func (c *FakeAwsCloudwatchLogGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudwatchLogGroup, err error) {

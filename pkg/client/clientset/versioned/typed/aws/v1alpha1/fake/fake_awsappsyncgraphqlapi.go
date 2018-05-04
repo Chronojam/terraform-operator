@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAppsyncGraphqlApis implements AwsAppsyncGraphqlApiInterface
 type FakeAwsAppsyncGraphqlApis struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsappsyncgraphqlapisResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsappsyncgraphqlapis"}
+var awsappsyncgraphqlapisResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsappsyncgraphqlapis"}
 
-var awsappsyncgraphqlapisKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAppsyncGraphqlApi"}
+var awsappsyncgraphqlapisKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAppsyncGraphqlApi"}
 
 // Get takes name of the awsAppsyncGraphqlApi, and returns the corresponding awsAppsyncGraphqlApi object, and an error if there is any.
 func (c *FakeAwsAppsyncGraphqlApis) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAppsyncGraphqlApi, err error) {

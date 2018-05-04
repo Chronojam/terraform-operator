@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudtrails implements AwsCloudtrailInterface
 type FakeAwsCloudtrails struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudtrailsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudtrails"}
+var awscloudtrailsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudtrails"}
 
-var awscloudtrailsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudtrail"}
+var awscloudtrailsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudtrail"}
 
 // Get takes name of the awsCloudtrail, and returns the corresponding awsCloudtrail object, and an error if there is any.
 func (c *FakeAwsCloudtrails) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudtrail, err error) {

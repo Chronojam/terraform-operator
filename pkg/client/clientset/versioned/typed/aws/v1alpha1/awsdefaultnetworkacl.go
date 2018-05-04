@@ -53,7 +53,7 @@ type awsDefaultNetworkAcls struct {
 }
 
 // newAwsDefaultNetworkAcls returns a AwsDefaultNetworkAcls
-func newAwsDefaultNetworkAcls(c *AwsV1alpha1Client, namespace string) *awsDefaultNetworkAcls {
+func newAwsDefaultNetworkAcls(c *ChronojamV1alpha1Client, namespace string) *awsDefaultNetworkAcls {
 	return &awsDefaultNetworkAcls{
 		client: c.RESTClient(),
 		ns:     namespace,

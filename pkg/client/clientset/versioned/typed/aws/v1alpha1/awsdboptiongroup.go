@@ -53,7 +53,7 @@ type awsDbOptionGroups struct {
 }
 
 // newAwsDbOptionGroups returns a AwsDbOptionGroups
-func newAwsDbOptionGroups(c *AwsV1alpha1Client, namespace string) *awsDbOptionGroups {
+func newAwsDbOptionGroups(c *ChronojamV1alpha1Client, namespace string) *awsDbOptionGroups {
 	return &awsDbOptionGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

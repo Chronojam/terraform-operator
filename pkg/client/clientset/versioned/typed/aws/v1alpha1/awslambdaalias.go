@@ -53,7 +53,7 @@ type awsLambdaAliases struct {
 }
 
 // newAwsLambdaAliases returns a AwsLambdaAliases
-func newAwsLambdaAliases(c *AwsV1alpha1Client, namespace string) *awsLambdaAliases {
+func newAwsLambdaAliases(c *ChronojamV1alpha1Client, namespace string) *awsLambdaAliases {
 	return &awsLambdaAliases{
 		client: c.RESTClient(),
 		ns:     namespace,

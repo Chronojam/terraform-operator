@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIamGroups implements AwsIamGroupInterface
 type FakeAwsIamGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiamgroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiamgroups"}
+var awsiamgroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiamgroups"}
 
-var awsiamgroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIamGroup"}
+var awsiamgroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIamGroup"}
 
 // Get takes name of the awsIamGroup, and returns the corresponding awsIamGroup object, and an error if there is any.
 func (c *FakeAwsIamGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIamGroup, err error) {

@@ -53,7 +53,7 @@ type awsIamSamlProviders struct {
 }
 
 // newAwsIamSamlProviders returns a AwsIamSamlProviders
-func newAwsIamSamlProviders(c *AwsV1alpha1Client, namespace string) *awsIamSamlProviders {
+func newAwsIamSamlProviders(c *ChronojamV1alpha1Client, namespace string) *awsIamSamlProviders {
 	return &awsIamSamlProviders{
 		client: c.RESTClient(),
 		ns:     namespace,

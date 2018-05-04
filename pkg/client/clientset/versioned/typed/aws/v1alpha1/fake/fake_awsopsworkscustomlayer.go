@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksCustomLayers implements AwsOpsworksCustomLayerInterface
 type FakeAwsOpsworksCustomLayers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworkscustomlayersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworkscustomlayers"}
+var awsopsworkscustomlayersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworkscustomlayers"}
 
-var awsopsworkscustomlayersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksCustomLayer"}
+var awsopsworkscustomlayersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksCustomLayer"}
 
 // Get takes name of the awsOpsworksCustomLayer, and returns the corresponding awsOpsworksCustomLayer object, and an error if there is any.
 func (c *FakeAwsOpsworksCustomLayers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksCustomLayer, err error) {

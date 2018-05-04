@@ -53,7 +53,7 @@ type awsSsmActivations struct {
 }
 
 // newAwsSsmActivations returns a AwsSsmActivations
-func newAwsSsmActivations(c *AwsV1alpha1Client, namespace string) *awsSsmActivations {
+func newAwsSsmActivations(c *ChronojamV1alpha1Client, namespace string) *awsSsmActivations {
 	return &awsSsmActivations{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsInspectorAssessmentTemplates implements AwsInspectorAssessmentTemplateInterface
 type FakeAwsInspectorAssessmentTemplates struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsinspectorassessmenttemplatesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsinspectorassessmenttemplates"}
+var awsinspectorassessmenttemplatesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsinspectorassessmenttemplates"}
 
-var awsinspectorassessmenttemplatesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsInspectorAssessmentTemplate"}
+var awsinspectorassessmenttemplatesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsInspectorAssessmentTemplate"}
 
 // Get takes name of the awsInspectorAssessmentTemplate, and returns the corresponding awsInspectorAssessmentTemplate object, and an error if there is any.
 func (c *FakeAwsInspectorAssessmentTemplates) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsInspectorAssessmentTemplate, err error) {

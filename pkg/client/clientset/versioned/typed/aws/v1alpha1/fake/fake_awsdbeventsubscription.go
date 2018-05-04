@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDbEventSubscriptions implements AwsDbEventSubscriptionInterface
 type FakeAwsDbEventSubscriptions struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdbeventsubscriptionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdbeventsubscriptions"}
+var awsdbeventsubscriptionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdbeventsubscriptions"}
 
-var awsdbeventsubscriptionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDbEventSubscription"}
+var awsdbeventsubscriptionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDbEventSubscription"}
 
 // Get takes name of the awsDbEventSubscription, and returns the corresponding awsDbEventSubscription object, and an error if there is any.
 func (c *FakeAwsDbEventSubscriptions) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDbEventSubscription, err error) {

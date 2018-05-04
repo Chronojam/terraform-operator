@@ -53,7 +53,7 @@ type awsEgressOnlyInternetGateways struct {
 }
 
 // newAwsEgressOnlyInternetGateways returns a AwsEgressOnlyInternetGateways
-func newAwsEgressOnlyInternetGateways(c *AwsV1alpha1Client, namespace string) *awsEgressOnlyInternetGateways {
+func newAwsEgressOnlyInternetGateways(c *ChronojamV1alpha1Client, namespace string) *awsEgressOnlyInternetGateways {
 	return &awsEgressOnlyInternetGateways{
 		client: c.RESTClient(),
 		ns:     namespace,

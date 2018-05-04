@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCodedeployApps implements AwsCodedeployAppInterface
 type FakeAwsCodedeployApps struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscodedeployappsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscodedeployapps"}
+var awscodedeployappsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscodedeployapps"}
 
-var awscodedeployappsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCodedeployApp"}
+var awscodedeployappsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCodedeployApp"}
 
 // Get takes name of the awsCodedeployApp, and returns the corresponding awsCodedeployApp object, and an error if there is any.
 func (c *FakeAwsCodedeployApps) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCodedeployApp, err error) {

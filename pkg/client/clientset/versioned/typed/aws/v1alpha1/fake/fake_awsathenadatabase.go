@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAthenaDatabases implements AwsAthenaDatabaseInterface
 type FakeAwsAthenaDatabases struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsathenadatabasesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsathenadatabases"}
+var awsathenadatabasesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsathenadatabases"}
 
-var awsathenadatabasesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAthenaDatabase"}
+var awsathenadatabasesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAthenaDatabase"}
 
 // Get takes name of the awsAthenaDatabase, and returns the corresponding awsAthenaDatabase object, and an error if there is any.
 func (c *FakeAwsAthenaDatabases) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAthenaDatabase, err error) {

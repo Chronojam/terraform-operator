@@ -53,7 +53,7 @@ type awsCodepipelines struct {
 }
 
 // newAwsCodepipelines returns a AwsCodepipelines
-func newAwsCodepipelines(c *AwsV1alpha1Client, namespace string) *awsCodepipelines {
+func newAwsCodepipelines(c *ChronojamV1alpha1Client, namespace string) *awsCodepipelines {
 	return &awsCodepipelines{
 		client: c.RESTClient(),
 		ns:     namespace,

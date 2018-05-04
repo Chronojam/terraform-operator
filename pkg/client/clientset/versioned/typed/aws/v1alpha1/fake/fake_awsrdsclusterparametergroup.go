@@ -30,13 +30,13 @@ import (
 
 // FakeAwsRdsClusterParameterGroups implements AwsRdsClusterParameterGroupInterface
 type FakeAwsRdsClusterParameterGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsrdsclusterparametergroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsrdsclusterparametergroups"}
+var awsrdsclusterparametergroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsrdsclusterparametergroups"}
 
-var awsrdsclusterparametergroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsRdsClusterParameterGroup"}
+var awsrdsclusterparametergroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsRdsClusterParameterGroup"}
 
 // Get takes name of the awsRdsClusterParameterGroup, and returns the corresponding awsRdsClusterParameterGroup object, and an error if there is any.
 func (c *FakeAwsRdsClusterParameterGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsRdsClusterParameterGroup, err error) {

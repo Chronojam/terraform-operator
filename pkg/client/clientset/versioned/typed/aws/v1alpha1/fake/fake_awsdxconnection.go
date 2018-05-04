@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDxConnections implements AwsDxConnectionInterface
 type FakeAwsDxConnections struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdxconnectionsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdxconnections"}
+var awsdxconnectionsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdxconnections"}
 
-var awsdxconnectionsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDxConnection"}
+var awsdxconnectionsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDxConnection"}
 
 // Get takes name of the awsDxConnection, and returns the corresponding awsDxConnection object, and an error if there is any.
 func (c *FakeAwsDxConnections) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDxConnection, err error) {

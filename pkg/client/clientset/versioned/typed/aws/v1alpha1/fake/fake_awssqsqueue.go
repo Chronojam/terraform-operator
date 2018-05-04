@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSqsQueues implements AwsSqsQueueInterface
 type FakeAwsSqsQueues struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awssqsqueuesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awssqsqueues"}
+var awssqsqueuesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awssqsqueues"}
 
-var awssqsqueuesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSqsQueue"}
+var awssqsqueuesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSqsQueue"}
 
 // Get takes name of the awsSqsQueue, and returns the corresponding awsSqsQueue object, and an error if there is any.
 func (c *FakeAwsSqsQueues) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSqsQueue, err error) {

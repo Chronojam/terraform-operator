@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAppsyncDatasources implements AwsAppsyncDatasourceInterface
 type FakeAwsAppsyncDatasources struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsappsyncdatasourcesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsappsyncdatasources"}
+var awsappsyncdatasourcesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsappsyncdatasources"}
 
-var awsappsyncdatasourcesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAppsyncDatasource"}
+var awsappsyncdatasourcesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAppsyncDatasource"}
 
 // Get takes name of the awsAppsyncDatasource, and returns the corresponding awsAppsyncDatasource object, and an error if there is any.
 func (c *FakeAwsAppsyncDatasources) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAppsyncDatasource, err error) {

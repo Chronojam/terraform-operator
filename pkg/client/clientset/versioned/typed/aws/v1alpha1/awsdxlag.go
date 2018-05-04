@@ -53,7 +53,7 @@ type awsDxLags struct {
 }
 
 // newAwsDxLags returns a AwsDxLags
-func newAwsDxLags(c *AwsV1alpha1Client, namespace string) *awsDxLags {
+func newAwsDxLags(c *ChronojamV1alpha1Client, namespace string) *awsDxLags {
 	return &awsDxLags{
 		client: c.RESTClient(),
 		ns:     namespace,

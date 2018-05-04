@@ -53,7 +53,7 @@ type awsApiGatewayClientCertificates struct {
 }
 
 // newAwsApiGatewayClientCertificates returns a AwsApiGatewayClientCertificates
-func newAwsApiGatewayClientCertificates(c *AwsV1alpha1Client, namespace string) *awsApiGatewayClientCertificates {
+func newAwsApiGatewayClientCertificates(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayClientCertificates {
 	return &awsApiGatewayClientCertificates{
 		client: c.RESTClient(),
 		ns:     namespace,

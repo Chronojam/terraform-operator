@@ -30,13 +30,13 @@ import (
 
 // FakeAwsWafWebAcls implements AwsWafWebAclInterface
 type FakeAwsWafWebAcls struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awswafwebaclsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awswafwebacls"}
+var awswafwebaclsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awswafwebacls"}
 
-var awswafwebaclsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsWafWebAcl"}
+var awswafwebaclsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsWafWebAcl"}
 
 // Get takes name of the awsWafWebAcl, and returns the corresponding awsWafWebAcl object, and an error if there is any.
 func (c *FakeAwsWafWebAcls) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsWafWebAcl, err error) {

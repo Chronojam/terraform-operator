@@ -53,7 +53,7 @@ type awsIamUsers struct {
 }
 
 // newAwsIamUsers returns a AwsIamUsers
-func newAwsIamUsers(c *AwsV1alpha1Client, namespace string) *awsIamUsers {
+func newAwsIamUsers(c *ChronojamV1alpha1Client, namespace string) *awsIamUsers {
 	return &awsIamUsers{
 		client: c.RESTClient(),
 		ns:     namespace,

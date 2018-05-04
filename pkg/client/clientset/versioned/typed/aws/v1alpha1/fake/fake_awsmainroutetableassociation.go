@@ -30,13 +30,13 @@ import (
 
 // FakeAwsMainRouteTableAssociations implements AwsMainRouteTableAssociationInterface
 type FakeAwsMainRouteTableAssociations struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsmainroutetableassociationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsmainroutetableassociations"}
+var awsmainroutetableassociationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsmainroutetableassociations"}
 
-var awsmainroutetableassociationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsMainRouteTableAssociation"}
+var awsmainroutetableassociationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsMainRouteTableAssociation"}
 
 // Get takes name of the awsMainRouteTableAssociation, and returns the corresponding awsMainRouteTableAssociation object, and an error if there is any.
 func (c *FakeAwsMainRouteTableAssociations) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsMainRouteTableAssociation, err error) {

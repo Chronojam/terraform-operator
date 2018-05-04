@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayStages implements AwsApiGatewayStageInterface
 type FakeAwsApiGatewayStages struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewaystagesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewaystages"}
+var awsapigatewaystagesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewaystages"}
 
-var awsapigatewaystagesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayStage"}
+var awsapigatewaystagesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayStage"}
 
 // Get takes name of the awsApiGatewayStage, and returns the corresponding awsApiGatewayStage object, and an error if there is any.
 func (c *FakeAwsApiGatewayStages) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayStage, err error) {

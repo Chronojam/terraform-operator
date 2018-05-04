@@ -30,13 +30,13 @@ import (
 
 // FakeAwsIamRoles implements AwsIamRoleInterface
 type FakeAwsIamRoles struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsiamrolesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsiamroles"}
+var awsiamrolesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsiamroles"}
 
-var awsiamrolesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsIamRole"}
+var awsiamrolesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsIamRole"}
 
 // Get takes name of the awsIamRole, and returns the corresponding awsIamRole object, and an error if there is any.
 func (c *FakeAwsIamRoles) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsIamRole, err error) {

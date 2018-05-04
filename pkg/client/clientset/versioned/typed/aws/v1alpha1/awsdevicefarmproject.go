@@ -53,7 +53,7 @@ type awsDevicefarmProjects struct {
 }
 
 // newAwsDevicefarmProjects returns a AwsDevicefarmProjects
-func newAwsDevicefarmProjects(c *AwsV1alpha1Client, namespace string) *awsDevicefarmProjects {
+func newAwsDevicefarmProjects(c *ChronojamV1alpha1Client, namespace string) *awsDevicefarmProjects {
 	return &awsDevicefarmProjects{
 		client: c.RESTClient(),
 		ns:     namespace,

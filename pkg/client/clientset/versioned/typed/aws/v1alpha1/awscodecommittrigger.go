@@ -53,7 +53,7 @@ type awsCodecommitTriggers struct {
 }
 
 // newAwsCodecommitTriggers returns a AwsCodecommitTriggers
-func newAwsCodecommitTriggers(c *AwsV1alpha1Client, namespace string) *awsCodecommitTriggers {
+func newAwsCodecommitTriggers(c *ChronojamV1alpha1Client, namespace string) *awsCodecommitTriggers {
 	return &awsCodecommitTriggers{
 		client: c.RESTClient(),
 		ns:     namespace,

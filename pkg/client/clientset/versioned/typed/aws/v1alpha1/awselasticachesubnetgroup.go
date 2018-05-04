@@ -53,7 +53,7 @@ type awsElasticacheSubnetGroups struct {
 }
 
 // newAwsElasticacheSubnetGroups returns a AwsElasticacheSubnetGroups
-func newAwsElasticacheSubnetGroups(c *AwsV1alpha1Client, namespace string) *awsElasticacheSubnetGroups {
+func newAwsElasticacheSubnetGroups(c *ChronojamV1alpha1Client, namespace string) *awsElasticacheSubnetGroups {
 	return &awsElasticacheSubnetGroups{
 		client: c.RESTClient(),
 		ns:     namespace,

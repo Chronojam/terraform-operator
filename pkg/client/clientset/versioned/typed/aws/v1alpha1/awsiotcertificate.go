@@ -53,7 +53,7 @@ type awsIotCertificates struct {
 }
 
 // newAwsIotCertificates returns a AwsIotCertificates
-func newAwsIotCertificates(c *AwsV1alpha1Client, namespace string) *awsIotCertificates {
+func newAwsIotCertificates(c *ChronojamV1alpha1Client, namespace string) *awsIotCertificates {
 	return &awsIotCertificates{
 		client: c.RESTClient(),
 		ns:     namespace,

@@ -53,7 +53,7 @@ type awsIamOpenidConnectProviders struct {
 }
 
 // newAwsIamOpenidConnectProviders returns a AwsIamOpenidConnectProviders
-func newAwsIamOpenidConnectProviders(c *AwsV1alpha1Client, namespace string) *awsIamOpenidConnectProviders {
+func newAwsIamOpenidConnectProviders(c *ChronojamV1alpha1Client, namespace string) *awsIamOpenidConnectProviders {
 	return &awsIamOpenidConnectProviders{
 		client: c.RESTClient(),
 		ns:     namespace,

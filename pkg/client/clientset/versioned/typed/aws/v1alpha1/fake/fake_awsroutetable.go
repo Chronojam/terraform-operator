@@ -30,13 +30,13 @@ import (
 
 // FakeAwsRouteTables implements AwsRouteTableInterface
 type FakeAwsRouteTables struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsroutetablesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsroutetables"}
+var awsroutetablesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsroutetables"}
 
-var awsroutetablesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsRouteTable"}
+var awsroutetablesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsRouteTable"}
 
 // Get takes name of the awsRouteTable, and returns the corresponding awsRouteTable object, and an error if there is any.
 func (c *FakeAwsRouteTables) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsRouteTable, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsNetworkAclRules implements AwsNetworkAclRuleInterface
 type FakeAwsNetworkAclRules struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsnetworkaclrulesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsnetworkaclrules"}
+var awsnetworkaclrulesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsnetworkaclrules"}
 
-var awsnetworkaclrulesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsNetworkAclRule"}
+var awsnetworkaclrulesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsNetworkAclRule"}
 
 // Get takes name of the awsNetworkAclRule, and returns the corresponding awsNetworkAclRule object, and an error if there is any.
 func (c *FakeAwsNetworkAclRules) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsNetworkAclRule, err error) {

@@ -53,7 +53,7 @@ type awsVpcEndpointServiceAllowedPrincipals struct {
 }
 
 // newAwsVpcEndpointServiceAllowedPrincipals returns a AwsVpcEndpointServiceAllowedPrincipals
-func newAwsVpcEndpointServiceAllowedPrincipals(c *AwsV1alpha1Client, namespace string) *awsVpcEndpointServiceAllowedPrincipals {
+func newAwsVpcEndpointServiceAllowedPrincipals(c *ChronojamV1alpha1Client, namespace string) *awsVpcEndpointServiceAllowedPrincipals {
 	return &awsVpcEndpointServiceAllowedPrincipals{
 		client: c.RESTClient(),
 		ns:     namespace,

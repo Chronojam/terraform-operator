@@ -53,7 +53,7 @@ type awsApiGatewayIntegrations struct {
 }
 
 // newAwsApiGatewayIntegrations returns a AwsApiGatewayIntegrations
-func newAwsApiGatewayIntegrations(c *AwsV1alpha1Client, namespace string) *awsApiGatewayIntegrations {
+func newAwsApiGatewayIntegrations(c *ChronojamV1alpha1Client, namespace string) *awsApiGatewayIntegrations {
 	return &awsApiGatewayIntegrations{
 		client: c.RESTClient(),
 		ns:     namespace,

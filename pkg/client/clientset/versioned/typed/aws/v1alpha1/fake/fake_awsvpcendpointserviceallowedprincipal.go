@@ -30,13 +30,13 @@ import (
 
 // FakeAwsVpcEndpointServiceAllowedPrincipals implements AwsVpcEndpointServiceAllowedPrincipalInterface
 type FakeAwsVpcEndpointServiceAllowedPrincipals struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsvpcendpointserviceallowedprincipalsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsvpcendpointserviceallowedprincipals"}
+var awsvpcendpointserviceallowedprincipalsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsvpcendpointserviceallowedprincipals"}
 
-var awsvpcendpointserviceallowedprincipalsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsVpcEndpointServiceAllowedPrincipal"}
+var awsvpcendpointserviceallowedprincipalsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsVpcEndpointServiceAllowedPrincipal"}
 
 // Get takes name of the awsVpcEndpointServiceAllowedPrincipal, and returns the corresponding awsVpcEndpointServiceAllowedPrincipal object, and an error if there is any.
 func (c *FakeAwsVpcEndpointServiceAllowedPrincipals) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsVpcEndpointServiceAllowedPrincipal, err error) {

@@ -53,7 +53,7 @@ type awsCognitoIdentityPools struct {
 }
 
 // newAwsCognitoIdentityPools returns a AwsCognitoIdentityPools
-func newAwsCognitoIdentityPools(c *AwsV1alpha1Client, namespace string) *awsCognitoIdentityPools {
+func newAwsCognitoIdentityPools(c *ChronojamV1alpha1Client, namespace string) *awsCognitoIdentityPools {
 	return &awsCognitoIdentityPools{
 		client: c.RESTClient(),
 		ns:     namespace,

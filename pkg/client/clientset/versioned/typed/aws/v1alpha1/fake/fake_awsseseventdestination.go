@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSesEventDestinations implements AwsSesEventDestinationInterface
 type FakeAwsSesEventDestinations struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsseseventdestinationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsseseventdestinations"}
+var awsseseventdestinationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsseseventdestinations"}
 
-var awsseseventdestinationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSesEventDestination"}
+var awsseseventdestinationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSesEventDestination"}
 
 // Get takes name of the awsSesEventDestination, and returns the corresponding awsSesEventDestination object, and an error if there is any.
 func (c *FakeAwsSesEventDestinations) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSesEventDestination, err error) {

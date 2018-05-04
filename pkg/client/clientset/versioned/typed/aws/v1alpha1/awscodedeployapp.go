@@ -53,7 +53,7 @@ type awsCodedeployApps struct {
 }
 
 // newAwsCodedeployApps returns a AwsCodedeployApps
-func newAwsCodedeployApps(c *AwsV1alpha1Client, namespace string) *awsCodedeployApps {
+func newAwsCodedeployApps(c *ChronojamV1alpha1Client, namespace string) *awsCodedeployApps {
 	return &awsCodedeployApps{
 		client: c.RESTClient(),
 		ns:     namespace,

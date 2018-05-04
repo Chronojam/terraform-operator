@@ -30,13 +30,13 @@ import (
 
 // FakeAwsEmrInstanceGroups implements AwsEmrInstanceGroupInterface
 type FakeAwsEmrInstanceGroups struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsemrinstancegroupsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsemrinstancegroups"}
+var awsemrinstancegroupsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsemrinstancegroups"}
 
-var awsemrinstancegroupsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsEmrInstanceGroup"}
+var awsemrinstancegroupsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsEmrInstanceGroup"}
 
 // Get takes name of the awsEmrInstanceGroup, and returns the corresponding awsEmrInstanceGroup object, and an error if there is any.
 func (c *FakeAwsEmrInstanceGroups) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsEmrInstanceGroup, err error) {

@@ -53,7 +53,7 @@ type awsAcmCertificateValidations struct {
 }
 
 // newAwsAcmCertificateValidations returns a AwsAcmCertificateValidations
-func newAwsAcmCertificateValidations(c *AwsV1alpha1Client, namespace string) *awsAcmCertificateValidations {
+func newAwsAcmCertificateValidations(c *ChronojamV1alpha1Client, namespace string) *awsAcmCertificateValidations {
 	return &awsAcmCertificateValidations{
 		client: c.RESTClient(),
 		ns:     namespace,

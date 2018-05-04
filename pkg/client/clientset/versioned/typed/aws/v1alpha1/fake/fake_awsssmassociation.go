@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSsmAssociations implements AwsSsmAssociationInterface
 type FakeAwsSsmAssociations struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsssmassociationsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsssmassociations"}
+var awsssmassociationsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsssmassociations"}
 
-var awsssmassociationsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSsmAssociation"}
+var awsssmassociationsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSsmAssociation"}
 
 // Get takes name of the awsSsmAssociation, and returns the corresponding awsSsmAssociation object, and an error if there is any.
 func (c *FakeAwsSsmAssociations) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSsmAssociation, err error) {

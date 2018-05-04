@@ -53,7 +53,7 @@ type awsIamRoles struct {
 }
 
 // newAwsIamRoles returns a AwsIamRoles
-func newAwsIamRoles(c *AwsV1alpha1Client, namespace string) *awsIamRoles {
+func newAwsIamRoles(c *ChronojamV1alpha1Client, namespace string) *awsIamRoles {
 	return &awsIamRoles{
 		client: c.RESTClient(),
 		ns:     namespace,

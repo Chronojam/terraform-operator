@@ -30,13 +30,13 @@ import (
 
 // FakeAwsAutoscalingLifecycleHooks implements AwsAutoscalingLifecycleHookInterface
 type FakeAwsAutoscalingLifecycleHooks struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsautoscalinglifecyclehooksResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsautoscalinglifecyclehooks"}
+var awsautoscalinglifecyclehooksResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsautoscalinglifecyclehooks"}
 
-var awsautoscalinglifecyclehooksKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsAutoscalingLifecycleHook"}
+var awsautoscalinglifecyclehooksKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsAutoscalingLifecycleHook"}
 
 // Get takes name of the awsAutoscalingLifecycleHook, and returns the corresponding awsAutoscalingLifecycleHook object, and an error if there is any.
 func (c *FakeAwsAutoscalingLifecycleHooks) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsAutoscalingLifecycleHook, err error) {

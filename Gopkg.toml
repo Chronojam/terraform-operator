@@ -22,9 +22,25 @@
 
 
 [[constraint]]
+  name = "github.com/Sirupsen/logrus"
+  version = "1.0.5"
+
+[[constraint]]
   name = "github.com/hashicorp/terraform"
   version = "0.11.7"
 
 [[constraint]]
   name = "github.com/terraform-providers/terraform-provider-aws"
   version = "1.17.0"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/trussle/terraform-operator"
+
+[[constraint]]
+  branch = "master"
+  name = "k8s.io/apimachinery"
+
+[[constraint]]
+  name = "k8s.io/client-go"
+  version = "7.0.0"

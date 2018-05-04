@@ -30,13 +30,13 @@ import (
 
 // FakeAwsElasticBeanstalkConfigurationTemplates implements AwsElasticBeanstalkConfigurationTemplateInterface
 type FakeAwsElasticBeanstalkConfigurationTemplates struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awselasticbeanstalkconfigurationtemplatesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awselasticbeanstalkconfigurationtemplates"}
+var awselasticbeanstalkconfigurationtemplatesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awselasticbeanstalkconfigurationtemplates"}
 
-var awselasticbeanstalkconfigurationtemplatesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsElasticBeanstalkConfigurationTemplate"}
+var awselasticbeanstalkconfigurationtemplatesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsElasticBeanstalkConfigurationTemplate"}
 
 // Get takes name of the awsElasticBeanstalkConfigurationTemplate, and returns the corresponding awsElasticBeanstalkConfigurationTemplate object, and an error if there is any.
 func (c *FakeAwsElasticBeanstalkConfigurationTemplates) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsElasticBeanstalkConfigurationTemplate, err error) {

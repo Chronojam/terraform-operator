@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLbCookieStickinessPolicies implements AwsLbCookieStickinessPolicyInterface
 type FakeAwsLbCookieStickinessPolicies struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslbcookiestickinesspoliciesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslbcookiestickinesspolicies"}
+var awslbcookiestickinesspoliciesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslbcookiestickinesspolicies"}
 
-var awslbcookiestickinesspoliciesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLbCookieStickinessPolicy"}
+var awslbcookiestickinesspoliciesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLbCookieStickinessPolicy"}
 
 // Get takes name of the awsLbCookieStickinessPolicy, and returns the corresponding awsLbCookieStickinessPolicy object, and an error if there is any.
 func (c *FakeAwsLbCookieStickinessPolicies) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLbCookieStickinessPolicy, err error) {

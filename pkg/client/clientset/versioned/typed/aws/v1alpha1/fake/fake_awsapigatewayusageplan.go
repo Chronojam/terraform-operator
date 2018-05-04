@@ -30,13 +30,13 @@ import (
 
 // FakeAwsApiGatewayUsagePlans implements AwsApiGatewayUsagePlanInterface
 type FakeAwsApiGatewayUsagePlans struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsapigatewayusageplansResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsapigatewayusageplans"}
+var awsapigatewayusageplansResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsapigatewayusageplans"}
 
-var awsapigatewayusageplansKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsApiGatewayUsagePlan"}
+var awsapigatewayusageplansKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsApiGatewayUsagePlan"}
 
 // Get takes name of the awsApiGatewayUsagePlan, and returns the corresponding awsApiGatewayUsagePlan object, and an error if there is any.
 func (c *FakeAwsApiGatewayUsagePlans) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsApiGatewayUsagePlan, err error) {

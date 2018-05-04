@@ -25,7 +25,7 @@ import (
 	rest "k8s.io/client-go/rest"
 )
 
-type AwsV1alpha1Interface interface {
+type ChronojamV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	AwsAcmCertificatesGetter
 	AwsAcmCertificateValidationsGetter
@@ -391,1461 +391,1461 @@ type AwsV1alpha1Interface interface {
 	AwsWafregionalXssMatchSetsGetter
 }
 
-// AwsV1alpha1Client is used to interact with features provided by the aws group.
-type AwsV1alpha1Client struct {
+// ChronojamV1alpha1Client is used to interact with features provided by the chronojam.co.uk group.
+type ChronojamV1alpha1Client struct {
 	restClient rest.Interface
 }
 
-func (c *AwsV1alpha1Client) AwsAcmCertificates(namespace string) AwsAcmCertificateInterface {
+func (c *ChronojamV1alpha1Client) AwsAcmCertificates(namespace string) AwsAcmCertificateInterface {
 	return newAwsAcmCertificates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAcmCertificateValidations(namespace string) AwsAcmCertificateValidationInterface {
+func (c *ChronojamV1alpha1Client) AwsAcmCertificateValidations(namespace string) AwsAcmCertificateValidationInterface {
 	return newAwsAcmCertificateValidations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAlbs(namespace string) AwsAlbInterface {
+func (c *ChronojamV1alpha1Client) AwsAlbs(namespace string) AwsAlbInterface {
 	return newAwsAlbs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAlbListeners(namespace string) AwsAlbListenerInterface {
+func (c *ChronojamV1alpha1Client) AwsAlbListeners(namespace string) AwsAlbListenerInterface {
 	return newAwsAlbListeners(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAlbListenerCertificates(namespace string) AwsAlbListenerCertificateInterface {
+func (c *ChronojamV1alpha1Client) AwsAlbListenerCertificates(namespace string) AwsAlbListenerCertificateInterface {
 	return newAwsAlbListenerCertificates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAlbListenerRules(namespace string) AwsAlbListenerRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsAlbListenerRules(namespace string) AwsAlbListenerRuleInterface {
 	return newAwsAlbListenerRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAlbTargetGroups(namespace string) AwsAlbTargetGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsAlbTargetGroups(namespace string) AwsAlbTargetGroupInterface {
 	return newAwsAlbTargetGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAlbTargetGroupAttachments(namespace string) AwsAlbTargetGroupAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsAlbTargetGroupAttachments(namespace string) AwsAlbTargetGroupAttachmentInterface {
 	return newAwsAlbTargetGroupAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAmis(namespace string) AwsAmiInterface {
+func (c *ChronojamV1alpha1Client) AwsAmis(namespace string) AwsAmiInterface {
 	return newAwsAmis(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAmiCopies(namespace string) AwsAmiCopyInterface {
+func (c *ChronojamV1alpha1Client) AwsAmiCopies(namespace string) AwsAmiCopyInterface {
 	return newAwsAmiCopies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAmiFromInstances(namespace string) AwsAmiFromInstanceInterface {
+func (c *ChronojamV1alpha1Client) AwsAmiFromInstances(namespace string) AwsAmiFromInstanceInterface {
 	return newAwsAmiFromInstances(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAmiLaunchPermissions(namespace string) AwsAmiLaunchPermissionInterface {
+func (c *ChronojamV1alpha1Client) AwsAmiLaunchPermissions(namespace string) AwsAmiLaunchPermissionInterface {
 	return newAwsAmiLaunchPermissions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayAccounts(namespace string) AwsApiGatewayAccountInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayAccounts(namespace string) AwsApiGatewayAccountInterface {
 	return newAwsApiGatewayAccounts(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayApiKeys(namespace string) AwsApiGatewayApiKeyInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayApiKeys(namespace string) AwsApiGatewayApiKeyInterface {
 	return newAwsApiGatewayApiKeys(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayAuthorizers(namespace string) AwsApiGatewayAuthorizerInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayAuthorizers(namespace string) AwsApiGatewayAuthorizerInterface {
 	return newAwsApiGatewayAuthorizers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayBasePathMappings(namespace string) AwsApiGatewayBasePathMappingInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayBasePathMappings(namespace string) AwsApiGatewayBasePathMappingInterface {
 	return newAwsApiGatewayBasePathMappings(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayClientCertificates(namespace string) AwsApiGatewayClientCertificateInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayClientCertificates(namespace string) AwsApiGatewayClientCertificateInterface {
 	return newAwsApiGatewayClientCertificates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayDeployments(namespace string) AwsApiGatewayDeploymentInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayDeployments(namespace string) AwsApiGatewayDeploymentInterface {
 	return newAwsApiGatewayDeployments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayDocumentationParts(namespace string) AwsApiGatewayDocumentationPartInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayDocumentationParts(namespace string) AwsApiGatewayDocumentationPartInterface {
 	return newAwsApiGatewayDocumentationParts(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayDocumentationVersions(namespace string) AwsApiGatewayDocumentationVersionInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayDocumentationVersions(namespace string) AwsApiGatewayDocumentationVersionInterface {
 	return newAwsApiGatewayDocumentationVersions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayDomainNames(namespace string) AwsApiGatewayDomainNameInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayDomainNames(namespace string) AwsApiGatewayDomainNameInterface {
 	return newAwsApiGatewayDomainNames(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayGatewayResponses(namespace string) AwsApiGatewayGatewayResponseInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayGatewayResponses(namespace string) AwsApiGatewayGatewayResponseInterface {
 	return newAwsApiGatewayGatewayResponses(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayIntegrations(namespace string) AwsApiGatewayIntegrationInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayIntegrations(namespace string) AwsApiGatewayIntegrationInterface {
 	return newAwsApiGatewayIntegrations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayIntegrationResponses(namespace string) AwsApiGatewayIntegrationResponseInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayIntegrationResponses(namespace string) AwsApiGatewayIntegrationResponseInterface {
 	return newAwsApiGatewayIntegrationResponses(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayMethods(namespace string) AwsApiGatewayMethodInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayMethods(namespace string) AwsApiGatewayMethodInterface {
 	return newAwsApiGatewayMethods(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayMethodResponses(namespace string) AwsApiGatewayMethodResponseInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayMethodResponses(namespace string) AwsApiGatewayMethodResponseInterface {
 	return newAwsApiGatewayMethodResponses(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayMethodSettingses(namespace string) AwsApiGatewayMethodSettingsInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayMethodSettingses(namespace string) AwsApiGatewayMethodSettingsInterface {
 	return newAwsApiGatewayMethodSettingses(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayModels(namespace string) AwsApiGatewayModelInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayModels(namespace string) AwsApiGatewayModelInterface {
 	return newAwsApiGatewayModels(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayRequestValidators(namespace string) AwsApiGatewayRequestValidatorInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayRequestValidators(namespace string) AwsApiGatewayRequestValidatorInterface {
 	return newAwsApiGatewayRequestValidators(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayResources(namespace string) AwsApiGatewayResourceInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayResources(namespace string) AwsApiGatewayResourceInterface {
 	return newAwsApiGatewayResources(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayRestApis(namespace string) AwsApiGatewayRestApiInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayRestApis(namespace string) AwsApiGatewayRestApiInterface {
 	return newAwsApiGatewayRestApis(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayStages(namespace string) AwsApiGatewayStageInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayStages(namespace string) AwsApiGatewayStageInterface {
 	return newAwsApiGatewayStages(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayUsagePlans(namespace string) AwsApiGatewayUsagePlanInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayUsagePlans(namespace string) AwsApiGatewayUsagePlanInterface {
 	return newAwsApiGatewayUsagePlans(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayUsagePlanKeys(namespace string) AwsApiGatewayUsagePlanKeyInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayUsagePlanKeys(namespace string) AwsApiGatewayUsagePlanKeyInterface {
 	return newAwsApiGatewayUsagePlanKeys(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsApiGatewayVpcLinks(namespace string) AwsApiGatewayVpcLinkInterface {
+func (c *ChronojamV1alpha1Client) AwsApiGatewayVpcLinks(namespace string) AwsApiGatewayVpcLinkInterface {
 	return newAwsApiGatewayVpcLinks(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAppCookieStickinessPolicies(namespace string) AwsAppCookieStickinessPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsAppCookieStickinessPolicies(namespace string) AwsAppCookieStickinessPolicyInterface {
 	return newAwsAppCookieStickinessPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAppautoscalingPolicies(namespace string) AwsAppautoscalingPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsAppautoscalingPolicies(namespace string) AwsAppautoscalingPolicyInterface {
 	return newAwsAppautoscalingPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAppautoscalingScheduledActions(namespace string) AwsAppautoscalingScheduledActionInterface {
+func (c *ChronojamV1alpha1Client) AwsAppautoscalingScheduledActions(namespace string) AwsAppautoscalingScheduledActionInterface {
 	return newAwsAppautoscalingScheduledActions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAppautoscalingTargets(namespace string) AwsAppautoscalingTargetInterface {
+func (c *ChronojamV1alpha1Client) AwsAppautoscalingTargets(namespace string) AwsAppautoscalingTargetInterface {
 	return newAwsAppautoscalingTargets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAppsyncDatasources(namespace string) AwsAppsyncDatasourceInterface {
+func (c *ChronojamV1alpha1Client) AwsAppsyncDatasources(namespace string) AwsAppsyncDatasourceInterface {
 	return newAwsAppsyncDatasources(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAppsyncGraphqlApis(namespace string) AwsAppsyncGraphqlApiInterface {
+func (c *ChronojamV1alpha1Client) AwsAppsyncGraphqlApis(namespace string) AwsAppsyncGraphqlApiInterface {
 	return newAwsAppsyncGraphqlApis(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAthenaDatabases(namespace string) AwsAthenaDatabaseInterface {
+func (c *ChronojamV1alpha1Client) AwsAthenaDatabases(namespace string) AwsAthenaDatabaseInterface {
 	return newAwsAthenaDatabases(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAthenaNamedQueries(namespace string) AwsAthenaNamedQueryInterface {
+func (c *ChronojamV1alpha1Client) AwsAthenaNamedQueries(namespace string) AwsAthenaNamedQueryInterface {
 	return newAwsAthenaNamedQueries(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAutoscalingAttachments(namespace string) AwsAutoscalingAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsAutoscalingAttachments(namespace string) AwsAutoscalingAttachmentInterface {
 	return newAwsAutoscalingAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAutoscalingGroups(namespace string) AwsAutoscalingGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsAutoscalingGroups(namespace string) AwsAutoscalingGroupInterface {
 	return newAwsAutoscalingGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAutoscalingLifecycleHooks(namespace string) AwsAutoscalingLifecycleHookInterface {
+func (c *ChronojamV1alpha1Client) AwsAutoscalingLifecycleHooks(namespace string) AwsAutoscalingLifecycleHookInterface {
 	return newAwsAutoscalingLifecycleHooks(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAutoscalingNotifications(namespace string) AwsAutoscalingNotificationInterface {
+func (c *ChronojamV1alpha1Client) AwsAutoscalingNotifications(namespace string) AwsAutoscalingNotificationInterface {
 	return newAwsAutoscalingNotifications(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAutoscalingPolicies(namespace string) AwsAutoscalingPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsAutoscalingPolicies(namespace string) AwsAutoscalingPolicyInterface {
 	return newAwsAutoscalingPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsAutoscalingSchedules(namespace string) AwsAutoscalingScheduleInterface {
+func (c *ChronojamV1alpha1Client) AwsAutoscalingSchedules(namespace string) AwsAutoscalingScheduleInterface {
 	return newAwsAutoscalingSchedules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsBatchComputeEnvironments(namespace string) AwsBatchComputeEnvironmentInterface {
+func (c *ChronojamV1alpha1Client) AwsBatchComputeEnvironments(namespace string) AwsBatchComputeEnvironmentInterface {
 	return newAwsBatchComputeEnvironments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsBatchJobDefinitions(namespace string) AwsBatchJobDefinitionInterface {
+func (c *ChronojamV1alpha1Client) AwsBatchJobDefinitions(namespace string) AwsBatchJobDefinitionInterface {
 	return newAwsBatchJobDefinitions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsBatchJobQueues(namespace string) AwsBatchJobQueueInterface {
+func (c *ChronojamV1alpha1Client) AwsBatchJobQueues(namespace string) AwsBatchJobQueueInterface {
 	return newAwsBatchJobQueues(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsBudgetsBudgets(namespace string) AwsBudgetsBudgetInterface {
+func (c *ChronojamV1alpha1Client) AwsBudgetsBudgets(namespace string) AwsBudgetsBudgetInterface {
 	return newAwsBudgetsBudgets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloud9EnvironmentEc2s(namespace string) AwsCloud9EnvironmentEc2Interface {
+func (c *ChronojamV1alpha1Client) AwsCloud9EnvironmentEc2s(namespace string) AwsCloud9EnvironmentEc2Interface {
 	return newAwsCloud9EnvironmentEc2s(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudformationStacks(namespace string) AwsCloudformationStackInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudformationStacks(namespace string) AwsCloudformationStackInterface {
 	return newAwsCloudformationStacks(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudfrontDistributions(namespace string) AwsCloudfrontDistributionInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudfrontDistributions(namespace string) AwsCloudfrontDistributionInterface {
 	return newAwsCloudfrontDistributions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudfrontOriginAccessIdentities(namespace string) AwsCloudfrontOriginAccessIdentityInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudfrontOriginAccessIdentities(namespace string) AwsCloudfrontOriginAccessIdentityInterface {
 	return newAwsCloudfrontOriginAccessIdentities(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudtrails(namespace string) AwsCloudtrailInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudtrails(namespace string) AwsCloudtrailInterface {
 	return newAwsCloudtrails(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchDashboards(namespace string) AwsCloudwatchDashboardInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchDashboards(namespace string) AwsCloudwatchDashboardInterface {
 	return newAwsCloudwatchDashboards(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchEventPermissions(namespace string) AwsCloudwatchEventPermissionInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchEventPermissions(namespace string) AwsCloudwatchEventPermissionInterface {
 	return newAwsCloudwatchEventPermissions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchEventRules(namespace string) AwsCloudwatchEventRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchEventRules(namespace string) AwsCloudwatchEventRuleInterface {
 	return newAwsCloudwatchEventRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchEventTargets(namespace string) AwsCloudwatchEventTargetInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchEventTargets(namespace string) AwsCloudwatchEventTargetInterface {
 	return newAwsCloudwatchEventTargets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchLogDestinations(namespace string) AwsCloudwatchLogDestinationInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchLogDestinations(namespace string) AwsCloudwatchLogDestinationInterface {
 	return newAwsCloudwatchLogDestinations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchLogDestinationPolicies(namespace string) AwsCloudwatchLogDestinationPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchLogDestinationPolicies(namespace string) AwsCloudwatchLogDestinationPolicyInterface {
 	return newAwsCloudwatchLogDestinationPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchLogGroups(namespace string) AwsCloudwatchLogGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchLogGroups(namespace string) AwsCloudwatchLogGroupInterface {
 	return newAwsCloudwatchLogGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchLogMetricFilters(namespace string) AwsCloudwatchLogMetricFilterInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchLogMetricFilters(namespace string) AwsCloudwatchLogMetricFilterInterface {
 	return newAwsCloudwatchLogMetricFilters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchLogResourcePolicies(namespace string) AwsCloudwatchLogResourcePolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchLogResourcePolicies(namespace string) AwsCloudwatchLogResourcePolicyInterface {
 	return newAwsCloudwatchLogResourcePolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchLogStreams(namespace string) AwsCloudwatchLogStreamInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchLogStreams(namespace string) AwsCloudwatchLogStreamInterface {
 	return newAwsCloudwatchLogStreams(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchLogSubscriptionFilters(namespace string) AwsCloudwatchLogSubscriptionFilterInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchLogSubscriptionFilters(namespace string) AwsCloudwatchLogSubscriptionFilterInterface {
 	return newAwsCloudwatchLogSubscriptionFilters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCloudwatchMetricAlarms(namespace string) AwsCloudwatchMetricAlarmInterface {
+func (c *ChronojamV1alpha1Client) AwsCloudwatchMetricAlarms(namespace string) AwsCloudwatchMetricAlarmInterface {
 	return newAwsCloudwatchMetricAlarms(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCodebuildProjects(namespace string) AwsCodebuildProjectInterface {
+func (c *ChronojamV1alpha1Client) AwsCodebuildProjects(namespace string) AwsCodebuildProjectInterface {
 	return newAwsCodebuildProjects(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCodecommitRepositories(namespace string) AwsCodecommitRepositoryInterface {
+func (c *ChronojamV1alpha1Client) AwsCodecommitRepositories(namespace string) AwsCodecommitRepositoryInterface {
 	return newAwsCodecommitRepositories(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCodecommitTriggers(namespace string) AwsCodecommitTriggerInterface {
+func (c *ChronojamV1alpha1Client) AwsCodecommitTriggers(namespace string) AwsCodecommitTriggerInterface {
 	return newAwsCodecommitTriggers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCodedeployApps(namespace string) AwsCodedeployAppInterface {
+func (c *ChronojamV1alpha1Client) AwsCodedeployApps(namespace string) AwsCodedeployAppInterface {
 	return newAwsCodedeployApps(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCodedeployDeploymentConfigs(namespace string) AwsCodedeployDeploymentConfigInterface {
+func (c *ChronojamV1alpha1Client) AwsCodedeployDeploymentConfigs(namespace string) AwsCodedeployDeploymentConfigInterface {
 	return newAwsCodedeployDeploymentConfigs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCodedeployDeploymentGroups(namespace string) AwsCodedeployDeploymentGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsCodedeployDeploymentGroups(namespace string) AwsCodedeployDeploymentGroupInterface {
 	return newAwsCodedeployDeploymentGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCodepipelines(namespace string) AwsCodepipelineInterface {
+func (c *ChronojamV1alpha1Client) AwsCodepipelines(namespace string) AwsCodepipelineInterface {
 	return newAwsCodepipelines(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCognitoIdentityPools(namespace string) AwsCognitoIdentityPoolInterface {
+func (c *ChronojamV1alpha1Client) AwsCognitoIdentityPools(namespace string) AwsCognitoIdentityPoolInterface {
 	return newAwsCognitoIdentityPools(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCognitoIdentityPoolRolesAttachments(namespace string) AwsCognitoIdentityPoolRolesAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsCognitoIdentityPoolRolesAttachments(namespace string) AwsCognitoIdentityPoolRolesAttachmentInterface {
 	return newAwsCognitoIdentityPoolRolesAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCognitoUserGroups(namespace string) AwsCognitoUserGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsCognitoUserGroups(namespace string) AwsCognitoUserGroupInterface {
 	return newAwsCognitoUserGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCognitoUserPools(namespace string) AwsCognitoUserPoolInterface {
+func (c *ChronojamV1alpha1Client) AwsCognitoUserPools(namespace string) AwsCognitoUserPoolInterface {
 	return newAwsCognitoUserPools(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCognitoUserPoolClients(namespace string) AwsCognitoUserPoolClientInterface {
+func (c *ChronojamV1alpha1Client) AwsCognitoUserPoolClients(namespace string) AwsCognitoUserPoolClientInterface {
 	return newAwsCognitoUserPoolClients(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCognitoUserPoolDomains(namespace string) AwsCognitoUserPoolDomainInterface {
+func (c *ChronojamV1alpha1Client) AwsCognitoUserPoolDomains(namespace string) AwsCognitoUserPoolDomainInterface {
 	return newAwsCognitoUserPoolDomains(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsConfigConfigRules(namespace string) AwsConfigConfigRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsConfigConfigRules(namespace string) AwsConfigConfigRuleInterface {
 	return newAwsConfigConfigRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsConfigConfigurationRecorders(namespace string) AwsConfigConfigurationRecorderInterface {
+func (c *ChronojamV1alpha1Client) AwsConfigConfigurationRecorders(namespace string) AwsConfigConfigurationRecorderInterface {
 	return newAwsConfigConfigurationRecorders(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsConfigConfigurationRecorderStatuses(namespace string) AwsConfigConfigurationRecorderStatusInterface {
+func (c *ChronojamV1alpha1Client) AwsConfigConfigurationRecorderStatuses(namespace string) AwsConfigConfigurationRecorderStatusInterface {
 	return newAwsConfigConfigurationRecorderStatuses(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsConfigDeliveryChannels(namespace string) AwsConfigDeliveryChannelInterface {
+func (c *ChronojamV1alpha1Client) AwsConfigDeliveryChannels(namespace string) AwsConfigDeliveryChannelInterface {
 	return newAwsConfigDeliveryChannels(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsCustomerGateways(namespace string) AwsCustomerGatewayInterface {
+func (c *ChronojamV1alpha1Client) AwsCustomerGateways(namespace string) AwsCustomerGatewayInterface {
 	return newAwsCustomerGateways(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDaxClusters(namespace string) AwsDaxClusterInterface {
+func (c *ChronojamV1alpha1Client) AwsDaxClusters(namespace string) AwsDaxClusterInterface {
 	return newAwsDaxClusters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDaxParameterGroups(namespace string) AwsDaxParameterGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsDaxParameterGroups(namespace string) AwsDaxParameterGroupInterface {
 	return newAwsDaxParameterGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDaxSubnetGroups(namespace string) AwsDaxSubnetGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsDaxSubnetGroups(namespace string) AwsDaxSubnetGroupInterface {
 	return newAwsDaxSubnetGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDbEventSubscriptions(namespace string) AwsDbEventSubscriptionInterface {
+func (c *ChronojamV1alpha1Client) AwsDbEventSubscriptions(namespace string) AwsDbEventSubscriptionInterface {
 	return newAwsDbEventSubscriptions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDbInstances(namespace string) AwsDbInstanceInterface {
+func (c *ChronojamV1alpha1Client) AwsDbInstances(namespace string) AwsDbInstanceInterface {
 	return newAwsDbInstances(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDbOptionGroups(namespace string) AwsDbOptionGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsDbOptionGroups(namespace string) AwsDbOptionGroupInterface {
 	return newAwsDbOptionGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDbParameterGroups(namespace string) AwsDbParameterGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsDbParameterGroups(namespace string) AwsDbParameterGroupInterface {
 	return newAwsDbParameterGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDbSecurityGroups(namespace string) AwsDbSecurityGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsDbSecurityGroups(namespace string) AwsDbSecurityGroupInterface {
 	return newAwsDbSecurityGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDbSnapshots(namespace string) AwsDbSnapshotInterface {
+func (c *ChronojamV1alpha1Client) AwsDbSnapshots(namespace string) AwsDbSnapshotInterface {
 	return newAwsDbSnapshots(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDbSubnetGroups(namespace string) AwsDbSubnetGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsDbSubnetGroups(namespace string) AwsDbSubnetGroupInterface {
 	return newAwsDbSubnetGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDefaultNetworkAcls(namespace string) AwsDefaultNetworkAclInterface {
+func (c *ChronojamV1alpha1Client) AwsDefaultNetworkAcls(namespace string) AwsDefaultNetworkAclInterface {
 	return newAwsDefaultNetworkAcls(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDefaultRouteTables(namespace string) AwsDefaultRouteTableInterface {
+func (c *ChronojamV1alpha1Client) AwsDefaultRouteTables(namespace string) AwsDefaultRouteTableInterface {
 	return newAwsDefaultRouteTables(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDefaultSecurityGroups(namespace string) AwsDefaultSecurityGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsDefaultSecurityGroups(namespace string) AwsDefaultSecurityGroupInterface {
 	return newAwsDefaultSecurityGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDefaultSubnets(namespace string) AwsDefaultSubnetInterface {
+func (c *ChronojamV1alpha1Client) AwsDefaultSubnets(namespace string) AwsDefaultSubnetInterface {
 	return newAwsDefaultSubnets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDefaultVpcs(namespace string) AwsDefaultVpcInterface {
+func (c *ChronojamV1alpha1Client) AwsDefaultVpcs(namespace string) AwsDefaultVpcInterface {
 	return newAwsDefaultVpcs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDefaultVpcDhcpOptionses(namespace string) AwsDefaultVpcDhcpOptionsInterface {
+func (c *ChronojamV1alpha1Client) AwsDefaultVpcDhcpOptionses(namespace string) AwsDefaultVpcDhcpOptionsInterface {
 	return newAwsDefaultVpcDhcpOptionses(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDevicefarmProjects(namespace string) AwsDevicefarmProjectInterface {
+func (c *ChronojamV1alpha1Client) AwsDevicefarmProjects(namespace string) AwsDevicefarmProjectInterface {
 	return newAwsDevicefarmProjects(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDirectoryServiceConditionalForwarders(namespace string) AwsDirectoryServiceConditionalForwarderInterface {
+func (c *ChronojamV1alpha1Client) AwsDirectoryServiceConditionalForwarders(namespace string) AwsDirectoryServiceConditionalForwarderInterface {
 	return newAwsDirectoryServiceConditionalForwarders(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDirectoryServiceDirectories(namespace string) AwsDirectoryServiceDirectoryInterface {
+func (c *ChronojamV1alpha1Client) AwsDirectoryServiceDirectories(namespace string) AwsDirectoryServiceDirectoryInterface {
 	return newAwsDirectoryServiceDirectories(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDmsCertificates(namespace string) AwsDmsCertificateInterface {
+func (c *ChronojamV1alpha1Client) AwsDmsCertificates(namespace string) AwsDmsCertificateInterface {
 	return newAwsDmsCertificates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDmsEndpoints(namespace string) AwsDmsEndpointInterface {
+func (c *ChronojamV1alpha1Client) AwsDmsEndpoints(namespace string) AwsDmsEndpointInterface {
 	return newAwsDmsEndpoints(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDmsReplicationInstances(namespace string) AwsDmsReplicationInstanceInterface {
+func (c *ChronojamV1alpha1Client) AwsDmsReplicationInstances(namespace string) AwsDmsReplicationInstanceInterface {
 	return newAwsDmsReplicationInstances(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDmsReplicationSubnetGroups(namespace string) AwsDmsReplicationSubnetGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsDmsReplicationSubnetGroups(namespace string) AwsDmsReplicationSubnetGroupInterface {
 	return newAwsDmsReplicationSubnetGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDmsReplicationTasks(namespace string) AwsDmsReplicationTaskInterface {
+func (c *ChronojamV1alpha1Client) AwsDmsReplicationTasks(namespace string) AwsDmsReplicationTaskInterface {
 	return newAwsDmsReplicationTasks(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDxConnections(namespace string) AwsDxConnectionInterface {
+func (c *ChronojamV1alpha1Client) AwsDxConnections(namespace string) AwsDxConnectionInterface {
 	return newAwsDxConnections(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDxConnectionAssociations(namespace string) AwsDxConnectionAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsDxConnectionAssociations(namespace string) AwsDxConnectionAssociationInterface {
 	return newAwsDxConnectionAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDxLags(namespace string) AwsDxLagInterface {
+func (c *ChronojamV1alpha1Client) AwsDxLags(namespace string) AwsDxLagInterface {
 	return newAwsDxLags(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDynamodbGlobalTables(namespace string) AwsDynamodbGlobalTableInterface {
+func (c *ChronojamV1alpha1Client) AwsDynamodbGlobalTables(namespace string) AwsDynamodbGlobalTableInterface {
 	return newAwsDynamodbGlobalTables(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDynamodbTables(namespace string) AwsDynamodbTableInterface {
+func (c *ChronojamV1alpha1Client) AwsDynamodbTables(namespace string) AwsDynamodbTableInterface {
 	return newAwsDynamodbTables(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsDynamodbTableItems(namespace string) AwsDynamodbTableItemInterface {
+func (c *ChronojamV1alpha1Client) AwsDynamodbTableItems(namespace string) AwsDynamodbTableItemInterface {
 	return newAwsDynamodbTableItems(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEbsSnapshots(namespace string) AwsEbsSnapshotInterface {
+func (c *ChronojamV1alpha1Client) AwsEbsSnapshots(namespace string) AwsEbsSnapshotInterface {
 	return newAwsEbsSnapshots(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEbsVolumes(namespace string) AwsEbsVolumeInterface {
+func (c *ChronojamV1alpha1Client) AwsEbsVolumes(namespace string) AwsEbsVolumeInterface {
 	return newAwsEbsVolumes(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEcrLifecyclePolicies(namespace string) AwsEcrLifecyclePolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsEcrLifecyclePolicies(namespace string) AwsEcrLifecyclePolicyInterface {
 	return newAwsEcrLifecyclePolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEcrRepositories(namespace string) AwsEcrRepositoryInterface {
+func (c *ChronojamV1alpha1Client) AwsEcrRepositories(namespace string) AwsEcrRepositoryInterface {
 	return newAwsEcrRepositories(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEcrRepositoryPolicies(namespace string) AwsEcrRepositoryPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsEcrRepositoryPolicies(namespace string) AwsEcrRepositoryPolicyInterface {
 	return newAwsEcrRepositoryPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEcsClusters(namespace string) AwsEcsClusterInterface {
+func (c *ChronojamV1alpha1Client) AwsEcsClusters(namespace string) AwsEcsClusterInterface {
 	return newAwsEcsClusters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEcsServices(namespace string) AwsEcsServiceInterface {
+func (c *ChronojamV1alpha1Client) AwsEcsServices(namespace string) AwsEcsServiceInterface {
 	return newAwsEcsServices(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEcsTaskDefinitions(namespace string) AwsEcsTaskDefinitionInterface {
+func (c *ChronojamV1alpha1Client) AwsEcsTaskDefinitions(namespace string) AwsEcsTaskDefinitionInterface {
 	return newAwsEcsTaskDefinitions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEfsFileSystems(namespace string) AwsEfsFileSystemInterface {
+func (c *ChronojamV1alpha1Client) AwsEfsFileSystems(namespace string) AwsEfsFileSystemInterface {
 	return newAwsEfsFileSystems(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEfsMountTargets(namespace string) AwsEfsMountTargetInterface {
+func (c *ChronojamV1alpha1Client) AwsEfsMountTargets(namespace string) AwsEfsMountTargetInterface {
 	return newAwsEfsMountTargets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEgressOnlyInternetGateways(namespace string) AwsEgressOnlyInternetGatewayInterface {
+func (c *ChronojamV1alpha1Client) AwsEgressOnlyInternetGateways(namespace string) AwsEgressOnlyInternetGatewayInterface {
 	return newAwsEgressOnlyInternetGateways(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEips(namespace string) AwsEipInterface {
+func (c *ChronojamV1alpha1Client) AwsEips(namespace string) AwsEipInterface {
 	return newAwsEips(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEipAssociations(namespace string) AwsEipAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsEipAssociations(namespace string) AwsEipAssociationInterface {
 	return newAwsEipAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticBeanstalkApplications(namespace string) AwsElasticBeanstalkApplicationInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticBeanstalkApplications(namespace string) AwsElasticBeanstalkApplicationInterface {
 	return newAwsElasticBeanstalkApplications(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticBeanstalkApplicationVersions(namespace string) AwsElasticBeanstalkApplicationVersionInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticBeanstalkApplicationVersions(namespace string) AwsElasticBeanstalkApplicationVersionInterface {
 	return newAwsElasticBeanstalkApplicationVersions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticBeanstalkConfigurationTemplates(namespace string) AwsElasticBeanstalkConfigurationTemplateInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticBeanstalkConfigurationTemplates(namespace string) AwsElasticBeanstalkConfigurationTemplateInterface {
 	return newAwsElasticBeanstalkConfigurationTemplates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticBeanstalkEnvironments(namespace string) AwsElasticBeanstalkEnvironmentInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticBeanstalkEnvironments(namespace string) AwsElasticBeanstalkEnvironmentInterface {
 	return newAwsElasticBeanstalkEnvironments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticacheClusters(namespace string) AwsElasticacheClusterInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticacheClusters(namespace string) AwsElasticacheClusterInterface {
 	return newAwsElasticacheClusters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticacheParameterGroups(namespace string) AwsElasticacheParameterGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticacheParameterGroups(namespace string) AwsElasticacheParameterGroupInterface {
 	return newAwsElasticacheParameterGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticacheReplicationGroups(namespace string) AwsElasticacheReplicationGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticacheReplicationGroups(namespace string) AwsElasticacheReplicationGroupInterface {
 	return newAwsElasticacheReplicationGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticacheSecurityGroups(namespace string) AwsElasticacheSecurityGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticacheSecurityGroups(namespace string) AwsElasticacheSecurityGroupInterface {
 	return newAwsElasticacheSecurityGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticacheSubnetGroups(namespace string) AwsElasticacheSubnetGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticacheSubnetGroups(namespace string) AwsElasticacheSubnetGroupInterface {
 	return newAwsElasticacheSubnetGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticsearchDomains(namespace string) AwsElasticsearchDomainInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticsearchDomains(namespace string) AwsElasticsearchDomainInterface {
 	return newAwsElasticsearchDomains(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElasticsearchDomainPolicies(namespace string) AwsElasticsearchDomainPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsElasticsearchDomainPolicies(namespace string) AwsElasticsearchDomainPolicyInterface {
 	return newAwsElasticsearchDomainPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElastictranscoderPipelines(namespace string) AwsElastictranscoderPipelineInterface {
+func (c *ChronojamV1alpha1Client) AwsElastictranscoderPipelines(namespace string) AwsElastictranscoderPipelineInterface {
 	return newAwsElastictranscoderPipelines(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElastictranscoderPresets(namespace string) AwsElastictranscoderPresetInterface {
+func (c *ChronojamV1alpha1Client) AwsElastictranscoderPresets(namespace string) AwsElastictranscoderPresetInterface {
 	return newAwsElastictranscoderPresets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElbs(namespace string) AwsElbInterface {
+func (c *ChronojamV1alpha1Client) AwsElbs(namespace string) AwsElbInterface {
 	return newAwsElbs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsElbAttachments(namespace string) AwsElbAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsElbAttachments(namespace string) AwsElbAttachmentInterface {
 	return newAwsElbAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEmrClusters(namespace string) AwsEmrClusterInterface {
+func (c *ChronojamV1alpha1Client) AwsEmrClusters(namespace string) AwsEmrClusterInterface {
 	return newAwsEmrClusters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEmrInstanceGroups(namespace string) AwsEmrInstanceGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsEmrInstanceGroups(namespace string) AwsEmrInstanceGroupInterface {
 	return newAwsEmrInstanceGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsEmrSecurityConfigurations(namespace string) AwsEmrSecurityConfigurationInterface {
+func (c *ChronojamV1alpha1Client) AwsEmrSecurityConfigurations(namespace string) AwsEmrSecurityConfigurationInterface {
 	return newAwsEmrSecurityConfigurations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsFlowLogs(namespace string) AwsFlowLogInterface {
+func (c *ChronojamV1alpha1Client) AwsFlowLogs(namespace string) AwsFlowLogInterface {
 	return newAwsFlowLogs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGameliftAliases(namespace string) AwsGameliftAliasInterface {
+func (c *ChronojamV1alpha1Client) AwsGameliftAliases(namespace string) AwsGameliftAliasInterface {
 	return newAwsGameliftAliases(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGameliftBuilds(namespace string) AwsGameliftBuildInterface {
+func (c *ChronojamV1alpha1Client) AwsGameliftBuilds(namespace string) AwsGameliftBuildInterface {
 	return newAwsGameliftBuilds(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGameliftFleets(namespace string) AwsGameliftFleetInterface {
+func (c *ChronojamV1alpha1Client) AwsGameliftFleets(namespace string) AwsGameliftFleetInterface {
 	return newAwsGameliftFleets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGlacierVaults(namespace string) AwsGlacierVaultInterface {
+func (c *ChronojamV1alpha1Client) AwsGlacierVaults(namespace string) AwsGlacierVaultInterface {
 	return newAwsGlacierVaults(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGlueCatalogDatabases(namespace string) AwsGlueCatalogDatabaseInterface {
+func (c *ChronojamV1alpha1Client) AwsGlueCatalogDatabases(namespace string) AwsGlueCatalogDatabaseInterface {
 	return newAwsGlueCatalogDatabases(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGlueConnections(namespace string) AwsGlueConnectionInterface {
+func (c *ChronojamV1alpha1Client) AwsGlueConnections(namespace string) AwsGlueConnectionInterface {
 	return newAwsGlueConnections(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGlueJobs(namespace string) AwsGlueJobInterface {
+func (c *ChronojamV1alpha1Client) AwsGlueJobs(namespace string) AwsGlueJobInterface {
 	return newAwsGlueJobs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGuarddutyDetectors(namespace string) AwsGuarddutyDetectorInterface {
+func (c *ChronojamV1alpha1Client) AwsGuarddutyDetectors(namespace string) AwsGuarddutyDetectorInterface {
 	return newAwsGuarddutyDetectors(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGuarddutyIpsets(namespace string) AwsGuarddutyIpsetInterface {
+func (c *ChronojamV1alpha1Client) AwsGuarddutyIpsets(namespace string) AwsGuarddutyIpsetInterface {
 	return newAwsGuarddutyIpsets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGuarddutyMembers(namespace string) AwsGuarddutyMemberInterface {
+func (c *ChronojamV1alpha1Client) AwsGuarddutyMembers(namespace string) AwsGuarddutyMemberInterface {
 	return newAwsGuarddutyMembers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsGuarddutyThreatintelsets(namespace string) AwsGuarddutyThreatintelsetInterface {
+func (c *ChronojamV1alpha1Client) AwsGuarddutyThreatintelsets(namespace string) AwsGuarddutyThreatintelsetInterface {
 	return newAwsGuarddutyThreatintelsets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamAccessKeys(namespace string) AwsIamAccessKeyInterface {
+func (c *ChronojamV1alpha1Client) AwsIamAccessKeys(namespace string) AwsIamAccessKeyInterface {
 	return newAwsIamAccessKeys(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamAccountAliases(namespace string) AwsIamAccountAliasInterface {
+func (c *ChronojamV1alpha1Client) AwsIamAccountAliases(namespace string) AwsIamAccountAliasInterface {
 	return newAwsIamAccountAliases(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamAccountPasswordPolicies(namespace string) AwsIamAccountPasswordPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsIamAccountPasswordPolicies(namespace string) AwsIamAccountPasswordPolicyInterface {
 	return newAwsIamAccountPasswordPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamGroups(namespace string) AwsIamGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsIamGroups(namespace string) AwsIamGroupInterface {
 	return newAwsIamGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamGroupMemberships(namespace string) AwsIamGroupMembershipInterface {
+func (c *ChronojamV1alpha1Client) AwsIamGroupMemberships(namespace string) AwsIamGroupMembershipInterface {
 	return newAwsIamGroupMemberships(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamGroupPolicies(namespace string) AwsIamGroupPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsIamGroupPolicies(namespace string) AwsIamGroupPolicyInterface {
 	return newAwsIamGroupPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamGroupPolicyAttachments(namespace string) AwsIamGroupPolicyAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsIamGroupPolicyAttachments(namespace string) AwsIamGroupPolicyAttachmentInterface {
 	return newAwsIamGroupPolicyAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamInstanceProfiles(namespace string) AwsIamInstanceProfileInterface {
+func (c *ChronojamV1alpha1Client) AwsIamInstanceProfiles(namespace string) AwsIamInstanceProfileInterface {
 	return newAwsIamInstanceProfiles(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamOpenidConnectProviders(namespace string) AwsIamOpenidConnectProviderInterface {
+func (c *ChronojamV1alpha1Client) AwsIamOpenidConnectProviders(namespace string) AwsIamOpenidConnectProviderInterface {
 	return newAwsIamOpenidConnectProviders(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamPolicies(namespace string) AwsIamPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsIamPolicies(namespace string) AwsIamPolicyInterface {
 	return newAwsIamPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamPolicyAttachments(namespace string) AwsIamPolicyAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsIamPolicyAttachments(namespace string) AwsIamPolicyAttachmentInterface {
 	return newAwsIamPolicyAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamRoles(namespace string) AwsIamRoleInterface {
+func (c *ChronojamV1alpha1Client) AwsIamRoles(namespace string) AwsIamRoleInterface {
 	return newAwsIamRoles(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamRolePolicies(namespace string) AwsIamRolePolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsIamRolePolicies(namespace string) AwsIamRolePolicyInterface {
 	return newAwsIamRolePolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamRolePolicyAttachments(namespace string) AwsIamRolePolicyAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsIamRolePolicyAttachments(namespace string) AwsIamRolePolicyAttachmentInterface {
 	return newAwsIamRolePolicyAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamSamlProviders(namespace string) AwsIamSamlProviderInterface {
+func (c *ChronojamV1alpha1Client) AwsIamSamlProviders(namespace string) AwsIamSamlProviderInterface {
 	return newAwsIamSamlProviders(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamServerCertificates(namespace string) AwsIamServerCertificateInterface {
+func (c *ChronojamV1alpha1Client) AwsIamServerCertificates(namespace string) AwsIamServerCertificateInterface {
 	return newAwsIamServerCertificates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamServiceLinkedRoles(namespace string) AwsIamServiceLinkedRoleInterface {
+func (c *ChronojamV1alpha1Client) AwsIamServiceLinkedRoles(namespace string) AwsIamServiceLinkedRoleInterface {
 	return newAwsIamServiceLinkedRoles(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamUsers(namespace string) AwsIamUserInterface {
+func (c *ChronojamV1alpha1Client) AwsIamUsers(namespace string) AwsIamUserInterface {
 	return newAwsIamUsers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamUserGroupMemberships(namespace string) AwsIamUserGroupMembershipInterface {
+func (c *ChronojamV1alpha1Client) AwsIamUserGroupMemberships(namespace string) AwsIamUserGroupMembershipInterface {
 	return newAwsIamUserGroupMemberships(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamUserLoginProfiles(namespace string) AwsIamUserLoginProfileInterface {
+func (c *ChronojamV1alpha1Client) AwsIamUserLoginProfiles(namespace string) AwsIamUserLoginProfileInterface {
 	return newAwsIamUserLoginProfiles(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamUserPolicies(namespace string) AwsIamUserPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsIamUserPolicies(namespace string) AwsIamUserPolicyInterface {
 	return newAwsIamUserPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamUserPolicyAttachments(namespace string) AwsIamUserPolicyAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsIamUserPolicyAttachments(namespace string) AwsIamUserPolicyAttachmentInterface {
 	return newAwsIamUserPolicyAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIamUserSshKeys(namespace string) AwsIamUserSshKeyInterface {
+func (c *ChronojamV1alpha1Client) AwsIamUserSshKeys(namespace string) AwsIamUserSshKeyInterface {
 	return newAwsIamUserSshKeys(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsInspectorAssessmentTargets(namespace string) AwsInspectorAssessmentTargetInterface {
+func (c *ChronojamV1alpha1Client) AwsInspectorAssessmentTargets(namespace string) AwsInspectorAssessmentTargetInterface {
 	return newAwsInspectorAssessmentTargets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsInspectorAssessmentTemplates(namespace string) AwsInspectorAssessmentTemplateInterface {
+func (c *ChronojamV1alpha1Client) AwsInspectorAssessmentTemplates(namespace string) AwsInspectorAssessmentTemplateInterface {
 	return newAwsInspectorAssessmentTemplates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsInspectorResourceGroups(namespace string) AwsInspectorResourceGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsInspectorResourceGroups(namespace string) AwsInspectorResourceGroupInterface {
 	return newAwsInspectorResourceGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsInstances(namespace string) AwsInstanceInterface {
+func (c *ChronojamV1alpha1Client) AwsInstances(namespace string) AwsInstanceInterface {
 	return newAwsInstances(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsInternetGateways(namespace string) AwsInternetGatewayInterface {
+func (c *ChronojamV1alpha1Client) AwsInternetGateways(namespace string) AwsInternetGatewayInterface {
 	return newAwsInternetGateways(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIotCertificates(namespace string) AwsIotCertificateInterface {
+func (c *ChronojamV1alpha1Client) AwsIotCertificates(namespace string) AwsIotCertificateInterface {
 	return newAwsIotCertificates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIotPolicies(namespace string) AwsIotPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsIotPolicies(namespace string) AwsIotPolicyInterface {
 	return newAwsIotPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIotThings(namespace string) AwsIotThingInterface {
+func (c *ChronojamV1alpha1Client) AwsIotThings(namespace string) AwsIotThingInterface {
 	return newAwsIotThings(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIotThingTypes(namespace string) AwsIotThingTypeInterface {
+func (c *ChronojamV1alpha1Client) AwsIotThingTypes(namespace string) AwsIotThingTypeInterface {
 	return newAwsIotThingTypes(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsIotTopicRules(namespace string) AwsIotTopicRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsIotTopicRules(namespace string) AwsIotTopicRuleInterface {
 	return newAwsIotTopicRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsKeyPairs(namespace string) AwsKeyPairInterface {
+func (c *ChronojamV1alpha1Client) AwsKeyPairs(namespace string) AwsKeyPairInterface {
 	return newAwsKeyPairs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsKinesisFirehoseDeliveryStreams(namespace string) AwsKinesisFirehoseDeliveryStreamInterface {
+func (c *ChronojamV1alpha1Client) AwsKinesisFirehoseDeliveryStreams(namespace string) AwsKinesisFirehoseDeliveryStreamInterface {
 	return newAwsKinesisFirehoseDeliveryStreams(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsKinesisStreams(namespace string) AwsKinesisStreamInterface {
+func (c *ChronojamV1alpha1Client) AwsKinesisStreams(namespace string) AwsKinesisStreamInterface {
 	return newAwsKinesisStreams(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsKmsAliases(namespace string) AwsKmsAliasInterface {
+func (c *ChronojamV1alpha1Client) AwsKmsAliases(namespace string) AwsKmsAliasInterface {
 	return newAwsKmsAliases(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsKmsGrants(namespace string) AwsKmsGrantInterface {
+func (c *ChronojamV1alpha1Client) AwsKmsGrants(namespace string) AwsKmsGrantInterface {
 	return newAwsKmsGrants(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsKmsKeys(namespace string) AwsKmsKeyInterface {
+func (c *ChronojamV1alpha1Client) AwsKmsKeys(namespace string) AwsKmsKeyInterface {
 	return newAwsKmsKeys(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLambdaAliases(namespace string) AwsLambdaAliasInterface {
+func (c *ChronojamV1alpha1Client) AwsLambdaAliases(namespace string) AwsLambdaAliasInterface {
 	return newAwsLambdaAliases(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLambdaEventSourceMappings(namespace string) AwsLambdaEventSourceMappingInterface {
+func (c *ChronojamV1alpha1Client) AwsLambdaEventSourceMappings(namespace string) AwsLambdaEventSourceMappingInterface {
 	return newAwsLambdaEventSourceMappings(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLambdaFunctions(namespace string) AwsLambdaFunctionInterface {
+func (c *ChronojamV1alpha1Client) AwsLambdaFunctions(namespace string) AwsLambdaFunctionInterface {
 	return newAwsLambdaFunctions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLambdaPermissions(namespace string) AwsLambdaPermissionInterface {
+func (c *ChronojamV1alpha1Client) AwsLambdaPermissions(namespace string) AwsLambdaPermissionInterface {
 	return newAwsLambdaPermissions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLaunchConfigurations(namespace string) AwsLaunchConfigurationInterface {
+func (c *ChronojamV1alpha1Client) AwsLaunchConfigurations(namespace string) AwsLaunchConfigurationInterface {
 	return newAwsLaunchConfigurations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLaunchTemplates(namespace string) AwsLaunchTemplateInterface {
+func (c *ChronojamV1alpha1Client) AwsLaunchTemplates(namespace string) AwsLaunchTemplateInterface {
 	return newAwsLaunchTemplates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLbs(namespace string) AwsLbInterface {
+func (c *ChronojamV1alpha1Client) AwsLbs(namespace string) AwsLbInterface {
 	return newAwsLbs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLbCookieStickinessPolicies(namespace string) AwsLbCookieStickinessPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsLbCookieStickinessPolicies(namespace string) AwsLbCookieStickinessPolicyInterface {
 	return newAwsLbCookieStickinessPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLbListeners(namespace string) AwsLbListenerInterface {
+func (c *ChronojamV1alpha1Client) AwsLbListeners(namespace string) AwsLbListenerInterface {
 	return newAwsLbListeners(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLbListenerCertificates(namespace string) AwsLbListenerCertificateInterface {
+func (c *ChronojamV1alpha1Client) AwsLbListenerCertificates(namespace string) AwsLbListenerCertificateInterface {
 	return newAwsLbListenerCertificates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLbListenerRules(namespace string) AwsLbListenerRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsLbListenerRules(namespace string) AwsLbListenerRuleInterface {
 	return newAwsLbListenerRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLbSslNegotiationPolicies(namespace string) AwsLbSslNegotiationPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsLbSslNegotiationPolicies(namespace string) AwsLbSslNegotiationPolicyInterface {
 	return newAwsLbSslNegotiationPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLbTargetGroups(namespace string) AwsLbTargetGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsLbTargetGroups(namespace string) AwsLbTargetGroupInterface {
 	return newAwsLbTargetGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLbTargetGroupAttachments(namespace string) AwsLbTargetGroupAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsLbTargetGroupAttachments(namespace string) AwsLbTargetGroupAttachmentInterface {
 	return newAwsLbTargetGroupAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLightsailDomains(namespace string) AwsLightsailDomainInterface {
+func (c *ChronojamV1alpha1Client) AwsLightsailDomains(namespace string) AwsLightsailDomainInterface {
 	return newAwsLightsailDomains(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLightsailInstances(namespace string) AwsLightsailInstanceInterface {
+func (c *ChronojamV1alpha1Client) AwsLightsailInstances(namespace string) AwsLightsailInstanceInterface {
 	return newAwsLightsailInstances(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLightsailKeyPairs(namespace string) AwsLightsailKeyPairInterface {
+func (c *ChronojamV1alpha1Client) AwsLightsailKeyPairs(namespace string) AwsLightsailKeyPairInterface {
 	return newAwsLightsailKeyPairs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLightsailStaticIps(namespace string) AwsLightsailStaticIpInterface {
+func (c *ChronojamV1alpha1Client) AwsLightsailStaticIps(namespace string) AwsLightsailStaticIpInterface {
 	return newAwsLightsailStaticIps(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLightsailStaticIpAttachments(namespace string) AwsLightsailStaticIpAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsLightsailStaticIpAttachments(namespace string) AwsLightsailStaticIpAttachmentInterface {
 	return newAwsLightsailStaticIpAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLoadBalancerBackendServerPolicies(namespace string) AwsLoadBalancerBackendServerPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsLoadBalancerBackendServerPolicies(namespace string) AwsLoadBalancerBackendServerPolicyInterface {
 	return newAwsLoadBalancerBackendServerPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLoadBalancerListenerPolicies(namespace string) AwsLoadBalancerListenerPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsLoadBalancerListenerPolicies(namespace string) AwsLoadBalancerListenerPolicyInterface {
 	return newAwsLoadBalancerListenerPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsLoadBalancerPolicies(namespace string) AwsLoadBalancerPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsLoadBalancerPolicies(namespace string) AwsLoadBalancerPolicyInterface {
 	return newAwsLoadBalancerPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsMainRouteTableAssociations(namespace string) AwsMainRouteTableAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsMainRouteTableAssociations(namespace string) AwsMainRouteTableAssociationInterface {
 	return newAwsMainRouteTableAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsMediaStoreContainers(namespace string) AwsMediaStoreContainerInterface {
+func (c *ChronojamV1alpha1Client) AwsMediaStoreContainers(namespace string) AwsMediaStoreContainerInterface {
 	return newAwsMediaStoreContainers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsMqBrokers(namespace string) AwsMqBrokerInterface {
+func (c *ChronojamV1alpha1Client) AwsMqBrokers(namespace string) AwsMqBrokerInterface {
 	return newAwsMqBrokers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsMqConfigurations(namespace string) AwsMqConfigurationInterface {
+func (c *ChronojamV1alpha1Client) AwsMqConfigurations(namespace string) AwsMqConfigurationInterface {
 	return newAwsMqConfigurations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsNatGateways(namespace string) AwsNatGatewayInterface {
+func (c *ChronojamV1alpha1Client) AwsNatGateways(namespace string) AwsNatGatewayInterface {
 	return newAwsNatGateways(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsNetworkAcls(namespace string) AwsNetworkAclInterface {
+func (c *ChronojamV1alpha1Client) AwsNetworkAcls(namespace string) AwsNetworkAclInterface {
 	return newAwsNetworkAcls(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsNetworkAclRules(namespace string) AwsNetworkAclRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsNetworkAclRules(namespace string) AwsNetworkAclRuleInterface {
 	return newAwsNetworkAclRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsNetworkInterfaces(namespace string) AwsNetworkInterfaceInterface {
+func (c *ChronojamV1alpha1Client) AwsNetworkInterfaces(namespace string) AwsNetworkInterfaceInterface {
 	return newAwsNetworkInterfaces(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsNetworkInterfaceAttachments(namespace string) AwsNetworkInterfaceAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsNetworkInterfaceAttachments(namespace string) AwsNetworkInterfaceAttachmentInterface {
 	return newAwsNetworkInterfaceAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsNetworkInterfaceSgAttachments(namespace string) AwsNetworkInterfaceSgAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsNetworkInterfaceSgAttachments(namespace string) AwsNetworkInterfaceSgAttachmentInterface {
 	return newAwsNetworkInterfaceSgAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksApplications(namespace string) AwsOpsworksApplicationInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksApplications(namespace string) AwsOpsworksApplicationInterface {
 	return newAwsOpsworksApplications(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksCustomLayers(namespace string) AwsOpsworksCustomLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksCustomLayers(namespace string) AwsOpsworksCustomLayerInterface {
 	return newAwsOpsworksCustomLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksGangliaLayers(namespace string) AwsOpsworksGangliaLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksGangliaLayers(namespace string) AwsOpsworksGangliaLayerInterface {
 	return newAwsOpsworksGangliaLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksHaproxyLayers(namespace string) AwsOpsworksHaproxyLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksHaproxyLayers(namespace string) AwsOpsworksHaproxyLayerInterface {
 	return newAwsOpsworksHaproxyLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksInstances(namespace string) AwsOpsworksInstanceInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksInstances(namespace string) AwsOpsworksInstanceInterface {
 	return newAwsOpsworksInstances(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksJavaAppLayers(namespace string) AwsOpsworksJavaAppLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksJavaAppLayers(namespace string) AwsOpsworksJavaAppLayerInterface {
 	return newAwsOpsworksJavaAppLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksMemcachedLayers(namespace string) AwsOpsworksMemcachedLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksMemcachedLayers(namespace string) AwsOpsworksMemcachedLayerInterface {
 	return newAwsOpsworksMemcachedLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksMysqlLayers(namespace string) AwsOpsworksMysqlLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksMysqlLayers(namespace string) AwsOpsworksMysqlLayerInterface {
 	return newAwsOpsworksMysqlLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksNodejsAppLayers(namespace string) AwsOpsworksNodejsAppLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksNodejsAppLayers(namespace string) AwsOpsworksNodejsAppLayerInterface {
 	return newAwsOpsworksNodejsAppLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksPermissions(namespace string) AwsOpsworksPermissionInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksPermissions(namespace string) AwsOpsworksPermissionInterface {
 	return newAwsOpsworksPermissions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksPhpAppLayers(namespace string) AwsOpsworksPhpAppLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksPhpAppLayers(namespace string) AwsOpsworksPhpAppLayerInterface {
 	return newAwsOpsworksPhpAppLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksRailsAppLayers(namespace string) AwsOpsworksRailsAppLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksRailsAppLayers(namespace string) AwsOpsworksRailsAppLayerInterface {
 	return newAwsOpsworksRailsAppLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksRdsDbInstances(namespace string) AwsOpsworksRdsDbInstanceInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksRdsDbInstances(namespace string) AwsOpsworksRdsDbInstanceInterface {
 	return newAwsOpsworksRdsDbInstances(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksStacks(namespace string) AwsOpsworksStackInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksStacks(namespace string) AwsOpsworksStackInterface {
 	return newAwsOpsworksStacks(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksStaticWebLayers(namespace string) AwsOpsworksStaticWebLayerInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksStaticWebLayers(namespace string) AwsOpsworksStaticWebLayerInterface {
 	return newAwsOpsworksStaticWebLayers(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOpsworksUserProfiles(namespace string) AwsOpsworksUserProfileInterface {
+func (c *ChronojamV1alpha1Client) AwsOpsworksUserProfiles(namespace string) AwsOpsworksUserProfileInterface {
 	return newAwsOpsworksUserProfiles(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOrganizationsAccounts(namespace string) AwsOrganizationsAccountInterface {
+func (c *ChronojamV1alpha1Client) AwsOrganizationsAccounts(namespace string) AwsOrganizationsAccountInterface {
 	return newAwsOrganizationsAccounts(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOrganizationsOrganizations(namespace string) AwsOrganizationsOrganizationInterface {
+func (c *ChronojamV1alpha1Client) AwsOrganizationsOrganizations(namespace string) AwsOrganizationsOrganizationInterface {
 	return newAwsOrganizationsOrganizations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOrganizationsPolicies(namespace string) AwsOrganizationsPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsOrganizationsPolicies(namespace string) AwsOrganizationsPolicyInterface {
 	return newAwsOrganizationsPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsOrganizationsPolicyAttachments(namespace string) AwsOrganizationsPolicyAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsOrganizationsPolicyAttachments(namespace string) AwsOrganizationsPolicyAttachmentInterface {
 	return newAwsOrganizationsPolicyAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsPlacementGroups(namespace string) AwsPlacementGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsPlacementGroups(namespace string) AwsPlacementGroupInterface {
 	return newAwsPlacementGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsProxyProtocolPolicies(namespace string) AwsProxyProtocolPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsProxyProtocolPolicies(namespace string) AwsProxyProtocolPolicyInterface {
 	return newAwsProxyProtocolPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRdsClusters(namespace string) AwsRdsClusterInterface {
+func (c *ChronojamV1alpha1Client) AwsRdsClusters(namespace string) AwsRdsClusterInterface {
 	return newAwsRdsClusters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRdsClusterInstances(namespace string) AwsRdsClusterInstanceInterface {
+func (c *ChronojamV1alpha1Client) AwsRdsClusterInstances(namespace string) AwsRdsClusterInstanceInterface {
 	return newAwsRdsClusterInstances(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRdsClusterParameterGroups(namespace string) AwsRdsClusterParameterGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsRdsClusterParameterGroups(namespace string) AwsRdsClusterParameterGroupInterface {
 	return newAwsRdsClusterParameterGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRedshiftClusters(namespace string) AwsRedshiftClusterInterface {
+func (c *ChronojamV1alpha1Client) AwsRedshiftClusters(namespace string) AwsRedshiftClusterInterface {
 	return newAwsRedshiftClusters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRedshiftParameterGroups(namespace string) AwsRedshiftParameterGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsRedshiftParameterGroups(namespace string) AwsRedshiftParameterGroupInterface {
 	return newAwsRedshiftParameterGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRedshiftSecurityGroups(namespace string) AwsRedshiftSecurityGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsRedshiftSecurityGroups(namespace string) AwsRedshiftSecurityGroupInterface {
 	return newAwsRedshiftSecurityGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRedshiftSubnetGroups(namespace string) AwsRedshiftSubnetGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsRedshiftSubnetGroups(namespace string) AwsRedshiftSubnetGroupInterface {
 	return newAwsRedshiftSubnetGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRoutes(namespace string) AwsRouteInterface {
+func (c *ChronojamV1alpha1Client) AwsRoutes(namespace string) AwsRouteInterface {
 	return newAwsRoutes(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRoute53DelegationSets(namespace string) AwsRoute53DelegationSetInterface {
+func (c *ChronojamV1alpha1Client) AwsRoute53DelegationSets(namespace string) AwsRoute53DelegationSetInterface {
 	return newAwsRoute53DelegationSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRoute53HealthChecks(namespace string) AwsRoute53HealthCheckInterface {
+func (c *ChronojamV1alpha1Client) AwsRoute53HealthChecks(namespace string) AwsRoute53HealthCheckInterface {
 	return newAwsRoute53HealthChecks(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRoute53QueryLogs(namespace string) AwsRoute53QueryLogInterface {
+func (c *ChronojamV1alpha1Client) AwsRoute53QueryLogs(namespace string) AwsRoute53QueryLogInterface {
 	return newAwsRoute53QueryLogs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRoute53Records(namespace string) AwsRoute53RecordInterface {
+func (c *ChronojamV1alpha1Client) AwsRoute53Records(namespace string) AwsRoute53RecordInterface {
 	return newAwsRoute53Records(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRoute53Zones(namespace string) AwsRoute53ZoneInterface {
+func (c *ChronojamV1alpha1Client) AwsRoute53Zones(namespace string) AwsRoute53ZoneInterface {
 	return newAwsRoute53Zones(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRoute53ZoneAssociations(namespace string) AwsRoute53ZoneAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsRoute53ZoneAssociations(namespace string) AwsRoute53ZoneAssociationInterface {
 	return newAwsRoute53ZoneAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRouteTables(namespace string) AwsRouteTableInterface {
+func (c *ChronojamV1alpha1Client) AwsRouteTables(namespace string) AwsRouteTableInterface {
 	return newAwsRouteTables(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsRouteTableAssociations(namespace string) AwsRouteTableAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsRouteTableAssociations(namespace string) AwsRouteTableAssociationInterface {
 	return newAwsRouteTableAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsS3Buckets(namespace string) AwsS3BucketInterface {
+func (c *ChronojamV1alpha1Client) AwsS3Buckets(namespace string) AwsS3BucketInterface {
 	return newAwsS3Buckets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsS3BucketMetrics(namespace string) AwsS3BucketMetricInterface {
+func (c *ChronojamV1alpha1Client) AwsS3BucketMetrics(namespace string) AwsS3BucketMetricInterface {
 	return newAwsS3BucketMetrics(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsS3BucketNotifications(namespace string) AwsS3BucketNotificationInterface {
+func (c *ChronojamV1alpha1Client) AwsS3BucketNotifications(namespace string) AwsS3BucketNotificationInterface {
 	return newAwsS3BucketNotifications(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsS3BucketObjects(namespace string) AwsS3BucketObjectInterface {
+func (c *ChronojamV1alpha1Client) AwsS3BucketObjects(namespace string) AwsS3BucketObjectInterface {
 	return newAwsS3BucketObjects(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsS3BucketPolicies(namespace string) AwsS3BucketPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsS3BucketPolicies(namespace string) AwsS3BucketPolicyInterface {
 	return newAwsS3BucketPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSecretsmanagerSecrets(namespace string) AwsSecretsmanagerSecretInterface {
+func (c *ChronojamV1alpha1Client) AwsSecretsmanagerSecrets(namespace string) AwsSecretsmanagerSecretInterface {
 	return newAwsSecretsmanagerSecrets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSecretsmanagerSecretVersions(namespace string) AwsSecretsmanagerSecretVersionInterface {
+func (c *ChronojamV1alpha1Client) AwsSecretsmanagerSecretVersions(namespace string) AwsSecretsmanagerSecretVersionInterface {
 	return newAwsSecretsmanagerSecretVersions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSecurityGroups(namespace string) AwsSecurityGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsSecurityGroups(namespace string) AwsSecurityGroupInterface {
 	return newAwsSecurityGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSecurityGroupRules(namespace string) AwsSecurityGroupRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsSecurityGroupRules(namespace string) AwsSecurityGroupRuleInterface {
 	return newAwsSecurityGroupRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsServiceDiscoveryPrivateDnsNamespaces(namespace string) AwsServiceDiscoveryPrivateDnsNamespaceInterface {
+func (c *ChronojamV1alpha1Client) AwsServiceDiscoveryPrivateDnsNamespaces(namespace string) AwsServiceDiscoveryPrivateDnsNamespaceInterface {
 	return newAwsServiceDiscoveryPrivateDnsNamespaces(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsServiceDiscoveryPublicDnsNamespaces(namespace string) AwsServiceDiscoveryPublicDnsNamespaceInterface {
+func (c *ChronojamV1alpha1Client) AwsServiceDiscoveryPublicDnsNamespaces(namespace string) AwsServiceDiscoveryPublicDnsNamespaceInterface {
 	return newAwsServiceDiscoveryPublicDnsNamespaces(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsServiceDiscoveryServices(namespace string) AwsServiceDiscoveryServiceInterface {
+func (c *ChronojamV1alpha1Client) AwsServiceDiscoveryServices(namespace string) AwsServiceDiscoveryServiceInterface {
 	return newAwsServiceDiscoveryServices(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsServicecatalogPortfolios(namespace string) AwsServicecatalogPortfolioInterface {
+func (c *ChronojamV1alpha1Client) AwsServicecatalogPortfolios(namespace string) AwsServicecatalogPortfolioInterface {
 	return newAwsServicecatalogPortfolios(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesActiveReceiptRuleSets(namespace string) AwsSesActiveReceiptRuleSetInterface {
+func (c *ChronojamV1alpha1Client) AwsSesActiveReceiptRuleSets(namespace string) AwsSesActiveReceiptRuleSetInterface {
 	return newAwsSesActiveReceiptRuleSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesConfigurationSets(namespace string) AwsSesConfigurationSetInterface {
+func (c *ChronojamV1alpha1Client) AwsSesConfigurationSets(namespace string) AwsSesConfigurationSetInterface {
 	return newAwsSesConfigurationSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesDomainDkims(namespace string) AwsSesDomainDkimInterface {
+func (c *ChronojamV1alpha1Client) AwsSesDomainDkims(namespace string) AwsSesDomainDkimInterface {
 	return newAwsSesDomainDkims(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesDomainIdentities(namespace string) AwsSesDomainIdentityInterface {
+func (c *ChronojamV1alpha1Client) AwsSesDomainIdentities(namespace string) AwsSesDomainIdentityInterface {
 	return newAwsSesDomainIdentities(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesDomainIdentityVerifications(namespace string) AwsSesDomainIdentityVerificationInterface {
+func (c *ChronojamV1alpha1Client) AwsSesDomainIdentityVerifications(namespace string) AwsSesDomainIdentityVerificationInterface {
 	return newAwsSesDomainIdentityVerifications(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesDomainMailFroms(namespace string) AwsSesDomainMailFromInterface {
+func (c *ChronojamV1alpha1Client) AwsSesDomainMailFroms(namespace string) AwsSesDomainMailFromInterface {
 	return newAwsSesDomainMailFroms(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesEventDestinations(namespace string) AwsSesEventDestinationInterface {
+func (c *ChronojamV1alpha1Client) AwsSesEventDestinations(namespace string) AwsSesEventDestinationInterface {
 	return newAwsSesEventDestinations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesIdentityNotificationTopics(namespace string) AwsSesIdentityNotificationTopicInterface {
+func (c *ChronojamV1alpha1Client) AwsSesIdentityNotificationTopics(namespace string) AwsSesIdentityNotificationTopicInterface {
 	return newAwsSesIdentityNotificationTopics(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesReceiptFilters(namespace string) AwsSesReceiptFilterInterface {
+func (c *ChronojamV1alpha1Client) AwsSesReceiptFilters(namespace string) AwsSesReceiptFilterInterface {
 	return newAwsSesReceiptFilters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesReceiptRules(namespace string) AwsSesReceiptRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsSesReceiptRules(namespace string) AwsSesReceiptRuleInterface {
 	return newAwsSesReceiptRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesReceiptRuleSets(namespace string) AwsSesReceiptRuleSetInterface {
+func (c *ChronojamV1alpha1Client) AwsSesReceiptRuleSets(namespace string) AwsSesReceiptRuleSetInterface {
 	return newAwsSesReceiptRuleSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSesTemplates(namespace string) AwsSesTemplateInterface {
+func (c *ChronojamV1alpha1Client) AwsSesTemplates(namespace string) AwsSesTemplateInterface {
 	return newAwsSesTemplates(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSfnActivities(namespace string) AwsSfnActivityInterface {
+func (c *ChronojamV1alpha1Client) AwsSfnActivities(namespace string) AwsSfnActivityInterface {
 	return newAwsSfnActivities(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSfnStateMachines(namespace string) AwsSfnStateMachineInterface {
+func (c *ChronojamV1alpha1Client) AwsSfnStateMachines(namespace string) AwsSfnStateMachineInterface {
 	return newAwsSfnStateMachines(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSimpledbDomains(namespace string) AwsSimpledbDomainInterface {
+func (c *ChronojamV1alpha1Client) AwsSimpledbDomains(namespace string) AwsSimpledbDomainInterface {
 	return newAwsSimpledbDomains(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSnapshotCreateVolumePermissions(namespace string) AwsSnapshotCreateVolumePermissionInterface {
+func (c *ChronojamV1alpha1Client) AwsSnapshotCreateVolumePermissions(namespace string) AwsSnapshotCreateVolumePermissionInterface {
 	return newAwsSnapshotCreateVolumePermissions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSnsPlatformApplications(namespace string) AwsSnsPlatformApplicationInterface {
+func (c *ChronojamV1alpha1Client) AwsSnsPlatformApplications(namespace string) AwsSnsPlatformApplicationInterface {
 	return newAwsSnsPlatformApplications(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSnsTopics(namespace string) AwsSnsTopicInterface {
+func (c *ChronojamV1alpha1Client) AwsSnsTopics(namespace string) AwsSnsTopicInterface {
 	return newAwsSnsTopics(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSnsTopicPolicies(namespace string) AwsSnsTopicPolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsSnsTopicPolicies(namespace string) AwsSnsTopicPolicyInterface {
 	return newAwsSnsTopicPolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSnsTopicSubscriptions(namespace string) AwsSnsTopicSubscriptionInterface {
+func (c *ChronojamV1alpha1Client) AwsSnsTopicSubscriptions(namespace string) AwsSnsTopicSubscriptionInterface {
 	return newAwsSnsTopicSubscriptions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSpotDatafeedSubscriptions(namespace string) AwsSpotDatafeedSubscriptionInterface {
+func (c *ChronojamV1alpha1Client) AwsSpotDatafeedSubscriptions(namespace string) AwsSpotDatafeedSubscriptionInterface {
 	return newAwsSpotDatafeedSubscriptions(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSpotFleetRequests(namespace string) AwsSpotFleetRequestInterface {
+func (c *ChronojamV1alpha1Client) AwsSpotFleetRequests(namespace string) AwsSpotFleetRequestInterface {
 	return newAwsSpotFleetRequests(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSpotInstanceRequests(namespace string) AwsSpotInstanceRequestInterface {
+func (c *ChronojamV1alpha1Client) AwsSpotInstanceRequests(namespace string) AwsSpotInstanceRequestInterface {
 	return newAwsSpotInstanceRequests(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSqsQueues(namespace string) AwsSqsQueueInterface {
+func (c *ChronojamV1alpha1Client) AwsSqsQueues(namespace string) AwsSqsQueueInterface {
 	return newAwsSqsQueues(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSqsQueuePolicies(namespace string) AwsSqsQueuePolicyInterface {
+func (c *ChronojamV1alpha1Client) AwsSqsQueuePolicies(namespace string) AwsSqsQueuePolicyInterface {
 	return newAwsSqsQueuePolicies(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmActivations(namespace string) AwsSsmActivationInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmActivations(namespace string) AwsSsmActivationInterface {
 	return newAwsSsmActivations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmAssociations(namespace string) AwsSsmAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmAssociations(namespace string) AwsSsmAssociationInterface {
 	return newAwsSsmAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmDocuments(namespace string) AwsSsmDocumentInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmDocuments(namespace string) AwsSsmDocumentInterface {
 	return newAwsSsmDocuments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmMaintenanceWindows(namespace string) AwsSsmMaintenanceWindowInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmMaintenanceWindows(namespace string) AwsSsmMaintenanceWindowInterface {
 	return newAwsSsmMaintenanceWindows(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmMaintenanceWindowTargets(namespace string) AwsSsmMaintenanceWindowTargetInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmMaintenanceWindowTargets(namespace string) AwsSsmMaintenanceWindowTargetInterface {
 	return newAwsSsmMaintenanceWindowTargets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmMaintenanceWindowTasks(namespace string) AwsSsmMaintenanceWindowTaskInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmMaintenanceWindowTasks(namespace string) AwsSsmMaintenanceWindowTaskInterface {
 	return newAwsSsmMaintenanceWindowTasks(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmParameters(namespace string) AwsSsmParameterInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmParameters(namespace string) AwsSsmParameterInterface {
 	return newAwsSsmParameters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmPatchBaselines(namespace string) AwsSsmPatchBaselineInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmPatchBaselines(namespace string) AwsSsmPatchBaselineInterface {
 	return newAwsSsmPatchBaselines(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmPatchGroups(namespace string) AwsSsmPatchGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmPatchGroups(namespace string) AwsSsmPatchGroupInterface {
 	return newAwsSsmPatchGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSsmResourceDataSyncs(namespace string) AwsSsmResourceDataSyncInterface {
+func (c *ChronojamV1alpha1Client) AwsSsmResourceDataSyncs(namespace string) AwsSsmResourceDataSyncInterface {
 	return newAwsSsmResourceDataSyncs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsSubnets(namespace string) AwsSubnetInterface {
+func (c *ChronojamV1alpha1Client) AwsSubnets(namespace string) AwsSubnetInterface {
 	return newAwsSubnets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVolumeAttachments(namespace string) AwsVolumeAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsVolumeAttachments(namespace string) AwsVolumeAttachmentInterface {
 	return newAwsVolumeAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcs(namespace string) AwsVpcInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcs(namespace string) AwsVpcInterface {
 	return newAwsVpcs(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcDhcpOptionses(namespace string) AwsVpcDhcpOptionsInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcDhcpOptionses(namespace string) AwsVpcDhcpOptionsInterface {
 	return newAwsVpcDhcpOptionses(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcDhcpOptionsAssociations(namespace string) AwsVpcDhcpOptionsAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcDhcpOptionsAssociations(namespace string) AwsVpcDhcpOptionsAssociationInterface {
 	return newAwsVpcDhcpOptionsAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcEndpoints(namespace string) AwsVpcEndpointInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcEndpoints(namespace string) AwsVpcEndpointInterface {
 	return newAwsVpcEndpoints(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcEndpointConnectionNotifications(namespace string) AwsVpcEndpointConnectionNotificationInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcEndpointConnectionNotifications(namespace string) AwsVpcEndpointConnectionNotificationInterface {
 	return newAwsVpcEndpointConnectionNotifications(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcEndpointRouteTableAssociations(namespace string) AwsVpcEndpointRouteTableAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcEndpointRouteTableAssociations(namespace string) AwsVpcEndpointRouteTableAssociationInterface {
 	return newAwsVpcEndpointRouteTableAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcEndpointServices(namespace string) AwsVpcEndpointServiceInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcEndpointServices(namespace string) AwsVpcEndpointServiceInterface {
 	return newAwsVpcEndpointServices(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcEndpointServiceAllowedPrincipals(namespace string) AwsVpcEndpointServiceAllowedPrincipalInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcEndpointServiceAllowedPrincipals(namespace string) AwsVpcEndpointServiceAllowedPrincipalInterface {
 	return newAwsVpcEndpointServiceAllowedPrincipals(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcEndpointSubnetAssociations(namespace string) AwsVpcEndpointSubnetAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcEndpointSubnetAssociations(namespace string) AwsVpcEndpointSubnetAssociationInterface {
 	return newAwsVpcEndpointSubnetAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcPeeringConnections(namespace string) AwsVpcPeeringConnectionInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcPeeringConnections(namespace string) AwsVpcPeeringConnectionInterface {
 	return newAwsVpcPeeringConnections(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcPeeringConnectionAccepters(namespace string) AwsVpcPeeringConnectionAccepterInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcPeeringConnectionAccepters(namespace string) AwsVpcPeeringConnectionAccepterInterface {
 	return newAwsVpcPeeringConnectionAccepters(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpcPeeringConnectionOptionses(namespace string) AwsVpcPeeringConnectionOptionsInterface {
+func (c *ChronojamV1alpha1Client) AwsVpcPeeringConnectionOptionses(namespace string) AwsVpcPeeringConnectionOptionsInterface {
 	return newAwsVpcPeeringConnectionOptionses(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpnConnections(namespace string) AwsVpnConnectionInterface {
+func (c *ChronojamV1alpha1Client) AwsVpnConnections(namespace string) AwsVpnConnectionInterface {
 	return newAwsVpnConnections(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpnConnectionRoutes(namespace string) AwsVpnConnectionRouteInterface {
+func (c *ChronojamV1alpha1Client) AwsVpnConnectionRoutes(namespace string) AwsVpnConnectionRouteInterface {
 	return newAwsVpnConnectionRoutes(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpnGateways(namespace string) AwsVpnGatewayInterface {
+func (c *ChronojamV1alpha1Client) AwsVpnGateways(namespace string) AwsVpnGatewayInterface {
 	return newAwsVpnGateways(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpnGatewayAttachments(namespace string) AwsVpnGatewayAttachmentInterface {
+func (c *ChronojamV1alpha1Client) AwsVpnGatewayAttachments(namespace string) AwsVpnGatewayAttachmentInterface {
 	return newAwsVpnGatewayAttachments(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsVpnGatewayRoutePropagations(namespace string) AwsVpnGatewayRoutePropagationInterface {
+func (c *ChronojamV1alpha1Client) AwsVpnGatewayRoutePropagations(namespace string) AwsVpnGatewayRoutePropagationInterface {
 	return newAwsVpnGatewayRoutePropagations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafByteMatchSets(namespace string) AwsWafByteMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafByteMatchSets(namespace string) AwsWafByteMatchSetInterface {
 	return newAwsWafByteMatchSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafGeoMatchSets(namespace string) AwsWafGeoMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafGeoMatchSets(namespace string) AwsWafGeoMatchSetInterface {
 	return newAwsWafGeoMatchSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafIpsets(namespace string) AwsWafIpsetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafIpsets(namespace string) AwsWafIpsetInterface {
 	return newAwsWafIpsets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafRateBasedRules(namespace string) AwsWafRateBasedRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsWafRateBasedRules(namespace string) AwsWafRateBasedRuleInterface {
 	return newAwsWafRateBasedRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafRegexMatchSets(namespace string) AwsWafRegexMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafRegexMatchSets(namespace string) AwsWafRegexMatchSetInterface {
 	return newAwsWafRegexMatchSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafRegexPatternSets(namespace string) AwsWafRegexPatternSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafRegexPatternSets(namespace string) AwsWafRegexPatternSetInterface {
 	return newAwsWafRegexPatternSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafRules(namespace string) AwsWafRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsWafRules(namespace string) AwsWafRuleInterface {
 	return newAwsWafRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafRuleGroups(namespace string) AwsWafRuleGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsWafRuleGroups(namespace string) AwsWafRuleGroupInterface {
 	return newAwsWafRuleGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafSizeConstraintSets(namespace string) AwsWafSizeConstraintSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafSizeConstraintSets(namespace string) AwsWafSizeConstraintSetInterface {
 	return newAwsWafSizeConstraintSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafSqlInjectionMatchSets(namespace string) AwsWafSqlInjectionMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafSqlInjectionMatchSets(namespace string) AwsWafSqlInjectionMatchSetInterface {
 	return newAwsWafSqlInjectionMatchSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafWebAcls(namespace string) AwsWafWebAclInterface {
+func (c *ChronojamV1alpha1Client) AwsWafWebAcls(namespace string) AwsWafWebAclInterface {
 	return newAwsWafWebAcls(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafXssMatchSets(namespace string) AwsWafXssMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafXssMatchSets(namespace string) AwsWafXssMatchSetInterface {
 	return newAwsWafXssMatchSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalByteMatchSets(namespace string) AwsWafregionalByteMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalByteMatchSets(namespace string) AwsWafregionalByteMatchSetInterface {
 	return newAwsWafregionalByteMatchSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalGeoMatchSets(namespace string) AwsWafregionalGeoMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalGeoMatchSets(namespace string) AwsWafregionalGeoMatchSetInterface {
 	return newAwsWafregionalGeoMatchSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalIpsets(namespace string) AwsWafregionalIpsetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalIpsets(namespace string) AwsWafregionalIpsetInterface {
 	return newAwsWafregionalIpsets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalRateBasedRules(namespace string) AwsWafregionalRateBasedRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalRateBasedRules(namespace string) AwsWafregionalRateBasedRuleInterface {
 	return newAwsWafregionalRateBasedRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalRegexMatchSets(namespace string) AwsWafregionalRegexMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalRegexMatchSets(namespace string) AwsWafregionalRegexMatchSetInterface {
 	return newAwsWafregionalRegexMatchSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalRegexPatternSets(namespace string) AwsWafregionalRegexPatternSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalRegexPatternSets(namespace string) AwsWafregionalRegexPatternSetInterface {
 	return newAwsWafregionalRegexPatternSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalRules(namespace string) AwsWafregionalRuleInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalRules(namespace string) AwsWafregionalRuleInterface {
 	return newAwsWafregionalRules(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalRuleGroups(namespace string) AwsWafregionalRuleGroupInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalRuleGroups(namespace string) AwsWafregionalRuleGroupInterface {
 	return newAwsWafregionalRuleGroups(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalSizeConstraintSets(namespace string) AwsWafregionalSizeConstraintSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalSizeConstraintSets(namespace string) AwsWafregionalSizeConstraintSetInterface {
 	return newAwsWafregionalSizeConstraintSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalSqlInjectionMatchSets(namespace string) AwsWafregionalSqlInjectionMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalSqlInjectionMatchSets(namespace string) AwsWafregionalSqlInjectionMatchSetInterface {
 	return newAwsWafregionalSqlInjectionMatchSets(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalWebAcls(namespace string) AwsWafregionalWebAclInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalWebAcls(namespace string) AwsWafregionalWebAclInterface {
 	return newAwsWafregionalWebAcls(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalWebAclAssociations(namespace string) AwsWafregionalWebAclAssociationInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalWebAclAssociations(namespace string) AwsWafregionalWebAclAssociationInterface {
 	return newAwsWafregionalWebAclAssociations(c, namespace)
 }
 
-func (c *AwsV1alpha1Client) AwsWafregionalXssMatchSets(namespace string) AwsWafregionalXssMatchSetInterface {
+func (c *ChronojamV1alpha1Client) AwsWafregionalXssMatchSets(namespace string) AwsWafregionalXssMatchSetInterface {
 	return newAwsWafregionalXssMatchSets(c, namespace)
 }
 
-// NewForConfig creates a new AwsV1alpha1Client for the given config.
-func NewForConfig(c *rest.Config) (*AwsV1alpha1Client, error) {
+// NewForConfig creates a new ChronojamV1alpha1Client for the given config.
+func NewForConfig(c *rest.Config) (*ChronojamV1alpha1Client, error) {
 	config := *c
 	if err := setConfigDefaults(&config); err != nil {
 		return nil, err
@@ -1854,12 +1854,12 @@ func NewForConfig(c *rest.Config) (*AwsV1alpha1Client, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &AwsV1alpha1Client{client}, nil
+	return &ChronojamV1alpha1Client{client}, nil
 }
 
-// NewForConfigOrDie creates a new AwsV1alpha1Client for the given config and
+// NewForConfigOrDie creates a new ChronojamV1alpha1Client for the given config and
 // panics if there is an error in the config.
-func NewForConfigOrDie(c *rest.Config) *AwsV1alpha1Client {
+func NewForConfigOrDie(c *rest.Config) *ChronojamV1alpha1Client {
 	client, err := NewForConfig(c)
 	if err != nil {
 		panic(err)
@@ -1867,9 +1867,9 @@ func NewForConfigOrDie(c *rest.Config) *AwsV1alpha1Client {
 	return client
 }
 
-// New creates a new AwsV1alpha1Client for the given RESTClient.
-func New(c rest.Interface) *AwsV1alpha1Client {
-	return &AwsV1alpha1Client{c}
+// New creates a new ChronojamV1alpha1Client for the given RESTClient.
+func New(c rest.Interface) *ChronojamV1alpha1Client {
+	return &ChronojamV1alpha1Client{c}
 }
 
 func setConfigDefaults(config *rest.Config) error {
@@ -1887,7 +1887,7 @@ func setConfigDefaults(config *rest.Config) error {
 
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
-func (c *AwsV1alpha1Client) RESTClient() rest.Interface {
+func (c *ChronojamV1alpha1Client) RESTClient() rest.Interface {
 	if c == nil {
 		return nil
 	}

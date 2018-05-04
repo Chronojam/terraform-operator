@@ -53,7 +53,7 @@ type awsKmsKeys struct {
 }
 
 // newAwsKmsKeys returns a AwsKmsKeys
-func newAwsKmsKeys(c *AwsV1alpha1Client, namespace string) *awsKmsKeys {
+func newAwsKmsKeys(c *ChronojamV1alpha1Client, namespace string) *awsKmsKeys {
 	return &awsKmsKeys{
 		client: c.RESTClient(),
 		ns:     namespace,

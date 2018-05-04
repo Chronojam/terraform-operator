@@ -53,7 +53,7 @@ type awsCloudwatchDashboards struct {
 }
 
 // newAwsCloudwatchDashboards returns a AwsCloudwatchDashboards
-func newAwsCloudwatchDashboards(c *AwsV1alpha1Client, namespace string) *awsCloudwatchDashboards {
+func newAwsCloudwatchDashboards(c *ChronojamV1alpha1Client, namespace string) *awsCloudwatchDashboards {
 	return &awsCloudwatchDashboards{
 		client: c.RESTClient(),
 		ns:     namespace,

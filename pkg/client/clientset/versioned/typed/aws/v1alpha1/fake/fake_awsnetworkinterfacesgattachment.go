@@ -30,13 +30,13 @@ import (
 
 // FakeAwsNetworkInterfaceSgAttachments implements AwsNetworkInterfaceSgAttachmentInterface
 type FakeAwsNetworkInterfaceSgAttachments struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsnetworkinterfacesgattachmentsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsnetworkinterfacesgattachments"}
+var awsnetworkinterfacesgattachmentsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsnetworkinterfacesgattachments"}
 
-var awsnetworkinterfacesgattachmentsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsNetworkInterfaceSgAttachment"}
+var awsnetworkinterfacesgattachmentsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsNetworkInterfaceSgAttachment"}
 
 // Get takes name of the awsNetworkInterfaceSgAttachment, and returns the corresponding awsNetworkInterfaceSgAttachment object, and an error if there is any.
 func (c *FakeAwsNetworkInterfaceSgAttachments) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsNetworkInterfaceSgAttachment, err error) {

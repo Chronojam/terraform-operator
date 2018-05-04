@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksMysqlLayers implements AwsOpsworksMysqlLayerInterface
 type FakeAwsOpsworksMysqlLayers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworksmysqllayersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworksmysqllayers"}
+var awsopsworksmysqllayersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworksmysqllayers"}
 
-var awsopsworksmysqllayersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksMysqlLayer"}
+var awsopsworksmysqllayersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksMysqlLayer"}
 
 // Get takes name of the awsOpsworksMysqlLayer, and returns the corresponding awsOpsworksMysqlLayer object, and an error if there is any.
 func (c *FakeAwsOpsworksMysqlLayers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksMysqlLayer, err error) {

@@ -61,13 +61,13 @@ func NewFilteredAwsElasticacheReplicationGroupInformer(client versioned.Interfac
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsElasticacheReplicationGroups(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsElasticacheReplicationGroups(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsElasticacheReplicationGroups(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsElasticacheReplicationGroups(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsElasticacheReplicationGroup{},

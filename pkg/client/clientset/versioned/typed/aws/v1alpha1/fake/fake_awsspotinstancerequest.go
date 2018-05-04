@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSpotInstanceRequests implements AwsSpotInstanceRequestInterface
 type FakeAwsSpotInstanceRequests struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsspotinstancerequestsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsspotinstancerequests"}
+var awsspotinstancerequestsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsspotinstancerequests"}
 
-var awsspotinstancerequestsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSpotInstanceRequest"}
+var awsspotinstancerequestsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSpotInstanceRequest"}
 
 // Get takes name of the awsSpotInstanceRequest, and returns the corresponding awsSpotInstanceRequest object, and an error if there is any.
 func (c *FakeAwsSpotInstanceRequests) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSpotInstanceRequest, err error) {

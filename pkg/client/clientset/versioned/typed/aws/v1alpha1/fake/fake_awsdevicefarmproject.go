@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDevicefarmProjects implements AwsDevicefarmProjectInterface
 type FakeAwsDevicefarmProjects struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdevicefarmprojectsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdevicefarmprojects"}
+var awsdevicefarmprojectsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdevicefarmprojects"}
 
-var awsdevicefarmprojectsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDevicefarmProject"}
+var awsdevicefarmprojectsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDevicefarmProject"}
 
 // Get takes name of the awsDevicefarmProject, and returns the corresponding awsDevicefarmProject object, and an error if there is any.
 func (c *FakeAwsDevicefarmProjects) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDevicefarmProject, err error) {

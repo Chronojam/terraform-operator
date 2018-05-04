@@ -30,13 +30,13 @@ import (
 
 // FakeAwsOpsworksHaproxyLayers implements AwsOpsworksHaproxyLayerInterface
 type FakeAwsOpsworksHaproxyLayers struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsopsworkshaproxylayersResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsopsworkshaproxylayers"}
+var awsopsworkshaproxylayersResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsopsworkshaproxylayers"}
 
-var awsopsworkshaproxylayersKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsOpsworksHaproxyLayer"}
+var awsopsworkshaproxylayersKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsOpsworksHaproxyLayer"}
 
 // Get takes name of the awsOpsworksHaproxyLayer, and returns the corresponding awsOpsworksHaproxyLayer object, and an error if there is any.
 func (c *FakeAwsOpsworksHaproxyLayers) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsOpsworksHaproxyLayer, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsCloudfrontOriginAccessIdentities implements AwsCloudfrontOriginAccessIdentityInterface
 type FakeAwsCloudfrontOriginAccessIdentities struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awscloudfrontoriginaccessidentitiesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awscloudfrontoriginaccessidentities"}
+var awscloudfrontoriginaccessidentitiesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awscloudfrontoriginaccessidentities"}
 
-var awscloudfrontoriginaccessidentitiesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsCloudfrontOriginAccessIdentity"}
+var awscloudfrontoriginaccessidentitiesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsCloudfrontOriginAccessIdentity"}
 
 // Get takes name of the awsCloudfrontOriginAccessIdentity, and returns the corresponding awsCloudfrontOriginAccessIdentity object, and an error if there is any.
 func (c *FakeAwsCloudfrontOriginAccessIdentities) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsCloudfrontOriginAccessIdentity, err error) {

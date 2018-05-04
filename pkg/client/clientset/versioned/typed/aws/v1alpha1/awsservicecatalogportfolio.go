@@ -53,7 +53,7 @@ type awsServicecatalogPortfolios struct {
 }
 
 // newAwsServicecatalogPortfolios returns a AwsServicecatalogPortfolios
-func newAwsServicecatalogPortfolios(c *AwsV1alpha1Client, namespace string) *awsServicecatalogPortfolios {
+func newAwsServicecatalogPortfolios(c *ChronojamV1alpha1Client, namespace string) *awsServicecatalogPortfolios {
 	return &awsServicecatalogPortfolios{
 		client: c.RESTClient(),
 		ns:     namespace,

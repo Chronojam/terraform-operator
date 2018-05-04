@@ -53,7 +53,7 @@ type awsRoute53Zones struct {
 }
 
 // newAwsRoute53Zones returns a AwsRoute53Zones
-func newAwsRoute53Zones(c *AwsV1alpha1Client, namespace string) *awsRoute53Zones {
+func newAwsRoute53Zones(c *ChronojamV1alpha1Client, namespace string) *awsRoute53Zones {
 	return &awsRoute53Zones{
 		client: c.RESTClient(),
 		ns:     namespace,

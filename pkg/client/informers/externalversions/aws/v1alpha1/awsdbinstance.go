@@ -61,13 +61,13 @@ func NewFilteredAwsDbInstanceInformer(client versioned.Interface, namespace stri
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsDbInstances(namespace).List(options)
+				return client.ChronojamV1alpha1().AwsDbInstances(namespace).List(options)
 			},
 			WatchFunc: func(options v1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.AwsV1alpha1().AwsDbInstances(namespace).Watch(options)
+				return client.ChronojamV1alpha1().AwsDbInstances(namespace).Watch(options)
 			},
 		},
 		&aws_v1alpha1.AwsDbInstance{},

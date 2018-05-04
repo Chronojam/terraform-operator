@@ -30,13 +30,13 @@ import (
 
 // FakeAwsLambdaEventSourceMappings implements AwsLambdaEventSourceMappingInterface
 type FakeAwsLambdaEventSourceMappings struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awslambdaeventsourcemappingsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awslambdaeventsourcemappings"}
+var awslambdaeventsourcemappingsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awslambdaeventsourcemappings"}
 
-var awslambdaeventsourcemappingsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsLambdaEventSourceMapping"}
+var awslambdaeventsourcemappingsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsLambdaEventSourceMapping"}
 
 // Get takes name of the awsLambdaEventSourceMapping, and returns the corresponding awsLambdaEventSourceMapping object, and an error if there is any.
 func (c *FakeAwsLambdaEventSourceMappings) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsLambdaEventSourceMapping, err error) {

@@ -30,13 +30,13 @@ import (
 
 // FakeAwsDxLags implements AwsDxLagInterface
 type FakeAwsDxLags struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsdxlagsResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsdxlags"}
+var awsdxlagsResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsdxlags"}
 
-var awsdxlagsKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsDxLag"}
+var awsdxlagsKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsDxLag"}
 
 // Get takes name of the awsDxLag, and returns the corresponding awsDxLag object, and an error if there is any.
 func (c *FakeAwsDxLags) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsDxLag, err error) {

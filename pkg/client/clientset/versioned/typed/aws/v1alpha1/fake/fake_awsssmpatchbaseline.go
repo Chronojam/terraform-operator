@@ -30,13 +30,13 @@ import (
 
 // FakeAwsSsmPatchBaselines implements AwsSsmPatchBaselineInterface
 type FakeAwsSsmPatchBaselines struct {
-	Fake *FakeAwsV1alpha1
+	Fake *FakeChronojamV1alpha1
 	ns   string
 }
 
-var awsssmpatchbaselinesResource = schema.GroupVersionResource{Group: "aws", Version: "v1alpha1", Resource: "awsssmpatchbaselines"}
+var awsssmpatchbaselinesResource = schema.GroupVersionResource{Group: "chronojam.co.uk", Version: "v1alpha1", Resource: "awsssmpatchbaselines"}
 
-var awsssmpatchbaselinesKind = schema.GroupVersionKind{Group: "aws", Version: "v1alpha1", Kind: "AwsSsmPatchBaseline"}
+var awsssmpatchbaselinesKind = schema.GroupVersionKind{Group: "chronojam.co.uk", Version: "v1alpha1", Kind: "AwsSsmPatchBaseline"}
 
 // Get takes name of the awsSsmPatchBaseline, and returns the corresponding awsSsmPatchBaseline object, and an error if there is any.
 func (c *FakeAwsSsmPatchBaselines) Get(name string, options v1.GetOptions) (result *v1alpha1.AwsSsmPatchBaseline, err error) {

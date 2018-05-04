@@ -53,7 +53,7 @@ type awsGameliftFleets struct {
 }
 
 // newAwsGameliftFleets returns a AwsGameliftFleets
-func newAwsGameliftFleets(c *AwsV1alpha1Client, namespace string) *awsGameliftFleets {
+func newAwsGameliftFleets(c *ChronojamV1alpha1Client, namespace string) *awsGameliftFleets {
 	return &awsGameliftFleets{
 		client: c.RESTClient(),
 		ns:     namespace,
