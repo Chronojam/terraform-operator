@@ -3,8 +3,7 @@ package generator
 import (
 	"bytes"
 	"fmt"
-
-	"github.com/hashicorp/terraform/helper/schema"
+	"io/ioutil"
 )
 
 type file struct {
@@ -21,21 +20,18 @@ func NewFile(packageName string) (*file, error) {
 		raw:    ret,
 	}
 
-	// Write out package name to the top of our file.
-	err := resource.writeToBuffer(fmt.Sprintf("package %s", packageName))
-	if err != nil {
-		return nil, err
+	if packageName != "" {
+		// Write out package name to the top of our file.
+		err := resource.WriteToBuffer(fmt.Sprintf("package %s", packageName))
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return resource, nil
 }
 
-func (res *file) generateField(name string, s *schema.Schema) (string, error) {
-
-	return "", nil
-}
-
-func (res *file) writeToBuffer(s string) error {
+func (res *file) WriteToBuffer(s string) error {
 	_, err := fmt.Fprintln(res.buffer, s)
 	if err != nil {
 		return err
@@ -44,8 +40,10 @@ func (res *file) writeToBuffer(s string) error {
 	return nil
 }
 
-// GenerateFromSchema ...
-func (res *file) AppendFromTerraformSchema(name string, s *schema.Schema) error {
+func (res *file) ToString() string {
+	return string(res.buffer.Bytes())
+}
 
-	return nil
+func (res *file) WriteToFile(path string) error {
+	return ioutil.WriteFile(path, res.buffer.Bytes(), 0755)
 }

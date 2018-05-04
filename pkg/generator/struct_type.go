@@ -31,25 +31,38 @@ func NewStructType(name string, s map[string]*schema.Schema) *structType {
 }
 
 func (s *structType) AddDependentStruct(st *structType) error {
+	// Lets check if we've seen this before
+	for _, x := range s.dependentStructs {
+		if st.BaseName == x.BaseName {
+			fmt.Printf("Seen %s\n", x.BaseName)
+			// Yeah we've seen it before, just drop rather than overriding for now.
+			return nil
+		}
+	}
 	s.dependentStructs = append(s.dependentStructs, st)
 	return nil
 }
 func (s *structType) WriteDependentStructs() {
 	for _, v := range s.dependentStructs {
-		b, err := v.Generate()
-		if err != nil {
-			panic(err)
-		}
-
-		_, err = fmt.Fprintf(s.buf, string(b)+"\n")
+		_, err := fmt.Fprintf(s.buf, string(v.buf.Bytes())+"\n")
 		if err != nil {
 			panic(err)
 		}
 	}
 }
 
-func (s *structType) Begin(name string) error {
-	_, err := fmt.Fprintf(s.buf, "type %s struct\n", name)
+func (s *structType) Begin(name string, generationComments []string) error {
+	for _, l := range generationComments {
+		_, err := fmt.Fprintf(s.buf, "// %s\n", l)
+		if err != nil {
+			return err
+		}
+	}
+	_, err := fmt.Fprintln(s.buf, "")
+	if err != nil {
+		return err
+	}
+	_, err = fmt.Fprintf(s.buf, "type %s struct\n", name)
 	if err != nil {
 		return err
 	}
@@ -70,11 +83,31 @@ func (s *structType) End() error {
 	return nil
 }
 
-// Generate ...
-func (s *structType) Generate() ([]byte, error) {
+func (s *structType) GenerateWithFields(fields, generationTags []string) ([]byte, error) {
 	// name = FooBar
-	name := camelAndTitle(s.BaseName)
-	err := s.Begin(name)
+	name := CamelAndTitle(s.BaseName)
+	err := s.Begin(name, generationTags)
+	if err != nil {
+		return s.b, err
+	}
+
+	for _, v := range fields {
+		fmt.Fprintf(s.buf, v+"\n")
+	}
+
+	err = s.End()
+	if err != nil {
+		return s.b, err
+	}
+
+	return s.buf.Bytes(), nil
+}
+
+// Generate ...
+func (s *structType) Generate(generationTags []string) ([]byte, error) {
+	// name = FooBar
+	name := CamelAndTitle(s.BaseName)
+	err := s.Begin(name, generationTags)
 	if err != nil {
 		return s.b, err
 	}
@@ -92,12 +125,12 @@ func (s *structType) Generate() ([]byte, error) {
 	}
 
 	s.WriteDependentStructs()
-	return s.b, nil
+	return s.buf.Bytes(), nil
 }
 
 func (s *structType) GenerateField(name string, sch *schema.Schema) error {
-	t := s.schemaTypeAsString(camelAndTitle(name), sch)
-	fmt.Fprintf(s.buf, "%s %s `json:\"%s\"`", camelAndTitle(name), t, name)
+	t := s.schemaTypeAsString(CamelAndTitle(name), sch)
+	fmt.Fprintf(s.buf, "%s %s `json:\"%s\"`\n", CamelAndTitle(name), t, name)
 	return nil
 }
 
@@ -128,11 +161,11 @@ func (s *structType) typeElemAsString(name string, i interface{}) string {
 	case *schema.Resource:
 		p := NewStructType(s.BaseName+name, i.(*schema.Resource).Schema)
 		s.AddDependentStruct(p)
-		_, err := s.Generate()
+		_, err := p.Generate([]string{})
 		if err != nil {
 			panic(err)
 		}
-		return s.BaseName + name
+		return CamelAndTitle(s.BaseName + name)
 	}
 
 	return "string"
