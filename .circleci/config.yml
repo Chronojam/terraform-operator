@@ -1,0 +1,74 @@
+version: 2
+jobs:
+  dependencies:
+    docker:
+      - image: circleci/golang:1.10
+    working_directory: /go/src/github.com/chronojam/terraform-operator
+    steps:
+      - setup_remote_docker
+      - checkout
+      - run:
+          name: Install & Run Glide
+          command: |
+            curl https://glide.sh/get | sh
+            glide install -v
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  build:
+    docker:
+      - image: circleci/golang:1.10
+    working_directory: /go/src/github.com/chronojam/terraform-operator
+    steps:
+      - setup_remote_docker
+      - attach_workspace:
+          at: .
+      - run:
+          name: Unit Tests
+          command: |
+            echo "Foobar"
+            # go test -v ./...
+      - run:
+          name: Build
+          command: |
+            make build
+      - run:
+          name: Docker-Push
+          command: |
+            docker login -p $DOCKER_LOGIN_PASSWORD -u $DOCKER_LOGIN_USERNAME quay.io
+            make docker-push
+
+  unit_tests:
+    docker:
+      - image: circleci/golang:1.10
+    working_directory: /go/src/github.com/chronojam/terraform-operator
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Unit_Packages
+          command: |
+            cd pkg/
+            echo $GOPATH
+            go test -v ./...
+      - run:
+          name: Unit_Cmd
+          command: |
+            cd cmd/
+            go test -v ./...
+
+workflows:
+  version: 2
+  test_build:
+    jobs:
+      - dependencies
+      - unit_tests:
+          requires:
+            - dependencies
+      - build:
+          requires:
+            - unit_tests
+          filters:
+            branches:
+              only: master

@@ -2,6 +2,9 @@ ROOT_PACKAGE:=github.com/chronojam/terraform-operator
 ABSOLUTE_PATH:=$(GOPATH)/src/$(ROOT_PACKAGE)
 PWD:=$(shell pwd)
 
+DOCKER_REPO:=quay.io/chronojam/terraform-operator
+TAG?=$(shell git rev-parse --short HEAD)
+
 install-pluralizer:
 	go build -o $(PWD)/.build/plural $(ABSOLUTE_PATH)/cmd/plural/*.go
 
@@ -24,3 +27,11 @@ generate-stubs: install-pluralizer
 	hack/scaffolder.sh
 
 generate-all: clean-generation generate-struct-types generate-k8s-funcs
+
+
+build:
+	go build -o $(PWD)/.build/operator $(ABSOLUTE_PATH)/cmd/plural/*.go
+	docker build -t $(DOCKER_REPO):$(TAG) .
+
+docker-push:
+	docker push $(DOCKER_REPO):$(TAG)
