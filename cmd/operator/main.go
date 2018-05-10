@@ -5,30 +5,38 @@ import (
 	"os/signal"
 	"syscall"
 
+	log "github.com/Sirupsen/logrus"
+
 	"k8s.io/client-go/tools/cache"
 
-	"github.com/chronojam/terraform-operator/pkg/controller"
-	csinf_v1 "github.com/trussle/terraform-operator/pkg/client/informers/externalversions/aws/v1"
-	meta_v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	operator "github.com/chronojam/terraform-operator/pkg/operator"
+	"github.com/chronojam/terraform-operator/pkg/operator/aws/v1alpha1/awsiampolicy"
+	cs "github.com/trussle/terraform-operator/pkg/client/clientset/versioned"
 )
 
 func main() {
-	client, resClient := controller.GetKubernetesClient()
-
-	informer := csinf_v1.NewAwsIamPolicyInformer(
-		resClient,
-		meta_v1.NamespaceAll,
-		0,
-		cache.Indexers{},
-	)
-
+	client, resClient := operator.GetKubernetesClient()
 	stopCh := make(chan struct{})
 	defer close(stopCh)
+	informers, err := constructInformers(resClient)
+	if err != nil {
+		log.Fatalf("%v", err)
+	}
 
-	go controller.Run(stopCh)
+	for inf, handler := range informers {
+		op := operator.New(client, inf, handler)
+		go op.Run(stopCh)
+	}
 
 	sigTerm := make(chan os.Signal, 1)
 	signal.Notify(sigTerm, syscall.SIGTERM)
 	signal.Notify(sigTerm, syscall.SIGINT)
 	<-sigTerm
+}
+
+func constructInformers(resClient cs.Interface) (map[cache.SharedIndexInformer]operator.Handler, error) {
+	return map[cache.SharedIndexInformer]operator.Handler{
+		awsiampolicy.DefaultInformer(resClient): &awsiampolicy.Handler{},
+	}, nil
+
 }
