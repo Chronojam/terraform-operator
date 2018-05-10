@@ -17,11 +17,11 @@ type AwsIamPolicyAttachment struct {
 }
 
 type AwsIamPolicyAttachmentSpec struct {
-	Groups    string `json:"groups"`
-	PolicyArn string `json:"policy_arn"`
 	Name      string `json:"name"`
 	Users     string `json:"users"`
 	Roles     string `json:"roles"`
+	Groups    string `json:"groups"`
+	PolicyArn string `json:"policy_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -18,14 +18,14 @@ type AwsLightsailKeyPair struct {
 
 type AwsLightsailKeyPairSpec struct {
 	NamePrefix           string `json:"name_prefix"`
-	PgpKey               string `json:"pgp_key"`
 	Arn                  string `json:"arn"`
 	Fingerprint          string `json:"fingerprint"`
-	PrivateKey           string `json:"private_key"`
-	EncryptedFingerprint string `json:"encrypted_fingerprint"`
-	Name                 string `json:"name"`
 	PublicKey            string `json:"public_key"`
 	EncryptedPrivateKey  string `json:"encrypted_private_key"`
+	Name                 string `json:"name"`
+	PrivateKey           string `json:"private_key"`
+	EncryptedFingerprint string `json:"encrypted_fingerprint"`
+	PgpKey               string `json:"pgp_key"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

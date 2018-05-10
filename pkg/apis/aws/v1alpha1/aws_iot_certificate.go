@@ -17,9 +17,9 @@ type AwsIotCertificate struct {
 }
 
 type AwsIotCertificateSpec struct {
+	Csr    string `json:"csr"`
 	Active bool   `json:"active"`
 	Arn    string `json:"arn"`
-	Csr    string `json:"csr"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

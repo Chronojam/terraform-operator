@@ -17,39 +17,21 @@ type AwsElasticsearchDomain struct {
 }
 
 type AwsElasticsearchDomainSpec struct {
-	AdvancedOptions      map[string]string                              `json:"advanced_options"`
-	Arn                  string                                         `json:"arn"`
-	Endpoint             string                                         `json:"endpoint"`
-	EbsOptions           []AwsElasticsearchDomainSpecEbsOptions         `json:"ebs_options"`
-	LogPublishingOptions AwsElasticsearchDomainSpecLogPublishingOptions `json:"log_publishing_options"`
-	DomainId             string                                         `json:"domain_id"`
-	EncryptAtRest        []AwsElasticsearchDomainSpecEncryptAtRest      `json:"encrypt_at_rest"`
 	SnapshotOptions      []AwsElasticsearchDomainSpecSnapshotOptions    `json:"snapshot_options"`
 	Tags                 map[string]string                              `json:"tags"`
-	AccessPolicies       string                                         `json:"access_policies"`
 	DomainName           string                                         `json:"domain_name"`
+	Endpoint             string                                         `json:"endpoint"`
 	KibanaEndpoint       string                                         `json:"kibana_endpoint"`
 	ClusterConfig        []AwsElasticsearchDomainSpecClusterConfig      `json:"cluster_config"`
+	DomainId             string                                         `json:"domain_id"`
+	EbsOptions           []AwsElasticsearchDomainSpecEbsOptions         `json:"ebs_options"`
 	VpcOptions           []AwsElasticsearchDomainSpecVpcOptions         `json:"vpc_options"`
+	AdvancedOptions      map[string]string                              `json:"advanced_options"`
+	LogPublishingOptions AwsElasticsearchDomainSpecLogPublishingOptions `json:"log_publishing_options"`
+	AccessPolicies       string                                         `json:"access_policies"`
+	Arn                  string                                         `json:"arn"`
+	EncryptAtRest        []AwsElasticsearchDomainSpecEncryptAtRest      `json:"encrypt_at_rest"`
 	ElasticsearchVersion string                                         `json:"elasticsearch_version"`
-}
-
-type AwsElasticsearchDomainSpecEbsOptions struct {
-	EbsEnabled bool   `json:"ebs_enabled"`
-	Iops       int    `json:"iops"`
-	VolumeSize int    `json:"volume_size"`
-	VolumeType string `json:"volume_type"`
-}
-
-type AwsElasticsearchDomainSpecLogPublishingOptions struct {
-	LogType               string `json:"log_type"`
-	CloudwatchLogGroupArn string `json:"cloudwatch_log_group_arn"`
-	Enabled               bool   `json:"enabled"`
-}
-
-type AwsElasticsearchDomainSpecEncryptAtRest struct {
-	Enabled  bool   `json:"enabled"`
-	KmsKeyId string `json:"kms_key_id"`
 }
 
 type AwsElasticsearchDomainSpecSnapshotOptions struct {
@@ -65,11 +47,29 @@ type AwsElasticsearchDomainSpecClusterConfig struct {
 	InstanceType           string `json:"instance_type"`
 }
 
+type AwsElasticsearchDomainSpecEbsOptions struct {
+	Iops       int    `json:"iops"`
+	VolumeSize int    `json:"volume_size"`
+	VolumeType string `json:"volume_type"`
+	EbsEnabled bool   `json:"ebs_enabled"`
+}
+
 type AwsElasticsearchDomainSpecVpcOptions struct {
-	SubnetIds         string `json:"subnet_ids"`
-	VpcId             string `json:"vpc_id"`
 	AvailabilityZones string `json:"availability_zones"`
 	SecurityGroupIds  string `json:"security_group_ids"`
+	SubnetIds         string `json:"subnet_ids"`
+	VpcId             string `json:"vpc_id"`
+}
+
+type AwsElasticsearchDomainSpecLogPublishingOptions struct {
+	LogType               string `json:"log_type"`
+	CloudwatchLogGroupArn string `json:"cloudwatch_log_group_arn"`
+	Enabled               bool   `json:"enabled"`
+}
+
+type AwsElasticsearchDomainSpecEncryptAtRest struct {
+	KmsKeyId string `json:"kms_key_id"`
+	Enabled  bool   `json:"enabled"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

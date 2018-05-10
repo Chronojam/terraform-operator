@@ -17,23 +17,23 @@ type AwsDaxCluster struct {
 }
 
 type AwsDaxClusterSpec struct {
-	AvailabilityZones     string                   `json:"availability_zones"`
-	NotificationTopicArn  string                   `json:"notification_topic_arn"`
-	Tags                  map[string]string        `json:"tags"`
-	ConfigurationEndpoint string                   `json:"configuration_endpoint"`
 	ClusterName           string                   `json:"cluster_name"`
-	NodeType              string                   `json:"node_type"`
-	Description           string                   `json:"description"`
-	SecurityGroupIds      string                   `json:"security_group_ids"`
+	AvailabilityZones     string                   `json:"availability_zones"`
+	ParameterGroupName    string                   `json:"parameter_group_name"`
+	MaintenanceWindow     string                   `json:"maintenance_window"`
+	SubnetGroupName       string                   `json:"subnet_group_name"`
+	Tags                  map[string]string        `json:"tags"`
+	Arn                   string                   `json:"arn"`
+	IamRoleArn            string                   `json:"iam_role_arn"`
 	ClusterAddress        string                   `json:"cluster_address"`
 	Nodes                 []AwsDaxClusterSpecNodes `json:"nodes"`
-	IamRoleArn            string                   `json:"iam_role_arn"`
-	ReplicationFactor     int                      `json:"replication_factor"`
-	ParameterGroupName    string                   `json:"parameter_group_name"`
-	SubnetGroupName       string                   `json:"subnet_group_name"`
+	NodeType              string                   `json:"node_type"`
+	SecurityGroupIds      string                   `json:"security_group_ids"`
 	Port                  int                      `json:"port"`
-	Arn                   string                   `json:"arn"`
-	MaintenanceWindow     string                   `json:"maintenance_window"`
+	ReplicationFactor     int                      `json:"replication_factor"`
+	Description           string                   `json:"description"`
+	NotificationTopicArn  string                   `json:"notification_topic_arn"`
+	ConfigurationEndpoint string                   `json:"configuration_endpoint"`
 }
 
 type AwsDaxClusterSpecNodes struct {

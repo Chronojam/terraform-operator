@@ -17,26 +17,26 @@ type AwsDirectoryServiceDirectory struct {
 }
 
 type AwsDirectoryServiceDirectorySpec struct {
-	Password        string                                            `json:"password"`
+	Tags            map[string]string                                 `json:"tags"`
+	Type            string                                            `json:"type"`
+	Size            string                                            `json:"size"`
+	ShortName       string                                            `json:"short_name"`
 	VpcSettings     []AwsDirectoryServiceDirectorySpecVpcSettings     `json:"vpc_settings"`
 	EnableSso       bool                                              `json:"enable_sso"`
-	ShortName       string                                            `json:"short_name"`
-	ConnectSettings []AwsDirectoryServiceDirectorySpecConnectSettings `json:"connect_settings"`
 	AccessUrl       string                                            `json:"access_url"`
-	SecurityGroupId string                                            `json:"security_group_id"`
 	Edition         string                                            `json:"edition"`
-	Name            string                                            `json:"name"`
-	Size            string                                            `json:"size"`
 	Alias           string                                            `json:"alias"`
-	Tags            map[string]string                                 `json:"tags"`
 	Description     string                                            `json:"description"`
+	ConnectSettings []AwsDirectoryServiceDirectorySpecConnectSettings `json:"connect_settings"`
 	DnsIpAddresses  string                                            `json:"dns_ip_addresses"`
-	Type            string                                            `json:"type"`
+	Name            string                                            `json:"name"`
+	SecurityGroupId string                                            `json:"security_group_id"`
+	Password        string                                            `json:"password"`
 }
 
 type AwsDirectoryServiceDirectorySpecVpcSettings struct {
-	VpcId     string `json:"vpc_id"`
 	SubnetIds string `json:"subnet_ids"`
+	VpcId     string `json:"vpc_id"`
 }
 
 type AwsDirectoryServiceDirectorySpecConnectSettings struct {

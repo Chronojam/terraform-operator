@@ -17,25 +17,25 @@ type AwsVpcEndpoint struct {
 }
 
 type AwsVpcEndpointSpec struct {
-	NetworkInterfaceIds string                       `json:"network_interface_ids"`
+	CidrBlocks          []string                     `json:"cidr_blocks"`
 	ServiceName         string                       `json:"service_name"`
-	State               string                       `json:"state"`
-	PrefixListId        string                       `json:"prefix_list_id"`
-	PrivateDnsEnabled   bool                         `json:"private_dns_enabled"`
-	VpcId               string                       `json:"vpc_id"`
-	VpcEndpointType     string                       `json:"vpc_endpoint_type"`
 	RouteTableIds       string                       `json:"route_table_ids"`
 	SubnetIds           string                       `json:"subnet_ids"`
-	CidrBlocks          []string                     `json:"cidr_blocks"`
-	DnsEntry            []AwsVpcEndpointSpecDnsEntry `json:"dns_entry"`
+	PrivateDnsEnabled   bool                         `json:"private_dns_enabled"`
+	VpcId               string                       `json:"vpc_id"`
 	Policy              string                       `json:"policy"`
-	SecurityGroupIds    string                       `json:"security_group_ids"`
+	State               string                       `json:"state"`
+	PrefixListId        string                       `json:"prefix_list_id"`
+	DnsEntry            []AwsVpcEndpointSpecDnsEntry `json:"dns_entry"`
 	AutoAccept          bool                         `json:"auto_accept"`
+	VpcEndpointType     string                       `json:"vpc_endpoint_type"`
+	SecurityGroupIds    string                       `json:"security_group_ids"`
+	NetworkInterfaceIds string                       `json:"network_interface_ids"`
 }
 
 type AwsVpcEndpointSpecDnsEntry struct {
-	HostedZoneId string `json:"hosted_zone_id"`
 	DnsName      string `json:"dns_name"`
+	HostedZoneId string `json:"hosted_zone_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

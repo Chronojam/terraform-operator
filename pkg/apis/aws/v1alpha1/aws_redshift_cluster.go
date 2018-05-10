@@ -17,55 +17,55 @@ type AwsRedshiftCluster struct {
 }
 
 type AwsRedshiftClusterSpec struct {
-	FinalSnapshotIdentifier          string                               `json:"final_snapshot_identifier"`
-	PreferredMaintenanceWindow       string                               `json:"preferred_maintenance_window"`
+	Encrypted                        bool                                 `json:"encrypted"`
+	Logging                          []AwsRedshiftClusterSpecLogging      `json:"logging"`
+	EnableLogging                    bool                                 `json:"enable_logging"`
+	DatabaseName                     string                               `json:"database_name"`
+	PubliclyAccessible               bool                                 `json:"publicly_accessible"`
+	BucketName                       string                               `json:"bucket_name"`
+	OwnerAccount                     string                               `json:"owner_account"`
+	ClusterIdentifier                string                               `json:"cluster_identifier"`
+	AllowVersionUpgrade              bool                                 `json:"allow_version_upgrade"`
+	SnapshotClusterIdentifier        string                               `json:"snapshot_cluster_identifier"`
+	ClusterSubnetGroupName           string                               `json:"cluster_subnet_group_name"`
+	ClusterVersion                   string                               `json:"cluster_version"`
+	SnapshotCopy                     []AwsRedshiftClusterSpecSnapshotCopy `json:"snapshot_copy"`
 	KmsKeyId                         string                               `json:"kms_key_id"`
 	ClusterPublicKey                 string                               `json:"cluster_public_key"`
-	BucketName                       string                               `json:"bucket_name"`
-	SnapshotIdentifier               string                               `json:"snapshot_identifier"`
-	SnapshotClusterIdentifier        string                               `json:"snapshot_cluster_identifier"`
-	PubliclyAccessible               bool                                 `json:"publicly_accessible"`
-	SkipFinalSnapshot                bool                                 `json:"skip_final_snapshot"`
-	NodeType                         string                               `json:"node_type"`
-	MasterUsername                   string                               `json:"master_username"`
-	AvailabilityZone                 string                               `json:"availability_zone"`
-	AllowVersionUpgrade              bool                                 `json:"allow_version_upgrade"`
-	Endpoint                         string                               `json:"endpoint"`
-	SnapshotCopy                     []AwsRedshiftClusterSpecSnapshotCopy `json:"snapshot_copy"`
-	DatabaseName                     string                               `json:"database_name"`
-	ClusterIdentifier                string                               `json:"cluster_identifier"`
-	AutomatedSnapshotRetentionPeriod int                                  `json:"automated_snapshot_retention_period"`
-	Logging                          []AwsRedshiftClusterSpecLogging      `json:"logging"`
-	ElasticIp                        string                               `json:"elastic_ip"`
-	OwnerAccount                     string                               `json:"owner_account"`
-	ClusterRevisionNumber            string                               `json:"cluster_revision_number"`
 	IamRoles                         string                               `json:"iam_roles"`
-	S3KeyPrefix                      string                               `json:"s3_key_prefix"`
-	Tags                             map[string]string                    `json:"tags"`
-	NumberOfNodes                    int                                  `json:"number_of_nodes"`
-	Encrypted                        bool                                 `json:"encrypted"`
-	ClusterParameterGroupName        string                               `json:"cluster_parameter_group_name"`
-	ClusterVersion                   string                               `json:"cluster_version"`
 	ClusterType                      string                               `json:"cluster_type"`
 	VpcSecurityGroupIds              string                               `json:"vpc_security_group_ids"`
-	ClusterSubnetGroupName           string                               `json:"cluster_subnet_group_name"`
+	PreferredMaintenanceWindow       string                               `json:"preferred_maintenance_window"`
+	AutomatedSnapshotRetentionPeriod int                                  `json:"automated_snapshot_retention_period"`
+	AvailabilityZone                 string                               `json:"availability_zone"`
+	FinalSnapshotIdentifier          string                               `json:"final_snapshot_identifier"`
+	SkipFinalSnapshot                bool                                 `json:"skip_final_snapshot"`
+	S3KeyPrefix                      string                               `json:"s3_key_prefix"`
+	ClusterParameterGroupName        string                               `json:"cluster_parameter_group_name"`
 	Port                             int                                  `json:"port"`
-	EnhancedVpcRouting               bool                                 `json:"enhanced_vpc_routing"`
-	EnableLogging                    bool                                 `json:"enable_logging"`
+	Endpoint                         string                               `json:"endpoint"`
+	ClusterRevisionNumber            string                               `json:"cluster_revision_number"`
+	NodeType                         string                               `json:"node_type"`
+	MasterUsername                   string                               `json:"master_username"`
 	MasterPassword                   string                               `json:"master_password"`
 	ClusterSecurityGroups            string                               `json:"cluster_security_groups"`
+	Tags                             map[string]string                    `json:"tags"`
+	NumberOfNodes                    int                                  `json:"number_of_nodes"`
+	EnhancedVpcRouting               bool                                 `json:"enhanced_vpc_routing"`
+	ElasticIp                        string                               `json:"elastic_ip"`
+	SnapshotIdentifier               string                               `json:"snapshot_identifier"`
+}
+
+type AwsRedshiftClusterSpecLogging struct {
+	Enable      bool   `json:"enable"`
+	BucketName  string `json:"bucket_name"`
+	S3KeyPrefix string `json:"s3_key_prefix"`
 }
 
 type AwsRedshiftClusterSpecSnapshotCopy struct {
 	RetentionPeriod   int    `json:"retention_period"`
 	GrantName         string `json:"grant_name"`
 	DestinationRegion string `json:"destination_region"`
-}
-
-type AwsRedshiftClusterSpecLogging struct {
-	S3KeyPrefix string `json:"s3_key_prefix"`
-	Enable      bool   `json:"enable"`
-	BucketName  string `json:"bucket_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

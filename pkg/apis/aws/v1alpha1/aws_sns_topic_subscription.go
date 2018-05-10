@@ -17,14 +17,14 @@ type AwsSnsTopicSubscription struct {
 }
 
 type AwsSnsTopicSubscriptionSpec struct {
-	RawMessageDelivery           bool   `json:"raw_message_delivery"`
-	Arn                          string `json:"arn"`
-	Protocol                     string `json:"protocol"`
-	Endpoint                     string `json:"endpoint"`
 	EndpointAutoConfirms         bool   `json:"endpoint_auto_confirms"`
 	ConfirmationTimeoutInMinutes int    `json:"confirmation_timeout_in_minutes"`
 	TopicArn                     string `json:"topic_arn"`
+	RawMessageDelivery           bool   `json:"raw_message_delivery"`
+	Protocol                     string `json:"protocol"`
+	Endpoint                     string `json:"endpoint"`
 	DeliveryPolicy               string `json:"delivery_policy"`
+	Arn                          string `json:"arn"`
 	FilterPolicy                 string `json:"filter_policy"`
 }
 

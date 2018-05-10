@@ -17,23 +17,23 @@ type AwsEcsTaskDefinition struct {
 }
 
 type AwsEcsTaskDefinitionSpec struct {
+	NetworkMode             string                                       `json:"network_mode"`
+	RequiresCompatibilities string                                       `json:"requires_compatibilities"`
+	Arn                     string                                       `json:"arn"`
 	Family                  string                                       `json:"family"`
 	ContainerDefinitions    string                                       `json:"container_definitions"`
-	TaskRoleArn             string                                       `json:"task_role_arn"`
+	ExecutionRoleArn        string                                       `json:"execution_role_arn"`
 	Memory                  string                                       `json:"memory"`
-	NetworkMode             string                                       `json:"network_mode"`
-	Volume                  AwsEcsTaskDefinitionSpecVolume               `json:"volume"`
-	PlacementConstraints    AwsEcsTaskDefinitionSpecPlacementConstraints `json:"placement_constraints"`
-	Arn                     string                                       `json:"arn"`
 	Cpu                     string                                       `json:"cpu"`
 	Revision                int                                          `json:"revision"`
-	ExecutionRoleArn        string                                       `json:"execution_role_arn"`
-	RequiresCompatibilities string                                       `json:"requires_compatibilities"`
+	TaskRoleArn             string                                       `json:"task_role_arn"`
+	Volume                  AwsEcsTaskDefinitionSpecVolume               `json:"volume"`
+	PlacementConstraints    AwsEcsTaskDefinitionSpecPlacementConstraints `json:"placement_constraints"`
 }
 
 type AwsEcsTaskDefinitionSpecVolume struct {
-	HostPath string `json:"host_path"`
 	Name     string `json:"name"`
+	HostPath string `json:"host_path"`
 }
 
 type AwsEcsTaskDefinitionSpecPlacementConstraints struct {

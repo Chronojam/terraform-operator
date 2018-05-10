@@ -17,9 +17,9 @@ type AwsRedshiftSecurityGroup struct {
 }
 
 type AwsRedshiftSecurityGroupSpec struct {
+	Name        string                              `json:"name"`
 	Description string                              `json:"description"`
 	Ingress     AwsRedshiftSecurityGroupSpecIngress `json:"ingress"`
-	Name        string                              `json:"name"`
 }
 
 type AwsRedshiftSecurityGroupSpecIngress struct {

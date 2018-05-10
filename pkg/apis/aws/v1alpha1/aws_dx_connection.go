@@ -17,11 +17,11 @@ type AwsDxConnection struct {
 }
 
 type AwsDxConnectionSpec struct {
+	Tags      map[string]string `json:"tags"`
 	Arn       string            `json:"arn"`
 	Name      string            `json:"name"`
 	Bandwidth string            `json:"bandwidth"`
 	Location  string            `json:"location"`
-	Tags      map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

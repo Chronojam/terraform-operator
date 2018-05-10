@@ -17,22 +17,22 @@ type AwsNetworkInterface struct {
 }
 
 type AwsNetworkInterfaceSpec struct {
-	SubnetId        string                            `json:"subnet_id"`
-	PrivateIp       string                            `json:"private_ip"`
-	SourceDestCheck bool                              `json:"source_dest_check"`
-	Description     string                            `json:"description"`
 	Tags            map[string]string                 `json:"tags"`
 	PrivateDnsName  string                            `json:"private_dns_name"`
 	PrivateIps      string                            `json:"private_ips"`
 	PrivateIpsCount int                               `json:"private_ips_count"`
 	SecurityGroups  string                            `json:"security_groups"`
 	Attachment      AwsNetworkInterfaceSpecAttachment `json:"attachment"`
+	SubnetId        string                            `json:"subnet_id"`
+	PrivateIp       string                            `json:"private_ip"`
+	SourceDestCheck bool                              `json:"source_dest_check"`
+	Description     string                            `json:"description"`
 }
 
 type AwsNetworkInterfaceSpecAttachment struct {
-	AttachmentId string `json:"attachment_id"`
 	Instance     string `json:"instance"`
 	DeviceIndex  int    `json:"device_index"`
+	AttachmentId string `json:"attachment_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

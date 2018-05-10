@@ -17,15 +17,15 @@ type AwsAppautoscalingScheduledAction struct {
 }
 
 type AwsAppautoscalingScheduledActionSpec struct {
-	ResourceId           string                                                     `json:"resource_id"`
 	ScalableTargetAction []AwsAppautoscalingScheduledActionSpecScalableTargetAction `json:"scalable_target_action"`
 	Schedule             string                                                     `json:"schedule"`
+	ScalableDimension    string                                                     `json:"scalable_dimension"`
+	ServiceNamespace     string                                                     `json:"service_namespace"`
+	ResourceId           string                                                     `json:"resource_id"`
+	StartTime            string                                                     `json:"start_time"`
 	EndTime              string                                                     `json:"end_time"`
 	Arn                  string                                                     `json:"arn"`
 	Name                 string                                                     `json:"name"`
-	ServiceNamespace     string                                                     `json:"service_namespace"`
-	ScalableDimension    string                                                     `json:"scalable_dimension"`
-	StartTime            string                                                     `json:"start_time"`
 }
 
 type AwsAppautoscalingScheduledActionSpecScalableTargetAction struct {

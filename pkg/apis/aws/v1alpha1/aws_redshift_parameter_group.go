@@ -17,15 +17,15 @@ type AwsRedshiftParameterGroup struct {
 }
 
 type AwsRedshiftParameterGroupSpec struct {
+	Family      string                                 `json:"family"`
 	Description string                                 `json:"description"`
 	Parameter   AwsRedshiftParameterGroupSpecParameter `json:"parameter"`
 	Name        string                                 `json:"name"`
-	Family      string                                 `json:"family"`
 }
 
 type AwsRedshiftParameterGroupSpecParameter struct {
-	Value string `json:"value"`
 	Name  string `json:"name"`
+	Value string `json:"value"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

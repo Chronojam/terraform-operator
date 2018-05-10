@@ -17,21 +17,21 @@ type AwsSqsQueue struct {
 }
 
 type AwsSqsQueueSpec struct {
-	MaxMessageSize               int               `json:"max_message_size"`
-	VisibilityTimeoutSeconds     int               `json:"visibility_timeout_seconds"`
-	ContentBasedDeduplication    bool              `json:"content_based_deduplication"`
-	KmsMasterKeyId               string            `json:"kms_master_key_id"`
 	KmsDataKeyReusePeriodSeconds int               `json:"kms_data_key_reuse_period_seconds"`
-	Name                         string            `json:"name"`
-	RedrivePolicy                string            `json:"redrive_policy"`
-	NamePrefix                   string            `json:"name_prefix"`
-	MessageRetentionSeconds      int               `json:"message_retention_seconds"`
-	ReceiveWaitTimeSeconds       int               `json:"receive_wait_time_seconds"`
-	Policy                       string            `json:"policy"`
 	Arn                          string            `json:"arn"`
 	FifoQueue                    bool              `json:"fifo_queue"`
-	Tags                         map[string]string `json:"tags"`
+	KmsMasterKeyId               string            `json:"kms_master_key_id"`
+	Name                         string            `json:"name"`
 	DelaySeconds                 int               `json:"delay_seconds"`
+	Policy                       string            `json:"policy"`
+	RedrivePolicy                string            `json:"redrive_policy"`
+	ContentBasedDeduplication    bool              `json:"content_based_deduplication"`
+	Tags                         map[string]string `json:"tags"`
+	NamePrefix                   string            `json:"name_prefix"`
+	MaxMessageSize               int               `json:"max_message_size"`
+	VisibilityTimeoutSeconds     int               `json:"visibility_timeout_seconds"`
+	MessageRetentionSeconds      int               `json:"message_retention_seconds"`
+	ReceiveWaitTimeSeconds       int               `json:"receive_wait_time_seconds"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

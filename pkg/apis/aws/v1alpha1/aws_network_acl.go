@@ -17,36 +17,36 @@ type AwsNetworkAcl struct {
 }
 
 type AwsNetworkAclSpec struct {
-	SubnetId  string                   `json:"subnet_id"`
-	SubnetIds string                   `json:"subnet_ids"`
 	Ingress   AwsNetworkAclSpecIngress `json:"ingress"`
 	Egress    AwsNetworkAclSpecEgress  `json:"egress"`
 	Tags      map[string]string        `json:"tags"`
 	VpcId     string                   `json:"vpc_id"`
+	SubnetId  string                   `json:"subnet_id"`
+	SubnetIds string                   `json:"subnet_ids"`
 }
 
 type AwsNetworkAclSpecIngress struct {
 	ToPort        int    `json:"to_port"`
-	Action        string `json:"action"`
-	Protocol      string `json:"protocol"`
+	RuleNo        int    `json:"rule_no"`
 	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
+	IcmpCode      int    `json:"icmp_code"`
 	FromPort      int    `json:"from_port"`
+	Protocol      string `json:"protocol"`
 	CidrBlock     string `json:"cidr_block"`
 	IcmpType      int    `json:"icmp_type"`
-	IcmpCode      int    `json:"icmp_code"`
-	RuleNo        int    `json:"rule_no"`
+	Action        string `json:"action"`
 }
 
 type AwsNetworkAclSpecEgress struct {
-	RuleNo        int    `json:"rule_no"`
-	Action        string `json:"action"`
-	Protocol      string `json:"protocol"`
-	IcmpCode      int    `json:"icmp_code"`
-	FromPort      int    `json:"from_port"`
 	ToPort        int    `json:"to_port"`
-	CidrBlock     string `json:"cidr_block"`
+	RuleNo        int    `json:"rule_no"`
+	Protocol      string `json:"protocol"`
 	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
 	IcmpType      int    `json:"icmp_type"`
+	FromPort      int    `json:"from_port"`
+	Action        string `json:"action"`
+	CidrBlock     string `json:"cidr_block"`
+	IcmpCode      int    `json:"icmp_code"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

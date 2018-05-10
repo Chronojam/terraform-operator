@@ -18,23 +18,23 @@ type AwsSnsTopic struct {
 
 type AwsSnsTopicSpec struct {
 	NamePrefix                           string `json:"name_prefix"`
-	ApplicationFailureFeedbackRoleArn    string `json:"application_failure_feedback_role_arn"`
-	HttpSuccessFeedbackRoleArn           string `json:"http_success_feedback_role_arn"`
-	Name                                 string `json:"name"`
-	ApplicationSuccessFeedbackSampleRate int    `json:"application_success_feedback_sample_rate"`
-	LambdaSuccessFeedbackSampleRate      int    `json:"lambda_success_feedback_sample_rate"`
-	LambdaFailureFeedbackRoleArn         string `json:"lambda_failure_feedback_role_arn"`
-	Arn                                  string `json:"arn"`
 	DisplayName                          string `json:"display_name"`
-	HttpFailureFeedbackRoleArn           string `json:"http_failure_feedback_role_arn"`
-	SqsSuccessFeedbackRoleArn            string `json:"sqs_success_feedback_role_arn"`
 	SqsFailureFeedbackRoleArn            string `json:"sqs_failure_feedback_role_arn"`
+	HttpSuccessFeedbackRoleArn           string `json:"http_success_feedback_role_arn"`
+	SqsSuccessFeedbackRoleArn            string `json:"sqs_success_feedback_role_arn"`
+	Name                                 string `json:"name"`
+	Policy                               string `json:"policy"`
 	DeliveryPolicy                       string `json:"delivery_policy"`
 	ApplicationSuccessFeedbackRoleArn    string `json:"application_success_feedback_role_arn"`
+	ApplicationSuccessFeedbackSampleRate int    `json:"application_success_feedback_sample_rate"`
+	ApplicationFailureFeedbackRoleArn    string `json:"application_failure_feedback_role_arn"`
 	HttpSuccessFeedbackSampleRate        int    `json:"http_success_feedback_sample_rate"`
-	LambdaSuccessFeedbackRoleArn         string `json:"lambda_success_feedback_role_arn"`
+	LambdaSuccessFeedbackSampleRate      int    `json:"lambda_success_feedback_sample_rate"`
+	LambdaFailureFeedbackRoleArn         string `json:"lambda_failure_feedback_role_arn"`
 	SqsSuccessFeedbackSampleRate         int    `json:"sqs_success_feedback_sample_rate"`
-	Policy                               string `json:"policy"`
+	HttpFailureFeedbackRoleArn           string `json:"http_failure_feedback_role_arn"`
+	LambdaSuccessFeedbackRoleArn         string `json:"lambda_success_feedback_role_arn"`
+	Arn                                  string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

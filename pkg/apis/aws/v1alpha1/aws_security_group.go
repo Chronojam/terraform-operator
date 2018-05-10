@@ -17,37 +17,37 @@ type AwsSecurityGroup struct {
 }
 
 type AwsSecurityGroupSpec struct {
+	Name                string                      `json:"name"`
+	Description         string                      `json:"description"`
+	Ingress             AwsSecurityGroupSpecIngress `json:"ingress"`
+	OwnerId             string                      `json:"owner_id"`
+	RevokeRulesOnDelete bool                        `json:"revoke_rules_on_delete"`
 	NamePrefix          string                      `json:"name_prefix"`
 	VpcId               string                      `json:"vpc_id"`
-	Ingress             AwsSecurityGroupSpecIngress `json:"ingress"`
 	Egress              AwsSecurityGroupSpecEgress  `json:"egress"`
 	Arn                 string                      `json:"arn"`
 	Tags                map[string]string           `json:"tags"`
-	Name                string                      `json:"name"`
-	OwnerId             string                      `json:"owner_id"`
-	RevokeRulesOnDelete bool                        `json:"revoke_rules_on_delete"`
-	Description         string                      `json:"description"`
 }
 
 type AwsSecurityGroupSpecIngress struct {
-	Protocol       string   `json:"protocol"`
-	CidrBlocks     []string `json:"cidr_blocks"`
 	Ipv6CidrBlocks []string `json:"ipv6_cidr_blocks"`
 	SecurityGroups string   `json:"security_groups"`
 	Self           bool     `json:"self"`
 	Description    string   `json:"description"`
 	FromPort       int      `json:"from_port"`
 	ToPort         int      `json:"to_port"`
+	Protocol       string   `json:"protocol"`
+	CidrBlocks     []string `json:"cidr_blocks"`
 }
 
 type AwsSecurityGroupSpecEgress struct {
-	Protocol       string   `json:"protocol"`
-	CidrBlocks     []string `json:"cidr_blocks"`
+	Ipv6CidrBlocks []string `json:"ipv6_cidr_blocks"`
 	PrefixListIds  []string `json:"prefix_list_ids"`
 	Self           bool     `json:"self"`
 	FromPort       int      `json:"from_port"`
 	ToPort         int      `json:"to_port"`
-	Ipv6CidrBlocks []string `json:"ipv6_cidr_blocks"`
+	Protocol       string   `json:"protocol"`
+	CidrBlocks     []string `json:"cidr_blocks"`
 	SecurityGroups string   `json:"security_groups"`
 	Description    string   `json:"description"`
 }

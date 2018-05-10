@@ -17,36 +17,36 @@ type AwsAlb struct {
 }
 
 type AwsAlbSpec struct {
-	ZoneId                       string                  `json:"zone_id"`
-	ArnSuffix                    string                  `json:"arn_suffix"`
 	SecurityGroups               string                  `json:"security_groups"`
-	SubnetMapping                AwsAlbSpecSubnetMapping `json:"subnet_mapping"`
-	IdleTimeout                  int                     `json:"idle_timeout"`
-	IpAddressType                string                  `json:"ip_address_type"`
+	AccessLogs                   []AwsAlbSpecAccessLogs  `json:"access_logs"`
+	VpcId                        string                  `json:"vpc_id"`
+	Name                         string                  `json:"name"`
+	NamePrefix                   string                  `json:"name_prefix"`
+	Internal                     bool                    `json:"internal"`
+	EnableHttp2                  bool                    `json:"enable_http2"`
+	ZoneId                       string                  `json:"zone_id"`
+	EnableDeletionProtection     bool                    `json:"enable_deletion_protection"`
+	DnsName                      string                  `json:"dns_name"`
+	Tags                         map[string]string       `json:"tags"`
 	Arn                          string                  `json:"arn"`
 	Subnets                      string                  `json:"subnets"`
-	AccessLogs                   []AwsAlbSpecAccessLogs  `json:"access_logs"`
-	EnableHttp2                  bool                    `json:"enable_http2"`
-	VpcId                        string                  `json:"vpc_id"`
-	NamePrefix                   string                  `json:"name_prefix"`
-	LoadBalancerType             string                  `json:"load_balancer_type"`
-	Tags                         map[string]string       `json:"tags"`
-	Name                         string                  `json:"name"`
-	Internal                     bool                    `json:"internal"`
-	EnableDeletionProtection     bool                    `json:"enable_deletion_protection"`
+	SubnetMapping                AwsAlbSpecSubnetMapping `json:"subnet_mapping"`
 	EnableCrossZoneLoadBalancing bool                    `json:"enable_cross_zone_load_balancing"`
-	DnsName                      string                  `json:"dns_name"`
-}
-
-type AwsAlbSpecSubnetMapping struct {
-	SubnetId     string `json:"subnet_id"`
-	AllocationId string `json:"allocation_id"`
+	IpAddressType                string                  `json:"ip_address_type"`
+	ArnSuffix                    string                  `json:"arn_suffix"`
+	LoadBalancerType             string                  `json:"load_balancer_type"`
+	IdleTimeout                  int                     `json:"idle_timeout"`
 }
 
 type AwsAlbSpecAccessLogs struct {
 	Bucket  string `json:"bucket"`
 	Prefix  string `json:"prefix"`
 	Enabled bool   `json:"enabled"`
+}
+
+type AwsAlbSpecSubnetMapping struct {
+	SubnetId     string `json:"subnet_id"`
+	AllocationId string `json:"allocation_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

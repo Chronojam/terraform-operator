@@ -24,8 +24,8 @@ type AwsElasticacheParameterGroupSpec struct {
 }
 
 type AwsElasticacheParameterGroupSpecParameter struct {
-	Name  string `json:"name"`
 	Value string `json:"value"`
+	Name  string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

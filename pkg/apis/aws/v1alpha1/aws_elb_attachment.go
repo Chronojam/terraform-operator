@@ -17,8 +17,8 @@ type AwsElbAttachment struct {
 }
 
 type AwsElbAttachmentSpec struct {
-	Instance string `json:"instance"`
 	Elb      string `json:"elb"`
+	Instance string `json:"instance"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

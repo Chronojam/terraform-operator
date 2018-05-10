@@ -17,21 +17,21 @@ type AwsCognitoUserPoolClient struct {
 }
 
 type AwsCognitoUserPoolClientSpec struct {
-	UserPoolId                      string   `json:"user_pool_id"`
-	ReadAttributes                  string   `json:"read_attributes"`
-	CallbackUrls                    []string `json:"callback_urls"`
-	Name                            string   `json:"name"`
-	GenerateSecret                  bool     `json:"generate_secret"`
-	ExplicitAuthFlows               string   `json:"explicit_auth_flows"`
 	AllowedOauthFlowsUserPoolClient bool     `json:"allowed_oauth_flows_user_pool_client"`
-	ClientSecret                    string   `json:"client_secret"`
-	RefreshTokenValidity            int      `json:"refresh_token_validity"`
-	LogoutUrls                      []string `json:"logout_urls"`
-	SupportedIdentityProviders      []string `json:"supported_identity_providers"`
-	WriteAttributes                 string   `json:"write_attributes"`
-	AllowedOauthFlows               string   `json:"allowed_oauth_flows"`
 	AllowedOauthScopes              string   `json:"allowed_oauth_scopes"`
 	DefaultRedirectUri              string   `json:"default_redirect_uri"`
+	ClientSecret                    string   `json:"client_secret"`
+	GenerateSecret                  bool     `json:"generate_secret"`
+	UserPoolId                      string   `json:"user_pool_id"`
+	ExplicitAuthFlows               string   `json:"explicit_auth_flows"`
+	AllowedOauthFlows               string   `json:"allowed_oauth_flows"`
+	Name                            string   `json:"name"`
+	ReadAttributes                  string   `json:"read_attributes"`
+	WriteAttributes                 string   `json:"write_attributes"`
+	RefreshTokenValidity            int      `json:"refresh_token_validity"`
+	CallbackUrls                    []string `json:"callback_urls"`
+	LogoutUrls                      []string `json:"logout_urls"`
+	SupportedIdentityProviders      []string `json:"supported_identity_providers"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

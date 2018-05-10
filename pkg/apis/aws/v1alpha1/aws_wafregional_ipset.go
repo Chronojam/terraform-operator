@@ -22,8 +22,8 @@ type AwsWafregionalIpsetSpec struct {
 }
 
 type AwsWafregionalIpsetSpecIpSetDescriptor struct {
-	Value string `json:"value"`
 	Type  string `json:"type"`
+	Value string `json:"value"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

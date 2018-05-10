@@ -17,12 +17,12 @@ type AwsCognitoUserPoolDomain struct {
 }
 
 type AwsCognitoUserPoolDomainSpec struct {
+	S3Bucket                  string `json:"s3_bucket"`
+	Version                   string `json:"version"`
 	Domain                    string `json:"domain"`
 	UserPoolId                string `json:"user_pool_id"`
 	AwsAccountId              string `json:"aws_account_id"`
 	CloudfrontDistributionArn string `json:"cloudfront_distribution_arn"`
-	S3Bucket                  string `json:"s3_bucket"`
-	Version                   string `json:"version"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

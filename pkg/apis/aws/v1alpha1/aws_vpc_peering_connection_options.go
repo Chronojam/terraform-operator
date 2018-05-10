@@ -17,15 +17,15 @@ type AwsVpcPeeringConnectionOptions struct {
 }
 
 type AwsVpcPeeringConnectionOptionsSpec struct {
-	VpcPeeringConnectionId string                                      `json:"vpc_peering_connection_id"`
 	Accepter               AwsVpcPeeringConnectionOptionsSpecAccepter  `json:"accepter"`
 	Requester              AwsVpcPeeringConnectionOptionsSpecRequester `json:"requester"`
+	VpcPeeringConnectionId string                                      `json:"vpc_peering_connection_id"`
 }
 
 type AwsVpcPeeringConnectionOptionsSpecAccepter struct {
-	AllowVpcToRemoteClassicLink bool `json:"allow_vpc_to_remote_classic_link"`
 	AllowRemoteVpcDnsResolution bool `json:"allow_remote_vpc_dns_resolution"`
 	AllowClassicLinkToRemoteVpc bool `json:"allow_classic_link_to_remote_vpc"`
+	AllowVpcToRemoteClassicLink bool `json:"allow_vpc_to_remote_classic_link"`
 }
 
 type AwsVpcPeeringConnectionOptionsSpecRequester struct {

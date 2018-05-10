@@ -17,18 +17,18 @@ type AwsDbSecurityGroup struct {
 }
 
 type AwsDbSecurityGroupSpec struct {
-	Arn         string                        `json:"arn"`
-	Name        string                        `json:"name"`
 	Description string                        `json:"description"`
 	Ingress     AwsDbSecurityGroupSpecIngress `json:"ingress"`
 	Tags        map[string]string             `json:"tags"`
+	Arn         string                        `json:"arn"`
+	Name        string                        `json:"name"`
 }
 
 type AwsDbSecurityGroupSpecIngress struct {
-	SecurityGroupOwnerId string `json:"security_group_owner_id"`
 	Cidr                 string `json:"cidr"`
 	SecurityGroupName    string `json:"security_group_name"`
 	SecurityGroupId      string `json:"security_group_id"`
+	SecurityGroupOwnerId string `json:"security_group_owner_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

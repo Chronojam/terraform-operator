@@ -17,31 +17,31 @@ type AwsBudgetsBudget struct {
 }
 
 type AwsBudgetsBudgetSpec struct {
-	Name            string                          `json:"name"`
-	NamePrefix      string                          `json:"name_prefix"`
-	LimitAmount     string                          `json:"limit_amount"`
 	LimitUnit       string                          `json:"limit_unit"`
-	TimePeriodStart string                          `json:"time_period_start"`
-	CostFilters     map[string]string               `json:"cost_filters"`
-	AccountId       string                          `json:"account_id"`
-	BudgetType      string                          `json:"budget_type"`
 	CostTypes       []AwsBudgetsBudgetSpecCostTypes `json:"cost_types"`
 	TimePeriodEnd   string                          `json:"time_period_end"`
 	TimeUnit        string                          `json:"time_unit"`
+	Name            string                          `json:"name"`
+	NamePrefix      string                          `json:"name_prefix"`
+	BudgetType      string                          `json:"budget_type"`
+	LimitAmount     string                          `json:"limit_amount"`
+	AccountId       string                          `json:"account_id"`
+	TimePeriodStart string                          `json:"time_period_start"`
+	CostFilters     map[string]string               `json:"cost_filters"`
 }
 
 type AwsBudgetsBudgetSpecCostTypes struct {
-	IncludeRefund            bool `json:"include_refund"`
-	IncludeSupport           bool `json:"include_support"`
-	IncludeTax               bool `json:"include_tax"`
-	UseAmortized             bool `json:"use_amortized"`
-	IncludeDiscount          bool `json:"include_discount"`
 	IncludeOtherSubscription bool `json:"include_other_subscription"`
-	IncludeSubscription      bool `json:"include_subscription"`
 	IncludeUpfront           bool `json:"include_upfront"`
+	UseAmortized             bool `json:"use_amortized"`
 	UseBlended               bool `json:"use_blended"`
 	IncludeCredit            bool `json:"include_credit"`
+	IncludeDiscount          bool `json:"include_discount"`
 	IncludeRecurring         bool `json:"include_recurring"`
+	IncludeRefund            bool `json:"include_refund"`
+	IncludeSubscription      bool `json:"include_subscription"`
+	IncludeSupport           bool `json:"include_support"`
+	IncludeTax               bool `json:"include_tax"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

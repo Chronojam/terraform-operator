@@ -31,9 +31,9 @@ type AwsApiGatewayUsagePlanSpecApiStages struct {
 }
 
 type AwsApiGatewayUsagePlanSpecQuotaSettings struct {
-	Period string `json:"period"`
 	Limit  int    `json:"limit"`
 	Offset int    `json:"offset"`
+	Period string `json:"period"`
 }
 
 type AwsApiGatewayUsagePlanSpecThrottleSettings struct {

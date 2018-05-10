@@ -17,41 +17,41 @@ type AwsOpsworksHaproxyLayer struct {
 }
 
 type AwsOpsworksHaproxyLayerSpec struct {
-	HealthcheckUrl           string                               `json:"healthcheck_url"`
-	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
-	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
+	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
 	CustomSetupRecipes       []string                             `json:"custom_setup_recipes"`
+	CustomJson               string                               `json:"custom_json"`
 	InstallUpdatesOnBoot     bool                                 `json:"install_updates_on_boot"`
-	EbsVolume                AwsOpsworksHaproxyLayerSpecEbsVolume `json:"ebs_volume"`
-	StatsEnabled             bool                                 `json:"stats_enabled"`
-	StatsPassword            string                               `json:"stats_password"`
+	StatsUrl                 string                               `json:"stats_url"`
+	StatsUser                string                               `json:"stats_user"`
 	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
-	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
+	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
 	SystemPackages           string                               `json:"system_packages"`
-	StackId                  string                               `json:"stack_id"`
+	Name                     string                               `json:"name"`
 	HealthcheckMethod        string                               `json:"healthcheck_method"`
 	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
 	CustomSecurityGroupIds   string                               `json:"custom_security_group_ids"`
-	CustomJson               string                               `json:"custom_json"`
-	Name                     string                               `json:"name"`
-	StatsUser                string                               `json:"stats_user"`
-	StatsUrl                 string                               `json:"stats_url"`
-	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
+	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
+	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
+	StackId                  string                               `json:"stack_id"`
+	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
+	StatsEnabled             bool                                 `json:"stats_enabled"`
+	HealthcheckUrl           string                               `json:"healthcheck_url"`
+	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
+	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
 	CustomConfigureRecipes   []string                             `json:"custom_configure_recipes"`
-	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
 	CustomShutdownRecipes    []string                             `json:"custom_shutdown_recipes"`
 	AutoHealing              bool                                 `json:"auto_healing"`
-	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
-	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
+	EbsVolume                AwsOpsworksHaproxyLayerSpecEbsVolume `json:"ebs_volume"`
+	StatsPassword            string                               `json:"stats_password"`
 }
 
 type AwsOpsworksHaproxyLayerSpecEbsVolume struct {
+	Type          string `json:"type"`
 	Iops          int    `json:"iops"`
 	MountPoint    string `json:"mount_point"`
 	NumberOfDisks int    `json:"number_of_disks"`
 	RaidLevel     string `json:"raid_level"`
 	Size          int    `json:"size"`
-	Type          string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

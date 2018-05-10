@@ -17,25 +17,25 @@ type AwsDbSnapshot struct {
 }
 
 type AwsDbSnapshotSpec struct {
-	VpcId                      string `json:"vpc_id"`
-	AllocatedStorage           int    `json:"allocated_storage"`
-	DbSnapshotArn              string `json:"db_snapshot_arn"`
-	Engine                     string `json:"engine"`
-	LicenseModel               string `json:"license_model"`
 	Port                       int    `json:"port"`
-	SourceDbSnapshotIdentifier string `json:"source_db_snapshot_identifier"`
-	SnapshotType               string `json:"snapshot_type"`
-	Encrypted                  bool   `json:"encrypted"`
-	EngineVersion              string `json:"engine_version"`
-	KmsKeyId                   string `json:"kms_key_id"`
-	Status                     string `json:"status"`
-	StorageType                string `json:"storage_type"`
 	SourceRegion               string `json:"source_region"`
 	DbSnapshotIdentifier       string `json:"db_snapshot_identifier"`
 	DbInstanceIdentifier       string `json:"db_instance_identifier"`
-	AvailabilityZone           string `json:"availability_zone"`
-	Iops                       int    `json:"iops"`
+	AllocatedStorage           int    `json:"allocated_storage"`
+	EngineVersion              string `json:"engine_version"`
+	LicenseModel               string `json:"license_model"`
 	OptionGroupName            string `json:"option_group_name"`
+	SnapshotType               string `json:"snapshot_type"`
+	AvailabilityZone           string `json:"availability_zone"`
+	Engine                     string `json:"engine"`
+	Iops                       int    `json:"iops"`
+	KmsKeyId                   string `json:"kms_key_id"`
+	Status                     string `json:"status"`
+	DbSnapshotArn              string `json:"db_snapshot_arn"`
+	Encrypted                  bool   `json:"encrypted"`
+	SourceDbSnapshotIdentifier string `json:"source_db_snapshot_identifier"`
+	StorageType                string `json:"storage_type"`
+	VpcId                      string `json:"vpc_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

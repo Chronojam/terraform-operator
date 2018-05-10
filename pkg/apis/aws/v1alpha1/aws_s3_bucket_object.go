@@ -17,24 +17,24 @@ type AwsS3BucketObject struct {
 }
 
 type AwsS3BucketObjectSpec struct {
-	Acl                  string            `json:"acl"`
-	CacheControl         string            `json:"cache_control"`
 	ContentBase64        string            `json:"content_base64"`
-	Bucket               string            `json:"bucket"`
-	Key                  string            `json:"key"`
-	KmsKeyId             string            `json:"kms_key_id"`
-	Etag                 string            `json:"etag"`
-	WebsiteRedirect      string            `json:"website_redirect"`
-	Content              string            `json:"content"`
-	ServerSideEncryption string            `json:"server_side_encryption"`
-	VersionId            string            `json:"version_id"`
-	Tags                 map[string]string `json:"tags"`
-	ContentDisposition   string            `json:"content_disposition"`
-	ContentEncoding      string            `json:"content_encoding"`
+	CacheControl         string            `json:"cache_control"`
 	ContentLanguage      string            `json:"content_language"`
+	Key                  string            `json:"key"`
+	Content              string            `json:"content"`
 	ContentType          string            `json:"content_type"`
-	Source               string            `json:"source"`
+	Tags                 map[string]string `json:"tags"`
+	VersionId            string            `json:"version_id"`
+	Acl                  string            `json:"acl"`
+	ContentDisposition   string            `json:"content_disposition"`
 	StorageClass         string            `json:"storage_class"`
+	Etag                 string            `json:"etag"`
+	KmsKeyId             string            `json:"kms_key_id"`
+	WebsiteRedirect      string            `json:"website_redirect"`
+	Bucket               string            `json:"bucket"`
+	ContentEncoding      string            `json:"content_encoding"`
+	Source               string            `json:"source"`
+	ServerSideEncryption string            `json:"server_side_encryption"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

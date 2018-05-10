@@ -17,15 +17,15 @@ type AwsIotThingType struct {
 }
 
 type AwsIotThingTypeSpec struct {
+	Arn        string                          `json:"arn"`
 	Name       string                          `json:"name"`
 	Properties []AwsIotThingTypeSpecProperties `json:"properties"`
 	Deprecated bool                            `json:"deprecated"`
-	Arn        string                          `json:"arn"`
 }
 
 type AwsIotThingTypeSpecProperties struct {
-	Description          string `json:"description"`
 	SearchableAttributes string `json:"searchable_attributes"`
+	Description          string `json:"description"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

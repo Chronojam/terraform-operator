@@ -17,16 +17,16 @@ type AwsEip struct {
 }
 
 type AwsEipSpec struct {
-	Tags                   map[string]string `json:"tags"`
 	NetworkInterface       string            `json:"network_interface"`
 	AllocationId           string            `json:"allocation_id"`
-	Domain                 string            `json:"domain"`
-	PublicIp               string            `json:"public_ip"`
 	AssociateWithPrivateIp string            `json:"associate_with_private_ip"`
+	PrivateIp              string            `json:"private_ip"`
+	Tags                   map[string]string `json:"tags"`
 	Vpc                    bool              `json:"vpc"`
 	Instance               string            `json:"instance"`
 	AssociationId          string            `json:"association_id"`
-	PrivateIp              string            `json:"private_ip"`
+	Domain                 string            `json:"domain"`
+	PublicIp               string            `json:"public_ip"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

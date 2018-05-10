@@ -17,16 +17,16 @@ type AwsDmsReplicationTask struct {
 }
 
 type AwsDmsReplicationTaskSpec struct {
-	TargetEndpointArn       string            `json:"target_endpoint_arn"`
-	MigrationType           string            `json:"migration_type"`
+	CdcStartTime            string            `json:"cdc_start_time"`
 	ReplicationInstanceArn  string            `json:"replication_instance_arn"`
 	SourceEndpointArn       string            `json:"source_endpoint_arn"`
-	TableMappings           string            `json:"table_mappings"`
-	Tags                    map[string]string `json:"tags"`
-	CdcStartTime            string            `json:"cdc_start_time"`
+	TargetEndpointArn       string            `json:"target_endpoint_arn"`
+	MigrationType           string            `json:"migration_type"`
 	ReplicationTaskArn      string            `json:"replication_task_arn"`
 	ReplicationTaskId       string            `json:"replication_task_id"`
 	ReplicationTaskSettings string            `json:"replication_task_settings"`
+	TableMappings           string            `json:"table_mappings"`
+	Tags                    map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

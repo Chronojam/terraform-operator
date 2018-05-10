@@ -17,14 +17,14 @@ type AwsSsmPatchBaseline struct {
 }
 
 type AwsSsmPatchBaselineSpec struct {
-	Name                           string                                `json:"name"`
-	Description                    string                                `json:"description"`
-	GlobalFilter                   []AwsSsmPatchBaselineSpecGlobalFilter `json:"global_filter"`
-	ApprovalRule                   []AwsSsmPatchBaselineSpecApprovalRule `json:"approval_rule"`
 	ApprovedPatches                string                                `json:"approved_patches"`
 	RejectedPatches                string                                `json:"rejected_patches"`
 	OperatingSystem                string                                `json:"operating_system"`
 	ApprovedPatchesComplianceLevel string                                `json:"approved_patches_compliance_level"`
+	Name                           string                                `json:"name"`
+	Description                    string                                `json:"description"`
+	GlobalFilter                   []AwsSsmPatchBaselineSpecGlobalFilter `json:"global_filter"`
+	ApprovalRule                   []AwsSsmPatchBaselineSpecApprovalRule `json:"approval_rule"`
 }
 
 type AwsSsmPatchBaselineSpecGlobalFilter struct {
@@ -33,9 +33,9 @@ type AwsSsmPatchBaselineSpecGlobalFilter struct {
 }
 
 type AwsSsmPatchBaselineSpecApprovalRule struct {
+	PatchFilter      []AwsSsmPatchBaselineSpecApprovalRulePatchFilter `json:"patch_filter"`
 	ApproveAfterDays int                                              `json:"approve_after_days"`
 	ComplianceLevel  string                                           `json:"compliance_level"`
-	PatchFilter      []AwsSsmPatchBaselineSpecApprovalRulePatchFilter `json:"patch_filter"`
 }
 
 type AwsSsmPatchBaselineSpecApprovalRulePatchFilter struct {

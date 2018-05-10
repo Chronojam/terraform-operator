@@ -17,13 +17,13 @@ type AwsEfsFileSystem struct {
 }
 
 type AwsEfsFileSystemSpec struct {
+	Tags            map[string]string `json:"tags"`
 	CreationToken   string            `json:"creation_token"`
 	ReferenceName   string            `json:"reference_name"`
 	PerformanceMode string            `json:"performance_mode"`
 	Encrypted       bool              `json:"encrypted"`
 	KmsKeyId        string            `json:"kms_key_id"`
 	DnsName         string            `json:"dns_name"`
-	Tags            map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,13 +17,13 @@ type AwsRdsClusterParameterGroup struct {
 }
 
 type AwsRdsClusterParameterGroupSpec struct {
+	Description string                                   `json:"description"`
+	Parameter   AwsRdsClusterParameterGroupSpecParameter `json:"parameter"`
+	Tags        map[string]string                        `json:"tags"`
 	Arn         string                                   `json:"arn"`
 	Name        string                                   `json:"name"`
 	NamePrefix  string                                   `json:"name_prefix"`
 	Family      string                                   `json:"family"`
-	Description string                                   `json:"description"`
-	Parameter   AwsRdsClusterParameterGroupSpecParameter `json:"parameter"`
-	Tags        map[string]string                        `json:"tags"`
 }
 
 type AwsRdsClusterParameterGroupSpecParameter struct {

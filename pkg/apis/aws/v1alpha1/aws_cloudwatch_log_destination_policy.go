@@ -17,8 +17,8 @@ type AwsCloudwatchLogDestinationPolicy struct {
 }
 
 type AwsCloudwatchLogDestinationPolicySpec struct {
-	DestinationName string `json:"destination_name"`
 	AccessPolicy    string `json:"access_policy"`
+	DestinationName string `json:"destination_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

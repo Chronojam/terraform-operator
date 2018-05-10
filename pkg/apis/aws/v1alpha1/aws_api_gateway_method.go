@@ -17,16 +17,16 @@ type AwsApiGatewayMethod struct {
 }
 
 type AwsApiGatewayMethodSpec struct {
+	RestApiId               string            `json:"rest_api_id"`
+	ResourceId              string            `json:"resource_id"`
 	HttpMethod              string            `json:"http_method"`
+	RequestParametersInJson string            `json:"request_parameters_in_json"`
+	RequestValidatorId      string            `json:"request_validator_id"`
 	Authorization           string            `json:"authorization"`
 	AuthorizerId            string            `json:"authorizer_id"`
+	ApiKeyRequired          bool              `json:"api_key_required"`
 	RequestModels           map[string]string `json:"request_models"`
 	RequestParameters       map[string]string `json:"request_parameters"`
-	RequestValidatorId      string            `json:"request_validator_id"`
-	RestApiId               string            `json:"rest_api_id"`
-	ApiKeyRequired          bool              `json:"api_key_required"`
-	RequestParametersInJson string            `json:"request_parameters_in_json"`
-	ResourceId              string            `json:"resource_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

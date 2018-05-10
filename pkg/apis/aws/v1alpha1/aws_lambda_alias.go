@@ -17,11 +17,11 @@ type AwsLambdaAlias struct {
 }
 
 type AwsLambdaAliasSpec struct {
+	Description     string `json:"description"`
 	FunctionName    string `json:"function_name"`
 	FunctionVersion string `json:"function_version"`
 	Name            string `json:"name"`
 	Arn             string `json:"arn"`
-	Description     string `json:"description"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

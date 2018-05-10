@@ -17,17 +17,13 @@ type AwsSesEventDestination struct {
 }
 
 type AwsSesEventDestinationSpec struct {
-	SnsDestination        AwsSesEventDestinationSpecSnsDestination        `json:"sns_destination"`
-	Name                  string                                          `json:"name"`
-	ConfigurationSetName  string                                          `json:"configuration_set_name"`
 	Enabled               bool                                            `json:"enabled"`
 	MatchingTypes         string                                          `json:"matching_types"`
 	CloudwatchDestination AwsSesEventDestinationSpecCloudwatchDestination `json:"cloudwatch_destination"`
 	KinesisDestination    AwsSesEventDestinationSpecKinesisDestination    `json:"kinesis_destination"`
-}
-
-type AwsSesEventDestinationSpecSnsDestination struct {
-	TopicArn string `json:"topic_arn"`
+	SnsDestination        AwsSesEventDestinationSpecSnsDestination        `json:"sns_destination"`
+	Name                  string                                          `json:"name"`
+	ConfigurationSetName  string                                          `json:"configuration_set_name"`
 }
 
 type AwsSesEventDestinationSpecCloudwatchDestination struct {
@@ -39,6 +35,10 @@ type AwsSesEventDestinationSpecCloudwatchDestination struct {
 type AwsSesEventDestinationSpecKinesisDestination struct {
 	StreamArn string `json:"stream_arn"`
 	RoleArn   string `json:"role_arn"`
+}
+
+type AwsSesEventDestinationSpecSnsDestination struct {
+	TopicArn string `json:"topic_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

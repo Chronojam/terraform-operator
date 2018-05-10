@@ -17,16 +17,16 @@ type AwsWafregionalRuleGroup struct {
 }
 
 type AwsWafregionalRuleGroupSpec struct {
+	Name          string                                   `json:"name"`
 	MetricName    string                                   `json:"metric_name"`
 	ActivatedRule AwsWafregionalRuleGroupSpecActivatedRule `json:"activated_rule"`
-	Name          string                                   `json:"name"`
 }
 
 type AwsWafregionalRuleGroupSpecActivatedRule struct {
-	Action   []AwsWafregionalRuleGroupSpecActivatedRuleAction `json:"action"`
 	Priority int                                              `json:"priority"`
 	RuleId   string                                           `json:"rule_id"`
 	Type     string                                           `json:"type"`
+	Action   []AwsWafregionalRuleGroupSpecActivatedRuleAction `json:"action"`
 }
 
 type AwsWafregionalRuleGroupSpecActivatedRuleAction struct {

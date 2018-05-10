@@ -25,9 +25,9 @@ type AwsCodepipelineSpec struct {
 }
 
 type AwsCodepipelineSpecArtifactStore struct {
-	Location      string                                          `json:"location"`
 	Type          string                                          `json:"type"`
 	EncryptionKey []AwsCodepipelineSpecArtifactStoreEncryptionKey `json:"encryption_key"`
+	Location      string                                          `json:"location"`
 }
 
 type AwsCodepipelineSpecArtifactStoreEncryptionKey struct {
@@ -41,16 +41,16 @@ type AwsCodepipelineSpecStage struct {
 }
 
 type AwsCodepipelineSpecStageAction struct {
-	Configuration   map[string]string `json:"configuration"`
-	Version         string            `json:"version"`
-	Name            string            `json:"name"`
-	RoleArn         string            `json:"role_arn"`
-	RunOrder        int               `json:"run_order"`
 	Category        string            `json:"category"`
-	Owner           string            `json:"owner"`
-	Provider        string            `json:"provider"`
 	InputArtifacts  []string          `json:"input_artifacts"`
 	OutputArtifacts []string          `json:"output_artifacts"`
+	Name            string            `json:"name"`
+	RunOrder        int               `json:"run_order"`
+	Configuration   map[string]string `json:"configuration"`
+	Owner           string            `json:"owner"`
+	Provider        string            `json:"provider"`
+	Version         string            `json:"version"`
+	RoleArn         string            `json:"role_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

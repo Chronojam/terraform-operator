@@ -17,31 +17,31 @@ type AwsDmsEndpoint struct {
 }
 
 type AwsDmsEndpointSpec struct {
-	Port                      int                                 `json:"port"`
-	ServerName                string                              `json:"server_name"`
-	SslMode                   string                              `json:"ssl_mode"`
-	MongodbSettings           []AwsDmsEndpointSpecMongodbSettings `json:"mongodb_settings"`
-	ServiceAccessRole         string                              `json:"service_access_role"`
-	EndpointType              string                              `json:"endpoint_type"`
-	EngineName                string                              `json:"engine_name"`
 	ExtraConnectionAttributes string                              `json:"extra_connection_attributes"`
-	CertificateArn            string                              `json:"certificate_arn"`
-	KmsKeyArn                 string                              `json:"kms_key_arn"`
-	Password                  string                              `json:"password"`
+	MongodbSettings           []AwsDmsEndpointSpecMongodbSettings `json:"mongodb_settings"`
 	DatabaseName              string                              `json:"database_name"`
 	EndpointId                string                              `json:"endpoint_id"`
+	SslMode                   string                              `json:"ssl_mode"`
 	Tags                      map[string]string                   `json:"tags"`
-	EndpointArn               string                              `json:"endpoint_arn"`
 	Username                  string                              `json:"username"`
+	CertificateArn            string                              `json:"certificate_arn"`
+	EndpointArn               string                              `json:"endpoint_arn"`
+	ServiceAccessRole         string                              `json:"service_access_role"`
+	EngineName                string                              `json:"engine_name"`
+	Password                  string                              `json:"password"`
+	Port                      int                                 `json:"port"`
+	ServerName                string                              `json:"server_name"`
+	EndpointType              string                              `json:"endpoint_type"`
+	KmsKeyArn                 string                              `json:"kms_key_arn"`
 }
 
 type AwsDmsEndpointSpecMongodbSettings struct {
-	AuthSource        string `json:"auth_source"`
 	AuthType          string `json:"auth_type"`
 	AuthMechanism     string `json:"auth_mechanism"`
 	NestingLevel      string `json:"nesting_level"`
 	ExtractDocId      string `json:"extract_doc_id"`
 	DocsToInvestigate string `json:"docs_to_investigate"`
+	AuthSource        string `json:"auth_source"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

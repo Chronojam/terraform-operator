@@ -17,7 +17,6 @@ type AwsAutoscalingLifecycleHook struct {
 }
 
 type AwsAutoscalingLifecycleHookSpec struct {
-	DefaultResult         string `json:"default_result"`
 	HeartbeatTimeout      int    `json:"heartbeat_timeout"`
 	LifecycleTransition   string `json:"lifecycle_transition"`
 	NotificationMetadata  string `json:"notification_metadata"`
@@ -25,6 +24,7 @@ type AwsAutoscalingLifecycleHookSpec struct {
 	RoleArn               string `json:"role_arn"`
 	Name                  string `json:"name"`
 	AutoscalingGroupName  string `json:"autoscaling_group_name"`
+	DefaultResult         string `json:"default_result"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,9 +17,9 @@ type AwsAutoscalingNotification struct {
 }
 
 type AwsAutoscalingNotificationSpec struct {
-	Notifications string `json:"notifications"`
 	TopicArn      string `json:"topic_arn"`
 	GroupNames    string `json:"group_names"`
+	Notifications string `json:"notifications"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

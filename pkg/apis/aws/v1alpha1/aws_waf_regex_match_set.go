@@ -22,14 +22,14 @@ type AwsWafRegexMatchSetSpec struct {
 }
 
 type AwsWafRegexMatchSetSpecRegexMatchTuple struct {
-	TextTransformation string                                               `json:"text_transformation"`
 	FieldToMatch       []AwsWafRegexMatchSetSpecRegexMatchTupleFieldToMatch `json:"field_to_match"`
 	RegexPatternSetId  string                                               `json:"regex_pattern_set_id"`
+	TextTransformation string                                               `json:"text_transformation"`
 }
 
 type AwsWafRegexMatchSetSpecRegexMatchTupleFieldToMatch struct {
-	Type string `json:"type"`
 	Data string `json:"data"`
+	Type string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

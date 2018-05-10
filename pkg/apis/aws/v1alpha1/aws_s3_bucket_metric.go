@@ -17,9 +17,9 @@ type AwsS3BucketMetric struct {
 }
 
 type AwsS3BucketMetricSpec struct {
-	Bucket string                        `json:"bucket"`
 	Filter []AwsS3BucketMetricSpecFilter `json:"filter"`
 	Name   string                        `json:"name"`
+	Bucket string                        `json:"bucket"`
 }
 
 type AwsS3BucketMetricSpecFilter struct {

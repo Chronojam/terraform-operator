@@ -17,7 +17,6 @@ type AwsEmrInstanceGroup struct {
 }
 
 type AwsEmrInstanceGroupSpec struct {
-	EbsConfig            AwsEmrInstanceGroupSpecEbsConfig `json:"ebs_config"`
 	ClusterId            string                           `json:"cluster_id"`
 	InstanceType         string                           `json:"instance_type"`
 	InstanceCount        int                              `json:"instance_count"`
@@ -25,13 +24,14 @@ type AwsEmrInstanceGroupSpec struct {
 	Status               string                           `json:"status"`
 	Name                 string                           `json:"name"`
 	EbsOptimized         bool                             `json:"ebs_optimized"`
+	EbsConfig            AwsEmrInstanceGroupSpecEbsConfig `json:"ebs_config"`
 }
 
 type AwsEmrInstanceGroupSpecEbsConfig struct {
-	VolumesPerInstance int    `json:"volumes_per_instance"`
 	Iops               int    `json:"iops"`
 	Size               int    `json:"size"`
 	Type               string `json:"type"`
+	VolumesPerInstance int    `json:"volumes_per_instance"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

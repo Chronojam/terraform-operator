@@ -17,27 +17,27 @@ type AwsElasticBeanstalkEnvironment struct {
 }
 
 type AwsElasticBeanstalkEnvironmentSpec struct {
-	Application          string                                        `json:"application"`
-	SolutionStackName    string                                        `json:"solution_stack_name"`
-	Tags                 map[string]string                             `json:"tags"`
+	Cname                string                                        `json:"cname"`
+	CnamePrefix          string                                        `json:"cname_prefix"`
+	Setting              AwsElasticBeanstalkEnvironmentSpecSetting     `json:"setting"`
+	AutoscalingGroups    []string                                      `json:"autoscaling_groups"`
 	Arn                  string                                        `json:"arn"`
+	Description          string                                        `json:"description"`
+	SolutionStackName    string                                        `json:"solution_stack_name"`
 	TemplateName         string                                        `json:"template_name"`
+	WaitForReadyTimeout  string                                        `json:"wait_for_ready_timeout"`
+	PollInterval         string                                        `json:"poll_interval"`
+	LoadBalancers        []string                                      `json:"load_balancers"`
 	Queues               []string                                      `json:"queues"`
 	Triggers             []string                                      `json:"triggers"`
-	Setting              AwsElasticBeanstalkEnvironmentSpecSetting     `json:"setting"`
-	AllSettings          AwsElasticBeanstalkEnvironmentSpecAllSettings `json:"all_settings"`
-	WaitForReadyTimeout  string                                        `json:"wait_for_ready_timeout"`
+	VersionLabel         string                                        `json:"version_label"`
 	Instances            []string                                      `json:"instances"`
 	Name                 string                                        `json:"name"`
-	Description          string                                        `json:"description"`
-	VersionLabel         string                                        `json:"version_label"`
-	CnamePrefix          string                                        `json:"cname_prefix"`
-	LaunchConfigurations []string                                      `json:"launch_configurations"`
-	LoadBalancers        []string                                      `json:"load_balancers"`
-	Cname                string                                        `json:"cname"`
+	Application          string                                        `json:"application"`
 	Tier                 string                                        `json:"tier"`
-	PollInterval         string                                        `json:"poll_interval"`
-	AutoscalingGroups    []string                                      `json:"autoscaling_groups"`
+	AllSettings          AwsElasticBeanstalkEnvironmentSpecAllSettings `json:"all_settings"`
+	LaunchConfigurations []string                                      `json:"launch_configurations"`
+	Tags                 map[string]string                             `json:"tags"`
 }
 
 type AwsElasticBeanstalkEnvironmentSpecSetting struct {
@@ -48,10 +48,10 @@ type AwsElasticBeanstalkEnvironmentSpecSetting struct {
 }
 
 type AwsElasticBeanstalkEnvironmentSpecAllSettings struct {
+	Resource  string `json:"resource"`
 	Namespace string `json:"namespace"`
 	Name      string `json:"name"`
 	Value     string `json:"value"`
-	Resource  string `json:"resource"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

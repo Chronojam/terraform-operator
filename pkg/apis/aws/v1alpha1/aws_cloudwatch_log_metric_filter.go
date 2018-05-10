@@ -24,10 +24,10 @@ type AwsCloudwatchLogMetricFilterSpec struct {
 }
 
 type AwsCloudwatchLogMetricFilterSpecMetricTransformation struct {
-	Value        string  `json:"value"`
-	DefaultValue float64 `json:"default_value"`
 	Name         string  `json:"name"`
 	Namespace    string  `json:"namespace"`
+	Value        string  `json:"value"`
+	DefaultValue float64 `json:"default_value"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

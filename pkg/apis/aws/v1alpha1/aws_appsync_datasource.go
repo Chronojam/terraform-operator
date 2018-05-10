@@ -17,15 +17,15 @@ type AwsAppsyncDatasource struct {
 }
 
 type AwsAppsyncDatasourceSpec struct {
-	ServiceRoleArn      string                                        `json:"service_role_arn"`
+	Arn                 string                                        `json:"arn"`
 	ApiId               string                                        `json:"api_id"`
-	Description         string                                        `json:"description"`
 	DynamodbConfig      []AwsAppsyncDatasourceSpecDynamodbConfig      `json:"dynamodb_config"`
+	ElasticsearchConfig []AwsAppsyncDatasourceSpecElasticsearchConfig `json:"elasticsearch_config"`
 	LambdaConfig        []AwsAppsyncDatasourceSpecLambdaConfig        `json:"lambda_config"`
+	ServiceRoleArn      string                                        `json:"service_role_arn"`
 	Name                string                                        `json:"name"`
 	Type                string                                        `json:"type"`
-	ElasticsearchConfig []AwsAppsyncDatasourceSpecElasticsearchConfig `json:"elasticsearch_config"`
-	Arn                 string                                        `json:"arn"`
+	Description         string                                        `json:"description"`
 }
 
 type AwsAppsyncDatasourceSpecDynamodbConfig struct {
@@ -34,13 +34,13 @@ type AwsAppsyncDatasourceSpecDynamodbConfig struct {
 	UseCallerCredentials bool   `json:"use_caller_credentials"`
 }
 
-type AwsAppsyncDatasourceSpecLambdaConfig struct {
-	FunctionArn string `json:"function_arn"`
+type AwsAppsyncDatasourceSpecElasticsearchConfig struct {
+	Region   string `json:"region"`
+	Endpoint string `json:"endpoint"`
 }
 
-type AwsAppsyncDatasourceSpecElasticsearchConfig struct {
-	Endpoint string `json:"endpoint"`
-	Region   string `json:"region"`
+type AwsAppsyncDatasourceSpecLambdaConfig struct {
+	FunctionArn string `json:"function_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

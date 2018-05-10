@@ -31,7 +31,7 @@ func main() {
 		"k8s.io/apimachinery/pkg/runtime"
 		"k8s.io/apimachinery/pkg/runtime/schema"
 
-		"github.com/chronojam/terraform-operator/pkg/apis/aws"
+		"github.com/chronojam/terraform-operator/pkg/apis/aws/v1alpha1"
 	)
 
 	var SchemeGroupVersion = schema.GroupVersion{

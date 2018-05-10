@@ -17,18 +17,18 @@ type AwsLbTargetGroup struct {
 }
 
 type AwsLbTargetGroupSpec struct {
-	Name                string                            `json:"name"`
+	Port                int                               `json:"port"`
 	VpcId               string                            `json:"vpc_id"`
 	DeregistrationDelay int                               `json:"deregistration_delay"`
+	TargetType          string                            `json:"target_type"`
+	ArnSuffix           string                            `json:"arn_suffix"`
+	Name                string                            `json:"name"`
+	NamePrefix          string                            `json:"name_prefix"`
+	Protocol            string                            `json:"protocol"`
 	Stickiness          []AwsLbTargetGroupSpecStickiness  `json:"stickiness"`
 	HealthCheck         []AwsLbTargetGroupSpecHealthCheck `json:"health_check"`
 	Tags                map[string]string                 `json:"tags"`
 	Arn                 string                            `json:"arn"`
-	ArnSuffix           string                            `json:"arn_suffix"`
-	Protocol            string                            `json:"protocol"`
-	TargetType          string                            `json:"target_type"`
-	NamePrefix          string                            `json:"name_prefix"`
-	Port                int                               `json:"port"`
 }
 
 type AwsLbTargetGroupSpecStickiness struct {
@@ -38,14 +38,14 @@ type AwsLbTargetGroupSpecStickiness struct {
 }
 
 type AwsLbTargetGroupSpecHealthCheck struct {
-	Interval           int    `json:"interval"`
-	Path               string `json:"path"`
 	Port               string `json:"port"`
 	Protocol           string `json:"protocol"`
 	Timeout            int    `json:"timeout"`
 	HealthyThreshold   int    `json:"healthy_threshold"`
 	Matcher            string `json:"matcher"`
 	UnhealthyThreshold int    `json:"unhealthy_threshold"`
+	Interval           int    `json:"interval"`
+	Path               string `json:"path"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

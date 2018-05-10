@@ -17,9 +17,9 @@ type AwsSesDomainIdentity struct {
 }
 
 type AwsSesDomainIdentitySpec struct {
+	VerificationToken string `json:"verification_token"`
 	Arn               string `json:"arn"`
 	Domain            string `json:"domain"`
-	VerificationToken string `json:"verification_token"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

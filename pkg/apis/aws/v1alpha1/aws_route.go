@@ -17,17 +17,17 @@ type AwsRoute struct {
 }
 
 type AwsRouteSpec struct {
-	DestinationCidrBlock     string `json:"destination_cidr_block"`
-	GatewayId                string `json:"gateway_id"`
-	NetworkInterfaceId       string `json:"network_interface_id"`
-	Origin                   string `json:"origin"`
-	DestinationIpv6CidrBlock string `json:"destination_ipv6_cidr_block"`
 	DestinationPrefixListId  string `json:"destination_prefix_list_id"`
+	GatewayId                string `json:"gateway_id"`
 	EgressOnlyGatewayId      string `json:"egress_only_gateway_id"`
 	NatGatewayId             string `json:"nat_gateway_id"`
-	InstanceId               string `json:"instance_id"`
 	InstanceOwnerId          string `json:"instance_owner_id"`
 	State                    string `json:"state"`
+	DestinationCidrBlock     string `json:"destination_cidr_block"`
+	DestinationIpv6CidrBlock string `json:"destination_ipv6_cidr_block"`
+	InstanceId               string `json:"instance_id"`
+	NetworkInterfaceId       string `json:"network_interface_id"`
+	Origin                   string `json:"origin"`
 	RouteTableId             string `json:"route_table_id"`
 	VpcPeeringConnectionId   string `json:"vpc_peering_connection_id"`
 }

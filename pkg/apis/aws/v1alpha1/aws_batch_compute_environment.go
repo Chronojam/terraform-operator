@@ -17,32 +17,32 @@ type AwsBatchComputeEnvironment struct {
 }
 
 type AwsBatchComputeEnvironmentSpec struct {
-	Arn                    string                                           `json:"arn"`
-	EccClusterArn          string                                           `json:"ecc_cluster_arn"`
-	Status                 string                                           `json:"status"`
 	ComputeEnvironmentName string                                           `json:"compute_environment_name"`
 	ComputeResources       []AwsBatchComputeEnvironmentSpecComputeResources `json:"compute_resources"`
+	EcsClusterArn          string                                           `json:"ecs_cluster_arn"`
+	Status                 string                                           `json:"status"`
+	EccClusterArn          string                                           `json:"ecc_cluster_arn"`
+	StatusReason           string                                           `json:"status_reason"`
 	ServiceRole            string                                           `json:"service_role"`
 	State                  string                                           `json:"state"`
 	Type                   string                                           `json:"type"`
-	EcsClusterArn          string                                           `json:"ecs_cluster_arn"`
-	StatusReason           string                                           `json:"status_reason"`
+	Arn                    string                                           `json:"arn"`
 }
 
 type AwsBatchComputeEnvironmentSpecComputeResources struct {
-	BidPercentage    int               `json:"bid_percentage"`
-	DesiredVcpus     int               `json:"desired_vcpus"`
+	InstanceRole     string            `json:"instance_role"`
+	MinVcpus         int               `json:"min_vcpus"`
 	SecurityGroupIds string            `json:"security_group_ids"`
+	SpotIamFleetRole string            `json:"spot_iam_fleet_role"`
 	Tags             map[string]string `json:"tags"`
 	Type             string            `json:"type"`
-	Subnets          string            `json:"subnets"`
+	BidPercentage    int               `json:"bid_percentage"`
+	DesiredVcpus     int               `json:"desired_vcpus"`
 	Ec2KeyPair       string            `json:"ec2_key_pair"`
 	ImageId          string            `json:"image_id"`
-	InstanceRole     string            `json:"instance_role"`
 	InstanceType     string            `json:"instance_type"`
 	MaxVcpus         int               `json:"max_vcpus"`
-	MinVcpus         int               `json:"min_vcpus"`
-	SpotIamFleetRole string            `json:"spot_iam_fleet_role"`
+	Subnets          string            `json:"subnets"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

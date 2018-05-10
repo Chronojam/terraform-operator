@@ -17,10 +17,10 @@ type AwsGameliftAlias struct {
 }
 
 type AwsGameliftAliasSpec struct {
-	Arn             string                                `json:"arn"`
 	Name            string                                `json:"name"`
 	Description     string                                `json:"description"`
 	RoutingStrategy []AwsGameliftAliasSpecRoutingStrategy `json:"routing_strategy"`
+	Arn             string                                `json:"arn"`
 }
 
 type AwsGameliftAliasSpecRoutingStrategy struct {

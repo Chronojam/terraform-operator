@@ -17,14 +17,14 @@ type AwsAutoscalingSchedule struct {
 }
 
 type AwsAutoscalingScheduleSpec struct {
-	StartTime            string `json:"start_time"`
-	EndTime              string `json:"end_time"`
-	Recurrence           string `json:"recurrence"`
-	MinSize              int    `json:"min_size"`
+	MaxSize              int    `json:"max_size"`
 	Arn                  string `json:"arn"`
 	ScheduledActionName  string `json:"scheduled_action_name"`
 	AutoscalingGroupName string `json:"autoscaling_group_name"`
-	MaxSize              int    `json:"max_size"`
+	EndTime              string `json:"end_time"`
+	Recurrence           string `json:"recurrence"`
+	StartTime            string `json:"start_time"`
+	MinSize              int    `json:"min_size"`
 	DesiredCapacity      int    `json:"desired_capacity"`
 }
 

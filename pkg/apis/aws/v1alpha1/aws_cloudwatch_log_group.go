@@ -17,12 +17,12 @@ type AwsCloudwatchLogGroup struct {
 }
 
 type AwsCloudwatchLogGroupSpec struct {
-	KmsKeyId        string            `json:"kms_key_id"`
-	Arn             string            `json:"arn"`
 	Tags            map[string]string `json:"tags"`
 	Name            string            `json:"name"`
 	NamePrefix      string            `json:"name_prefix"`
 	RetentionInDays int               `json:"retention_in_days"`
+	KmsKeyId        string            `json:"kms_key_id"`
+	Arn             string            `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

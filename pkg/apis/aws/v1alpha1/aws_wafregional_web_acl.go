@@ -17,23 +17,23 @@ type AwsWafregionalWebAcl struct {
 }
 
 type AwsWafregionalWebAclSpec struct {
-	Name          string                                  `json:"name"`
-	DefaultAction []AwsWafregionalWebAclSpecDefaultAction `json:"default_action"`
 	MetricName    string                                  `json:"metric_name"`
 	Rule          AwsWafregionalWebAclSpecRule            `json:"rule"`
-}
-
-type AwsWafregionalWebAclSpecDefaultAction struct {
-	Type string `json:"type"`
+	Name          string                                  `json:"name"`
+	DefaultAction []AwsWafregionalWebAclSpecDefaultAction `json:"default_action"`
 }
 
 type AwsWafregionalWebAclSpecRule struct {
+	RuleId   string                               `json:"rule_id"`
 	Action   []AwsWafregionalWebAclSpecRuleAction `json:"action"`
 	Priority int                                  `json:"priority"`
-	RuleId   string                               `json:"rule_id"`
 }
 
 type AwsWafregionalWebAclSpecRuleAction struct {
+	Type string `json:"type"`
+}
+
+type AwsWafregionalWebAclSpecDefaultAction struct {
 	Type string `json:"type"`
 }
 

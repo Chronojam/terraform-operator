@@ -17,27 +17,27 @@ type AwsSsmMaintenanceWindowTask struct {
 }
 
 type AwsSsmMaintenanceWindowTaskSpec struct {
+	WindowId       string                                          `json:"window_id"`
+	LoggingInfo    []AwsSsmMaintenanceWindowTaskSpecLoggingInfo    `json:"logging_info"`
+	MaxConcurrency string                                          `json:"max_concurrency"`
+	MaxErrors      string                                          `json:"max_errors"`
+	TaskType       string                                          `json:"task_type"`
+	TaskArn        string                                          `json:"task_arn"`
 	ServiceRoleArn string                                          `json:"service_role_arn"`
 	Targets        []AwsSsmMaintenanceWindowTaskSpecTargets        `json:"targets"`
 	Priority       int                                             `json:"priority"`
-	MaxErrors      string                                          `json:"max_errors"`
-	MaxConcurrency string                                          `json:"max_concurrency"`
-	TaskType       string                                          `json:"task_type"`
-	TaskArn        string                                          `json:"task_arn"`
-	LoggingInfo    []AwsSsmMaintenanceWindowTaskSpecLoggingInfo    `json:"logging_info"`
 	TaskParameters []AwsSsmMaintenanceWindowTaskSpecTaskParameters `json:"task_parameters"`
-	WindowId       string                                          `json:"window_id"`
-}
-
-type AwsSsmMaintenanceWindowTaskSpecTargets struct {
-	Key    string   `json:"key"`
-	Values []string `json:"values"`
 }
 
 type AwsSsmMaintenanceWindowTaskSpecLoggingInfo struct {
 	S3BucketName   string `json:"s3_bucket_name"`
 	S3Region       string `json:"s3_region"`
 	S3BucketPrefix string `json:"s3_bucket_prefix"`
+}
+
+type AwsSsmMaintenanceWindowTaskSpecTargets struct {
+	Key    string   `json:"key"`
+	Values []string `json:"values"`
 }
 
 type AwsSsmMaintenanceWindowTaskSpecTaskParameters struct {

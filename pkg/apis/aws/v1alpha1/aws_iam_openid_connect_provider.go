@@ -17,10 +17,10 @@ type AwsIamOpenidConnectProvider struct {
 }
 
 type AwsIamOpenidConnectProviderSpec struct {
-	Arn            string   `json:"arn"`
-	Url            string   `json:"url"`
 	ClientIdList   []string `json:"client_id_list"`
 	ThumbprintList []string `json:"thumbprint_list"`
+	Arn            string   `json:"arn"`
+	Url            string   `json:"url"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -18,17 +18,17 @@ type AwsCodebuildProject struct {
 
 type AwsCodebuildProjectSpec struct {
 	Cache         []AwsCodebuildProjectSpecCache     `json:"cache"`
-	Description   string                             `json:"description"`
 	Name          string                             `json:"name"`
 	Timeout       int                                `json:"timeout"`
 	BuildTimeout  int                                `json:"build_timeout"`
-	VpcConfig     []AwsCodebuildProjectSpecVpcConfig `json:"vpc_config"`
+	Tags          map[string]string                  `json:"tags"`
 	Artifacts     AwsCodebuildProjectSpecArtifacts   `json:"artifacts"`
 	EncryptionKey string                             `json:"encryption_key"`
 	Environment   AwsCodebuildProjectSpecEnvironment `json:"environment"`
 	ServiceRole   string                             `json:"service_role"`
 	Source        AwsCodebuildProjectSpecSource      `json:"source"`
-	Tags          map[string]string                  `json:"tags"`
+	VpcConfig     []AwsCodebuildProjectSpecVpcConfig `json:"vpc_config"`
+	Description   string                             `json:"description"`
 }
 
 type AwsCodebuildProjectSpecCache struct {
@@ -36,19 +36,13 @@ type AwsCodebuildProjectSpecCache struct {
 	Location string `json:"location"`
 }
 
-type AwsCodebuildProjectSpecVpcConfig struct {
-	VpcId            string `json:"vpc_id"`
-	Subnets          string `json:"subnets"`
-	SecurityGroupIds string `json:"security_group_ids"`
-}
-
 type AwsCodebuildProjectSpecArtifacts struct {
-	Path          string `json:"path"`
-	Type          string `json:"type"`
 	Name          string `json:"name"`
 	Location      string `json:"location"`
 	NamespaceType string `json:"namespace_type"`
 	Packaging     string `json:"packaging"`
+	Path          string `json:"path"`
+	Type          string `json:"type"`
 }
 
 type AwsCodebuildProjectSpecEnvironment struct {
@@ -74,6 +68,12 @@ type AwsCodebuildProjectSpecSource struct {
 type AwsCodebuildProjectSpecSourceAuth struct {
 	Resource string `json:"resource"`
 	Type     string `json:"type"`
+}
+
+type AwsCodebuildProjectSpecVpcConfig struct {
+	VpcId            string `json:"vpc_id"`
+	Subnets          string `json:"subnets"`
+	SecurityGroupIds string `json:"security_group_ids"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,11 +17,11 @@ type AwsSfnStateMachine struct {
 }
 
 type AwsSfnStateMachineSpec struct {
+	Definition   string `json:"definition"`
 	Name         string `json:"name"`
 	RoleArn      string `json:"role_arn"`
 	CreationDate string `json:"creation_date"`
 	Status       string `json:"status"`
-	Definition   string `json:"definition"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

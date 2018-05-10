@@ -27,10 +27,10 @@ type AwsAcmCertificateSpec struct {
 }
 
 type AwsAcmCertificateSpecDomainValidationOptions struct {
+	DomainName          string `json:"domain_name"`
 	ResourceRecordName  string `json:"resource_record_name"`
 	ResourceRecordType  string `json:"resource_record_type"`
 	ResourceRecordValue string `json:"resource_record_value"`
-	DomainName          string `json:"domain_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

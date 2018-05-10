@@ -17,16 +17,16 @@ type AwsSsmResourceDataSync struct {
 }
 
 type AwsSsmResourceDataSyncSpec struct {
-	S3Destination []AwsSsmResourceDataSyncSpecS3Destination `json:"s3_destination"`
 	Name          string                                    `json:"name"`
+	S3Destination []AwsSsmResourceDataSyncSpecS3Destination `json:"s3_destination"`
 }
 
 type AwsSsmResourceDataSyncSpecS3Destination struct {
+	SyncFormat string `json:"sync_format"`
 	KmsKeyArn  string `json:"kms_key_arn"`
 	BucketName string `json:"bucket_name"`
 	Prefix     string `json:"prefix"`
 	Region     string `json:"region"`
-	SyncFormat string `json:"sync_format"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

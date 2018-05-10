@@ -17,13 +17,13 @@ type AwsApiGatewayApiKey struct {
 }
 
 type AwsApiGatewayApiKeySpec struct {
-	LastUpdatedDate string                          `json:"last_updated_date"`
-	Value           string                          `json:"value"`
 	Name            string                          `json:"name"`
 	Description     string                          `json:"description"`
 	Enabled         bool                            `json:"enabled"`
 	StageKey        AwsApiGatewayApiKeySpecStageKey `json:"stage_key"`
 	CreatedDate     string                          `json:"created_date"`
+	LastUpdatedDate string                          `json:"last_updated_date"`
+	Value           string                          `json:"value"`
 }
 
 type AwsApiGatewayApiKeySpecStageKey struct {

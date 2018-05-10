@@ -17,9 +17,9 @@ type AwsElasticacheSubnetGroup struct {
 }
 
 type AwsElasticacheSubnetGroupSpec struct {
-	Description string `json:"description"`
 	Name        string `json:"name"`
 	SubnetIds   string `json:"subnet_ids"`
+	Description string `json:"description"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,36 +17,36 @@ type AwsOpsworksMemcachedLayer struct {
 }
 
 type AwsOpsworksMemcachedLayerSpec struct {
-	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
-	AutoHealing              bool                                   `json:"auto_healing"`
-	StackId                  string                                 `json:"stack_id"`
-	DrainElbOnShutdown       bool                                   `json:"drain_elb_on_shutdown"`
-	EbsVolume                AwsOpsworksMemcachedLayerSpecEbsVolume `json:"ebs_volume"`
-	Name                     string                                 `json:"name"`
-	CustomSetupRecipes       []string                               `json:"custom_setup_recipes"`
-	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
 	CustomUndeployRecipes    []string                               `json:"custom_undeploy_recipes"`
-	InstanceShutdownTimeout  int                                    `json:"instance_shutdown_timeout"`
-	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
-	CustomSecurityGroupIds   string                                 `json:"custom_security_group_ids"`
+	AutoHealing              bool                                   `json:"auto_healing"`
 	InstallUpdatesOnBoot     bool                                   `json:"install_updates_on_boot"`
-	CustomShutdownRecipes    []string                               `json:"custom_shutdown_recipes"`
-	CustomJson               string                                 `json:"custom_json"`
-	SystemPackages           string                                 `json:"system_packages"`
-	UseEbsOptimizedInstances bool                                   `json:"use_ebs_optimized_instances"`
-	AllocatedMemory          int                                    `json:"allocated_memory"`
 	AutoAssignPublicIps      bool                                   `json:"auto_assign_public_ips"`
 	ElasticLoadBalancer      string                                 `json:"elastic_load_balancer"`
+	Name                     string                                 `json:"name"`
+	AllocatedMemory          int                                    `json:"allocated_memory"`
+	CustomSetupRecipes       []string                               `json:"custom_setup_recipes"`
 	CustomConfigureRecipes   []string                               `json:"custom_configure_recipes"`
+	CustomShutdownRecipes    []string                               `json:"custom_shutdown_recipes"`
+	CustomSecurityGroupIds   string                                 `json:"custom_security_group_ids"`
+	DrainElbOnShutdown       bool                                   `json:"drain_elb_on_shutdown"`
+	SystemPackages           string                                 `json:"system_packages"`
+	StackId                  string                                 `json:"stack_id"`
+	EbsVolume                AwsOpsworksMemcachedLayerSpecEbsVolume `json:"ebs_volume"`
+	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
+	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
+	InstanceShutdownTimeout  int                                    `json:"instance_shutdown_timeout"`
+	UseEbsOptimizedInstances bool                                   `json:"use_ebs_optimized_instances"`
+	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
+	CustomJson               string                                 `json:"custom_json"`
 }
 
 type AwsOpsworksMemcachedLayerSpecEbsVolume struct {
-	Iops          int    `json:"iops"`
-	MountPoint    string `json:"mount_point"`
 	NumberOfDisks int    `json:"number_of_disks"`
 	RaidLevel     string `json:"raid_level"`
 	Size          int    `json:"size"`
 	Type          string `json:"type"`
+	Iops          int    `json:"iops"`
+	MountPoint    string `json:"mount_point"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

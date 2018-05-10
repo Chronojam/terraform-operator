@@ -17,49 +17,42 @@ type AwsCodedeployDeploymentGroup struct {
 }
 
 type AwsCodedeployDeploymentGroupSpec struct {
-	LoadBalancerInfo            []AwsCodedeployDeploymentGroupSpecLoadBalancerInfo          `json:"load_balancer_info"`
-	AutoRollbackConfiguration   []AwsCodedeployDeploymentGroupSpecAutoRollbackConfiguration `json:"auto_rollback_configuration"`
-	AutoscalingGroups           string                                                      `json:"autoscaling_groups"`
-	TriggerConfiguration        AwsCodedeployDeploymentGroupSpecTriggerConfiguration        `json:"trigger_configuration"`
-	DeploymentStyle             []AwsCodedeployDeploymentGroupSpecDeploymentStyle           `json:"deployment_style"`
-	BlueGreenDeploymentConfig   []AwsCodedeployDeploymentGroupSpecBlueGreenDeploymentConfig `json:"blue_green_deployment_config"`
+	AlarmConfiguration          []AwsCodedeployDeploymentGroupSpecAlarmConfiguration        `json:"alarm_configuration"`
 	Ec2TagSet                   AwsCodedeployDeploymentGroupSpecEc2TagSet                   `json:"ec2_tag_set"`
+	TriggerConfiguration        AwsCodedeployDeploymentGroupSpecTriggerConfiguration        `json:"trigger_configuration"`
+	BlueGreenDeploymentConfig   []AwsCodedeployDeploymentGroupSpecBlueGreenDeploymentConfig `json:"blue_green_deployment_config"`
+	AutoscalingGroups           string                                                      `json:"autoscaling_groups"`
 	Ec2TagFilter                AwsCodedeployDeploymentGroupSpecEc2TagFilter                `json:"ec2_tag_filter"`
 	ServiceRoleArn              string                                                      `json:"service_role_arn"`
-	DeploymentConfigName        string                                                      `json:"deployment_config_name"`
-	AlarmConfiguration          []AwsCodedeployDeploymentGroupSpecAlarmConfiguration        `json:"alarm_configuration"`
 	OnPremisesInstanceTagFilter AwsCodedeployDeploymentGroupSpecOnPremisesInstanceTagFilter `json:"on_premises_instance_tag_filter"`
 	AppName                     string                                                      `json:"app_name"`
 	DeploymentGroupName         string                                                      `json:"deployment_group_name"`
+	DeploymentStyle             []AwsCodedeployDeploymentGroupSpecDeploymentStyle           `json:"deployment_style"`
+	LoadBalancerInfo            []AwsCodedeployDeploymentGroupSpecLoadBalancerInfo          `json:"load_balancer_info"`
+	AutoRollbackConfiguration   []AwsCodedeployDeploymentGroupSpecAutoRollbackConfiguration `json:"auto_rollback_configuration"`
+	DeploymentConfigName        string                                                      `json:"deployment_config_name"`
 }
 
-type AwsCodedeployDeploymentGroupSpecLoadBalancerInfo struct {
-	ElbInfo         AwsCodedeployDeploymentGroupSpecLoadBalancerInfoElbInfo         `json:"elb_info"`
-	TargetGroupInfo AwsCodedeployDeploymentGroupSpecLoadBalancerInfoTargetGroupInfo `json:"target_group_info"`
+type AwsCodedeployDeploymentGroupSpecAlarmConfiguration struct {
+	Alarms                 string `json:"alarms"`
+	Enabled                bool   `json:"enabled"`
+	IgnorePollAlarmFailure bool   `json:"ignore_poll_alarm_failure"`
 }
 
-type AwsCodedeployDeploymentGroupSpecLoadBalancerInfoElbInfo struct {
-	Name string `json:"name"`
+type AwsCodedeployDeploymentGroupSpecEc2TagSet struct {
+	Ec2TagFilter AwsCodedeployDeploymentGroupSpecEc2TagSetEc2TagFilter `json:"ec2_tag_filter"`
 }
 
-type AwsCodedeployDeploymentGroupSpecLoadBalancerInfoTargetGroupInfo struct {
-	Name string `json:"name"`
-}
-
-type AwsCodedeployDeploymentGroupSpecAutoRollbackConfiguration struct {
-	Enabled bool   `json:"enabled"`
-	Events  string `json:"events"`
+type AwsCodedeployDeploymentGroupSpecEc2TagSetEc2TagFilter struct {
+	Type  string `json:"type"`
+	Value string `json:"value"`
+	Key   string `json:"key"`
 }
 
 type AwsCodedeployDeploymentGroupSpecTriggerConfiguration struct {
 	TriggerEvents    string `json:"trigger_events"`
 	TriggerName      string `json:"trigger_name"`
 	TriggerTargetArn string `json:"trigger_target_arn"`
-}
-
-type AwsCodedeployDeploymentGroupSpecDeploymentStyle struct {
-	DeploymentOption string `json:"deployment_option"`
-	DeploymentType   string `json:"deployment_type"`
 }
 
 type AwsCodedeployDeploymentGroupSpecBlueGreenDeploymentConfig struct {
@@ -82,32 +75,39 @@ type AwsCodedeployDeploymentGroupSpecBlueGreenDeploymentConfigTerminateBlueInsta
 	TerminationWaitTimeInMinutes int    `json:"termination_wait_time_in_minutes"`
 }
 
-type AwsCodedeployDeploymentGroupSpecEc2TagSet struct {
-	Ec2TagFilter AwsCodedeployDeploymentGroupSpecEc2TagSetEc2TagFilter `json:"ec2_tag_filter"`
-}
-
-type AwsCodedeployDeploymentGroupSpecEc2TagSetEc2TagFilter struct {
-	Key   string `json:"key"`
-	Type  string `json:"type"`
-	Value string `json:"value"`
-}
-
 type AwsCodedeployDeploymentGroupSpecEc2TagFilter struct {
 	Key   string `json:"key"`
 	Type  string `json:"type"`
 	Value string `json:"value"`
 }
 
-type AwsCodedeployDeploymentGroupSpecAlarmConfiguration struct {
-	Alarms                 string `json:"alarms"`
-	Enabled                bool   `json:"enabled"`
-	IgnorePollAlarmFailure bool   `json:"ignore_poll_alarm_failure"`
-}
-
 type AwsCodedeployDeploymentGroupSpecOnPremisesInstanceTagFilter struct {
 	Key   string `json:"key"`
 	Type  string `json:"type"`
 	Value string `json:"value"`
+}
+
+type AwsCodedeployDeploymentGroupSpecDeploymentStyle struct {
+	DeploymentOption string `json:"deployment_option"`
+	DeploymentType   string `json:"deployment_type"`
+}
+
+type AwsCodedeployDeploymentGroupSpecLoadBalancerInfo struct {
+	ElbInfo         AwsCodedeployDeploymentGroupSpecLoadBalancerInfoElbInfo         `json:"elb_info"`
+	TargetGroupInfo AwsCodedeployDeploymentGroupSpecLoadBalancerInfoTargetGroupInfo `json:"target_group_info"`
+}
+
+type AwsCodedeployDeploymentGroupSpecLoadBalancerInfoElbInfo struct {
+	Name string `json:"name"`
+}
+
+type AwsCodedeployDeploymentGroupSpecLoadBalancerInfoTargetGroupInfo struct {
+	Name string `json:"name"`
+}
+
+type AwsCodedeployDeploymentGroupSpecAutoRollbackConfiguration struct {
+	Enabled bool   `json:"enabled"`
+	Events  string `json:"events"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

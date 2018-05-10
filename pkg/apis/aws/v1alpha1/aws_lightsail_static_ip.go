@@ -17,10 +17,10 @@ type AwsLightsailStaticIp struct {
 }
 
 type AwsLightsailStaticIpSpec struct {
-	Arn         string `json:"arn"`
-	SupportCode string `json:"support_code"`
 	Name        string `json:"name"`
 	IpAddress   string `json:"ip_address"`
+	Arn         string `json:"arn"`
+	SupportCode string `json:"support_code"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,8 +17,8 @@ type AwsIamUserGroupMembership struct {
 }
 
 type AwsIamUserGroupMembershipSpec struct {
-	User   string `json:"user"`
 	Groups string `json:"groups"`
+	User   string `json:"user"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

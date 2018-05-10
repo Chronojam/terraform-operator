@@ -17,18 +17,38 @@ type AwsCloudwatchEventTarget struct {
 }
 
 type AwsCloudwatchEventTargetSpec struct {
-	Input             string                                          `json:"input"`
-	RunCommandTargets []AwsCloudwatchEventTargetSpecRunCommandTargets `json:"run_command_targets"`
-	EcsTarget         []AwsCloudwatchEventTargetSpecEcsTarget         `json:"ecs_target"`
 	BatchTarget       []AwsCloudwatchEventTargetSpecBatchTarget       `json:"batch_target"`
-	SqsTarget         []AwsCloudwatchEventTargetSpecSqsTarget         `json:"sqs_target"`
-	Rule              string                                          `json:"rule"`
+	InputTransformer  []AwsCloudwatchEventTargetSpecInputTransformer  `json:"input_transformer"`
 	TargetId          string                                          `json:"target_id"`
 	Arn               string                                          `json:"arn"`
-	InputTransformer  []AwsCloudwatchEventTargetSpecInputTransformer  `json:"input_transformer"`
 	InputPath         string                                          `json:"input_path"`
 	RoleArn           string                                          `json:"role_arn"`
 	KinesisTarget     []AwsCloudwatchEventTargetSpecKinesisTarget     `json:"kinesis_target"`
+	SqsTarget         []AwsCloudwatchEventTargetSpecSqsTarget         `json:"sqs_target"`
+	Rule              string                                          `json:"rule"`
+	Input             string                                          `json:"input"`
+	RunCommandTargets []AwsCloudwatchEventTargetSpecRunCommandTargets `json:"run_command_targets"`
+	EcsTarget         []AwsCloudwatchEventTargetSpecEcsTarget         `json:"ecs_target"`
+}
+
+type AwsCloudwatchEventTargetSpecBatchTarget struct {
+	JobAttempts   int    `json:"job_attempts"`
+	JobDefinition string `json:"job_definition"`
+	JobName       string `json:"job_name"`
+	ArraySize     int    `json:"array_size"`
+}
+
+type AwsCloudwatchEventTargetSpecInputTransformer struct {
+	InputPaths    map[string]string `json:"input_paths"`
+	InputTemplate string            `json:"input_template"`
+}
+
+type AwsCloudwatchEventTargetSpecKinesisTarget struct {
+	PartitionKeyPath string `json:"partition_key_path"`
+}
+
+type AwsCloudwatchEventTargetSpecSqsTarget struct {
+	MessageGroupId string `json:"message_group_id"`
 }
 
 type AwsCloudwatchEventTargetSpecRunCommandTargets struct {
@@ -39,26 +59,6 @@ type AwsCloudwatchEventTargetSpecRunCommandTargets struct {
 type AwsCloudwatchEventTargetSpecEcsTarget struct {
 	TaskCount         int    `json:"task_count"`
 	TaskDefinitionArn string `json:"task_definition_arn"`
-}
-
-type AwsCloudwatchEventTargetSpecBatchTarget struct {
-	JobName       string `json:"job_name"`
-	ArraySize     int    `json:"array_size"`
-	JobAttempts   int    `json:"job_attempts"`
-	JobDefinition string `json:"job_definition"`
-}
-
-type AwsCloudwatchEventTargetSpecSqsTarget struct {
-	MessageGroupId string `json:"message_group_id"`
-}
-
-type AwsCloudwatchEventTargetSpecInputTransformer struct {
-	InputPaths    map[string]string `json:"input_paths"`
-	InputTemplate string            `json:"input_template"`
-}
-
-type AwsCloudwatchEventTargetSpecKinesisTarget struct {
-	PartitionKeyPath string `json:"partition_key_path"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

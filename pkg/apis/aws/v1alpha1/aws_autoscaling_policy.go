@@ -17,26 +17,32 @@ type AwsAutoscalingPolicy struct {
 }
 
 type AwsAutoscalingPolicySpec struct {
-	AutoscalingGroupName        string                                                `json:"autoscaling_group_name"`
-	PolicyType                  string                                                `json:"policy_type"`
-	Cooldown                    int                                                   `json:"cooldown"`
-	MetricAggregationType       string                                                `json:"metric_aggregation_type"`
-	ScalingAdjustment           int                                                   `json:"scaling_adjustment"`
-	TargetTrackingConfiguration []AwsAutoscalingPolicySpecTargetTrackingConfiguration `json:"target_tracking_configuration"`
-	Arn                         string                                                `json:"arn"`
 	Name                        string                                                `json:"name"`
 	AdjustmentType              string                                                `json:"adjustment_type"`
+	AutoscalingGroupName        string                                                `json:"autoscaling_group_name"`
+	Cooldown                    int                                                   `json:"cooldown"`
 	EstimatedInstanceWarmup     int                                                   `json:"estimated_instance_warmup"`
+	ScalingAdjustment           int                                                   `json:"scaling_adjustment"`
+	Arn                         string                                                `json:"arn"`
+	MetricAggregationType       string                                                `json:"metric_aggregation_type"`
 	MinAdjustmentMagnitude      int                                                   `json:"min_adjustment_magnitude"`
 	MinAdjustmentStep           int                                                   `json:"min_adjustment_step"`
 	StepAdjustment              AwsAutoscalingPolicySpecStepAdjustment                `json:"step_adjustment"`
+	TargetTrackingConfiguration []AwsAutoscalingPolicySpecTargetTrackingConfiguration `json:"target_tracking_configuration"`
+	PolicyType                  string                                                `json:"policy_type"`
+}
+
+type AwsAutoscalingPolicySpecStepAdjustment struct {
+	MetricIntervalUpperBound string `json:"metric_interval_upper_bound"`
+	ScalingAdjustment        int    `json:"scaling_adjustment"`
+	MetricIntervalLowerBound string `json:"metric_interval_lower_bound"`
 }
 
 type AwsAutoscalingPolicySpecTargetTrackingConfiguration struct {
-	DisableScaleIn                bool                                                                               `json:"disable_scale_in"`
 	PredefinedMetricSpecification []AwsAutoscalingPolicySpecTargetTrackingConfigurationPredefinedMetricSpecification `json:"predefined_metric_specification"`
 	CustomizedMetricSpecification []AwsAutoscalingPolicySpecTargetTrackingConfigurationCustomizedMetricSpecification `json:"customized_metric_specification"`
 	TargetValue                   float64                                                                            `json:"target_value"`
+	DisableScaleIn                bool                                                                               `json:"disable_scale_in"`
 }
 
 type AwsAutoscalingPolicySpecTargetTrackingConfigurationPredefinedMetricSpecification struct {
@@ -53,14 +59,8 @@ type AwsAutoscalingPolicySpecTargetTrackingConfigurationCustomizedMetricSpecific
 }
 
 type AwsAutoscalingPolicySpecTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimension struct {
-	Value string `json:"value"`
 	Name  string `json:"name"`
-}
-
-type AwsAutoscalingPolicySpecStepAdjustment struct {
-	ScalingAdjustment        int    `json:"scaling_adjustment"`
-	MetricIntervalLowerBound string `json:"metric_interval_lower_bound"`
-	MetricIntervalUpperBound string `json:"metric_interval_upper_bound"`
+	Value string `json:"value"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,9 +17,9 @@ type AwsDaxParameterGroup struct {
 }
 
 type AwsDaxParameterGroupSpec struct {
-	Parameters  AwsDaxParameterGroupSpecParameters `json:"parameters"`
 	Name        string                             `json:"name"`
 	Description string                             `json:"description"`
+	Parameters  AwsDaxParameterGroupSpecParameters `json:"parameters"`
 }
 
 type AwsDaxParameterGroupSpecParameters struct {

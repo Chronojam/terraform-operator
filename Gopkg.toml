@@ -43,4 +43,4 @@
 
 [[constraint]]
   name = "k8s.io/client-go"
-  version = "7.0.0"
+  branch = "master"

@@ -17,25 +17,25 @@ type AwsRoute53HealthCheck struct {
 }
 
 type AwsRoute53HealthCheckSpec struct {
-	Regions                      string            `json:"regions"`
-	Port                         int               `json:"port"`
-	ResourcePath                 string            `json:"resource_path"`
 	InsufficientDataHealthStatus string            `json:"insufficient_data_health_status"`
 	ReferenceName                string            `json:"reference_name"`
-	Type                         string            `json:"type"`
-	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
-	Tags                         map[string]string `json:"tags"`
-	IpAddress                    string            `json:"ip_address"`
-	SearchString                 string            `json:"search_string"`
-	MeasureLatency               bool              `json:"measure_latency"`
+	InvertHealthcheck            bool              `json:"invert_healthcheck"`
 	ChildHealthchecks            string            `json:"child_healthchecks"`
+	MeasureLatency               bool              `json:"measure_latency"`
+	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
+	FailureThreshold             int               `json:"failure_threshold"`
+	RequestInterval              int               `json:"request_interval"`
+	Port                         int               `json:"port"`
+	ResourcePath                 string            `json:"resource_path"`
+	SearchString                 string            `json:"search_string"`
 	ChildHealthThreshold         int               `json:"child_health_threshold"`
 	CloudwatchAlarmName          string            `json:"cloudwatch_alarm_name"`
 	EnableSni                    bool              `json:"enable_sni"`
-	FailureThreshold             int               `json:"failure_threshold"`
-	RequestInterval              int               `json:"request_interval"`
+	Type                         string            `json:"type"`
+	IpAddress                    string            `json:"ip_address"`
 	Fqdn                         string            `json:"fqdn"`
-	InvertHealthcheck            bool              `json:"invert_healthcheck"`
+	Regions                      string            `json:"regions"`
+	Tags                         map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,33 +17,33 @@ type AwsConfigConfigRule struct {
 }
 
 type AwsConfigConfigRuleSpec struct {
-	Source                    []AwsConfigConfigRuleSpecSource `json:"source"`
-	Name                      string                          `json:"name"`
 	RuleId                    string                          `json:"rule_id"`
 	Arn                       string                          `json:"arn"`
 	Description               string                          `json:"description"`
 	InputParameters           string                          `json:"input_parameters"`
 	MaximumExecutionFrequency string                          `json:"maximum_execution_frequency"`
 	Scope                     []AwsConfigConfigRuleSpecScope  `json:"scope"`
-}
-
-type AwsConfigConfigRuleSpecSource struct {
-	SourceDetail     AwsConfigConfigRuleSpecSourceSourceDetail `json:"source_detail"`
-	SourceIdentifier string                                    `json:"source_identifier"`
-	Owner            string                                    `json:"owner"`
-}
-
-type AwsConfigConfigRuleSpecSourceSourceDetail struct {
-	EventSource               string `json:"event_source"`
-	MaximumExecutionFrequency string `json:"maximum_execution_frequency"`
-	MessageType               string `json:"message_type"`
+	Source                    []AwsConfigConfigRuleSpecSource `json:"source"`
+	Name                      string                          `json:"name"`
 }
 
 type AwsConfigConfigRuleSpecScope struct {
+	TagValue                string `json:"tag_value"`
 	ComplianceResourceId    string `json:"compliance_resource_id"`
 	ComplianceResourceTypes string `json:"compliance_resource_types"`
 	TagKey                  string `json:"tag_key"`
-	TagValue                string `json:"tag_value"`
+}
+
+type AwsConfigConfigRuleSpecSource struct {
+	Owner            string                                    `json:"owner"`
+	SourceDetail     AwsConfigConfigRuleSpecSourceSourceDetail `json:"source_detail"`
+	SourceIdentifier string                                    `json:"source_identifier"`
+}
+
+type AwsConfigConfigRuleSpecSourceSourceDetail struct {
+	MaximumExecutionFrequency string `json:"maximum_execution_frequency"`
+	MessageType               string `json:"message_type"`
+	EventSource               string `json:"event_source"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

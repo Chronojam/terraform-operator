@@ -17,10 +17,10 @@ type AwsVpnGateway struct {
 }
 
 type AwsVpnGatewaySpec struct {
-	VpcId            string            `json:"vpc_id"`
-	Tags             map[string]string `json:"tags"`
 	AvailabilityZone string            `json:"availability_zone"`
 	AmazonSideAsn    string            `json:"amazon_side_asn"`
+	VpcId            string            `json:"vpc_id"`
+	Tags             map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

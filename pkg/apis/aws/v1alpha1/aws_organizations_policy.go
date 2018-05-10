@@ -17,11 +17,11 @@ type AwsOrganizationsPolicy struct {
 }
 
 type AwsOrganizationsPolicySpec struct {
-	Name        string `json:"name"`
-	Type        string `json:"type"`
 	Arn         string `json:"arn"`
 	Content     string `json:"content"`
 	Description string `json:"description"`
+	Name        string `json:"name"`
+	Type        string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

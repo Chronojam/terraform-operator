@@ -17,32 +17,32 @@ type AwsRdsClusterInstance struct {
 }
 
 type AwsRdsClusterInstanceSpec struct {
-	PubliclyAccessible          bool              `json:"publicly_accessible"`
-	KmsKeyId                    string            `json:"kms_key_id"`
-	AvailabilityZone            string            `json:"availability_zone"`
-	DbSubnetGroupName           string            `json:"db_subnet_group_name"`
-	Writer                      bool              `json:"writer"`
-	ClusterIdentifier           string            `json:"cluster_identifier"`
-	Endpoint                    string            `json:"endpoint"`
-	Engine                      string            `json:"engine"`
-	ApplyImmediately            bool              `json:"apply_immediately"`
-	PreferredMaintenanceWindow  string            `json:"preferred_maintenance_window"`
-	PreferredBackupWindow       string            `json:"preferred_backup_window"`
-	Identifier                  string            `json:"identifier"`
-	IdentifierPrefix            string            `json:"identifier_prefix"`
-	Port                        int               `json:"port"`
-	InstanceClass               string            `json:"instance_class"`
 	PromotionTier               int               `json:"promotion_tier"`
-	PerformanceInsightsEnabled  bool              `json:"performance_insights_enabled"`
-	PerformanceInsightsKmsKeyId string            `json:"performance_insights_kms_key_id"`
+	Writer                      bool              `json:"writer"`
+	Port                        int               `json:"port"`
+	PubliclyAccessible          bool              `json:"publicly_accessible"`
 	EngineVersion               string            `json:"engine_version"`
-	DbParameterGroupName        string            `json:"db_parameter_group_name"`
-	StorageEncrypted            bool              `json:"storage_encrypted"`
 	DbiResourceId               string            `json:"dbi_resource_id"`
 	AutoMinorVersionUpgrade     bool              `json:"auto_minor_version_upgrade"`
-	MonitoringRoleArn           string            `json:"monitoring_role_arn"`
-	MonitoringInterval          int               `json:"monitoring_interval"`
 	Tags                        map[string]string `json:"tags"`
+	Engine                      string            `json:"engine"`
+	DbParameterGroupName        string            `json:"db_parameter_group_name"`
+	KmsKeyId                    string            `json:"kms_key_id"`
+	PreferredMaintenanceWindow  string            `json:"preferred_maintenance_window"`
+	AvailabilityZone            string            `json:"availability_zone"`
+	PerformanceInsightsEnabled  bool              `json:"performance_insights_enabled"`
+	MonitoringRoleArn           string            `json:"monitoring_role_arn"`
+	IdentifierPrefix            string            `json:"identifier_prefix"`
+	DbSubnetGroupName           string            `json:"db_subnet_group_name"`
+	Endpoint                    string            `json:"endpoint"`
+	InstanceClass               string            `json:"instance_class"`
+	ApplyImmediately            bool              `json:"apply_immediately"`
+	StorageEncrypted            bool              `json:"storage_encrypted"`
+	Identifier                  string            `json:"identifier"`
+	ClusterIdentifier           string            `json:"cluster_identifier"`
+	PreferredBackupWindow       string            `json:"preferred_backup_window"`
+	MonitoringInterval          int               `json:"monitoring_interval"`
+	PerformanceInsightsKmsKeyId string            `json:"performance_insights_kms_key_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

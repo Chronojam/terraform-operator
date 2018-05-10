@@ -17,8 +17,8 @@ type AwsWafregionalByteMatchSet struct {
 }
 
 type AwsWafregionalByteMatchSetSpec struct {
-	Name           string                                       `json:"name"`
 	ByteMatchTuple AwsWafregionalByteMatchSetSpecByteMatchTuple `json:"byte_match_tuple"`
+	Name           string                                       `json:"name"`
 }
 
 type AwsWafregionalByteMatchSetSpecByteMatchTuple struct {

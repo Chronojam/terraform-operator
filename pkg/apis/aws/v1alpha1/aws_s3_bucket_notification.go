@@ -17,18 +17,10 @@ type AwsS3BucketNotification struct {
 }
 
 type AwsS3BucketNotificationSpec struct {
-	Bucket         string                                      `json:"bucket"`
-	Topic          []AwsS3BucketNotificationSpecTopic          `json:"topic"`
 	Queue          []AwsS3BucketNotificationSpecQueue          `json:"queue"`
 	LambdaFunction []AwsS3BucketNotificationSpecLambdaFunction `json:"lambda_function"`
-}
-
-type AwsS3BucketNotificationSpecTopic struct {
-	FilterPrefix string `json:"filter_prefix"`
-	FilterSuffix string `json:"filter_suffix"`
-	TopicArn     string `json:"topic_arn"`
-	Events       string `json:"events"`
-	Id           string `json:"id"`
+	Bucket         string                                      `json:"bucket"`
+	Topic          []AwsS3BucketNotificationSpecTopic          `json:"topic"`
 }
 
 type AwsS3BucketNotificationSpecQueue struct {
@@ -40,11 +32,19 @@ type AwsS3BucketNotificationSpecQueue struct {
 }
 
 type AwsS3BucketNotificationSpecLambdaFunction struct {
+	FilterSuffix      string `json:"filter_suffix"`
 	LambdaFunctionArn string `json:"lambda_function_arn"`
 	Events            string `json:"events"`
 	Id                string `json:"id"`
 	FilterPrefix      string `json:"filter_prefix"`
-	FilterSuffix      string `json:"filter_suffix"`
+}
+
+type AwsS3BucketNotificationSpecTopic struct {
+	Events       string `json:"events"`
+	Id           string `json:"id"`
+	FilterPrefix string `json:"filter_prefix"`
+	FilterSuffix string `json:"filter_suffix"`
+	TopicArn     string `json:"topic_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

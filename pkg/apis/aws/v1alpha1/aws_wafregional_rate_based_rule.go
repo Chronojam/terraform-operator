@@ -17,11 +17,11 @@ type AwsWafregionalRateBasedRule struct {
 }
 
 type AwsWafregionalRateBasedRuleSpec struct {
+	Name       string                                   `json:"name"`
+	MetricName string                                   `json:"metric_name"`
 	Predicate  AwsWafregionalRateBasedRuleSpecPredicate `json:"predicate"`
 	RateKey    string                                   `json:"rate_key"`
 	RateLimit  int                                      `json:"rate_limit"`
-	Name       string                                   `json:"name"`
-	MetricName string                                   `json:"metric_name"`
 }
 
 type AwsWafregionalRateBasedRuleSpecPredicate struct {
