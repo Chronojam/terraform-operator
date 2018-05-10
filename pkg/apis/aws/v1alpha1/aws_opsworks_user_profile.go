@@ -17,10 +17,10 @@ type AwsOpsworksUserProfile struct {
 }
 
 type AwsOpsworksUserProfileSpec struct {
+	AllowSelfManagement bool   `json:"allow_self_management"`
 	SshUsername         string `json:"ssh_username"`
 	SshPublicKey        string `json:"ssh_public_key"`
 	UserArn             string `json:"user_arn"`
-	AllowSelfManagement bool   `json:"allow_self_management"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

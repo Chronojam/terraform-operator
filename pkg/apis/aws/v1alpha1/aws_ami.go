@@ -17,30 +17,30 @@ type AwsAmi struct {
 }
 
 type AwsAmiSpec struct {
-	Name                 string                         `json:"name"`
-	RootDeviceName       string                         `json:"root_device_name"`
-	RootSnapshotId       string                         `json:"root_snapshot_id"`
-	EbsBlockDevice       AwsAmiSpecEbsBlockDevice       `json:"ebs_block_device"`
 	ImageLocation        string                         `json:"image_location"`
-	Description          string                         `json:"description"`
-	RamdiskId            string                         `json:"ramdisk_id"`
-	SriovNetSupport      string                         `json:"sriov_net_support"`
-	Architecture         string                         `json:"architecture"`
-	VirtualizationType   string                         `json:"virtualization_type"`
-	EphemeralBlockDevice AwsAmiSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
+	Tags                 map[string]string              `json:"tags"`
 	ManageEbsSnapshots   bool                           `json:"manage_ebs_snapshots"`
 	KernelId             string                         `json:"kernel_id"`
-	Tags                 map[string]string              `json:"tags"`
+	RootDeviceName       string                         `json:"root_device_name"`
+	EbsBlockDevice       AwsAmiSpecEbsBlockDevice       `json:"ebs_block_device"`
+	SriovNetSupport      string                         `json:"sriov_net_support"`
+	RamdiskId            string                         `json:"ramdisk_id"`
+	RootSnapshotId       string                         `json:"root_snapshot_id"`
+	VirtualizationType   string                         `json:"virtualization_type"`
+	EphemeralBlockDevice AwsAmiSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
+	Architecture         string                         `json:"architecture"`
+	Description          string                         `json:"description"`
+	Name                 string                         `json:"name"`
 }
 
 type AwsAmiSpecEbsBlockDevice struct {
-	Iops                int    `json:"iops"`
-	SnapshotId          string `json:"snapshot_id"`
 	VolumeSize          int    `json:"volume_size"`
 	VolumeType          string `json:"volume_type"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	DeviceName          string `json:"device_name"`
 	Encrypted           bool   `json:"encrypted"`
+	Iops                int    `json:"iops"`
+	SnapshotId          string `json:"snapshot_id"`
 }
 
 type AwsAmiSpecEphemeralBlockDevice struct {

@@ -17,36 +17,36 @@ type AwsOpsworksNodejsAppLayer struct {
 }
 
 type AwsOpsworksNodejsAppLayerSpec struct {
-	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
-	InstallUpdatesOnBoot     bool                                   `json:"install_updates_on_boot"`
-	EbsVolume                AwsOpsworksNodejsAppLayerSpecEbsVolume `json:"ebs_volume"`
-	CustomSetupRecipes       []string                               `json:"custom_setup_recipes"`
-	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
-	StackId                  string                                 `json:"stack_id"`
-	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
-	CustomConfigureRecipes   []string                               `json:"custom_configure_recipes"`
-	CustomUndeployRecipes    []string                               `json:"custom_undeploy_recipes"`
+	CustomSecurityGroupIds   string                                 `json:"custom_security_group_ids"`
 	AutoHealing              bool                                   `json:"auto_healing"`
 	UseEbsOptimizedInstances bool                                   `json:"use_ebs_optimized_instances"`
-	DrainElbOnShutdown       bool                                   `json:"drain_elb_on_shutdown"`
-	SystemPackages           string                                 `json:"system_packages"`
-	AutoAssignPublicIps      bool                                   `json:"auto_assign_public_ips"`
-	ElasticLoadBalancer      string                                 `json:"elastic_load_balancer"`
+	CustomConfigureRecipes   []string                               `json:"custom_configure_recipes"`
 	CustomShutdownRecipes    []string                               `json:"custom_shutdown_recipes"`
-	CustomSecurityGroupIds   string                                 `json:"custom_security_group_ids"`
+	InstallUpdatesOnBoot     bool                                   `json:"install_updates_on_boot"`
+	SystemPackages           string                                 `json:"system_packages"`
+	StackId                  string                                 `json:"stack_id"`
+	EbsVolume                AwsOpsworksNodejsAppLayerSpecEbsVolume `json:"ebs_volume"`
+	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
+	ElasticLoadBalancer      string                                 `json:"elastic_load_balancer"`
+	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
 	CustomJson               string                                 `json:"custom_json"`
+	DrainElbOnShutdown       bool                                   `json:"drain_elb_on_shutdown"`
+	NodejsVersion            string                                 `json:"nodejs_version"`
+	AutoAssignPublicIps      bool                                   `json:"auto_assign_public_ips"`
+	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
+	CustomSetupRecipes       []string                               `json:"custom_setup_recipes"`
+	CustomUndeployRecipes    []string                               `json:"custom_undeploy_recipes"`
 	InstanceShutdownTimeout  int                                    `json:"instance_shutdown_timeout"`
 	Name                     string                                 `json:"name"`
-	NodejsVersion            string                                 `json:"nodejs_version"`
 }
 
 type AwsOpsworksNodejsAppLayerSpecEbsVolume struct {
+	Iops          int    `json:"iops"`
+	MountPoint    string `json:"mount_point"`
 	NumberOfDisks int    `json:"number_of_disks"`
 	RaidLevel     string `json:"raid_level"`
 	Size          int    `json:"size"`
 	Type          string `json:"type"`
-	Iops          int    `json:"iops"`
-	MountPoint    string `json:"mount_point"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

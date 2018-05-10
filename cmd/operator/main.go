@@ -9,9 +9,9 @@ import (
 
 	"k8s.io/client-go/tools/cache"
 
+	cs "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned"
 	operator "github.com/chronojam/terraform-operator/pkg/operator"
 	"github.com/chronojam/terraform-operator/pkg/operator/aws/v1alpha1/awsiampolicy"
-	cs "github.com/trussle/terraform-operator/pkg/client/clientset/versioned"
 )
 
 func main() {

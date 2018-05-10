@@ -17,17 +17,17 @@ type AwsApiGatewayUsagePlan struct {
 }
 
 type AwsApiGatewayUsagePlanSpec struct {
+	ProductCode      string                                     `json:"product_code"`
 	Name             string                                     `json:"name"`
 	Description      string                                     `json:"description"`
 	ApiStages        []AwsApiGatewayUsagePlanSpecApiStages      `json:"api_stages"`
 	QuotaSettings    AwsApiGatewayUsagePlanSpecQuotaSettings    `json:"quota_settings"`
 	ThrottleSettings AwsApiGatewayUsagePlanSpecThrottleSettings `json:"throttle_settings"`
-	ProductCode      string                                     `json:"product_code"`
 }
 
 type AwsApiGatewayUsagePlanSpecApiStages struct {
-	ApiId string `json:"api_id"`
 	Stage string `json:"stage"`
+	ApiId string `json:"api_id"`
 }
 
 type AwsApiGatewayUsagePlanSpecQuotaSettings struct {

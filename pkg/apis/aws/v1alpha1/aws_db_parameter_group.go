@@ -17,19 +17,19 @@ type AwsDbParameterGroup struct {
 }
 
 type AwsDbParameterGroupSpec struct {
+	Parameter   AwsDbParameterGroupSpecParameter `json:"parameter"`
+	Tags        map[string]string                `json:"tags"`
 	Arn         string                           `json:"arn"`
 	Name        string                           `json:"name"`
 	NamePrefix  string                           `json:"name_prefix"`
 	Family      string                           `json:"family"`
 	Description string                           `json:"description"`
-	Parameter   AwsDbParameterGroupSpecParameter `json:"parameter"`
-	Tags        map[string]string                `json:"tags"`
 }
 
 type AwsDbParameterGroupSpecParameter struct {
+	Name        string `json:"name"`
 	Value       string `json:"value"`
 	ApplyMethod string `json:"apply_method"`
-	Name        string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

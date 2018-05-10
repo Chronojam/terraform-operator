@@ -17,10 +17,10 @@ type AwsIamGroup struct {
 }
 
 type AwsIamGroupSpec struct {
-	Arn      string `json:"arn"`
 	UniqueId string `json:"unique_id"`
 	Name     string `json:"name"`
 	Path     string `json:"path"`
+	Arn      string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

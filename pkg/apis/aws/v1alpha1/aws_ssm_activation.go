@@ -17,6 +17,7 @@ type AwsSsmActivation struct {
 }
 
 type AwsSsmActivationSpec struct {
+	Expired           string `json:"expired"`
 	ExpirationDate    string `json:"expiration_date"`
 	IamRole           string `json:"iam_role"`
 	RegistrationLimit int    `json:"registration_limit"`
@@ -24,7 +25,6 @@ type AwsSsmActivationSpec struct {
 	ActivationCode    string `json:"activation_code"`
 	Name              string `json:"name"`
 	Description       string `json:"description"`
-	Expired           string `json:"expired"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

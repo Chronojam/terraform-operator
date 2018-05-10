@@ -17,18 +17,18 @@ type AwsSnsPlatformApplication struct {
 }
 
 type AwsSnsPlatformApplicationSpec struct {
-	EventEndpointCreatedTopicArn string `json:"event_endpoint_created_topic_arn"`
-	EventEndpointUpdatedTopicArn string `json:"event_endpoint_updated_topic_arn"`
-	FailureFeedbackRoleArn       string `json:"failure_feedback_role_arn"`
-	PlatformPrincipal            string `json:"platform_principal"`
 	SuccessFeedbackRoleArn       string `json:"success_feedback_role_arn"`
-	Name                         string `json:"name"`
+	Platform                     string `json:"platform"`
 	PlatformCredential           string `json:"platform_credential"`
 	Arn                          string `json:"arn"`
-	SuccessFeedbackSampleRate    string `json:"success_feedback_sample_rate"`
-	Platform                     string `json:"platform"`
 	EventDeliveryFailureTopicArn string `json:"event_delivery_failure_topic_arn"`
 	EventEndpointDeletedTopicArn string `json:"event_endpoint_deleted_topic_arn"`
+	EventEndpointUpdatedTopicArn string `json:"event_endpoint_updated_topic_arn"`
+	Name                         string `json:"name"`
+	EventEndpointCreatedTopicArn string `json:"event_endpoint_created_topic_arn"`
+	FailureFeedbackRoleArn       string `json:"failure_feedback_role_arn"`
+	PlatformPrincipal            string `json:"platform_principal"`
+	SuccessFeedbackSampleRate    string `json:"success_feedback_sample_rate"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

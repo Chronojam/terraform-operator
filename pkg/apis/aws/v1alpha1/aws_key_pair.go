@@ -17,10 +17,10 @@ type AwsKeyPair struct {
 }
 
 type AwsKeyPairSpec struct {
-	PublicKey     string `json:"public_key"`
-	Fingerprint   string `json:"fingerprint"`
 	KeyName       string `json:"key_name"`
 	KeyNamePrefix string `json:"key_name_prefix"`
+	PublicKey     string `json:"public_key"`
+	Fingerprint   string `json:"fingerprint"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

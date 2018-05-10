@@ -17,11 +17,11 @@ type AwsConfigDeliveryChannel struct {
 }
 
 type AwsConfigDeliveryChannelSpec struct {
-	Name                       string                                                   `json:"name"`
 	S3BucketName               string                                                   `json:"s3_bucket_name"`
 	S3KeyPrefix                string                                                   `json:"s3_key_prefix"`
 	SnsTopicArn                string                                                   `json:"sns_topic_arn"`
 	SnapshotDeliveryProperties []AwsConfigDeliveryChannelSpecSnapshotDeliveryProperties `json:"snapshot_delivery_properties"`
+	Name                       string                                                   `json:"name"`
 }
 
 type AwsConfigDeliveryChannelSpecSnapshotDeliveryProperties struct {

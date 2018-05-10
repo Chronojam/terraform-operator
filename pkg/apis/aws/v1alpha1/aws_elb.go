@@ -17,26 +17,34 @@ type AwsElb struct {
 }
 
 type AwsElbSpec struct {
-	Instances                 string                  `json:"instances"`
-	SourceSecurityGroupId     string                  `json:"source_security_group_id"`
 	Subnets                   string                  `json:"subnets"`
-	ConnectionDraining        bool                    `json:"connection_draining"`
-	NamePrefix                string                  `json:"name_prefix"`
-	Internal                  bool                    `json:"internal"`
-	CrossZoneLoadBalancing    bool                    `json:"cross_zone_load_balancing"`
-	AvailabilityZones         string                  `json:"availability_zones"`
-	DnsName                   string                  `json:"dns_name"`
-	ZoneId                    string                  `json:"zone_id"`
-	Tags                      map[string]string       `json:"tags"`
-	Name                      string                  `json:"name"`
-	SecurityGroups            string                  `json:"security_groups"`
-	SourceSecurityGroup       string                  `json:"source_security_group"`
-	ConnectionDrainingTimeout int                     `json:"connection_draining_timeout"`
-	IdleTimeout               int                     `json:"idle_timeout"`
-	Arn                       string                  `json:"arn"`
-	AccessLogs                []AwsElbSpecAccessLogs  `json:"access_logs"`
 	Listener                  AwsElbSpecListener      `json:"listener"`
+	Tags                      map[string]string       `json:"tags"`
+	Arn                       string                  `json:"arn"`
+	Instances                 string                  `json:"instances"`
+	SourceSecurityGroup       string                  `json:"source_security_group"`
+	AccessLogs                []AwsElbSpecAccessLogs  `json:"access_logs"`
+	ZoneId                    string                  `json:"zone_id"`
+	Internal                  bool                    `json:"internal"`
+	AvailabilityZones         string                  `json:"availability_zones"`
+	IdleTimeout               int                     `json:"idle_timeout"`
+	ConnectionDrainingTimeout int                     `json:"connection_draining_timeout"`
 	HealthCheck               []AwsElbSpecHealthCheck `json:"health_check"`
+	DnsName                   string                  `json:"dns_name"`
+	Name                      string                  `json:"name"`
+	NamePrefix                string                  `json:"name_prefix"`
+	ConnectionDraining        bool                    `json:"connection_draining"`
+	CrossZoneLoadBalancing    bool                    `json:"cross_zone_load_balancing"`
+	SecurityGroups            string                  `json:"security_groups"`
+	SourceSecurityGroupId     string                  `json:"source_security_group_id"`
+}
+
+type AwsElbSpecListener struct {
+	LbProtocol       string `json:"lb_protocol"`
+	SslCertificateId string `json:"ssl_certificate_id"`
+	InstancePort     int    `json:"instance_port"`
+	InstanceProtocol string `json:"instance_protocol"`
+	LbPort           int    `json:"lb_port"`
 }
 
 type AwsElbSpecAccessLogs struct {
@@ -44,14 +52,6 @@ type AwsElbSpecAccessLogs struct {
 	Bucket       string `json:"bucket"`
 	BucketPrefix string `json:"bucket_prefix"`
 	Enabled      bool   `json:"enabled"`
-}
-
-type AwsElbSpecListener struct {
-	InstanceProtocol string `json:"instance_protocol"`
-	LbPort           int    `json:"lb_port"`
-	LbProtocol       string `json:"lb_protocol"`
-	SslCertificateId string `json:"ssl_certificate_id"`
-	InstancePort     int    `json:"instance_port"`
 }
 
 type AwsElbSpecHealthCheck struct {

@@ -2,8 +2,8 @@ package awsiamaccountpasswordpolicy
 
 import (
     meta_v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-    csinf_v1 "github.com/trussle/terraform-operator/pkg/client/informers/externalversions/aws/v1"
-    cs "github.com/trussle/terraform-operator/pkg/client/clientset/versioned"
+    csinf_v1 "github.com/chronojam/terraform-operator/pkg/client/informers/externalversions/aws/v1alpha1"
+    cs "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned"
     "k8s.io/client-go/tools/cache"
 )
 

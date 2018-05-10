@@ -1,5 +1,5 @@
 /*
-Copyright The Kubernetes Authors.
+Copyright 2018 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -57,6 +57,8 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAcmCertificates().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsacmcertificatevalidations"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAcmCertificateValidations().Informer()}, nil
+	case v1alpha1.SchemeGroupVersion.WithResource("awsacmpcacertificateauthorities"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAcmpcaCertificateAuthorities().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsalbs"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsAlbs().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsalblisteners"):
@@ -363,6 +365,8 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGlacierVaults().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsgluecatalogdatabases"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGlueCatalogDatabases().Informer()}, nil
+	case v1alpha1.SchemeGroupVersion.WithResource("awsgluecatalogtables"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGlueCatalogTables().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsglueconnections"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Chronojam().V1alpha1().AwsGlueConnections().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("awsgluejobs"):

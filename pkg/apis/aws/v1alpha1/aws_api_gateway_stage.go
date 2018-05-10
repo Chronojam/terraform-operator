@@ -17,19 +17,19 @@ type AwsApiGatewayStage struct {
 }
 
 type AwsApiGatewayStageSpec struct {
-	RestApiId            string                                    `json:"rest_api_id"`
-	AccessLogSettings    []AwsApiGatewayStageSpecAccessLogSettings `json:"access_log_settings"`
-	CacheClusterEnabled  bool                                      `json:"cache_cluster_enabled"`
 	CacheClusterSize     string                                    `json:"cache_cluster_size"`
-	DeploymentId         string                                    `json:"deployment_id"`
-	DocumentationVersion string                                    `json:"documentation_version"`
-	ExecutionArn         string                                    `json:"execution_arn"`
-	InvokeUrl            string                                    `json:"invoke_url"`
-	Variables            map[string]string                         `json:"variables"`
 	ClientCertificateId  string                                    `json:"client_certificate_id"`
-	Description          string                                    `json:"description"`
+	DocumentationVersion string                                    `json:"documentation_version"`
 	StageName            string                                    `json:"stage_name"`
 	Tags                 map[string]string                         `json:"tags"`
+	Variables            map[string]string                         `json:"variables"`
+	AccessLogSettings    []AwsApiGatewayStageSpecAccessLogSettings `json:"access_log_settings"`
+	CacheClusterEnabled  bool                                      `json:"cache_cluster_enabled"`
+	DeploymentId         string                                    `json:"deployment_id"`
+	Description          string                                    `json:"description"`
+	ExecutionArn         string                                    `json:"execution_arn"`
+	InvokeUrl            string                                    `json:"invoke_url"`
+	RestApiId            string                                    `json:"rest_api_id"`
 }
 
 type AwsApiGatewayStageSpecAccessLogSettings struct {

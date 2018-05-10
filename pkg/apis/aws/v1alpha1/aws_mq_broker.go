@@ -17,21 +17,21 @@ type AwsMqBroker struct {
 }
 
 type AwsMqBrokerSpec struct {
-	EngineType                 string                                      `json:"engine_type"`
-	ApplyImmediately           bool                                        `json:"apply_immediately"`
-	Configuration              []AwsMqBrokerSpecConfiguration              `json:"configuration"`
 	DeploymentMode             string                                      `json:"deployment_mode"`
+	HostInstanceType           string                                      `json:"host_instance_type"`
+	Configuration              []AwsMqBrokerSpecConfiguration              `json:"configuration"`
+	Instances                  []AwsMqBrokerSpecInstances                  `json:"instances"`
+	AutoMinorVersionUpgrade    bool                                        `json:"auto_minor_version_upgrade"`
+	BrokerName                 string                                      `json:"broker_name"`
+	EngineType                 string                                      `json:"engine_type"`
 	SecurityGroups             string                                      `json:"security_groups"`
+	SubnetIds                  string                                      `json:"subnet_ids"`
 	User                       AwsMqBrokerSpecUser                         `json:"user"`
 	Arn                        string                                      `json:"arn"`
-	Instances                  []AwsMqBrokerSpecInstances                  `json:"instances"`
-	BrokerName                 string                                      `json:"broker_name"`
+	ApplyImmediately           bool                                        `json:"apply_immediately"`
 	MaintenanceWindowStartTime []AwsMqBrokerSpecMaintenanceWindowStartTime `json:"maintenance_window_start_time"`
 	PubliclyAccessible         bool                                        `json:"publicly_accessible"`
 	EngineVersion              string                                      `json:"engine_version"`
-	SubnetIds                  string                                      `json:"subnet_ids"`
-	AutoMinorVersionUpgrade    bool                                        `json:"auto_minor_version_upgrade"`
-	HostInstanceType           string                                      `json:"host_instance_type"`
 }
 
 type AwsMqBrokerSpecConfiguration struct {
@@ -39,16 +39,16 @@ type AwsMqBrokerSpecConfiguration struct {
 	Revision int    `json:"revision"`
 }
 
-type AwsMqBrokerSpecUser struct {
-	Groups        string `json:"groups"`
-	Password      string `json:"password"`
-	Username      string `json:"username"`
-	ConsoleAccess bool   `json:"console_access"`
-}
-
 type AwsMqBrokerSpecInstances struct {
 	ConsoleUrl string   `json:"console_url"`
 	Endpoints  []string `json:"endpoints"`
+}
+
+type AwsMqBrokerSpecUser struct {
+	ConsoleAccess bool   `json:"console_access"`
+	Groups        string `json:"groups"`
+	Password      string `json:"password"`
+	Username      string `json:"username"`
 }
 
 type AwsMqBrokerSpecMaintenanceWindowStartTime struct {

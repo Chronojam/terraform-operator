@@ -17,7 +17,6 @@ type AwsConfigConfigRule struct {
 }
 
 type AwsConfigConfigRuleSpec struct {
-	RuleId                    string                          `json:"rule_id"`
 	Arn                       string                          `json:"arn"`
 	Description               string                          `json:"description"`
 	InputParameters           string                          `json:"input_parameters"`
@@ -25,13 +24,14 @@ type AwsConfigConfigRuleSpec struct {
 	Scope                     []AwsConfigConfigRuleSpecScope  `json:"scope"`
 	Source                    []AwsConfigConfigRuleSpecSource `json:"source"`
 	Name                      string                          `json:"name"`
+	RuleId                    string                          `json:"rule_id"`
 }
 
 type AwsConfigConfigRuleSpecScope struct {
+	TagKey                  string `json:"tag_key"`
 	TagValue                string `json:"tag_value"`
 	ComplianceResourceId    string `json:"compliance_resource_id"`
 	ComplianceResourceTypes string `json:"compliance_resource_types"`
-	TagKey                  string `json:"tag_key"`
 }
 
 type AwsConfigConfigRuleSpecSource struct {

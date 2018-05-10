@@ -17,41 +17,41 @@ type AwsLaunchConfiguration struct {
 }
 
 type AwsLaunchConfigurationSpec struct {
-	UserData                     string                                         `json:"user_data"`
 	VpcClassicLinkSecurityGroups string                                         `json:"vpc_classic_link_security_groups"`
-	SpotPrice                    string                                         `json:"spot_price"`
 	EbsOptimized                 bool                                           `json:"ebs_optimized"`
-	IamInstanceProfile           string                                         `json:"iam_instance_profile"`
+	PlacementTenancy             string                                         `json:"placement_tenancy"`
 	InstanceType                 string                                         `json:"instance_type"`
-	KeyName                      string                                         `json:"key_name"`
-	UserDataBase64               string                                         `json:"user_data_base64"`
-	SecurityGroups               string                                         `json:"security_groups"`
-	EbsBlockDevice               AwsLaunchConfigurationSpecEbsBlockDevice       `json:"ebs_block_device"`
 	NamePrefix                   string                                         `json:"name_prefix"`
-	ImageId                      string                                         `json:"image_id"`
+	SecurityGroups               string                                         `json:"security_groups"`
 	VpcClassicLinkId             string                                         `json:"vpc_classic_link_id"`
 	AssociatePublicIpAddress     bool                                           `json:"associate_public_ip_address"`
-	PlacementTenancy             string                                         `json:"placement_tenancy"`
 	EnableMonitoring             bool                                           `json:"enable_monitoring"`
-	EphemeralBlockDevice         AwsLaunchConfigurationSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
-	RootBlockDevice              []AwsLaunchConfigurationSpecRootBlockDevice    `json:"root_block_device"`
 	Name                         string                                         `json:"name"`
-}
-
-type AwsLaunchConfigurationSpecEbsBlockDevice struct {
-	VolumeSize          int    `json:"volume_size"`
-	VolumeType          string `json:"volume_type"`
-	Encrypted           bool   `json:"encrypted"`
-	DeleteOnTermination bool   `json:"delete_on_termination"`
-	DeviceName          string `json:"device_name"`
-	NoDevice            bool   `json:"no_device"`
-	Iops                int    `json:"iops"`
-	SnapshotId          string `json:"snapshot_id"`
+	SpotPrice                    string                                         `json:"spot_price"`
+	EphemeralBlockDevice         AwsLaunchConfigurationSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
+	IamInstanceProfile           string                                         `json:"iam_instance_profile"`
+	KeyName                      string                                         `json:"key_name"`
+	UserData                     string                                         `json:"user_data"`
+	UserDataBase64               string                                         `json:"user_data_base64"`
+	EbsBlockDevice               AwsLaunchConfigurationSpecEbsBlockDevice       `json:"ebs_block_device"`
+	RootBlockDevice              []AwsLaunchConfigurationSpecRootBlockDevice    `json:"root_block_device"`
+	ImageId                      string                                         `json:"image_id"`
 }
 
 type AwsLaunchConfigurationSpecEphemeralBlockDevice struct {
 	DeviceName  string `json:"device_name"`
 	VirtualName string `json:"virtual_name"`
+}
+
+type AwsLaunchConfigurationSpecEbsBlockDevice struct {
+	NoDevice            bool   `json:"no_device"`
+	Iops                int    `json:"iops"`
+	SnapshotId          string `json:"snapshot_id"`
+	VolumeSize          int    `json:"volume_size"`
+	VolumeType          string `json:"volume_type"`
+	Encrypted           bool   `json:"encrypted"`
+	DeleteOnTermination bool   `json:"delete_on_termination"`
+	DeviceName          string `json:"device_name"`
 }
 
 type AwsLaunchConfigurationSpecRootBlockDevice struct {

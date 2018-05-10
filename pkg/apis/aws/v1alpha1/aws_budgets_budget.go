@@ -17,31 +17,31 @@ type AwsBudgetsBudget struct {
 }
 
 type AwsBudgetsBudgetSpec struct {
+	Name            string                          `json:"name"`
 	LimitUnit       string                          `json:"limit_unit"`
 	CostTypes       []AwsBudgetsBudgetSpecCostTypes `json:"cost_types"`
+	TimePeriodStart string                          `json:"time_period_start"`
 	TimePeriodEnd   string                          `json:"time_period_end"`
 	TimeUnit        string                          `json:"time_unit"`
-	Name            string                          `json:"name"`
-	NamePrefix      string                          `json:"name_prefix"`
+	CostFilters     map[string]string               `json:"cost_filters"`
+	AccountId       string                          `json:"account_id"`
 	BudgetType      string                          `json:"budget_type"`
 	LimitAmount     string                          `json:"limit_amount"`
-	AccountId       string                          `json:"account_id"`
-	TimePeriodStart string                          `json:"time_period_start"`
-	CostFilters     map[string]string               `json:"cost_filters"`
+	NamePrefix      string                          `json:"name_prefix"`
 }
 
 type AwsBudgetsBudgetSpecCostTypes struct {
+	IncludeDiscount          bool `json:"include_discount"`
 	IncludeOtherSubscription bool `json:"include_other_subscription"`
-	IncludeUpfront           bool `json:"include_upfront"`
+	IncludeRecurring         bool `json:"include_recurring"`
 	UseAmortized             bool `json:"use_amortized"`
 	UseBlended               bool `json:"use_blended"`
 	IncludeCredit            bool `json:"include_credit"`
-	IncludeDiscount          bool `json:"include_discount"`
-	IncludeRecurring         bool `json:"include_recurring"`
-	IncludeRefund            bool `json:"include_refund"`
 	IncludeSubscription      bool `json:"include_subscription"`
 	IncludeSupport           bool `json:"include_support"`
 	IncludeTax               bool `json:"include_tax"`
+	IncludeUpfront           bool `json:"include_upfront"`
+	IncludeRefund            bool `json:"include_refund"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,10 +17,10 @@ type AwsEcrRepository struct {
 }
 
 type AwsEcrRepositorySpec struct {
-	Arn           string `json:"arn"`
 	RegistryId    string `json:"registry_id"`
 	RepositoryUrl string `json:"repository_url"`
 	Name          string `json:"name"`
+	Arn           string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

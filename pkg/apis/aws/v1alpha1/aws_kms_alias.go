@@ -17,11 +17,11 @@ type AwsKmsAlias struct {
 }
 
 type AwsKmsAliasSpec struct {
-	NamePrefix   string `json:"name_prefix"`
 	TargetKeyId  string `json:"target_key_id"`
 	TargetKeyArn string `json:"target_key_arn"`
 	Arn          string `json:"arn"`
 	Name         string `json:"name"`
+	NamePrefix   string `json:"name_prefix"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

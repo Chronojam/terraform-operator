@@ -1,0 +1,13 @@
+
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: awscloud9environmentec2s.chronojam.co.uk
+spec:
+  group: chronojam.co.uk
+  version: v1alpha1
+  names:
+    kind: AwsCloud9EnvironmentEc2
+    plural: awscloud9environmentec2s
+  scope: Namespaced
+

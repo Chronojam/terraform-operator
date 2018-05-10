@@ -17,22 +17,28 @@ type AwsElastictranscoderPipeline struct {
 }
 
 type AwsElastictranscoderPipelineSpec struct {
-	AwsKmsKeyArn               string                                                     `json:"aws_kms_key_arn"`
-	ContentConfig              AwsElastictranscoderPipelineSpecContentConfig              `json:"content_config"`
 	Name                       string                                                     `json:"name"`
-	Notifications              AwsElastictranscoderPipelineSpecNotifications              `json:"notifications"`
-	ThumbnailConfigPermissions AwsElastictranscoderPipelineSpecThumbnailConfigPermissions `json:"thumbnail_config_permissions"`
-	Arn                        string                                                     `json:"arn"`
-	ContentConfigPermissions   AwsElastictranscoderPipelineSpecContentConfigPermissions   `json:"content_config_permissions"`
-	InputBucket                string                                                     `json:"input_bucket"`
-	OutputBucket               string                                                     `json:"output_bucket"`
 	Role                       string                                                     `json:"role"`
 	ThumbnailConfig            AwsElastictranscoderPipelineSpecThumbnailConfig            `json:"thumbnail_config"`
+	ThumbnailConfigPermissions AwsElastictranscoderPipelineSpecThumbnailConfigPermissions `json:"thumbnail_config_permissions"`
+	Arn                        string                                                     `json:"arn"`
+	AwsKmsKeyArn               string                                                     `json:"aws_kms_key_arn"`
+	InputBucket                string                                                     `json:"input_bucket"`
+	Notifications              AwsElastictranscoderPipelineSpecNotifications              `json:"notifications"`
+	OutputBucket               string                                                     `json:"output_bucket"`
+	ContentConfig              AwsElastictranscoderPipelineSpecContentConfig              `json:"content_config"`
+	ContentConfigPermissions   AwsElastictranscoderPipelineSpecContentConfigPermissions   `json:"content_config_permissions"`
 }
 
-type AwsElastictranscoderPipelineSpecContentConfig struct {
+type AwsElastictranscoderPipelineSpecThumbnailConfig struct {
 	Bucket       string `json:"bucket"`
 	StorageClass string `json:"storage_class"`
+}
+
+type AwsElastictranscoderPipelineSpecThumbnailConfigPermissions struct {
+	Access      []string `json:"access"`
+	Grantee     string   `json:"grantee"`
+	GranteeType string   `json:"grantee_type"`
 }
 
 type AwsElastictranscoderPipelineSpecNotifications struct {
@@ -42,21 +48,15 @@ type AwsElastictranscoderPipelineSpecNotifications struct {
 	Error       string `json:"error"`
 }
 
-type AwsElastictranscoderPipelineSpecThumbnailConfigPermissions struct {
-	Access      []string `json:"access"`
-	Grantee     string   `json:"grantee"`
-	GranteeType string   `json:"grantee_type"`
+type AwsElastictranscoderPipelineSpecContentConfig struct {
+	Bucket       string `json:"bucket"`
+	StorageClass string `json:"storage_class"`
 }
 
 type AwsElastictranscoderPipelineSpecContentConfigPermissions struct {
 	Access      []string `json:"access"`
 	Grantee     string   `json:"grantee"`
 	GranteeType string   `json:"grantee_type"`
-}
-
-type AwsElastictranscoderPipelineSpecThumbnailConfig struct {
-	Bucket       string `json:"bucket"`
-	StorageClass string `json:"storage_class"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

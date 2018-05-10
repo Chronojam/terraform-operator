@@ -1,5 +1,5 @@
 /*
-Copyright The Kubernetes Authors.
+Copyright 2018 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -33,6 +33,14 @@ type AwsAcmCertificateValidationListerExpansion interface{}
 // AwsAcmCertificateValidationNamespaceListerExpansion allows custom methods to be added to
 // AwsAcmCertificateValidationNamespaceLister.
 type AwsAcmCertificateValidationNamespaceListerExpansion interface{}
+
+// AwsAcmpcaCertificateAuthorityListerExpansion allows custom methods to be added to
+// AwsAcmpcaCertificateAuthorityLister.
+type AwsAcmpcaCertificateAuthorityListerExpansion interface{}
+
+// AwsAcmpcaCertificateAuthorityNamespaceListerExpansion allows custom methods to be added to
+// AwsAcmpcaCertificateAuthorityNamespaceLister.
+type AwsAcmpcaCertificateAuthorityNamespaceListerExpansion interface{}
 
 // AwsAlbListerExpansion allows custom methods to be added to
 // AwsAlbLister.
@@ -1257,6 +1265,14 @@ type AwsGlueCatalogDatabaseListerExpansion interface{}
 // AwsGlueCatalogDatabaseNamespaceListerExpansion allows custom methods to be added to
 // AwsGlueCatalogDatabaseNamespaceLister.
 type AwsGlueCatalogDatabaseNamespaceListerExpansion interface{}
+
+// AwsGlueCatalogTableListerExpansion allows custom methods to be added to
+// AwsGlueCatalogTableLister.
+type AwsGlueCatalogTableListerExpansion interface{}
+
+// AwsGlueCatalogTableNamespaceListerExpansion allows custom methods to be added to
+// AwsGlueCatalogTableNamespaceLister.
+type AwsGlueCatalogTableNamespaceListerExpansion interface{}
 
 // AwsGlueConnectionListerExpansion allows custom methods to be added to
 // AwsGlueConnectionLister.

@@ -17,9 +17,9 @@ type AwsSesReceiptFilter struct {
 }
 
 type AwsSesReceiptFilterSpec struct {
-	Policy string `json:"policy"`
 	Name   string `json:"name"`
 	Cidr   string `json:"cidr"`
+	Policy string `json:"policy"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

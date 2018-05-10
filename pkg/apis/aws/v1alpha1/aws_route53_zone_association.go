@@ -17,9 +17,9 @@ type AwsRoute53ZoneAssociation struct {
 }
 
 type AwsRoute53ZoneAssociationSpec struct {
+	ZoneId    string `json:"zone_id"`
 	VpcId     string `json:"vpc_id"`
 	VpcRegion string `json:"vpc_region"`
-	ZoneId    string `json:"zone_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

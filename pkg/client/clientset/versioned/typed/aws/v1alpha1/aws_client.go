@@ -1,5 +1,5 @@
 /*
-Copyright The Kubernetes Authors.
+Copyright 2018 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ type ChronojamV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	AwsAcmCertificatesGetter
 	AwsAcmCertificateValidationsGetter
+	AwsAcmpcaCertificateAuthoritiesGetter
 	AwsAlbsGetter
 	AwsAlbListenersGetter
 	AwsAlbListenerCertificatesGetter
@@ -182,6 +183,7 @@ type ChronojamV1alpha1Interface interface {
 	AwsGameliftFleetsGetter
 	AwsGlacierVaultsGetter
 	AwsGlueCatalogDatabasesGetter
+	AwsGlueCatalogTablesGetter
 	AwsGlueConnectionsGetter
 	AwsGlueJobsGetter
 	AwsGuarddutyDetectorsGetter
@@ -402,6 +404,10 @@ func (c *ChronojamV1alpha1Client) AwsAcmCertificates(namespace string) AwsAcmCer
 
 func (c *ChronojamV1alpha1Client) AwsAcmCertificateValidations(namespace string) AwsAcmCertificateValidationInterface {
 	return newAwsAcmCertificateValidations(c, namespace)
+}
+
+func (c *ChronojamV1alpha1Client) AwsAcmpcaCertificateAuthorities(namespace string) AwsAcmpcaCertificateAuthorityInterface {
+	return newAwsAcmpcaCertificateAuthorities(c, namespace)
 }
 
 func (c *ChronojamV1alpha1Client) AwsAlbs(namespace string) AwsAlbInterface {
@@ -1014,6 +1020,10 @@ func (c *ChronojamV1alpha1Client) AwsGlacierVaults(namespace string) AwsGlacierV
 
 func (c *ChronojamV1alpha1Client) AwsGlueCatalogDatabases(namespace string) AwsGlueCatalogDatabaseInterface {
 	return newAwsGlueCatalogDatabases(c, namespace)
+}
+
+func (c *ChronojamV1alpha1Client) AwsGlueCatalogTables(namespace string) AwsGlueCatalogTableInterface {
+	return newAwsGlueCatalogTables(c, namespace)
 }
 
 func (c *ChronojamV1alpha1Client) AwsGlueConnections(namespace string) AwsGlueConnectionInterface {

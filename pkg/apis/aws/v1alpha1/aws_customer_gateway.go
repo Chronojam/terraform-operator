@@ -17,10 +17,10 @@ type AwsCustomerGateway struct {
 }
 
 type AwsCustomerGatewaySpec struct {
-	BgpAsn    int               `json:"bgp_asn"`
 	IpAddress string            `json:"ip_address"`
 	Type      string            `json:"type"`
 	Tags      map[string]string `json:"tags"`
+	BgpAsn    int               `json:"bgp_asn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

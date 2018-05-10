@@ -17,15 +17,15 @@ type AwsSecretsmanagerSecret struct {
 }
 
 type AwsSecretsmanagerSecretSpec struct {
-	RotationRules        []AwsSecretsmanagerSecretSpecRotationRules `json:"rotation_rules"`
-	Tags                 map[string]string                          `json:"tags"`
 	Arn                  string                                     `json:"arn"`
+	KmsKeyId             string                                     `json:"kms_key_id"`
+	RecoveryWindowInDays int                                        `json:"recovery_window_in_days"`
+	RotationRules        []AwsSecretsmanagerSecretSpecRotationRules `json:"rotation_rules"`
+	Description          string                                     `json:"description"`
+	Name                 string                                     `json:"name"`
 	RotationEnabled      bool                                       `json:"rotation_enabled"`
 	RotationLambdaArn    string                                     `json:"rotation_lambda_arn"`
-	RecoveryWindowInDays int                                        `json:"recovery_window_in_days"`
-	Description          string                                     `json:"description"`
-	KmsKeyId             string                                     `json:"kms_key_id"`
-	Name                 string                                     `json:"name"`
+	Tags                 map[string]string                          `json:"tags"`
 }
 
 type AwsSecretsmanagerSecretSpecRotationRules struct {

@@ -17,32 +17,23 @@ type AwsOpsworksApplication struct {
 }
 
 type AwsOpsworksApplicationSpec struct {
-	Type                   string                                       `json:"type"`
-	DataSourceDatabaseName string                                       `json:"data_source_database_name"`
-	Domains                []string                                     `json:"domains"`
-	Name                   string                                       `json:"name"`
-	DocumentRoot           string                                       `json:"document_root"`
-	AppSource              []AwsOpsworksApplicationSpecAppSource        `json:"app_source"`
 	Environment            AwsOpsworksApplicationSpecEnvironment        `json:"environment"`
 	EnableSsl              bool                                         `json:"enable_ssl"`
-	ShortName              string                                       `json:"short_name"`
-	AwsFlowRubySettings    string                                       `json:"aws_flow_ruby_settings"`
-	Description            string                                       `json:"description"`
-	SslConfiguration       []AwsOpsworksApplicationSpecSslConfiguration `json:"ssl_configuration"`
-	StackId                string                                       `json:"stack_id"`
-	RailsEnv               string                                       `json:"rails_env"`
 	AutoBundleOnDeploy     string                                       `json:"auto_bundle_on_deploy"`
 	DataSourceType         string                                       `json:"data_source_type"`
+	Domains                []string                                     `json:"domains"`
+	DocumentRoot           string                                       `json:"document_root"`
+	AwsFlowRubySettings    string                                       `json:"aws_flow_ruby_settings"`
+	DataSourceDatabaseName string                                       `json:"data_source_database_name"`
 	DataSourceArn          string                                       `json:"data_source_arn"`
-}
-
-type AwsOpsworksApplicationSpecAppSource struct {
-	Password string `json:"password"`
-	Revision string `json:"revision"`
-	SshKey   string `json:"ssh_key"`
-	Type     string `json:"type"`
-	Url      string `json:"url"`
-	Username string `json:"username"`
+	Description            string                                       `json:"description"`
+	SslConfiguration       []AwsOpsworksApplicationSpecSslConfiguration `json:"ssl_configuration"`
+	Name                   string                                       `json:"name"`
+	ShortName              string                                       `json:"short_name"`
+	RailsEnv               string                                       `json:"rails_env"`
+	AppSource              []AwsOpsworksApplicationSpecAppSource        `json:"app_source"`
+	Type                   string                                       `json:"type"`
+	StackId                string                                       `json:"stack_id"`
 }
 
 type AwsOpsworksApplicationSpecEnvironment struct {
@@ -52,9 +43,18 @@ type AwsOpsworksApplicationSpecEnvironment struct {
 }
 
 type AwsOpsworksApplicationSpecSslConfiguration struct {
-	Certificate string `json:"certificate"`
 	PrivateKey  string `json:"private_key"`
 	Chain       string `json:"chain"`
+	Certificate string `json:"certificate"`
+}
+
+type AwsOpsworksApplicationSpecAppSource struct {
+	Type     string `json:"type"`
+	Url      string `json:"url"`
+	Username string `json:"username"`
+	Password string `json:"password"`
+	Revision string `json:"revision"`
+	SshKey   string `json:"ssh_key"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

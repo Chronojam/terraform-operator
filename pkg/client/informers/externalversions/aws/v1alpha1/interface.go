@@ -1,5 +1,5 @@
 /*
-Copyright The Kubernetes Authors.
+Copyright 2018 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -28,6 +28,8 @@ type Interface interface {
 	AwsAcmCertificates() AwsAcmCertificateInformer
 	// AwsAcmCertificateValidations returns a AwsAcmCertificateValidationInformer.
 	AwsAcmCertificateValidations() AwsAcmCertificateValidationInformer
+	// AwsAcmpcaCertificateAuthorities returns a AwsAcmpcaCertificateAuthorityInformer.
+	AwsAcmpcaCertificateAuthorities() AwsAcmpcaCertificateAuthorityInformer
 	// AwsAlbs returns a AwsAlbInformer.
 	AwsAlbs() AwsAlbInformer
 	// AwsAlbListeners returns a AwsAlbListenerInformer.
@@ -334,6 +336,8 @@ type Interface interface {
 	AwsGlacierVaults() AwsGlacierVaultInformer
 	// AwsGlueCatalogDatabases returns a AwsGlueCatalogDatabaseInformer.
 	AwsGlueCatalogDatabases() AwsGlueCatalogDatabaseInformer
+	// AwsGlueCatalogTables returns a AwsGlueCatalogTableInformer.
+	AwsGlueCatalogTables() AwsGlueCatalogTableInformer
 	// AwsGlueConnections returns a AwsGlueConnectionInformer.
 	AwsGlueConnections() AwsGlueConnectionInformer
 	// AwsGlueJobs returns a AwsGlueJobInformer.
@@ -769,6 +773,11 @@ func (v *version) AwsAcmCertificates() AwsAcmCertificateInformer {
 // AwsAcmCertificateValidations returns a AwsAcmCertificateValidationInformer.
 func (v *version) AwsAcmCertificateValidations() AwsAcmCertificateValidationInformer {
 	return &awsAcmCertificateValidationInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// AwsAcmpcaCertificateAuthorities returns a AwsAcmpcaCertificateAuthorityInformer.
+func (v *version) AwsAcmpcaCertificateAuthorities() AwsAcmpcaCertificateAuthorityInformer {
+	return &awsAcmpcaCertificateAuthorityInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // AwsAlbs returns a AwsAlbInformer.
@@ -1534,6 +1543,11 @@ func (v *version) AwsGlacierVaults() AwsGlacierVaultInformer {
 // AwsGlueCatalogDatabases returns a AwsGlueCatalogDatabaseInformer.
 func (v *version) AwsGlueCatalogDatabases() AwsGlueCatalogDatabaseInformer {
 	return &awsGlueCatalogDatabaseInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// AwsGlueCatalogTables returns a AwsGlueCatalogTableInformer.
+func (v *version) AwsGlueCatalogTables() AwsGlueCatalogTableInformer {
+	return &awsGlueCatalogTableInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // AwsGlueConnections returns a AwsGlueConnectionInformer.

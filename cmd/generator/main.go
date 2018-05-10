@@ -20,6 +20,17 @@ func main() {
 	doc.WriteToBuffer("package v1alpha1")
 	doc.WriteToFile("pkg/apis/aws/v1alpha1/doc.go")
 
+	groupName, err := generator.NewFile("aws")
+	if err != nil {
+		panic(err)
+	}
+
+	groupName.WriteToBuffer(`
+	const GroupName = "chronojam.co.uk"	
+	`)
+
+	groupName.WriteToFile("pkg/apis/aws/group.go")
+
 	register, err := generator.NewFile("v1alpha1")
 	if err != nil {
 		panic(err)
@@ -31,7 +42,7 @@ func main() {
 		"k8s.io/apimachinery/pkg/runtime"
 		"k8s.io/apimachinery/pkg/runtime/schema"
 
-		"github.com/chronojam/terraform-operator/pkg/apis/aws/v1alpha1"
+		"github.com/chronojam/terraform-operator/pkg/apis/aws"
 	)
 
 	var SchemeGroupVersion = schema.GroupVersion{
@@ -51,7 +62,7 @@ func main() {
 	`)
 
 	for k, v := range prov.ResourcesMap {
-		register.WriteToBuffer(generator.CamelAndTitle(k) + "{},")
+		register.WriteToBuffer("&" + generator.CamelAndTitle(k) + "{},")
 		f, err := generator.NewFile("v1alpha1")
 		if err != nil {
 			panic(err)

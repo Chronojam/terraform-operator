@@ -24,8 +24,8 @@ type AwsLbSslNegotiationPolicySpec struct {
 }
 
 type AwsLbSslNegotiationPolicySpecAttribute struct {
-	Value string `json:"value"`
 	Name  string `json:"name"`
+	Value string `json:"value"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

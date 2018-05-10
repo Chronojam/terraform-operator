@@ -17,23 +17,23 @@ type AwsRoute53Record struct {
 }
 
 type AwsRoute53RecordSpec struct {
+	SetIdentifier                 string                                         `json:"set_identifier"`
 	LatencyRoutingPolicy          []AwsRoute53RecordSpecLatencyRoutingPolicy     `json:"latency_routing_policy"`
 	GeolocationRoutingPolicy      []AwsRoute53RecordSpecGeolocationRoutingPolicy `json:"geolocation_routing_policy"`
-	Records                       string                                         `json:"records"`
-	Type                          string                                         `json:"type"`
-	Failover                      string                                         `json:"failover"`
-	Name                          string                                         `json:"name"`
 	HealthCheckId                 string                                         `json:"health_check_id"`
-	AllowOverwrite                bool                                           `json:"allow_overwrite"`
-	Weight                        int                                            `json:"weight"`
-	WeightedRoutingPolicy         []AwsRoute53RecordSpecWeightedRoutingPolicy    `json:"weighted_routing_policy"`
-	Ttl                           int                                            `json:"ttl"`
-	SetIdentifier                 string                                         `json:"set_identifier"`
-	Alias                         AwsRoute53RecordSpecAlias                      `json:"alias"`
-	FailoverRoutingPolicy         []AwsRoute53RecordSpecFailoverRoutingPolicy    `json:"failover_routing_policy"`
-	MultivalueAnswerRoutingPolicy bool                                           `json:"multivalue_answer_routing_policy"`
-	Fqdn                          string                                         `json:"fqdn"`
+	Type                          string                                         `json:"type"`
 	ZoneId                        string                                         `json:"zone_id"`
+	Ttl                           int                                            `json:"ttl"`
+	Alias                         AwsRoute53RecordSpecAlias                      `json:"alias"`
+	Failover                      string                                         `json:"failover"`
+	WeightedRoutingPolicy         []AwsRoute53RecordSpecWeightedRoutingPolicy    `json:"weighted_routing_policy"`
+	MultivalueAnswerRoutingPolicy bool                                           `json:"multivalue_answer_routing_policy"`
+	AllowOverwrite                bool                                           `json:"allow_overwrite"`
+	Name                          string                                         `json:"name"`
+	Records                       string                                         `json:"records"`
+	Fqdn                          string                                         `json:"fqdn"`
+	FailoverRoutingPolicy         []AwsRoute53RecordSpecFailoverRoutingPolicy    `json:"failover_routing_policy"`
+	Weight                        int                                            `json:"weight"`
 }
 
 type AwsRoute53RecordSpecLatencyRoutingPolicy struct {
@@ -41,19 +41,19 @@ type AwsRoute53RecordSpecLatencyRoutingPolicy struct {
 }
 
 type AwsRoute53RecordSpecGeolocationRoutingPolicy struct {
-	Subdivision string `json:"subdivision"`
 	Continent   string `json:"continent"`
 	Country     string `json:"country"`
-}
-
-type AwsRoute53RecordSpecWeightedRoutingPolicy struct {
-	Weight int `json:"weight"`
+	Subdivision string `json:"subdivision"`
 }
 
 type AwsRoute53RecordSpecAlias struct {
 	ZoneId               string `json:"zone_id"`
 	Name                 string `json:"name"`
 	EvaluateTargetHealth bool   `json:"evaluate_target_health"`
+}
+
+type AwsRoute53RecordSpecWeightedRoutingPolicy struct {
+	Weight int `json:"weight"`
 }
 
 type AwsRoute53RecordSpecFailoverRoutingPolicy struct {

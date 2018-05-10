@@ -17,10 +17,10 @@ type AwsDmsCertificate struct {
 }
 
 type AwsDmsCertificateSpec struct {
+	CertificateWallet string `json:"certificate_wallet"`
 	CertificateArn    string `json:"certificate_arn"`
 	CertificateId     string `json:"certificate_id"`
 	CertificatePem    string `json:"certificate_pem"`
-	CertificateWallet string `json:"certificate_wallet"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,21 +17,21 @@ type AwsDefaultVpc struct {
 }
 
 type AwsDefaultVpcSpec struct {
-	EnableClassiclinkDnsSupport  bool              `json:"enable_classiclink_dns_support"`
-	DhcpOptionsId                string            `json:"dhcp_options_id"`
-	Ipv6AssociationId            string            `json:"ipv6_association_id"`
-	CidrBlock                    string            `json:"cidr_block"`
 	EnableDnsSupport             bool              `json:"enable_dns_support"`
+	EnableClassiclinkDnsSupport  bool              `json:"enable_classiclink_dns_support"`
 	MainRouteTableId             string            `json:"main_route_table_id"`
-	DefaultSecurityGroupId       string            `json:"default_security_group_id"`
-	InstanceTenancy              string            `json:"instance_tenancy"`
-	EnableDnsHostnames           bool              `json:"enable_dns_hostnames"`
-	AssignGeneratedIpv6CidrBlock bool              `json:"assign_generated_ipv6_cidr_block"`
-	Tags                         map[string]string `json:"tags"`
-	EnableClassiclink            bool              `json:"enable_classiclink"`
 	DefaultNetworkAclId          string            `json:"default_network_acl_id"`
+	DhcpOptionsId                string            `json:"dhcp_options_id"`
+	DefaultSecurityGroupId       string            `json:"default_security_group_id"`
+	CidrBlock                    string            `json:"cidr_block"`
 	DefaultRouteTableId          string            `json:"default_route_table_id"`
+	Ipv6AssociationId            string            `json:"ipv6_association_id"`
+	Tags                         map[string]string `json:"tags"`
+	EnableDnsHostnames           bool              `json:"enable_dns_hostnames"`
+	EnableClassiclink            bool              `json:"enable_classiclink"`
+	AssignGeneratedIpv6CidrBlock bool              `json:"assign_generated_ipv6_cidr_block"`
 	Ipv6CidrBlock                string            `json:"ipv6_cidr_block"`
+	InstanceTenancy              string            `json:"instance_tenancy"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

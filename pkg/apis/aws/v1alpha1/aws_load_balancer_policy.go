@@ -17,10 +17,10 @@ type AwsLoadBalancerPolicy struct {
 }
 
 type AwsLoadBalancerPolicySpec struct {
+	LoadBalancerName string                                   `json:"load_balancer_name"`
 	PolicyName       string                                   `json:"policy_name"`
 	PolicyTypeName   string                                   `json:"policy_type_name"`
 	PolicyAttribute  AwsLoadBalancerPolicySpecPolicyAttribute `json:"policy_attribute"`
-	LoadBalancerName string                                   `json:"load_balancer_name"`
 }
 
 type AwsLoadBalancerPolicySpecPolicyAttribute struct {

@@ -18,21 +18,15 @@ type AwsSsmMaintenanceWindowTask struct {
 
 type AwsSsmMaintenanceWindowTaskSpec struct {
 	WindowId       string                                          `json:"window_id"`
-	LoggingInfo    []AwsSsmMaintenanceWindowTaskSpecLoggingInfo    `json:"logging_info"`
 	MaxConcurrency string                                          `json:"max_concurrency"`
+	Targets        []AwsSsmMaintenanceWindowTaskSpecTargets        `json:"targets"`
+	Priority       int                                             `json:"priority"`
+	TaskParameters []AwsSsmMaintenanceWindowTaskSpecTaskParameters `json:"task_parameters"`
 	MaxErrors      string                                          `json:"max_errors"`
 	TaskType       string                                          `json:"task_type"`
 	TaskArn        string                                          `json:"task_arn"`
 	ServiceRoleArn string                                          `json:"service_role_arn"`
-	Targets        []AwsSsmMaintenanceWindowTaskSpecTargets        `json:"targets"`
-	Priority       int                                             `json:"priority"`
-	TaskParameters []AwsSsmMaintenanceWindowTaskSpecTaskParameters `json:"task_parameters"`
-}
-
-type AwsSsmMaintenanceWindowTaskSpecLoggingInfo struct {
-	S3BucketName   string `json:"s3_bucket_name"`
-	S3Region       string `json:"s3_region"`
-	S3BucketPrefix string `json:"s3_bucket_prefix"`
+	LoggingInfo    []AwsSsmMaintenanceWindowTaskSpecLoggingInfo    `json:"logging_info"`
 }
 
 type AwsSsmMaintenanceWindowTaskSpecTargets struct {
@@ -43,6 +37,12 @@ type AwsSsmMaintenanceWindowTaskSpecTargets struct {
 type AwsSsmMaintenanceWindowTaskSpecTaskParameters struct {
 	Name   string   `json:"name"`
 	Values []string `json:"values"`
+}
+
+type AwsSsmMaintenanceWindowTaskSpecLoggingInfo struct {
+	S3BucketName   string `json:"s3_bucket_name"`
+	S3Region       string `json:"s3_region"`
+	S3BucketPrefix string `json:"s3_bucket_prefix"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

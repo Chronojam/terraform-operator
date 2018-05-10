@@ -17,37 +17,32 @@ type AwsEcsService struct {
 }
 
 type AwsEcsServiceSpec struct {
-	Cluster                         string                                      `json:"cluster"`
 	TaskDefinition                  string                                      `json:"task_definition"`
-	LaunchType                      string                                      `json:"launch_type"`
-	NetworkConfiguration            []AwsEcsServiceSpecNetworkConfiguration     `json:"network_configuration"`
+	DesiredCount                    int                                         `json:"desired_count"`
+	DeploymentMaximumPercent        int                                         `json:"deployment_maximum_percent"`
+	PlacementStrategy               AwsEcsServiceSpecPlacementStrategy          `json:"placement_strategy"`
+	Cluster                         string                                      `json:"cluster"`
 	HealthCheckGracePeriodSeconds   int                                         `json:"health_check_grace_period_seconds"`
+	IamRole                         string                                      `json:"iam_role"`
 	DeploymentMinimumHealthyPercent int                                         `json:"deployment_minimum_healthy_percent"`
+	NetworkConfiguration            []AwsEcsServiceSpecNetworkConfiguration     `json:"network_configuration"`
+	OrderedPlacementStrategy        []AwsEcsServiceSpecOrderedPlacementStrategy `json:"ordered_placement_strategy"`
+	PlacementConstraints            AwsEcsServiceSpecPlacementConstraints       `json:"placement_constraints"`
 	ServiceRegistries               AwsEcsServiceSpecServiceRegistries          `json:"service_registries"`
 	Name                            string                                      `json:"name"`
-	PlacementConstraints            AwsEcsServiceSpecPlacementConstraints       `json:"placement_constraints"`
-	OrderedPlacementStrategy        []AwsEcsServiceSpecOrderedPlacementStrategy `json:"ordered_placement_strategy"`
-	DesiredCount                    int                                         `json:"desired_count"`
-	IamRole                         string                                      `json:"iam_role"`
-	DeploymentMaximumPercent        int                                         `json:"deployment_maximum_percent"`
+	LaunchType                      string                                      `json:"launch_type"`
 	LoadBalancer                    AwsEcsServiceSpecLoadBalancer               `json:"load_balancer"`
-	PlacementStrategy               AwsEcsServiceSpecPlacementStrategy          `json:"placement_strategy"`
+}
+
+type AwsEcsServiceSpecPlacementStrategy struct {
+	Type  string `json:"type"`
+	Field string `json:"field"`
 }
 
 type AwsEcsServiceSpecNetworkConfiguration struct {
-	SecurityGroups string `json:"security_groups"`
 	Subnets        string `json:"subnets"`
 	AssignPublicIp bool   `json:"assign_public_ip"`
-}
-
-type AwsEcsServiceSpecServiceRegistries struct {
-	Port        int    `json:"port"`
-	RegistryArn string `json:"registry_arn"`
-}
-
-type AwsEcsServiceSpecPlacementConstraints struct {
-	Type       string `json:"type"`
-	Expression string `json:"expression"`
+	SecurityGroups string `json:"security_groups"`
 }
 
 type AwsEcsServiceSpecOrderedPlacementStrategy struct {
@@ -55,16 +50,21 @@ type AwsEcsServiceSpecOrderedPlacementStrategy struct {
 	Field string `json:"field"`
 }
 
+type AwsEcsServiceSpecPlacementConstraints struct {
+	Expression string `json:"expression"`
+	Type       string `json:"type"`
+}
+
+type AwsEcsServiceSpecServiceRegistries struct {
+	Port        int    `json:"port"`
+	RegistryArn string `json:"registry_arn"`
+}
+
 type AwsEcsServiceSpecLoadBalancer struct {
 	ElbName        string `json:"elb_name"`
 	TargetGroupArn string `json:"target_group_arn"`
 	ContainerName  string `json:"container_name"`
 	ContainerPort  int    `json:"container_port"`
-}
-
-type AwsEcsServiceSpecPlacementStrategy struct {
-	Type  string `json:"type"`
-	Field string `json:"field"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

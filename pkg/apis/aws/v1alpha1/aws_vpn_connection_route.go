@@ -17,8 +17,8 @@ type AwsVpnConnectionRoute struct {
 }
 
 type AwsVpnConnectionRouteSpec struct {
-	VpnConnectionId      string `json:"vpn_connection_id"`
 	DestinationCidrBlock string `json:"destination_cidr_block"`
+	VpnConnectionId      string `json:"vpn_connection_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

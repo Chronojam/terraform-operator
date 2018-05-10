@@ -23,11 +23,11 @@ type AwsCodecommitTriggerSpec struct {
 }
 
 type AwsCodecommitTriggerSpecTrigger struct {
+	Events         []string `json:"events"`
 	Name           string   `json:"name"`
 	DestinationArn string   `json:"destination_arn"`
 	CustomData     string   `json:"custom_data"`
 	Branches       []string `json:"branches"`
-	Events         []string `json:"events"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

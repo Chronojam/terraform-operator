@@ -17,21 +17,21 @@ type AwsDirectoryServiceDirectory struct {
 }
 
 type AwsDirectoryServiceDirectorySpec struct {
+	SecurityGroupId string                                            `json:"security_group_id"`
+	AccessUrl       string                                            `json:"access_url"`
+	Password        string                                            `json:"password"`
+	Alias           string                                            `json:"alias"`
+	ShortName       string                                            `json:"short_name"`
+	VpcSettings     []AwsDirectoryServiceDirectorySpecVpcSettings     `json:"vpc_settings"`
+	ConnectSettings []AwsDirectoryServiceDirectorySpecConnectSettings `json:"connect_settings"`
+	EnableSso       bool                                              `json:"enable_sso"`
+	DnsIpAddresses  string                                            `json:"dns_ip_addresses"`
+	Edition         string                                            `json:"edition"`
+	Name            string                                            `json:"name"`
+	Description     string                                            `json:"description"`
 	Tags            map[string]string                                 `json:"tags"`
 	Type            string                                            `json:"type"`
 	Size            string                                            `json:"size"`
-	ShortName       string                                            `json:"short_name"`
-	VpcSettings     []AwsDirectoryServiceDirectorySpecVpcSettings     `json:"vpc_settings"`
-	EnableSso       bool                                              `json:"enable_sso"`
-	AccessUrl       string                                            `json:"access_url"`
-	Edition         string                                            `json:"edition"`
-	Alias           string                                            `json:"alias"`
-	Description     string                                            `json:"description"`
-	ConnectSettings []AwsDirectoryServiceDirectorySpecConnectSettings `json:"connect_settings"`
-	DnsIpAddresses  string                                            `json:"dns_ip_addresses"`
-	Name            string                                            `json:"name"`
-	SecurityGroupId string                                            `json:"security_group_id"`
-	Password        string                                            `json:"password"`
 }
 
 type AwsDirectoryServiceDirectorySpecVpcSettings struct {

@@ -17,34 +17,34 @@ type AwsAmiCopy struct {
 }
 
 type AwsAmiCopySpec struct {
+	Architecture         string                             `json:"architecture"`
 	RootDeviceName       string                             `json:"root_device_name"`
-	EbsBlockDevice       AwsAmiCopySpecEbsBlockDevice       `json:"ebs_block_device"`
-	Tags                 map[string]string                  `json:"tags"`
-	SourceAmiRegion      string                             `json:"source_ami_region"`
+	RootSnapshotId       string                             `json:"root_snapshot_id"`
+	VirtualizationType   string                             `json:"virtualization_type"`
 	KmsKeyId             string                             `json:"kms_key_id"`
+	ImageLocation        string                             `json:"image_location"`
 	KernelId             string                             `json:"kernel_id"`
 	RamdiskId            string                             `json:"ramdisk_id"`
-	VirtualizationType   string                             `json:"virtualization_type"`
-	ManageEbsSnapshots   bool                               `json:"manage_ebs_snapshots"`
-	ImageLocation        string                             `json:"image_location"`
-	RootSnapshotId       string                             `json:"root_snapshot_id"`
 	SriovNetSupport      string                             `json:"sriov_net_support"`
-	EphemeralBlockDevice AwsAmiCopySpecEphemeralBlockDevice `json:"ephemeral_block_device"`
 	SourceAmiId          string                             `json:"source_ami_id"`
-	Encrypted            bool                               `json:"encrypted"`
-	Architecture         string                             `json:"architecture"`
 	Description          string                             `json:"description"`
+	Encrypted            bool                               `json:"encrypted"`
+	SourceAmiRegion      string                             `json:"source_ami_region"`
 	Name                 string                             `json:"name"`
+	EbsBlockDevice       AwsAmiCopySpecEbsBlockDevice       `json:"ebs_block_device"`
+	EphemeralBlockDevice AwsAmiCopySpecEphemeralBlockDevice `json:"ephemeral_block_device"`
+	Tags                 map[string]string                  `json:"tags"`
+	ManageEbsSnapshots   bool                               `json:"manage_ebs_snapshots"`
 }
 
 type AwsAmiCopySpecEbsBlockDevice struct {
-	SnapshotId          string `json:"snapshot_id"`
-	VolumeSize          int    `json:"volume_size"`
 	VolumeType          string `json:"volume_type"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	DeviceName          string `json:"device_name"`
 	Encrypted           bool   `json:"encrypted"`
 	Iops                int    `json:"iops"`
+	SnapshotId          string `json:"snapshot_id"`
+	VolumeSize          int    `json:"volume_size"`
 }
 
 type AwsAmiCopySpecEphemeralBlockDevice struct {

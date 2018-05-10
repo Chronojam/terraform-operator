@@ -17,30 +17,30 @@ type AwsDaxCluster struct {
 }
 
 type AwsDaxClusterSpec struct {
-	ClusterName           string                   `json:"cluster_name"`
-	AvailabilityZones     string                   `json:"availability_zones"`
+	NotificationTopicArn  string                   `json:"notification_topic_arn"`
 	ParameterGroupName    string                   `json:"parameter_group_name"`
 	MaintenanceWindow     string                   `json:"maintenance_window"`
+	NodeType              string                   `json:"node_type"`
+	Description           string                   `json:"description"`
 	SubnetGroupName       string                   `json:"subnet_group_name"`
 	Tags                  map[string]string        `json:"tags"`
-	Arn                   string                   `json:"arn"`
-	IamRoleArn            string                   `json:"iam_role_arn"`
-	ClusterAddress        string                   `json:"cluster_address"`
-	Nodes                 []AwsDaxClusterSpecNodes `json:"nodes"`
-	NodeType              string                   `json:"node_type"`
-	SecurityGroupIds      string                   `json:"security_group_ids"`
-	Port                  int                      `json:"port"`
-	ReplicationFactor     int                      `json:"replication_factor"`
-	Description           string                   `json:"description"`
-	NotificationTopicArn  string                   `json:"notification_topic_arn"`
 	ConfigurationEndpoint string                   `json:"configuration_endpoint"`
+	ClusterAddress        string                   `json:"cluster_address"`
+	Arn                   string                   `json:"arn"`
+	ClusterName           string                   `json:"cluster_name"`
+	IamRoleArn            string                   `json:"iam_role_arn"`
+	AvailabilityZones     string                   `json:"availability_zones"`
+	SecurityGroupIds      string                   `json:"security_group_ids"`
+	Nodes                 []AwsDaxClusterSpecNodes `json:"nodes"`
+	ReplicationFactor     int                      `json:"replication_factor"`
+	Port                  int                      `json:"port"`
 }
 
 type AwsDaxClusterSpecNodes struct {
-	Id               string `json:"id"`
 	Address          string `json:"address"`
 	Port             int    `json:"port"`
 	AvailabilityZone string `json:"availability_zone"`
+	Id               string `json:"id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

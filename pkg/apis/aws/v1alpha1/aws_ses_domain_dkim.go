@@ -17,8 +17,8 @@ type AwsSesDomainDkim struct {
 }
 
 type AwsSesDomainDkimSpec struct {
-	Domain     string   `json:"domain"`
 	DkimTokens []string `json:"dkim_tokens"`
+	Domain     string   `json:"domain"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

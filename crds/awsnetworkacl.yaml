@@ -1,0 +1,13 @@
+
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: awsnetworkacls.chronojam.co.uk
+spec:
+  group: chronojam.co.uk
+  version: v1alpha1
+  names:
+    kind: AwsNetworkAcl
+    plural: awsnetworkacls
+  scope: Namespaced
+

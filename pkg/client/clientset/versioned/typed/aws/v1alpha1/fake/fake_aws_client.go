@@ -1,5 +1,5 @@
 /*
-Copyright The Kubernetes Authors.
+Copyright 2018 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -34,6 +34,10 @@ func (c *FakeChronojamV1alpha1) AwsAcmCertificates(namespace string) v1alpha1.Aw
 
 func (c *FakeChronojamV1alpha1) AwsAcmCertificateValidations(namespace string) v1alpha1.AwsAcmCertificateValidationInterface {
 	return &FakeAwsAcmCertificateValidations{c, namespace}
+}
+
+func (c *FakeChronojamV1alpha1) AwsAcmpcaCertificateAuthorities(namespace string) v1alpha1.AwsAcmpcaCertificateAuthorityInterface {
+	return &FakeAwsAcmpcaCertificateAuthorities{c, namespace}
 }
 
 func (c *FakeChronojamV1alpha1) AwsAlbs(namespace string) v1alpha1.AwsAlbInterface {
@@ -646,6 +650,10 @@ func (c *FakeChronojamV1alpha1) AwsGlacierVaults(namespace string) v1alpha1.AwsG
 
 func (c *FakeChronojamV1alpha1) AwsGlueCatalogDatabases(namespace string) v1alpha1.AwsGlueCatalogDatabaseInterface {
 	return &FakeAwsGlueCatalogDatabases{c, namespace}
+}
+
+func (c *FakeChronojamV1alpha1) AwsGlueCatalogTables(namespace string) v1alpha1.AwsGlueCatalogTableInterface {
+	return &FakeAwsGlueCatalogTables{c, namespace}
 }
 
 func (c *FakeChronojamV1alpha1) AwsGlueConnections(namespace string) v1alpha1.AwsGlueConnectionInterface {

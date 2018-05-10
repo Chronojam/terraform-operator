@@ -17,15 +17,15 @@ type AwsApiGatewayIntegrationResponse struct {
 }
 
 type AwsApiGatewayIntegrationResponseSpec struct {
+	ContentHandling          string            `json:"content_handling"`
+	HttpMethod               string            `json:"http_method"`
+	ResponseTemplates        map[string]string `json:"response_templates"`
+	ResponseParameters       map[string]string `json:"response_parameters"`
+	ResponseParametersInJson string            `json:"response_parameters_in_json"`
+	RestApiId                string            `json:"rest_api_id"`
 	ResourceId               string            `json:"resource_id"`
 	StatusCode               string            `json:"status_code"`
 	SelectionPattern         string            `json:"selection_pattern"`
-	ResponseTemplates        map[string]string `json:"response_templates"`
-	ResponseParametersInJson string            `json:"response_parameters_in_json"`
-	RestApiId                string            `json:"rest_api_id"`
-	HttpMethod               string            `json:"http_method"`
-	ResponseParameters       map[string]string `json:"response_parameters"`
-	ContentHandling          string            `json:"content_handling"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

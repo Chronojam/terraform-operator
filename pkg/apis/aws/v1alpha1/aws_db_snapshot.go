@@ -17,25 +17,25 @@ type AwsDbSnapshot struct {
 }
 
 type AwsDbSnapshotSpec struct {
-	Port                       int    `json:"port"`
-	SourceRegion               string `json:"source_region"`
-	DbSnapshotIdentifier       string `json:"db_snapshot_identifier"`
+	SnapshotType               string `json:"snapshot_type"`
 	DbInstanceIdentifier       string `json:"db_instance_identifier"`
 	AllocatedStorage           int    `json:"allocated_storage"`
-	EngineVersion              string `json:"engine_version"`
-	LicenseModel               string `json:"license_model"`
-	OptionGroupName            string `json:"option_group_name"`
-	SnapshotType               string `json:"snapshot_type"`
-	AvailabilityZone           string `json:"availability_zone"`
-	Engine                     string `json:"engine"`
-	Iops                       int    `json:"iops"`
-	KmsKeyId                   string `json:"kms_key_id"`
-	Status                     string `json:"status"`
-	DbSnapshotArn              string `json:"db_snapshot_arn"`
-	Encrypted                  bool   `json:"encrypted"`
+	SourceRegion               string `json:"source_region"`
 	SourceDbSnapshotIdentifier string `json:"source_db_snapshot_identifier"`
-	StorageType                string `json:"storage_type"`
 	VpcId                      string `json:"vpc_id"`
+	DbSnapshotArn              string `json:"db_snapshot_arn"`
+	EngineVersion              string `json:"engine_version"`
+	KmsKeyId                   string `json:"kms_key_id"`
+	Iops                       int    `json:"iops"`
+	OptionGroupName            string `json:"option_group_name"`
+	Status                     string `json:"status"`
+	AvailabilityZone           string `json:"availability_zone"`
+	Encrypted                  bool   `json:"encrypted"`
+	Engine                     string `json:"engine"`
+	StorageType                string `json:"storage_type"`
+	DbSnapshotIdentifier       string `json:"db_snapshot_identifier"`
+	LicenseModel               string `json:"license_model"`
+	Port                       int    `json:"port"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

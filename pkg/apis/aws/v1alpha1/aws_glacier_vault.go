@@ -17,12 +17,12 @@ type AwsGlacierVault struct {
 }
 
 type AwsGlacierVaultSpec struct {
+	Name         string                            `json:"name"`
 	Location     string                            `json:"location"`
 	Arn          string                            `json:"arn"`
 	AccessPolicy string                            `json:"access_policy"`
 	Notification []AwsGlacierVaultSpecNotification `json:"notification"`
 	Tags         map[string]string                 `json:"tags"`
-	Name         string                            `json:"name"`
 }
 
 type AwsGlacierVaultSpecNotification struct {

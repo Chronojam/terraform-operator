@@ -17,27 +17,27 @@ type AwsCloudtrail struct {
 }
 
 type AwsCloudtrailSpec struct {
-	EnableLogging              bool                             `json:"enable_logging"`
-	S3KeyPrefix                string                           `json:"s3_key_prefix"`
-	Name                       string                           `json:"name"`
-	IsMultiRegionTrail         bool                             `json:"is_multi_region_trail"`
-	HomeRegion                 string                           `json:"home_region"`
-	Arn                        string                           `json:"arn"`
-	CloudWatchLogsGroupArn     string                           `json:"cloud_watch_logs_group_arn"`
-	SnsTopicName               string                           `json:"sns_topic_name"`
-	EnableLogFileValidation    bool                             `json:"enable_log_file_validation"`
-	Tags                       map[string]string                `json:"tags"`
+	EventSelector              []AwsCloudtrailSpecEventSelector `json:"event_selector"`
 	S3BucketName               string                           `json:"s3_bucket_name"`
+	CloudWatchLogsRoleArn      string                           `json:"cloud_watch_logs_role_arn"`
 	IncludeGlobalServiceEvents bool                             `json:"include_global_service_events"`
 	KmsKeyId                   string                           `json:"kms_key_id"`
-	EventSelector              []AwsCloudtrailSpecEventSelector `json:"event_selector"`
-	CloudWatchLogsRoleArn      string                           `json:"cloud_watch_logs_role_arn"`
+	Tags                       map[string]string                `json:"tags"`
+	EnableLogging              bool                             `json:"enable_logging"`
+	S3KeyPrefix                string                           `json:"s3_key_prefix"`
+	SnsTopicName               string                           `json:"sns_topic_name"`
+	EnableLogFileValidation    bool                             `json:"enable_log_file_validation"`
+	HomeRegion                 string                           `json:"home_region"`
+	Arn                        string                           `json:"arn"`
+	Name                       string                           `json:"name"`
+	CloudWatchLogsGroupArn     string                           `json:"cloud_watch_logs_group_arn"`
+	IsMultiRegionTrail         bool                             `json:"is_multi_region_trail"`
 }
 
 type AwsCloudtrailSpecEventSelector struct {
-	DataResource            []AwsCloudtrailSpecEventSelectorDataResource `json:"data_resource"`
 	ReadWriteType           string                                       `json:"read_write_type"`
 	IncludeManagementEvents bool                                         `json:"include_management_events"`
+	DataResource            []AwsCloudtrailSpecEventSelectorDataResource `json:"data_resource"`
 }
 
 type AwsCloudtrailSpecEventSelectorDataResource struct {

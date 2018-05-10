@@ -1,5 +1,5 @@
 /*
-Copyright The Kubernetes Authors.
+Copyright 2018 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@ package v1alpha1
 type AwsAcmCertificateExpansion interface{}
 
 type AwsAcmCertificateValidationExpansion interface{}
+
+type AwsAcmpcaCertificateAuthorityExpansion interface{}
 
 type AwsAlbExpansion interface{}
 
@@ -327,6 +329,8 @@ type AwsGameliftFleetExpansion interface{}
 type AwsGlacierVaultExpansion interface{}
 
 type AwsGlueCatalogDatabaseExpansion interface{}
+
+type AwsGlueCatalogTableExpansion interface{}
 
 type AwsGlueConnectionExpansion interface{}
 

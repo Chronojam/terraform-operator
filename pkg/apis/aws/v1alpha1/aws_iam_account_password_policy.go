@@ -17,16 +17,16 @@ type AwsIamAccountPasswordPolicy struct {
 }
 
 type AwsIamAccountPasswordPolicySpec struct {
-	AllowUsersToChangePassword bool `json:"allow_users_to_change_password"`
-	HardExpiry                 bool `json:"hard_expiry"`
-	MinimumPasswordLength      int  `json:"minimum_password_length"`
-	PasswordReusePrevention    int  `json:"password_reuse_prevention"`
 	ExpirePasswords            bool `json:"expire_passwords"`
-	MaxPasswordAge             int  `json:"max_password_age"`
+	PasswordReusePrevention    int  `json:"password_reuse_prevention"`
 	RequireLowercaseCharacters bool `json:"require_lowercase_characters"`
 	RequireNumbers             bool `json:"require_numbers"`
+	AllowUsersToChangePassword bool `json:"allow_users_to_change_password"`
+	MaxPasswordAge             int  `json:"max_password_age"`
+	MinimumPasswordLength      int  `json:"minimum_password_length"`
 	RequireSymbols             bool `json:"require_symbols"`
 	RequireUppercaseCharacters bool `json:"require_uppercase_characters"`
+	HardExpiry                 bool `json:"hard_expiry"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

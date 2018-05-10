@@ -17,23 +17,25 @@ type AwsGameliftFleet struct {
 }
 
 type AwsGameliftFleetSpec struct {
-	BuildId                        string                                            `json:"build_id"`
 	Name                           string                                            `json:"name"`
-	MetricGroups                   []string                                          `json:"metric_groups"`
-	NewGameSessionProtectionPolicy string                                            `json:"new_game_session_protection_policy"`
-	ResourceCreationLimitPolicy    []AwsGameliftFleetSpecResourceCreationLimitPolicy `json:"resource_creation_limit_policy"`
-	RuntimeConfiguration           []AwsGameliftFleetSpecRuntimeConfiguration        `json:"runtime_configuration"`
-	Arn                            string                                            `json:"arn"`
-	Ec2InstanceType                string                                            `json:"ec2_instance_type"`
 	Description                    string                                            `json:"description"`
 	Ec2InboundPermission           []AwsGameliftFleetSpecEc2InboundPermission        `json:"ec2_inbound_permission"`
 	LogPaths                       []string                                          `json:"log_paths"`
+	MetricGroups                   []string                                          `json:"metric_groups"`
 	OperatingSystem                string                                            `json:"operating_system"`
+	RuntimeConfiguration           []AwsGameliftFleetSpecRuntimeConfiguration        `json:"runtime_configuration"`
+	Arn                            string                                            `json:"arn"`
+	BuildId                        string                                            `json:"build_id"`
+	Ec2InstanceType                string                                            `json:"ec2_instance_type"`
+	NewGameSessionProtectionPolicy string                                            `json:"new_game_session_protection_policy"`
+	ResourceCreationLimitPolicy    []AwsGameliftFleetSpecResourceCreationLimitPolicy `json:"resource_creation_limit_policy"`
 }
 
-type AwsGameliftFleetSpecResourceCreationLimitPolicy struct {
-	PolicyPeriodInMinutes     int `json:"policy_period_in_minutes"`
-	NewGameSessionsPerCreator int `json:"new_game_sessions_per_creator"`
+type AwsGameliftFleetSpecEc2InboundPermission struct {
+	FromPort int    `json:"from_port"`
+	IpRange  string `json:"ip_range"`
+	Protocol string `json:"protocol"`
+	ToPort   int    `json:"to_port"`
 }
 
 type AwsGameliftFleetSpecRuntimeConfiguration struct {
@@ -48,11 +50,9 @@ type AwsGameliftFleetSpecRuntimeConfigurationServerProcess struct {
 	Parameters           string `json:"parameters"`
 }
 
-type AwsGameliftFleetSpecEc2InboundPermission struct {
-	FromPort int    `json:"from_port"`
-	IpRange  string `json:"ip_range"`
-	Protocol string `json:"protocol"`
-	ToPort   int    `json:"to_port"`
+type AwsGameliftFleetSpecResourceCreationLimitPolicy struct {
+	NewGameSessionsPerCreator int `json:"new_game_sessions_per_creator"`
+	PolicyPeriodInMinutes     int `json:"policy_period_in_minutes"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

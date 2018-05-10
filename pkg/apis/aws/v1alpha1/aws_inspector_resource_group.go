@@ -17,8 +17,8 @@ type AwsInspectorResourceGroup struct {
 }
 
 type AwsInspectorResourceGroupSpec struct {
-	Arn  string            `json:"arn"`
 	Tags map[string]string `json:"tags"`
+	Arn  string            `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

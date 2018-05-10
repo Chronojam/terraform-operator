@@ -17,18 +17,19 @@ type AwsLbTargetGroup struct {
 }
 
 type AwsLbTargetGroupSpec struct {
-	Port                int                               `json:"port"`
-	VpcId               string                            `json:"vpc_id"`
-	DeregistrationDelay int                               `json:"deregistration_delay"`
-	TargetType          string                            `json:"target_type"`
-	ArnSuffix           string                            `json:"arn_suffix"`
 	Name                string                            `json:"name"`
 	NamePrefix          string                            `json:"name_prefix"`
-	Protocol            string                            `json:"protocol"`
-	Stickiness          []AwsLbTargetGroupSpecStickiness  `json:"stickiness"`
-	HealthCheck         []AwsLbTargetGroupSpecHealthCheck `json:"health_check"`
+	Port                int                               `json:"port"`
+	DeregistrationDelay int                               `json:"deregistration_delay"`
+	ProxyProtocolV2     bool                              `json:"proxy_protocol_v2"`
+	TargetType          string                            `json:"target_type"`
 	Tags                map[string]string                 `json:"tags"`
 	Arn                 string                            `json:"arn"`
+	ArnSuffix           string                            `json:"arn_suffix"`
+	Protocol            string                            `json:"protocol"`
+	VpcId               string                            `json:"vpc_id"`
+	Stickiness          []AwsLbTargetGroupSpecStickiness  `json:"stickiness"`
+	HealthCheck         []AwsLbTargetGroupSpecHealthCheck `json:"health_check"`
 }
 
 type AwsLbTargetGroupSpecStickiness struct {

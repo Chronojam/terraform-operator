@@ -17,11 +17,11 @@ type AwsApiGatewayUsagePlanKey struct {
 }
 
 type AwsApiGatewayUsagePlanKeySpec struct {
-	KeyId       string `json:"key_id"`
-	KeyType     string `json:"key_type"`
 	UsagePlanId string `json:"usage_plan_id"`
 	Name        string `json:"name"`
 	Value       string `json:"value"`
+	KeyId       string `json:"key_id"`
+	KeyType     string `json:"key_type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

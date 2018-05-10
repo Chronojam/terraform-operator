@@ -17,24 +17,25 @@ type AwsGlueJob struct {
 }
 
 type AwsGlueJobSpec struct {
-	MaxRetries        int                               `json:"max_retries"`
+	Description       string                            `json:"description"`
 	AllocatedCapacity int                               `json:"allocated_capacity"`
-	Command           []AwsGlueJobSpecCommand           `json:"command"`
 	Connections       []string                          `json:"connections"`
 	DefaultArguments  map[string]string                 `json:"default_arguments"`
-	Description       string                            `json:"description"`
 	ExecutionProperty []AwsGlueJobSpecExecutionProperty `json:"execution_property"`
+	MaxRetries        int                               `json:"max_retries"`
 	Name              string                            `json:"name"`
 	RoleArn           string                            `json:"role_arn"`
+	Timeout           int                               `json:"timeout"`
+	Command           []AwsGlueJobSpecCommand           `json:"command"`
+}
+
+type AwsGlueJobSpecExecutionProperty struct {
+	MaxConcurrentRuns int `json:"max_concurrent_runs"`
 }
 
 type AwsGlueJobSpecCommand struct {
 	Name           string `json:"name"`
 	ScriptLocation string `json:"script_location"`
-}
-
-type AwsGlueJobSpecExecutionProperty struct {
-	MaxConcurrentRuns int `json:"max_concurrent_runs"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

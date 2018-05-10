@@ -25,9 +25,9 @@ type AwsWafregionalRateBasedRuleSpec struct {
 }
 
 type AwsWafregionalRateBasedRuleSpecPredicate struct {
-	Negated bool   `json:"negated"`
 	DataId  string `json:"data_id"`
 	Type    string `json:"type"`
+	Negated bool   `json:"negated"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

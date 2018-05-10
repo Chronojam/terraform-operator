@@ -17,11 +17,11 @@ type AwsInspectorAssessmentTemplate struct {
 }
 
 type AwsInspectorAssessmentTemplateSpec struct {
-	Arn              string `json:"arn"`
 	Duration         int    `json:"duration"`
 	RulesPackageArns string `json:"rules_package_arns"`
 	Name             string `json:"name"`
 	TargetArn        string `json:"target_arn"`
+	Arn              string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

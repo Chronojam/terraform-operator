@@ -17,16 +17,16 @@ type AwsNetworkInterface struct {
 }
 
 type AwsNetworkInterfaceSpec struct {
+	Description     string                            `json:"description"`
+	Attachment      AwsNetworkInterfaceSpecAttachment `json:"attachment"`
 	Tags            map[string]string                 `json:"tags"`
+	SubnetId        string                            `json:"subnet_id"`
 	PrivateDnsName  string                            `json:"private_dns_name"`
 	PrivateIps      string                            `json:"private_ips"`
-	PrivateIpsCount int                               `json:"private_ips_count"`
 	SecurityGroups  string                            `json:"security_groups"`
-	Attachment      AwsNetworkInterfaceSpecAttachment `json:"attachment"`
-	SubnetId        string                            `json:"subnet_id"`
 	PrivateIp       string                            `json:"private_ip"`
+	PrivateIpsCount int                               `json:"private_ips_count"`
 	SourceDestCheck bool                              `json:"source_dest_check"`
-	Description     string                            `json:"description"`
 }
 
 type AwsNetworkInterfaceSpecAttachment struct {

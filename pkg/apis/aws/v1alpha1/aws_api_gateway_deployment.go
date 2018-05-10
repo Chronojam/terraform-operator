@@ -17,7 +17,6 @@ type AwsApiGatewayDeployment struct {
 }
 
 type AwsApiGatewayDeploymentSpec struct {
-	StageDescription string            `json:"stage_description"`
 	Variables        map[string]string `json:"variables"`
 	CreatedDate      string            `json:"created_date"`
 	InvokeUrl        string            `json:"invoke_url"`
@@ -25,6 +24,7 @@ type AwsApiGatewayDeploymentSpec struct {
 	RestApiId        string            `json:"rest_api_id"`
 	StageName        string            `json:"stage_name"`
 	Description      string            `json:"description"`
+	StageDescription string            `json:"stage_description"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

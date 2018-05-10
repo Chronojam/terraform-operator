@@ -24,8 +24,8 @@ type AwsIotThingTypeSpec struct {
 }
 
 type AwsIotThingTypeSpecProperties struct {
-	SearchableAttributes string `json:"searchable_attributes"`
 	Description          string `json:"description"`
+	SearchableAttributes string `json:"searchable_attributes"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

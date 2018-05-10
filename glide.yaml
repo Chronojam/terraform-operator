@@ -1,0 +1,37 @@
+package: github.com/chronojam/terraform-operator
+import:
+- package: github.com/Sirupsen/logrus
+- package: github.com/hashicorp/terraform
+  subpackages:
+  - helper/schema
+- package: github.com/terraform-providers/terraform-provider-aws
+  subpackages:
+  - aws
+- package: k8s.io/apimachinery
+  version: release-1.9
+  subpackages:
+  - pkg/api/errors
+  - pkg/apis/meta/v1
+  - pkg/labels
+  - pkg/runtime
+  - pkg/runtime/schema
+  - pkg/runtime/serializer
+  - pkg/types
+  - pkg/util/runtime
+  - pkg/util/wait
+  - pkg/watch
+- package: k8s.io/client-go
+  version: v7.0.0
+  subpackages:
+  - discovery
+  - discovery/fake
+  - kubernetes
+  - rest
+  - testing
+  - tools/cache
+  - tools/clientcmd
+  - util/flowcontrol
+  - util/workqueue
+- package: k8s.io/code-generator
+  version: release-1.9
+- package: k8s.io/gengo

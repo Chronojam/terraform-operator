@@ -17,11 +17,11 @@ type AwsBatchJobQueue struct {
 }
 
 type AwsBatchJobQueueSpec struct {
+	Priority            int      `json:"priority"`
+	State               string   `json:"state"`
 	Arn                 string   `json:"arn"`
 	ComputeEnvironments []string `json:"compute_environments"`
 	Name                string   `json:"name"`
-	Priority            int      `json:"priority"`
-	State               string   `json:"state"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

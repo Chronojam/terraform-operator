@@ -22,19 +22,19 @@ type AwsVpcPeeringConnectionSpec struct {
 	VpcId        string                               `json:"vpc_id"`
 	AcceptStatus string                               `json:"accept_status"`
 	PeerRegion   string                               `json:"peer_region"`
-	Accepter     AwsVpcPeeringConnectionSpecAccepter  `json:"accepter"`
 	Requester    AwsVpcPeeringConnectionSpecRequester `json:"requester"`
-	AutoAccept   bool                                 `json:"auto_accept"`
 	Tags         map[string]string                    `json:"tags"`
+	AutoAccept   bool                                 `json:"auto_accept"`
+	Accepter     AwsVpcPeeringConnectionSpecAccepter  `json:"accepter"`
 }
 
-type AwsVpcPeeringConnectionSpecAccepter struct {
+type AwsVpcPeeringConnectionSpecRequester struct {
 	AllowRemoteVpcDnsResolution bool `json:"allow_remote_vpc_dns_resolution"`
 	AllowClassicLinkToRemoteVpc bool `json:"allow_classic_link_to_remote_vpc"`
 	AllowVpcToRemoteClassicLink bool `json:"allow_vpc_to_remote_classic_link"`
 }
 
-type AwsVpcPeeringConnectionSpecRequester struct {
+type AwsVpcPeeringConnectionSpecAccepter struct {
 	AllowRemoteVpcDnsResolution bool `json:"allow_remote_vpc_dns_resolution"`
 	AllowClassicLinkToRemoteVpc bool `json:"allow_classic_link_to_remote_vpc"`
 	AllowVpcToRemoteClassicLink bool `json:"allow_vpc_to_remote_classic_link"`

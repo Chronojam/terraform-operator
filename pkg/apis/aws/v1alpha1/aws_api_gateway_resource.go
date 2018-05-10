@@ -17,10 +17,10 @@ type AwsApiGatewayResource struct {
 }
 
 type AwsApiGatewayResourceSpec struct {
-	RestApiId string `json:"rest_api_id"`
-	ParentId  string `json:"parent_id"`
 	PathPart  string `json:"path_part"`
 	Path      string `json:"path"`
+	RestApiId string `json:"rest_api_id"`
+	ParentId  string `json:"parent_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

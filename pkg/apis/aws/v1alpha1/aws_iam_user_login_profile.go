@@ -17,12 +17,12 @@ type AwsIamUserLoginProfile struct {
 }
 
 type AwsIamUserLoginProfileSpec struct {
-	PgpKey                string `json:"pgp_key"`
-	PasswordResetRequired bool   `json:"password_reset_required"`
 	PasswordLength        int    `json:"password_length"`
 	KeyFingerprint        string `json:"key_fingerprint"`
 	EncryptedPassword     string `json:"encrypted_password"`
 	User                  string `json:"user"`
+	PgpKey                string `json:"pgp_key"`
+	PasswordResetRequired bool   `json:"password_reset_required"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

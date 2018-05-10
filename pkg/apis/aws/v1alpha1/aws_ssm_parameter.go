@@ -17,15 +17,15 @@ type AwsSsmParameter struct {
 }
 
 type AwsSsmParameterSpec struct {
-	Arn            string            `json:"arn"`
-	KeyId          string            `json:"key_id"`
-	Name           string            `json:"name"`
-	Description    string            `json:"description"`
-	Type           string            `json:"type"`
 	Tags           map[string]string `json:"tags"`
+	Type           string            `json:"type"`
+	KeyId          string            `json:"key_id"`
 	Value          string            `json:"value"`
+	Arn            string            `json:"arn"`
 	Overwrite      bool              `json:"overwrite"`
 	AllowedPattern string            `json:"allowed_pattern"`
+	Name           string            `json:"name"`
+	Description    string            `json:"description"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

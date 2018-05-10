@@ -17,9 +17,9 @@ type AwsCloudwatchDashboard struct {
 }
 
 type AwsCloudwatchDashboardSpec struct {
-	DashboardName string `json:"dashboard_name"`
 	DashboardArn  string `json:"dashboard_arn"`
 	DashboardBody string `json:"dashboard_body"`
+	DashboardName string `json:"dashboard_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

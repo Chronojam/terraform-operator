@@ -38,8 +38,8 @@ INFORMER_CONTENT='package LC
 
 import (
     meta_v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-    csinf_v1 "github.com/trussle/terraform-operator/pkg/client/informers/externalversions/aws/v1"
-    cs "github.com/trussle/terraform-operator/pkg/client/clientset/versioned"
+    csinf_v1 "github.com/chronojam/terraform-operator/pkg/client/informers/externalversions/aws/v1alpha1"
+    cs "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned"
     "k8s.io/client-go/tools/cache"
 )
 
@@ -52,6 +52,22 @@ func DefaultInformer(resClient cs.Interface) cache.SharedIndexInformer {
 		)
 }'
 
+
+CRD_TEMPLATE="
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: PLURAL.chronojam.co.uk
+spec:
+  group: chronojam.co.uk
+  version: v1alpha1
+  names:
+    kind: ST
+    plural: PLURAL
+  scope: Namespaced
+"
+
+
 function write_file {
     RP=$1
     FN=$(echo $1 | awk -F/ '{ print $NF }')
@@ -61,21 +77,24 @@ function write_file {
     fi
     LC=$(echo "$ST" | awk '{ print tolower($1) }' )
     LC=$(echo $LC | tr -d '\n')
-    echo $LC
     DIR=$WRITE_PATH/$LC
 
+    PLURAL=$(.build/plural $LC)
+
     mkdir -p $DIR
+    mkdir -p crds/
 
     echo "$HANDLER_CONTENT" > $DIR/handler.go
     echo "$INFORMER_CONTENT" > $DIR/informer.go
+    echo "$CRD_TEMPLATE" > crds/$LC.yaml
 
-    echo "$DIR/handler.go"
-
-    sed -i '' "s/LC/$LC/g" $DIR/handler.go $DIR/informer.go
-    sed -i '' "s/ST/$ST/g" $DIR/handler.go $DIR/informer.go
+    sed -i '' "s/LC/$LC/g" $DIR/handler.go $DIR/informer.go crds/$LC.yaml
+    sed -i '' "s/ST/$ST/g" $DIR/handler.go $DIR/informer.go crds/$LC.yaml
+    sed -i '' "s/PLURAL/$PLURAL/g" $DIR/handler.go $DIR/informer.go crds/$LC.yaml
 
     echo "Written:  $DIR/handler.go"
     echo "Written:  $DIR/informer.go"
+    echo "Written:  crds/$LC.yaml"
 }
 
 

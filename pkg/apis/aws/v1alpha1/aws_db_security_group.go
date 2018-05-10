@@ -17,11 +17,11 @@ type AwsDbSecurityGroup struct {
 }
 
 type AwsDbSecurityGroupSpec struct {
+	Arn         string                        `json:"arn"`
+	Name        string                        `json:"name"`
 	Description string                        `json:"description"`
 	Ingress     AwsDbSecurityGroupSpecIngress `json:"ingress"`
 	Tags        map[string]string             `json:"tags"`
-	Arn         string                        `json:"arn"`
-	Name        string                        `json:"name"`
 }
 
 type AwsDbSecurityGroupSpecIngress struct {

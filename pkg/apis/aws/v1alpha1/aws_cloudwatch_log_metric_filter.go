@@ -17,10 +17,10 @@ type AwsCloudwatchLogMetricFilter struct {
 }
 
 type AwsCloudwatchLogMetricFilterSpec struct {
-	Name                 string                                                 `json:"name"`
 	Pattern              string                                                 `json:"pattern"`
 	LogGroupName         string                                                 `json:"log_group_name"`
 	MetricTransformation []AwsCloudwatchLogMetricFilterSpecMetricTransformation `json:"metric_transformation"`
+	Name                 string                                                 `json:"name"`
 }
 
 type AwsCloudwatchLogMetricFilterSpecMetricTransformation struct {

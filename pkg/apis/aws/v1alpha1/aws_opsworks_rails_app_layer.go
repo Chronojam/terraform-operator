@@ -17,32 +17,32 @@ type AwsOpsworksRailsAppLayer struct {
 }
 
 type AwsOpsworksRailsAppLayerSpec struct {
-	AutoAssignElasticIps     bool                                  `json:"auto_assign_elastic_ips"`
-	InstanceShutdownTimeout  int                                   `json:"instance_shutdown_timeout"`
-	SystemPackages           string                                `json:"system_packages"`
-	EbsVolume                AwsOpsworksRailsAppLayerSpecEbsVolume `json:"ebs_volume"`
-	ManageBundler            bool                                  `json:"manage_bundler"`
-	AutoAssignPublicIps      bool                                  `json:"auto_assign_public_ips"`
-	CustomDeployRecipes      []string                              `json:"custom_deploy_recipes"`
 	CustomSecurityGroupIds   string                                `json:"custom_security_group_ids"`
-	AutoHealing              bool                                  `json:"auto_healing"`
-	InstallUpdatesOnBoot     bool                                  `json:"install_updates_on_boot"`
-	Name                     string                                `json:"name"`
-	AppServer                string                                `json:"app_server"`
 	ElasticLoadBalancer      string                                `json:"elastic_load_balancer"`
-	CustomConfigureRecipes   []string                              `json:"custom_configure_recipes"`
-	CustomShutdownRecipes    []string                              `json:"custom_shutdown_recipes"`
-	UseEbsOptimizedInstances bool                                  `json:"use_ebs_optimized_instances"`
-	PassengerVersion         string                                `json:"passenger_version"`
-	RubygemsVersion          string                                `json:"rubygems_version"`
-	CustomInstanceProfileArn string                                `json:"custom_instance_profile_arn"`
 	CustomSetupRecipes       []string                              `json:"custom_setup_recipes"`
-	CustomUndeployRecipes    []string                              `json:"custom_undeploy_recipes"`
+	CustomShutdownRecipes    []string                              `json:"custom_shutdown_recipes"`
+	AutoHealing              bool                                  `json:"auto_healing"`
+	UseEbsOptimizedInstances bool                                  `json:"use_ebs_optimized_instances"`
+	RubygemsVersion          string                                `json:"rubygems_version"`
+	ManageBundler            bool                                  `json:"manage_bundler"`
+	EbsVolume                AwsOpsworksRailsAppLayerSpecEbsVolume `json:"ebs_volume"`
+	AutoAssignElasticIps     bool                                  `json:"auto_assign_elastic_ips"`
+	CustomConfigureRecipes   []string                              `json:"custom_configure_recipes"`
+	CustomDeployRecipes      []string                              `json:"custom_deploy_recipes"`
 	CustomJson               string                                `json:"custom_json"`
+	InstallUpdatesOnBoot     bool                                  `json:"install_updates_on_boot"`
 	DrainElbOnShutdown       bool                                  `json:"drain_elb_on_shutdown"`
+	SystemPackages           string                                `json:"system_packages"`
+	Name                     string                                `json:"name"`
+	BundlerVersion           string                                `json:"bundler_version"`
+	AppServer                string                                `json:"app_server"`
+	PassengerVersion         string                                `json:"passenger_version"`
+	AutoAssignPublicIps      bool                                  `json:"auto_assign_public_ips"`
+	CustomInstanceProfileArn string                                `json:"custom_instance_profile_arn"`
+	CustomUndeployRecipes    []string                              `json:"custom_undeploy_recipes"`
+	InstanceShutdownTimeout  int                                   `json:"instance_shutdown_timeout"`
 	StackId                  string                                `json:"stack_id"`
 	RubyVersion              string                                `json:"ruby_version"`
-	BundlerVersion           string                                `json:"bundler_version"`
 }
 
 type AwsOpsworksRailsAppLayerSpecEbsVolume struct {

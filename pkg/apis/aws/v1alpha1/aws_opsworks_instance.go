@@ -17,67 +17,67 @@ type AwsOpsworksInstance struct {
 }
 
 type AwsOpsworksInstanceSpec struct {
-	ReportedOsVersion        string                                      `json:"reported_os_version"`
-	AutoScalingType          string                                      `json:"auto_scaling_type"`
-	InfrastructureClass      string                                      `json:"infrastructure_class"`
-	InstallUpdatesOnBoot     bool                                        `json:"install_updates_on_boot"`
-	LayerIds                 []string                                    `json:"layer_ids"`
+	ReportedAgentVersion     string                                      `json:"reported_agent_version"`
 	ReportedOsFamily         string                                      `json:"reported_os_family"`
-	EcsClusterArn            string                                      `json:"ecs_cluster_arn"`
-	LastServiceErrorId       string                                      `json:"last_service_error_id"`
-	Status                   string                                      `json:"status"`
-	VirtualizationType       string                                      `json:"virtualization_type"`
+	SecurityGroupIds         []string                                    `json:"security_group_ids"`
+	StackId                  string                                      `json:"stack_id"`
+	AutoScalingType          string                                      `json:"auto_scaling_type"`
+	InstallUpdatesOnBoot     bool                                        `json:"install_updates_on_boot"`
+	InstanceType             string                                      `json:"instance_type"`
+	PublicDns                string                                      `json:"public_dns"`
 	EbsBlockDevice           AwsOpsworksInstanceSpecEbsBlockDevice       `json:"ebs_block_device"`
-	RootBlockDevice          AwsOpsworksInstanceSpecRootBlockDevice      `json:"root_block_device"`
-	Architecture             string                                      `json:"architecture"`
-	Platform                 string                                      `json:"platform"`
-	PublicIp                 string                                      `json:"public_ip"`
-	ReportedOsName           string                                      `json:"reported_os_name"`
+	PrivateIp                string                                      `json:"private_ip"`
 	SubnetId                 string                                      `json:"subnet_id"`
-	SshHostDsaKeyFingerprint string                                      `json:"ssh_host_dsa_key_fingerprint"`
+	AvailabilityZone         string                                      `json:"availability_zone"`
+	DeleteEbs                bool                                        `json:"delete_ebs"`
 	DeleteEip                bool                                        `json:"delete_eip"`
+	Hostname                 string                                      `json:"hostname"`
+	ReportedOsName           string                                      `json:"reported_os_name"`
+	ReportedOsVersion        string                                      `json:"reported_os_version"`
+	State                    string                                      `json:"state"`
+	VirtualizationType       string                                      `json:"virtualization_type"`
+	AmiId                    string                                      `json:"ami_id"`
+	EbsOptimized             bool                                        `json:"ebs_optimized"`
+	InfrastructureClass      string                                      `json:"infrastructure_class"`
+	PrivateDns               string                                      `json:"private_dns"`
+	RootDeviceType           string                                      `json:"root_device_type"`
+	CreatedAt                string                                      `json:"created_at"`
 	Ec2InstanceId            string                                      `json:"ec2_instance_id"`
 	InstanceProfileArn       string                                      `json:"instance_profile_arn"`
-	Os                       string                                      `json:"os"`
-	RootDeviceType           string                                      `json:"root_device_type"`
-	AvailabilityZone         string                                      `json:"availability_zone"`
-	CreatedAt                string                                      `json:"created_at"`
-	ElasticIp                string                                      `json:"elastic_ip"`
-	SecurityGroupIds         []string                                    `json:"security_group_ids"`
-	SshHostRsaKeyFingerprint string                                      `json:"ssh_host_rsa_key_fingerprint"`
-	SshKeyName               string                                      `json:"ssh_key_name"`
-	AmiId                    string                                      `json:"ami_id"`
-	DeleteEbs                bool                                        `json:"delete_ebs"`
 	RegisteredBy             string                                      `json:"registered_by"`
-	ReportedAgentVersion     string                                      `json:"reported_agent_version"`
-	RootDeviceVolumeId       string                                      `json:"root_device_volume_id"`
-	EphemeralBlockDevice     AwsOpsworksInstanceSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
 	AgentVersion             string                                      `json:"agent_version"`
-	PrivateIp                string                                      `json:"private_ip"`
-	PublicDns                string                                      `json:"public_dns"`
-	StackId                  string                                      `json:"stack_id"`
-	State                    string                                      `json:"state"`
-	EbsOptimized             bool                                        `json:"ebs_optimized"`
-	Hostname                 string                                      `json:"hostname"`
-	InstanceType             string                                      `json:"instance_type"`
-	PrivateDns               string                                      `json:"private_dns"`
+	EcsClusterArn            string                                      `json:"ecs_cluster_arn"`
+	SshHostDsaKeyFingerprint string                                      `json:"ssh_host_dsa_key_fingerprint"`
+	RootBlockDevice          AwsOpsworksInstanceSpecRootBlockDevice      `json:"root_block_device"`
+	EphemeralBlockDevice     AwsOpsworksInstanceSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
+	Architecture             string                                      `json:"architecture"`
+	LastServiceErrorId       string                                      `json:"last_service_error_id"`
+	Platform                 string                                      `json:"platform"`
+	SshKeyName               string                                      `json:"ssh_key_name"`
+	SshHostRsaKeyFingerprint string                                      `json:"ssh_host_rsa_key_fingerprint"`
 	Tenancy                  string                                      `json:"tenancy"`
+	ElasticIp                string                                      `json:"elastic_ip"`
+	LayerIds                 []string                                    `json:"layer_ids"`
+	Os                       string                                      `json:"os"`
+	RootDeviceVolumeId       string                                      `json:"root_device_volume_id"`
+	PublicIp                 string                                      `json:"public_ip"`
+	Status                   string                                      `json:"status"`
 }
 
 type AwsOpsworksInstanceSpecEbsBlockDevice struct {
-	SnapshotId          string `json:"snapshot_id"`
-	VolumeSize          int    `json:"volume_size"`
-	VolumeType          string `json:"volume_type"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	DeviceName          string `json:"device_name"`
 	Iops                int    `json:"iops"`
+	SnapshotId          string `json:"snapshot_id"`
+	VolumeSize          int    `json:"volume_size"`
+	VolumeType          string `json:"volume_type"`
 }
 
 type AwsOpsworksInstanceSpecRootBlockDevice struct {
-	VolumeSize          int    `json:"volume_size"`
-	VolumeType          string `json:"volume_type"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	Iops                int    `json:"iops"`
+	VolumeSize          int    `json:"volume_size"`
+	VolumeType          string `json:"volume_type"`
 }
 
 type AwsOpsworksInstanceSpecEphemeralBlockDevice struct {

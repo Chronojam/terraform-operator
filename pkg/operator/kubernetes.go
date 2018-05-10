@@ -8,7 +8,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 
-	cs "github.com/trussle/terraform-operator/pkg/client/clientset/versioned"
+	cs "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned"
 )
 
 func GetKubernetesClient() (kubernetes.Interface, cs.Interface) {
