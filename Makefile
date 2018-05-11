@@ -18,6 +18,7 @@ generate-struct-types: install-struct-generator
 	mkdir -p $(ABSOLUTE_PATH)/pkg/apis/aws/v1alpha1
 	$(PWD)/.build/generator
 	go fmt $(ABSOLUTE_PATH)/pkg/apis/aws/v1alpha1/*.go
+	go fmt $(ABSOLUTE_PATH)/hack/*.go
 
 generate-k8s-funcs:
 	# https://github.com/kubernetes/code-generator/issues/21
@@ -25,9 +26,9 @@ generate-k8s-funcs:
 
 generate-stubs: install-pluralizer
 	hack/scaffolder.sh
+	go run hack/crGenerator.go
 
 generate-all: clean-generation generate-struct-types generate-k8s-funcs
-
 
 build:
 	go build -o $(PWD)/.build/operator $(ABSOLUTE_PATH)/cmd/plural/*.go

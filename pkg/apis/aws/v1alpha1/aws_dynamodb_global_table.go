@@ -17,9 +17,9 @@ type AwsDynamodbGlobalTable struct {
 }
 
 type AwsDynamodbGlobalTableSpec struct {
-	Arn     string                            `json:"arn"`
 	Name    string                            `json:"name"`
 	Replica AwsDynamodbGlobalTableSpecReplica `json:"replica"`
+	Arn     string                            `json:"arn"`
 }
 
 type AwsDynamodbGlobalTableSpecReplica struct {

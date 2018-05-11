@@ -22,15 +22,15 @@ type AwsWafSizeConstraintSetSpec struct {
 }
 
 type AwsWafSizeConstraintSetSpecSizeConstraints struct {
-	TextTransformation string                                                 `json:"text_transformation"`
 	FieldToMatch       AwsWafSizeConstraintSetSpecSizeConstraintsFieldToMatch `json:"field_to_match"`
 	ComparisonOperator string                                                 `json:"comparison_operator"`
 	Size               int                                                    `json:"size"`
+	TextTransformation string                                                 `json:"text_transformation"`
 }
 
 type AwsWafSizeConstraintSetSpecSizeConstraintsFieldToMatch struct {
-	Data string `json:"data"`
 	Type string `json:"type"`
+	Data string `json:"data"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

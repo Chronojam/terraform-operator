@@ -17,9 +17,9 @@ type AwsCloudwatchLogStream struct {
 }
 
 type AwsCloudwatchLogStreamSpec struct {
+	Name         string `json:"name"`
 	LogGroupName string `json:"log_group_name"`
 	Arn          string `json:"arn"`
-	Name         string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

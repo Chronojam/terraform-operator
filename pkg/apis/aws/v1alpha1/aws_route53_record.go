@@ -17,23 +17,23 @@ type AwsRoute53Record struct {
 }
 
 type AwsRoute53RecordSpec struct {
-	SetIdentifier                 string                                         `json:"set_identifier"`
 	LatencyRoutingPolicy          []AwsRoute53RecordSpecLatencyRoutingPolicy     `json:"latency_routing_policy"`
+	MultivalueAnswerRoutingPolicy bool                                           `json:"multivalue_answer_routing_policy"`
+	Fqdn                          string                                         `json:"fqdn"`
+	Weight                        int                                            `json:"weight"`
+	SetIdentifier                 string                                         `json:"set_identifier"`
+	Failover                      string                                         `json:"failover"`
 	GeolocationRoutingPolicy      []AwsRoute53RecordSpecGeolocationRoutingPolicy `json:"geolocation_routing_policy"`
+	Records                       string                                         `json:"records"`
+	Name                          string                                         `json:"name"`
+	Alias                         AwsRoute53RecordSpecAlias                      `json:"alias"`
+	FailoverRoutingPolicy         []AwsRoute53RecordSpecFailoverRoutingPolicy    `json:"failover_routing_policy"`
+	WeightedRoutingPolicy         []AwsRoute53RecordSpecWeightedRoutingPolicy    `json:"weighted_routing_policy"`
 	HealthCheckId                 string                                         `json:"health_check_id"`
+	AllowOverwrite                bool                                           `json:"allow_overwrite"`
 	Type                          string                                         `json:"type"`
 	ZoneId                        string                                         `json:"zone_id"`
 	Ttl                           int                                            `json:"ttl"`
-	Alias                         AwsRoute53RecordSpecAlias                      `json:"alias"`
-	Failover                      string                                         `json:"failover"`
-	WeightedRoutingPolicy         []AwsRoute53RecordSpecWeightedRoutingPolicy    `json:"weighted_routing_policy"`
-	MultivalueAnswerRoutingPolicy bool                                           `json:"multivalue_answer_routing_policy"`
-	AllowOverwrite                bool                                           `json:"allow_overwrite"`
-	Name                          string                                         `json:"name"`
-	Records                       string                                         `json:"records"`
-	Fqdn                          string                                         `json:"fqdn"`
-	FailoverRoutingPolicy         []AwsRoute53RecordSpecFailoverRoutingPolicy    `json:"failover_routing_policy"`
-	Weight                        int                                            `json:"weight"`
 }
 
 type AwsRoute53RecordSpecLatencyRoutingPolicy struct {
@@ -52,12 +52,12 @@ type AwsRoute53RecordSpecAlias struct {
 	EvaluateTargetHealth bool   `json:"evaluate_target_health"`
 }
 
-type AwsRoute53RecordSpecWeightedRoutingPolicy struct {
-	Weight int `json:"weight"`
-}
-
 type AwsRoute53RecordSpecFailoverRoutingPolicy struct {
 	Type string `json:"type"`
+}
+
+type AwsRoute53RecordSpecWeightedRoutingPolicy struct {
+	Weight int `json:"weight"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

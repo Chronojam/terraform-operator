@@ -17,21 +17,21 @@ type AwsLightsailInstance struct {
 }
 
 type AwsLightsailInstanceSpec struct {
+	PrivateIpAddress string `json:"private_ip_address"`
+	AvailabilityZone string `json:"availability_zone"`
+	RamSize          int    `json:"ram_size"`
 	Arn              string `json:"arn"`
-	CreatedAt        string `json:"created_at"`
-	Ipv6Address      string `json:"ipv6_address"`
-	KeyPairName      string `json:"key_pair_name"`
 	UserData         string `json:"user_data"`
 	CpuCount         int    `json:"cpu_count"`
-	Name             string `json:"name"`
-	BlueprintId      string `json:"blueprint_id"`
-	PublicIpAddress  string `json:"public_ip_address"`
-	Username         string `json:"username"`
-	AvailabilityZone string `json:"availability_zone"`
-	PrivateIpAddress string `json:"private_ip_address"`
+	Ipv6Address      string `json:"ipv6_address"`
 	IsStaticIp       bool   `json:"is_static_ip"`
+	PublicIpAddress  string `json:"public_ip_address"`
+	Name             string `json:"name"`
+	KeyPairName      string `json:"key_pair_name"`
+	CreatedAt        string `json:"created_at"`
+	Username         string `json:"username"`
+	BlueprintId      string `json:"blueprint_id"`
 	BundleId         string `json:"bundle_id"`
-	RamSize          int    `json:"ram_size"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,18 +17,18 @@ type AwsGameliftFleet struct {
 }
 
 type AwsGameliftFleetSpec struct {
-	Name                           string                                            `json:"name"`
-	Description                    string                                            `json:"description"`
 	Ec2InboundPermission           []AwsGameliftFleetSpecEc2InboundPermission        `json:"ec2_inbound_permission"`
-	LogPaths                       []string                                          `json:"log_paths"`
-	MetricGroups                   []string                                          `json:"metric_groups"`
+	NewGameSessionProtectionPolicy string                                            `json:"new_game_session_protection_policy"`
 	OperatingSystem                string                                            `json:"operating_system"`
 	RuntimeConfiguration           []AwsGameliftFleetSpecRuntimeConfiguration        `json:"runtime_configuration"`
-	Arn                            string                                            `json:"arn"`
 	BuildId                        string                                            `json:"build_id"`
-	Ec2InstanceType                string                                            `json:"ec2_instance_type"`
-	NewGameSessionProtectionPolicy string                                            `json:"new_game_session_protection_policy"`
+	Name                           string                                            `json:"name"`
+	Description                    string                                            `json:"description"`
+	MetricGroups                   []string                                          `json:"metric_groups"`
 	ResourceCreationLimitPolicy    []AwsGameliftFleetSpecResourceCreationLimitPolicy `json:"resource_creation_limit_policy"`
+	Arn                            string                                            `json:"arn"`
+	Ec2InstanceType                string                                            `json:"ec2_instance_type"`
+	LogPaths                       []string                                          `json:"log_paths"`
 }
 
 type AwsGameliftFleetSpecEc2InboundPermission struct {
@@ -39,9 +39,9 @@ type AwsGameliftFleetSpecEc2InboundPermission struct {
 }
 
 type AwsGameliftFleetSpecRuntimeConfiguration struct {
+	ServerProcess                       []AwsGameliftFleetSpecRuntimeConfigurationServerProcess `json:"server_process"`
 	GameSessionActivationTimeoutSeconds int                                                     `json:"game_session_activation_timeout_seconds"`
 	MaxConcurrentGameSessionActivations int                                                     `json:"max_concurrent_game_session_activations"`
-	ServerProcess                       []AwsGameliftFleetSpecRuntimeConfigurationServerProcess `json:"server_process"`
 }
 
 type AwsGameliftFleetSpecRuntimeConfigurationServerProcess struct {

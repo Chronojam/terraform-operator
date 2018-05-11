@@ -17,87 +17,35 @@ type AwsS3Bucket struct {
 }
 
 type AwsS3BucketSpec struct {
-	Bucket                            string                                             `json:"bucket"`
-	Region                            string                                             `json:"region"`
-	LifecycleRule                     []AwsS3BucketSpecLifecycleRule                     `json:"lifecycle_rule"`
-	AccelerationStatus                string                                             `json:"acceleration_status"`
-	Tags                              map[string]string                                  `json:"tags"`
-	ReplicationConfiguration          []AwsS3BucketSpecReplicationConfiguration          `json:"replication_configuration"`
-	BucketPrefix                      string                                             `json:"bucket_prefix"`
-	BucketDomainName                  string                                             `json:"bucket_domain_name"`
+	CorsRule                          []AwsS3BucketSpecCorsRule                          `json:"cors_rule"`
 	Website                           []AwsS3BucketSpecWebsite                           `json:"website"`
 	WebsiteEndpoint                   string                                             `json:"website_endpoint"`
+	Versioning                        []AwsS3BucketSpecVersioning                        `json:"versioning"`
 	Logging                           AwsS3BucketSpecLogging                             `json:"logging"`
+	AccelerationStatus                string                                             `json:"acceleration_status"`
+	Arn                               string                                             `json:"arn"`
+	Acl                               string                                             `json:"acl"`
+	HostedZoneId                      string                                             `json:"hosted_zone_id"`
 	ForceDestroy                      bool                                               `json:"force_destroy"`
 	RequestPayer                      string                                             `json:"request_payer"`
 	ServerSideEncryptionConfiguration []AwsS3BucketSpecServerSideEncryptionConfiguration `json:"server_side_encryption_configuration"`
-	Arn                               string                                             `json:"arn"`
-	Acl                               string                                             `json:"acl"`
-	CorsRule                          []AwsS3BucketSpecCorsRule                          `json:"cors_rule"`
-	HostedZoneId                      string                                             `json:"hosted_zone_id"`
+	Bucket                            string                                             `json:"bucket"`
+	BucketDomainName                  string                                             `json:"bucket_domain_name"`
 	Policy                            string                                             `json:"policy"`
 	WebsiteDomain                     string                                             `json:"website_domain"`
-	Versioning                        []AwsS3BucketSpecVersioning                        `json:"versioning"`
+	Tags                              map[string]string                                  `json:"tags"`
+	BucketPrefix                      string                                             `json:"bucket_prefix"`
+	Region                            string                                             `json:"region"`
+	LifecycleRule                     []AwsS3BucketSpecLifecycleRule                     `json:"lifecycle_rule"`
+	ReplicationConfiguration          []AwsS3BucketSpecReplicationConfiguration          `json:"replication_configuration"`
 }
 
-type AwsS3BucketSpecLifecycleRule struct {
-	Prefix                             string                                                  `json:"prefix"`
-	Tags                               map[string]string                                       `json:"tags"`
-	Enabled                            bool                                                    `json:"enabled"`
-	AbortIncompleteMultipartUploadDays int                                                     `json:"abort_incomplete_multipart_upload_days"`
-	NoncurrentVersionExpiration        AwsS3BucketSpecLifecycleRuleNoncurrentVersionExpiration `json:"noncurrent_version_expiration"`
-	Transition                         AwsS3BucketSpecLifecycleRuleTransition                  `json:"transition"`
-	Id                                 string                                                  `json:"id"`
-	NoncurrentVersionTransition        AwsS3BucketSpecLifecycleRuleNoncurrentVersionTransition `json:"noncurrent_version_transition"`
-	Expiration                         AwsS3BucketSpecLifecycleRuleExpiration                  `json:"expiration"`
-}
-
-type AwsS3BucketSpecLifecycleRuleNoncurrentVersionExpiration struct {
-	Days int `json:"days"`
-}
-
-type AwsS3BucketSpecLifecycleRuleTransition struct {
-	Days         int    `json:"days"`
-	StorageClass string `json:"storage_class"`
-	Date         string `json:"date"`
-}
-
-type AwsS3BucketSpecLifecycleRuleNoncurrentVersionTransition struct {
-	Days         int    `json:"days"`
-	StorageClass string `json:"storage_class"`
-}
-
-type AwsS3BucketSpecLifecycleRuleExpiration struct {
-	Date                      string `json:"date"`
-	Days                      int    `json:"days"`
-	ExpiredObjectDeleteMarker bool   `json:"expired_object_delete_marker"`
-}
-
-type AwsS3BucketSpecReplicationConfiguration struct {
-	Role  string                                       `json:"role"`
-	Rules AwsS3BucketSpecReplicationConfigurationRules `json:"rules"`
-}
-
-type AwsS3BucketSpecReplicationConfigurationRules struct {
-	Prefix                  string                                                              `json:"prefix"`
-	Status                  string                                                              `json:"status"`
-	Id                      string                                                              `json:"id"`
-	Destination             AwsS3BucketSpecReplicationConfigurationRulesDestination             `json:"destination"`
-	SourceSelectionCriteria AwsS3BucketSpecReplicationConfigurationRulesSourceSelectionCriteria `json:"source_selection_criteria"`
-}
-
-type AwsS3BucketSpecReplicationConfigurationRulesDestination struct {
-	Bucket          string `json:"bucket"`
-	StorageClass    string `json:"storage_class"`
-	ReplicaKmsKeyId string `json:"replica_kms_key_id"`
-}
-
-type AwsS3BucketSpecReplicationConfigurationRulesSourceSelectionCriteria struct {
-	SseKmsEncryptedObjects AwsS3BucketSpecReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects `json:"sse_kms_encrypted_objects"`
-}
-
-type AwsS3BucketSpecReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects struct {
-	Enabled bool `json:"enabled"`
+type AwsS3BucketSpecCorsRule struct {
+	AllowedHeaders []string `json:"allowed_headers"`
+	AllowedMethods []string `json:"allowed_methods"`
+	AllowedOrigins []string `json:"allowed_origins"`
+	ExposeHeaders  []string `json:"expose_headers"`
+	MaxAgeSeconds  int      `json:"max_age_seconds"`
 }
 
 type AwsS3BucketSpecWebsite struct {
@@ -105,6 +53,11 @@ type AwsS3BucketSpecWebsite struct {
 	ErrorDocument         string `json:"error_document"`
 	RedirectAllRequestsTo string `json:"redirect_all_requests_to"`
 	RoutingRules          string `json:"routing_rules"`
+}
+
+type AwsS3BucketSpecVersioning struct {
+	Enabled   bool `json:"enabled"`
+	MfaDelete bool `json:"mfa_delete"`
 }
 
 type AwsS3BucketSpecLogging struct {
@@ -125,17 +78,64 @@ type AwsS3BucketSpecServerSideEncryptionConfigurationRuleApplyServerSideEncrypti
 	SseAlgorithm   string `json:"sse_algorithm"`
 }
 
-type AwsS3BucketSpecCorsRule struct {
-	AllowedHeaders []string `json:"allowed_headers"`
-	AllowedMethods []string `json:"allowed_methods"`
-	AllowedOrigins []string `json:"allowed_origins"`
-	ExposeHeaders  []string `json:"expose_headers"`
-	MaxAgeSeconds  int      `json:"max_age_seconds"`
+type AwsS3BucketSpecLifecycleRule struct {
+	Prefix                             string                                                  `json:"prefix"`
+	Tags                               map[string]string                                       `json:"tags"`
+	Enabled                            bool                                                    `json:"enabled"`
+	Expiration                         AwsS3BucketSpecLifecycleRuleExpiration                  `json:"expiration"`
+	NoncurrentVersionExpiration        AwsS3BucketSpecLifecycleRuleNoncurrentVersionExpiration `json:"noncurrent_version_expiration"`
+	Id                                 string                                                  `json:"id"`
+	AbortIncompleteMultipartUploadDays int                                                     `json:"abort_incomplete_multipart_upload_days"`
+	Transition                         AwsS3BucketSpecLifecycleRuleTransition                  `json:"transition"`
+	NoncurrentVersionTransition        AwsS3BucketSpecLifecycleRuleNoncurrentVersionTransition `json:"noncurrent_version_transition"`
 }
 
-type AwsS3BucketSpecVersioning struct {
-	Enabled   bool `json:"enabled"`
-	MfaDelete bool `json:"mfa_delete"`
+type AwsS3BucketSpecLifecycleRuleExpiration struct {
+	Date                      string `json:"date"`
+	Days                      int    `json:"days"`
+	ExpiredObjectDeleteMarker bool   `json:"expired_object_delete_marker"`
+}
+
+type AwsS3BucketSpecLifecycleRuleNoncurrentVersionExpiration struct {
+	Days int `json:"days"`
+}
+
+type AwsS3BucketSpecLifecycleRuleTransition struct {
+	Date         string `json:"date"`
+	Days         int    `json:"days"`
+	StorageClass string `json:"storage_class"`
+}
+
+type AwsS3BucketSpecLifecycleRuleNoncurrentVersionTransition struct {
+	Days         int    `json:"days"`
+	StorageClass string `json:"storage_class"`
+}
+
+type AwsS3BucketSpecReplicationConfiguration struct {
+	Role  string                                       `json:"role"`
+	Rules AwsS3BucketSpecReplicationConfigurationRules `json:"rules"`
+}
+
+type AwsS3BucketSpecReplicationConfigurationRules struct {
+	Id                      string                                                              `json:"id"`
+	Destination             AwsS3BucketSpecReplicationConfigurationRulesDestination             `json:"destination"`
+	SourceSelectionCriteria AwsS3BucketSpecReplicationConfigurationRulesSourceSelectionCriteria `json:"source_selection_criteria"`
+	Prefix                  string                                                              `json:"prefix"`
+	Status                  string                                                              `json:"status"`
+}
+
+type AwsS3BucketSpecReplicationConfigurationRulesDestination struct {
+	Bucket          string `json:"bucket"`
+	StorageClass    string `json:"storage_class"`
+	ReplicaKmsKeyId string `json:"replica_kms_key_id"`
+}
+
+type AwsS3BucketSpecReplicationConfigurationRulesSourceSelectionCriteria struct {
+	SseKmsEncryptedObjects AwsS3BucketSpecReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects `json:"sse_kms_encrypted_objects"`
+}
+
+type AwsS3BucketSpecReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects struct {
+	Enabled bool `json:"enabled"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

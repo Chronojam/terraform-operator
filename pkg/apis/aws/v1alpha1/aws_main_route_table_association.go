@@ -17,9 +17,9 @@ type AwsMainRouteTableAssociation struct {
 }
 
 type AwsMainRouteTableAssociationSpec struct {
-	VpcId                string `json:"vpc_id"`
 	RouteTableId         string `json:"route_table_id"`
 	OriginalRouteTableId string `json:"original_route_table_id"`
+	VpcId                string `json:"vpc_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

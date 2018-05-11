@@ -17,9 +17,9 @@ type AwsCodedeployDeploymentConfig struct {
 }
 
 type AwsCodedeployDeploymentConfigSpec struct {
+	DeploymentConfigName string                                                 `json:"deployment_config_name"`
 	MinimumHealthyHosts  []AwsCodedeployDeploymentConfigSpecMinimumHealthyHosts `json:"minimum_healthy_hosts"`
 	DeploymentConfigId   string                                                 `json:"deployment_config_id"`
-	DeploymentConfigName string                                                 `json:"deployment_config_name"`
 }
 
 type AwsCodedeployDeploymentConfigSpecMinimumHealthyHosts struct {

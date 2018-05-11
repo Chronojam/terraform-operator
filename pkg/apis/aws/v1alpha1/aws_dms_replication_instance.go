@@ -17,23 +17,23 @@ type AwsDmsReplicationInstance struct {
 }
 
 type AwsDmsReplicationInstanceSpec struct {
-	EngineVersion                 string            `json:"engine_version"`
-	MultiAz                       bool              `json:"multi_az"`
-	ReplicationInstanceClass      string            `json:"replication_instance_class"`
-	ReplicationInstancePrivateIps []string          `json:"replication_instance_private_ips"`
-	AvailabilityZone              string            `json:"availability_zone"`
 	AutoMinorVersionUpgrade       bool              `json:"auto_minor_version_upgrade"`
-	KmsKeyArn                     string            `json:"kms_key_arn"`
-	PubliclyAccessible            bool              `json:"publicly_accessible"`
-	ReplicationInstanceArn        string            `json:"replication_instance_arn"`
+	AvailabilityZone              string            `json:"availability_zone"`
+	MultiAz                       bool              `json:"multi_az"`
+	PreferredMaintenanceWindow    string            `json:"preferred_maintenance_window"`
 	Tags                          map[string]string `json:"tags"`
-	ApplyImmediately              bool              `json:"apply_immediately"`
-	ReplicationInstanceId         string            `json:"replication_instance_id"`
+	KmsKeyArn                     string            `json:"kms_key_arn"`
+	ReplicationInstanceClass      string            `json:"replication_instance_class"`
+	ReplicationInstancePublicIps  []string          `json:"replication_instance_public_ips"`
+	AllocatedStorage              int               `json:"allocated_storage"`
+	ReplicationInstancePrivateIps []string          `json:"replication_instance_private_ips"`
 	ReplicationSubnetGroupId      string            `json:"replication_subnet_group_id"`
 	VpcSecurityGroupIds           string            `json:"vpc_security_group_ids"`
-	AllocatedStorage              int               `json:"allocated_storage"`
-	ReplicationInstancePublicIps  []string          `json:"replication_instance_public_ips"`
-	PreferredMaintenanceWindow    string            `json:"preferred_maintenance_window"`
+	ApplyImmediately              bool              `json:"apply_immediately"`
+	EngineVersion                 string            `json:"engine_version"`
+	PubliclyAccessible            bool              `json:"publicly_accessible"`
+	ReplicationInstanceArn        string            `json:"replication_instance_arn"`
+	ReplicationInstanceId         string            `json:"replication_instance_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,11 +17,11 @@ type AwsOpsworksPermission struct {
 }
 
 type AwsOpsworksPermissionSpec struct {
+	AllowSudo bool   `json:"allow_sudo"`
+	UserArn   string `json:"user_arn"`
 	Level     string `json:"level"`
 	StackId   string `json:"stack_id"`
 	AllowSsh  bool   `json:"allow_ssh"`
-	AllowSudo bool   `json:"allow_sudo"`
-	UserArn   string `json:"user_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

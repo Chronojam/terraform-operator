@@ -17,33 +17,33 @@ type AwsDirectoryServiceDirectory struct {
 }
 
 type AwsDirectoryServiceDirectorySpec struct {
-	SecurityGroupId string                                            `json:"security_group_id"`
-	AccessUrl       string                                            `json:"access_url"`
-	Password        string                                            `json:"password"`
-	Alias           string                                            `json:"alias"`
-	ShortName       string                                            `json:"short_name"`
+	Description     string                                            `json:"description"`
 	VpcSettings     []AwsDirectoryServiceDirectorySpecVpcSettings     `json:"vpc_settings"`
-	ConnectSettings []AwsDirectoryServiceDirectorySpecConnectSettings `json:"connect_settings"`
 	EnableSso       bool                                              `json:"enable_sso"`
+	Alias           string                                            `json:"alias"`
+	Tags            map[string]string                                 `json:"tags"`
+	ConnectSettings []AwsDirectoryServiceDirectorySpecConnectSettings `json:"connect_settings"`
+	AccessUrl       string                                            `json:"access_url"`
 	DnsIpAddresses  string                                            `json:"dns_ip_addresses"`
+	SecurityGroupId string                                            `json:"security_group_id"`
+	Type            string                                            `json:"type"`
 	Edition         string                                            `json:"edition"`
 	Name            string                                            `json:"name"`
-	Description     string                                            `json:"description"`
-	Tags            map[string]string                                 `json:"tags"`
-	Type            string                                            `json:"type"`
+	Password        string                                            `json:"password"`
 	Size            string                                            `json:"size"`
+	ShortName       string                                            `json:"short_name"`
 }
 
 type AwsDirectoryServiceDirectorySpecVpcSettings struct {
-	SubnetIds string `json:"subnet_ids"`
 	VpcId     string `json:"vpc_id"`
+	SubnetIds string `json:"subnet_ids"`
 }
 
 type AwsDirectoryServiceDirectorySpecConnectSettings struct {
-	CustomerUsername string `json:"customer_username"`
 	CustomerDnsIps   string `json:"customer_dns_ips"`
 	SubnetIds        string `json:"subnet_ids"`
 	VpcId            string `json:"vpc_id"`
+	CustomerUsername string `json:"customer_username"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

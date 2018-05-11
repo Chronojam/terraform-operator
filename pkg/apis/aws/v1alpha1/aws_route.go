@@ -18,18 +18,18 @@ type AwsRoute struct {
 
 type AwsRouteSpec struct {
 	DestinationCidrBlock     string `json:"destination_cidr_block"`
+	EgressOnlyGatewayId      string `json:"egress_only_gateway_id"`
+	NatGatewayId             string `json:"nat_gateway_id"`
+	InstanceOwnerId          string `json:"instance_owner_id"`
+	NetworkInterfaceId       string `json:"network_interface_id"`
+	State                    string `json:"state"`
+	RouteTableId             string `json:"route_table_id"`
 	DestinationIpv6CidrBlock string `json:"destination_ipv6_cidr_block"`
 	DestinationPrefixListId  string `json:"destination_prefix_list_id"`
 	GatewayId                string `json:"gateway_id"`
-	EgressOnlyGatewayId      string `json:"egress_only_gateway_id"`
-	NatGatewayId             string `json:"nat_gateway_id"`
 	InstanceId               string `json:"instance_id"`
-	InstanceOwnerId          string `json:"instance_owner_id"`
 	Origin                   string `json:"origin"`
-	State                    string `json:"state"`
 	VpcPeeringConnectionId   string `json:"vpc_peering_connection_id"`
-	NetworkInterfaceId       string `json:"network_interface_id"`
-	RouteTableId             string `json:"route_table_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,25 +17,25 @@ type AwsAlb struct {
 }
 
 type AwsAlbSpec struct {
-	SecurityGroups               string                  `json:"security_groups"`
+	IpAddressType                string                  `json:"ip_address_type"`
+	Tags                         map[string]string       `json:"tags"`
+	ArnSuffix                    string                  `json:"arn_suffix"`
+	Name                         string                  `json:"name"`
+	NamePrefix                   string                  `json:"name_prefix"`
+	Internal                     bool                    `json:"internal"`
+	EnableDeletionProtection     bool                    `json:"enable_deletion_protection"`
+	LoadBalancerType             string                  `json:"load_balancer_type"`
+	Subnets                      string                  `json:"subnets"`
 	AccessLogs                   []AwsAlbSpecAccessLogs  `json:"access_logs"`
+	IdleTimeout                  int                     `json:"idle_timeout"`
 	EnableHttp2                  bool                    `json:"enable_http2"`
 	VpcId                        string                  `json:"vpc_id"`
-	ArnSuffix                    string                  `json:"arn_suffix"`
-	NamePrefix                   string                  `json:"name_prefix"`
-	Subnets                      string                  `json:"subnets"`
-	SubnetMapping                AwsAlbSpecSubnetMapping `json:"subnet_mapping"`
-	Tags                         map[string]string       `json:"tags"`
 	Arn                          string                  `json:"arn"`
-	Internal                     bool                    `json:"internal"`
-	LoadBalancerType             string                  `json:"load_balancer_type"`
-	IdleTimeout                  int                     `json:"idle_timeout"`
+	SecurityGroups               string                  `json:"security_groups"`
+	SubnetMapping                AwsAlbSpecSubnetMapping `json:"subnet_mapping"`
 	EnableCrossZoneLoadBalancing bool                    `json:"enable_cross_zone_load_balancing"`
-	DnsName                      string                  `json:"dns_name"`
-	Name                         string                  `json:"name"`
-	EnableDeletionProtection     bool                    `json:"enable_deletion_protection"`
-	IpAddressType                string                  `json:"ip_address_type"`
 	ZoneId                       string                  `json:"zone_id"`
+	DnsName                      string                  `json:"dns_name"`
 }
 
 type AwsAlbSpecAccessLogs struct {

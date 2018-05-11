@@ -17,34 +17,26 @@ type AwsElb struct {
 }
 
 type AwsElbSpec struct {
-	Subnets                   string                  `json:"subnets"`
-	Listener                  AwsElbSpecListener      `json:"listener"`
-	Tags                      map[string]string       `json:"tags"`
-	Arn                       string                  `json:"arn"`
-	Instances                 string                  `json:"instances"`
-	SourceSecurityGroup       string                  `json:"source_security_group"`
 	AccessLogs                []AwsElbSpecAccessLogs  `json:"access_logs"`
-	ZoneId                    string                  `json:"zone_id"`
+	HealthCheck               []AwsElbSpecHealthCheck `json:"health_check"`
 	Internal                  bool                    `json:"internal"`
 	AvailabilityZones         string                  `json:"availability_zones"`
-	IdleTimeout               int                     `json:"idle_timeout"`
-	ConnectionDrainingTimeout int                     `json:"connection_draining_timeout"`
-	HealthCheck               []AwsElbSpecHealthCheck `json:"health_check"`
-	DnsName                   string                  `json:"dns_name"`
-	Name                      string                  `json:"name"`
-	NamePrefix                string                  `json:"name_prefix"`
-	ConnectionDraining        bool                    `json:"connection_draining"`
-	CrossZoneLoadBalancing    bool                    `json:"cross_zone_load_balancing"`
-	SecurityGroups            string                  `json:"security_groups"`
+	Subnets                   string                  `json:"subnets"`
 	SourceSecurityGroupId     string                  `json:"source_security_group_id"`
-}
-
-type AwsElbSpecListener struct {
-	LbProtocol       string `json:"lb_protocol"`
-	SslCertificateId string `json:"ssl_certificate_id"`
-	InstancePort     int    `json:"instance_port"`
-	InstanceProtocol string `json:"instance_protocol"`
-	LbPort           int    `json:"lb_port"`
+	ConnectionDrainingTimeout int                     `json:"connection_draining_timeout"`
+	DnsName                   string                  `json:"dns_name"`
+	Arn                       string                  `json:"arn"`
+	CrossZoneLoadBalancing    bool                    `json:"cross_zone_load_balancing"`
+	Instances                 string                  `json:"instances"`
+	Listener                  AwsElbSpecListener      `json:"listener"`
+	Tags                      map[string]string       `json:"tags"`
+	NamePrefix                string                  `json:"name_prefix"`
+	SecurityGroups            string                  `json:"security_groups"`
+	ConnectionDraining        bool                    `json:"connection_draining"`
+	ZoneId                    string                  `json:"zone_id"`
+	Name                      string                  `json:"name"`
+	SourceSecurityGroup       string                  `json:"source_security_group"`
+	IdleTimeout               int                     `json:"idle_timeout"`
 }
 
 type AwsElbSpecAccessLogs struct {
@@ -55,11 +47,19 @@ type AwsElbSpecAccessLogs struct {
 }
 
 type AwsElbSpecHealthCheck struct {
+	Interval           int    `json:"interval"`
+	Timeout            int    `json:"timeout"`
 	HealthyThreshold   int    `json:"healthy_threshold"`
 	UnhealthyThreshold int    `json:"unhealthy_threshold"`
 	Target             string `json:"target"`
-	Interval           int    `json:"interval"`
-	Timeout            int    `json:"timeout"`
+}
+
+type AwsElbSpecListener struct {
+	LbPort           int    `json:"lb_port"`
+	LbProtocol       string `json:"lb_protocol"`
+	SslCertificateId string `json:"ssl_certificate_id"`
+	InstancePort     int    `json:"instance_port"`
+	InstanceProtocol string `json:"instance_protocol"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,26 +17,26 @@ type AwsOpsworksStaticWebLayer struct {
 }
 
 type AwsOpsworksStaticWebLayerSpec struct {
-	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
-	CustomSecurityGroupIds   string                                 `json:"custom_security_group_ids"`
-	InstanceShutdownTimeout  int                                    `json:"instance_shutdown_timeout"`
-	CustomConfigureRecipes   []string                               `json:"custom_configure_recipes"`
 	CustomJson               string                                 `json:"custom_json"`
+	AutoHealing              bool                                   `json:"auto_healing"`
+	InstanceShutdownTimeout  int                                    `json:"instance_shutdown_timeout"`
+	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
+	AutoAssignPublicIps      bool                                   `json:"auto_assign_public_ips"`
+	ElasticLoadBalancer      string                                 `json:"elastic_load_balancer"`
+	CustomConfigureRecipes   []string                               `json:"custom_configure_recipes"`
+	CustomSecurityGroupIds   string                                 `json:"custom_security_group_ids"`
+	EbsVolume                AwsOpsworksStaticWebLayerSpecEbsVolume `json:"ebs_volume"`
 	Name                     string                                 `json:"name"`
+	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
+	CustomShutdownRecipes    []string                               `json:"custom_shutdown_recipes"`
+	InstallUpdatesOnBoot     bool                                   `json:"install_updates_on_boot"`
 	SystemPackages           string                                 `json:"system_packages"`
 	StackId                  string                                 `json:"stack_id"`
 	UseEbsOptimizedInstances bool                                   `json:"use_ebs_optimized_instances"`
-	AutoAssignPublicIps      bool                                   `json:"auto_assign_public_ips"`
-	CustomShutdownRecipes    []string                               `json:"custom_shutdown_recipes"`
-	AutoHealing              bool                                   `json:"auto_healing"`
 	CustomSetupRecipes       []string                               `json:"custom_setup_recipes"`
+	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
 	CustomUndeployRecipes    []string                               `json:"custom_undeploy_recipes"`
-	InstallUpdatesOnBoot     bool                                   `json:"install_updates_on_boot"`
 	DrainElbOnShutdown       bool                                   `json:"drain_elb_on_shutdown"`
-	EbsVolume                AwsOpsworksStaticWebLayerSpecEbsVolume `json:"ebs_volume"`
-	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
-	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
-	ElasticLoadBalancer      string                                 `json:"elastic_load_balancer"`
 }
 
 type AwsOpsworksStaticWebLayerSpecEbsVolume struct {

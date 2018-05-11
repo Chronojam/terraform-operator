@@ -17,8 +17,8 @@ type AwsElasticsearchDomainPolicy struct {
 }
 
 type AwsElasticsearchDomainPolicySpec struct {
-	DomainName     string `json:"domain_name"`
 	AccessPolicies string `json:"access_policies"`
+	DomainName     string `json:"domain_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

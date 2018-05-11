@@ -17,14 +17,14 @@ type AwsBatchJobDefinition struct {
 }
 
 type AwsBatchJobDefinitionSpec struct {
+	RetryStrategy       []AwsBatchJobDefinitionSpecRetryStrategy `json:"retry_strategy"`
+	Timeout             []AwsBatchJobDefinitionSpecTimeout       `json:"timeout"`
 	Type                string                                   `json:"type"`
 	Revision            int                                      `json:"revision"`
 	Arn                 string                                   `json:"arn"`
 	Name                string                                   `json:"name"`
 	ContainerProperties string                                   `json:"container_properties"`
 	Parameters          map[string]string                        `json:"parameters"`
-	RetryStrategy       []AwsBatchJobDefinitionSpecRetryStrategy `json:"retry_strategy"`
-	Timeout             []AwsBatchJobDefinitionSpecTimeout       `json:"timeout"`
 }
 
 type AwsBatchJobDefinitionSpecRetryStrategy struct {

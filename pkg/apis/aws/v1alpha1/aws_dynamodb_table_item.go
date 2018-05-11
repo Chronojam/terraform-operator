@@ -17,10 +17,10 @@ type AwsDynamodbTableItem struct {
 }
 
 type AwsDynamodbTableItemSpec struct {
-	RangeKey  string `json:"range_key"`
-	Item      string `json:"item"`
 	TableName string `json:"table_name"`
 	HashKey   string `json:"hash_key"`
+	RangeKey  string `json:"range_key"`
+	Item      string `json:"item"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

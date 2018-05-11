@@ -17,8 +17,8 @@ type AwsGuarddutyDetector struct {
 }
 
 type AwsGuarddutyDetectorSpec struct {
-	AccountId string `json:"account_id"`
 	Enable    bool   `json:"enable"`
+	AccountId string `json:"account_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

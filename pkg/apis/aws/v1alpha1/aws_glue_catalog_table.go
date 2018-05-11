@@ -17,45 +17,39 @@ type AwsGlueCatalogTable struct {
 }
 
 type AwsGlueCatalogTableSpec struct {
-	DatabaseName      string                                     `json:"database_name"`
+	CatalogId         string                                     `json:"catalog_id"`
 	Description       string                                     `json:"description"`
-	Owner             string                                     `json:"owner"`
-	PartitionKeys     []AwsGlueCatalogTableSpecPartitionKeys     `json:"partition_keys"`
+	Parameters        map[string]string                          `json:"parameters"`
 	Retention         int                                        `json:"retention"`
 	StorageDescriptor []AwsGlueCatalogTableSpecStorageDescriptor `json:"storage_descriptor"`
-	TableType         string                                     `json:"table_type"`
 	ViewOriginalText  string                                     `json:"view_original_text"`
 	ViewExpandedText  string                                     `json:"view_expanded_text"`
-	CatalogId         string                                     `json:"catalog_id"`
+	DatabaseName      string                                     `json:"database_name"`
 	Name              string                                     `json:"name"`
-	Parameters        map[string]string                          `json:"parameters"`
-}
-
-type AwsGlueCatalogTableSpecPartitionKeys struct {
-	Type    string `json:"type"`
-	Comment string `json:"comment"`
-	Name    string `json:"name"`
+	Owner             string                                     `json:"owner"`
+	PartitionKeys     []AwsGlueCatalogTableSpecPartitionKeys     `json:"partition_keys"`
+	TableType         string                                     `json:"table_type"`
 }
 
 type AwsGlueCatalogTableSpecStorageDescriptor struct {
-	OutputFormat           string                                                `json:"output_format"`
-	SkewedInfo             []AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo  `json:"skewed_info"`
-	SortColumns            []AwsGlueCatalogTableSpecStorageDescriptorSortColumns `json:"sort_columns"`
-	BucketColumns          []string                                              `json:"bucket_columns"`
-	Columns                []AwsGlueCatalogTableSpecStorageDescriptorColumns     `json:"columns"`
-	Location               string                                                `json:"location"`
+	Compressed             bool                                                  `json:"compressed"`
 	NumberOfBuckets        int                                                   `json:"number_of_buckets"`
+	OutputFormat           string                                                `json:"output_format"`
 	Parameters             map[string]string                                     `json:"parameters"`
 	SerDeInfo              []AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo   `json:"ser_de_info"`
+	SortColumns            []AwsGlueCatalogTableSpecStorageDescriptorSortColumns `json:"sort_columns"`
 	StoredAsSubDirectories bool                                                  `json:"stored_as_sub_directories"`
-	Compressed             bool                                                  `json:"compressed"`
+	Columns                []AwsGlueCatalogTableSpecStorageDescriptorColumns     `json:"columns"`
 	InputFormat            string                                                `json:"input_format"`
+	Location               string                                                `json:"location"`
+	SkewedInfo             []AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo  `json:"skewed_info"`
+	BucketColumns          []string                                              `json:"bucket_columns"`
 }
 
-type AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo struct {
-	SkewedColumnNames             []string          `json:"skewed_column_names"`
-	SkewedColumnValues            []string          `json:"skewed_column_values"`
-	SkewedColumnValueLocationMaps map[string]string `json:"skewed_column_value_location_maps"`
+type AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo struct {
+	SerializationLibrary string            `json:"serialization_library"`
+	Name                 string            `json:"name"`
+	Parameters           map[string]string `json:"parameters"`
 }
 
 type AwsGlueCatalogTableSpecStorageDescriptorSortColumns struct {
@@ -69,10 +63,16 @@ type AwsGlueCatalogTableSpecStorageDescriptorColumns struct {
 	Type    string `json:"type"`
 }
 
-type AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo struct {
-	Parameters           map[string]string `json:"parameters"`
-	SerializationLibrary string            `json:"serialization_library"`
-	Name                 string            `json:"name"`
+type AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo struct {
+	SkewedColumnNames             []string          `json:"skewed_column_names"`
+	SkewedColumnValues            []string          `json:"skewed_column_values"`
+	SkewedColumnValueLocationMaps map[string]string `json:"skewed_column_value_location_maps"`
+}
+
+type AwsGlueCatalogTableSpecPartitionKeys struct {
+	Type    string `json:"type"`
+	Comment string `json:"comment"`
+	Name    string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

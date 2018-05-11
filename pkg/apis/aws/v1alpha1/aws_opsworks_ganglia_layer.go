@@ -17,38 +17,38 @@ type AwsOpsworksGangliaLayer struct {
 }
 
 type AwsOpsworksGangliaLayerSpec struct {
-	Username                 string                               `json:"username"`
-	Password                 string                               `json:"password"`
-	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
-	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
-	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
+	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
+	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
+	CustomJson               string                               `json:"custom_json"`
 	AutoHealing              bool                                 `json:"auto_healing"`
+	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
+	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
+	Url                      string                               `json:"url"`
+	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
+	Password                 string                               `json:"password"`
+	Username                 string                               `json:"username"`
+	CustomShutdownRecipes    []string                             `json:"custom_shutdown_recipes"`
+	SystemPackages           string                               `json:"system_packages"`
+	Name                     string                               `json:"name"`
+	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
+	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
 	StackId                  string                               `json:"stack_id"`
+	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
 	EbsVolume                AwsOpsworksGangliaLayerSpecEbsVolume `json:"ebs_volume"`
 	CustomSetupRecipes       []string                             `json:"custom_setup_recipes"`
 	CustomConfigureRecipes   []string                             `json:"custom_configure_recipes"`
-	CustomShutdownRecipes    []string                             `json:"custom_shutdown_recipes"`
-	InstallUpdatesOnBoot     bool                                 `json:"install_updates_on_boot"`
-	Url                      string                               `json:"url"`
-	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
-	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
-	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
 	CustomSecurityGroupIds   string                               `json:"custom_security_group_ids"`
-	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
-	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
-	CustomJson               string                               `json:"custom_json"`
-	SystemPackages           string                               `json:"system_packages"`
-	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
-	Name                     string                               `json:"name"`
+	InstallUpdatesOnBoot     bool                                 `json:"install_updates_on_boot"`
+	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
 }
 
 type AwsOpsworksGangliaLayerSpecEbsVolume struct {
-	Iops          int    `json:"iops"`
-	MountPoint    string `json:"mount_point"`
-	NumberOfDisks int    `json:"number_of_disks"`
 	RaidLevel     string `json:"raid_level"`
 	Size          int    `json:"size"`
 	Type          string `json:"type"`
+	Iops          int    `json:"iops"`
+	MountPoint    string `json:"mount_point"`
+	NumberOfDisks int    `json:"number_of_disks"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

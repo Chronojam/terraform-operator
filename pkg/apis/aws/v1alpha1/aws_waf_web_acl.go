@@ -17,10 +17,10 @@ type AwsWafWebAcl struct {
 }
 
 type AwsWafWebAclSpec struct {
+	Name          string                        `json:"name"`
 	DefaultAction AwsWafWebAclSpecDefaultAction `json:"default_action"`
 	MetricName    string                        `json:"metric_name"`
 	Rules         AwsWafWebAclSpecRules         `json:"rules"`
-	Name          string                        `json:"name"`
 }
 
 type AwsWafWebAclSpecDefaultAction struct {
@@ -28,10 +28,10 @@ type AwsWafWebAclSpecDefaultAction struct {
 }
 
 type AwsWafWebAclSpecRules struct {
+	Action   AwsWafWebAclSpecRulesAction `json:"action"`
 	Priority int                         `json:"priority"`
 	Type     string                      `json:"type"`
 	RuleId   string                      `json:"rule_id"`
-	Action   AwsWafWebAclSpecRulesAction `json:"action"`
 }
 
 type AwsWafWebAclSpecRulesAction struct {

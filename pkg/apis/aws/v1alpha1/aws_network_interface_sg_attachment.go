@@ -17,8 +17,8 @@ type AwsNetworkInterfaceSgAttachment struct {
 }
 
 type AwsNetworkInterfaceSgAttachmentSpec struct {
-	NetworkInterfaceId string `json:"network_interface_id"`
 	SecurityGroupId    string `json:"security_group_id"`
+	NetworkInterfaceId string `json:"network_interface_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

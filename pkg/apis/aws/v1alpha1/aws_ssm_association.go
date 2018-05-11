@@ -17,15 +17,15 @@ type AwsSsmAssociation struct {
 }
 
 type AwsSsmAssociationSpec struct {
-	AssociationId      string                                `json:"association_id"`
-	InstanceId         string                                `json:"instance_id"`
-	DocumentVersion    string                                `json:"document_version"`
 	Parameters         map[string]string                     `json:"parameters"`
 	ScheduleExpression string                                `json:"schedule_expression"`
 	OutputLocation     []AwsSsmAssociationSpecOutputLocation `json:"output_location"`
 	AssociationName    string                                `json:"association_name"`
-	Targets            []AwsSsmAssociationSpecTargets        `json:"targets"`
+	InstanceId         string                                `json:"instance_id"`
+	DocumentVersion    string                                `json:"document_version"`
 	Name               string                                `json:"name"`
+	AssociationId      string                                `json:"association_id"`
+	Targets            []AwsSsmAssociationSpecTargets        `json:"targets"`
 }
 
 type AwsSsmAssociationSpecOutputLocation struct {

@@ -17,24 +17,24 @@ type AwsS3BucketObject struct {
 }
 
 type AwsS3BucketObjectSpec struct {
-	ContentEncoding      string            `json:"content_encoding"`
-	Content              string            `json:"content"`
-	ContentBase64        string            `json:"content_base64"`
-	ServerSideEncryption string            `json:"server_side_encryption"`
-	KmsKeyId             string            `json:"kms_key_id"`
-	Etag                 string            `json:"etag"`
-	VersionId            string            `json:"version_id"`
-	Acl                  string            `json:"acl"`
-	WebsiteRedirect      string            `json:"website_redirect"`
-	CacheControl         string            `json:"cache_control"`
 	ContentType          string            `json:"content_type"`
-	Source               string            `json:"source"`
 	StorageClass         string            `json:"storage_class"`
+	Etag                 string            `json:"etag"`
 	Bucket               string            `json:"bucket"`
+	Acl                  string            `json:"acl"`
+	CacheControl         string            `json:"cache_control"`
+	ContentEncoding      string            `json:"content_encoding"`
 	ContentDisposition   string            `json:"content_disposition"`
-	ContentLanguage      string            `json:"content_language"`
+	Source               string            `json:"source"`
+	Content              string            `json:"content"`
+	KmsKeyId             string            `json:"kms_key_id"`
+	WebsiteRedirect      string            `json:"website_redirect"`
 	Key                  string            `json:"key"`
+	ServerSideEncryption string            `json:"server_side_encryption"`
+	VersionId            string            `json:"version_id"`
 	Tags                 map[string]string `json:"tags"`
+	ContentLanguage      string            `json:"content_language"`
+	ContentBase64        string            `json:"content_base64"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

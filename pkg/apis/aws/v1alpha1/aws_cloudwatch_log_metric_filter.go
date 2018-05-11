@@ -17,17 +17,17 @@ type AwsCloudwatchLogMetricFilter struct {
 }
 
 type AwsCloudwatchLogMetricFilterSpec struct {
+	Name                 string                                                 `json:"name"`
 	Pattern              string                                                 `json:"pattern"`
 	LogGroupName         string                                                 `json:"log_group_name"`
 	MetricTransformation []AwsCloudwatchLogMetricFilterSpecMetricTransformation `json:"metric_transformation"`
-	Name                 string                                                 `json:"name"`
 }
 
 type AwsCloudwatchLogMetricFilterSpecMetricTransformation struct {
-	Name         string  `json:"name"`
-	Namespace    string  `json:"namespace"`
 	Value        string  `json:"value"`
 	DefaultValue float64 `json:"default_value"`
+	Name         string  `json:"name"`
+	Namespace    string  `json:"namespace"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

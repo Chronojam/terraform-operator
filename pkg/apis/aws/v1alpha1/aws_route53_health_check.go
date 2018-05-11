@@ -17,25 +17,25 @@ type AwsRoute53HealthCheck struct {
 }
 
 type AwsRoute53HealthCheckSpec struct {
-	RequestInterval              int               `json:"request_interval"`
-	IpAddress                    string            `json:"ip_address"`
-	Port                         int               `json:"port"`
 	InvertHealthcheck            bool              `json:"invert_healthcheck"`
-	ChildHealthThreshold         int               `json:"child_health_threshold"`
-	EnableSni                    bool              `json:"enable_sni"`
+	ReferenceName                string            `json:"reference_name"`
+	Regions                      string            `json:"regions"`
 	FailureThreshold             int               `json:"failure_threshold"`
-	SearchString                 string            `json:"search_string"`
+	Fqdn                         string            `json:"fqdn"`
 	MeasureLatency               bool              `json:"measure_latency"`
 	ChildHealthchecks            string            `json:"child_healthchecks"`
-	CloudwatchAlarmName          string            `json:"cloudwatch_alarm_name"`
+	ChildHealthThreshold         int               `json:"child_health_threshold"`
 	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
 	InsufficientDataHealthStatus string            `json:"insufficient_data_health_status"`
-	Type                         string            `json:"type"`
 	ResourcePath                 string            `json:"resource_path"`
-	ReferenceName                string            `json:"reference_name"`
+	SearchString                 string            `json:"search_string"`
+	EnableSni                    bool              `json:"enable_sni"`
 	Tags                         map[string]string `json:"tags"`
-	Fqdn                         string            `json:"fqdn"`
-	Regions                      string            `json:"regions"`
+	RequestInterval              int               `json:"request_interval"`
+	CloudwatchAlarmName          string            `json:"cloudwatch_alarm_name"`
+	Port                         int               `json:"port"`
+	Type                         string            `json:"type"`
+	IpAddress                    string            `json:"ip_address"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

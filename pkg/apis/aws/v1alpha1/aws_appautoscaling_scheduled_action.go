@@ -17,20 +17,20 @@ type AwsAppautoscalingScheduledAction struct {
 }
 
 type AwsAppautoscalingScheduledActionSpec struct {
-	ResourceId           string                                                     `json:"resource_id"`
+	Arn                  string                                                     `json:"arn"`
+	Name                 string                                                     `json:"name"`
 	ScalableDimension    string                                                     `json:"scalable_dimension"`
+	ScalableTargetAction []AwsAppautoscalingScheduledActionSpecScalableTargetAction `json:"scalable_target_action"`
 	Schedule             string                                                     `json:"schedule"`
 	StartTime            string                                                     `json:"start_time"`
-	Name                 string                                                     `json:"name"`
-	ServiceNamespace     string                                                     `json:"service_namespace"`
-	ScalableTargetAction []AwsAppautoscalingScheduledActionSpecScalableTargetAction `json:"scalable_target_action"`
 	EndTime              string                                                     `json:"end_time"`
-	Arn                  string                                                     `json:"arn"`
+	ServiceNamespace     string                                                     `json:"service_namespace"`
+	ResourceId           string                                                     `json:"resource_id"`
 }
 
 type AwsAppautoscalingScheduledActionSpecScalableTargetAction struct {
-	MinCapacity int `json:"min_capacity"`
 	MaxCapacity int `json:"max_capacity"`
+	MinCapacity int `json:"min_capacity"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

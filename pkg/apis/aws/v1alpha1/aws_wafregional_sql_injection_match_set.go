@@ -22,8 +22,8 @@ type AwsWafregionalSqlInjectionMatchSetSpec struct {
 }
 
 type AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTuple struct {
-	TextTransformation string                                                                     `json:"text_transformation"`
 	FieldToMatch       []AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTupleFieldToMatch `json:"field_to_match"`
+	TextTransformation string                                                                     `json:"text_transformation"`
 }
 
 type AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTupleFieldToMatch struct {

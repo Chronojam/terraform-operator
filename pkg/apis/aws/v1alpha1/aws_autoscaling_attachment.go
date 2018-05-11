@@ -17,9 +17,9 @@ type AwsAutoscalingAttachment struct {
 }
 
 type AwsAutoscalingAttachmentSpec struct {
-	AutoscalingGroupName string `json:"autoscaling_group_name"`
 	Elb                  string `json:"elb"`
 	AlbTargetGroupArn    string `json:"alb_target_group_arn"`
+	AutoscalingGroupName string `json:"autoscaling_group_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

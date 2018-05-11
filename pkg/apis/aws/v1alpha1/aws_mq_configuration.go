@@ -17,13 +17,13 @@ type AwsMqConfiguration struct {
 }
 
 type AwsMqConfigurationSpec struct {
-	LatestRevision int    `json:"latest_revision"`
-	Arn            string `json:"arn"`
-	Data           string `json:"data"`
 	Description    string `json:"description"`
 	EngineType     string `json:"engine_type"`
 	EngineVersion  string `json:"engine_version"`
 	Name           string `json:"name"`
+	LatestRevision int    `json:"latest_revision"`
+	Arn            string `json:"arn"`
+	Data           string `json:"data"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

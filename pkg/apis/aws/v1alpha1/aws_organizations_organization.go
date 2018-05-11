@@ -17,11 +17,11 @@ type AwsOrganizationsOrganization struct {
 }
 
 type AwsOrganizationsOrganizationSpec struct {
-	MasterAccountEmail string `json:"master_account_email"`
 	MasterAccountId    string `json:"master_account_id"`
 	FeatureSet         string `json:"feature_set"`
 	Arn                string `json:"arn"`
 	MasterAccountArn   string `json:"master_account_arn"`
+	MasterAccountEmail string `json:"master_account_email"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

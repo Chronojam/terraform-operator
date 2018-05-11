@@ -17,8 +17,8 @@ type AwsWafregionalRegexMatchSet struct {
 }
 
 type AwsWafregionalRegexMatchSetSpec struct {
-	RegexMatchTuple AwsWafregionalRegexMatchSetSpecRegexMatchTuple `json:"regex_match_tuple"`
 	Name            string                                         `json:"name"`
+	RegexMatchTuple AwsWafregionalRegexMatchSetSpecRegexMatchTuple `json:"regex_match_tuple"`
 }
 
 type AwsWafregionalRegexMatchSetSpecRegexMatchTuple struct {

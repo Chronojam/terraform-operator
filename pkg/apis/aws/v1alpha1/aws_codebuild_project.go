@@ -17,24 +17,18 @@ type AwsCodebuildProject struct {
 }
 
 type AwsCodebuildProjectSpec struct {
-	BuildTimeout  int                                `json:"build_timeout"`
-	VpcConfig     []AwsCodebuildProjectSpecVpcConfig `json:"vpc_config"`
 	Cache         []AwsCodebuildProjectSpecCache     `json:"cache"`
+	Description   string                             `json:"description"`
+	Name          string                             `json:"name"`
+	Source        AwsCodebuildProjectSpecSource      `json:"source"`
+	BuildTimeout  int                                `json:"build_timeout"`
+	Tags          map[string]string                  `json:"tags"`
+	VpcConfig     []AwsCodebuildProjectSpecVpcConfig `json:"vpc_config"`
+	Artifacts     AwsCodebuildProjectSpecArtifacts   `json:"artifacts"`
 	EncryptionKey string                             `json:"encryption_key"`
 	Environment   AwsCodebuildProjectSpecEnvironment `json:"environment"`
 	ServiceRole   string                             `json:"service_role"`
-	Source        AwsCodebuildProjectSpecSource      `json:"source"`
 	Timeout       int                                `json:"timeout"`
-	Artifacts     AwsCodebuildProjectSpecArtifacts   `json:"artifacts"`
-	Description   string                             `json:"description"`
-	Name          string                             `json:"name"`
-	Tags          map[string]string                  `json:"tags"`
-}
-
-type AwsCodebuildProjectSpecVpcConfig struct {
-	VpcId            string `json:"vpc_id"`
-	Subnets          string `json:"subnets"`
-	SecurityGroupIds string `json:"security_group_ids"`
 }
 
 type AwsCodebuildProjectSpecCache struct {
@@ -42,29 +36,22 @@ type AwsCodebuildProjectSpecCache struct {
 	Location string `json:"location"`
 }
 
-type AwsCodebuildProjectSpecEnvironment struct {
-	Type                string                                                  `json:"type"`
-	PrivilegedMode      bool                                                    `json:"privileged_mode"`
-	ComputeType         string                                                  `json:"compute_type"`
-	EnvironmentVariable []AwsCodebuildProjectSpecEnvironmentEnvironmentVariable `json:"environment_variable"`
-	Image               string                                                  `json:"image"`
-}
-
-type AwsCodebuildProjectSpecEnvironmentEnvironmentVariable struct {
-	Name  string `json:"name"`
-	Value string `json:"value"`
-}
-
 type AwsCodebuildProjectSpecSource struct {
+	Buildspec string                            `json:"buildspec"`
 	Location  string                            `json:"location"`
 	Type      string                            `json:"type"`
 	Auth      AwsCodebuildProjectSpecSourceAuth `json:"auth"`
-	Buildspec string                            `json:"buildspec"`
 }
 
 type AwsCodebuildProjectSpecSourceAuth struct {
-	Type     string `json:"type"`
 	Resource string `json:"resource"`
+	Type     string `json:"type"`
+}
+
+type AwsCodebuildProjectSpecVpcConfig struct {
+	SecurityGroupIds string `json:"security_group_ids"`
+	VpcId            string `json:"vpc_id"`
+	Subnets          string `json:"subnets"`
 }
 
 type AwsCodebuildProjectSpecArtifacts struct {
@@ -74,6 +61,19 @@ type AwsCodebuildProjectSpecArtifacts struct {
 	Type          string `json:"type"`
 	Name          string `json:"name"`
 	Location      string `json:"location"`
+}
+
+type AwsCodebuildProjectSpecEnvironment struct {
+	ComputeType         string                                                  `json:"compute_type"`
+	EnvironmentVariable []AwsCodebuildProjectSpecEnvironmentEnvironmentVariable `json:"environment_variable"`
+	Image               string                                                  `json:"image"`
+	Type                string                                                  `json:"type"`
+	PrivilegedMode      bool                                                    `json:"privileged_mode"`
+}
+
+type AwsCodebuildProjectSpecEnvironmentEnvironmentVariable struct {
+	Name  string `json:"name"`
+	Value string `json:"value"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

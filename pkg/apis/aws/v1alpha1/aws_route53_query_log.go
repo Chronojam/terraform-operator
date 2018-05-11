@@ -17,8 +17,8 @@ type AwsRoute53QueryLog struct {
 }
 
 type AwsRoute53QueryLogSpec struct {
-	CloudwatchLogGroupArn string `json:"cloudwatch_log_group_arn"`
 	ZoneId                string `json:"zone_id"`
+	CloudwatchLogGroupArn string `json:"cloudwatch_log_group_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

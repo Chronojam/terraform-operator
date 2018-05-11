@@ -17,14 +17,14 @@ type AwsIamServiceLinkedRole struct {
 }
 
 type AwsIamServiceLinkedRoleSpec struct {
-	Arn            string `json:"arn"`
-	CreateDate     string `json:"create_date"`
 	UniqueId       string `json:"unique_id"`
 	CustomSuffix   string `json:"custom_suffix"`
 	Description    string `json:"description"`
 	AwsServiceName string `json:"aws_service_name"`
 	Name           string `json:"name"`
 	Path           string `json:"path"`
+	Arn            string `json:"arn"`
+	CreateDate     string `json:"create_date"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

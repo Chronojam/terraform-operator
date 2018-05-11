@@ -17,14 +17,14 @@ type AwsLambdaPermission struct {
 }
 
 type AwsLambdaPermissionSpec struct {
+	StatementIdPrefix string `json:"statement_id_prefix"`
+	Action            string `json:"action"`
 	FunctionName      string `json:"function_name"`
 	Principal         string `json:"principal"`
 	Qualifier         string `json:"qualifier"`
 	SourceAccount     string `json:"source_account"`
 	SourceArn         string `json:"source_arn"`
 	StatementId       string `json:"statement_id"`
-	StatementIdPrefix string `json:"statement_id_prefix"`
-	Action            string `json:"action"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

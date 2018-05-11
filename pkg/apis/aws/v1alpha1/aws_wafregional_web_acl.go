@@ -28,9 +28,9 @@ type AwsWafregionalWebAclSpecDefaultAction struct {
 }
 
 type AwsWafregionalWebAclSpecRule struct {
+	Action   []AwsWafregionalWebAclSpecRuleAction `json:"action"`
 	Priority int                                  `json:"priority"`
 	RuleId   string                               `json:"rule_id"`
-	Action   []AwsWafregionalWebAclSpecRuleAction `json:"action"`
 }
 
 type AwsWafregionalWebAclSpecRuleAction struct {

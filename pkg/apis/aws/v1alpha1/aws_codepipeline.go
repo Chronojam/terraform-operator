@@ -31,8 +31,8 @@ type AwsCodepipelineSpecArtifactStore struct {
 }
 
 type AwsCodepipelineSpecArtifactStoreEncryptionKey struct {
-	Type string `json:"type"`
 	Id   string `json:"id"`
+	Type string `json:"type"`
 }
 
 type AwsCodepipelineSpecStage struct {
@@ -41,13 +41,13 @@ type AwsCodepipelineSpecStage struct {
 }
 
 type AwsCodepipelineSpecStageAction struct {
-	Version         string            `json:"version"`
-	InputArtifacts  []string          `json:"input_artifacts"`
-	RoleArn         string            `json:"role_arn"`
 	Configuration   map[string]string `json:"configuration"`
 	Category        string            `json:"category"`
 	Owner           string            `json:"owner"`
+	InputArtifacts  []string          `json:"input_artifacts"`
+	RoleArn         string            `json:"role_arn"`
 	Provider        string            `json:"provider"`
+	Version         string            `json:"version"`
 	OutputArtifacts []string          `json:"output_artifacts"`
 	Name            string            `json:"name"`
 	RunOrder        int               `json:"run_order"`

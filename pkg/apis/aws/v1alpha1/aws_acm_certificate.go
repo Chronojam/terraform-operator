@@ -17,20 +17,20 @@ type AwsAcmCertificate struct {
 }
 
 type AwsAcmCertificateSpec struct {
-	DomainName              string                                         `json:"domain_name"`
 	SubjectAlternativeNames []string                                       `json:"subject_alternative_names"`
 	ValidationMethod        string                                         `json:"validation_method"`
 	Arn                     string                                         `json:"arn"`
 	DomainValidationOptions []AwsAcmCertificateSpecDomainValidationOptions `json:"domain_validation_options"`
 	ValidationEmails        []string                                       `json:"validation_emails"`
 	Tags                    map[string]string                              `json:"tags"`
+	DomainName              string                                         `json:"domain_name"`
 }
 
 type AwsAcmCertificateSpecDomainValidationOptions struct {
-	ResourceRecordType  string `json:"resource_record_type"`
-	ResourceRecordValue string `json:"resource_record_value"`
 	DomainName          string `json:"domain_name"`
 	ResourceRecordName  string `json:"resource_record_name"`
+	ResourceRecordType  string `json:"resource_record_type"`
+	ResourceRecordValue string `json:"resource_record_value"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

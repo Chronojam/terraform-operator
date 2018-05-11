@@ -17,17 +17,17 @@ type AwsSecurityGroupRule struct {
 }
 
 type AwsSecurityGroupRuleSpec struct {
-	Ipv6CidrBlocks        []string `json:"ipv6_cidr_blocks"`
-	PrefixListIds         []string `json:"prefix_list_ids"`
-	Description           string   `json:"description"`
 	Type                  string   `json:"type"`
 	FromPort              int      `json:"from_port"`
-	ToPort                int      `json:"to_port"`
-	CidrBlocks            []string `json:"cidr_blocks"`
-	Protocol              string   `json:"protocol"`
-	SecurityGroupId       string   `json:"security_group_id"`
+	PrefixListIds         []string `json:"prefix_list_ids"`
 	SourceSecurityGroupId string   `json:"source_security_group_id"`
+	ToPort                int      `json:"to_port"`
+	Protocol              string   `json:"protocol"`
+	CidrBlocks            []string `json:"cidr_blocks"`
+	Ipv6CidrBlocks        []string `json:"ipv6_cidr_blocks"`
+	SecurityGroupId       string   `json:"security_group_id"`
 	Self                  bool     `json:"self"`
+	Description           string   `json:"description"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

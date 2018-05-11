@@ -17,15 +17,15 @@ type AwsSnsTopicSubscription struct {
 }
 
 type AwsSnsTopicSubscriptionSpec struct {
-	TopicArn                     string `json:"topic_arn"`
-	DeliveryPolicy               string `json:"delivery_policy"`
-	RawMessageDelivery           bool   `json:"raw_message_delivery"`
+	Protocol                     string `json:"protocol"`
 	Endpoint                     string `json:"endpoint"`
-	ConfirmationTimeoutInMinutes int    `json:"confirmation_timeout_in_minutes"`
+	RawMessageDelivery           bool   `json:"raw_message_delivery"`
+	DeliveryPolicy               string `json:"delivery_policy"`
 	Arn                          string `json:"arn"`
 	FilterPolicy                 string `json:"filter_policy"`
-	Protocol                     string `json:"protocol"`
 	EndpointAutoConfirms         bool   `json:"endpoint_auto_confirms"`
+	ConfirmationTimeoutInMinutes int    `json:"confirmation_timeout_in_minutes"`
+	TopicArn                     string `json:"topic_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

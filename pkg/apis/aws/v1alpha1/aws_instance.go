@@ -17,43 +17,51 @@ type AwsInstance struct {
 }
 
 type AwsInstanceSpec struct {
-	Ami                               string                               `json:"ami"`
-	NetworkInterface                  AwsInstanceSpecNetworkInterface      `json:"network_interface"`
-	PrivateDns                        string                               `json:"private_dns"`
-	Ipv6Addresses                     []string                             `json:"ipv6_addresses"`
-	VolumeTags                        map[string]string                    `json:"volume_tags"`
-	PlacementGroup                    string                               `json:"placement_group"`
-	KeyName                           string                               `json:"key_name"`
-	EbsOptimized                      bool                                 `json:"ebs_optimized"`
-	SecurityGroups                    string                               `json:"security_groups"`
-	Monitoring                        bool                                 `json:"monitoring"`
-	Ipv6AddressCount                  int                                  `json:"ipv6_address_count"`
-	CreditSpecification               []AwsInstanceSpecCreditSpecification `json:"credit_specification"`
-	InstanceType                      string                               `json:"instance_type"`
-	SubnetId                          string                               `json:"subnet_id"`
-	PrimaryNetworkInterfaceId         string                               `json:"primary_network_interface_id"`
-	PublicIp                          string                               `json:"public_ip"`
-	DisableApiTermination             bool                                 `json:"disable_api_termination"`
-	IamInstanceProfile                string                               `json:"iam_instance_profile"`
-	RootBlockDevice                   []AwsInstanceSpecRootBlockDevice     `json:"root_block_device"`
-	InstanceInitiatedShutdownBehavior string                               `json:"instance_initiated_shutdown_behavior"`
-	Tags                              map[string]string                    `json:"tags"`
-	BlockDevice                       map[string]string                    `json:"block_device"`
 	AvailabilityZone                  string                               `json:"availability_zone"`
-	UserData                          string                               `json:"user_data"`
-	InstanceState                     string                               `json:"instance_state"`
-	Tenancy                           string                               `json:"tenancy"`
-	AssociatePublicIpAddress          bool                                 `json:"associate_public_ip_address"`
-	GetPasswordData                   bool                                 `json:"get_password_data"`
-	PasswordData                      string                               `json:"password_data"`
-	SourceDestCheck                   bool                                 `json:"source_dest_check"`
-	UserDataBase64                    string                               `json:"user_data_base64"`
+	InstanceType                      string                               `json:"instance_type"`
 	NetworkInterfaceId                string                               `json:"network_interface_id"`
-	PrivateIp                         string                               `json:"private_ip"`
+	DisableApiTermination             bool                                 `json:"disable_api_termination"`
+	InstanceInitiatedShutdownBehavior string                               `json:"instance_initiated_shutdown_behavior"`
+	Monitoring                        bool                                 `json:"monitoring"`
+	Tags                              map[string]string                    `json:"tags"`
+	PublicIp                          string                               `json:"public_ip"`
+	EbsOptimized                      bool                                 `json:"ebs_optimized"`
+	IamInstanceProfile                string                               `json:"iam_instance_profile"`
+	VolumeTags                        map[string]string                    `json:"volume_tags"`
+	KeyName                           string                               `json:"key_name"`
+	SecurityGroups                    string                               `json:"security_groups"`
 	VpcSecurityGroupIds               string                               `json:"vpc_security_group_ids"`
-	PublicDns                         string                               `json:"public_dns"`
-	EbsBlockDevice                    AwsInstanceSpecEbsBlockDevice        `json:"ebs_block_device"`
+	PrimaryNetworkInterfaceId         string                               `json:"primary_network_interface_id"`
+	PrivateDns                        string                               `json:"private_dns"`
+	BlockDevice                       map[string]string                    `json:"block_device"`
+	AssociatePublicIpAddress          bool                                 `json:"associate_public_ip_address"`
+	PlacementGroup                    string                               `json:"placement_group"`
+	GetPasswordData                   bool                                 `json:"get_password_data"`
+	SourceDestCheck                   bool                                 `json:"source_dest_check"`
+	RootBlockDevice                   []AwsInstanceSpecRootBlockDevice     `json:"root_block_device"`
+	Ami                               string                               `json:"ami"`
+	UserData                          string                               `json:"user_data"`
+	NetworkInterface                  AwsInstanceSpecNetworkInterface      `json:"network_interface"`
 	EphemeralBlockDevice              AwsInstanceSpecEphemeralBlockDevice  `json:"ephemeral_block_device"`
+	CreditSpecification               []AwsInstanceSpecCreditSpecification `json:"credit_specification"`
+	PrivateIp                         string                               `json:"private_ip"`
+	Ipv6AddressCount                  int                                  `json:"ipv6_address_count"`
+	Tenancy                           string                               `json:"tenancy"`
+	PublicDns                         string                               `json:"public_dns"`
+	InstanceState                     string                               `json:"instance_state"`
+	Ipv6Addresses                     []string                             `json:"ipv6_addresses"`
+	PasswordData                      string                               `json:"password_data"`
+	SubnetId                          string                               `json:"subnet_id"`
+	UserDataBase64                    string                               `json:"user_data_base64"`
+	EbsBlockDevice                    AwsInstanceSpecEbsBlockDevice        `json:"ebs_block_device"`
+}
+
+type AwsInstanceSpecRootBlockDevice struct {
+	VolumeSize          int    `json:"volume_size"`
+	VolumeType          string `json:"volume_type"`
+	VolumeId            string `json:"volume_id"`
+	DeleteOnTermination bool   `json:"delete_on_termination"`
+	Iops                int    `json:"iops"`
 }
 
 type AwsInstanceSpecNetworkInterface struct {
@@ -62,33 +70,25 @@ type AwsInstanceSpecNetworkInterface struct {
 	DeviceIndex         int    `json:"device_index"`
 }
 
+type AwsInstanceSpecEphemeralBlockDevice struct {
+	DeviceName  string `json:"device_name"`
+	VirtualName string `json:"virtual_name"`
+	NoDevice    bool   `json:"no_device"`
+}
+
 type AwsInstanceSpecCreditSpecification struct {
 	CpuCredits string `json:"cpu_credits"`
 }
 
-type AwsInstanceSpecRootBlockDevice struct {
-	DeleteOnTermination bool   `json:"delete_on_termination"`
-	Iops                int    `json:"iops"`
-	VolumeSize          int    `json:"volume_size"`
-	VolumeType          string `json:"volume_type"`
-	VolumeId            string `json:"volume_id"`
-}
-
 type AwsInstanceSpecEbsBlockDevice struct {
-	Encrypted           bool   `json:"encrypted"`
-	Iops                int    `json:"iops"`
 	SnapshotId          string `json:"snapshot_id"`
 	VolumeSize          int    `json:"volume_size"`
 	VolumeType          string `json:"volume_type"`
 	VolumeId            string `json:"volume_id"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	DeviceName          string `json:"device_name"`
-}
-
-type AwsInstanceSpecEphemeralBlockDevice struct {
-	DeviceName  string `json:"device_name"`
-	VirtualName string `json:"virtual_name"`
-	NoDevice    bool   `json:"no_device"`
+	Encrypted           bool   `json:"encrypted"`
+	Iops                int    `json:"iops"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,32 +17,32 @@ type AwsOpsworksHaproxyLayer struct {
 }
 
 type AwsOpsworksHaproxyLayerSpec struct {
-	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
-	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
-	HealthcheckMethod        string                               `json:"healthcheck_method"`
-	EbsVolume                AwsOpsworksHaproxyLayerSpecEbsVolume `json:"ebs_volume"`
-	StatsPassword            string                               `json:"stats_password"`
 	CustomShutdownRecipes    []string                             `json:"custom_shutdown_recipes"`
 	CustomJson               string                               `json:"custom_json"`
-	AutoHealing              bool                                 `json:"auto_healing"`
-	InstallUpdatesOnBoot     bool                                 `json:"install_updates_on_boot"`
-	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
-	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
+	StackId                  string                               `json:"stack_id"`
+	StatsEnabled             bool                                 `json:"stats_enabled"`
 	HealthcheckUrl           string                               `json:"healthcheck_url"`
-	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
-	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
+	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
+	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
+	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
+	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
+	CustomSetupRecipes       []string                             `json:"custom_setup_recipes"`
 	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
 	CustomSecurityGroupIds   string                               `json:"custom_security_group_ids"`
-	StackId                  string                               `json:"stack_id"`
+	InstallUpdatesOnBoot     bool                                 `json:"install_updates_on_boot"`
+	EbsVolume                AwsOpsworksHaproxyLayerSpecEbsVolume `json:"ebs_volume"`
 	StatsUrl                 string                               `json:"stats_url"`
-	StatsEnabled             bool                                 `json:"stats_enabled"`
-	StatsUser                string                               `json:"stats_user"`
-	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
+	StatsPassword            string                               `json:"stats_password"`
 	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
-	CustomSetupRecipes       []string                             `json:"custom_setup_recipes"`
+	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
+	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
+	HealthcheckMethod        string                               `json:"healthcheck_method"`
+	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
 	CustomConfigureRecipes   []string                             `json:"custom_configure_recipes"`
+	AutoHealing              bool                                 `json:"auto_healing"`
 	SystemPackages           string                               `json:"system_packages"`
 	Name                     string                               `json:"name"`
+	StatsUser                string                               `json:"stats_user"`
 }
 
 type AwsOpsworksHaproxyLayerSpecEbsVolume struct {

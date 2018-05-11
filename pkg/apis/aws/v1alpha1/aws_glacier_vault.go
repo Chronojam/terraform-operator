@@ -17,17 +17,17 @@ type AwsGlacierVault struct {
 }
 
 type AwsGlacierVaultSpec struct {
+	Tags         map[string]string                 `json:"tags"`
 	Name         string                            `json:"name"`
 	Location     string                            `json:"location"`
 	Arn          string                            `json:"arn"`
 	AccessPolicy string                            `json:"access_policy"`
 	Notification []AwsGlacierVaultSpecNotification `json:"notification"`
-	Tags         map[string]string                 `json:"tags"`
 }
 
 type AwsGlacierVaultSpecNotification struct {
-	Events   string `json:"events"`
 	SnsTopic string `json:"sns_topic"`
+	Events   string `json:"events"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

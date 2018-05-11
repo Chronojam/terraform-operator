@@ -17,15 +17,15 @@ type AwsAutoscalingSchedule struct {
 }
 
 type AwsAutoscalingScheduleSpec struct {
-	StartTime            string `json:"start_time"`
-	EndTime              string `json:"end_time"`
-	MinSize              int    `json:"min_size"`
-	DesiredCapacity      int    `json:"desired_capacity"`
-	Arn                  string `json:"arn"`
 	ScheduledActionName  string `json:"scheduled_action_name"`
 	AutoscalingGroupName string `json:"autoscaling_group_name"`
+	StartTime            string `json:"start_time"`
+	EndTime              string `json:"end_time"`
 	Recurrence           string `json:"recurrence"`
+	Arn                  string `json:"arn"`
+	MinSize              int    `json:"min_size"`
 	MaxSize              int    `json:"max_size"`
+	DesiredCapacity      int    `json:"desired_capacity"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

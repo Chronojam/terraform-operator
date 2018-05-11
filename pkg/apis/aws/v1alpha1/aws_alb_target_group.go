@@ -17,28 +17,29 @@ type AwsAlbTargetGroup struct {
 }
 
 type AwsAlbTargetGroupSpec struct {
-	DeregistrationDelay int                                `json:"deregistration_delay"`
-	TargetType          string                             `json:"target_type"`
-	Stickiness          []AwsAlbTargetGroupSpecStickiness  `json:"stickiness"`
-	HealthCheck         []AwsAlbTargetGroupSpecHealthCheck `json:"health_check"`
-	Arn                 string                             `json:"arn"`
-	Protocol            string                             `json:"protocol"`
+	Name                string                             `json:"name"`
 	NamePrefix          string                             `json:"name_prefix"`
 	Port                int                                `json:"port"`
-	VpcId               string                             `json:"vpc_id"`
+	DeregistrationDelay int                                `json:"deregistration_delay"`
 	ProxyProtocolV2     bool                               `json:"proxy_protocol_v2"`
+	TargetType          string                             `json:"target_type"`
+	Stickiness          []AwsAlbTargetGroupSpecStickiness  `json:"stickiness"`
+	Arn                 string                             `json:"arn"`
+	Protocol            string                             `json:"protocol"`
+	VpcId               string                             `json:"vpc_id"`
+	HealthCheck         []AwsAlbTargetGroupSpecHealthCheck `json:"health_check"`
 	Tags                map[string]string                  `json:"tags"`
 	ArnSuffix           string                             `json:"arn_suffix"`
-	Name                string                             `json:"name"`
 }
 
 type AwsAlbTargetGroupSpecStickiness struct {
+	Enabled        bool   `json:"enabled"`
 	Type           string `json:"type"`
 	CookieDuration int    `json:"cookie_duration"`
-	Enabled        bool   `json:"enabled"`
 }
 
 type AwsAlbTargetGroupSpecHealthCheck struct {
+	Timeout            int    `json:"timeout"`
 	HealthyThreshold   int    `json:"healthy_threshold"`
 	Matcher            string `json:"matcher"`
 	UnhealthyThreshold int    `json:"unhealthy_threshold"`
@@ -46,7 +47,6 @@ type AwsAlbTargetGroupSpecHealthCheck struct {
 	Path               string `json:"path"`
 	Port               string `json:"port"`
 	Protocol           string `json:"protocol"`
-	Timeout            int    `json:"timeout"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

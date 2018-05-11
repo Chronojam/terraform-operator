@@ -28,10 +28,10 @@ type AwsEmrInstanceGroupSpec struct {
 }
 
 type AwsEmrInstanceGroupSpecEbsConfig struct {
-	Size               int    `json:"size"`
-	Type               string `json:"type"`
 	VolumesPerInstance int    `json:"volumes_per_instance"`
 	Iops               int    `json:"iops"`
+	Size               int    `json:"size"`
+	Type               string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
