@@ -44,13 +44,12 @@ jobs:
       - image: circleci/golang:1.10
     working_directory: /go/src/github.com/chronojam/terraform-operator
     steps:
-      - checkout
+      - attach_workspace:
+          at: .
       - run:
           name: Unit_Packages
           command: |
-            pwd
             cd pkg/
-            echo $GOPATH
             go test -v ./...
       - run:
           name: Unit_Cmd
@@ -63,9 +62,9 @@ workflows:
   test_build:
     jobs:
       - dependencies
-      - unit_tests:
-          requires:
-            - dependencies
+#      - unit_tests:
+#          requires:
+#            - dependencies
       - build:
           requires:
             - unit_tests
