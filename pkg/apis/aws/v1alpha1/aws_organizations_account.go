@@ -17,14 +17,14 @@ type AwsOrganizationsAccount struct {
 }
 
 type AwsOrganizationsAccountSpec struct {
+	Arn                    string `json:"arn"`
+	JoinedMethod           string `json:"joined_method"`
 	JoinedTimestamp        string `json:"joined_timestamp"`
 	Status                 string `json:"status"`
 	Name                   string `json:"name"`
 	Email                  string `json:"email"`
 	IamUserAccessToBilling string `json:"iam_user_access_to_billing"`
 	RoleName               string `json:"role_name"`
-	Arn                    string `json:"arn"`
-	JoinedMethod           string `json:"joined_method"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

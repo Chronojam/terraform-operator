@@ -17,9 +17,9 @@ type AwsElasticacheSecurityGroup struct {
 }
 
 type AwsElasticacheSecurityGroupSpec struct {
-	SecurityGroupNames string `json:"security_group_names"`
 	Description        string `json:"description"`
 	Name               string `json:"name"`
+	SecurityGroupNames string `json:"security_group_names"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

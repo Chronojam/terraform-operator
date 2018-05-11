@@ -17,51 +17,44 @@ type AwsSpotFleetRequest struct {
 }
 
 type AwsSpotFleetRequestSpec struct {
-	ReplaceUnhealthyInstances        bool                                       `json:"replace_unhealthy_instances"`
-	ClientToken                      string                                     `json:"client_token"`
-	SpotPrice                        string                                     `json:"spot_price"`
-	SpotRequestState                 string                                     `json:"spot_request_state"`
-	LaunchSpecification              AwsSpotFleetRequestSpecLaunchSpecification `json:"launch_specification"`
+	LoadBalancers                    string                                     `json:"load_balancers"`
 	TargetCapacity                   int                                        `json:"target_capacity"`
 	AllocationStrategy               string                                     `json:"allocation_strategy"`
-	ExcessCapacityTerminationPolicy  string                                     `json:"excess_capacity_termination_policy"`
+	SpotPrice                        string                                     `json:"spot_price"`
+	SpotRequestState                 string                                     `json:"spot_request_state"`
+	ClientToken                      string                                     `json:"client_token"`
 	IamFleetRole                     string                                     `json:"iam_fleet_role"`
-	TerminateInstancesWithExpiration bool                                       `json:"terminate_instances_with_expiration"`
-	ValidUntil                       string                                     `json:"valid_until"`
-	LoadBalancers                    string                                     `json:"load_balancers"`
-	WaitForFulfillment               bool                                       `json:"wait_for_fulfillment"`
-	InstanceInterruptionBehaviour    string                                     `json:"instance_interruption_behaviour"`
+	ReplaceUnhealthyInstances        bool                                       `json:"replace_unhealthy_instances"`
 	ValidFrom                        string                                     `json:"valid_from"`
+	TerminateInstancesWithExpiration bool                                       `json:"terminate_instances_with_expiration"`
+	WaitForFulfillment               bool                                       `json:"wait_for_fulfillment"`
+	ExcessCapacityTerminationPolicy  string                                     `json:"excess_capacity_termination_policy"`
+	InstanceInterruptionBehaviour    string                                     `json:"instance_interruption_behaviour"`
+	LaunchSpecification              AwsSpotFleetRequestSpecLaunchSpecification `json:"launch_specification"`
+	ValidUntil                       string                                     `json:"valid_until"`
 	TargetGroupArns                  string                                     `json:"target_group_arns"`
 }
 
 type AwsSpotFleetRequestSpecLaunchSpecification struct {
-	RootBlockDevice          AwsSpotFleetRequestSpecLaunchSpecificationRootBlockDevice      `json:"root_block_device"`
-	Monitoring               bool                                                           `json:"monitoring"`
-	AvailabilityZone         string                                                         `json:"availability_zone"`
-	VpcSecurityGroupIds      string                                                         `json:"vpc_security_group_ids"`
-	IamInstanceProfile       string                                                         `json:"iam_instance_profile"`
-	WeightedCapacity         string                                                         `json:"weighted_capacity"`
-	KeyName                  string                                                         `json:"key_name"`
-	SpotPrice                string                                                         `json:"spot_price"`
-	SubnetId                 string                                                         `json:"subnet_id"`
 	EphemeralBlockDevice     AwsSpotFleetRequestSpecLaunchSpecificationEphemeralBlockDevice `json:"ephemeral_block_device"`
 	EbsOptimized             bool                                                           `json:"ebs_optimized"`
-	Ami                      string                                                         `json:"ami"`
-	PlacementGroup           string                                                         `json:"placement_group"`
 	PlacementTenancy         string                                                         `json:"placement_tenancy"`
-	UserData                 string                                                         `json:"user_data"`
-	Tags                     map[string]string                                              `json:"tags"`
 	AssociatePublicIpAddress bool                                                           `json:"associate_public_ip_address"`
 	EbsBlockDevice           AwsSpotFleetRequestSpecLaunchSpecificationEbsBlockDevice       `json:"ebs_block_device"`
+	Ami                      string                                                         `json:"ami"`
+	Monitoring               bool                                                           `json:"monitoring"`
+	SubnetId                 string                                                         `json:"subnet_id"`
 	InstanceType             string                                                         `json:"instance_type"`
-}
-
-type AwsSpotFleetRequestSpecLaunchSpecificationRootBlockDevice struct {
-	DeleteOnTermination bool   `json:"delete_on_termination"`
-	Iops                int    `json:"iops"`
-	VolumeSize          int    `json:"volume_size"`
-	VolumeType          string `json:"volume_type"`
+	KeyName                  string                                                         `json:"key_name"`
+	PlacementGroup           string                                                         `json:"placement_group"`
+	AvailabilityZone         string                                                         `json:"availability_zone"`
+	Tags                     map[string]string                                              `json:"tags"`
+	VpcSecurityGroupIds      string                                                         `json:"vpc_security_group_ids"`
+	RootBlockDevice          AwsSpotFleetRequestSpecLaunchSpecificationRootBlockDevice      `json:"root_block_device"`
+	IamInstanceProfile       string                                                         `json:"iam_instance_profile"`
+	SpotPrice                string                                                         `json:"spot_price"`
+	UserData                 string                                                         `json:"user_data"`
+	WeightedCapacity         string                                                         `json:"weighted_capacity"`
 }
 
 type AwsSpotFleetRequestSpecLaunchSpecificationEphemeralBlockDevice struct {
@@ -70,13 +63,20 @@ type AwsSpotFleetRequestSpecLaunchSpecificationEphemeralBlockDevice struct {
 }
 
 type AwsSpotFleetRequestSpecLaunchSpecificationEbsBlockDevice struct {
+	Iops                int    `json:"iops"`
 	SnapshotId          string `json:"snapshot_id"`
 	VolumeSize          int    `json:"volume_size"`
 	VolumeType          string `json:"volume_type"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	DeviceName          string `json:"device_name"`
 	Encrypted           bool   `json:"encrypted"`
+}
+
+type AwsSpotFleetRequestSpecLaunchSpecificationRootBlockDevice struct {
+	DeleteOnTermination bool   `json:"delete_on_termination"`
 	Iops                int    `json:"iops"`
+	VolumeSize          int    `json:"volume_size"`
+	VolumeType          string `json:"volume_type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

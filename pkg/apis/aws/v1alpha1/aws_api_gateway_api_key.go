@@ -17,18 +17,18 @@ type AwsApiGatewayApiKey struct {
 }
 
 type AwsApiGatewayApiKeySpec struct {
-	Name            string                          `json:"name"`
 	Description     string                          `json:"description"`
 	Enabled         bool                            `json:"enabled"`
 	StageKey        AwsApiGatewayApiKeySpecStageKey `json:"stage_key"`
 	CreatedDate     string                          `json:"created_date"`
 	LastUpdatedDate string                          `json:"last_updated_date"`
 	Value           string                          `json:"value"`
+	Name            string                          `json:"name"`
 }
 
 type AwsApiGatewayApiKeySpecStageKey struct {
-	RestApiId string `json:"rest_api_id"`
 	StageName string `json:"stage_name"`
+	RestApiId string `json:"rest_api_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

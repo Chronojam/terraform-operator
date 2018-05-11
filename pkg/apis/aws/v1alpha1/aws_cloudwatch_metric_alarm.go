@@ -17,25 +17,25 @@ type AwsCloudwatchMetricAlarm struct {
 }
 
 type AwsCloudwatchMetricAlarmSpec struct {
-	InsufficientDataActions           string            `json:"insufficient_data_actions"`
-	Unit                              string            `json:"unit"`
-	AlarmName                         string            `json:"alarm_name"`
 	EvaluationPeriods                 int               `json:"evaluation_periods"`
-	MetricName                        string            `json:"metric_name"`
 	Period                            int               `json:"period"`
-	Dimensions                        map[string]string `json:"dimensions"`
-	Threshold                         float64           `json:"threshold"`
+	Statistic                         string            `json:"statistic"`
+	ExtendedStatistic                 string            `json:"extended_statistic"`
+	Unit                              string            `json:"unit"`
+	ComparisonOperator                string            `json:"comparison_operator"`
+	ActionsEnabled                    bool              `json:"actions_enabled"`
 	AlarmActions                      string            `json:"alarm_actions"`
 	AlarmDescription                  string            `json:"alarm_description"`
-	OkActions                         string            `json:"ok_actions"`
-	ExtendedStatistic                 string            `json:"extended_statistic"`
-	Namespace                         string            `json:"namespace"`
 	DatapointsToAlarm                 int               `json:"datapoints_to_alarm"`
+	Dimensions                        map[string]string `json:"dimensions"`
+	InsufficientDataActions           string            `json:"insufficient_data_actions"`
 	TreatMissingData                  string            `json:"treat_missing_data"`
-	ComparisonOperator                string            `json:"comparison_operator"`
-	Statistic                         string            `json:"statistic"`
-	ActionsEnabled                    bool              `json:"actions_enabled"`
 	EvaluateLowSampleCountPercentiles string            `json:"evaluate_low_sample_count_percentiles"`
+	AlarmName                         string            `json:"alarm_name"`
+	OkActions                         string            `json:"ok_actions"`
+	MetricName                        string            `json:"metric_name"`
+	Namespace                         string            `json:"namespace"`
+	Threshold                         float64           `json:"threshold"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

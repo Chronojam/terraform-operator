@@ -22,9 +22,9 @@ type AwsAutoscalingScheduleSpec struct {
 	StartTime            string `json:"start_time"`
 	Recurrence           string `json:"recurrence"`
 	MinSize              int    `json:"min_size"`
+	MaxSize              int    `json:"max_size"`
 	ScheduledActionName  string `json:"scheduled_action_name"`
 	EndTime              string `json:"end_time"`
-	MaxSize              int    `json:"max_size"`
 	DesiredCapacity      int    `json:"desired_capacity"`
 }
 

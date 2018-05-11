@@ -17,15 +17,15 @@ type AwsLbSslNegotiationPolicy struct {
 }
 
 type AwsLbSslNegotiationPolicySpec struct {
-	Name         string                                 `json:"name"`
-	LoadBalancer string                                 `json:"load_balancer"`
 	LbPort       int                                    `json:"lb_port"`
 	Attribute    AwsLbSslNegotiationPolicySpecAttribute `json:"attribute"`
+	Name         string                                 `json:"name"`
+	LoadBalancer string                                 `json:"load_balancer"`
 }
 
 type AwsLbSslNegotiationPolicySpecAttribute struct {
-	Name  string `json:"name"`
 	Value string `json:"value"`
+	Name  string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

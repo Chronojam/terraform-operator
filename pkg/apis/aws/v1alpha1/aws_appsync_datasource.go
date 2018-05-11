@@ -18,14 +18,14 @@ type AwsAppsyncDatasource struct {
 
 type AwsAppsyncDatasourceSpec struct {
 	Name                string                                        `json:"name"`
+	Type                string                                        `json:"type"`
 	DynamodbConfig      []AwsAppsyncDatasourceSpecDynamodbConfig      `json:"dynamodb_config"`
 	ElasticsearchConfig []AwsAppsyncDatasourceSpecElasticsearchConfig `json:"elasticsearch_config"`
-	LambdaConfig        []AwsAppsyncDatasourceSpecLambdaConfig        `json:"lambda_config"`
+	ServiceRoleArn      string                                        `json:"service_role_arn"`
 	Arn                 string                                        `json:"arn"`
 	ApiId               string                                        `json:"api_id"`
 	Description         string                                        `json:"description"`
-	ServiceRoleArn      string                                        `json:"service_role_arn"`
-	Type                string                                        `json:"type"`
+	LambdaConfig        []AwsAppsyncDatasourceSpecLambdaConfig        `json:"lambda_config"`
 }
 
 type AwsAppsyncDatasourceSpecDynamodbConfig struct {

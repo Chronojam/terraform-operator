@@ -17,34 +17,34 @@ type AwsElasticacheReplicationGroup struct {
 }
 
 type AwsElasticacheReplicationGroupSpec struct {
-	SubnetGroupName              string                                          `json:"subnet_group_name"`
-	TransitEncryptionEnabled     bool                                            `json:"transit_encryption_enabled"`
-	ParameterGroupName           string                                          `json:"parameter_group_name"`
-	AutoMinorVersionUpgrade      bool                                            `json:"auto_minor_version_upgrade"`
-	ClusterMode                  []AwsElasticacheReplicationGroupSpecClusterMode `json:"cluster_mode"`
-	SnapshotName                 string                                          `json:"snapshot_name"`
-	Port                         int                                             `json:"port"`
-	AuthToken                    string                                          `json:"auth_token"`
-	NodeType                     string                                          `json:"node_type"`
 	EngineVersion                string                                          `json:"engine_version"`
-	SnapshotWindow               string                                          `json:"snapshot_window"`
-	ApplyImmediately             bool                                            `json:"apply_immediately"`
-	PrimaryEndpointAddress       string                                          `json:"primary_endpoint_address"`
-	NotificationTopicArn         string                                          `json:"notification_topic_arn"`
-	ReplicationGroupId           string                                          `json:"replication_group_id"`
-	AtRestEncryptionEnabled      bool                                            `json:"at_rest_encryption_enabled"`
 	MaintenanceWindow            string                                          `json:"maintenance_window"`
 	Tags                         map[string]string                               `json:"tags"`
-	ReplicationGroupDescription  string                                          `json:"replication_group_description"`
-	NumberCacheClusters          int                                             `json:"number_cache_clusters"`
-	ConfigurationEndpointAddress string                                          `json:"configuration_endpoint_address"`
-	AvailabilityZones            string                                          `json:"availability_zones"`
+	AtRestEncryptionEnabled      bool                                            `json:"at_rest_encryption_enabled"`
+	AuthToken                    string                                          `json:"auth_token"`
 	SecurityGroupNames           string                                          `json:"security_group_names"`
 	SecurityGroupIds             string                                          `json:"security_group_ids"`
-	Engine                       string                                          `json:"engine"`
-	SnapshotArns                 string                                          `json:"snapshot_arns"`
+	Port                         int                                             `json:"port"`
 	SnapshotRetentionLimit       int                                             `json:"snapshot_retention_limit"`
+	ReplicationGroupDescription  string                                          `json:"replication_group_description"`
+	SubnetGroupName              string                                          `json:"subnet_group_name"`
+	PrimaryEndpointAddress       string                                          `json:"primary_endpoint_address"`
+	SnapshotArns                 string                                          `json:"snapshot_arns"`
+	SnapshotName                 string                                          `json:"snapshot_name"`
+	NotificationTopicArn         string                                          `json:"notification_topic_arn"`
+	ReplicationGroupId           string                                          `json:"replication_group_id"`
 	AutomaticFailoverEnabled     bool                                            `json:"automatic_failover_enabled"`
+	NodeType                     string                                          `json:"node_type"`
+	ConfigurationEndpointAddress string                                          `json:"configuration_endpoint_address"`
+	TransitEncryptionEnabled     bool                                            `json:"transit_encryption_enabled"`
+	AvailabilityZones            string                                          `json:"availability_zones"`
+	SnapshotWindow               string                                          `json:"snapshot_window"`
+	Engine                       string                                          `json:"engine"`
+	ParameterGroupName           string                                          `json:"parameter_group_name"`
+	ApplyImmediately             bool                                            `json:"apply_immediately"`
+	AutoMinorVersionUpgrade      bool                                            `json:"auto_minor_version_upgrade"`
+	NumberCacheClusters          int                                             `json:"number_cache_clusters"`
+	ClusterMode                  []AwsElasticacheReplicationGroupSpecClusterMode `json:"cluster_mode"`
 }
 
 type AwsElasticacheReplicationGroupSpecClusterMode struct {

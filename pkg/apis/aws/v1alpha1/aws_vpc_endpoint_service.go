@@ -17,15 +17,15 @@ type AwsVpcEndpointService struct {
 }
 
 type AwsVpcEndpointServiceSpec struct {
-	AvailabilityZones       string `json:"availability_zones"`
-	BaseEndpointDnsNames    string `json:"base_endpoint_dns_names"`
-	AllowedPrincipals       string `json:"allowed_principals"`
-	State                   string `json:"state"`
-	ServiceName             string `json:"service_name"`
-	PrivateDnsName          string `json:"private_dns_name"`
-	AcceptanceRequired      bool   `json:"acceptance_required"`
 	NetworkLoadBalancerArns string `json:"network_load_balancer_arns"`
+	AllowedPrincipals       string `json:"allowed_principals"`
+	ServiceName             string `json:"service_name"`
+	AcceptanceRequired      bool   `json:"acceptance_required"`
 	ServiceType             string `json:"service_type"`
+	AvailabilityZones       string `json:"availability_zones"`
+	PrivateDnsName          string `json:"private_dns_name"`
+	BaseEndpointDnsNames    string `json:"base_endpoint_dns_names"`
+	State                   string `json:"state"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

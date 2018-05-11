@@ -17,22 +17,22 @@ type AwsApiGatewayIntegration struct {
 }
 
 type AwsApiGatewayIntegrationSpec struct {
-	Credentials             string            `json:"credentials"`
-	IntegrationHttpMethod   string            `json:"integration_http_method"`
-	RequestParametersInJson string            `json:"request_parameters_in_json"`
-	CacheKeyParameters      string            `json:"cache_key_parameters"`
-	ResourceId              string            `json:"resource_id"`
-	HttpMethod              string            `json:"http_method"`
-	Uri                     string            `json:"uri"`
-	PassthroughBehavior     string            `json:"passthrough_behavior"`
-	ConnectionId            string            `json:"connection_id"`
-	RequestTemplates        map[string]string `json:"request_templates"`
-	RequestParameters       map[string]string `json:"request_parameters"`
-	ContentHandling         string            `json:"content_handling"`
-	CacheNamespace          string            `json:"cache_namespace"`
-	RestApiId               string            `json:"rest_api_id"`
 	Type                    string            `json:"type"`
 	ConnectionType          string            `json:"connection_type"`
+	Uri                     string            `json:"uri"`
+	HttpMethod              string            `json:"http_method"`
+	RequestTemplates        map[string]string `json:"request_templates"`
+	RequestParameters       map[string]string `json:"request_parameters"`
+	PassthroughBehavior     string            `json:"passthrough_behavior"`
+	IntegrationHttpMethod   string            `json:"integration_http_method"`
+	Credentials             string            `json:"credentials"`
+	ContentHandling         string            `json:"content_handling"`
+	CacheNamespace          string            `json:"cache_namespace"`
+	ResourceId              string            `json:"resource_id"`
+	ConnectionId            string            `json:"connection_id"`
+	RequestParametersInJson string            `json:"request_parameters_in_json"`
+	CacheKeyParameters      string            `json:"cache_key_parameters"`
+	RestApiId               string            `json:"rest_api_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

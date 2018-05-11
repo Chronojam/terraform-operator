@@ -17,12 +17,12 @@ type AwsSsmMaintenanceWindow struct {
 }
 
 type AwsSsmMaintenanceWindowSpec struct {
+	Duration                 int    `json:"duration"`
 	Cutoff                   int    `json:"cutoff"`
 	AllowUnassociatedTargets bool   `json:"allow_unassociated_targets"`
 	Enabled                  bool   `json:"enabled"`
 	Name                     string `json:"name"`
 	Schedule                 string `json:"schedule"`
-	Duration                 int    `json:"duration"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

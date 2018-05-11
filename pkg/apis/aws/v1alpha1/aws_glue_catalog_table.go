@@ -17,18 +17,18 @@ type AwsGlueCatalogTable struct {
 }
 
 type AwsGlueCatalogTableSpec struct {
-	Parameters        map[string]string                          `json:"parameters"`
-	PartitionKeys     []AwsGlueCatalogTableSpecPartitionKeys     `json:"partition_keys"`
-	Retention         int                                        `json:"retention"`
-	StorageDescriptor []AwsGlueCatalogTableSpecStorageDescriptor `json:"storage_descriptor"`
-	ViewOriginalText  string                                     `json:"view_original_text"`
-	ViewExpandedText  string                                     `json:"view_expanded_text"`
 	CatalogId         string                                     `json:"catalog_id"`
 	DatabaseName      string                                     `json:"database_name"`
-	Description       string                                     `json:"description"`
 	Name              string                                     `json:"name"`
+	Retention         int                                        `json:"retention"`
+	ViewExpandedText  string                                     `json:"view_expanded_text"`
+	Description       string                                     `json:"description"`
 	Owner             string                                     `json:"owner"`
+	Parameters        map[string]string                          `json:"parameters"`
+	PartitionKeys     []AwsGlueCatalogTableSpecPartitionKeys     `json:"partition_keys"`
+	StorageDescriptor []AwsGlueCatalogTableSpecStorageDescriptor `json:"storage_descriptor"`
 	TableType         string                                     `json:"table_type"`
+	ViewOriginalText  string                                     `json:"view_original_text"`
 }
 
 type AwsGlueCatalogTableSpecPartitionKeys struct {
@@ -38,24 +38,18 @@ type AwsGlueCatalogTableSpecPartitionKeys struct {
 }
 
 type AwsGlueCatalogTableSpecStorageDescriptor struct {
-	SerDeInfo              []AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo   `json:"ser_de_info"`
-	SkewedInfo             []AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo  `json:"skewed_info"`
-	SortColumns            []AwsGlueCatalogTableSpecStorageDescriptorSortColumns `json:"sort_columns"`
 	Compressed             bool                                                  `json:"compressed"`
 	Location               string                                                `json:"location"`
 	OutputFormat           string                                                `json:"output_format"`
-	Parameters             map[string]string                                     `json:"parameters"`
+	SkewedInfo             []AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo  `json:"skewed_info"`
+	SortColumns            []AwsGlueCatalogTableSpecStorageDescriptorSortColumns `json:"sort_columns"`
 	StoredAsSubDirectories bool                                                  `json:"stored_as_sub_directories"`
 	BucketColumns          []string                                              `json:"bucket_columns"`
-	Columns                []AwsGlueCatalogTableSpecStorageDescriptorColumns     `json:"columns"`
 	InputFormat            string                                                `json:"input_format"`
 	NumberOfBuckets        int                                                   `json:"number_of_buckets"`
-}
-
-type AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo struct {
-	Name                 string            `json:"name"`
-	Parameters           map[string]string `json:"parameters"`
-	SerializationLibrary string            `json:"serialization_library"`
+	Parameters             map[string]string                                     `json:"parameters"`
+	SerDeInfo              []AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo   `json:"ser_de_info"`
+	Columns                []AwsGlueCatalogTableSpecStorageDescriptorColumns     `json:"columns"`
 }
 
 type AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo struct {
@@ -69,10 +63,16 @@ type AwsGlueCatalogTableSpecStorageDescriptorSortColumns struct {
 	SortOrder int    `json:"sort_order"`
 }
 
+type AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo struct {
+	Name                 string            `json:"name"`
+	Parameters           map[string]string `json:"parameters"`
+	SerializationLibrary string            `json:"serialization_library"`
+}
+
 type AwsGlueCatalogTableSpecStorageDescriptorColumns struct {
+	Comment string `json:"comment"`
 	Name    string `json:"name"`
 	Type    string `json:"type"`
-	Comment string `json:"comment"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

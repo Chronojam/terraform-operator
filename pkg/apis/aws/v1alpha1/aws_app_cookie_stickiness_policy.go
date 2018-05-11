@@ -17,10 +17,10 @@ type AwsAppCookieStickinessPolicy struct {
 }
 
 type AwsAppCookieStickinessPolicySpec struct {
-	LoadBalancer string `json:"load_balancer"`
-	LbPort       int    `json:"lb_port"`
 	CookieName   string `json:"cookie_name"`
 	Name         string `json:"name"`
+	LoadBalancer string `json:"load_balancer"`
+	LbPort       int    `json:"lb_port"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

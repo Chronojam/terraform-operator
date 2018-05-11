@@ -28,10 +28,10 @@ type AwsWafWebAclSpecDefaultAction struct {
 }
 
 type AwsWafWebAclSpecRules struct {
+	RuleId   string                      `json:"rule_id"`
 	Action   AwsWafWebAclSpecRulesAction `json:"action"`
 	Priority int                         `json:"priority"`
 	Type     string                      `json:"type"`
-	RuleId   string                      `json:"rule_id"`
 }
 
 type AwsWafWebAclSpecRulesAction struct {

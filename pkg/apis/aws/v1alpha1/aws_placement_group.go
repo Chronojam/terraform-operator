@@ -17,8 +17,8 @@ type AwsPlacementGroup struct {
 }
 
 type AwsPlacementGroupSpec struct {
-	Name     string `json:"name"`
 	Strategy string `json:"strategy"`
+	Name     string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

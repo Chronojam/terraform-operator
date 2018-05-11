@@ -17,21 +17,21 @@ type AwsCloudtrail struct {
 }
 
 type AwsCloudtrailSpec struct {
-	Tags                       map[string]string                `json:"tags"`
-	CloudWatchLogsGroupArn     string                           `json:"cloud_watch_logs_group_arn"`
-	KmsKeyId                   string                           `json:"kms_key_id"`
-	HomeRegion                 string                           `json:"home_region"`
-	EventSelector              []AwsCloudtrailSpecEventSelector `json:"event_selector"`
-	S3BucketName               string                           `json:"s3_bucket_name"`
-	IncludeGlobalServiceEvents bool                             `json:"include_global_service_events"`
-	EnableLogFileValidation    bool                             `json:"enable_log_file_validation"`
-	Name                       string                           `json:"name"`
-	IsMultiRegionTrail         bool                             `json:"is_multi_region_trail"`
-	SnsTopicName               string                           `json:"sns_topic_name"`
-	Arn                        string                           `json:"arn"`
-	EnableLogging              bool                             `json:"enable_logging"`
 	S3KeyPrefix                string                           `json:"s3_key_prefix"`
+	EnableLogFileValidation    bool                             `json:"enable_log_file_validation"`
+	Tags                       map[string]string                `json:"tags"`
+	S3BucketName               string                           `json:"s3_bucket_name"`
+	IsMultiRegionTrail         bool                             `json:"is_multi_region_trail"`
+	EnableLogging              bool                             `json:"enable_logging"`
 	CloudWatchLogsRoleArn      string                           `json:"cloud_watch_logs_role_arn"`
+	SnsTopicName               string                           `json:"sns_topic_name"`
+	HomeRegion                 string                           `json:"home_region"`
+	Name                       string                           `json:"name"`
+	IncludeGlobalServiceEvents bool                             `json:"include_global_service_events"`
+	KmsKeyId                   string                           `json:"kms_key_id"`
+	EventSelector              []AwsCloudtrailSpecEventSelector `json:"event_selector"`
+	Arn                        string                           `json:"arn"`
+	CloudWatchLogsGroupArn     string                           `json:"cloud_watch_logs_group_arn"`
 }
 
 type AwsCloudtrailSpecEventSelector struct {
@@ -41,8 +41,8 @@ type AwsCloudtrailSpecEventSelector struct {
 }
 
 type AwsCloudtrailSpecEventSelectorDataResource struct {
-	Type   string   `json:"type"`
 	Values []string `json:"values"`
+	Type   string   `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

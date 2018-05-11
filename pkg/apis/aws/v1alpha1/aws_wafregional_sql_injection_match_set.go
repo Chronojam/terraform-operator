@@ -17,8 +17,8 @@ type AwsWafregionalSqlInjectionMatchSet struct {
 }
 
 type AwsWafregionalSqlInjectionMatchSetSpec struct {
-	SqlInjectionMatchTuple AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTuple `json:"sql_injection_match_tuple"`
 	Name                   string                                                       `json:"name"`
+	SqlInjectionMatchTuple AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTuple `json:"sql_injection_match_tuple"`
 }
 
 type AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTuple struct {

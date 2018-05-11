@@ -17,20 +17,20 @@ type AwsLightsailInstance struct {
 }
 
 type AwsLightsailInstanceSpec struct {
+	BundleId         string `json:"bundle_id"`
+	KeyPairName      string `json:"key_pair_name"`
 	Arn              string `json:"arn"`
-	PrivateIpAddress string `json:"private_ip_address"`
-	AvailabilityZone string `json:"availability_zone"`
 	CreatedAt        string `json:"created_at"`
 	CpuCount         int    `json:"cpu_count"`
 	Ipv6Address      string `json:"ipv6_address"`
 	IsStaticIp       bool   `json:"is_static_ip"`
-	PublicIpAddress  string `json:"public_ip_address"`
-	BlueprintId      string `json:"blueprint_id"`
-	KeyPairName      string `json:"key_pair_name"`
-	UserData         string `json:"user_data"`
-	Name             string `json:"name"`
-	BundleId         string `json:"bundle_id"`
+	PrivateIpAddress string `json:"private_ip_address"`
+	AvailabilityZone string `json:"availability_zone"`
 	RamSize          int    `json:"ram_size"`
+	Name             string `json:"name"`
+	BlueprintId      string `json:"blueprint_id"`
+	UserData         string `json:"user_data"`
+	PublicIpAddress  string `json:"public_ip_address"`
 	Username         string `json:"username"`
 }
 

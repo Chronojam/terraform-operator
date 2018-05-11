@@ -17,10 +17,10 @@ type AwsCloudwatchLogDestination struct {
 }
 
 type AwsCloudwatchLogDestinationSpec struct {
+	Arn       string `json:"arn"`
 	Name      string `json:"name"`
 	RoleArn   string `json:"role_arn"`
 	TargetArn string `json:"target_arn"`
-	Arn       string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

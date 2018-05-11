@@ -17,14 +17,14 @@ type AwsSubnet struct {
 }
 
 type AwsSubnetSpec struct {
-	Ipv6CidrBlock               string            `json:"ipv6_cidr_block"`
-	AvailabilityZone            string            `json:"availability_zone"`
 	MapPublicIpOnLaunch         bool              `json:"map_public_ip_on_launch"`
 	AssignIpv6AddressOnCreation bool              `json:"assign_ipv6_address_on_creation"`
 	Ipv6CidrBlockAssociationId  string            `json:"ipv6_cidr_block_association_id"`
 	Tags                        map[string]string `json:"tags"`
 	VpcId                       string            `json:"vpc_id"`
 	CidrBlock                   string            `json:"cidr_block"`
+	Ipv6CidrBlock               string            `json:"ipv6_cidr_block"`
+	AvailabilityZone            string            `json:"availability_zone"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,20 +17,20 @@ type AwsVpcEndpoint struct {
 }
 
 type AwsVpcEndpointSpec struct {
-	NetworkInterfaceIds string                       `json:"network_interface_ids"`
-	ServiceName         string                       `json:"service_name"`
-	SecurityGroupIds    string                       `json:"security_group_ids"`
 	CidrBlocks          []string                     `json:"cidr_blocks"`
+	VpcEndpointType     string                       `json:"vpc_endpoint_type"`
+	State               string                       `json:"state"`
 	PrivateDnsEnabled   bool                         `json:"private_dns_enabled"`
 	VpcId               string                       `json:"vpc_id"`
 	Policy              string                       `json:"policy"`
-	RouteTableIds       string                       `json:"route_table_ids"`
-	State               string                       `json:"state"`
+	PrefixListId        string                       `json:"prefix_list_id"`
+	NetworkInterfaceIds string                       `json:"network_interface_ids"`
 	DnsEntry            []AwsVpcEndpointSpecDnsEntry `json:"dns_entry"`
 	AutoAccept          bool                         `json:"auto_accept"`
-	VpcEndpointType     string                       `json:"vpc_endpoint_type"`
 	SubnetIds           string                       `json:"subnet_ids"`
-	PrefixListId        string                       `json:"prefix_list_id"`
+	SecurityGroupIds    string                       `json:"security_group_ids"`
+	ServiceName         string                       `json:"service_name"`
+	RouteTableIds       string                       `json:"route_table_ids"`
 }
 
 type AwsVpcEndpointSpecDnsEntry struct {

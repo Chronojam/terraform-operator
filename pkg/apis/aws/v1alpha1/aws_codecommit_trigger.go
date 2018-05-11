@@ -17,17 +17,17 @@ type AwsCodecommitTrigger struct {
 }
 
 type AwsCodecommitTriggerSpec struct {
+	ConfigurationId string                          `json:"configuration_id"`
 	Trigger         AwsCodecommitTriggerSpecTrigger `json:"trigger"`
 	RepositoryName  string                          `json:"repository_name"`
-	ConfigurationId string                          `json:"configuration_id"`
 }
 
 type AwsCodecommitTriggerSpecTrigger struct {
+	Name           string   `json:"name"`
+	DestinationArn string   `json:"destination_arn"`
 	CustomData     string   `json:"custom_data"`
 	Branches       []string `json:"branches"`
 	Events         []string `json:"events"`
-	Name           string   `json:"name"`
-	DestinationArn string   `json:"destination_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

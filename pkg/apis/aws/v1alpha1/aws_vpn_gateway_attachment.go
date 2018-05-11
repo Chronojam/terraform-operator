@@ -17,8 +17,8 @@ type AwsVpnGatewayAttachment struct {
 }
 
 type AwsVpnGatewayAttachmentSpec struct {
-	VpcId        string `json:"vpc_id"`
 	VpnGatewayId string `json:"vpn_gateway_id"`
+	VpcId        string `json:"vpc_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -1,0 +1,23 @@
+apiVersion: chronojam.co.uk/v1alpha1
+kind: AwsIamPolicy
+metadata:
+  name: example-policy
+spec:
+  name: "FooBar"
+  nameprefix: ""
+  description: "This is an example."
+  path: "/"
+  policy: |
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Action": [
+            "ec2:Describe*"
+          ],
+          "Effect": "Allow",
+          "Resource": "*"
+        }
+      ]
+    }
+

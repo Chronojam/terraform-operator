@@ -17,10 +17,10 @@ type AwsRedshiftSubnetGroup struct {
 }
 
 type AwsRedshiftSubnetGroupSpec struct {
+	Tags        map[string]string `json:"tags"`
 	Name        string            `json:"name"`
 	Description string            `json:"description"`
 	SubnetIds   string            `json:"subnet_ids"`
-	Tags        map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

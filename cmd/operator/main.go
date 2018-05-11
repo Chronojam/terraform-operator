@@ -8,6 +8,7 @@ import (
 	log "github.com/Sirupsen/logrus"
 
 	"k8s.io/client-go/tools/cache"
+	"k8s.io/client-go/util/workqueue"
 
 	cs "github.com/chronojam/terraform-operator/pkg/client/clientset/versioned"
 	operator "github.com/chronojam/terraform-operator/pkg/operator"
@@ -24,7 +25,37 @@ func main() {
 	}
 
 	for inf, handler := range informers {
-		op := operator.New(client, inf, handler)
+		queue := workqueue.NewRateLimitingQueue(workqueue.DefaultControllerRateLimiter())
+		inf.AddEventHandler(cache.ResourceEventHandlerFuncs{
+			AddFunc: func(obj interface{}) {
+				key, err := cache.MetaNamespaceKeyFunc(obj)
+				log.Infof("Add myresource: %s", key)
+				if err == nil {
+					queue.Add(key)
+				}
+			},
+			UpdateFunc: func(oldObj, newObj interface{}) {
+				key, err := cache.MetaNamespaceKeyFunc(newObj)
+				log.Infof("Update myresource: %s", key)
+				if err == nil {
+					queue.Add(key)
+				}
+			},
+			DeleteFunc: func(obj interface{}) {
+				key, err := cache.DeletionHandlingMetaNamespaceKeyFunc(obj)
+				log.Infof("Delete myresource: %s", key)
+				if err == nil {
+					queue.Add(key)
+				}
+			},
+		})
+		op := operator.Controller{
+			Logger:    log.NewEntry(log.New()),
+			ClientSet: client,
+			Informer:  inf,
+			Queue:     queue,
+			Handler:   handler,
+		}
 		go op.Run(stopCh)
 	}
 
@@ -38,5 +69,4 @@ func constructInformers(resClient cs.Interface) (map[cache.SharedIndexInformer]o
 	return map[cache.SharedIndexInformer]operator.Handler{
 		awsiampolicy.DefaultInformer(resClient): &awsiampolicy.Handler{},
 	}, nil
-
 }

@@ -17,19 +17,19 @@ type AwsAlbTargetGroup struct {
 }
 
 type AwsAlbTargetGroupSpec struct {
+	Arn                 string                             `json:"arn"`
 	ArnSuffix           string                             `json:"arn_suffix"`
+	Name                string                             `json:"name"`
+	NamePrefix          string                             `json:"name_prefix"`
+	Stickiness          []AwsAlbTargetGroupSpecStickiness  `json:"stickiness"`
+	HealthCheck         []AwsAlbTargetGroupSpecHealthCheck `json:"health_check"`
+	Tags                map[string]string                  `json:"tags"`
 	Port                int                                `json:"port"`
 	Protocol            string                             `json:"protocol"`
 	VpcId               string                             `json:"vpc_id"`
 	DeregistrationDelay int                                `json:"deregistration_delay"`
-	Stickiness          []AwsAlbTargetGroupSpecStickiness  `json:"stickiness"`
-	HealthCheck         []AwsAlbTargetGroupSpecHealthCheck `json:"health_check"`
-	Arn                 string                             `json:"arn"`
-	Name                string                             `json:"name"`
-	NamePrefix          string                             `json:"name_prefix"`
 	ProxyProtocolV2     bool                               `json:"proxy_protocol_v2"`
 	TargetType          string                             `json:"target_type"`
-	Tags                map[string]string                  `json:"tags"`
 }
 
 type AwsAlbTargetGroupSpecStickiness struct {
@@ -39,14 +39,14 @@ type AwsAlbTargetGroupSpecStickiness struct {
 }
 
 type AwsAlbTargetGroupSpecHealthCheck struct {
-	Interval           int    `json:"interval"`
-	Path               string `json:"path"`
-	Port               string `json:"port"`
-	Protocol           string `json:"protocol"`
 	Timeout            int    `json:"timeout"`
 	HealthyThreshold   int    `json:"healthy_threshold"`
 	Matcher            string `json:"matcher"`
 	UnhealthyThreshold int    `json:"unhealthy_threshold"`
+	Interval           int    `json:"interval"`
+	Path               string `json:"path"`
+	Port               string `json:"port"`
+	Protocol           string `json:"protocol"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

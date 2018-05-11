@@ -24,16 +24,16 @@ type AwsApiGatewayMethodSettingsSpec struct {
 }
 
 type AwsApiGatewayMethodSettingsSpecSettings struct {
-	RequireAuthorizationForCacheControl    bool    `json:"require_authorization_for_cache_control"`
 	UnauthorizedCacheControlHeaderStrategy string  `json:"unauthorized_cache_control_header_strategy"`
 	MetricsEnabled                         bool    `json:"metrics_enabled"`
+	LoggingLevel                           string  `json:"logging_level"`
+	CacheDataEncrypted                     bool    `json:"cache_data_encrypted"`
+	RequireAuthorizationForCacheControl    bool    `json:"require_authorization_for_cache_control"`
+	CacheTtlInSeconds                      int     `json:"cache_ttl_in_seconds"`
 	DataTraceEnabled                       bool    `json:"data_trace_enabled"`
 	ThrottlingBurstLimit                   int     `json:"throttling_burst_limit"`
 	ThrottlingRateLimit                    float64 `json:"throttling_rate_limit"`
-	CacheTtlInSeconds                      int     `json:"cache_ttl_in_seconds"`
-	LoggingLevel                           string  `json:"logging_level"`
 	CachingEnabled                         bool    `json:"caching_enabled"`
-	CacheDataEncrypted                     bool    `json:"cache_data_encrypted"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

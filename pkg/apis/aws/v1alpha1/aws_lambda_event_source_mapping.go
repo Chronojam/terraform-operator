@@ -17,17 +17,17 @@ type AwsLambdaEventSourceMapping struct {
 }
 
 type AwsLambdaEventSourceMappingSpec struct {
-	FunctionName          string `json:"function_name"`
 	Enabled               bool   `json:"enabled"`
-	LastProcessingResult  string `json:"last_processing_result"`
-	StateTransitionReason string `json:"state_transition_reason"`
-	State                 string `json:"state"`
-	Uuid                  string `json:"uuid"`
-	EventSourceArn        string `json:"event_source_arn"`
 	StartingPosition      string `json:"starting_position"`
 	BatchSize             int    `json:"batch_size"`
 	FunctionArn           string `json:"function_arn"`
 	LastModified          string `json:"last_modified"`
+	LastProcessingResult  string `json:"last_processing_result"`
+	State                 string `json:"state"`
+	EventSourceArn        string `json:"event_source_arn"`
+	FunctionName          string `json:"function_name"`
+	StateTransitionReason string `json:"state_transition_reason"`
+	Uuid                  string `json:"uuid"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

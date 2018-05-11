@@ -17,22 +17,22 @@ type AwsBatchJobDefinition struct {
 }
 
 type AwsBatchJobDefinitionSpec struct {
+	Timeout             []AwsBatchJobDefinitionSpecTimeout       `json:"timeout"`
+	Type                string                                   `json:"type"`
 	Revision            int                                      `json:"revision"`
 	Arn                 string                                   `json:"arn"`
 	Name                string                                   `json:"name"`
 	ContainerProperties string                                   `json:"container_properties"`
 	Parameters          map[string]string                        `json:"parameters"`
 	RetryStrategy       []AwsBatchJobDefinitionSpecRetryStrategy `json:"retry_strategy"`
-	Timeout             []AwsBatchJobDefinitionSpecTimeout       `json:"timeout"`
-	Type                string                                   `json:"type"`
-}
-
-type AwsBatchJobDefinitionSpecRetryStrategy struct {
-	Attempts int `json:"attempts"`
 }
 
 type AwsBatchJobDefinitionSpecTimeout struct {
 	AttemptDurationSeconds int `json:"attempt_duration_seconds"`
+}
+
+type AwsBatchJobDefinitionSpecRetryStrategy struct {
+	Attempts int `json:"attempts"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

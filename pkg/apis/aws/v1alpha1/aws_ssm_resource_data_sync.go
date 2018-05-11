@@ -17,8 +17,8 @@ type AwsSsmResourceDataSync struct {
 }
 
 type AwsSsmResourceDataSyncSpec struct {
-	Name          string                                    `json:"name"`
 	S3Destination []AwsSsmResourceDataSyncSpecS3Destination `json:"s3_destination"`
+	Name          string                                    `json:"name"`
 }
 
 type AwsSsmResourceDataSyncSpecS3Destination struct {

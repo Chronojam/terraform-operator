@@ -17,13 +17,13 @@ type AwsCodecommitRepository struct {
 }
 
 type AwsCodecommitRepositorySpec struct {
+	Arn            string `json:"arn"`
+	RepositoryId   string `json:"repository_id"`
+	CloneUrlHttp   string `json:"clone_url_http"`
 	CloneUrlSsh    string `json:"clone_url_ssh"`
 	DefaultBranch  string `json:"default_branch"`
 	RepositoryName string `json:"repository_name"`
 	Description    string `json:"description"`
-	Arn            string `json:"arn"`
-	RepositoryId   string `json:"repository_id"`
-	CloneUrlHttp   string `json:"clone_url_http"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

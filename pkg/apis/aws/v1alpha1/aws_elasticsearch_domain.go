@@ -17,21 +17,28 @@ type AwsElasticsearchDomain struct {
 }
 
 type AwsElasticsearchDomainSpec struct {
-	KibanaEndpoint       string                                         `json:"kibana_endpoint"`
-	EncryptAtRest        []AwsElasticsearchDomainSpecEncryptAtRest      `json:"encrypt_at_rest"`
+	VpcOptions           []AwsElasticsearchDomainSpecVpcOptions         `json:"vpc_options"`
 	ElasticsearchVersion string                                         `json:"elasticsearch_version"`
-	Tags                 map[string]string                              `json:"tags"`
-	AccessPolicies       string                                         `json:"access_policies"`
-	Arn                  string                                         `json:"arn"`
-	Endpoint             string                                         `json:"endpoint"`
-	DomainName           string                                         `json:"domain_name"`
+	AdvancedOptions      map[string]string                              `json:"advanced_options"`
+	EncryptAtRest        []AwsElasticsearchDomainSpecEncryptAtRest      `json:"encrypt_at_rest"`
 	SnapshotOptions      []AwsElasticsearchDomainSpecSnapshotOptions    `json:"snapshot_options"`
 	LogPublishingOptions AwsElasticsearchDomainSpecLogPublishingOptions `json:"log_publishing_options"`
-	AdvancedOptions      map[string]string                              `json:"advanced_options"`
-	DomainId             string                                         `json:"domain_id"`
-	ClusterConfig        []AwsElasticsearchDomainSpecClusterConfig      `json:"cluster_config"`
+	Tags                 map[string]string                              `json:"tags"`
+	DomainName           string                                         `json:"domain_name"`
 	EbsOptions           []AwsElasticsearchDomainSpecEbsOptions         `json:"ebs_options"`
-	VpcOptions           []AwsElasticsearchDomainSpecVpcOptions         `json:"vpc_options"`
+	ClusterConfig        []AwsElasticsearchDomainSpecClusterConfig      `json:"cluster_config"`
+	Arn                  string                                         `json:"arn"`
+	KibanaEndpoint       string                                         `json:"kibana_endpoint"`
+	Endpoint             string                                         `json:"endpoint"`
+	AccessPolicies       string                                         `json:"access_policies"`
+	DomainId             string                                         `json:"domain_id"`
+}
+
+type AwsElasticsearchDomainSpecVpcOptions struct {
+	AvailabilityZones string `json:"availability_zones"`
+	SecurityGroupIds  string `json:"security_group_ids"`
+	SubnetIds         string `json:"subnet_ids"`
+	VpcId             string `json:"vpc_id"`
 }
 
 type AwsElasticsearchDomainSpecEncryptAtRest struct {
@@ -49,27 +56,20 @@ type AwsElasticsearchDomainSpecLogPublishingOptions struct {
 	LogType               string `json:"log_type"`
 }
 
+type AwsElasticsearchDomainSpecEbsOptions struct {
+	EbsEnabled bool   `json:"ebs_enabled"`
+	Iops       int    `json:"iops"`
+	VolumeSize int    `json:"volume_size"`
+	VolumeType string `json:"volume_type"`
+}
+
 type AwsElasticsearchDomainSpecClusterConfig struct {
+	DedicatedMasterEnabled bool   `json:"dedicated_master_enabled"`
+	DedicatedMasterType    string `json:"dedicated_master_type"`
 	InstanceCount          int    `json:"instance_count"`
 	InstanceType           string `json:"instance_type"`
 	ZoneAwarenessEnabled   bool   `json:"zone_awareness_enabled"`
 	DedicatedMasterCount   int    `json:"dedicated_master_count"`
-	DedicatedMasterEnabled bool   `json:"dedicated_master_enabled"`
-	DedicatedMasterType    string `json:"dedicated_master_type"`
-}
-
-type AwsElasticsearchDomainSpecEbsOptions struct {
-	VolumeSize int    `json:"volume_size"`
-	VolumeType string `json:"volume_type"`
-	EbsEnabled bool   `json:"ebs_enabled"`
-	Iops       int    `json:"iops"`
-}
-
-type AwsElasticsearchDomainSpecVpcOptions struct {
-	AvailabilityZones string `json:"availability_zones"`
-	SecurityGroupIds  string `json:"security_group_ids"`
-	SubnetIds         string `json:"subnet_ids"`
-	VpcId             string `json:"vpc_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

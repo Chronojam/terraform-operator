@@ -17,37 +17,37 @@ type AwsOpsworksMysqlLayer struct {
 }
 
 type AwsOpsworksMysqlLayerSpec struct {
-	ElasticLoadBalancer        string                             `json:"elastic_load_balancer"`
-	CustomSecurityGroupIds     string                             `json:"custom_security_group_ids"`
-	InstanceShutdownTimeout    int                                `json:"instance_shutdown_timeout"`
-	Name                       string                             `json:"name"`
-	AutoAssignPublicIps        bool                               `json:"auto_assign_public_ips"`
 	CustomDeployRecipes        []string                           `json:"custom_deploy_recipes"`
+	CustomShutdownRecipes      []string                           `json:"custom_shutdown_recipes"`
+	AutoHealing                bool                               `json:"auto_healing"`
 	StackId                    string                             `json:"stack_id"`
-	UseEbsOptimizedInstances   bool                               `json:"use_ebs_optimized_instances"`
-	AutoAssignElasticIps       bool                               `json:"auto_assign_elastic_ips"`
+	RootPasswordOnAllInstances bool                               `json:"root_password_on_all_instances"`
+	AutoAssignPublicIps        bool                               `json:"auto_assign_public_ips"`
 	CustomInstanceProfileArn   string                             `json:"custom_instance_profile_arn"`
 	CustomSetupRecipes         []string                           `json:"custom_setup_recipes"`
-	CustomUndeployRecipes      []string                           `json:"custom_undeploy_recipes"`
-	CustomShutdownRecipes      []string                           `json:"custom_shutdown_recipes"`
+	InstallUpdatesOnBoot       bool                               `json:"install_updates_on_boot"`
+	UseEbsOptimizedInstances   bool                               `json:"use_ebs_optimized_instances"`
 	DrainElbOnShutdown         bool                               `json:"drain_elb_on_shutdown"`
 	RootPassword               string                             `json:"root_password"`
-	RootPasswordOnAllInstances bool                               `json:"root_password_on_all_instances"`
-	CustomConfigureRecipes     []string                           `json:"custom_configure_recipes"`
+	CustomUndeployRecipes      []string                           `json:"custom_undeploy_recipes"`
+	CustomSecurityGroupIds     string                             `json:"custom_security_group_ids"`
 	CustomJson                 string                             `json:"custom_json"`
-	AutoHealing                bool                               `json:"auto_healing"`
-	InstallUpdatesOnBoot       bool                               `json:"install_updates_on_boot"`
+	InstanceShutdownTimeout    int                                `json:"instance_shutdown_timeout"`
 	SystemPackages             string                             `json:"system_packages"`
+	AutoAssignElasticIps       bool                               `json:"auto_assign_elastic_ips"`
+	ElasticLoadBalancer        string                             `json:"elastic_load_balancer"`
+	CustomConfigureRecipes     []string                           `json:"custom_configure_recipes"`
 	EbsVolume                  AwsOpsworksMysqlLayerSpecEbsVolume `json:"ebs_volume"`
+	Name                       string                             `json:"name"`
 }
 
 type AwsOpsworksMysqlLayerSpecEbsVolume struct {
-	Iops          int    `json:"iops"`
-	MountPoint    string `json:"mount_point"`
 	NumberOfDisks int    `json:"number_of_disks"`
 	RaidLevel     string `json:"raid_level"`
 	Size          int    `json:"size"`
 	Type          string `json:"type"`
+	Iops          int    `json:"iops"`
+	MountPoint    string `json:"mount_point"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

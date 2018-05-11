@@ -17,14 +17,10 @@ type AwsWafregionalWebAcl struct {
 }
 
 type AwsWafregionalWebAclSpec struct {
+	Rule          AwsWafregionalWebAclSpecRule            `json:"rule"`
 	Name          string                                  `json:"name"`
 	DefaultAction []AwsWafregionalWebAclSpecDefaultAction `json:"default_action"`
 	MetricName    string                                  `json:"metric_name"`
-	Rule          AwsWafregionalWebAclSpecRule            `json:"rule"`
-}
-
-type AwsWafregionalWebAclSpecDefaultAction struct {
-	Type string `json:"type"`
 }
 
 type AwsWafregionalWebAclSpecRule struct {
@@ -34,6 +30,10 @@ type AwsWafregionalWebAclSpecRule struct {
 }
 
 type AwsWafregionalWebAclSpecRuleAction struct {
+	Type string `json:"type"`
+}
+
+type AwsWafregionalWebAclSpecDefaultAction struct {
 	Type string `json:"type"`
 }
 

@@ -17,10 +17,10 @@ type AwsSecretsmanagerSecretVersion struct {
 }
 
 type AwsSecretsmanagerSecretVersionSpec struct {
-	VersionId     string `json:"version_id"`
-	VersionStages string `json:"version_stages"`
 	SecretId      string `json:"secret_id"`
 	SecretString  string `json:"secret_string"`
+	VersionId     string `json:"version_id"`
+	VersionStages string `json:"version_stages"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

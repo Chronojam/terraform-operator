@@ -17,11 +17,11 @@ type AwsNetworkInterfaceAttachment struct {
 }
 
 type AwsNetworkInterfaceAttachmentSpec struct {
+	DeviceIndex        int    `json:"device_index"`
+	InstanceId         string `json:"instance_id"`
 	NetworkInterfaceId string `json:"network_interface_id"`
 	AttachmentId       string `json:"attachment_id"`
 	Status             string `json:"status"`
-	DeviceIndex        int    `json:"device_index"`
-	InstanceId         string `json:"instance_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

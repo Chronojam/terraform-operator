@@ -17,30 +17,25 @@ type AwsLaunchConfiguration struct {
 }
 
 type AwsLaunchConfigurationSpec struct {
+	VpcClassicLinkSecurityGroups string                                         `json:"vpc_classic_link_security_groups"`
 	AssociatePublicIpAddress     bool                                           `json:"associate_public_ip_address"`
 	SpotPrice                    string                                         `json:"spot_price"`
-	Name                         string                                         `json:"name"`
-	ImageId                      string                                         `json:"image_id"`
+	EnableMonitoring             bool                                           `json:"enable_monitoring"`
+	RootBlockDevice              []AwsLaunchConfigurationSpecRootBlockDevice    `json:"root_block_device"`
+	IamInstanceProfile           string                                         `json:"iam_instance_profile"`
+	NamePrefix                   string                                         `json:"name_prefix"`
 	UserDataBase64               string                                         `json:"user_data_base64"`
 	SecurityGroups               string                                         `json:"security_groups"`
 	EphemeralBlockDevice         AwsLaunchConfigurationSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
-	RootBlockDevice              []AwsLaunchConfigurationSpecRootBlockDevice    `json:"root_block_device"`
+	Name                         string                                         `json:"name"`
+	UserData                     string                                         `json:"user_data"`
 	VpcClassicLinkId             string                                         `json:"vpc_classic_link_id"`
-	VpcClassicLinkSecurityGroups string                                         `json:"vpc_classic_link_security_groups"`
-	EbsOptimized                 bool                                           `json:"ebs_optimized"`
 	PlacementTenancy             string                                         `json:"placement_tenancy"`
 	EbsBlockDevice               AwsLaunchConfigurationSpecEbsBlockDevice       `json:"ebs_block_device"`
-	InstanceType                 string                                         `json:"instance_type"`
-	IamInstanceProfile           string                                         `json:"iam_instance_profile"`
-	UserData                     string                                         `json:"user_data"`
-	NamePrefix                   string                                         `json:"name_prefix"`
+	ImageId                      string                                         `json:"image_id"`
 	KeyName                      string                                         `json:"key_name"`
-	EnableMonitoring             bool                                           `json:"enable_monitoring"`
-}
-
-type AwsLaunchConfigurationSpecEphemeralBlockDevice struct {
-	DeviceName  string `json:"device_name"`
-	VirtualName string `json:"virtual_name"`
+	EbsOptimized                 bool                                           `json:"ebs_optimized"`
+	InstanceType                 string                                         `json:"instance_type"`
 }
 
 type AwsLaunchConfigurationSpecRootBlockDevice struct {
@@ -50,7 +45,13 @@ type AwsLaunchConfigurationSpecRootBlockDevice struct {
 	VolumeType          string `json:"volume_type"`
 }
 
+type AwsLaunchConfigurationSpecEphemeralBlockDevice struct {
+	DeviceName  string `json:"device_name"`
+	VirtualName string `json:"virtual_name"`
+}
+
 type AwsLaunchConfigurationSpecEbsBlockDevice struct {
+	Encrypted           bool   `json:"encrypted"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	DeviceName          string `json:"device_name"`
 	NoDevice            bool   `json:"no_device"`
@@ -58,7 +59,6 @@ type AwsLaunchConfigurationSpecEbsBlockDevice struct {
 	SnapshotId          string `json:"snapshot_id"`
 	VolumeSize          int    `json:"volume_size"`
 	VolumeType          string `json:"volume_type"`
-	Encrypted           bool   `json:"encrypted"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,6 +17,7 @@ type AwsDbOptionGroup struct {
 }
 
 type AwsDbOptionGroupSpec struct {
+	Arn                    string                     `json:"arn"`
 	Name                   string                     `json:"name"`
 	NamePrefix             string                     `json:"name_prefix"`
 	EngineName             string                     `json:"engine_name"`
@@ -24,16 +25,15 @@ type AwsDbOptionGroupSpec struct {
 	OptionGroupDescription string                     `json:"option_group_description"`
 	Option                 AwsDbOptionGroupSpecOption `json:"option"`
 	Tags                   map[string]string          `json:"tags"`
-	Arn                    string                     `json:"arn"`
 }
 
 type AwsDbOptionGroupSpecOption struct {
-	Version                     string                                   `json:"version"`
 	OptionName                  string                                   `json:"option_name"`
 	OptionSettings              AwsDbOptionGroupSpecOptionOptionSettings `json:"option_settings"`
 	Port                        int                                      `json:"port"`
 	DbSecurityGroupMemberships  string                                   `json:"db_security_group_memberships"`
 	VpcSecurityGroupMemberships string                                   `json:"vpc_security_group_memberships"`
+	Version                     string                                   `json:"version"`
 }
 
 type AwsDbOptionGroupSpecOptionOptionSettings struct {

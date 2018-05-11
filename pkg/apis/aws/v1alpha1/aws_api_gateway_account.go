@@ -22,8 +22,8 @@ type AwsApiGatewayAccountSpec struct {
 }
 
 type AwsApiGatewayAccountSpecThrottleSettings struct {
-	RateLimit  float64 `json:"rate_limit"`
 	BurstLimit int     `json:"burst_limit"`
+	RateLimit  float64 `json:"rate_limit"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

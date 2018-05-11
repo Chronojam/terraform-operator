@@ -17,7 +17,6 @@ type AwsConfigConfigRule struct {
 }
 
 type AwsConfigConfigRuleSpec struct {
-	Name                      string                          `json:"name"`
 	RuleId                    string                          `json:"rule_id"`
 	Arn                       string                          `json:"arn"`
 	Description               string                          `json:"description"`
@@ -25,6 +24,7 @@ type AwsConfigConfigRuleSpec struct {
 	MaximumExecutionFrequency string                          `json:"maximum_execution_frequency"`
 	Scope                     []AwsConfigConfigRuleSpecScope  `json:"scope"`
 	Source                    []AwsConfigConfigRuleSpecSource `json:"source"`
+	Name                      string                          `json:"name"`
 }
 
 type AwsConfigConfigRuleSpecScope struct {

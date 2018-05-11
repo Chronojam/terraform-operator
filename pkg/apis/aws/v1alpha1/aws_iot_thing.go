@@ -17,12 +17,12 @@ type AwsIotThing struct {
 }
 
 type AwsIotThingSpec struct {
+	ThingTypeName   string            `json:"thing_type_name"`
+	DefaultClientId string            `json:"default_client_id"`
 	Version         int               `json:"version"`
 	Arn             string            `json:"arn"`
 	Name            string            `json:"name"`
 	Attributes      map[string]string `json:"attributes"`
-	ThingTypeName   string            `json:"thing_type_name"`
-	DefaultClientId string            `json:"default_client_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,25 +17,25 @@ type AwsDbSnapshot struct {
 }
 
 type AwsDbSnapshotSpec struct {
+	Engine                     string `json:"engine"`
 	SourceRegion               string `json:"source_region"`
-	Status                     string `json:"status"`
-	AllocatedStorage           int    `json:"allocated_storage"`
-	EngineVersion              string `json:"engine_version"`
+	DbSnapshotArn              string `json:"db_snapshot_arn"`
 	OptionGroupName            string `json:"option_group_name"`
-	DbSnapshotIdentifier       string `json:"db_snapshot_identifier"`
 	SnapshotType               string `json:"snapshot_type"`
+	Status                     string `json:"status"`
+	StorageType                string `json:"storage_type"`
+	DbSnapshotIdentifier       string `json:"db_snapshot_identifier"`
+	AvailabilityZone           string `json:"availability_zone"`
 	Iops                       int    `json:"iops"`
+	KmsKeyId                   string `json:"kms_key_id"`
+	Port                       int    `json:"port"`
+	DbInstanceIdentifier       string `json:"db_instance_identifier"`
+	Encrypted                  bool   `json:"encrypted"`
+	EngineVersion              string `json:"engine_version"`
+	LicenseModel               string `json:"license_model"`
 	SourceDbSnapshotIdentifier string `json:"source_db_snapshot_identifier"`
 	VpcId                      string `json:"vpc_id"`
-	DbInstanceIdentifier       string `json:"db_instance_identifier"`
-	DbSnapshotArn              string `json:"db_snapshot_arn"`
-	Engine                     string `json:"engine"`
-	LicenseModel               string `json:"license_model"`
-	Port                       int    `json:"port"`
-	StorageType                string `json:"storage_type"`
-	AvailabilityZone           string `json:"availability_zone"`
-	Encrypted                  bool   `json:"encrypted"`
-	KmsKeyId                   string `json:"kms_key_id"`
+	AllocatedStorage           int    `json:"allocated_storage"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

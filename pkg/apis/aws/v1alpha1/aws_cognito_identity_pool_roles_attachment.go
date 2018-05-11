@@ -30,10 +30,10 @@ type AwsCognitoIdentityPoolRolesAttachmentSpecRoleMapping struct {
 }
 
 type AwsCognitoIdentityPoolRolesAttachmentSpecRoleMappingMappingRule struct {
-	Claim     string `json:"claim"`
-	MatchType string `json:"match_type"`
 	RoleArn   string `json:"role_arn"`
 	Value     string `json:"value"`
+	Claim     string `json:"claim"`
+	MatchType string `json:"match_type"`
 }
 
 type AwsCognitoIdentityPoolRolesAttachmentSpecRoles struct {

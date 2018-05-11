@@ -17,14 +17,14 @@ type AwsLightsailKeyPair struct {
 }
 
 type AwsLightsailKeyPairSpec struct {
+	Fingerprint          string `json:"fingerprint"`
+	EncryptedPrivateKey  string `json:"encrypted_private_key"`
 	Name                 string `json:"name"`
 	NamePrefix           string `json:"name_prefix"`
+	PgpKey               string `json:"pgp_key"`
 	Arn                  string `json:"arn"`
 	PublicKey            string `json:"public_key"`
 	PrivateKey           string `json:"private_key"`
-	EncryptedPrivateKey  string `json:"encrypted_private_key"`
-	PgpKey               string `json:"pgp_key"`
-	Fingerprint          string `json:"fingerprint"`
 	EncryptedFingerprint string `json:"encrypted_fingerprint"`
 }
 

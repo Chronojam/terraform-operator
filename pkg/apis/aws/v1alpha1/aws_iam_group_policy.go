@@ -17,10 +17,10 @@ type AwsIamGroupPolicy struct {
 }
 
 type AwsIamGroupPolicySpec struct {
-	Policy     string `json:"policy"`
-	Name       string `json:"name"`
 	NamePrefix string `json:"name_prefix"`
 	Group      string `json:"group"`
+	Policy     string `json:"policy"`
+	Name       string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

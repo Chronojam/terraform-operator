@@ -17,39 +17,39 @@ type AwsOpsworksStack struct {
 }
 
 type AwsOpsworksStackSpec struct {
-	CustomJson                  string                                      `json:"custom_json"`
-	DefaultSshKeyName           string                                      `json:"default_ssh_key_name"`
-	HostnameTheme               string                                      `json:"hostname_theme"`
+	ConfigurationManagerVersion string                                      `json:"configuration_manager_version"`
 	Tags                        map[string]string                           `json:"tags"`
-	Arn                         string                                      `json:"arn"`
-	CustomCookbooksSource       []AwsOpsworksStackSpecCustomCookbooksSource `json:"custom_cookbooks_source"`
-	BerkshelfVersion            string                                      `json:"berkshelf_version"`
-	UseOpsworksSecurityGroups   bool                                        `json:"use_opsworks_security_groups"`
 	AgentVersion                string                                      `json:"agent_version"`
-	ManageBerkshelf             bool                                        `json:"manage_berkshelf"`
-	ServiceRoleArn              string                                      `json:"service_role_arn"`
 	Color                       string                                      `json:"color"`
 	ConfigurationManagerName    string                                      `json:"configuration_manager_name"`
-	ConfigurationManagerVersion string                                      `json:"configuration_manager_version"`
-	DefaultRootDeviceType       string                                      `json:"default_root_device_type"`
+	CustomCookbooksSource       []AwsOpsworksStackSpecCustomCookbooksSource `json:"custom_cookbooks_source"`
+	CustomJson                  string                                      `json:"custom_json"`
 	DefaultSubnetId             string                                      `json:"default_subnet_id"`
-	Name                        string                                      `json:"name"`
-	Region                      string                                      `json:"region"`
-	StackEndpoint               string                                      `json:"stack_endpoint"`
+	HostnameTheme               string                                      `json:"hostname_theme"`
 	UseCustomCookbooks          bool                                        `json:"use_custom_cookbooks"`
+	Arn                         string                                      `json:"arn"`
+	ServiceRoleArn              string                                      `json:"service_role_arn"`
+	ManageBerkshelf             bool                                        `json:"manage_berkshelf"`
 	VpcId                       string                                      `json:"vpc_id"`
 	DefaultOs                   string                                      `json:"default_os"`
+	DefaultRootDeviceType       string                                      `json:"default_root_device_type"`
+	DefaultSshKeyName           string                                      `json:"default_ssh_key_name"`
+	UseOpsworksSecurityGroups   bool                                        `json:"use_opsworks_security_groups"`
+	Region                      string                                      `json:"region"`
 	DefaultInstanceProfileArn   string                                      `json:"default_instance_profile_arn"`
+	BerkshelfVersion            string                                      `json:"berkshelf_version"`
+	Name                        string                                      `json:"name"`
 	DefaultAvailabilityZone     string                                      `json:"default_availability_zone"`
+	StackEndpoint               string                                      `json:"stack_endpoint"`
 }
 
 type AwsOpsworksStackSpecCustomCookbooksSource struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
 	Revision string `json:"revision"`
 	SshKey   string `json:"ssh_key"`
 	Type     string `json:"type"`
 	Url      string `json:"url"`
-	Username string `json:"username"`
-	Password string `json:"password"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

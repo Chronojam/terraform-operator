@@ -17,6 +17,7 @@ type AwsCloud9EnvironmentEc2 struct {
 }
 
 type AwsCloud9EnvironmentEc2Spec struct {
+	Description              string `json:"description"`
 	OwnerArn                 string `json:"owner_arn"`
 	SubnetId                 string `json:"subnet_id"`
 	Arn                      string `json:"arn"`
@@ -24,7 +25,6 @@ type AwsCloud9EnvironmentEc2Spec struct {
 	Name                     string `json:"name"`
 	InstanceType             string `json:"instance_type"`
 	AutomaticStopTimeMinutes int    `json:"automatic_stop_time_minutes"`
-	Description              string `json:"description"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

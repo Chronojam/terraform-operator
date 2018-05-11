@@ -17,10 +17,10 @@ type AwsElasticacheParameterGroup struct {
 }
 
 type AwsElasticacheParameterGroupSpec struct {
-	Name        string                                    `json:"name"`
-	Family      string                                    `json:"family"`
 	Description string                                    `json:"description"`
 	Parameter   AwsElasticacheParameterGroupSpecParameter `json:"parameter"`
+	Name        string                                    `json:"name"`
+	Family      string                                    `json:"family"`
 }
 
 type AwsElasticacheParameterGroupSpecParameter struct {

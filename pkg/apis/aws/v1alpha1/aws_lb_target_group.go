@@ -17,36 +17,36 @@ type AwsLbTargetGroup struct {
 }
 
 type AwsLbTargetGroupSpec struct {
-	DeregistrationDelay int                               `json:"deregistration_delay"`
-	HealthCheck         []AwsLbTargetGroupSpecHealthCheck `json:"health_check"`
-	Port                int                               `json:"port"`
-	ArnSuffix           string                            `json:"arn_suffix"`
 	Name                string                            `json:"name"`
 	NamePrefix          string                            `json:"name_prefix"`
+	Port                int                               `json:"port"`
 	Protocol            string                            `json:"protocol"`
 	VpcId               string                            `json:"vpc_id"`
+	Tags                map[string]string                 `json:"tags"`
+	Arn                 string                            `json:"arn"`
+	ArnSuffix           string                            `json:"arn_suffix"`
+	DeregistrationDelay int                               `json:"deregistration_delay"`
 	ProxyProtocolV2     bool                              `json:"proxy_protocol_v2"`
 	TargetType          string                            `json:"target_type"`
-	Arn                 string                            `json:"arn"`
-	Tags                map[string]string                 `json:"tags"`
 	Stickiness          []AwsLbTargetGroupSpecStickiness  `json:"stickiness"`
-}
-
-type AwsLbTargetGroupSpecHealthCheck struct {
-	Path               string `json:"path"`
-	Port               string `json:"port"`
-	Protocol           string `json:"protocol"`
-	Timeout            int    `json:"timeout"`
-	HealthyThreshold   int    `json:"healthy_threshold"`
-	Matcher            string `json:"matcher"`
-	UnhealthyThreshold int    `json:"unhealthy_threshold"`
-	Interval           int    `json:"interval"`
+	HealthCheck         []AwsLbTargetGroupSpecHealthCheck `json:"health_check"`
 }
 
 type AwsLbTargetGroupSpecStickiness struct {
 	Enabled        bool   `json:"enabled"`
 	Type           string `json:"type"`
 	CookieDuration int    `json:"cookie_duration"`
+}
+
+type AwsLbTargetGroupSpecHealthCheck struct {
+	Protocol           string `json:"protocol"`
+	Timeout            int    `json:"timeout"`
+	HealthyThreshold   int    `json:"healthy_threshold"`
+	Matcher            string `json:"matcher"`
+	UnhealthyThreshold int    `json:"unhealthy_threshold"`
+	Interval           int    `json:"interval"`
+	Path               string `json:"path"`
+	Port               string `json:"port"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

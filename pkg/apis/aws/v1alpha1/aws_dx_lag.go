@@ -17,13 +17,13 @@ type AwsDxLag struct {
 }
 
 type AwsDxLagSpec struct {
+	Arn                  string            `json:"arn"`
+	Name                 string            `json:"name"`
 	ConnectionsBandwidth string            `json:"connections_bandwidth"`
 	Location             string            `json:"location"`
 	NumberOfConnections  int               `json:"number_of_connections"`
 	ForceDestroy         bool              `json:"force_destroy"`
 	Tags                 map[string]string `json:"tags"`
-	Arn                  string            `json:"arn"`
-	Name                 string            `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

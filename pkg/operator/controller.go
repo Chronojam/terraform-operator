@@ -12,89 +12,48 @@ import (
 	"k8s.io/client-go/util/workqueue"
 )
 
-func New(client kubernetes.Interface, informer cache.SharedIndexInformer, handler Handler) Controller {
-
-	queue := workqueue.NewRateLimitingQueue(workqueue.DefaultControllerRateLimiter())
-
-	informer.AddEventHandler(cache.ResourceEventHandlerFuncs{
-		AddFunc: func(obj interface{}) {
-			// convert the resource object into a key (in this case
-			// we are just doing it in the format of 'namespace/name')
-			key, err := cache.MetaNamespaceKeyFunc(obj)
-			if err == nil {
-				// add the key to the queue for the handler to get
-				queue.Add(key)
-			}
-		},
-		UpdateFunc: func(oldObj, newObj interface{}) {
-			key, err := cache.MetaNamespaceKeyFunc(newObj)
-			if err == nil {
-				queue.Add(key)
-			}
-		},
-		DeleteFunc: func(obj interface{}) {
-			// DeletionHandlingMetaNamsespaceKeyFunc is a helper function that allows
-			// us to check the DeletedFinalStateUnknown existence in the event that
-			// a resource was deleted but it is still contained in the index
-			//
-			// this then in turn calls MetaNamespaceKeyFunc
-			key, err := cache.DeletionHandlingMetaNamespaceKeyFunc(obj)
-			if err == nil {
-				queue.Add(key)
-			}
-		},
-	})
-	return Controller{
-		logger:    log.NewEntry(log.New()),
-		clientset: client,
-		informer:  informer,
-		queue:     queue,
-		handler:   handler,
-	}
-}
-
 // Controller struct defines how a controller should encapsulate
 // logging, client connectivity, informing (list and watching)
-// queueing, and handling of resource changes
+// Queueing, and handling of resource changes
 type Controller struct {
-	logger    *log.Entry
-	clientset kubernetes.Interface
-	queue     workqueue.RateLimitingInterface
-	informer  cache.SharedIndexInformer
-	handler   Handler
+	Logger    *log.Entry
+	ClientSet kubernetes.Interface
+	Queue     workqueue.RateLimitingInterface
+	Informer  cache.SharedIndexInformer
+	Handler   Handler
 }
 
 // Run is the main path of execution for the controller loop
 func (c *Controller) Run(stopCh <-chan struct{}) {
 	// handle a panic with logging and exiting
 	defer utilruntime.HandleCrash()
-	// ignore new items in the queue but when all goroutines
+	// ignore new items in the Queue but when all goroutines
 	// have completed existing items then shutdown
-	defer c.queue.ShutDown()
+	defer c.Queue.ShutDown()
 
-	c.logger.Info("Controller.Run: initiating")
+	c.Logger.Info("Controller.Run: initiating")
 
-	// run the informer to start listing and watching resources
-	go c.informer.Run(stopCh)
+	// run the Informer to start listing and watching resources
+	go c.Informer.Run(stopCh)
 
 	// do the initial synchronization (one time) to populate resources
 	if !cache.WaitForCacheSync(stopCh, c.HasSynced) {
 		utilruntime.HandleError(fmt.Errorf("Error syncing cache"))
 		return
 	}
-	c.logger.Info("Controller.Run: cache sync complete")
+	c.Logger.Info("Controller.Run: cache sync complete")
 
 	// run the runWorker method every second with a stop channel
 	wait.Until(c.runWorker, time.Second, stopCh)
 }
 
 // HasSynced allows us to satisfy the Controller interface
-// by wiring up the informer's HasSynced method to it
+// by wiring up the Informer's HasSynced method to it
 func (c *Controller) HasSynced() bool {
-	return c.informer.HasSynced()
+	return c.Informer.HasSynced()
 }
 
-// runWorker executes the loop to process new items added to the queue
+// runWorker executes the loop to process new items added to the Queue
 func (c *Controller) runWorker() {
 	log.Info("Controller.runWorker: starting")
 
@@ -107,25 +66,25 @@ func (c *Controller) runWorker() {
 	log.Info("Controller.runWorker: completed")
 }
 
-// processNextItem retrieves each queued item and takes the
-// necessary handler action based off of if the item was
+// processNextItem retrieves each Queued item and takes the
+// necessary Handler action based off of if the item was
 // created or deleted
 func (c *Controller) processNextItem() bool {
 	log.Info("Controller.processNextItem: start")
 
-	// fetch the next item (blocking) from the queue to process or
+	// fetch the next item (blocking) from the Queue to process or
 	// if a shutdown is requested then return out of this to stop
 	// processing
-	key, quit := c.queue.Get()
+	key, quit := c.Queue.Get()
 
 	// stop the worker loop from running as this indicates we
-	// have sent a shutdown message that the queue has indicated
+	// have sent a shutdown message that the Queue has indicated
 	// from the Get method
 	if quit {
 		return false
 	}
 
-	defer c.queue.Done(key)
+	defer c.Queue.Done(key)
 
 	// assert the string out of the key (format `namespace/name`)
 	keyRaw := key.(string)
@@ -137,35 +96,35 @@ func (c *Controller) processNextItem() bool {
 	// resource was created (true) or deleted (false)
 	//
 	// if there is an error in getting the key from the index
-	// then we want to retry this particular queue key a certain
-	// number of times (5 here) before we forget the queue key
+	// then we want to retry this particular Queue key a certain
+	// number of times (5 here) before we forget the Queue key
 	// and throw an error
-	item, exists, err := c.informer.GetIndexer().GetByKey(keyRaw)
+	item, exists, err := c.Informer.GetIndexer().GetByKey(keyRaw)
 	if err != nil {
-		if c.queue.NumRequeues(key) < 5 {
-			c.logger.Errorf("Controller.processNextItem: Failed processing item with key %s with error %v, retrying", key, err)
-			c.queue.AddRateLimited(key)
+		if c.Queue.NumRequeues(key) < 5 {
+			c.Logger.Errorf("Controller.processNextItem: Failed processing item with key %s with error %v, retrying", key, err)
+			c.Queue.AddRateLimited(key)
 		} else {
-			c.logger.Errorf("Controller.processNextItem: Failed processing item with key %s with error %v, no more retries", key, err)
-			c.queue.Forget(key)
+			c.Logger.Errorf("Controller.processNextItem: Failed processing item with key %s with error %v, no more retries", key, err)
+			c.Queue.Forget(key)
 			utilruntime.HandleError(err)
 		}
 	}
 
-	// if the item doesn't exist then it was deleted and we need to fire off the handler's
+	// if the item doesn't exist then it was deleted and we need to fire off the Handler's
 	// ObjectDeleted method. but if the object does exist that indicates that the object
 	// was created (or updated) so run the ObjectCreated method
 	//
-	// after both instances, we want to forget the key from the queue, as this indicates
-	// a code path of successful queue key processing
+	// after both instances, we want to forget the key from the Queue, as this indicates
+	// a code path of successful Queue key processing
 	if !exists {
-		c.logger.Infof("Controller.processNextItem: object deleted detected: %s", keyRaw)
-		c.handler.ObjectDeleted(item)
-		c.queue.Forget(key)
+		c.Logger.Infof("Controller.processNextItem: object deleted detected: %s", keyRaw)
+		c.Handler.ObjectDeleted(item)
+		c.Queue.Forget(key)
 	} else {
-		c.logger.Infof("Controller.processNextItem: object created detected: %s", keyRaw)
-		c.handler.ObjectCreated(item)
-		c.queue.Forget(key)
+		c.Logger.Infof("Controller.processNextItem: object created detected: %s", keyRaw)
+		c.Handler.ObjectCreated(item)
+		c.Queue.Forget(key)
 	}
 
 	// keep the worker loop running by returning true

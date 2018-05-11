@@ -17,15 +17,15 @@ type AwsEbsVolume struct {
 }
 
 type AwsEbsVolumeSpec struct {
-	Encrypted        bool              `json:"encrypted"`
+	Iops             int               `json:"iops"`
 	Size             int               `json:"size"`
+	Type             string            `json:"type"`
 	Tags             map[string]string `json:"tags"`
 	Arn              string            `json:"arn"`
 	AvailabilityZone string            `json:"availability_zone"`
-	SnapshotId       string            `json:"snapshot_id"`
-	Type             string            `json:"type"`
-	Iops             int               `json:"iops"`
+	Encrypted        bool              `json:"encrypted"`
 	KmsKeyId         string            `json:"kms_key_id"`
+	SnapshotId       string            `json:"snapshot_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

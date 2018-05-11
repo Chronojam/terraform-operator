@@ -17,15 +17,15 @@ type AwsEbsSnapshot struct {
 }
 
 type AwsEbsSnapshotSpec struct {
-	KmsKeyId            string            `json:"kms_key_id"`
-	VolumeId            string            `json:"volume_id"`
-	Encrypted           bool              `json:"encrypted"`
-	OwnerAlias          string            `json:"owner_alias"`
 	VolumeSize          int               `json:"volume_size"`
+	KmsKeyId            string            `json:"kms_key_id"`
 	DataEncryptionKeyId string            `json:"data_encryption_key_id"`
-	Tags                map[string]string `json:"tags"`
 	Description         string            `json:"description"`
 	OwnerId             string            `json:"owner_id"`
+	OwnerAlias          string            `json:"owner_alias"`
+	Encrypted           bool              `json:"encrypted"`
+	VolumeId            string            `json:"volume_id"`
+	Tags                map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

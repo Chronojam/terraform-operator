@@ -17,10 +17,10 @@ type AwsSsmMaintenanceWindowTarget struct {
 }
 
 type AwsSsmMaintenanceWindowTargetSpec struct {
+	WindowId         string                                     `json:"window_id"`
 	ResourceType     string                                     `json:"resource_type"`
 	Targets          []AwsSsmMaintenanceWindowTargetSpecTargets `json:"targets"`
 	OwnerInformation string                                     `json:"owner_information"`
-	WindowId         string                                     `json:"window_id"`
 }
 
 type AwsSsmMaintenanceWindowTargetSpecTargets struct {

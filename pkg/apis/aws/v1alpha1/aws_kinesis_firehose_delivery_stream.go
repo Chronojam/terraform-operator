@@ -17,17 +17,122 @@ type AwsKinesisFirehoseDeliveryStream struct {
 }
 
 type AwsKinesisFirehoseDeliveryStreamSpec struct {
-	SplunkConfiguration        []AwsKinesisFirehoseDeliveryStreamSpecSplunkConfiguration        `json:"splunk_configuration"`
-	VersionId                  string                                                           `json:"version_id"`
 	DestinationId              string                                                           `json:"destination_id"`
-	Arn                        string                                                           `json:"arn"`
 	Name                       string                                                           `json:"name"`
-	KinesisSourceConfiguration []AwsKinesisFirehoseDeliveryStreamSpecKinesisSourceConfiguration `json:"kinesis_source_configuration"`
 	Destination                string                                                           `json:"destination"`
 	S3Configuration            []AwsKinesisFirehoseDeliveryStreamSpecS3Configuration            `json:"s3_configuration"`
-	ExtendedS3Configuration    []AwsKinesisFirehoseDeliveryStreamSpecExtendedS3Configuration    `json:"extended_s3_configuration"`
 	RedshiftConfiguration      []AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfiguration      `json:"redshift_configuration"`
 	ElasticsearchConfiguration []AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfiguration `json:"elasticsearch_configuration"`
+	SplunkConfiguration        []AwsKinesisFirehoseDeliveryStreamSpecSplunkConfiguration        `json:"splunk_configuration"`
+	Arn                        string                                                           `json:"arn"`
+	KinesisSourceConfiguration []AwsKinesisFirehoseDeliveryStreamSpecKinesisSourceConfiguration `json:"kinesis_source_configuration"`
+	ExtendedS3Configuration    []AwsKinesisFirehoseDeliveryStreamSpecExtendedS3Configuration    `json:"extended_s3_configuration"`
+	VersionId                  string                                                           `json:"version_id"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecS3Configuration struct {
+	KmsKeyArn                string                                                                      `json:"kms_key_arn"`
+	RoleArn                  string                                                                      `json:"role_arn"`
+	Prefix                   string                                                                      `json:"prefix"`
+	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecS3ConfigurationCloudwatchLoggingOptions `json:"cloudwatch_logging_options"`
+	BucketArn                string                                                                      `json:"bucket_arn"`
+	BufferSize               int                                                                         `json:"buffer_size"`
+	BufferInterval           int                                                                         `json:"buffer_interval"`
+	CompressionFormat        string                                                                      `json:"compression_format"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecS3ConfigurationCloudwatchLoggingOptions struct {
+	Enabled       bool   `json:"enabled"`
+	LogGroupName  string `json:"log_group_name"`
+	LogStreamName string `json:"log_stream_name"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfiguration struct {
+	Username                 string                                                                             `json:"username"`
+	Password                 string                                                                             `json:"password"`
+	ProcessingConfiguration  []AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfiguration `json:"processing_configuration"`
+	S3BackupMode             string                                                                             `json:"s3_backup_mode"`
+	RetryDuration            int                                                                                `json:"retry_duration"`
+	CopyOptions              string                                                                             `json:"copy_options"`
+	DataTableColumns         string                                                                             `json:"data_table_columns"`
+	ClusterJdbcurl           string                                                                             `json:"cluster_jdbcurl"`
+	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationCloudwatchLoggingOptions  `json:"cloudwatch_logging_options"`
+	DataTableName            string                                                                             `json:"data_table_name"`
+	S3BackupConfiguration    []AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationS3BackupConfiguration   `json:"s3_backup_configuration"`
+	RoleArn                  string                                                                             `json:"role_arn"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfiguration struct {
+	Enabled    bool                                                                                         `json:"enabled"`
+	Processors []AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfigurationProcessors `json:"processors"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfigurationProcessors struct {
+	Parameters []AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfigurationProcessorsParameters `json:"parameters"`
+	Type       string                                                                                                 `json:"type"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfigurationProcessorsParameters struct {
+	ParameterName  string `json:"parameter_name"`
+	ParameterValue string `json:"parameter_value"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationCloudwatchLoggingOptions struct {
+	Enabled       bool   `json:"enabled"`
+	LogGroupName  string `json:"log_group_name"`
+	LogStreamName string `json:"log_stream_name"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationS3BackupConfiguration struct {
+	BucketArn                string                                                                                                 `json:"bucket_arn"`
+	BufferSize               int                                                                                                    `json:"buffer_size"`
+	BufferInterval           int                                                                                                    `json:"buffer_interval"`
+	CompressionFormat        string                                                                                                 `json:"compression_format"`
+	KmsKeyArn                string                                                                                                 `json:"kms_key_arn"`
+	RoleArn                  string                                                                                                 `json:"role_arn"`
+	Prefix                   string                                                                                                 `json:"prefix"`
+	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptions `json:"cloudwatch_logging_options"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptions struct {
+	Enabled       bool   `json:"enabled"`
+	LogGroupName  string `json:"log_group_name"`
+	LogStreamName string `json:"log_stream_name"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfiguration struct {
+	S3BackupMode             string                                                                                  `json:"s3_backup_mode"`
+	TypeName                 string                                                                                  `json:"type_name"`
+	BufferingInterval        int                                                                                     `json:"buffering_interval"`
+	DomainArn                string                                                                                  `json:"domain_arn"`
+	IndexName                string                                                                                  `json:"index_name"`
+	RoleArn                  string                                                                                  `json:"role_arn"`
+	ProcessingConfiguration  []AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfiguration `json:"processing_configuration"`
+	BufferingSize            int                                                                                     `json:"buffering_size"`
+	IndexRotationPeriod      string                                                                                  `json:"index_rotation_period"`
+	RetryDuration            int                                                                                     `json:"retry_duration"`
+	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationCloudwatchLoggingOptions  `json:"cloudwatch_logging_options"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfiguration struct {
+	Enabled    bool                                                                                              `json:"enabled"`
+	Processors []AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfigurationProcessors `json:"processors"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfigurationProcessors struct {
+	Parameters []AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfigurationProcessorsParameters `json:"parameters"`
+	Type       string                                                                                                      `json:"type"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfigurationProcessorsParameters struct {
+	ParameterName  string `json:"parameter_name"`
+	ParameterValue string `json:"parameter_value"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationCloudwatchLoggingOptions struct {
+	Enabled       bool   `json:"enabled"`
+	LogGroupName  string `json:"log_group_name"`
+	LogStreamName string `json:"log_stream_name"`
 }
 
 type AwsKinesisFirehoseDeliveryStreamSpecSplunkConfiguration struct {
@@ -67,38 +172,22 @@ type AwsKinesisFirehoseDeliveryStreamSpecKinesisSourceConfiguration struct {
 	RoleArn          string `json:"role_arn"`
 }
 
-type AwsKinesisFirehoseDeliveryStreamSpecS3Configuration struct {
-	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecS3ConfigurationCloudwatchLoggingOptions `json:"cloudwatch_logging_options"`
-	BucketArn                string                                                                      `json:"bucket_arn"`
-	BufferSize               int                                                                         `json:"buffer_size"`
-	BufferInterval           int                                                                         `json:"buffer_interval"`
-	CompressionFormat        string                                                                      `json:"compression_format"`
-	KmsKeyArn                string                                                                      `json:"kms_key_arn"`
-	RoleArn                  string                                                                      `json:"role_arn"`
-	Prefix                   string                                                                      `json:"prefix"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecS3ConfigurationCloudwatchLoggingOptions struct {
-	Enabled       bool   `json:"enabled"`
-	LogGroupName  string `json:"log_group_name"`
-	LogStreamName string `json:"log_stream_name"`
-}
-
 type AwsKinesisFirehoseDeliveryStreamSpecExtendedS3Configuration struct {
 	CompressionFormat        string                                                                               `json:"compression_format"`
-	S3BackupConfiguration    []AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationS3BackupConfiguration   `json:"s3_backup_configuration"`
-	ProcessingConfiguration  []AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationProcessingConfiguration `json:"processing_configuration"`
-	BufferInterval           int                                                                                  `json:"buffer_interval"`
-	BufferSize               int                                                                                  `json:"buffer_size"`
-	KmsKeyArn                string                                                                               `json:"kms_key_arn"`
 	RoleArn                  string                                                                               `json:"role_arn"`
 	Prefix                   string                                                                               `json:"prefix"`
 	S3BackupMode             string                                                                               `json:"s3_backup_mode"`
+	S3BackupConfiguration    []AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationS3BackupConfiguration   `json:"s3_backup_configuration"`
 	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationCloudwatchLoggingOptions  `json:"cloudwatch_logging_options"`
 	BucketArn                string                                                                               `json:"bucket_arn"`
+	BufferSize               int                                                                                  `json:"buffer_size"`
+	ProcessingConfiguration  []AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationProcessingConfiguration `json:"processing_configuration"`
+	BufferInterval           int                                                                                  `json:"buffer_interval"`
+	KmsKeyArn                string                                                                               `json:"kms_key_arn"`
 }
 
 type AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationS3BackupConfiguration struct {
+	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptions `json:"cloudwatch_logging_options"`
 	BucketArn                string                                                                                                   `json:"bucket_arn"`
 	BufferSize               int                                                                                                      `json:"buffer_size"`
 	BufferInterval           int                                                                                                      `json:"buffer_interval"`
@@ -106,10 +195,15 @@ type AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationS3BackupConfigur
 	KmsKeyArn                string                                                                                                   `json:"kms_key_arn"`
 	RoleArn                  string                                                                                                   `json:"role_arn"`
 	Prefix                   string                                                                                                   `json:"prefix"`
-	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptions `json:"cloudwatch_logging_options"`
 }
 
 type AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationS3BackupConfigurationCloudwatchLoggingOptions struct {
+	Enabled       bool   `json:"enabled"`
+	LogGroupName  string `json:"log_group_name"`
+	LogStreamName string `json:"log_stream_name"`
+}
+
+type AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationCloudwatchLoggingOptions struct {
 	Enabled       bool   `json:"enabled"`
 	LogGroupName  string `json:"log_group_name"`
 	LogStreamName string `json:"log_stream_name"`
@@ -128,100 +222,6 @@ type AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationProcessingConfig
 type AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationProcessingConfigurationProcessorsParameters struct {
 	ParameterName  string `json:"parameter_name"`
 	ParameterValue string `json:"parameter_value"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecExtendedS3ConfigurationCloudwatchLoggingOptions struct {
-	LogStreamName string `json:"log_stream_name"`
-	Enabled       bool   `json:"enabled"`
-	LogGroupName  string `json:"log_group_name"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfiguration struct {
-	Username                 string                                                                             `json:"username"`
-	Password                 string                                                                             `json:"password"`
-	S3BackupConfiguration    []AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationS3BackupConfiguration   `json:"s3_backup_configuration"`
-	RetryDuration            int                                                                                `json:"retry_duration"`
-	CopyOptions              string                                                                             `json:"copy_options"`
-	DataTableColumns         string                                                                             `json:"data_table_columns"`
-	DataTableName            string                                                                             `json:"data_table_name"`
-	ClusterJdbcurl           string                                                                             `json:"cluster_jdbcurl"`
-	RoleArn                  string                                                                             `json:"role_arn"`
-	S3BackupMode             string                                                                             `json:"s3_backup_mode"`
-	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationCloudwatchLoggingOptions  `json:"cloudwatch_logging_options"`
-	ProcessingConfiguration  []AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfiguration `json:"processing_configuration"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationS3BackupConfiguration struct {
-	BufferInterval           int                                                                                                    `json:"buffer_interval"`
-	CompressionFormat        string                                                                                                 `json:"compression_format"`
-	KmsKeyArn                string                                                                                                 `json:"kms_key_arn"`
-	RoleArn                  string                                                                                                 `json:"role_arn"`
-	Prefix                   string                                                                                                 `json:"prefix"`
-	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptions `json:"cloudwatch_logging_options"`
-	BucketArn                string                                                                                                 `json:"bucket_arn"`
-	BufferSize               int                                                                                                    `json:"buffer_size"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationS3BackupConfigurationCloudwatchLoggingOptions struct {
-	Enabled       bool   `json:"enabled"`
-	LogGroupName  string `json:"log_group_name"`
-	LogStreamName string `json:"log_stream_name"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationCloudwatchLoggingOptions struct {
-	LogStreamName string `json:"log_stream_name"`
-	Enabled       bool   `json:"enabled"`
-	LogGroupName  string `json:"log_group_name"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfiguration struct {
-	Enabled    bool                                                                                         `json:"enabled"`
-	Processors []AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfigurationProcessors `json:"processors"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfigurationProcessors struct {
-	Parameters []AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfigurationProcessorsParameters `json:"parameters"`
-	Type       string                                                                                                 `json:"type"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecRedshiftConfigurationProcessingConfigurationProcessorsParameters struct {
-	ParameterName  string `json:"parameter_name"`
-	ParameterValue string `json:"parameter_value"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfiguration struct {
-	BufferingInterval        int                                                                                     `json:"buffering_interval"`
-	DomainArn                string                                                                                  `json:"domain_arn"`
-	IndexName                string                                                                                  `json:"index_name"`
-	RoleArn                  string                                                                                  `json:"role_arn"`
-	TypeName                 string                                                                                  `json:"type_name"`
-	ProcessingConfiguration  []AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfiguration `json:"processing_configuration"`
-	BufferingSize            int                                                                                     `json:"buffering_size"`
-	IndexRotationPeriod      string                                                                                  `json:"index_rotation_period"`
-	RetryDuration            int                                                                                     `json:"retry_duration"`
-	S3BackupMode             string                                                                                  `json:"s3_backup_mode"`
-	CloudwatchLoggingOptions AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationCloudwatchLoggingOptions  `json:"cloudwatch_logging_options"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfiguration struct {
-	Enabled    bool                                                                                              `json:"enabled"`
-	Processors []AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfigurationProcessors `json:"processors"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfigurationProcessors struct {
-	Parameters []AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfigurationProcessorsParameters `json:"parameters"`
-	Type       string                                                                                                      `json:"type"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationProcessingConfigurationProcessorsParameters struct {
-	ParameterName  string `json:"parameter_name"`
-	ParameterValue string `json:"parameter_value"`
-}
-
-type AwsKinesisFirehoseDeliveryStreamSpecElasticsearchConfigurationCloudwatchLoggingOptions struct {
-	LogGroupName  string `json:"log_group_name"`
-	LogStreamName string `json:"log_stream_name"`
-	Enabled       bool   `json:"enabled"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

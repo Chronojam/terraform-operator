@@ -17,18 +17,18 @@ type AwsEcsTaskDefinition struct {
 }
 
 type AwsEcsTaskDefinitionSpec struct {
-	Volume                  AwsEcsTaskDefinitionSpecVolume               `json:"volume"`
-	Arn                     string                                       `json:"arn"`
-	Revision                int                                          `json:"revision"`
-	ExecutionRoleArn        string                                       `json:"execution_role_arn"`
-	NetworkMode             string                                       `json:"network_mode"`
 	Memory                  string                                       `json:"memory"`
-	PlacementConstraints    AwsEcsTaskDefinitionSpecPlacementConstraints `json:"placement_constraints"`
-	RequiresCompatibilities string                                       `json:"requires_compatibilities"`
+	NetworkMode             string                                       `json:"network_mode"`
 	Cpu                     string                                       `json:"cpu"`
 	Family                  string                                       `json:"family"`
+	Revision                int                                          `json:"revision"`
 	ContainerDefinitions    string                                       `json:"container_definitions"`
 	TaskRoleArn             string                                       `json:"task_role_arn"`
+	ExecutionRoleArn        string                                       `json:"execution_role_arn"`
+	Volume                  AwsEcsTaskDefinitionSpecVolume               `json:"volume"`
+	PlacementConstraints    AwsEcsTaskDefinitionSpecPlacementConstraints `json:"placement_constraints"`
+	Arn                     string                                       `json:"arn"`
+	RequiresCompatibilities string                                       `json:"requires_compatibilities"`
 }
 
 type AwsEcsTaskDefinitionSpecVolume struct {
@@ -37,8 +37,8 @@ type AwsEcsTaskDefinitionSpecVolume struct {
 }
 
 type AwsEcsTaskDefinitionSpecPlacementConstraints struct {
-	Expression string `json:"expression"`
 	Type       string `json:"type"`
+	Expression string `json:"expression"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

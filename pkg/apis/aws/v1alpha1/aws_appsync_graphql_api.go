@@ -17,10 +17,10 @@ type AwsAppsyncGraphqlApi struct {
 }
 
 type AwsAppsyncGraphqlApiSpec struct {
+	Arn                string                                   `json:"arn"`
 	AuthenticationType string                                   `json:"authentication_type"`
 	Name               string                                   `json:"name"`
 	UserPoolConfig     []AwsAppsyncGraphqlApiSpecUserPoolConfig `json:"user_pool_config"`
-	Arn                string                                   `json:"arn"`
 }
 
 type AwsAppsyncGraphqlApiSpecUserPoolConfig struct {

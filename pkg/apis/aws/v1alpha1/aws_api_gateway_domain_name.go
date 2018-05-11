@@ -17,15 +17,15 @@ type AwsApiGatewayDomainName struct {
 }
 
 type AwsApiGatewayDomainNameSpec struct {
-	CertificateChain      string `json:"certificate_chain"`
-	DomainName            string `json:"domain_name"`
-	CloudfrontDomainName  string `json:"cloudfront_domain_name"`
+	CertificateName       string `json:"certificate_name"`
+	CertificateArn        string `json:"certificate_arn"`
 	CertificateUploadDate string `json:"certificate_upload_date"`
 	CertificateBody       string `json:"certificate_body"`
+	CertificateChain      string `json:"certificate_chain"`
 	CertificatePrivateKey string `json:"certificate_private_key"`
-	CertificateArn        string `json:"certificate_arn"`
+	DomainName            string `json:"domain_name"`
+	CloudfrontDomainName  string `json:"cloudfront_domain_name"`
 	CloudfrontZoneId      string `json:"cloudfront_zone_id"`
-	CertificateName       string `json:"certificate_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

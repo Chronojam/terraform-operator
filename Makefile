@@ -12,12 +12,16 @@ install-struct-generator:
 	go build -o $(PWD)/.build/generator $(ABSOLUTE_PATH)/cmd/generator/*.go
 
 clean-generation:
+	rm -rf $(ABSOLUTE_PATH)/hack/*.go
 	rm -rf $(ABSOLUTE_PATH)/pkg/apis/aws/v1alpha1/*.go
+	rm -rf $(ABSOLUTE_PATH)/pkg/terraform/aws/v1alpha1/*.go
 
 generate-struct-types: install-struct-generator
 	mkdir -p $(ABSOLUTE_PATH)/pkg/apis/aws/v1alpha1
+	mkdir -p $(ABSOLUTE_PATH)/pkg/terraform/aws/v1alpha1
 	$(PWD)/.build/generator
 	go fmt $(ABSOLUTE_PATH)/pkg/apis/aws/v1alpha1/*.go
+	go fmt $(ABSOLUTE_PATH)/pkg/terraform/aws/v1alpha1/*.go
 	go fmt $(ABSOLUTE_PATH)/hack/*.go
 
 generate-k8s-funcs:
@@ -30,7 +34,14 @@ generate-stubs: install-pluralizer
 
 generate-all: clean-generation generate-struct-types generate-k8s-funcs
 
-build:
+get-terraform:
+	curl -o terraform.zip https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip
+	unzip terraform.zip
+	mv terraform ./terraform
+	chmod +x terraform
+	rm terraform.zip
+
+build: get-terraform
 	go build -o $(PWD)/.build/operator $(ABSOLUTE_PATH)/cmd/plural/*.go
 	docker build -t $(DOCKER_REPO):$(TAG) .
 

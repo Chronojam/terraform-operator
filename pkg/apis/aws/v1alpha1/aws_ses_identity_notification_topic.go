@@ -17,9 +17,9 @@ type AwsSesIdentityNotificationTopic struct {
 }
 
 type AwsSesIdentityNotificationTopicSpec struct {
-	TopicArn         string `json:"topic_arn"`
 	NotificationType string `json:"notification_type"`
 	Identity         string `json:"identity"`
+	TopicArn         string `json:"topic_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,12 +17,12 @@ type AwsIamUserSshKey struct {
 }
 
 type AwsIamUserSshKeySpec struct {
-	Fingerprint    string `json:"fingerprint"`
-	Username       string `json:"username"`
 	PublicKey      string `json:"public_key"`
 	Encoding       string `json:"encoding"`
 	Status         string `json:"status"`
 	SshPublicKeyId string `json:"ssh_public_key_id"`
+	Fingerprint    string `json:"fingerprint"`
+	Username       string `json:"username"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

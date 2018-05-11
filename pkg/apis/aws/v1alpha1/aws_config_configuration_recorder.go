@@ -17,9 +17,9 @@ type AwsConfigConfigurationRecorder struct {
 }
 
 type AwsConfigConfigurationRecorderSpec struct {
+	RecordingGroup []AwsConfigConfigurationRecorderSpecRecordingGroup `json:"recording_group"`
 	Name           string                                             `json:"name"`
 	RoleArn        string                                             `json:"role_arn"`
-	RecordingGroup []AwsConfigConfigurationRecorderSpecRecordingGroup `json:"recording_group"`
 }
 
 type AwsConfigConfigurationRecorderSpecRecordingGroup struct {

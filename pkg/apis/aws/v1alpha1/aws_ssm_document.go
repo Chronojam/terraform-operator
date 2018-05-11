@@ -17,23 +17,28 @@ type AwsSsmDocument struct {
 }
 
 type AwsSsmDocumentSpec struct {
-	Status         string                                   `json:"status"`
-	PlatformTypes  []string                                 `json:"platform_types"`
-	Name           string                                   `json:"name"`
-	DocumentType   string                                   `json:"document_type"`
-	DefaultVersion string                                   `json:"default_version"`
-	Description    string                                   `json:"description"`
-	Owner          string                                   `json:"owner"`
-	DocumentFormat string                                   `json:"document_format"`
 	SchemaVersion  string                                   `json:"schema_version"`
+	CreatedDate    string                                   `json:"created_date"`
+	Description    string                                   `json:"description"`
 	Hash           string                                   `json:"hash"`
-	Parameter      []AwsSsmDocumentSpecParameter            `json:"parameter"`
-	Permissions    map[string]AwsSsmDocumentSpecPermissions `json:"permissions"`
 	Arn            string                                   `json:"arn"`
 	Content        string                                   `json:"content"`
-	CreatedDate    string                                   `json:"created_date"`
+	DocumentFormat string                                   `json:"document_format"`
 	LatestVersion  string                                   `json:"latest_version"`
+	Permissions    map[string]AwsSsmDocumentSpecPermissions `json:"permissions"`
+	DocumentType   string                                   `json:"document_type"`
+	DefaultVersion string                                   `json:"default_version"`
+	Owner          string                                   `json:"owner"`
+	Status         string                                   `json:"status"`
+	PlatformTypes  []string                                 `json:"platform_types"`
+	Parameter      []AwsSsmDocumentSpecParameter            `json:"parameter"`
+	Name           string                                   `json:"name"`
 	HashType       string                                   `json:"hash_type"`
+}
+
+type AwsSsmDocumentSpecPermissions struct {
+	Type       string `json:"type"`
+	AccountIds string `json:"account_ids"`
 }
 
 type AwsSsmDocumentSpecParameter struct {
@@ -41,11 +46,6 @@ type AwsSsmDocumentSpecParameter struct {
 	Type         string `json:"type"`
 	Name         string `json:"name"`
 	DefaultValue string `json:"default_value"`
-}
-
-type AwsSsmDocumentSpecPermissions struct {
-	Type       string `json:"type"`
-	AccountIds string `json:"account_ids"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,10 +17,10 @@ type AwsServiceDiscoveryPublicDnsNamespace struct {
 }
 
 type AwsServiceDiscoveryPublicDnsNamespaceSpec struct {
+	HostedZone  string `json:"hosted_zone"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
 	Arn         string `json:"arn"`
-	HostedZone  string `json:"hosted_zone"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

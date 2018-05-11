@@ -89,7 +89,7 @@ func main() {
 
 	for k, v := range prov.ResourcesMap {
 		register.WriteToBuffer("&" + generator.CamelAndTitle(k) + "{},")
-
+		register.WriteToBuffer("&" + generator.CamelAndTitle(k) + "List{},")
 		crGenerator.WriteToBuffer(fmt.Sprintf(`
 			cr%s := CustomResource{
 				Kind: "%s",
@@ -102,6 +102,20 @@ func main() {
 		`, generator.CamelAndTitle(k), generator.CamelAndTitle(k), strings.Replace(k, "_", "-", -1), generator.CamelAndTitle(k)))
 		crGenerator.WriteToBuffer(fmt.Sprintf(`
 		generator.ToFile(cr%s, "examples/crs/%s.yaml")`, generator.CamelAndTitle(k), strings.Replace(k, "_", "-", -1)))
+		tfResource, err := generator.NewFile("v1alpha1")
+		if err != nil {
+			panic(err)
+		}
+		tfResource.WriteToBuffer(fmt.Sprintf(`
+		import (
+			"github.com/chronojam/terraform-operator/pkg/apis/aws/v1alpha1"
+		)
+
+		type %sResource struct {
+			%s
+		}	
+		`, generator.CamelAndTitle(k), fmt.Sprintf("Resource v1alpha1.%sSpec `json:\"%s\"`", generator.CamelAndTitle(k), k)))
+
 		f, err := generator.NewFile("v1alpha1")
 		if err != nil {
 			panic(err)
@@ -152,6 +166,10 @@ func main() {
 			panic(err)
 		}
 		err = f.WriteToFile(fmt.Sprintf("pkg/apis/aws/v1alpha1/%s.go", k))
+		if err != nil {
+			panic(err)
+		}
+		err = tfResource.WriteToFile(fmt.Sprintf("pkg/terraform/aws/v1alpha1/%s.go", k))
 		if err != nil {
 			panic(err)
 		}

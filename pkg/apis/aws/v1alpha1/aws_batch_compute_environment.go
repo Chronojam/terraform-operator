@@ -17,31 +17,31 @@ type AwsBatchComputeEnvironment struct {
 }
 
 type AwsBatchComputeEnvironmentSpec struct {
-	ComputeEnvironmentName string                                           `json:"compute_environment_name"`
-	ComputeResources       []AwsBatchComputeEnvironmentSpecComputeResources `json:"compute_resources"`
-	Type                   string                                           `json:"type"`
-	Arn                    string                                           `json:"arn"`
-	StatusReason           string                                           `json:"status_reason"`
-	ServiceRole            string                                           `json:"service_role"`
-	State                  string                                           `json:"state"`
 	EccClusterArn          string                                           `json:"ecc_cluster_arn"`
 	EcsClusterArn          string                                           `json:"ecs_cluster_arn"`
 	Status                 string                                           `json:"status"`
+	State                  string                                           `json:"state"`
+	ComputeResources       []AwsBatchComputeEnvironmentSpecComputeResources `json:"compute_resources"`
+	ServiceRole            string                                           `json:"service_role"`
+	Type                   string                                           `json:"type"`
+	Arn                    string                                           `json:"arn"`
+	StatusReason           string                                           `json:"status_reason"`
+	ComputeEnvironmentName string                                           `json:"compute_environment_name"`
 }
 
 type AwsBatchComputeEnvironmentSpecComputeResources struct {
-	InstanceRole     string            `json:"instance_role"`
-	InstanceType     string            `json:"instance_type"`
-	MinVcpus         int               `json:"min_vcpus"`
-	Type             string            `json:"type"`
-	MaxVcpus         int               `json:"max_vcpus"`
-	SecurityGroupIds string            `json:"security_group_ids"`
-	SpotIamFleetRole string            `json:"spot_iam_fleet_role"`
-	Subnets          string            `json:"subnets"`
 	BidPercentage    int               `json:"bid_percentage"`
 	DesiredVcpus     int               `json:"desired_vcpus"`
 	Ec2KeyPair       string            `json:"ec2_key_pair"`
+	InstanceType     string            `json:"instance_type"`
+	MinVcpus         int               `json:"min_vcpus"`
+	SecurityGroupIds string            `json:"security_group_ids"`
+	Type             string            `json:"type"`
 	ImageId          string            `json:"image_id"`
+	InstanceRole     string            `json:"instance_role"`
+	MaxVcpus         int               `json:"max_vcpus"`
+	SpotIamFleetRole string            `json:"spot_iam_fleet_role"`
+	Subnets          string            `json:"subnets"`
 	Tags             map[string]string `json:"tags"`
 }
 

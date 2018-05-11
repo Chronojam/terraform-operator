@@ -17,25 +17,25 @@ type AwsLb struct {
 }
 
 type AwsLbSpec struct {
-	NamePrefix                   string                 `json:"name_prefix"`
-	ZoneId                       string                 `json:"zone_id"`
+	SecurityGroups               string                 `json:"security_groups"`
+	EnableDeletionProtection     bool                   `json:"enable_deletion_protection"`
+	EnableCrossZoneLoadBalancing bool                   `json:"enable_cross_zone_load_balancing"`
+	IpAddressType                string                 `json:"ip_address_type"`
+	LoadBalancerType             string                 `json:"load_balancer_type"`
+	Internal                     bool                   `json:"internal"`
+	AccessLogs                   []AwsLbSpecAccessLogs  `json:"access_logs"`
+	IdleTimeout                  int                    `json:"idle_timeout"`
 	DnsName                      string                 `json:"dns_name"`
 	Tags                         map[string]string      `json:"tags"`
 	ArnSuffix                    string                 `json:"arn_suffix"`
-	Name                         string                 `json:"name"`
-	AccessLogs                   []AwsLbSpecAccessLogs  `json:"access_logs"`
-	IdleTimeout                  int                    `json:"idle_timeout"`
-	Internal                     bool                   `json:"internal"`
-	SecurityGroups               string                 `json:"security_groups"`
-	EnableCrossZoneLoadBalancing bool                   `json:"enable_cross_zone_load_balancing"`
-	EnableHttp2                  bool                   `json:"enable_http2"`
-	IpAddressType                string                 `json:"ip_address_type"`
-	VpcId                        string                 `json:"vpc_id"`
-	Arn                          string                 `json:"arn"`
-	LoadBalancerType             string                 `json:"load_balancer_type"`
-	EnableDeletionProtection     bool                   `json:"enable_deletion_protection"`
-	Subnets                      string                 `json:"subnets"`
 	SubnetMapping                AwsLbSpecSubnetMapping `json:"subnet_mapping"`
+	EnableHttp2                  bool                   `json:"enable_http2"`
+	VpcId                        string                 `json:"vpc_id"`
+	ZoneId                       string                 `json:"zone_id"`
+	Name                         string                 `json:"name"`
+	NamePrefix                   string                 `json:"name_prefix"`
+	Subnets                      string                 `json:"subnets"`
+	Arn                          string                 `json:"arn"`
 }
 
 type AwsLbSpecAccessLogs struct {

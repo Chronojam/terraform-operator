@@ -17,13 +17,13 @@ type AwsGlueConnection struct {
 }
 
 type AwsGlueConnectionSpec struct {
-	CatalogId                      string                                                `json:"catalog_id"`
 	ConnectionProperties           map[string]string                                     `json:"connection_properties"`
 	ConnectionType                 string                                                `json:"connection_type"`
 	Description                    string                                                `json:"description"`
 	MatchCriteria                  []string                                              `json:"match_criteria"`
 	Name                           string                                                `json:"name"`
 	PhysicalConnectionRequirements []AwsGlueConnectionSpecPhysicalConnectionRequirements `json:"physical_connection_requirements"`
+	CatalogId                      string                                                `json:"catalog_id"`
 }
 
 type AwsGlueConnectionSpecPhysicalConnectionRequirements struct {

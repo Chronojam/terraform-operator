@@ -17,32 +17,32 @@ type AwsAmiFromInstance struct {
 }
 
 type AwsAmiFromInstanceSpec struct {
-	RootDeviceName        string                                     `json:"root_device_name"`
-	RootSnapshotId        string                                     `json:"root_snapshot_id"`
+	ImageLocation         string                                     `json:"image_location"`
+	Description           string                                     `json:"description"`
 	VirtualizationType    string                                     `json:"virtualization_type"`
 	EbsBlockDevice        AwsAmiFromInstanceSpecEbsBlockDevice       `json:"ebs_block_device"`
-	SnapshotWithoutReboot bool                                       `json:"snapshot_without_reboot"`
-	Architecture          string                                     `json:"architecture"`
-	Description           string                                     `json:"description"`
-	KernelId              string                                     `json:"kernel_id"`
-	SriovNetSupport       string                                     `json:"sriov_net_support"`
 	Tags                  map[string]string                          `json:"tags"`
+	Architecture          string                                     `json:"architecture"`
+	RootSnapshotId        string                                     `json:"root_snapshot_id"`
+	EphemeralBlockDevice  AwsAmiFromInstanceSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
+	Name                  string                                     `json:"name"`
+	RamdiskId             string                                     `json:"ramdisk_id"`
 	ManageEbsSnapshots    bool                                       `json:"manage_ebs_snapshots"`
 	SourceInstanceId      string                                     `json:"source_instance_id"`
-	Name                  string                                     `json:"name"`
-	EphemeralBlockDevice  AwsAmiFromInstanceSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
-	ImageLocation         string                                     `json:"image_location"`
-	RamdiskId             string                                     `json:"ramdisk_id"`
+	KernelId              string                                     `json:"kernel_id"`
+	RootDeviceName        string                                     `json:"root_device_name"`
+	SriovNetSupport       string                                     `json:"sriov_net_support"`
+	SnapshotWithoutReboot bool                                       `json:"snapshot_without_reboot"`
 }
 
 type AwsAmiFromInstanceSpecEbsBlockDevice struct {
-	SnapshotId          string `json:"snapshot_id"`
 	VolumeSize          int    `json:"volume_size"`
 	VolumeType          string `json:"volume_type"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	DeviceName          string `json:"device_name"`
 	Encrypted           bool   `json:"encrypted"`
 	Iops                int    `json:"iops"`
+	SnapshotId          string `json:"snapshot_id"`
 }
 
 type AwsAmiFromInstanceSpecEphemeralBlockDevice struct {

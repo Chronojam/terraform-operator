@@ -17,25 +17,25 @@ type AwsRoute53HealthCheck struct {
 }
 
 type AwsRoute53HealthCheckSpec struct {
-	EnableSni                    bool              `json:"enable_sni"`
-	Regions                      string            `json:"regions"`
-	ResourcePath                 string            `json:"resource_path"`
-	SearchString                 string            `json:"search_string"`
-	CloudwatchAlarmName          string            `json:"cloudwatch_alarm_name"`
-	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
-	InsufficientDataHealthStatus string            `json:"insufficient_data_health_status"`
-	Tags                         map[string]string `json:"tags"`
-	Type                         string            `json:"type"`
-	InvertHealthcheck            bool              `json:"invert_healthcheck"`
-	ChildHealthThreshold         int               `json:"child_health_threshold"`
-	ReferenceName                string            `json:"reference_name"`
-	RequestInterval              int               `json:"request_interval"`
-	MeasureLatency               bool              `json:"measure_latency"`
 	Fqdn                         string            `json:"fqdn"`
-	Port                         int               `json:"port"`
-	ChildHealthchecks            string            `json:"child_healthchecks"`
-	FailureThreshold             int               `json:"failure_threshold"`
+	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
+	CloudwatchAlarmName          string            `json:"cloudwatch_alarm_name"`
+	RequestInterval              int               `json:"request_interval"`
+	SearchString                 string            `json:"search_string"`
+	ChildHealthThreshold         int               `json:"child_health_threshold"`
+	Tags                         map[string]string `json:"tags"`
 	IpAddress                    string            `json:"ip_address"`
+	ResourcePath                 string            `json:"resource_path"`
+	InsufficientDataHealthStatus string            `json:"insufficient_data_health_status"`
+	InvertHealthcheck            bool              `json:"invert_healthcheck"`
+	MeasureLatency               bool              `json:"measure_latency"`
+	ChildHealthchecks            string            `json:"child_healthchecks"`
+	ReferenceName                string            `json:"reference_name"`
+	EnableSni                    bool              `json:"enable_sni"`
+	Type                         string            `json:"type"`
+	FailureThreshold             int               `json:"failure_threshold"`
+	Port                         int               `json:"port"`
+	Regions                      string            `json:"regions"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
