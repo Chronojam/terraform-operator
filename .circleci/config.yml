@@ -44,8 +44,6 @@ jobs:
       - image: circleci/golang:1.10
     working_directory: /go/src/github.com/chronojam/terraform-operator
     steps:
-      - attach_workspace:
-          at: .
       - run:
           name: Unit_Packages
           command: |
