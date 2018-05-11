@@ -17,9 +17,9 @@ type AwsEcrRepositoryPolicy struct {
 }
 
 type AwsEcrRepositoryPolicySpec struct {
-	Repository string `json:"repository"`
 	Policy     string `json:"policy"`
 	RegistryId string `json:"registry_id"`
+	Repository string `json:"repository"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

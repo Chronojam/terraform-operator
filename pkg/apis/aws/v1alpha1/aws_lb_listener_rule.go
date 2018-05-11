@@ -17,21 +17,21 @@ type AwsLbListenerRule struct {
 }
 
 type AwsLbListenerRuleSpec struct {
-	Condition   AwsLbListenerRuleSpecCondition `json:"condition"`
 	Arn         string                         `json:"arn"`
 	ListenerArn string                         `json:"listener_arn"`
 	Priority    int                            `json:"priority"`
 	Action      []AwsLbListenerRuleSpecAction  `json:"action"`
-}
-
-type AwsLbListenerRuleSpecCondition struct {
-	Field  string   `json:"field"`
-	Values []string `json:"values"`
+	Condition   AwsLbListenerRuleSpecCondition `json:"condition"`
 }
 
 type AwsLbListenerRuleSpecAction struct {
 	TargetGroupArn string `json:"target_group_arn"`
 	Type           string `json:"type"`
+}
+
+type AwsLbListenerRuleSpecCondition struct {
+	Field  string   `json:"field"`
+	Values []string `json:"values"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

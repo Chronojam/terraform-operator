@@ -17,31 +17,26 @@ type AwsMqBroker struct {
 }
 
 type AwsMqBrokerSpec struct {
-	DeploymentMode             string                                      `json:"deployment_mode"`
-	HostInstanceType           string                                      `json:"host_instance_type"`
-	Configuration              []AwsMqBrokerSpecConfiguration              `json:"configuration"`
-	Instances                  []AwsMqBrokerSpecInstances                  `json:"instances"`
-	AutoMinorVersionUpgrade    bool                                        `json:"auto_minor_version_upgrade"`
 	BrokerName                 string                                      `json:"broker_name"`
+	Configuration              []AwsMqBrokerSpecConfiguration              `json:"configuration"`
+	EngineVersion              string                                      `json:"engine_version"`
+	SubnetIds                  string                                      `json:"subnet_ids"`
 	EngineType                 string                                      `json:"engine_type"`
 	SecurityGroups             string                                      `json:"security_groups"`
-	SubnetIds                  string                                      `json:"subnet_ids"`
 	User                       AwsMqBrokerSpecUser                         `json:"user"`
+	MaintenanceWindowStartTime []AwsMqBrokerSpecMaintenanceWindowStartTime `json:"maintenance_window_start_time"`
 	Arn                        string                                      `json:"arn"`
 	ApplyImmediately           bool                                        `json:"apply_immediately"`
-	MaintenanceWindowStartTime []AwsMqBrokerSpecMaintenanceWindowStartTime `json:"maintenance_window_start_time"`
+	AutoMinorVersionUpgrade    bool                                        `json:"auto_minor_version_upgrade"`
+	DeploymentMode             string                                      `json:"deployment_mode"`
+	HostInstanceType           string                                      `json:"host_instance_type"`
 	PubliclyAccessible         bool                                        `json:"publicly_accessible"`
-	EngineVersion              string                                      `json:"engine_version"`
+	Instances                  []AwsMqBrokerSpecInstances                  `json:"instances"`
 }
 
 type AwsMqBrokerSpecConfiguration struct {
 	Id       string `json:"id"`
 	Revision int    `json:"revision"`
-}
-
-type AwsMqBrokerSpecInstances struct {
-	ConsoleUrl string   `json:"console_url"`
-	Endpoints  []string `json:"endpoints"`
 }
 
 type AwsMqBrokerSpecUser struct {
@@ -55,6 +50,11 @@ type AwsMqBrokerSpecMaintenanceWindowStartTime struct {
 	DayOfWeek string `json:"day_of_week"`
 	TimeOfDay string `json:"time_of_day"`
 	TimeZone  string `json:"time_zone"`
+}
+
+type AwsMqBrokerSpecInstances struct {
+	ConsoleUrl string   `json:"console_url"`
+	Endpoints  []string `json:"endpoints"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

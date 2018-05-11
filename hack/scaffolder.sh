@@ -95,6 +95,7 @@ function write_file {
     echo "Written:  $DIR/handler.go"
     echo "Written:  $DIR/informer.go"
     echo "Written:  crds/$LC.yaml"
+
 }
 
 

@@ -17,46 +17,46 @@ type AwsLambdaFunction struct {
 }
 
 type AwsLambdaFunctionSpec struct {
+	DeadLetterConfig             []AwsLambdaFunctionSpecDeadLetterConfig `json:"dead_letter_config"`
+	Version                      string                                  `json:"version"`
+	LastModified                 string                                  `json:"last_modified"`
+	Environment                  []AwsLambdaFunctionSpecEnvironment      `json:"environment"`
+	Tags                         map[string]string                       `json:"tags"`
+	Role                         string                                  `json:"role"`
+	Runtime                      string                                  `json:"runtime"`
+	VpcConfig                    []AwsLambdaFunctionSpecVpcConfig        `json:"vpc_config"`
+	QualifiedArn                 string                                  `json:"qualified_arn"`
+	FunctionName                 string                                  `json:"function_name"`
+	Arn                          string                                  `json:"arn"`
 	SourceCodeHash               string                                  `json:"source_code_hash"`
+	Filename                     string                                  `json:"filename"`
+	S3Bucket                     string                                  `json:"s3_bucket"`
+	S3Key                        string                                  `json:"s3_key"`
+	S3ObjectVersion              string                                  `json:"s3_object_version"`
+	Description                  string                                  `json:"description"`
 	SourceCodeSize               int                                     `json:"source_code_size"`
+	KmsKeyArn                    string                                  `json:"kms_key_arn"`
+	InvokeArn                    string                                  `json:"invoke_arn"`
+	TracingConfig                []AwsLambdaFunctionSpecTracingConfig    `json:"tracing_config"`
+	Handler                      string                                  `json:"handler"`
+	MemorySize                   int                                     `json:"memory_size"`
+	ReservedConcurrentExecutions int                                     `json:"reserved_concurrent_executions"`
 	Timeout                      int                                     `json:"timeout"`
 	Publish                      bool                                    `json:"publish"`
-	Version                      string                                  `json:"version"`
-	Arn                          string                                  `json:"arn"`
-	InvokeArn                    string                                  `json:"invoke_arn"`
-	Environment                  []AwsLambdaFunctionSpecEnvironment      `json:"environment"`
-	S3Bucket                     string                                  `json:"s3_bucket"`
-	Description                  string                                  `json:"description"`
-	DeadLetterConfig             []AwsLambdaFunctionSpecDeadLetterConfig `json:"dead_letter_config"`
-	Handler                      string                                  `json:"handler"`
-	VpcConfig                    []AwsLambdaFunctionSpecVpcConfig        `json:"vpc_config"`
-	LastModified                 string                                  `json:"last_modified"`
-	TracingConfig                []AwsLambdaFunctionSpecTracingConfig    `json:"tracing_config"`
-	Tags                         map[string]string                       `json:"tags"`
-	S3Key                        string                                  `json:"s3_key"`
-	FunctionName                 string                                  `json:"function_name"`
-	ReservedConcurrentExecutions int                                     `json:"reserved_concurrent_executions"`
-	Runtime                      string                                  `json:"runtime"`
-	QualifiedArn                 string                                  `json:"qualified_arn"`
-	KmsKeyArn                    string                                  `json:"kms_key_arn"`
-	Filename                     string                                  `json:"filename"`
-	S3ObjectVersion              string                                  `json:"s3_object_version"`
-	MemorySize                   int                                     `json:"memory_size"`
-	Role                         string                                  `json:"role"`
-}
-
-type AwsLambdaFunctionSpecEnvironment struct {
-	Variables map[string]string `json:"variables"`
 }
 
 type AwsLambdaFunctionSpecDeadLetterConfig struct {
 	TargetArn string `json:"target_arn"`
 }
 
+type AwsLambdaFunctionSpecEnvironment struct {
+	Variables map[string]string `json:"variables"`
+}
+
 type AwsLambdaFunctionSpecVpcConfig struct {
+	SubnetIds        string `json:"subnet_ids"`
 	SecurityGroupIds string `json:"security_group_ids"`
 	VpcId            string `json:"vpc_id"`
-	SubnetIds        string `json:"subnet_ids"`
 }
 
 type AwsLambdaFunctionSpecTracingConfig struct {

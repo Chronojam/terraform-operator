@@ -17,7 +17,6 @@ type AwsIamInstanceProfile struct {
 }
 
 type AwsIamInstanceProfileSpec struct {
-	Path       string `json:"path"`
 	Roles      string `json:"roles"`
 	Role       string `json:"role"`
 	Arn        string `json:"arn"`
@@ -25,6 +24,7 @@ type AwsIamInstanceProfileSpec struct {
 	UniqueId   string `json:"unique_id"`
 	Name       string `json:"name"`
 	NamePrefix string `json:"name_prefix"`
+	Path       string `json:"path"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

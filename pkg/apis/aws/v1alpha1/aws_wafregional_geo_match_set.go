@@ -17,8 +17,8 @@ type AwsWafregionalGeoMatchSet struct {
 }
 
 type AwsWafregionalGeoMatchSetSpec struct {
-	Name               string                                          `json:"name"`
 	GeoMatchConstraint AwsWafregionalGeoMatchSetSpecGeoMatchConstraint `json:"geo_match_constraint"`
+	Name               string                                          `json:"name"`
 }
 
 type AwsWafregionalGeoMatchSetSpecGeoMatchConstraint struct {

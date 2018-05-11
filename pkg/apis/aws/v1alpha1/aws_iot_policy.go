@@ -17,10 +17,10 @@ type AwsIotPolicy struct {
 }
 
 type AwsIotPolicySpec struct {
-	Name             string `json:"name"`
-	Policy           string `json:"policy"`
 	Arn              string `json:"arn"`
 	DefaultVersionId string `json:"default_version_id"`
+	Name             string `json:"name"`
+	Policy           string `json:"policy"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

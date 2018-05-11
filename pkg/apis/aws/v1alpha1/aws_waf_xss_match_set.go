@@ -17,8 +17,8 @@ type AwsWafXssMatchSet struct {
 }
 
 type AwsWafXssMatchSetSpec struct {
-	XssMatchTuples AwsWafXssMatchSetSpecXssMatchTuples `json:"xss_match_tuples"`
 	Name           string                              `json:"name"`
+	XssMatchTuples AwsWafXssMatchSetSpecXssMatchTuples `json:"xss_match_tuples"`
 }
 
 type AwsWafXssMatchSetSpecXssMatchTuples struct {

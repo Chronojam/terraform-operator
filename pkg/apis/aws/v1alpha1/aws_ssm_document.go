@@ -17,30 +17,30 @@ type AwsSsmDocument struct {
 }
 
 type AwsSsmDocumentSpec struct {
-	Content        string                                   `json:"content"`
-	Description    string                                   `json:"description"`
-	Name           string                                   `json:"name"`
-	Hash           string                                   `json:"hash"`
-	Owner          string                                   `json:"owner"`
 	Status         string                                   `json:"status"`
-	Parameter      []AwsSsmDocumentSpecParameter            `json:"parameter"`
 	PlatformTypes  []string                                 `json:"platform_types"`
-	Permissions    map[string]AwsSsmDocumentSpecPermissions `json:"permissions"`
-	DocumentFormat string                                   `json:"document_format"`
+	Name           string                                   `json:"name"`
 	DocumentType   string                                   `json:"document_type"`
-	SchemaVersion  string                                   `json:"schema_version"`
-	CreatedDate    string                                   `json:"created_date"`
 	DefaultVersion string                                   `json:"default_version"`
-	HashType       string                                   `json:"hash_type"`
+	Description    string                                   `json:"description"`
+	Owner          string                                   `json:"owner"`
+	DocumentFormat string                                   `json:"document_format"`
+	SchemaVersion  string                                   `json:"schema_version"`
+	Hash           string                                   `json:"hash"`
+	Parameter      []AwsSsmDocumentSpecParameter            `json:"parameter"`
+	Permissions    map[string]AwsSsmDocumentSpecPermissions `json:"permissions"`
 	Arn            string                                   `json:"arn"`
+	Content        string                                   `json:"content"`
+	CreatedDate    string                                   `json:"created_date"`
 	LatestVersion  string                                   `json:"latest_version"`
+	HashType       string                                   `json:"hash_type"`
 }
 
 type AwsSsmDocumentSpecParameter struct {
+	Description  string `json:"description"`
 	Type         string `json:"type"`
 	Name         string `json:"name"`
 	DefaultValue string `json:"default_value"`
-	Description  string `json:"description"`
 }
 
 type AwsSsmDocumentSpecPermissions struct {

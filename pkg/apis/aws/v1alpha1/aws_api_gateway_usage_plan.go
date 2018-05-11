@@ -26,14 +26,14 @@ type AwsApiGatewayUsagePlanSpec struct {
 }
 
 type AwsApiGatewayUsagePlanSpecApiStages struct {
-	Stage string `json:"stage"`
 	ApiId string `json:"api_id"`
+	Stage string `json:"stage"`
 }
 
 type AwsApiGatewayUsagePlanSpecQuotaSettings struct {
+	Period string `json:"period"`
 	Limit  int    `json:"limit"`
 	Offset int    `json:"offset"`
-	Period string `json:"period"`
 }
 
 type AwsApiGatewayUsagePlanSpecThrottleSettings struct {

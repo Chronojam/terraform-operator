@@ -17,20 +17,20 @@ type AwsCloudformationStack struct {
 }
 
 type AwsCloudformationStackSpec struct {
-	TemplateUrl      string            `json:"template_url"`
-	DisableRollback  bool              `json:"disable_rollback"`
-	NotificationArns string            `json:"notification_arns"`
-	Outputs          map[string]string `json:"outputs"`
-	PolicyBody       string            `json:"policy_body"`
-	PolicyUrl        string            `json:"policy_url"`
 	Name             string            `json:"name"`
-	TemplateBody     string            `json:"template_body"`
-	Parameters       map[string]string `json:"parameters"`
+	PolicyBody       string            `json:"policy_body"`
+	TimeoutInMinutes int               `json:"timeout_in_minutes"`
 	IamRoleArn       string            `json:"iam_role_arn"`
+	Outputs          map[string]string `json:"outputs"`
+	TemplateBody     string            `json:"template_body"`
+	TemplateUrl      string            `json:"template_url"`
+	NotificationArns string            `json:"notification_arns"`
 	OnFailure        string            `json:"on_failure"`
 	Tags             map[string]string `json:"tags"`
 	Capabilities     string            `json:"capabilities"`
-	TimeoutInMinutes int               `json:"timeout_in_minutes"`
+	DisableRollback  bool              `json:"disable_rollback"`
+	Parameters       map[string]string `json:"parameters"`
+	PolicyUrl        string            `json:"policy_url"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

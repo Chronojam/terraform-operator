@@ -17,13 +17,13 @@ type AwsWafregionalSqlInjectionMatchSet struct {
 }
 
 type AwsWafregionalSqlInjectionMatchSetSpec struct {
-	Name                   string                                                       `json:"name"`
 	SqlInjectionMatchTuple AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTuple `json:"sql_injection_match_tuple"`
+	Name                   string                                                       `json:"name"`
 }
 
 type AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTuple struct {
-	TextTransformation string                                                                     `json:"text_transformation"`
 	FieldToMatch       []AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTupleFieldToMatch `json:"field_to_match"`
+	TextTransformation string                                                                     `json:"text_transformation"`
 }
 
 type AwsWafregionalSqlInjectionMatchSetSpecSqlInjectionMatchTupleFieldToMatch struct {

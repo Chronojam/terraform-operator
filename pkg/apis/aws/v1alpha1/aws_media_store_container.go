@@ -17,9 +17,9 @@ type AwsMediaStoreContainer struct {
 }
 
 type AwsMediaStoreContainerSpec struct {
-	Endpoint string `json:"endpoint"`
 	Name     string `json:"name"`
 	Arn      string `json:"arn"`
+	Endpoint string `json:"endpoint"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

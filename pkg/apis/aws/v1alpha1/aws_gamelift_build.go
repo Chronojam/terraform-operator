@@ -24,9 +24,9 @@ type AwsGameliftBuildSpec struct {
 }
 
 type AwsGameliftBuildSpecStorageLocation struct {
+	RoleArn string `json:"role_arn"`
 	Bucket  string `json:"bucket"`
 	Key     string `json:"key"`
-	RoleArn string `json:"role_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

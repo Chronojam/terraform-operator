@@ -17,21 +17,22 @@ type AwsSsmMaintenanceWindowTask struct {
 }
 
 type AwsSsmMaintenanceWindowTaskSpec struct {
+	TaskArn        string                                          `json:"task_arn"`
+	Priority       int                                             `json:"priority"`
 	WindowId       string                                          `json:"window_id"`
 	MaxConcurrency string                                          `json:"max_concurrency"`
-	Targets        []AwsSsmMaintenanceWindowTaskSpecTargets        `json:"targets"`
-	Priority       int                                             `json:"priority"`
-	TaskParameters []AwsSsmMaintenanceWindowTaskSpecTaskParameters `json:"task_parameters"`
 	MaxErrors      string                                          `json:"max_errors"`
-	TaskType       string                                          `json:"task_type"`
-	TaskArn        string                                          `json:"task_arn"`
-	ServiceRoleArn string                                          `json:"service_role_arn"`
 	LoggingInfo    []AwsSsmMaintenanceWindowTaskSpecLoggingInfo    `json:"logging_info"`
+	TaskParameters []AwsSsmMaintenanceWindowTaskSpecTaskParameters `json:"task_parameters"`
+	TaskType       string                                          `json:"task_type"`
+	ServiceRoleArn string                                          `json:"service_role_arn"`
+	Targets        []AwsSsmMaintenanceWindowTaskSpecTargets        `json:"targets"`
 }
 
-type AwsSsmMaintenanceWindowTaskSpecTargets struct {
-	Key    string   `json:"key"`
-	Values []string `json:"values"`
+type AwsSsmMaintenanceWindowTaskSpecLoggingInfo struct {
+	S3Region       string `json:"s3_region"`
+	S3BucketPrefix string `json:"s3_bucket_prefix"`
+	S3BucketName   string `json:"s3_bucket_name"`
 }
 
 type AwsSsmMaintenanceWindowTaskSpecTaskParameters struct {
@@ -39,10 +40,9 @@ type AwsSsmMaintenanceWindowTaskSpecTaskParameters struct {
 	Values []string `json:"values"`
 }
 
-type AwsSsmMaintenanceWindowTaskSpecLoggingInfo struct {
-	S3BucketName   string `json:"s3_bucket_name"`
-	S3Region       string `json:"s3_region"`
-	S3BucketPrefix string `json:"s3_bucket_prefix"`
+type AwsSsmMaintenanceWindowTaskSpecTargets struct {
+	Key    string   `json:"key"`
+	Values []string `json:"values"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

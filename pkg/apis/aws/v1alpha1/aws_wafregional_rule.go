@@ -17,9 +17,9 @@ type AwsWafregionalRule struct {
 }
 
 type AwsWafregionalRuleSpec struct {
-	Name       string                          `json:"name"`
 	MetricName string                          `json:"metric_name"`
 	Predicate  AwsWafregionalRuleSpecPredicate `json:"predicate"`
+	Name       string                          `json:"name"`
 }
 
 type AwsWafregionalRuleSpecPredicate struct {

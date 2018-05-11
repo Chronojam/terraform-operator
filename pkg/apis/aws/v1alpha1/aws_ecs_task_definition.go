@@ -17,28 +17,28 @@ type AwsEcsTaskDefinition struct {
 }
 
 type AwsEcsTaskDefinitionSpec struct {
-	PlacementConstraints    AwsEcsTaskDefinitionSpecPlacementConstraints `json:"placement_constraints"`
-	Arn                     string                                       `json:"arn"`
-	Family                  string                                       `json:"family"`
-	ContainerDefinitions    string                                       `json:"container_definitions"`
-	ExecutionRoleArn        string                                       `json:"execution_role_arn"`
-	Memory                  string                                       `json:"memory"`
-	NetworkMode             string                                       `json:"network_mode"`
 	Volume                  AwsEcsTaskDefinitionSpecVolume               `json:"volume"`
+	Arn                     string                                       `json:"arn"`
+	Revision                int                                          `json:"revision"`
+	ExecutionRoleArn        string                                       `json:"execution_role_arn"`
+	NetworkMode             string                                       `json:"network_mode"`
+	Memory                  string                                       `json:"memory"`
+	PlacementConstraints    AwsEcsTaskDefinitionSpecPlacementConstraints `json:"placement_constraints"`
 	RequiresCompatibilities string                                       `json:"requires_compatibilities"`
 	Cpu                     string                                       `json:"cpu"`
-	Revision                int                                          `json:"revision"`
+	Family                  string                                       `json:"family"`
+	ContainerDefinitions    string                                       `json:"container_definitions"`
 	TaskRoleArn             string                                       `json:"task_role_arn"`
 }
 
-type AwsEcsTaskDefinitionSpecPlacementConstraints struct {
-	Type       string `json:"type"`
-	Expression string `json:"expression"`
+type AwsEcsTaskDefinitionSpecVolume struct {
+	HostPath string `json:"host_path"`
+	Name     string `json:"name"`
 }
 
-type AwsEcsTaskDefinitionSpecVolume struct {
-	Name     string `json:"name"`
-	HostPath string `json:"host_path"`
+type AwsEcsTaskDefinitionSpecPlacementConstraints struct {
+	Expression string `json:"expression"`
+	Type       string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

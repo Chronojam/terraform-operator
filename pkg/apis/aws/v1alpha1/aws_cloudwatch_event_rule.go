@@ -17,6 +17,7 @@ type AwsCloudwatchEventRule struct {
 }
 
 type AwsCloudwatchEventRuleSpec struct {
+	Arn                string `json:"arn"`
 	Name               string `json:"name"`
 	NamePrefix         string `json:"name_prefix"`
 	ScheduleExpression string `json:"schedule_expression"`
@@ -24,7 +25,6 @@ type AwsCloudwatchEventRuleSpec struct {
 	Description        string `json:"description"`
 	RoleArn            string `json:"role_arn"`
 	IsEnabled          bool   `json:"is_enabled"`
-	Arn                string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

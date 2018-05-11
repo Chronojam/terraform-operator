@@ -4,6 +4,9 @@ import (
 	"bytes"
 	"fmt"
 	"io/ioutil"
+	"text/tabwriter"
+
+	yaml "gopkg.in/yaml.v2"
 )
 
 type file struct {
@@ -51,4 +54,29 @@ func (res *file) ToString() string {
 
 func (res *file) WriteToFile(path string) error {
 	return ioutil.WriteFile(path, res.buffer.Bytes(), 0755)
+}
+
+// Given a go object and a path, render it to a file,
+// Takes an optional header string.
+func ToFile(crd interface{}, path string) error {
+	b, err := yaml.Marshal(crd)
+	if err != nil {
+		return err
+	}
+
+	w := new(tabwriter.Writer)
+	buf := bytes.NewBuffer([]byte{})
+	w.Init(buf, 0, 0, 2, ' ', 0)
+	w.Write(b)
+	w.Flush()
+
+	f, err := NewFile("")
+	if err != nil {
+		return err
+	}
+
+	f.WriteToBuffer(string(buf.Bytes()))
+	f.WriteToFile(path)
+
+	return nil
 }

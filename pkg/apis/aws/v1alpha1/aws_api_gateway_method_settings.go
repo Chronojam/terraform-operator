@@ -17,23 +17,23 @@ type AwsApiGatewayMethodSettings struct {
 }
 
 type AwsApiGatewayMethodSettingsSpec struct {
-	Settings   []AwsApiGatewayMethodSettingsSpecSettings `json:"settings"`
 	RestApiId  string                                    `json:"rest_api_id"`
 	StageName  string                                    `json:"stage_name"`
 	MethodPath string                                    `json:"method_path"`
+	Settings   []AwsApiGatewayMethodSettingsSpecSettings `json:"settings"`
 }
 
 type AwsApiGatewayMethodSettingsSpecSettings struct {
-	MetricsEnabled                         bool    `json:"metrics_enabled"`
-	ThrottlingBurstLimit                   int     `json:"throttling_burst_limit"`
-	CachingEnabled                         bool    `json:"caching_enabled"`
-	CacheDataEncrypted                     bool    `json:"cache_data_encrypted"`
-	LoggingLevel                           string  `json:"logging_level"`
-	DataTraceEnabled                       bool    `json:"data_trace_enabled"`
-	ThrottlingRateLimit                    float64 `json:"throttling_rate_limit"`
-	CacheTtlInSeconds                      int     `json:"cache_ttl_in_seconds"`
 	RequireAuthorizationForCacheControl    bool    `json:"require_authorization_for_cache_control"`
 	UnauthorizedCacheControlHeaderStrategy string  `json:"unauthorized_cache_control_header_strategy"`
+	MetricsEnabled                         bool    `json:"metrics_enabled"`
+	DataTraceEnabled                       bool    `json:"data_trace_enabled"`
+	ThrottlingBurstLimit                   int     `json:"throttling_burst_limit"`
+	ThrottlingRateLimit                    float64 `json:"throttling_rate_limit"`
+	CacheTtlInSeconds                      int     `json:"cache_ttl_in_seconds"`
+	LoggingLevel                           string  `json:"logging_level"`
+	CachingEnabled                         bool    `json:"caching_enabled"`
+	CacheDataEncrypted                     bool    `json:"cache_data_encrypted"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

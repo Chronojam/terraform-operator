@@ -17,10 +17,10 @@ type AwsIamUserPolicy struct {
 }
 
 type AwsIamUserPolicySpec struct {
-	NamePrefix string `json:"name_prefix"`
-	User       string `json:"user"`
 	Policy     string `json:"policy"`
 	Name       string `json:"name"`
+	NamePrefix string `json:"name_prefix"`
+	User       string `json:"user"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

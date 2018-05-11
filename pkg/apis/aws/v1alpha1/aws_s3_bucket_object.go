@@ -17,23 +17,23 @@ type AwsS3BucketObject struct {
 }
 
 type AwsS3BucketObjectSpec struct {
-	ContentEncoding      string            `json:"content_encoding"`
-	Content              string            `json:"content"`
-	ContentBase64        string            `json:"content_base64"`
-	ServerSideEncryption string            `json:"server_side_encryption"`
-	KmsKeyId             string            `json:"kms_key_id"`
-	Etag                 string            `json:"etag"`
-	VersionId            string            `json:"version_id"`
-	Acl                  string            `json:"acl"`
-	WebsiteRedirect      string            `json:"website_redirect"`
-	CacheControl         string            `json:"cache_control"`
 	ContentType          string            `json:"content_type"`
+	Key                  string            `json:"key"`
 	Source               string            `json:"source"`
-	StorageClass         string            `json:"storage_class"`
-	Bucket               string            `json:"bucket"`
+	VersionId            string            `json:"version_id"`
+	CacheControl         string            `json:"cache_control"`
 	ContentDisposition   string            `json:"content_disposition"`
 	ContentLanguage      string            `json:"content_language"`
-	Key                  string            `json:"key"`
+	Content              string            `json:"content"`
+	ContentBase64        string            `json:"content_base64"`
+	StorageClass         string            `json:"storage_class"`
+	Bucket               string            `json:"bucket"`
+	ContentEncoding      string            `json:"content_encoding"`
+	ServerSideEncryption string            `json:"server_side_encryption"`
+	KmsKeyId             string            `json:"kms_key_id"`
+	WebsiteRedirect      string            `json:"website_redirect"`
+	Acl                  string            `json:"acl"`
+	Etag                 string            `json:"etag"`
 	Tags                 map[string]string `json:"tags"`
 }
 

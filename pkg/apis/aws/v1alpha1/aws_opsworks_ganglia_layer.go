@@ -17,29 +17,29 @@ type AwsOpsworksGangliaLayer struct {
 }
 
 type AwsOpsworksGangliaLayerSpec struct {
-	Username                 string                               `json:"username"`
-	Password                 string                               `json:"password"`
+	CustomSecurityGroupIds   string                               `json:"custom_security_group_ids"`
+	Url                      string                               `json:"url"`
 	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
-	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
+	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
 	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
+	CustomJson               string                               `json:"custom_json"`
+	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
 	AutoHealing              bool                                 `json:"auto_healing"`
 	StackId                  string                               `json:"stack_id"`
 	EbsVolume                AwsOpsworksGangliaLayerSpecEbsVolume `json:"ebs_volume"`
-	CustomSetupRecipes       []string                             `json:"custom_setup_recipes"`
 	CustomConfigureRecipes   []string                             `json:"custom_configure_recipes"`
-	CustomShutdownRecipes    []string                             `json:"custom_shutdown_recipes"`
-	InstallUpdatesOnBoot     bool                                 `json:"install_updates_on_boot"`
-	Url                      string                               `json:"url"`
-	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
 	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
 	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
-	CustomSecurityGroupIds   string                               `json:"custom_security_group_ids"`
-	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
+	InstallUpdatesOnBoot     bool                                 `json:"install_updates_on_boot"`
 	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
-	CustomJson               string                               `json:"custom_json"`
 	SystemPackages           string                               `json:"system_packages"`
 	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
 	Name                     string                               `json:"name"`
+	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
+	CustomSetupRecipes       []string                             `json:"custom_setup_recipes"`
+	CustomShutdownRecipes    []string                             `json:"custom_shutdown_recipes"`
+	Username                 string                               `json:"username"`
+	Password                 string                               `json:"password"`
 }
 
 type AwsOpsworksGangliaLayerSpecEbsVolume struct {

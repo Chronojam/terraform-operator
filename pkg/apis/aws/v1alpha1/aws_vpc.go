@@ -17,21 +17,21 @@ type AwsVpc struct {
 }
 
 type AwsVpcSpec struct {
-	DhcpOptionsId                string            `json:"dhcp_options_id"`
-	Ipv6CidrBlock                string            `json:"ipv6_cidr_block"`
-	EnableDnsSupport             bool              `json:"enable_dns_support"`
-	EnableClassiclinkDnsSupport  bool              `json:"enable_classiclink_dns_support"`
-	Ipv6AssociationId            string            `json:"ipv6_association_id"`
+	DefaultNetworkAclId          string            `json:"default_network_acl_id"`
+	InstanceTenancy              string            `json:"instance_tenancy"`
+	EnableClassiclink            bool              `json:"enable_classiclink"`
 	Tags                         map[string]string `json:"tags"`
 	CidrBlock                    string            `json:"cidr_block"`
-	InstanceTenancy              string            `json:"instance_tenancy"`
 	EnableDnsHostnames           bool              `json:"enable_dns_hostnames"`
-	AssignGeneratedIpv6CidrBlock bool              `json:"assign_generated_ipv6_cidr_block"`
 	MainRouteTableId             string            `json:"main_route_table_id"`
-	DefaultNetworkAclId          string            `json:"default_network_acl_id"`
 	DefaultSecurityGroupId       string            `json:"default_security_group_id"`
-	EnableClassiclink            bool              `json:"enable_classiclink"`
+	Ipv6AssociationId            string            `json:"ipv6_association_id"`
+	EnableDnsSupport             bool              `json:"enable_dns_support"`
+	AssignGeneratedIpv6CidrBlock bool              `json:"assign_generated_ipv6_cidr_block"`
 	DefaultRouteTableId          string            `json:"default_route_table_id"`
+	Ipv6CidrBlock                string            `json:"ipv6_cidr_block"`
+	EnableClassiclinkDnsSupport  bool              `json:"enable_classiclink_dns_support"`
+	DhcpOptionsId                string            `json:"dhcp_options_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

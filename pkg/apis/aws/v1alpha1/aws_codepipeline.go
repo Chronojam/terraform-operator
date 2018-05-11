@@ -17,11 +17,11 @@ type AwsCodepipeline struct {
 }
 
 type AwsCodepipelineSpec struct {
-	Name          string                             `json:"name"`
-	RoleArn       string                             `json:"role_arn"`
 	ArtifactStore []AwsCodepipelineSpecArtifactStore `json:"artifact_store"`
 	Stage         []AwsCodepipelineSpecStage         `json:"stage"`
 	Arn           string                             `json:"arn"`
+	Name          string                             `json:"name"`
+	RoleArn       string                             `json:"role_arn"`
 }
 
 type AwsCodepipelineSpecArtifactStore struct {
@@ -43,14 +43,14 @@ type AwsCodepipelineSpecStage struct {
 type AwsCodepipelineSpecStageAction struct {
 	Version         string            `json:"version"`
 	InputArtifacts  []string          `json:"input_artifacts"`
-	RoleArn         string            `json:"role_arn"`
-	Configuration   map[string]string `json:"configuration"`
-	Category        string            `json:"category"`
 	Owner           string            `json:"owner"`
 	Provider        string            `json:"provider"`
 	OutputArtifacts []string          `json:"output_artifacts"`
 	Name            string            `json:"name"`
+	RoleArn         string            `json:"role_arn"`
 	RunOrder        int               `json:"run_order"`
+	Configuration   map[string]string `json:"configuration"`
+	Category        string            `json:"category"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

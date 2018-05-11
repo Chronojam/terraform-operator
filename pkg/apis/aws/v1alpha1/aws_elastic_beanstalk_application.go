@@ -17,9 +17,9 @@ type AwsElasticBeanstalkApplication struct {
 }
 
 type AwsElasticBeanstalkApplicationSpec struct {
-	AppversionLifecycle []AwsElasticBeanstalkApplicationSpecAppversionLifecycle `json:"appversion_lifecycle"`
 	Name                string                                                  `json:"name"`
 	Description         string                                                  `json:"description"`
+	AppversionLifecycle []AwsElasticBeanstalkApplicationSpecAppversionLifecycle `json:"appversion_lifecycle"`
 }
 
 type AwsElasticBeanstalkApplicationSpecAppversionLifecycle struct {

@@ -17,27 +17,27 @@ type AwsElasticBeanstalkEnvironment struct {
 }
 
 type AwsElasticBeanstalkEnvironmentSpec struct {
-	PollInterval         string                                        `json:"poll_interval"`
 	Setting              AwsElasticBeanstalkEnvironmentSpecSetting     `json:"setting"`
-	AllSettings          AwsElasticBeanstalkEnvironmentSpecAllSettings `json:"all_settings"`
-	SolutionStackName    string                                        `json:"solution_stack_name"`
-	LaunchConfigurations []string                                      `json:"launch_configurations"`
-	Tags                 map[string]string                             `json:"tags"`
-	Application          string                                        `json:"application"`
-	Description          string                                        `json:"description"`
-	Instances            []string                                      `json:"instances"`
-	TemplateName         string                                        `json:"template_name"`
 	AutoscalingGroups    []string                                      `json:"autoscaling_groups"`
-	LoadBalancers        []string                                      `json:"load_balancers"`
-	Queues               []string                                      `json:"queues"`
-	Arn                  string                                        `json:"arn"`
-	VersionLabel         string                                        `json:"version_label"`
-	CnamePrefix          string                                        `json:"cname_prefix"`
-	WaitForReadyTimeout  string                                        `json:"wait_for_ready_timeout"`
-	Triggers             []string                                      `json:"triggers"`
 	Name                 string                                        `json:"name"`
 	Cname                string                                        `json:"cname"`
 	Tier                 string                                        `json:"tier"`
+	AllSettings          AwsElasticBeanstalkEnvironmentSpecAllSettings `json:"all_settings"`
+	SolutionStackName    string                                        `json:"solution_stack_name"`
+	TemplateName         string                                        `json:"template_name"`
+	LaunchConfigurations []string                                      `json:"launch_configurations"`
+	Queues               []string                                      `json:"queues"`
+	Arn                  string                                        `json:"arn"`
+	VersionLabel         string                                        `json:"version_label"`
+	Tags                 map[string]string                             `json:"tags"`
+	LoadBalancers        []string                                      `json:"load_balancers"`
+	Triggers             []string                                      `json:"triggers"`
+	CnamePrefix          string                                        `json:"cname_prefix"`
+	WaitForReadyTimeout  string                                        `json:"wait_for_ready_timeout"`
+	PollInterval         string                                        `json:"poll_interval"`
+	Instances            []string                                      `json:"instances"`
+	Application          string                                        `json:"application"`
+	Description          string                                        `json:"description"`
 }
 
 type AwsElasticBeanstalkEnvironmentSpecSetting struct {

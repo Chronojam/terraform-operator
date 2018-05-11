@@ -17,48 +17,21 @@ type AwsElasticsearchDomain struct {
 }
 
 type AwsElasticsearchDomainSpec struct {
-	AdvancedOptions      map[string]string                              `json:"advanced_options"`
-	DomainId             string                                         `json:"domain_id"`
-	SnapshotOptions      []AwsElasticsearchDomainSpecSnapshotOptions    `json:"snapshot_options"`
-	ElasticsearchVersion string                                         `json:"elasticsearch_version"`
-	ClusterConfig        []AwsElasticsearchDomainSpecClusterConfig      `json:"cluster_config"`
-	VpcOptions           []AwsElasticsearchDomainSpecVpcOptions         `json:"vpc_options"`
-	AccessPolicies       string                                         `json:"access_policies"`
-	DomainName           string                                         `json:"domain_name"`
 	KibanaEndpoint       string                                         `json:"kibana_endpoint"`
+	EncryptAtRest        []AwsElasticsearchDomainSpecEncryptAtRest      `json:"encrypt_at_rest"`
+	ElasticsearchVersion string                                         `json:"elasticsearch_version"`
 	Tags                 map[string]string                              `json:"tags"`
+	AccessPolicies       string                                         `json:"access_policies"`
 	Arn                  string                                         `json:"arn"`
 	Endpoint             string                                         `json:"endpoint"`
-	EbsOptions           []AwsElasticsearchDomainSpecEbsOptions         `json:"ebs_options"`
-	EncryptAtRest        []AwsElasticsearchDomainSpecEncryptAtRest      `json:"encrypt_at_rest"`
+	DomainName           string                                         `json:"domain_name"`
+	SnapshotOptions      []AwsElasticsearchDomainSpecSnapshotOptions    `json:"snapshot_options"`
 	LogPublishingOptions AwsElasticsearchDomainSpecLogPublishingOptions `json:"log_publishing_options"`
-}
-
-type AwsElasticsearchDomainSpecSnapshotOptions struct {
-	AutomatedSnapshotStartHour int `json:"automated_snapshot_start_hour"`
-}
-
-type AwsElasticsearchDomainSpecClusterConfig struct {
-	InstanceType           string `json:"instance_type"`
-	ZoneAwarenessEnabled   bool   `json:"zone_awareness_enabled"`
-	DedicatedMasterCount   int    `json:"dedicated_master_count"`
-	DedicatedMasterEnabled bool   `json:"dedicated_master_enabled"`
-	DedicatedMasterType    string `json:"dedicated_master_type"`
-	InstanceCount          int    `json:"instance_count"`
-}
-
-type AwsElasticsearchDomainSpecVpcOptions struct {
-	AvailabilityZones string `json:"availability_zones"`
-	SecurityGroupIds  string `json:"security_group_ids"`
-	SubnetIds         string `json:"subnet_ids"`
-	VpcId             string `json:"vpc_id"`
-}
-
-type AwsElasticsearchDomainSpecEbsOptions struct {
-	EbsEnabled bool   `json:"ebs_enabled"`
-	Iops       int    `json:"iops"`
-	VolumeSize int    `json:"volume_size"`
-	VolumeType string `json:"volume_type"`
+	AdvancedOptions      map[string]string                              `json:"advanced_options"`
+	DomainId             string                                         `json:"domain_id"`
+	ClusterConfig        []AwsElasticsearchDomainSpecClusterConfig      `json:"cluster_config"`
+	EbsOptions           []AwsElasticsearchDomainSpecEbsOptions         `json:"ebs_options"`
+	VpcOptions           []AwsElasticsearchDomainSpecVpcOptions         `json:"vpc_options"`
 }
 
 type AwsElasticsearchDomainSpecEncryptAtRest struct {
@@ -66,10 +39,37 @@ type AwsElasticsearchDomainSpecEncryptAtRest struct {
 	KmsKeyId string `json:"kms_key_id"`
 }
 
+type AwsElasticsearchDomainSpecSnapshotOptions struct {
+	AutomatedSnapshotStartHour int `json:"automated_snapshot_start_hour"`
+}
+
 type AwsElasticsearchDomainSpecLogPublishingOptions struct {
-	LogType               string `json:"log_type"`
 	CloudwatchLogGroupArn string `json:"cloudwatch_log_group_arn"`
 	Enabled               bool   `json:"enabled"`
+	LogType               string `json:"log_type"`
+}
+
+type AwsElasticsearchDomainSpecClusterConfig struct {
+	InstanceCount          int    `json:"instance_count"`
+	InstanceType           string `json:"instance_type"`
+	ZoneAwarenessEnabled   bool   `json:"zone_awareness_enabled"`
+	DedicatedMasterCount   int    `json:"dedicated_master_count"`
+	DedicatedMasterEnabled bool   `json:"dedicated_master_enabled"`
+	DedicatedMasterType    string `json:"dedicated_master_type"`
+}
+
+type AwsElasticsearchDomainSpecEbsOptions struct {
+	VolumeSize int    `json:"volume_size"`
+	VolumeType string `json:"volume_type"`
+	EbsEnabled bool   `json:"ebs_enabled"`
+	Iops       int    `json:"iops"`
+}
+
+type AwsElasticsearchDomainSpecVpcOptions struct {
+	AvailabilityZones string `json:"availability_zones"`
+	SecurityGroupIds  string `json:"security_group_ids"`
+	SubnetIds         string `json:"subnet_ids"`
+	VpcId             string `json:"vpc_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

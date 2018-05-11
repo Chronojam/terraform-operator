@@ -17,12 +17,12 @@ type AwsElasticBeanstalkConfigurationTemplate struct {
 }
 
 type AwsElasticBeanstalkConfigurationTemplateSpec struct {
-	Application       string                                              `json:"application"`
-	Description       string                                              `json:"description"`
-	EnvironmentId     string                                              `json:"environment_id"`
 	Setting           AwsElasticBeanstalkConfigurationTemplateSpecSetting `json:"setting"`
 	SolutionStackName string                                              `json:"solution_stack_name"`
 	Name              string                                              `json:"name"`
+	Application       string                                              `json:"application"`
+	Description       string                                              `json:"description"`
+	EnvironmentId     string                                              `json:"environment_id"`
 }
 
 type AwsElasticBeanstalkConfigurationTemplateSpecSetting struct {

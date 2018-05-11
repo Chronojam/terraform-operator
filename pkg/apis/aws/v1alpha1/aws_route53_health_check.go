@@ -17,25 +17,25 @@ type AwsRoute53HealthCheck struct {
 }
 
 type AwsRoute53HealthCheckSpec struct {
-	RequestInterval              int               `json:"request_interval"`
-	IpAddress                    string            `json:"ip_address"`
-	Port                         int               `json:"port"`
-	InvertHealthcheck            bool              `json:"invert_healthcheck"`
-	ChildHealthThreshold         int               `json:"child_health_threshold"`
 	EnableSni                    bool              `json:"enable_sni"`
-	FailureThreshold             int               `json:"failure_threshold"`
+	Regions                      string            `json:"regions"`
+	ResourcePath                 string            `json:"resource_path"`
 	SearchString                 string            `json:"search_string"`
-	MeasureLatency               bool              `json:"measure_latency"`
-	ChildHealthchecks            string            `json:"child_healthchecks"`
 	CloudwatchAlarmName          string            `json:"cloudwatch_alarm_name"`
 	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
 	InsufficientDataHealthStatus string            `json:"insufficient_data_health_status"`
-	Type                         string            `json:"type"`
-	ResourcePath                 string            `json:"resource_path"`
-	ReferenceName                string            `json:"reference_name"`
 	Tags                         map[string]string `json:"tags"`
+	Type                         string            `json:"type"`
+	InvertHealthcheck            bool              `json:"invert_healthcheck"`
+	ChildHealthThreshold         int               `json:"child_health_threshold"`
+	ReferenceName                string            `json:"reference_name"`
+	RequestInterval              int               `json:"request_interval"`
+	MeasureLatency               bool              `json:"measure_latency"`
 	Fqdn                         string            `json:"fqdn"`
-	Regions                      string            `json:"regions"`
+	Port                         int               `json:"port"`
+	ChildHealthchecks            string            `json:"child_healthchecks"`
+	FailureThreshold             int               `json:"failure_threshold"`
+	IpAddress                    string            `json:"ip_address"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

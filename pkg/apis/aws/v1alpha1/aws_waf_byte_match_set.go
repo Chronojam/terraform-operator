@@ -22,15 +22,15 @@ type AwsWafByteMatchSetSpec struct {
 }
 
 type AwsWafByteMatchSetSpecByteMatchTuples struct {
+	FieldToMatch         AwsWafByteMatchSetSpecByteMatchTuplesFieldToMatch `json:"field_to_match"`
 	PositionalConstraint string                                            `json:"positional_constraint"`
 	TargetString         string                                            `json:"target_string"`
 	TextTransformation   string                                            `json:"text_transformation"`
-	FieldToMatch         AwsWafByteMatchSetSpecByteMatchTuplesFieldToMatch `json:"field_to_match"`
 }
 
 type AwsWafByteMatchSetSpecByteMatchTuplesFieldToMatch struct {
-	Data string `json:"data"`
 	Type string `json:"type"`
+	Data string `json:"data"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

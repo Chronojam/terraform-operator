@@ -23,9 +23,9 @@ type AwsWafRuleSpec struct {
 }
 
 type AwsWafRuleSpecPredicates struct {
-	Type    string `json:"type"`
 	Negated bool   `json:"negated"`
 	DataId  string `json:"data_id"`
+	Type    string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,9 +17,9 @@ type AwsDirectoryServiceConditionalForwarder struct {
 }
 
 type AwsDirectoryServiceConditionalForwarderSpec struct {
-	DirectoryId      string   `json:"directory_id"`
 	DnsIps           []string `json:"dns_ips"`
 	RemoteDomainName string   `json:"remote_domain_name"`
+	DirectoryId      string   `json:"directory_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

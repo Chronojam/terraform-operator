@@ -17,12 +17,12 @@ type AwsVpcDhcpOptions struct {
 }
 
 type AwsVpcDhcpOptionsSpec struct {
+	NetbiosNameServers []string          `json:"netbios_name_servers"`
 	Tags               map[string]string `json:"tags"`
 	DomainName         string            `json:"domain_name"`
 	DomainNameServers  []string          `json:"domain_name_servers"`
 	NtpServers         []string          `json:"ntp_servers"`
 	NetbiosNodeType    string            `json:"netbios_node_type"`
-	NetbiosNameServers []string          `json:"netbios_name_servers"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

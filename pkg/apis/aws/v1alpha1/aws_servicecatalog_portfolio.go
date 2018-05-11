@@ -17,12 +17,12 @@ type AwsServicecatalogPortfolio struct {
 }
 
 type AwsServicecatalogPortfolioSpec struct {
-	Tags         map[string]string `json:"tags"`
 	Arn          string            `json:"arn"`
 	CreatedTime  string            `json:"created_time"`
 	Name         string            `json:"name"`
 	Description  string            `json:"description"`
 	ProviderName string            `json:"provider_name"`
+	Tags         map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

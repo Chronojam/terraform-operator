@@ -17,35 +17,35 @@ type AwsNetworkAcl struct {
 }
 
 type AwsNetworkAclSpec struct {
-	Ingress   AwsNetworkAclSpecIngress `json:"ingress"`
-	Egress    AwsNetworkAclSpecEgress  `json:"egress"`
-	Tags      map[string]string        `json:"tags"`
 	VpcId     string                   `json:"vpc_id"`
 	SubnetId  string                   `json:"subnet_id"`
 	SubnetIds string                   `json:"subnet_ids"`
+	Ingress   AwsNetworkAclSpecIngress `json:"ingress"`
+	Egress    AwsNetworkAclSpecEgress  `json:"egress"`
+	Tags      map[string]string        `json:"tags"`
 }
 
 type AwsNetworkAclSpecIngress struct {
-	FromPort      int    `json:"from_port"`
 	RuleNo        int    `json:"rule_no"`
-	Action        string `json:"action"`
-	Protocol      string `json:"protocol"`
+	IcmpType      int    `json:"icmp_type"`
 	IcmpCode      int    `json:"icmp_code"`
+	FromPort      int    `json:"from_port"`
 	ToPort        int    `json:"to_port"`
 	CidrBlock     string `json:"cidr_block"`
 	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
-	IcmpType      int    `json:"icmp_type"`
+	Action        string `json:"action"`
+	Protocol      string `json:"protocol"`
 }
 
 type AwsNetworkAclSpecEgress struct {
 	Protocol      string `json:"protocol"`
-	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
-	FromPort      int    `json:"from_port"`
-	RuleNo        int    `json:"rule_no"`
-	CidrBlock     string `json:"cidr_block"`
 	IcmpType      int    `json:"icmp_type"`
 	IcmpCode      int    `json:"icmp_code"`
+	FromPort      int    `json:"from_port"`
 	ToPort        int    `json:"to_port"`
+	CidrBlock     string `json:"cidr_block"`
+	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
+	RuleNo        int    `json:"rule_no"`
 	Action        string `json:"action"`
 }
 

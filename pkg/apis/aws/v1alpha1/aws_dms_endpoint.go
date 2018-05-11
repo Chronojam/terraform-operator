@@ -17,32 +17,23 @@ type AwsDmsEndpoint struct {
 }
 
 type AwsDmsEndpointSpec struct {
-	MongodbSettings           []AwsDmsEndpointSpecMongodbSettings `json:"mongodb_settings"`
-	S3Settings                []AwsDmsEndpointSpecS3Settings      `json:"s3_settings"`
-	DatabaseName              string                              `json:"database_name"`
-	Tags                      map[string]string                   `json:"tags"`
-	Username                  string                              `json:"username"`
-	ExtraConnectionAttributes string                              `json:"extra_connection_attributes"`
+	EndpointArn               string                              `json:"endpoint_arn"`
 	EndpointId                string                              `json:"endpoint_id"`
 	EndpointType              string                              `json:"endpoint_type"`
-	EngineName                string                              `json:"engine_name"`
+	ExtraConnectionAttributes string                              `json:"extra_connection_attributes"`
+	Tags                      map[string]string                   `json:"tags"`
 	CertificateArn            string                              `json:"certificate_arn"`
+	EngineName                string                              `json:"engine_name"`
+	KmsKeyArn                 string                              `json:"kms_key_arn"`
 	Password                  string                              `json:"password"`
 	SslMode                   string                              `json:"ssl_mode"`
+	S3Settings                []AwsDmsEndpointSpecS3Settings      `json:"s3_settings"`
+	ServiceAccessRole         string                              `json:"service_access_role"`
+	MongodbSettings           []AwsDmsEndpointSpecMongodbSettings `json:"mongodb_settings"`
+	DatabaseName              string                              `json:"database_name"`
 	Port                      int                                 `json:"port"`
 	ServerName                string                              `json:"server_name"`
-	EndpointArn               string                              `json:"endpoint_arn"`
-	ServiceAccessRole         string                              `json:"service_access_role"`
-	KmsKeyArn                 string                              `json:"kms_key_arn"`
-}
-
-type AwsDmsEndpointSpecMongodbSettings struct {
-	AuthType          string `json:"auth_type"`
-	AuthMechanism     string `json:"auth_mechanism"`
-	NestingLevel      string `json:"nesting_level"`
-	ExtractDocId      string `json:"extract_doc_id"`
-	DocsToInvestigate string `json:"docs_to_investigate"`
-	AuthSource        string `json:"auth_source"`
+	Username                  string                              `json:"username"`
 }
 
 type AwsDmsEndpointSpecS3Settings struct {
@@ -53,6 +44,15 @@ type AwsDmsEndpointSpecS3Settings struct {
 	CompressionType         string `json:"compression_type"`
 	ServiceAccessRoleArn    string `json:"service_access_role_arn"`
 	ExternalTableDefinition string `json:"external_table_definition"`
+}
+
+type AwsDmsEndpointSpecMongodbSettings struct {
+	AuthType          string `json:"auth_type"`
+	AuthMechanism     string `json:"auth_mechanism"`
+	NestingLevel      string `json:"nesting_level"`
+	ExtractDocId      string `json:"extract_doc_id"`
+	DocsToInvestigate string `json:"docs_to_investigate"`
+	AuthSource        string `json:"auth_source"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

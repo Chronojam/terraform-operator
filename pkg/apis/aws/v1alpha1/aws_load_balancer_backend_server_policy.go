@@ -17,9 +17,9 @@ type AwsLoadBalancerBackendServerPolicy struct {
 }
 
 type AwsLoadBalancerBackendServerPolicySpec struct {
-	InstancePort     int    `json:"instance_port"`
 	LoadBalancerName string `json:"load_balancer_name"`
 	PolicyNames      string `json:"policy_names"`
+	InstancePort     int    `json:"instance_port"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

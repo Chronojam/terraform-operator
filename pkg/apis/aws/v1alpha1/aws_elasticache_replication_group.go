@@ -17,34 +17,34 @@ type AwsElasticacheReplicationGroup struct {
 }
 
 type AwsElasticacheReplicationGroupSpec struct {
-	AutomaticFailoverEnabled     bool                                            `json:"automatic_failover_enabled"`
-	ConfigurationEndpointAddress string                                          `json:"configuration_endpoint_address"`
+	SubnetGroupName              string                                          `json:"subnet_group_name"`
 	TransitEncryptionEnabled     bool                                            `json:"transit_encryption_enabled"`
-	AuthToken                    string                                          `json:"auth_token"`
-	PrimaryEndpointAddress       string                                          `json:"primary_endpoint_address"`
-	Engine                       string                                          `json:"engine"`
-	SnapshotName                 string                                          `json:"snapshot_name"`
-	ReplicationGroupId           string                                          `json:"replication_group_id"`
-	NumberCacheClusters          int                                             `json:"number_cache_clusters"`
-	ApplyImmediately             bool                                            `json:"apply_immediately"`
-	EngineVersion                string                                          `json:"engine_version"`
 	ParameterGroupName           string                                          `json:"parameter_group_name"`
-	Port                         int                                             `json:"port"`
-	NotificationTopicArn         string                                          `json:"notification_topic_arn"`
-	ReplicationGroupDescription  string                                          `json:"replication_group_description"`
-	SnapshotWindow               string                                          `json:"snapshot_window"`
 	AutoMinorVersionUpgrade      bool                                            `json:"auto_minor_version_upgrade"`
+	ClusterMode                  []AwsElasticacheReplicationGroupSpecClusterMode `json:"cluster_mode"`
+	SnapshotName                 string                                          `json:"snapshot_name"`
+	Port                         int                                             `json:"port"`
+	AuthToken                    string                                          `json:"auth_token"`
+	NodeType                     string                                          `json:"node_type"`
+	EngineVersion                string                                          `json:"engine_version"`
+	SnapshotWindow               string                                          `json:"snapshot_window"`
+	ApplyImmediately             bool                                            `json:"apply_immediately"`
+	PrimaryEndpointAddress       string                                          `json:"primary_endpoint_address"`
+	NotificationTopicArn         string                                          `json:"notification_topic_arn"`
+	ReplicationGroupId           string                                          `json:"replication_group_id"`
+	AtRestEncryptionEnabled      bool                                            `json:"at_rest_encryption_enabled"`
 	MaintenanceWindow            string                                          `json:"maintenance_window"`
 	Tags                         map[string]string                               `json:"tags"`
-	SnapshotRetentionLimit       int                                             `json:"snapshot_retention_limit"`
+	ReplicationGroupDescription  string                                          `json:"replication_group_description"`
+	NumberCacheClusters          int                                             `json:"number_cache_clusters"`
+	ConfigurationEndpointAddress string                                          `json:"configuration_endpoint_address"`
 	AvailabilityZones            string                                          `json:"availability_zones"`
 	SecurityGroupNames           string                                          `json:"security_group_names"`
 	SecurityGroupIds             string                                          `json:"security_group_ids"`
+	Engine                       string                                          `json:"engine"`
 	SnapshotArns                 string                                          `json:"snapshot_arns"`
-	ClusterMode                  []AwsElasticacheReplicationGroupSpecClusterMode `json:"cluster_mode"`
-	AtRestEncryptionEnabled      bool                                            `json:"at_rest_encryption_enabled"`
-	NodeType                     string                                          `json:"node_type"`
-	SubnetGroupName              string                                          `json:"subnet_group_name"`
+	SnapshotRetentionLimit       int                                             `json:"snapshot_retention_limit"`
+	AutomaticFailoverEnabled     bool                                            `json:"automatic_failover_enabled"`
 }
 
 type AwsElasticacheReplicationGroupSpecClusterMode struct {

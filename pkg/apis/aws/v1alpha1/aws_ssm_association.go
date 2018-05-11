@@ -17,25 +17,25 @@ type AwsSsmAssociation struct {
 }
 
 type AwsSsmAssociationSpec struct {
+	Targets            []AwsSsmAssociationSpecTargets        `json:"targets"`
+	AssociationName    string                                `json:"association_name"`
 	AssociationId      string                                `json:"association_id"`
 	InstanceId         string                                `json:"instance_id"`
 	DocumentVersion    string                                `json:"document_version"`
-	Parameters         map[string]string                     `json:"parameters"`
 	ScheduleExpression string                                `json:"schedule_expression"`
-	OutputLocation     []AwsSsmAssociationSpecOutputLocation `json:"output_location"`
-	AssociationName    string                                `json:"association_name"`
-	Targets            []AwsSsmAssociationSpecTargets        `json:"targets"`
 	Name               string                                `json:"name"`
-}
-
-type AwsSsmAssociationSpecOutputLocation struct {
-	S3BucketName string `json:"s3_bucket_name"`
-	S3KeyPrefix  string `json:"s3_key_prefix"`
+	Parameters         map[string]string                     `json:"parameters"`
+	OutputLocation     []AwsSsmAssociationSpecOutputLocation `json:"output_location"`
 }
 
 type AwsSsmAssociationSpecTargets struct {
 	Key    string   `json:"key"`
 	Values []string `json:"values"`
+}
+
+type AwsSsmAssociationSpecOutputLocation struct {
+	S3BucketName string `json:"s3_bucket_name"`
+	S3KeyPrefix  string `json:"s3_key_prefix"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -23,8 +23,8 @@ type AwsS3BucketMetricSpec struct {
 }
 
 type AwsS3BucketMetricSpecFilter struct {
-	Prefix string            `json:"prefix"`
 	Tags   map[string]string `json:"tags"`
+	Prefix string            `json:"prefix"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

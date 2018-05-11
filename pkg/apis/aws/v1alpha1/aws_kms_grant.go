@@ -17,16 +17,16 @@ type AwsKmsGrant struct {
 }
 
 type AwsKmsGrantSpec struct {
+	RetiringPrincipal   string                     `json:"retiring_principal"`
+	GrantCreationTokens string                     `json:"grant_creation_tokens"`
+	GrantId             string                     `json:"grant_id"`
+	KeyId               string                     `json:"key_id"`
 	GranteePrincipal    string                     `json:"grantee_principal"`
 	Operations          string                     `json:"operations"`
 	Constraints         AwsKmsGrantSpecConstraints `json:"constraints"`
-	GrantId             string                     `json:"grant_id"`
-	Name                string                     `json:"name"`
-	KeyId               string                     `json:"key_id"`
-	RetiringPrincipal   string                     `json:"retiring_principal"`
-	GrantCreationTokens string                     `json:"grant_creation_tokens"`
 	RetireOnDelete      bool                       `json:"retire_on_delete"`
 	GrantToken          string                     `json:"grant_token"`
+	Name                string                     `json:"name"`
 }
 
 type AwsKmsGrantSpecConstraints struct {

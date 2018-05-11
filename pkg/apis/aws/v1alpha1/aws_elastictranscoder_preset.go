@@ -18,27 +18,40 @@ type AwsElastictranscoderPreset struct {
 
 type AwsElastictranscoderPresetSpec struct {
 	Description       string                                          `json:"description"`
+	VideoWatermarks   AwsElastictranscoderPresetSpecVideoWatermarks   `json:"video_watermarks"`
+	Arn               string                                          `json:"arn"`
+	Audio             AwsElastictranscoderPresetSpecAudio             `json:"audio"`
 	Name              string                                          `json:"name"`
-	AudioCodecOptions AwsElastictranscoderPresetSpecAudioCodecOptions `json:"audio_codec_options"`
-	Container         string                                          `json:"container"`
 	Thumbnails        AwsElastictranscoderPresetSpecThumbnails        `json:"thumbnails"`
 	Type              string                                          `json:"type"`
 	Video             AwsElastictranscoderPresetSpecVideo             `json:"video"`
-	VideoWatermarks   AwsElastictranscoderPresetSpecVideoWatermarks   `json:"video_watermarks"`
 	VideoCodecOptions map[string]string                               `json:"video_codec_options"`
-	Arn               string                                          `json:"arn"`
-	Audio             AwsElastictranscoderPresetSpecAudio             `json:"audio"`
+	AudioCodecOptions AwsElastictranscoderPresetSpecAudioCodecOptions `json:"audio_codec_options"`
+	Container         string                                          `json:"container"`
 }
 
-type AwsElastictranscoderPresetSpecAudioCodecOptions struct {
-	Profile  string `json:"profile"`
-	Signed   string `json:"signed"`
-	BitDepth string `json:"bit_depth"`
-	BitOrder string `json:"bit_order"`
+type AwsElastictranscoderPresetSpecVideoWatermarks struct {
+	SizingPolicy     string `json:"sizing_policy"`
+	VerticalOffset   string `json:"vertical_offset"`
+	HorizontalAlign  string `json:"horizontal_align"`
+	HorizontalOffset string `json:"horizontal_offset"`
+	MaxHeight        string `json:"max_height"`
+	MaxWidth         string `json:"max_width"`
+	Opacity          string `json:"opacity"`
+	Id               string `json:"id"`
+	Target           string `json:"target"`
+	VerticalAlign    string `json:"vertical_align"`
+}
+
+type AwsElastictranscoderPresetSpecAudio struct {
+	Codec            string `json:"codec"`
+	SampleRate       string `json:"sample_rate"`
+	AudioPackingMode string `json:"audio_packing_mode"`
+	BitRate          string `json:"bit_rate"`
+	Channels         string `json:"channels"`
 }
 
 type AwsElastictranscoderPresetSpecThumbnails struct {
-	Resolution    string `json:"resolution"`
 	SizingPolicy  string `json:"sizing_policy"`
 	AspectRatio   string `json:"aspect_ratio"`
 	Format        string `json:"format"`
@@ -46,43 +59,30 @@ type AwsElastictranscoderPresetSpecThumbnails struct {
 	MaxHeight     string `json:"max_height"`
 	MaxWidth      string `json:"max_width"`
 	PaddingPolicy string `json:"padding_policy"`
+	Resolution    string `json:"resolution"`
 }
 
 type AwsElastictranscoderPresetSpecVideo struct {
-	MaxHeight          string `json:"max_height"`
+	MaxFrameRate       string `json:"max_frame_rate"`
 	MaxWidth           string `json:"max_width"`
-	Resolution         string `json:"resolution"`
-	AspectRatio        string `json:"aspect_ratio"`
-	Codec              string `json:"codec"`
+	PaddingPolicy      string `json:"padding_policy"`
 	FixedGop           string `json:"fixed_gop"`
 	FrameRate          string `json:"frame_rate"`
-	MaxFrameRate       string `json:"max_frame_rate"`
-	BitRate            string `json:"bit_rate"`
-	DisplayAspectRatio string `json:"display_aspect_ratio"`
 	KeyframesMaxDist   string `json:"keyframes_max_dist"`
-	PaddingPolicy      string `json:"padding_policy"`
+	DisplayAspectRatio string `json:"display_aspect_ratio"`
+	MaxHeight          string `json:"max_height"`
+	Resolution         string `json:"resolution"`
 	SizingPolicy       string `json:"sizing_policy"`
+	AspectRatio        string `json:"aspect_ratio"`
+	BitRate            string `json:"bit_rate"`
+	Codec              string `json:"codec"`
 }
 
-type AwsElastictranscoderPresetSpecVideoWatermarks struct {
-	VerticalAlign    string `json:"vertical_align"`
-	Id               string `json:"id"`
-	MaxWidth         string `json:"max_width"`
-	MaxHeight        string `json:"max_height"`
-	Opacity          string `json:"opacity"`
-	SizingPolicy     string `json:"sizing_policy"`
-	Target           string `json:"target"`
-	VerticalOffset   string `json:"vertical_offset"`
-	HorizontalAlign  string `json:"horizontal_align"`
-	HorizontalOffset string `json:"horizontal_offset"`
-}
-
-type AwsElastictranscoderPresetSpecAudio struct {
-	AudioPackingMode string `json:"audio_packing_mode"`
-	BitRate          string `json:"bit_rate"`
-	Channels         string `json:"channels"`
-	Codec            string `json:"codec"`
-	SampleRate       string `json:"sample_rate"`
+type AwsElastictranscoderPresetSpecAudioCodecOptions struct {
+	BitDepth string `json:"bit_depth"`
+	BitOrder string `json:"bit_order"`
+	Profile  string `json:"profile"`
+	Signed   string `json:"signed"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

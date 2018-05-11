@@ -17,21 +17,21 @@ type AwsAppsyncDatasource struct {
 }
 
 type AwsAppsyncDatasourceSpec struct {
-	ApiId               string                                        `json:"api_id"`
-	ServiceRoleArn      string                                        `json:"service_role_arn"`
-	Arn                 string                                        `json:"arn"`
 	Name                string                                        `json:"name"`
-	Type                string                                        `json:"type"`
-	Description         string                                        `json:"description"`
 	DynamodbConfig      []AwsAppsyncDatasourceSpecDynamodbConfig      `json:"dynamodb_config"`
 	ElasticsearchConfig []AwsAppsyncDatasourceSpecElasticsearchConfig `json:"elasticsearch_config"`
 	LambdaConfig        []AwsAppsyncDatasourceSpecLambdaConfig        `json:"lambda_config"`
+	Arn                 string                                        `json:"arn"`
+	ApiId               string                                        `json:"api_id"`
+	Description         string                                        `json:"description"`
+	ServiceRoleArn      string                                        `json:"service_role_arn"`
+	Type                string                                        `json:"type"`
 }
 
 type AwsAppsyncDatasourceSpecDynamodbConfig struct {
+	UseCallerCredentials bool   `json:"use_caller_credentials"`
 	Region               string `json:"region"`
 	TableName            string `json:"table_name"`
-	UseCallerCredentials bool   `json:"use_caller_credentials"`
 }
 
 type AwsAppsyncDatasourceSpecElasticsearchConfig struct {

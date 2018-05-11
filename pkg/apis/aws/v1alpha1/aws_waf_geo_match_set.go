@@ -22,8 +22,8 @@ type AwsWafGeoMatchSetSpec struct {
 }
 
 type AwsWafGeoMatchSetSpecGeoMatchConstraint struct {
-	Type  string `json:"type"`
 	Value string `json:"value"`
+	Type  string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

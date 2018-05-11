@@ -17,22 +17,22 @@ type AwsDefaultRouteTable struct {
 }
 
 type AwsDefaultRouteTableSpec struct {
+	DefaultRouteTableId string                        `json:"default_route_table_id"`
 	VpcId               string                        `json:"vpc_id"`
 	PropagatingVgws     string                        `json:"propagating_vgws"`
 	Route               AwsDefaultRouteTableSpecRoute `json:"route"`
 	Tags                map[string]string             `json:"tags"`
-	DefaultRouteTableId string                        `json:"default_route_table_id"`
 }
 
 type AwsDefaultRouteTableSpecRoute struct {
-	EgressOnlyGatewayId    string `json:"egress_only_gateway_id"`
-	GatewayId              string `json:"gateway_id"`
-	InstanceId             string `json:"instance_id"`
-	NatGatewayId           string `json:"nat_gateway_id"`
 	VpcPeeringConnectionId string `json:"vpc_peering_connection_id"`
 	NetworkInterfaceId     string `json:"network_interface_id"`
 	CidrBlock              string `json:"cidr_block"`
 	Ipv6CidrBlock          string `json:"ipv6_cidr_block"`
+	EgressOnlyGatewayId    string `json:"egress_only_gateway_id"`
+	GatewayId              string `json:"gateway_id"`
+	InstanceId             string `json:"instance_id"`
+	NatGatewayId           string `json:"nat_gateway_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

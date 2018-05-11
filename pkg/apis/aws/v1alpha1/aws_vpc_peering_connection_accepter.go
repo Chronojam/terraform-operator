@@ -17,15 +17,15 @@ type AwsVpcPeeringConnectionAccepter struct {
 }
 
 type AwsVpcPeeringConnectionAccepterSpec struct {
-	VpcPeeringConnectionId string                                       `json:"vpc_peering_connection_id"`
+	AcceptStatus           string                                       `json:"accept_status"`
 	VpcId                  string                                       `json:"vpc_id"`
+	Accepter               AwsVpcPeeringConnectionAccepterSpecAccepter  `json:"accepter"`
+	VpcPeeringConnectionId string                                       `json:"vpc_peering_connection_id"`
+	AutoAccept             bool                                         `json:"auto_accept"`
+	PeerVpcId              string                                       `json:"peer_vpc_id"`
 	PeerOwnerId            string                                       `json:"peer_owner_id"`
 	PeerRegion             string                                       `json:"peer_region"`
-	Accepter               AwsVpcPeeringConnectionAccepterSpecAccepter  `json:"accepter"`
 	Requester              AwsVpcPeeringConnectionAccepterSpecRequester `json:"requester"`
-	AutoAccept             bool                                         `json:"auto_accept"`
-	AcceptStatus           string                                       `json:"accept_status"`
-	PeerVpcId              string                                       `json:"peer_vpc_id"`
 	Tags                   map[string]string                            `json:"tags"`
 }
 

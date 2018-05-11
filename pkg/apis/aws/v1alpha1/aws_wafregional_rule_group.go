@@ -23,10 +23,10 @@ type AwsWafregionalRuleGroupSpec struct {
 }
 
 type AwsWafregionalRuleGroupSpecActivatedRule struct {
-	Action   []AwsWafregionalRuleGroupSpecActivatedRuleAction `json:"action"`
-	Priority int                                              `json:"priority"`
 	RuleId   string                                           `json:"rule_id"`
 	Type     string                                           `json:"type"`
+	Action   []AwsWafregionalRuleGroupSpecActivatedRuleAction `json:"action"`
+	Priority int                                              `json:"priority"`
 }
 
 type AwsWafregionalRuleGroupSpecActivatedRuleAction struct {

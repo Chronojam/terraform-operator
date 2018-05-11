@@ -22,11 +22,11 @@ type AwsSsmResourceDataSyncSpec struct {
 }
 
 type AwsSsmResourceDataSyncSpecS3Destination struct {
-	SyncFormat string `json:"sync_format"`
 	KmsKeyArn  string `json:"kms_key_arn"`
 	BucketName string `json:"bucket_name"`
 	Prefix     string `json:"prefix"`
 	Region     string `json:"region"`
+	SyncFormat string `json:"sync_format"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

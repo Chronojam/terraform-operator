@@ -37,8 +37,8 @@ type AwsCognitoIdentityPoolRolesAttachmentSpecRoleMappingMappingRule struct {
 }
 
 type AwsCognitoIdentityPoolRolesAttachmentSpecRoles struct {
-	Unauthenticated string `json:"unauthenticated"`
 	Authenticated   string `json:"authenticated"`
+	Unauthenticated string `json:"unauthenticated"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,13 +17,13 @@ type AwsIamAccessKey struct {
 }
 
 type AwsIamAccessKeySpec struct {
-	KeyFingerprint  string `json:"key_fingerprint"`
 	EncryptedSecret string `json:"encrypted_secret"`
 	User            string `json:"user"`
 	Status          string `json:"status"`
 	Secret          string `json:"secret"`
 	SesSmtpPassword string `json:"ses_smtp_password"`
 	PgpKey          string `json:"pgp_key"`
+	KeyFingerprint  string `json:"key_fingerprint"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/chronojam/terraform-operator/pkg/generator"
 	"github.com/hashicorp/terraform/helper/schema"
@@ -19,6 +20,11 @@ func main() {
 	doc.WriteToBuffer("// +groupName=chronojam.co.uk\n")
 	doc.WriteToBuffer("package v1alpha1")
 	doc.WriteToFile("pkg/apis/aws/v1alpha1/doc.go")
+
+	crGenerator, err := generator.NewFile("main")
+	if err != nil {
+		panic(err)
+	}
 
 	groupName, err := generator.NewFile("aws")
 	if err != nil {
@@ -61,8 +67,41 @@ func main() {
 			SchemeGroupVersion,
 	`)
 
+	crGenerator.WriteToBuffer(fmt.Sprintf(`
+	import (
+		"github.com/chronojam/terraform-operator/pkg/apis/aws/v1alpha1"
+		"github.com/chronojam/terraform-operator/pkg/generator"
+	)
+
+	type CustomResource struct {
+		%s
+		%s
+		%s
+
+		%s
+	}
+
+	func main() {
+	`, "ApiVersion	string	`json:\"apiVersion\"`",
+		"Kind     string `json:\"kind\"`",
+		"Metadata	map[string]interface{} `json:\"metadata\"`",
+		"Spec interface{} `json:\"spec\"`"))
+
 	for k, v := range prov.ResourcesMap {
 		register.WriteToBuffer("&" + generator.CamelAndTitle(k) + "{},")
+
+		crGenerator.WriteToBuffer(fmt.Sprintf(`
+			cr%s := CustomResource{
+				Kind: "%s",
+				ApiVersion: "chronojam.co.uk/v1alpha1",
+				Metadata: map[string]interface{}{
+					"name": "example-%s",
+				},
+				Spec: v1alpha1.%sSpec{}, 
+			}
+		`, generator.CamelAndTitle(k), generator.CamelAndTitle(k), strings.Replace(k, "_", "-", -1), generator.CamelAndTitle(k)))
+		crGenerator.WriteToBuffer(fmt.Sprintf(`
+		generator.ToFile(cr%s, "examples/crs/%s.yaml")`, generator.CamelAndTitle(k), strings.Replace(k, "_", "-", -1)))
 		f, err := generator.NewFile("v1alpha1")
 		if err != nil {
 			panic(err)
@@ -118,10 +157,12 @@ func main() {
 		}
 	}
 
+	crGenerator.WriteToBuffer("}")
 	register.WriteToBuffer(`
 	)
 	meta_v1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil
 }`)
 	register.WriteToFile("pkg/apis/aws/v1alpha1/register.go")
+	crGenerator.WriteToFile("hack/crGenerator.go")
 }

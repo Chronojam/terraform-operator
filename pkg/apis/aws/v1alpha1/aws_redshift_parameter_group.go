@@ -17,10 +17,10 @@ type AwsRedshiftParameterGroup struct {
 }
 
 type AwsRedshiftParameterGroupSpec struct {
-	Parameter   AwsRedshiftParameterGroupSpecParameter `json:"parameter"`
 	Name        string                                 `json:"name"`
 	Family      string                                 `json:"family"`
 	Description string                                 `json:"description"`
+	Parameter   AwsRedshiftParameterGroupSpecParameter `json:"parameter"`
 }
 
 type AwsRedshiftParameterGroupSpecParameter struct {

@@ -17,15 +17,15 @@ type AwsApiGatewayAuthorizer struct {
 }
 
 type AwsApiGatewayAuthorizerSpec struct {
-	ProviderArns                 string `json:"provider_arns"`
-	Type                         string `json:"type"`
-	IdentityValidationExpression string `json:"identity_validation_expression"`
-	Name                         string `json:"name"`
 	RestApiId                    string `json:"rest_api_id"`
+	IdentityValidationExpression string `json:"identity_validation_expression"`
+	ProviderArns                 string `json:"provider_arns"`
+	IdentitySource               string `json:"identity_source"`
+	Name                         string `json:"name"`
+	Type                         string `json:"type"`
 	AuthorizerCredentials        string `json:"authorizer_credentials"`
 	AuthorizerResultTtlInSeconds int    `json:"authorizer_result_ttl_in_seconds"`
 	AuthorizerUri                string `json:"authorizer_uri"`
-	IdentitySource               string `json:"identity_source"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

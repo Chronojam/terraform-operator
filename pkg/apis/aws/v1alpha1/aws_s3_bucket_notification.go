@@ -24,19 +24,19 @@ type AwsS3BucketNotificationSpec struct {
 }
 
 type AwsS3BucketNotificationSpecLambdaFunction struct {
-	Events            string `json:"events"`
 	Id                string `json:"id"`
 	FilterPrefix      string `json:"filter_prefix"`
 	FilterSuffix      string `json:"filter_suffix"`
 	LambdaFunctionArn string `json:"lambda_function_arn"`
+	Events            string `json:"events"`
 }
 
 type AwsS3BucketNotificationSpecTopic struct {
+	TopicArn     string `json:"topic_arn"`
+	Events       string `json:"events"`
 	Id           string `json:"id"`
 	FilterPrefix string `json:"filter_prefix"`
 	FilterSuffix string `json:"filter_suffix"`
-	TopicArn     string `json:"topic_arn"`
-	Events       string `json:"events"`
 }
 
 type AwsS3BucketNotificationSpecQueue struct {

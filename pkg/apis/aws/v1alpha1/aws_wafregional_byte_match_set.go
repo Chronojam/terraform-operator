@@ -22,10 +22,10 @@ type AwsWafregionalByteMatchSetSpec struct {
 }
 
 type AwsWafregionalByteMatchSetSpecByteMatchTuple struct {
-	FieldToMatch         AwsWafregionalByteMatchSetSpecByteMatchTupleFieldToMatch `json:"field_to_match"`
 	PositionalConstraint string                                                   `json:"positional_constraint"`
 	TargetString         string                                                   `json:"target_string"`
 	TextTransformation   string                                                   `json:"text_transformation"`
+	FieldToMatch         AwsWafregionalByteMatchSetSpecByteMatchTupleFieldToMatch `json:"field_to_match"`
 }
 
 type AwsWafregionalByteMatchSetSpecByteMatchTupleFieldToMatch struct {

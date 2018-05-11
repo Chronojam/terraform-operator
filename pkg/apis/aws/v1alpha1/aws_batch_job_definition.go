@@ -17,7 +17,6 @@ type AwsBatchJobDefinition struct {
 }
 
 type AwsBatchJobDefinitionSpec struct {
-	Type                string                                   `json:"type"`
 	Revision            int                                      `json:"revision"`
 	Arn                 string                                   `json:"arn"`
 	Name                string                                   `json:"name"`
@@ -25,6 +24,7 @@ type AwsBatchJobDefinitionSpec struct {
 	Parameters          map[string]string                        `json:"parameters"`
 	RetryStrategy       []AwsBatchJobDefinitionSpecRetryStrategy `json:"retry_strategy"`
 	Timeout             []AwsBatchJobDefinitionSpecTimeout       `json:"timeout"`
+	Type                string                                   `json:"type"`
 }
 
 type AwsBatchJobDefinitionSpecRetryStrategy struct {

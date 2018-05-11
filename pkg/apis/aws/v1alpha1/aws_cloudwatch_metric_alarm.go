@@ -17,25 +17,25 @@ type AwsCloudwatchMetricAlarm struct {
 }
 
 type AwsCloudwatchMetricAlarmSpec struct {
-	Namespace                         string            `json:"namespace"`
-	Period                            int               `json:"period"`
-	Threshold                         float64           `json:"threshold"`
-	AlarmDescription                  string            `json:"alarm_description"`
-	DatapointsToAlarm                 int               `json:"datapoints_to_alarm"`
-	Dimensions                        map[string]string `json:"dimensions"`
-	ComparisonOperator                string            `json:"comparison_operator"`
-	Statistic                         string            `json:"statistic"`
-	AlarmActions                      string            `json:"alarm_actions"`
+	InsufficientDataActions           string            `json:"insufficient_data_actions"`
 	Unit                              string            `json:"unit"`
-	EvaluateLowSampleCountPercentiles string            `json:"evaluate_low_sample_count_percentiles"`
-	OkActions                         string            `json:"ok_actions"`
-	TreatMissingData                  string            `json:"treat_missing_data"`
 	AlarmName                         string            `json:"alarm_name"`
 	EvaluationPeriods                 int               `json:"evaluation_periods"`
 	MetricName                        string            `json:"metric_name"`
-	ActionsEnabled                    bool              `json:"actions_enabled"`
-	InsufficientDataActions           string            `json:"insufficient_data_actions"`
+	Period                            int               `json:"period"`
+	Dimensions                        map[string]string `json:"dimensions"`
+	Threshold                         float64           `json:"threshold"`
+	AlarmActions                      string            `json:"alarm_actions"`
+	AlarmDescription                  string            `json:"alarm_description"`
+	OkActions                         string            `json:"ok_actions"`
 	ExtendedStatistic                 string            `json:"extended_statistic"`
+	Namespace                         string            `json:"namespace"`
+	DatapointsToAlarm                 int               `json:"datapoints_to_alarm"`
+	TreatMissingData                  string            `json:"treat_missing_data"`
+	ComparisonOperator                string            `json:"comparison_operator"`
+	Statistic                         string            `json:"statistic"`
+	ActionsEnabled                    bool              `json:"actions_enabled"`
+	EvaluateLowSampleCountPercentiles string            `json:"evaluate_low_sample_count_percentiles"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

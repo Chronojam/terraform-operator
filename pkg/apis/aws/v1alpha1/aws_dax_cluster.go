@@ -17,22 +17,22 @@ type AwsDaxCluster struct {
 }
 
 type AwsDaxClusterSpec struct {
-	NotificationTopicArn  string                   `json:"notification_topic_arn"`
-	ParameterGroupName    string                   `json:"parameter_group_name"`
-	MaintenanceWindow     string                   `json:"maintenance_window"`
-	NodeType              string                   `json:"node_type"`
-	Description           string                   `json:"description"`
-	SubnetGroupName       string                   `json:"subnet_group_name"`
-	Tags                  map[string]string        `json:"tags"`
-	ConfigurationEndpoint string                   `json:"configuration_endpoint"`
-	ClusterAddress        string                   `json:"cluster_address"`
-	Arn                   string                   `json:"arn"`
-	ClusterName           string                   `json:"cluster_name"`
-	IamRoleArn            string                   `json:"iam_role_arn"`
-	AvailabilityZones     string                   `json:"availability_zones"`
-	SecurityGroupIds      string                   `json:"security_group_ids"`
 	Nodes                 []AwsDaxClusterSpecNodes `json:"nodes"`
+	Arn                   string                   `json:"arn"`
+	SecurityGroupIds      string                   `json:"security_group_ids"`
+	SubnetGroupName       string                   `json:"subnet_group_name"`
+	MaintenanceWindow     string                   `json:"maintenance_window"`
+	Tags                  map[string]string        `json:"tags"`
+	IamRoleArn            string                   `json:"iam_role_arn"`
 	ReplicationFactor     int                      `json:"replication_factor"`
+	NotificationTopicArn  string                   `json:"notification_topic_arn"`
+	ConfigurationEndpoint string                   `json:"configuration_endpoint"`
+	ClusterName           string                   `json:"cluster_name"`
+	Description           string                   `json:"description"`
+	ParameterGroupName    string                   `json:"parameter_group_name"`
+	ClusterAddress        string                   `json:"cluster_address"`
+	NodeType              string                   `json:"node_type"`
+	AvailabilityZones     string                   `json:"availability_zones"`
 	Port                  int                      `json:"port"`
 }
 

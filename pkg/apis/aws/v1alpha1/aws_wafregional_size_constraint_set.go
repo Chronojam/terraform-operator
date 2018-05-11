@@ -22,10 +22,10 @@ type AwsWafregionalSizeConstraintSetSpec struct {
 }
 
 type AwsWafregionalSizeConstraintSetSpecSizeConstraints struct {
-	TextTransformation string                                                         `json:"text_transformation"`
 	FieldToMatch       AwsWafregionalSizeConstraintSetSpecSizeConstraintsFieldToMatch `json:"field_to_match"`
 	ComparisonOperator string                                                         `json:"comparison_operator"`
 	Size               int                                                            `json:"size"`
+	TextTransformation string                                                         `json:"text_transformation"`
 }
 
 type AwsWafregionalSizeConstraintSetSpecSizeConstraintsFieldToMatch struct {

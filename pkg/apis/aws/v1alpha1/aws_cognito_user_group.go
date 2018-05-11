@@ -17,11 +17,11 @@ type AwsCognitoUserGroup struct {
 }
 
 type AwsCognitoUserGroupSpec struct {
-	RoleArn     string `json:"role_arn"`
-	UserPoolId  string `json:"user_pool_id"`
 	Description string `json:"description"`
 	Name        string `json:"name"`
 	Precedence  int    `json:"precedence"`
+	RoleArn     string `json:"role_arn"`
+	UserPoolId  string `json:"user_pool_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

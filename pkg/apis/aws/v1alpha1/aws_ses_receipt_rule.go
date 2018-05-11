@@ -17,50 +17,26 @@ type AwsSesReceiptRule struct {
 }
 
 type AwsSesReceiptRuleSpec struct {
-	Recipients      string                               `json:"recipients"`
-	ScanEnabled     bool                                 `json:"scan_enabled"`
-	SnsAction       AwsSesReceiptRuleSpecSnsAction       `json:"sns_action"`
-	Name            string                               `json:"name"`
-	RuleSetName     string                               `json:"rule_set_name"`
-	AddHeaderAction AwsSesReceiptRuleSpecAddHeaderAction `json:"add_header_action"`
-	LambdaAction    AwsSesReceiptRuleSpecLambdaAction    `json:"lambda_action"`
-	StopAction      AwsSesReceiptRuleSpecStopAction      `json:"stop_action"`
-	Enabled         bool                                 `json:"enabled"`
-	TlsPolicy       string                               `json:"tls_policy"`
-	WorkmailAction  AwsSesReceiptRuleSpecWorkmailAction  `json:"workmail_action"`
 	After           string                               `json:"after"`
+	Enabled         bool                                 `json:"enabled"`
+	ScanEnabled     bool                                 `json:"scan_enabled"`
+	AddHeaderAction AwsSesReceiptRuleSpecAddHeaderAction `json:"add_header_action"`
+	Name            string                               `json:"name"`
 	BounceAction    AwsSesReceiptRuleSpecBounceAction    `json:"bounce_action"`
+	StopAction      AwsSesReceiptRuleSpecStopAction      `json:"stop_action"`
 	S3Action        AwsSesReceiptRuleSpecS3Action        `json:"s3_action"`
-}
-
-type AwsSesReceiptRuleSpecSnsAction struct {
-	TopicArn string `json:"topic_arn"`
-	Position int    `json:"position"`
+	RuleSetName     string                               `json:"rule_set_name"`
+	Recipients      string                               `json:"recipients"`
+	TlsPolicy       string                               `json:"tls_policy"`
+	LambdaAction    AwsSesReceiptRuleSpecLambdaAction    `json:"lambda_action"`
+	SnsAction       AwsSesReceiptRuleSpecSnsAction       `json:"sns_action"`
+	WorkmailAction  AwsSesReceiptRuleSpecWorkmailAction  `json:"workmail_action"`
 }
 
 type AwsSesReceiptRuleSpecAddHeaderAction struct {
 	HeaderName  string `json:"header_name"`
 	HeaderValue string `json:"header_value"`
 	Position    int    `json:"position"`
-}
-
-type AwsSesReceiptRuleSpecLambdaAction struct {
-	FunctionArn    string `json:"function_arn"`
-	InvocationType string `json:"invocation_type"`
-	TopicArn       string `json:"topic_arn"`
-	Position       int    `json:"position"`
-}
-
-type AwsSesReceiptRuleSpecStopAction struct {
-	Scope    string `json:"scope"`
-	TopicArn string `json:"topic_arn"`
-	Position int    `json:"position"`
-}
-
-type AwsSesReceiptRuleSpecWorkmailAction struct {
-	OrganizationArn string `json:"organization_arn"`
-	TopicArn        string `json:"topic_arn"`
-	Position        int    `json:"position"`
 }
 
 type AwsSesReceiptRuleSpecBounceAction struct {
@@ -72,12 +48,36 @@ type AwsSesReceiptRuleSpecBounceAction struct {
 	Position      int    `json:"position"`
 }
 
+type AwsSesReceiptRuleSpecStopAction struct {
+	Scope    string `json:"scope"`
+	TopicArn string `json:"topic_arn"`
+	Position int    `json:"position"`
+}
+
 type AwsSesReceiptRuleSpecS3Action struct {
 	Position        int    `json:"position"`
 	BucketName      string `json:"bucket_name"`
 	KmsKeyArn       string `json:"kms_key_arn"`
 	ObjectKeyPrefix string `json:"object_key_prefix"`
 	TopicArn        string `json:"topic_arn"`
+}
+
+type AwsSesReceiptRuleSpecLambdaAction struct {
+	FunctionArn    string `json:"function_arn"`
+	InvocationType string `json:"invocation_type"`
+	TopicArn       string `json:"topic_arn"`
+	Position       int    `json:"position"`
+}
+
+type AwsSesReceiptRuleSpecSnsAction struct {
+	Position int    `json:"position"`
+	TopicArn string `json:"topic_arn"`
+}
+
+type AwsSesReceiptRuleSpecWorkmailAction struct {
+	OrganizationArn string `json:"organization_arn"`
+	TopicArn        string `json:"topic_arn"`
+	Position        int    `json:"position"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

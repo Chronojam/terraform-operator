@@ -17,21 +17,21 @@ type AwsCognitoUserPoolClient struct {
 }
 
 type AwsCognitoUserPoolClientSpec struct {
-	SupportedIdentityProviders      []string `json:"supported_identity_providers"`
-	Name                            string   `json:"name"`
-	ClientSecret                    string   `json:"client_secret"`
-	AllowedOauthFlows               string   `json:"allowed_oauth_flows"`
-	AllowedOauthFlowsUserPoolClient bool     `json:"allowed_oauth_flows_user_pool_client"`
-	LogoutUrls                      []string `json:"logout_urls"`
-	GenerateSecret                  bool     `json:"generate_secret"`
-	ExplicitAuthFlows               string   `json:"explicit_auth_flows"`
 	ReadAttributes                  string   `json:"read_attributes"`
+	AllowedOauthFlows               string   `json:"allowed_oauth_flows"`
 	WriteAttributes                 string   `json:"write_attributes"`
-	AllowedOauthScopes              string   `json:"allowed_oauth_scopes"`
+	AllowedOauthFlowsUserPoolClient bool     `json:"allowed_oauth_flows_user_pool_client"`
+	SupportedIdentityProviders      []string `json:"supported_identity_providers"`
 	UserPoolId                      string   `json:"user_pool_id"`
+	ExplicitAuthFlows               string   `json:"explicit_auth_flows"`
+	RefreshTokenValidity            int      `json:"refresh_token_validity"`
+	AllowedOauthScopes              string   `json:"allowed_oauth_scopes"`
 	CallbackUrls                    []string `json:"callback_urls"`
 	DefaultRedirectUri              string   `json:"default_redirect_uri"`
-	RefreshTokenValidity            int      `json:"refresh_token_validity"`
+	LogoutUrls                      []string `json:"logout_urls"`
+	Name                            string   `json:"name"`
+	GenerateSecret                  bool     `json:"generate_secret"`
+	ClientSecret                    string   `json:"client_secret"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
