@@ -5,22 +5,22 @@ kind: AwsSnsTopic
 metadata:
   name: example-aws-sns-topic
 spec:
-  sqsfailurefeedbackrolearn: ""
-  displayname: ""
-  httpsuccessfeedbackrolearn: ""
-  httpfailurefeedbackrolearn: ""
-  lambdasuccessfeedbacksamplerate: 0
-  sqssuccessfeedbackrolearn: ""
   policy: ""
-  applicationsuccessfeedbackrolearn: ""
-  applicationsuccessfeedbacksamplerate: 0
-  lambdafailurefeedbackrolearn: ""
-  sqssuccessfeedbacksamplerate: 0
-  arn: ""
-  deliverypolicy: ""
   applicationfailurefeedbackrolearn: ""
-  httpsuccessfeedbacksamplerate: 0
-  name: ""
-  nameprefix: ""
+  httpsuccessfeedbackrolearn: ""
   lambdasuccessfeedbackrolearn: ""
+  nameprefix: ""
+  displayname: ""
+  deliverypolicy: ""
+  applicationsuccessfeedbacksamplerate: 0
+  lambdasuccessfeedbacksamplerate: 0
+  sqssuccessfeedbacksamplerate: 0
+  name: ""
+  lambdafailurefeedbackrolearn: ""
+  sqsfailurefeedbackrolearn: ""
+  arn: ""
+  applicationsuccessfeedbackrolearn: ""
+  httpsuccessfeedbacksamplerate: 0
+  httpfailurefeedbackrolearn: ""
+  sqssuccessfeedbackrolearn: ""
 

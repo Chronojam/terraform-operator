@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAthenaDatabase struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAthenaDatabaseSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAthenaDatabaseSpec `json:"spec"`
 }
 
 type AwsAthenaDatabaseSpec struct {
@@ -25,7 +25,7 @@ type AwsAthenaDatabaseSpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAthenaDatabaseList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAthenaDatabase `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAthenaDatabase `json:"items"`
 }

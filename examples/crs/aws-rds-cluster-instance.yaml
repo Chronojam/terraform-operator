@@ -5,30 +5,30 @@ kind: AwsRdsClusterInstance
 metadata:
   name: example-aws-rds-cluster-instance
 spec:
-  dbiresourceid: ""
-  availabilityzone: ""
-  instanceclass: ""
+  dbsubnetgroupname: ""
+  port: 0
   engine: ""
+  dbparametergroupname: ""
+  preferredbackupwindow: ""
+  availabilityzone: ""
+  clusteridentifier: ""
+  instanceclass: ""
+  engineversion: ""
   applyimmediately: false
+  kmskeyid: ""
   storageencrypted: false
   preferredmaintenancewindow: ""
-  promotiontier: 0
-  performanceinsightsenabled: false
-  performanceinsightskmskeyid: ""
-  dbsubnetgroupname: ""
-  clusteridentifier: ""
+  tags: {}
+  endpoint: ""
   publiclyaccessible: false
-  monitoringrolearn: ""
-  kmskeyid: ""
-  autominorversionupgrade: false
-  preferredbackupwindow: ""
-  monitoringinterval: 0
+  promotiontier: 0
+  performanceinsightskmskeyid: ""
+  performanceinsightsenabled: false
   identifier: ""
   identifierprefix: ""
-  port: 0
-  engineversion: ""
-  tags: {}
   writer: false
-  endpoint: ""
-  dbparametergroupname: ""
+  dbiresourceid: ""
+  autominorversionupgrade: false
+  monitoringrolearn: ""
+  monitoringinterval: 0
 

@@ -5,31 +5,31 @@ kind: AwsOpsworksNodejsAppLayer
 metadata:
   name: example-aws-opsworks-nodejs-app-layer
 spec:
-  drainelbonshutdown: false
+  custominstanceprofilearn: ""
+  customdeployrecipes: []
+  instanceshutdowntimeout: 0
   systempackages: ""
   stackid: ""
-  useebsoptimizedinstances: false
-  name: ""
-  customdeployrecipes: []
-  customshutdownrecipes: []
-  installupdatesonboot: false
-  customsetuprecipes: []
-  customundeployrecipes: []
-  elasticloadbalancer: ""
-  customconfigurerecipes: []
-  customsecuritygroupids: ""
-  instanceshutdowntimeout: 0
   autoassignelasticips: false
   autoassignpublicips: false
-  custominstanceprofilearn: ""
-  nodejsversion: ""
-  customjson: ""
+  elasticloadbalancer: ""
   autohealing: false
+  drainelbonshutdown: false
+  useebsoptimizedinstances: false
   ebsvolume:
-    type: ""
     iops: 0
     mountpoint: ""
     numberofdisks: 0
     raidlevel: ""
     size: 0
+    type: ""
+  customsetuprecipes: []
+  customconfigurerecipes: []
+  customundeployrecipes: []
+  customsecuritygroupids: ""
+  installupdatesonboot: false
+  name: ""
+  customshutdownrecipes: []
+  customjson: ""
+  nodejsversion: ""
 

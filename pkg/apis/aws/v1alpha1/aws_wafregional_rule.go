@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafregionalRule struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsWafregionalRuleSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsWafregionalRuleSpec `json:"spec"`
 }
 
 type AwsWafregionalRuleSpec struct {
@@ -23,15 +23,15 @@ type AwsWafregionalRuleSpec struct {
 }
 
 type AwsWafregionalRuleSpecPredicate struct {
+	Negated bool   `json:"negated"`
 	DataId  string `json:"data_id"`
 	Type    string `json:"type"`
-	Negated bool   `json:"negated"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafregionalRuleList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsWafregionalRule `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsWafregionalRule `json:"items"`
 }

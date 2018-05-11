@@ -5,21 +5,21 @@ kind: AwsDaxCluster
 metadata:
   name: example-aws-dax-cluster
 spec:
-  nodes: []
-  arn: ""
-  securitygroupids: ""
-  subnetgroupname: ""
-  maintenancewindow: ""
-  tags: {}
-  iamrolearn: ""
-  replicationfactor: 0
-  notificationtopicarn: ""
-  configurationendpoint: ""
   clustername: ""
-  description: ""
-  parametergroupname: ""
-  clusteraddress: ""
   nodetype: ""
   availabilityzones: ""
+  description: ""
   port: 0
+  nodes: []
+  replicationfactor: 0
+  subnetgroupname: ""
+  parametergroupname: ""
+  configurationendpoint: ""
+  clusteraddress: ""
+  arn: ""
+  iamrolearn: ""
+  notificationtopicarn: ""
+  maintenancewindow: ""
+  securitygroupids: ""
+  tags: {}
 

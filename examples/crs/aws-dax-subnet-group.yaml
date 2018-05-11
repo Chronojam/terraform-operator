@@ -5,8 +5,8 @@ kind: AwsDaxSubnetGroup
 metadata:
   name: example-aws-dax-subnet-group
 spec:
+  vpcid: ""
   name: ""
   description: ""
   subnetids: ""
-  vpcid: ""
 

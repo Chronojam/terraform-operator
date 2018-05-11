@@ -5,66 +5,66 @@ kind: AwsSpotInstanceRequest
 metadata:
   name: example-aws-spot-instance-request
 spec:
-  iaminstanceprofile: ""
-  tags: {}
-  blockdevice: {}
-  subnetid: ""
   vpcsecuritygroupids: ""
-  publicdns: ""
+  publicip: ""
+  ebsoptimized: false
+  instanceinitiatedshutdownbehavior: ""
+  ipv6addresscount: 0
+  tags: {}
+  spotrequeststate: ""
+  availabilityzone: ""
+  validfrom: ""
+  userdata: ""
+  keyname: ""
+  primarynetworkinterfaceid: ""
+  monitoring: false
+  ipv6addresses: []
+  tenancy: ""
+  placementgroup: ""
   networkinterfaceid: ""
   privatedns: ""
-  launchgroup: ""
-  ipv6addresscount: 0
-  ipv6addresses: []
-  volumetags: {}
-  availabilityzone: ""
+  spotprice: ""
+  sourcedestcheck: false
   getpassworddata: false
-  privateip: ""
-  publicip: ""
-  monitoring: false
-  instanceinterruptionbehaviour: ""
-  userdata: ""
-  primarynetworkinterfaceid: ""
-  ebsoptimized: false
-  spotrequeststate: ""
-  spotinstanceid: ""
-  spottype: ""
-  waitforfulfillment: false
-  blockdurationminutes: 0
-  associatepublicipaddress: false
-  keyname: ""
   userdatabase64: ""
+  instancestate: ""
   disableapitermination: false
-  tenancy: ""
-  ami: ""
+  volumetags: {}
+  spottype: ""
+  launchgroup: ""
+  associatepublicipaddress: false
+  spotinstanceid: ""
+  passworddata: ""
+  subnetid: ""
+  publicdns: ""
   networkinterface:
     deleteontermination: false
     networkinterfaceid: ""
     deviceindex: 0
-  instancestate: ""
-  ephemeralblockdevice:
-    devicename: ""
-    virtualname: ""
-    nodevice: false
-  spotprice: ""
-  validfrom: ""
-  placementgroup: ""
+  waitforfulfillment: false
+  spotbidstatus: ""
+  instanceinterruptionbehaviour: ""
   instancetype: ""
+  iaminstanceprofile: ""
+  blockdevice: {}
+  rootblockdevice: []
+  creditspecification: []
   securitygroups: ""
+  privateip: ""
   ebsblockdevice:
-    encrypted: false
-    iops: 0
-    snapshotid: ""
-    volumesize: 0
     volumetype: ""
     volumeid: ""
     deleteontermination: false
     devicename: ""
-  creditspecification: []
-  rootblockdevice: []
+    encrypted: false
+    iops: 0
+    snapshotid: ""
+    volumesize: 0
+  ephemeralblockdevice:
+    nodevice: false
+    devicename: ""
+    virtualname: ""
+  blockdurationminutes: 0
   validuntil: ""
-  passworddata: ""
-  sourcedestcheck: false
-  instanceinitiatedshutdownbehavior: ""
-  spotbidstatus: ""
+  ami: ""
 

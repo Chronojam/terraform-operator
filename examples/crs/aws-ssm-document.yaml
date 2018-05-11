@@ -5,21 +5,21 @@ kind: AwsSsmDocument
 metadata:
   name: example-aws-ssm-document
 spec:
-  status: ""
-  platformtypes: []
-  name: ""
-  documenttype: ""
-  defaultversion: ""
-  description: ""
-  owner: ""
-  documentformat: ""
-  schemaversion: ""
-  hash: ""
-  parameter: []
-  permissions: {}
   arn: ""
-  content: ""
-  createddate: ""
-  latestversion: ""
+  documentformat: ""
+  documenttype: ""
+  schemaversion: ""
+  defaultversion: ""
+  platformtypes: []
+  parameter: []
+  name: ""
   hashtype: ""
+  permissions: {}
+  createddate: ""
+  description: ""
+  hash: ""
+  latestversion: ""
+  owner: ""
+  status: ""
+  content: ""
 

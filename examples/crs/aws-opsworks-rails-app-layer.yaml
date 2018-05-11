@@ -5,31 +5,31 @@ kind: AwsOpsworksRailsAppLayer
 metadata:
   name: example-aws-opsworks-rails-app-layer
 spec:
-  name: ""
-  passengerversion: ""
   autoassignelasticips: false
-  elasticloadbalancer: ""
-  customdeployrecipes: []
-  customjson: ""
-  drainelbonshutdown: false
-  systempackages: ""
-  managebundler: false
-  rubyversion: ""
-  customundeployrecipes: []
-  customshutdownrecipes: []
-  autohealing: false
-  rubygemsversion: ""
-  bundlerversion: ""
-  autoassignpublicips: false
-  customsetuprecipes: []
   customsecuritygroupids: ""
   installupdatesonboot: false
-  appserver: ""
-  custominstanceprofilearn: ""
-  customconfigurerecipes: []
+  drainelbonshutdown: false
+  customdeployrecipes: []
+  autohealing: false
   instanceshutdowntimeout: 0
-  stackid: ""
+  systempackages: ""
   useebsoptimizedinstances: false
+  managebundler: false
+  appserver: ""
+  rubygemsversion: ""
+  autoassignpublicips: false
+  custominstanceprofilearn: ""
+  elasticloadbalancer: ""
+  customsetuprecipes: []
+  customconfigurerecipes: []
+  customundeployrecipes: []
+  stackid: ""
+  name: ""
+  bundlerversion: ""
+  rubyversion: ""
+  passengerversion: ""
+  customshutdownrecipes: []
+  customjson: ""
   ebsvolume:
     iops: 0
     mountpoint: ""

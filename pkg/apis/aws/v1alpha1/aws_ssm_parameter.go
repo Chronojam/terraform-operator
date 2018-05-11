@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmParameter struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSsmParameterSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSsmParameterSpec `json:"spec"`
 }
 
 type AwsSsmParameterSpec struct {
+	KeyId          string            `json:"key_id"`
+	Overwrite      bool              `json:"overwrite"`
 	AllowedPattern string            `json:"allowed_pattern"`
-	Tags           map[string]string `json:"tags"`
+	Name           string            `json:"name"`
 	Description    string            `json:"description"`
 	Type           string            `json:"type"`
-	Arn            string            `json:"arn"`
-	Overwrite      bool              `json:"overwrite"`
-	Name           string            `json:"name"`
 	Value          string            `json:"value"`
-	KeyId          string            `json:"key_id"`
+	Arn            string            `json:"arn"`
+	Tags           map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmParameterList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSsmParameter `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSsmParameter `json:"items"`
 }

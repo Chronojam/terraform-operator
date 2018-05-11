@@ -9,6 +9,6 @@ spec:
   family: ""
   description: ""
   parameter:
-    name: ""
     value: ""
+    name: ""
 

@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSesIdentityNotificationTopic struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSesIdentityNotificationTopicSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSesIdentityNotificationTopicSpec `json:"spec"`
 }
 
 type AwsSesIdentityNotificationTopicSpec struct {
@@ -25,7 +25,7 @@ type AwsSesIdentityNotificationTopicSpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSesIdentityNotificationTopicList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSesIdentityNotificationTopic `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSesIdentityNotificationTopic `json:"items"`
 }

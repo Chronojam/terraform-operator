@@ -5,12 +5,12 @@ kind: AwsIamServiceLinkedRole
 metadata:
   name: example-aws-iam-service-linked-role
 spec:
-  awsservicename: ""
-  name: ""
   path: ""
   arn: ""
   createdate: ""
   uniqueid: ""
   customsuffix: ""
   description: ""
+  awsservicename: ""
+  name: ""
 

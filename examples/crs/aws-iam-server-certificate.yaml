@@ -5,11 +5,11 @@ kind: AwsIamServerCertificate
 metadata:
   name: example-aws-iam-server-certificate
 spec:
+  name: ""
+  nameprefix: ""
+  arn: ""
   certificatebody: ""
   certificatechain: ""
   path: ""
   privatekey: ""
-  name: ""
-  nameprefix: ""
-  arn: ""
 

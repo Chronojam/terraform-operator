@@ -11,27 +11,44 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsMqBroker struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsMqBrokerSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsMqBrokerSpec `json:"spec"`
 }
 
 type AwsMqBrokerSpec struct {
-	SubnetIds                  string                                      `json:"subnet_ids"`
-	PubliclyAccessible         bool                                        `json:"publicly_accessible"`
-	SecurityGroups             string                                      `json:"security_groups"`
-	MaintenanceWindowStartTime []AwsMqBrokerSpecMaintenanceWindowStartTime `json:"maintenance_window_start_time"`
-	Arn                        string                                      `json:"arn"`
-	AutoMinorVersionUpgrade    bool                                        `json:"auto_minor_version_upgrade"`
-	HostInstanceType           string                                      `json:"host_instance_type"`
-	EngineVersion              string                                      `json:"engine_version"`
+	User                       AwsMqBrokerSpecUser                         `json:"user"`
 	Instances                  []AwsMqBrokerSpecInstances                  `json:"instances"`
+	AutoMinorVersionUpgrade    bool                                        `json:"auto_minor_version_upgrade"`
 	BrokerName                 string                                      `json:"broker_name"`
 	EngineType                 string                                      `json:"engine_type"`
-	DeploymentMode             string                                      `json:"deployment_mode"`
-	User                       AwsMqBrokerSpecUser                         `json:"user"`
+	HostInstanceType           string                                      `json:"host_instance_type"`
+	Arn                        string                                      `json:"arn"`
 	ApplyImmediately           bool                                        `json:"apply_immediately"`
 	Configuration              []AwsMqBrokerSpecConfiguration              `json:"configuration"`
+	EngineVersion              string                                      `json:"engine_version"`
+	MaintenanceWindowStartTime []AwsMqBrokerSpecMaintenanceWindowStartTime `json:"maintenance_window_start_time"`
+	PubliclyAccessible         bool                                        `json:"publicly_accessible"`
+	DeploymentMode             string                                      `json:"deployment_mode"`
+	SecurityGroups             string                                      `json:"security_groups"`
+	SubnetIds                  string                                      `json:"subnet_ids"`
+}
+
+type AwsMqBrokerSpecUser struct {
+	ConsoleAccess bool   `json:"console_access"`
+	Groups        string `json:"groups"`
+	Password      string `json:"password"`
+	Username      string `json:"username"`
+}
+
+type AwsMqBrokerSpecInstances struct {
+	Endpoints  []string `json:"endpoints"`
+	ConsoleUrl string   `json:"console_url"`
+}
+
+type AwsMqBrokerSpecConfiguration struct {
+	Id       string `json:"id"`
+	Revision int    `json:"revision"`
 }
 
 type AwsMqBrokerSpecMaintenanceWindowStartTime struct {
@@ -40,27 +57,10 @@ type AwsMqBrokerSpecMaintenanceWindowStartTime struct {
 	TimeZone  string `json:"time_zone"`
 }
 
-type AwsMqBrokerSpecInstances struct {
-	Endpoints  []string `json:"endpoints"`
-	ConsoleUrl string   `json:"console_url"`
-}
-
-type AwsMqBrokerSpecUser struct {
-	Username      string `json:"username"`
-	ConsoleAccess bool   `json:"console_access"`
-	Groups        string `json:"groups"`
-	Password      string `json:"password"`
-}
-
-type AwsMqBrokerSpecConfiguration struct {
-	Id       string `json:"id"`
-	Revision int    `json:"revision"`
-}
-
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsMqBrokerList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsMqBroker `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsMqBroker `json:"items"`
 }

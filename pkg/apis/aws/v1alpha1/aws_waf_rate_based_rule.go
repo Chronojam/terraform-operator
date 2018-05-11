@@ -11,17 +11,17 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafRateBasedRule struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsWafRateBasedRuleSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsWafRateBasedRuleSpec `json:"spec"`
 }
 
 type AwsWafRateBasedRuleSpec struct {
+	RateLimit  int                               `json:"rate_limit"`
+	Name       string                            `json:"name"`
 	MetricName string                            `json:"metric_name"`
 	Predicates AwsWafRateBasedRuleSpecPredicates `json:"predicates"`
 	RateKey    string                            `json:"rate_key"`
-	RateLimit  int                               `json:"rate_limit"`
-	Name       string                            `json:"name"`
 }
 
 type AwsWafRateBasedRuleSpecPredicates struct {
@@ -33,7 +33,7 @@ type AwsWafRateBasedRuleSpecPredicates struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafRateBasedRuleList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsWafRateBasedRule `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsWafRateBasedRule `json:"items"`
 }

@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLightsailKeyPair struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLightsailKeyPairSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLightsailKeyPairSpec `json:"spec"`
 }
 
 type AwsLightsailKeyPairSpec struct {
-	Fingerprint          string `json:"fingerprint"`
-	EncryptedPrivateKey  string `json:"encrypted_private_key"`
 	Name                 string `json:"name"`
-	NamePrefix           string `json:"name_prefix"`
 	PgpKey               string `json:"pgp_key"`
-	Arn                  string `json:"arn"`
 	PublicKey            string `json:"public_key"`
-	PrivateKey           string `json:"private_key"`
+	EncryptedPrivateKey  string `json:"encrypted_private_key"`
 	EncryptedFingerprint string `json:"encrypted_fingerprint"`
+	NamePrefix           string `json:"name_prefix"`
+	Arn                  string `json:"arn"`
+	Fingerprint          string `json:"fingerprint"`
+	PrivateKey           string `json:"private_key"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLightsailKeyPairList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLightsailKeyPair `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLightsailKeyPair `json:"items"`
 }

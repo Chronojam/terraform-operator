@@ -5,6 +5,7 @@ kind: AwsApiGatewayRestApi
 metadata:
   name: example-aws-api-gateway-rest-api
 spec:
+  createddate: ""
   name: ""
   description: ""
   policy: ""
@@ -12,5 +13,4 @@ spec:
   body: ""
   minimumcompressionsize: 0
   rootresourceid: ""
-  createddate: ""
 

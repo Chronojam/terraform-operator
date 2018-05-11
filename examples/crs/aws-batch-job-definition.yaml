@@ -5,12 +5,12 @@ kind: AwsBatchJobDefinition
 metadata:
   name: example-aws-batch-job-definition
 spec:
+  timeout: []
+  type: ""
   revision: 0
   arn: ""
   name: ""
   containerproperties: ""
   parameters: {}
   retrystrategy: []
-  timeout: []
-  type: ""
 

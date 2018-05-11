@@ -11,23 +11,23 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOrganizationsOrganization struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsOrganizationsOrganizationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsOrganizationsOrganizationSpec `json:"spec"`
 }
 
 type AwsOrganizationsOrganizationSpec struct {
-	MasterAccountEmail string `json:"master_account_email"`
-	MasterAccountId    string `json:"master_account_id"`
 	FeatureSet         string `json:"feature_set"`
 	Arn                string `json:"arn"`
 	MasterAccountArn   string `json:"master_account_arn"`
+	MasterAccountEmail string `json:"master_account_email"`
+	MasterAccountId    string `json:"master_account_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOrganizationsOrganizationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsOrganizationsOrganization `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsOrganizationsOrganization `json:"items"`
 }

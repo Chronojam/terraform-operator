@@ -5,29 +5,29 @@ kind: AwsElb
 metadata:
   name: example-aws-elb
 spec:
-  connectiondrainingtimeout: 0
-  healthcheck: []
-  name: ""
-  internal: false
-  instances: ""
-  subnets: ""
-  arn: ""
-  crosszoneloadbalancing: false
-  accesslogs: []
-  zoneid: ""
-  sourcesecuritygroupid: ""
-  tags: {}
   nameprefix: ""
-  availabilityzones: ""
-  securitygroups: ""
-  sourcesecuritygroup: ""
-  idletimeout: 0
+  sourcesecuritygroupid: ""
   connectiondraining: false
+  accesslogs: []
+  name: ""
+  availabilityzones: ""
+  sourcesecuritygroup: ""
+  subnets: ""
   listener:
+    lbport: 0
     lbprotocol: ""
     sslcertificateid: ""
     instanceport: 0
     instanceprotocol: ""
-    lbport: 0
+  internal: false
+  instances: ""
+  connectiondrainingtimeout: 0
+  tags: {}
   dnsname: ""
+  zoneid: ""
+  arn: ""
+  crosszoneloadbalancing: false
+  securitygroups: ""
+  idletimeout: 0
+  healthcheck: []
 

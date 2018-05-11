@@ -5,7 +5,7 @@ kind: AwsSesDomainMailFrom
 metadata:
   name: example-aws-ses-domain-mail-from
 spec:
+  behavioronmxfailure: ""
   domain: ""
   mailfromdomain: ""
-  behavioronmxfailure: ""
 

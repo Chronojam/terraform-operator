@@ -11,21 +11,21 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSecretsmanagerSecret struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSecretsmanagerSecretSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSecretsmanagerSecretSpec `json:"spec"`
 }
 
 type AwsSecretsmanagerSecretSpec struct {
-	RecoveryWindowInDays int                                        `json:"recovery_window_in_days"`
+	KmsKeyId             string                                     `json:"kms_key_id"`
 	RotationEnabled      bool                                       `json:"rotation_enabled"`
 	RotationRules        []AwsSecretsmanagerSecretSpecRotationRules `json:"rotation_rules"`
-	Tags                 map[string]string                          `json:"tags"`
 	Arn                  string                                     `json:"arn"`
 	Description          string                                     `json:"description"`
-	KmsKeyId             string                                     `json:"kms_key_id"`
 	Name                 string                                     `json:"name"`
+	RecoveryWindowInDays int                                        `json:"recovery_window_in_days"`
 	RotationLambdaArn    string                                     `json:"rotation_lambda_arn"`
+	Tags                 map[string]string                          `json:"tags"`
 }
 
 type AwsSecretsmanagerSecretSpecRotationRules struct {
@@ -35,7 +35,7 @@ type AwsSecretsmanagerSecretSpecRotationRules struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSecretsmanagerSecretList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSecretsmanagerSecret `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSecretsmanagerSecret `json:"items"`
 }

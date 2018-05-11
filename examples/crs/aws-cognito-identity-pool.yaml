@@ -5,6 +5,7 @@ kind: AwsCognitoIdentityPool
 metadata:
   name: example-aws-cognito-identity-pool
 spec:
+  supportedloginproviders: {}
   identitypoolname: ""
   cognitoidentityproviders:
     clientid: ""
@@ -14,5 +15,4 @@ spec:
   allowunauthenticatedidentities: false
   openidconnectproviderarns: []
   samlproviderarns: []
-  supportedloginproviders: {}
 

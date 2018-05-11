@@ -5,19 +5,19 @@ kind: AwsEcsTaskDefinition
 metadata:
   name: example-aws-ecs-task-definition
 spec:
+  memory: ""
+  networkmode: ""
   volume:
-    hostpath: ""
     name: ""
+    hostpath: ""
+  placementconstraints:
+    type: ""
+    expression: ""
   arn: ""
+  cpu: ""
   revision: 0
   executionrolearn: ""
-  networkmode: ""
-  memory: ""
-  placementconstraints:
-    expression: ""
-    type: ""
   requirescompatibilities: ""
-  cpu: ""
   family: ""
   containerdefinitions: ""
   taskrolearn: ""

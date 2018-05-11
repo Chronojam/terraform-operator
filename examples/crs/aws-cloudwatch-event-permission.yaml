@@ -5,7 +5,7 @@ kind: AwsCloudwatchEventPermission
 metadata:
   name: example-aws-cloudwatch-event-permission
 spec:
-  statementid: ""
   action: ""
   principal: ""
+  statementid: ""
 

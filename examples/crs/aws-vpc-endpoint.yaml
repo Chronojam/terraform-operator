@@ -5,18 +5,18 @@ kind: AwsVpcEndpoint
 metadata:
   name: example-aws-vpc-endpoint
 spec:
-  networkinterfaceids: ""
   servicename: ""
   securitygroupids: ""
-  cidrblocks: []
   privatednsenabled: false
-  vpcid: ""
-  policy: ""
-  routetableids: ""
-  state: ""
-  dnsentry: []
+  networkinterfaceids: ""
   autoaccept: false
   vpcendpointtype: ""
-  subnetids: ""
+  policy: ""
+  state: ""
   prefixlistid: ""
+  cidrblocks: []
+  vpcid: ""
+  routetableids: ""
+  subnetids: ""
+  dnsentry: []
 

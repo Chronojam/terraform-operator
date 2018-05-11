@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcPeeringConnectionOptions struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsVpcPeeringConnectionOptionsSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsVpcPeeringConnectionOptionsSpec `json:"spec"`
 }
 
 type AwsVpcPeeringConnectionOptionsSpec struct {
@@ -37,7 +37,7 @@ type AwsVpcPeeringConnectionOptionsSpecRequester struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcPeeringConnectionOptionsList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsVpcPeeringConnectionOptions `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsVpcPeeringConnectionOptions `json:"items"`
 }

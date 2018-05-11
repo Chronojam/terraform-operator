@@ -5,12 +5,12 @@ kind: AwsConfigConfigRule
 metadata:
   name: example-aws-config-config-rule
 spec:
-  name: ""
-  ruleid: ""
-  arn: ""
   description: ""
   inputparameters: ""
   maximumexecutionfrequency: ""
   scope: []
   source: []
+  name: ""
+  ruleid: ""
+  arn: ""
 

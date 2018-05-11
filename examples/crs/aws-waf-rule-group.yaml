@@ -5,11 +5,11 @@ kind: AwsWafRuleGroup
 metadata:
   name: example-aws-waf-rule-group
 spec:
-  name: ""
-  metricname: ""
   activatedrule:
-    action: []
-    priority: 0
     ruleid: ""
     type: ""
+    action: []
+    priority: 0
+  name: ""
+  metricname: ""
 

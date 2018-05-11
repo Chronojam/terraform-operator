@@ -8,8 +8,8 @@ spec:
   name: ""
   metricname: ""
   activatedrule:
+    priority: 0
     ruleid: ""
     type: ""
     action: []
-    priority: 0
 

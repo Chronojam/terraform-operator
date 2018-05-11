@@ -5,30 +5,30 @@ kind: AwsOpsworksStaticWebLayer
 metadata:
   name: example-aws-opsworks-static-web-layer
 spec:
-  autoassignelasticips: false
-  custominstanceprofilearn: ""
+  autohealing: false
   installupdatesonboot: false
-  name: ""
   customsetuprecipes: []
   customdeployrecipes: []
-  autohealing: false
-  systempackages: ""
-  stackid: ""
-  elasticloadbalancer: ""
-  customundeployrecipes: []
-  customsecuritygroupids: ""
+  customshutdownrecipes: []
   customjson: ""
+  useebsoptimizedinstances: false
+  autoassignpublicips: false
+  customconfigurerecipes: []
+  customundeployrecipes: []
+  instanceshutdowntimeout: 0
+  name: ""
+  custominstanceprofilearn: ""
+  customsecuritygroupids: ""
+  stackid: ""
   ebsvolume:
-    iops: 0
     mountpoint: ""
     numberofdisks: 0
     raidlevel: ""
     size: 0
     type: ""
-  useebsoptimizedinstances: false
-  autoassignpublicips: false
-  customconfigurerecipes: []
-  customshutdownrecipes: []
-  instanceshutdowntimeout: 0
+    iops: 0
+  autoassignelasticips: false
+  elasticloadbalancer: ""
   drainelbonshutdown: false
+  systempackages: ""
 

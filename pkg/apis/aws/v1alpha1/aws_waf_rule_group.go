@@ -11,22 +11,22 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafRuleGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsWafRuleGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsWafRuleGroupSpec `json:"spec"`
 }
 
 type AwsWafRuleGroupSpec struct {
+	ActivatedRule AwsWafRuleGroupSpecActivatedRule `json:"activated_rule"`
 	Name          string                           `json:"name"`
 	MetricName    string                           `json:"metric_name"`
-	ActivatedRule AwsWafRuleGroupSpecActivatedRule `json:"activated_rule"`
 }
 
 type AwsWafRuleGroupSpecActivatedRule struct {
-	Action   []AwsWafRuleGroupSpecActivatedRuleAction `json:"action"`
-	Priority int                                      `json:"priority"`
 	RuleId   string                                   `json:"rule_id"`
 	Type     string                                   `json:"type"`
+	Action   []AwsWafRuleGroupSpecActivatedRuleAction `json:"action"`
+	Priority int                                      `json:"priority"`
 }
 
 type AwsWafRuleGroupSpecActivatedRuleAction struct {
@@ -36,7 +36,7 @@ type AwsWafRuleGroupSpecActivatedRuleAction struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafRuleGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsWafRuleGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsWafRuleGroup `json:"items"`
 }

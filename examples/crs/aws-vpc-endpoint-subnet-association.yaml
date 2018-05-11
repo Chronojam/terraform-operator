@@ -5,6 +5,6 @@ kind: AwsVpcEndpointSubnetAssociation
 metadata:
   name: example-aws-vpc-endpoint-subnet-association
 spec:
-  subnetid: ""
   vpcendpointid: ""
+  subnetid: ""
 

@@ -5,9 +5,9 @@ kind: AwsServiceDiscoveryPrivateDnsNamespace
 metadata:
   name: example-aws-service-discovery-private-dns-namespace
 spec:
+  name: ""
   description: ""
   vpc: ""
   arn: ""
   hostedzone: ""
-  name: ""
 

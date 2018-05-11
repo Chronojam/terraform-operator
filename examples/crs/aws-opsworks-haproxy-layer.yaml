@@ -5,31 +5,21 @@ kind: AwsOpsworksHaproxyLayer
 metadata:
   name: example-aws-opsworks-haproxy-layer
 spec:
-  healthcheckurl: ""
-  healthcheckmethod: ""
-  statsuser: ""
-  autoassignpublicips: false
-  custominstanceprofilearn: ""
-  customjson: ""
-  instanceshutdowntimeout: 0
-  drainelbonshutdown: false
-  customconfigurerecipes: []
-  customdeployrecipes: []
-  customshutdownrecipes: []
-  customsecuritygroupids: ""
-  name: ""
   statspassword: ""
-  statsenabled: false
-  statsurl: ""
-  elasticloadbalancer: ""
-  customsetuprecipes: []
-  installupdatesonboot: false
   systempackages: ""
-  useebsoptimizedinstances: false
+  name: ""
+  statsenabled: false
+  customshutdownrecipes: []
+  customjson: ""
+  installupdatesonboot: false
+  instanceshutdowntimeout: 0
+  healthcheckurl: ""
   autoassignelasticips: false
-  customundeployrecipes: []
+  elasticloadbalancer: ""
+  customdeployrecipes: []
+  healthcheckmethod: ""
   autohealing: false
-  stackid: ""
+  drainelbonshutdown: false
   ebsvolume:
     iops: 0
     mountpoint: ""
@@ -37,4 +27,14 @@ spec:
     raidlevel: ""
     size: 0
     type: ""
+  autoassignpublicips: false
+  custominstanceprofilearn: ""
+  customsetuprecipes: []
+  stackid: ""
+  useebsoptimizedinstances: false
+  statsurl: ""
+  statsuser: ""
+  customconfigurerecipes: []
+  customundeployrecipes: []
+  customsecuritygroupids: ""
 

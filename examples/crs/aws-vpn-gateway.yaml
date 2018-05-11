@@ -5,8 +5,8 @@ kind: AwsVpnGateway
 metadata:
   name: example-aws-vpn-gateway
 spec:
+  vpcid: ""
   tags: {}
   availabilityzone: ""
   amazonsideasn: ""
-  vpcid: ""
 

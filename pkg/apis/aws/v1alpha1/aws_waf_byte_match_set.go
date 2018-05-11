@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafByteMatchSet struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsWafByteMatchSetSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsWafByteMatchSetSpec `json:"spec"`
 }
 
 type AwsWafByteMatchSetSpec struct {
@@ -22,10 +22,10 @@ type AwsWafByteMatchSetSpec struct {
 }
 
 type AwsWafByteMatchSetSpecByteMatchTuples struct {
-	FieldToMatch         AwsWafByteMatchSetSpecByteMatchTuplesFieldToMatch `json:"field_to_match"`
 	PositionalConstraint string                                            `json:"positional_constraint"`
 	TargetString         string                                            `json:"target_string"`
 	TextTransformation   string                                            `json:"text_transformation"`
+	FieldToMatch         AwsWafByteMatchSetSpecByteMatchTuplesFieldToMatch `json:"field_to_match"`
 }
 
 type AwsWafByteMatchSetSpecByteMatchTuplesFieldToMatch struct {
@@ -36,7 +36,7 @@ type AwsWafByteMatchSetSpecByteMatchTuplesFieldToMatch struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafByteMatchSetList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsWafByteMatchSet `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsWafByteMatchSet `json:"items"`
 }

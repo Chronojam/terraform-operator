@@ -5,6 +5,6 @@ kind: AwsEcsCluster
 metadata:
   name: example-aws-ecs-cluster
 spec:
-  name: ""
   arn: ""
+  name: ""
 

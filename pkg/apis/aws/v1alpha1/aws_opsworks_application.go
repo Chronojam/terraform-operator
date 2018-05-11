@@ -11,44 +11,44 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksApplication struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsOpsworksApplicationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsOpsworksApplicationSpec `json:"spec"`
 }
 
 type AwsOpsworksApplicationSpec struct {
-	SslConfiguration       []AwsOpsworksApplicationSpecSslConfiguration `json:"ssl_configuration"`
-	ShortName              string                                       `json:"short_name"`
 	DocumentRoot           string                                       `json:"document_root"`
-	DataSourceType         string                                       `json:"data_source_type"`
-	Domains                []string                                     `json:"domains"`
-	Description            string                                       `json:"description"`
-	EnableSsl              bool                                         `json:"enable_ssl"`
-	Name                   string                                       `json:"name"`
-	Type                   string                                       `json:"type"`
-	RailsEnv               string                                       `json:"rails_env"`
-	DataSourceDatabaseName string                                       `json:"data_source_database_name"`
 	AutoBundleOnDeploy     string                                       `json:"auto_bundle_on_deploy"`
-	AwsFlowRubySettings    string                                       `json:"aws_flow_ruby_settings"`
-	AppSource              []AwsOpsworksApplicationSpecAppSource        `json:"app_source"`
+	Description            string                                       `json:"description"`
+	SslConfiguration       []AwsOpsworksApplicationSpecSslConfiguration `json:"ssl_configuration"`
+	Name                   string                                       `json:"name"`
 	StackId                string                                       `json:"stack_id"`
-	DataSourceArn          string                                       `json:"data_source_arn"`
+	EnableSsl              bool                                         `json:"enable_ssl"`
+	Type                   string                                       `json:"type"`
+	DataSourceDatabaseName string                                       `json:"data_source_database_name"`
+	AppSource              []AwsOpsworksApplicationSpecAppSource        `json:"app_source"`
 	Environment            AwsOpsworksApplicationSpecEnvironment        `json:"environment"`
+	ShortName              string                                       `json:"short_name"`
+	RailsEnv               string                                       `json:"rails_env"`
+	DataSourceArn          string                                       `json:"data_source_arn"`
+	Domains                []string                                     `json:"domains"`
+	AwsFlowRubySettings    string                                       `json:"aws_flow_ruby_settings"`
+	DataSourceType         string                                       `json:"data_source_type"`
 }
 
 type AwsOpsworksApplicationSpecSslConfiguration struct {
+	Certificate string `json:"certificate"`
 	PrivateKey  string `json:"private_key"`
 	Chain       string `json:"chain"`
-	Certificate string `json:"certificate"`
 }
 
 type AwsOpsworksApplicationSpecAppSource struct {
-	Username string `json:"username"`
-	Password string `json:"password"`
 	Revision string `json:"revision"`
 	SshKey   string `json:"ssh_key"`
 	Type     string `json:"type"`
 	Url      string `json:"url"`
+	Username string `json:"username"`
+	Password string `json:"password"`
 }
 
 type AwsOpsworksApplicationSpecEnvironment struct {
@@ -60,7 +60,7 @@ type AwsOpsworksApplicationSpecEnvironment struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksApplicationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsOpsworksApplication `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsOpsworksApplication `json:"items"`
 }

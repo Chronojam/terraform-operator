@@ -11,20 +11,20 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsConfigConfigurationRecorderStatus struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsConfigConfigurationRecorderStatusSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsConfigConfigurationRecorderStatusSpec `json:"spec"`
 }
 
 type AwsConfigConfigurationRecorderStatusSpec struct {
-	Name      string `json:"name"`
 	IsEnabled bool   `json:"is_enabled"`
+	Name      string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsConfigConfigurationRecorderStatusList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsConfigConfigurationRecorderStatus `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsConfigConfigurationRecorderStatus `json:"items"`
 }

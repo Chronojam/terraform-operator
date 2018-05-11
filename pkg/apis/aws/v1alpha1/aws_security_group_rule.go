@@ -11,29 +11,29 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSecurityGroupRule struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSecurityGroupRuleSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSecurityGroupRuleSpec `json:"spec"`
 }
 
 type AwsSecurityGroupRuleSpec struct {
+	PrefixListIds         []string `json:"prefix_list_ids"`
+	SecurityGroupId       string   `json:"security_group_id"`
+	Self                  bool     `json:"self"`
+	Description           string   `json:"description"`
+	FromPort              int      `json:"from_port"`
 	ToPort                int      `json:"to_port"`
 	CidrBlocks            []string `json:"cidr_blocks"`
 	Ipv6CidrBlocks        []string `json:"ipv6_cidr_blocks"`
-	SourceSecurityGroupId string   `json:"source_security_group_id"`
-	Self                  bool     `json:"self"`
 	Type                  string   `json:"type"`
-	FromPort              int      `json:"from_port"`
 	Protocol              string   `json:"protocol"`
-	PrefixListIds         []string `json:"prefix_list_ids"`
-	SecurityGroupId       string   `json:"security_group_id"`
-	Description           string   `json:"description"`
+	SourceSecurityGroupId string   `json:"source_security_group_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSecurityGroupRuleList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSecurityGroupRule `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSecurityGroupRule `json:"items"`
 }

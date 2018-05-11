@@ -5,61 +5,61 @@ kind: AwsOpsworksInstance
 metadata:
   name: example-aws-opsworks-instance
 spec:
-  ec2instanceid: ""
   privatedns: ""
-  virtualizationtype: ""
-  ebsblockdevice:
-    iops: 0
-    snapshotid: ""
-    volumesize: 0
-    volumetype: ""
-    deleteontermination: false
-    devicename: ""
-  ephemeralblockdevice:
-    devicename: ""
-    virtualname: ""
-  deleteeip: false
-  ecsclusterarn: ""
-  infrastructureclass: ""
-  installupdatesonboot: false
-  reportedosname: ""
-  rootdevicevolumeid: ""
-  sshhostrsakeyfingerprint: ""
-  amiid: ""
-  availabilityzone: ""
-  createdat: ""
-  layerids: []
-  reportedosversion: ""
-  rootdevicetype: ""
-  status: ""
   tenancy: ""
-  agentversion: ""
-  ebsoptimized: false
-  os: ""
-  publicip: ""
   architecture: ""
-  registeredby: ""
-  reportedagentversion: ""
-  publicdns: ""
-  reportedosfamily: ""
-  securitygroupids: []
-  sshhostdsakeyfingerprint: ""
-  deleteebs: false
-  hostname: ""
-  platform: ""
-  privateip: ""
-  lastserviceerrorid: ""
-  sshkeyname: ""
-  stackid: ""
   autoscalingtype: ""
   elasticip: ""
-  instanceprofilearn: ""
-  instancetype: ""
-  state: ""
-  subnetid: ""
+  lastserviceerrorid: ""
+  os: ""
+  status: ""
+  virtualizationtype: ""
+  hostname: ""
+  layerids: []
+  platform: ""
+  rootdevicetype: ""
+  sshkeyname: ""
+  amiid: ""
+  ecsclusterarn: ""
+  agentversion: ""
+  deleteebs: false
+  deleteeip: false
+  registeredby: ""
+  sshhostrsakeyfingerprint: ""
+  rootdevicevolumeid: ""
+  createdat: ""
+  ebsoptimized: false
+  infrastructureclass: ""
+  publicip: ""
+  reportedosfamily: ""
   rootblockdevice:
     deleteontermination: false
     iops: 0
     volumesize: 0
     volumetype: ""
+  availabilityzone: ""
+  reportedagentversion: ""
+  state: ""
+  subnetid: ""
+  ebsblockdevice:
+    volumesize: 0
+    volumetype: ""
+    deleteontermination: false
+    devicename: ""
+    iops: 0
+    snapshotid: ""
+  stackid: ""
+  installupdatesonboot: false
+  instancetype: ""
+  publicdns: ""
+  reportedosname: ""
+  securitygroupids: []
+  ephemeralblockdevice:
+    devicename: ""
+    virtualname: ""
+  ec2instanceid: ""
+  instanceprofilearn: ""
+  privateip: ""
+  reportedosversion: ""
+  sshhostdsakeyfingerprint: ""
 

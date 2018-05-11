@@ -5,12 +5,12 @@ kind: AwsApiGatewayDeployment
 metadata:
   name: example-aws-api-gateway-deployment
 spec:
-  description: ""
-  stagedescription: ""
-  variables: {}
-  createddate: ""
   invokeurl: ""
   executionarn: ""
   restapiid: ""
   stagename: ""
+  description: ""
+  stagedescription: ""
+  variables: {}
+  createddate: ""
 

@@ -5,17 +5,17 @@ kind: AwsSesEventDestination
 metadata:
   name: example-aws-ses-event-destination
 spec:
+  name: ""
   configurationsetname: ""
   enabled: false
   matchingtypes: ""
   cloudwatchdestination:
+    valuesource: ""
     defaultvalue: ""
     dimensionname: ""
-    valuesource: ""
   kinesisdestination:
     streamarn: ""
     rolearn: ""
   snsdestination:
     topicarn: ""
-  name: ""
 

@@ -5,12 +5,12 @@ kind: AwsCodecommitTrigger
 metadata:
   name: example-aws-codecommit-trigger
 spec:
+  repositoryname: ""
+  configurationid: ""
   trigger:
+    name: ""
+    destinationarn: ""
     customdata: ""
     branches: []
     events: []
-    name: ""
-    destinationarn: ""
-  repositoryname: ""
-  configurationid: ""
 

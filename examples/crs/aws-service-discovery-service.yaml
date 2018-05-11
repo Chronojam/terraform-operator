@@ -5,10 +5,10 @@ kind: AwsServiceDiscoveryService
 metadata:
   name: example-aws-service-discovery-service
 spec:
+  name: ""
+  description: ""
   dnsconfig: []
   healthcheckconfig: []
   healthcheckcustomconfig: []
   arn: ""
-  name: ""
-  description: ""
 

@@ -5,25 +5,25 @@ kind: AwsLb
 metadata:
   name: example-aws-lb
 spec:
-  nameprefix: ""
-  zoneid: ""
-  dnsname: ""
-  tags: {}
-  arnsuffix: ""
-  name: ""
-  accesslogs: []
-  idletimeout: 0
-  internal: false
   securitygroups: ""
+  subnets: ""
+  idletimeout: 0
   enablecrosszoneloadbalancing: false
   enablehttp2: false
-  ipaddresstype: ""
-  vpcid: ""
-  arn: ""
+  zoneid: ""
+  dnsname: ""
   loadbalancertype: ""
-  enabledeletionprotection: false
-  subnets: ""
   subnetmapping:
     subnetid: ""
     allocationid: ""
+  enabledeletionprotection: false
+  arnsuffix: ""
+  internal: false
+  ipaddresstype: ""
+  tags: {}
+  arn: ""
+  nameprefix: ""
+  accesslogs: []
+  vpcid: ""
+  name: ""
 

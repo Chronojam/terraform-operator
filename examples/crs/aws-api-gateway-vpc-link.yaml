@@ -5,7 +5,7 @@ kind: AwsApiGatewayVpcLink
 metadata:
   name: example-aws-api-gateway-vpc-link
 spec:
-  name: ""
   description: ""
   targetarns: ""
+  name: ""
 

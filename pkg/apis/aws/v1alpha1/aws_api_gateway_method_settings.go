@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayMethodSettings struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsApiGatewayMethodSettingsSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsApiGatewayMethodSettingsSpec `json:"spec"`
 }
 
 type AwsApiGatewayMethodSettingsSpec struct {
@@ -24,22 +24,22 @@ type AwsApiGatewayMethodSettingsSpec struct {
 }
 
 type AwsApiGatewayMethodSettingsSpecSettings struct {
+	ThrottlingBurstLimit                   int     `json:"throttling_burst_limit"`
+	ThrottlingRateLimit                    float64 `json:"throttling_rate_limit"`
+	CacheTtlInSeconds                      int     `json:"cache_ttl_in_seconds"`
+	CacheDataEncrypted                     bool    `json:"cache_data_encrypted"`
+	RequireAuthorizationForCacheControl    bool    `json:"require_authorization_for_cache_control"`
 	UnauthorizedCacheControlHeaderStrategy string  `json:"unauthorized_cache_control_header_strategy"`
 	MetricsEnabled                         bool    `json:"metrics_enabled"`
 	LoggingLevel                           string  `json:"logging_level"`
-	CacheDataEncrypted                     bool    `json:"cache_data_encrypted"`
-	RequireAuthorizationForCacheControl    bool    `json:"require_authorization_for_cache_control"`
-	CacheTtlInSeconds                      int     `json:"cache_ttl_in_seconds"`
 	DataTraceEnabled                       bool    `json:"data_trace_enabled"`
-	ThrottlingBurstLimit                   int     `json:"throttling_burst_limit"`
-	ThrottlingRateLimit                    float64 `json:"throttling_rate_limit"`
 	CachingEnabled                         bool    `json:"caching_enabled"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayMethodSettingsList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsApiGatewayMethodSettings `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsApiGatewayMethodSettings `json:"items"`
 }

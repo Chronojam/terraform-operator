@@ -6,20 +6,20 @@ metadata:
   name: example-aws-dms-endpoint
 spec:
   endpointarn: ""
-  endpointid: ""
-  endpointtype: ""
   extraconnectionattributes: ""
-  tags: {}
+  mongodbsettings: []
   certificatearn: ""
   enginename: ""
-  kmskeyarn: ""
-  password: ""
-  sslmode: ""
-  s3settings: []
-  serviceaccessrole: ""
-  mongodbsettings: []
   databasename: ""
+  kmskeyarn: ""
   port: 0
   servername: ""
+  tags: {}
   username: ""
+  s3settings: []
+  endpointid: ""
+  serviceaccessrole: ""
+  endpointtype: ""
+  password: ""
+  sslmode: ""
 

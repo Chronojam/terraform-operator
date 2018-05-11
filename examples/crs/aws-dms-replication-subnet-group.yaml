@@ -5,10 +5,10 @@ kind: AwsDmsReplicationSubnetGroup
 metadata:
   name: example-aws-dms-replication-subnet-group
 spec:
-  vpcid: ""
   replicationsubnetgrouparn: ""
   replicationsubnetgroupdescription: ""
   replicationsubnetgroupid: ""
   subnetids: ""
   tags: {}
+  vpcid: ""
 

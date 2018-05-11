@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafregionalRuleGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsWafregionalRuleGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsWafregionalRuleGroupSpec `json:"spec"`
 }
 
 type AwsWafregionalRuleGroupSpec struct {
@@ -23,10 +23,10 @@ type AwsWafregionalRuleGroupSpec struct {
 }
 
 type AwsWafregionalRuleGroupSpecActivatedRule struct {
-	Action   []AwsWafregionalRuleGroupSpecActivatedRuleAction `json:"action"`
 	Priority int                                              `json:"priority"`
 	RuleId   string                                           `json:"rule_id"`
 	Type     string                                           `json:"type"`
+	Action   []AwsWafregionalRuleGroupSpecActivatedRuleAction `json:"action"`
 }
 
 type AwsWafregionalRuleGroupSpecActivatedRuleAction struct {
@@ -36,7 +36,7 @@ type AwsWafregionalRuleGroupSpecActivatedRuleAction struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafregionalRuleGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsWafregionalRuleGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsWafregionalRuleGroup `json:"items"`
 }

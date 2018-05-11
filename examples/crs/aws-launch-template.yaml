@@ -5,29 +5,29 @@ kind: AwsLaunchTemplate
 metadata:
   name: example-aws-launch-template
 spec:
-  instanceinitiatedshutdownbehavior: ""
-  kernelid: ""
-  placement: []
-  userdata: ""
-  nameprefix: ""
-  ebsoptimized: false
-  instancemarketoptions: []
-  keyname: ""
-  monitoring: []
-  securitygroupnames: ""
   name: ""
-  latestversion: 0
-  networkinterfaces: []
-  vpcsecuritygroupids: ""
   blockdevicemappings: []
-  iaminstanceprofile: []
   creditspecification: []
-  disableapitermination: false
+  ebsoptimized: false
   elasticgpuspecifications: []
   imageid: ""
+  instancemarketoptions: []
+  networkinterfaces: []
+  placement: []
+  instanceinitiatedshutdownbehavior: ""
   instancetype: ""
-  ramdiskid: ""
+  monitoring: []
+  userdata: ""
   description: ""
+  latestversion: 0
+  disableapitermination: false
+  iaminstanceprofile: []
+  keyname: ""
+  ramdiskid: ""
+  securitygroupnames: ""
+  nameprefix: ""
   defaultversion: 0
+  kernelid: ""
+  vpcsecuritygroupids: ""
   tagspecifications: []
 

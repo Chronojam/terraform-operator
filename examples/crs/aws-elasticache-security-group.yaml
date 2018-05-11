@@ -5,7 +5,7 @@ kind: AwsElasticacheSecurityGroup
 metadata:
   name: example-aws-elasticache-security-group
 spec:
-  securitygroupnames: ""
   description: ""
   name: ""
+  securitygroupnames: ""
 

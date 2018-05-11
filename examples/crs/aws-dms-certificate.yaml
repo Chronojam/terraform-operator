@@ -5,8 +5,8 @@ kind: AwsDmsCertificate
 metadata:
   name: example-aws-dms-certificate
 spec:
-  certificatearn: ""
-  certificateid: ""
   certificatepem: ""
   certificatewallet: ""
+  certificatearn: ""
+  certificateid: ""
 

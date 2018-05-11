@@ -5,13 +5,13 @@ kind: AwsSsmParameter
 metadata:
   name: example-aws-ssm-parameter
 spec:
-  name: ""
-  arn: ""
-  value: ""
   keyid: ""
   overwrite: false
   allowedpattern: ""
-  tags: {}
+  name: ""
   description: ""
   type: ""
+  value: ""
+  arn: ""
+  tags: {}
 

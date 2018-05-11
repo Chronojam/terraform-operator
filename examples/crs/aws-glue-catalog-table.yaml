@@ -5,16 +5,16 @@ kind: AwsGlueCatalogTable
 metadata:
   name: example-aws-glue-catalog-table
 spec:
-  parameters: {}
-  partitionkeys: []
-  retention: 0
-  storagedescriptor: []
+  owner: ""
+  tabletype: ""
   vieworiginaltext: ""
-  viewexpandedtext: ""
   catalogid: ""
   databasename: ""
   description: ""
+  retention: 0
+  storagedescriptor: []
+  viewexpandedtext: ""
   name: ""
-  owner: ""
-  tabletype: ""
+  parameters: {}
+  partitionkeys: []
 

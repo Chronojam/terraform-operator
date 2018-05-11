@@ -11,18 +11,18 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayUsagePlan struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsApiGatewayUsagePlanSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsApiGatewayUsagePlanSpec `json:"spec"`
 }
 
 type AwsApiGatewayUsagePlanSpec struct {
-	ProductCode      string                                     `json:"product_code"`
-	Name             string                                     `json:"name"`
 	Description      string                                     `json:"description"`
 	ApiStages        []AwsApiGatewayUsagePlanSpecApiStages      `json:"api_stages"`
 	QuotaSettings    AwsApiGatewayUsagePlanSpecQuotaSettings    `json:"quota_settings"`
 	ThrottleSettings AwsApiGatewayUsagePlanSpecThrottleSettings `json:"throttle_settings"`
+	ProductCode      string                                     `json:"product_code"`
+	Name             string                                     `json:"name"`
 }
 
 type AwsApiGatewayUsagePlanSpecApiStages struct {
@@ -44,7 +44,7 @@ type AwsApiGatewayUsagePlanSpecThrottleSettings struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayUsagePlanList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsApiGatewayUsagePlan `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsApiGatewayUsagePlan `json:"items"`
 }

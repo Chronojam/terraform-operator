@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAutoscalingSchedule struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAutoscalingScheduleSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAutoscalingScheduleSpec `json:"spec"`
 }
 
 type AwsAutoscalingScheduleSpec struct {
+	EndTime              string `json:"end_time"`
+	MinSize              int    `json:"min_size"`
+	MaxSize              int    `json:"max_size"`
 	Arn                  string `json:"arn"`
+	ScheduledActionName  string `json:"scheduled_action_name"`
 	AutoscalingGroupName string `json:"autoscaling_group_name"`
 	StartTime            string `json:"start_time"`
 	Recurrence           string `json:"recurrence"`
-	MinSize              int    `json:"min_size"`
-	MaxSize              int    `json:"max_size"`
-	ScheduledActionName  string `json:"scheduled_action_name"`
-	EndTime              string `json:"end_time"`
 	DesiredCapacity      int    `json:"desired_capacity"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAutoscalingScheduleList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAutoscalingSchedule `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAutoscalingSchedule `json:"items"`
 }

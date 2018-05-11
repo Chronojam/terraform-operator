@@ -5,32 +5,32 @@ kind: AwsElasticacheReplicationGroup
 metadata:
   name: example-aws-elasticache-replication-group
 spec:
-  subnetgroupname: ""
-  transitencryptionenabled: false
   parametergroupname: ""
-  autominorversionupgrade: false
-  clustermode: []
-  snapshotname: ""
-  port: 0
-  authtoken: ""
-  nodetype: ""
-  engineversion: ""
-  snapshotwindow: ""
+  subnetgroupname: ""
   applyimmediately: false
-  primaryendpointaddress: ""
-  notificationtopicarn: ""
-  replicationgroupid: ""
-  atrestencryptionenabled: false
-  maintenancewindow: ""
-  tags: {}
-  replicationgroupdescription: ""
-  numbercacheclusters: 0
   configurationendpointaddress: ""
-  availabilityzones: ""
-  securitygroupnames: ""
-  securitygroupids: ""
+  authtoken: ""
   engine: ""
+  engineversion: ""
+  securitygroupids: ""
+  notificationtopicarn: ""
+  tags: {}
+  nodetype: ""
+  securitygroupnames: ""
+  snapshotwindow: ""
+  replicationgroupid: ""
+  clustermode: []
+  availabilityzones: ""
+  maintenancewindow: ""
+  port: 0
+  snapshotname: ""
+  autominorversionupgrade: false
+  numbercacheclusters: 0
+  transitencryptionenabled: false
   snapshotarns: ""
   snapshotretentionlimit: 0
+  replicationgroupdescription: ""
+  atrestencryptionenabled: false
   automaticfailoverenabled: false
+  primaryendpointaddress: ""
 

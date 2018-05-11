@@ -11,28 +11,31 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchEventTarget struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCloudwatchEventTargetSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCloudwatchEventTargetSpec `json:"spec"`
 }
 
 type AwsCloudwatchEventTargetSpec struct {
 	Input             string                                          `json:"input"`
-	InputPath         string                                          `json:"input_path"`
-	KinesisTarget     []AwsCloudwatchEventTargetSpecKinesisTarget     `json:"kinesis_target"`
+	BatchTarget       []AwsCloudwatchEventTargetSpecBatchTarget       `json:"batch_target"`
 	SqsTarget         []AwsCloudwatchEventTargetSpecSqsTarget         `json:"sqs_target"`
 	InputTransformer  []AwsCloudwatchEventTargetSpecInputTransformer  `json:"input_transformer"`
 	Rule              string                                          `json:"rule"`
 	TargetId          string                                          `json:"target_id"`
 	Arn               string                                          `json:"arn"`
-	BatchTarget       []AwsCloudwatchEventTargetSpecBatchTarget       `json:"batch_target"`
+	EcsTarget         []AwsCloudwatchEventTargetSpecEcsTarget         `json:"ecs_target"`
+	KinesisTarget     []AwsCloudwatchEventTargetSpecKinesisTarget     `json:"kinesis_target"`
+	InputPath         string                                          `json:"input_path"`
 	RoleArn           string                                          `json:"role_arn"`
 	RunCommandTargets []AwsCloudwatchEventTargetSpecRunCommandTargets `json:"run_command_targets"`
-	EcsTarget         []AwsCloudwatchEventTargetSpecEcsTarget         `json:"ecs_target"`
 }
 
-type AwsCloudwatchEventTargetSpecKinesisTarget struct {
-	PartitionKeyPath string `json:"partition_key_path"`
+type AwsCloudwatchEventTargetSpecBatchTarget struct {
+	JobDefinition string `json:"job_definition"`
+	JobName       string `json:"job_name"`
+	ArraySize     int    `json:"array_size"`
+	JobAttempts   int    `json:"job_attempts"`
 }
 
 type AwsCloudwatchEventTargetSpecSqsTarget struct {
@@ -44,11 +47,13 @@ type AwsCloudwatchEventTargetSpecInputTransformer struct {
 	InputTemplate string            `json:"input_template"`
 }
 
-type AwsCloudwatchEventTargetSpecBatchTarget struct {
-	JobDefinition string `json:"job_definition"`
-	JobName       string `json:"job_name"`
-	ArraySize     int    `json:"array_size"`
-	JobAttempts   int    `json:"job_attempts"`
+type AwsCloudwatchEventTargetSpecEcsTarget struct {
+	TaskCount         int    `json:"task_count"`
+	TaskDefinitionArn string `json:"task_definition_arn"`
+}
+
+type AwsCloudwatchEventTargetSpecKinesisTarget struct {
+	PartitionKeyPath string `json:"partition_key_path"`
 }
 
 type AwsCloudwatchEventTargetSpecRunCommandTargets struct {
@@ -56,15 +61,10 @@ type AwsCloudwatchEventTargetSpecRunCommandTargets struct {
 	Values []string `json:"values"`
 }
 
-type AwsCloudwatchEventTargetSpecEcsTarget struct {
-	TaskCount         int    `json:"task_count"`
-	TaskDefinitionArn string `json:"task_definition_arn"`
-}
-
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchEventTargetList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCloudwatchEventTarget `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCloudwatchEventTarget `json:"items"`
 }

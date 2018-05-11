@@ -5,10 +5,10 @@ kind: AwsGlacierVault
 metadata:
   name: example-aws-glacier-vault
 spec:
-  accesspolicy: ""
-  notification: []
   tags: {}
   name: ""
   location: ""
   arn: ""
+  accesspolicy: ""
+  notification: []
 

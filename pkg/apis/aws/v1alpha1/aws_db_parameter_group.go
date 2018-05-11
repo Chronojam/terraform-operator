@@ -11,31 +11,31 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDbParameterGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDbParameterGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDbParameterGroupSpec `json:"spec"`
 }
 
 type AwsDbParameterGroupSpec struct {
-	NamePrefix  string                           `json:"name_prefix"`
-	Family      string                           `json:"family"`
-	Description string                           `json:"description"`
 	Parameter   AwsDbParameterGroupSpecParameter `json:"parameter"`
 	Tags        map[string]string                `json:"tags"`
 	Arn         string                           `json:"arn"`
 	Name        string                           `json:"name"`
+	NamePrefix  string                           `json:"name_prefix"`
+	Family      string                           `json:"family"`
+	Description string                           `json:"description"`
 }
 
 type AwsDbParameterGroupSpecParameter struct {
-	Name        string `json:"name"`
 	Value       string `json:"value"`
 	ApplyMethod string `json:"apply_method"`
+	Name        string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDbParameterGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDbParameterGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDbParameterGroup `json:"items"`
 }

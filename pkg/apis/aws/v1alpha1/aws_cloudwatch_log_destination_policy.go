@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchLogDestinationPolicy struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCloudwatchLogDestinationPolicySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCloudwatchLogDestinationPolicySpec `json:"spec"`
 }
 
 type AwsCloudwatchLogDestinationPolicySpec struct {
@@ -24,7 +24,7 @@ type AwsCloudwatchLogDestinationPolicySpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchLogDestinationPolicyList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCloudwatchLogDestinationPolicy `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCloudwatchLogDestinationPolicy `json:"items"`
 }

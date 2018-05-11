@@ -11,17 +11,17 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbListenerRule struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLbListenerRuleSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLbListenerRuleSpec `json:"spec"`
 }
 
 type AwsLbListenerRuleSpec struct {
+	Action      []AwsLbListenerRuleSpecAction  `json:"action"`
+	Condition   AwsLbListenerRuleSpecCondition `json:"condition"`
 	Arn         string                         `json:"arn"`
 	ListenerArn string                         `json:"listener_arn"`
 	Priority    int                            `json:"priority"`
-	Action      []AwsLbListenerRuleSpecAction  `json:"action"`
-	Condition   AwsLbListenerRuleSpecCondition `json:"condition"`
 }
 
 type AwsLbListenerRuleSpecAction struct {
@@ -37,7 +37,7 @@ type AwsLbListenerRuleSpecCondition struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbListenerRuleList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLbListenerRule `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLbListenerRule `json:"items"`
 }

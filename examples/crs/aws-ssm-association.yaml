@@ -5,13 +5,13 @@ kind: AwsSsmAssociation
 metadata:
   name: example-aws-ssm-association
 spec:
+  scheduleexpression: ""
+  outputlocation: []
   targets: []
-  associationname: ""
+  name: ""
   associationid: ""
   instanceid: ""
   documentversion: ""
-  scheduleexpression: ""
-  name: ""
   parameters: {}
-  outputlocation: []
+  associationname: ""
 

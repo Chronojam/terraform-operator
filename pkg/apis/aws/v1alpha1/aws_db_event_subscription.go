@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDbEventSubscription struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDbEventSubscriptionSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDbEventSubscriptionSpec `json:"spec"`
 }
 
 type AwsDbEventSubscriptionSpec struct {
-	Arn             string            `json:"arn"`
-	SnsTopic        string            `json:"sns_topic"`
 	SourceIds       string            `json:"source_ids"`
 	SourceType      string            `json:"source_type"`
-	CustomerAwsId   string            `json:"customer_aws_id"`
-	Name            string            `json:"name"`
-	EventCategories string            `json:"event_categories"`
 	Enabled         bool              `json:"enabled"`
+	CustomerAwsId   string            `json:"customer_aws_id"`
+	Arn             string            `json:"arn"`
+	Name            string            `json:"name"`
+	SnsTopic        string            `json:"sns_topic"`
+	EventCategories string            `json:"event_categories"`
 	Tags            map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDbEventSubscriptionList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDbEventSubscription `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDbEventSubscription `json:"items"`
 }

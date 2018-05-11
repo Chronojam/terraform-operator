@@ -11,14 +11,14 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayAccount struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsApiGatewayAccountSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsApiGatewayAccountSpec `json:"spec"`
 }
 
 type AwsApiGatewayAccountSpec struct {
-	CloudwatchRoleArn string                                     `json:"cloudwatch_role_arn"`
 	ThrottleSettings  []AwsApiGatewayAccountSpecThrottleSettings `json:"throttle_settings"`
+	CloudwatchRoleArn string                                     `json:"cloudwatch_role_arn"`
 }
 
 type AwsApiGatewayAccountSpecThrottleSettings struct {
@@ -29,7 +29,7 @@ type AwsApiGatewayAccountSpecThrottleSettings struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayAccountList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsApiGatewayAccount `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsApiGatewayAccount `json:"items"`
 }

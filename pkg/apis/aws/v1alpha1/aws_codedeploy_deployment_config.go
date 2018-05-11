@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCodedeployDeploymentConfig struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCodedeployDeploymentConfigSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCodedeployDeploymentConfigSpec `json:"spec"`
 }
 
 type AwsCodedeployDeploymentConfigSpec struct {
@@ -23,14 +23,14 @@ type AwsCodedeployDeploymentConfigSpec struct {
 }
 
 type AwsCodedeployDeploymentConfigSpecMinimumHealthyHosts struct {
-	Type  string `json:"type"`
 	Value int    `json:"value"`
+	Type  string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCodedeployDeploymentConfigList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCodedeployDeploymentConfig `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCodedeployDeploymentConfig `json:"items"`
 }

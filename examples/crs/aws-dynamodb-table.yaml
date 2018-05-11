@@ -5,36 +5,36 @@ kind: AwsDynamodbTable
 metadata:
   name: example-aws-dynamodb-table
 spec:
+  rangekey: ""
+  attribute:
+    name: ""
+    type: ""
+  ttl:
+    enabled: false
+    attributename: ""
   localsecondaryindex:
     name: ""
     rangekey: ""
     projectiontype: ""
     nonkeyattributes: []
-  streamviewtype: ""
-  tags: {}
-  attribute:
-    name: ""
-    type: ""
+  streamenabled: false
+  streamarn: ""
+  serversideencryption: []
+  pointintimerecovery: []
   globalsecondaryindex:
-    projectiontype: ""
     nonkeyattributes: []
     name: ""
     writecapacity: 0
     readcapacity: 0
     hashkey: ""
     rangekey: ""
-  writecapacity: 0
-  rangekey: ""
-  streamenabled: false
-  streamarn: ""
-  hashkey: ""
-  name: ""
-  readcapacity: 0
-  ttl:
-    attributename: ""
-    enabled: false
-  streamlabel: ""
-  serversideencryption: []
-  pointintimerecovery: []
+    projectiontype: ""
+  streamviewtype: ""
+  tags: {}
   arn: ""
+  name: ""
+  hashkey: ""
+  writecapacity: 0
+  readcapacity: 0
+  streamlabel: ""
 

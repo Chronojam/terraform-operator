@@ -11,25 +11,36 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAcmpcaCertificateAuthority struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAcmpcaCertificateAuthoritySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAcmpcaCertificateAuthoritySpec `json:"spec"`
 }
 
 type AwsAcmpcaCertificateAuthoritySpec struct {
+	Tags                              map[string]string                                                    `json:"tags"`
 	Arn                               string                                                               `json:"arn"`
-	CertificateAuthorityConfiguration []AwsAcmpcaCertificateAuthoritySpecCertificateAuthorityConfiguration `json:"certificate_authority_configuration"`
+	NotBefore                         string                                                               `json:"not_before"`
 	CertificateChain                  string                                                               `json:"certificate_chain"`
 	CertificateSigningRequest         string                                                               `json:"certificate_signing_request"`
 	Enabled                           bool                                                                 `json:"enabled"`
-	RevocationConfiguration           []AwsAcmpcaCertificateAuthoritySpecRevocationConfiguration           `json:"revocation_configuration"`
-	Status                            string                                                               `json:"status"`
-	Tags                              map[string]string                                                    `json:"tags"`
-	Certificate                       string                                                               `json:"certificate"`
 	NotAfter                          string                                                               `json:"not_after"`
-	NotBefore                         string                                                               `json:"not_before"`
+	RevocationConfiguration           []AwsAcmpcaCertificateAuthoritySpecRevocationConfiguration           `json:"revocation_configuration"`
 	Serial                            string                                                               `json:"serial"`
+	Certificate                       string                                                               `json:"certificate"`
+	CertificateAuthorityConfiguration []AwsAcmpcaCertificateAuthoritySpecCertificateAuthorityConfiguration `json:"certificate_authority_configuration"`
+	Status                            string                                                               `json:"status"`
 	Type                              string                                                               `json:"type"`
+}
+
+type AwsAcmpcaCertificateAuthoritySpecRevocationConfiguration struct {
+	CrlConfiguration []AwsAcmpcaCertificateAuthoritySpecRevocationConfigurationCrlConfiguration `json:"crl_configuration"`
+}
+
+type AwsAcmpcaCertificateAuthoritySpecRevocationConfigurationCrlConfiguration struct {
+	Enabled          bool   `json:"enabled"`
+	ExpirationInDays int    `json:"expiration_in_days"`
+	S3BucketName     string `json:"s3_bucket_name"`
+	CustomCname      string `json:"custom_cname"`
 }
 
 type AwsAcmpcaCertificateAuthoritySpecCertificateAuthorityConfiguration struct {
@@ -39,36 +50,25 @@ type AwsAcmpcaCertificateAuthoritySpecCertificateAuthorityConfiguration struct {
 }
 
 type AwsAcmpcaCertificateAuthoritySpecCertificateAuthorityConfigurationSubject struct {
-	Title                      string `json:"title"`
-	CommonName                 string `json:"common_name"`
-	Country                    string `json:"country"`
-	Initials                   string `json:"initials"`
-	Locality                   string `json:"locality"`
-	Organization               string `json:"organization"`
-	OrganizationalUnit         string `json:"organizational_unit"`
 	Surname                    string `json:"surname"`
-	DistinguishedNameQualifier string `json:"distinguished_name_qualifier"`
+	Title                      string `json:"title"`
+	Locality                   string `json:"locality"`
+	OrganizationalUnit         string `json:"organizational_unit"`
+	Pseudonym                  string `json:"pseudonym"`
 	GenerationQualifier        string `json:"generation_qualifier"`
 	GivenName                  string `json:"given_name"`
-	Pseudonym                  string `json:"pseudonym"`
+	Initials                   string `json:"initials"`
+	Organization               string `json:"organization"`
 	State                      string `json:"state"`
-}
-
-type AwsAcmpcaCertificateAuthoritySpecRevocationConfiguration struct {
-	CrlConfiguration []AwsAcmpcaCertificateAuthoritySpecRevocationConfigurationCrlConfiguration `json:"crl_configuration"`
-}
-
-type AwsAcmpcaCertificateAuthoritySpecRevocationConfigurationCrlConfiguration struct {
-	CustomCname      string `json:"custom_cname"`
-	Enabled          bool   `json:"enabled"`
-	ExpirationInDays int    `json:"expiration_in_days"`
-	S3BucketName     string `json:"s3_bucket_name"`
+	CommonName                 string `json:"common_name"`
+	Country                    string `json:"country"`
+	DistinguishedNameQualifier string `json:"distinguished_name_qualifier"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAcmpcaCertificateAuthorityList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAcmpcaCertificateAuthority `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAcmpcaCertificateAuthority `json:"items"`
 }

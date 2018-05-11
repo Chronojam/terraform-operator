@@ -11,22 +11,22 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbTargetGroupAttachment struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLbTargetGroupAttachmentSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLbTargetGroupAttachmentSpec `json:"spec"`
 }
 
 type AwsLbTargetGroupAttachmentSpec struct {
+	AvailabilityZone string `json:"availability_zone"`
 	TargetGroupArn   string `json:"target_group_arn"`
 	TargetId         string `json:"target_id"`
 	Port             int    `json:"port"`
-	AvailabilityZone string `json:"availability_zone"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbTargetGroupAttachmentList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLbTargetGroupAttachment `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLbTargetGroupAttachment `json:"items"`
 }

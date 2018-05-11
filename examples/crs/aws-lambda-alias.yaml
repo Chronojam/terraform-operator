@@ -5,9 +5,9 @@ kind: AwsLambdaAlias
 metadata:
   name: example-aws-lambda-alias
 spec:
-  arn: ""
-  description: ""
   functionname: ""
   functionversion: ""
   name: ""
+  arn: ""
+  description: ""
 

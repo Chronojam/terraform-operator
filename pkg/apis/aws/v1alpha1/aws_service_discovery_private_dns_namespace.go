@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsServiceDiscoveryPrivateDnsNamespace struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsServiceDiscoveryPrivateDnsNamespaceSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsServiceDiscoveryPrivateDnsNamespaceSpec `json:"spec"`
 }
 
 type AwsServiceDiscoveryPrivateDnsNamespaceSpec struct {
@@ -27,7 +27,7 @@ type AwsServiceDiscoveryPrivateDnsNamespaceSpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsServiceDiscoveryPrivateDnsNamespaceList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsServiceDiscoveryPrivateDnsNamespace `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsServiceDiscoveryPrivateDnsNamespace `json:"items"`
 }

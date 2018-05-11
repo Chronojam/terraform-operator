@@ -5,8 +5,8 @@ kind: AwsIotPolicy
 metadata:
   name: example-aws-iot-policy
 spec:
-  arn: ""
-  defaultversionid: ""
   name: ""
   policy: ""
+  arn: ""
+  defaultversionid: ""
 

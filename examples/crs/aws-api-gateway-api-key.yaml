@@ -5,8 +5,6 @@ kind: AwsApiGatewayApiKey
 metadata:
   name: example-aws-api-gateway-api-key
 spec:
-  name: ""
-  description: ""
   enabled: false
   stagekey:
     restapiid: ""
@@ -14,4 +12,6 @@ spec:
   createddate: ""
   lastupdateddate: ""
   value: ""
+  name: ""
+  description: ""
 

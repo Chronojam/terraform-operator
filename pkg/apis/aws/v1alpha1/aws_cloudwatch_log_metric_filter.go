@@ -11,16 +11,16 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchLogMetricFilter struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCloudwatchLogMetricFilterSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCloudwatchLogMetricFilterSpec `json:"spec"`
 }
 
 type AwsCloudwatchLogMetricFilterSpec struct {
-	LogGroupName         string                                                 `json:"log_group_name"`
-	MetricTransformation []AwsCloudwatchLogMetricFilterSpecMetricTransformation `json:"metric_transformation"`
 	Name                 string                                                 `json:"name"`
 	Pattern              string                                                 `json:"pattern"`
+	LogGroupName         string                                                 `json:"log_group_name"`
+	MetricTransformation []AwsCloudwatchLogMetricFilterSpecMetricTransformation `json:"metric_transformation"`
 }
 
 type AwsCloudwatchLogMetricFilterSpecMetricTransformation struct {
@@ -33,7 +33,7 @@ type AwsCloudwatchLogMetricFilterSpecMetricTransformation struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchLogMetricFilterList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCloudwatchLogMetricFilter `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCloudwatchLogMetricFilter `json:"items"`
 }

@@ -11,33 +11,33 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksNodejsAppLayer struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsOpsworksNodejsAppLayerSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsOpsworksNodejsAppLayerSpec `json:"spec"`
 }
 
 type AwsOpsworksNodejsAppLayerSpec struct {
+	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
+	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
+	InstanceShutdownTimeout  int                                    `json:"instance_shutdown_timeout"`
+	SystemPackages           string                                 `json:"system_packages"`
+	StackId                  string                                 `json:"stack_id"`
+	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
+	AutoAssignPublicIps      bool                                   `json:"auto_assign_public_ips"`
+	ElasticLoadBalancer      string                                 `json:"elastic_load_balancer"`
+	AutoHealing              bool                                   `json:"auto_healing"`
+	DrainElbOnShutdown       bool                                   `json:"drain_elb_on_shutdown"`
+	UseEbsOptimizedInstances bool                                   `json:"use_ebs_optimized_instances"`
+	EbsVolume                AwsOpsworksNodejsAppLayerSpecEbsVolume `json:"ebs_volume"`
+	CustomSetupRecipes       []string                               `json:"custom_setup_recipes"`
+	CustomConfigureRecipes   []string                               `json:"custom_configure_recipes"`
 	CustomUndeployRecipes    []string                               `json:"custom_undeploy_recipes"`
 	CustomSecurityGroupIds   string                                 `json:"custom_security_group_ids"`
-	AutoHealing              bool                                   `json:"auto_healing"`
-	InstanceShutdownTimeout  int                                    `json:"instance_shutdown_timeout"`
-	StackId                  string                                 `json:"stack_id"`
-	UseEbsOptimizedInstances bool                                   `json:"use_ebs_optimized_instances"`
-	AutoAssignPublicIps      bool                                   `json:"auto_assign_public_ips"`
-	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
-	Name                     string                                 `json:"name"`
-	NodejsVersion            string                                 `json:"nodejs_version"`
-	SystemPackages           string                                 `json:"system_packages"`
-	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
-	CustomSetupRecipes       []string                               `json:"custom_setup_recipes"`
-	CustomJson               string                                 `json:"custom_json"`
-	DrainElbOnShutdown       bool                                   `json:"drain_elb_on_shutdown"`
-	ElasticLoadBalancer      string                                 `json:"elastic_load_balancer"`
-	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
 	InstallUpdatesOnBoot     bool                                   `json:"install_updates_on_boot"`
-	EbsVolume                AwsOpsworksNodejsAppLayerSpecEbsVolume `json:"ebs_volume"`
-	CustomConfigureRecipes   []string                               `json:"custom_configure_recipes"`
+	Name                     string                                 `json:"name"`
 	CustomShutdownRecipes    []string                               `json:"custom_shutdown_recipes"`
+	CustomJson               string                                 `json:"custom_json"`
+	NodejsVersion            string                                 `json:"nodejs_version"`
 }
 
 type AwsOpsworksNodejsAppLayerSpecEbsVolume struct {
@@ -52,7 +52,7 @@ type AwsOpsworksNodejsAppLayerSpecEbsVolume struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksNodejsAppLayerList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsOpsworksNodejsAppLayer `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsOpsworksNodejsAppLayer `json:"items"`
 }

@@ -11,30 +11,30 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSnsPlatformApplication struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSnsPlatformApplicationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSnsPlatformApplicationSpec `json:"spec"`
 }
 
 type AwsSnsPlatformApplicationSpec struct {
-	EventEndpointCreatedTopicArn string `json:"event_endpoint_created_topic_arn"`
+	Arn                          string `json:"arn"`
+	EventEndpointUpdatedTopicArn string `json:"event_endpoint_updated_topic_arn"`
+	FailureFeedbackRoleArn       string `json:"failure_feedback_role_arn"`
 	EventEndpointDeletedTopicArn string `json:"event_endpoint_deleted_topic_arn"`
 	PlatformPrincipal            string `json:"platform_principal"`
-	SuccessFeedbackSampleRate    string `json:"success_feedback_sample_rate"`
-	PlatformCredential           string `json:"platform_credential"`
-	Arn                          string `json:"arn"`
-	EventDeliveryFailureTopicArn string `json:"event_delivery_failure_topic_arn"`
-	FailureFeedbackRoleArn       string `json:"failure_feedback_role_arn"`
 	SuccessFeedbackRoleArn       string `json:"success_feedback_role_arn"`
 	Name                         string `json:"name"`
 	Platform                     string `json:"platform"`
-	EventEndpointUpdatedTopicArn string `json:"event_endpoint_updated_topic_arn"`
+	PlatformCredential           string `json:"platform_credential"`
+	EventDeliveryFailureTopicArn string `json:"event_delivery_failure_topic_arn"`
+	EventEndpointCreatedTopicArn string `json:"event_endpoint_created_topic_arn"`
+	SuccessFeedbackSampleRate    string `json:"success_feedback_sample_rate"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSnsPlatformApplicationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSnsPlatformApplication `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSnsPlatformApplication `json:"items"`
 }

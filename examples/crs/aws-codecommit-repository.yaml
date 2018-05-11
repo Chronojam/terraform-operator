@@ -5,11 +5,11 @@ kind: AwsCodecommitRepository
 metadata:
   name: example-aws-codecommit-repository
 spec:
-  cloneurlssh: ""
-  defaultbranch: ""
   repositoryname: ""
   description: ""
   arn: ""
   repositoryid: ""
   cloneurlhttp: ""
+  cloneurlssh: ""
+  defaultbranch: ""
 

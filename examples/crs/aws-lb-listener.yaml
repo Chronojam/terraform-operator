@@ -5,11 +5,11 @@ kind: AwsLbListener
 metadata:
   name: example-aws-lb-listener
 spec:
-  protocol: ""
-  sslpolicy: ""
-  certificatearn: ""
   defaultaction: []
   arn: ""
   loadbalancerarn: ""
   port: 0
+  protocol: ""
+  sslpolicy: ""
+  certificatearn: ""
 

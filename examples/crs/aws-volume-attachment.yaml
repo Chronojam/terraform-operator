@@ -5,9 +5,9 @@ kind: AwsVolumeAttachment
 metadata:
   name: example-aws-volume-attachment
 spec:
+  skipdestroy: false
   devicename: ""
   instanceid: ""
   volumeid: ""
   forcedetach: false
-  skipdestroy: false
 

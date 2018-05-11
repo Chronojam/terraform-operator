@@ -5,12 +5,12 @@ kind: AwsSsmActivation
 metadata:
   name: example-aws-ssm-activation
 spec:
-  registrationcount: 0
-  activationcode: ""
-  name: ""
-  description: ""
   expired: ""
   expirationdate: ""
   iamrole: ""
   registrationlimit: 0
+  registrationcount: 0
+  activationcode: ""
+  name: ""
+  description: ""
 

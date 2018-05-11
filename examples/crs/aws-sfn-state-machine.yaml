@@ -5,9 +5,9 @@ kind: AwsSfnStateMachine
 metadata:
   name: example-aws-sfn-state-machine
 spec:
+  status: ""
+  definition: ""
   name: ""
   rolearn: ""
   creationdate: ""
-  status: ""
-  definition: ""
 

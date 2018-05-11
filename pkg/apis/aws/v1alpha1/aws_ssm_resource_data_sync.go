@@ -11,14 +11,14 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmResourceDataSync struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSsmResourceDataSyncSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSsmResourceDataSyncSpec `json:"spec"`
 }
 
 type AwsSsmResourceDataSyncSpec struct {
-	S3Destination []AwsSsmResourceDataSyncSpecS3Destination `json:"s3_destination"`
 	Name          string                                    `json:"name"`
+	S3Destination []AwsSsmResourceDataSyncSpecS3Destination `json:"s3_destination"`
 }
 
 type AwsSsmResourceDataSyncSpecS3Destination struct {
@@ -32,7 +32,7 @@ type AwsSsmResourceDataSyncSpecS3Destination struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmResourceDataSyncList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSsmResourceDataSync `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSsmResourceDataSync `json:"items"`
 }

@@ -5,7 +5,9 @@ kind: AwsNetworkInterface
 metadata:
   name: example-aws-network-interface
 spec:
-  privateip: ""
+  privatednsname: ""
+  privateips: ""
+  privateipscount: 0
   securitygroups: ""
   sourcedestcheck: false
   attachment:
@@ -13,9 +15,7 @@ spec:
     deviceindex: 0
     attachmentid: ""
   subnetid: ""
-  privateips: ""
-  privateipscount: 0
-  description: ""
+  privateip: ""
   tags: {}
-  privatednsname: ""
+  description: ""
 

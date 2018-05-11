@@ -11,29 +11,29 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsNetworkAclRule struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsNetworkAclRuleSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsNetworkAclRuleSpec `json:"spec"`
 }
 
 type AwsNetworkAclRuleSpec struct {
+	RuleNumber    int    `json:"rule_number"`
+	Protocol      string `json:"protocol"`
+	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
+	ToPort        int    `json:"to_port"`
+	NetworkAclId  string `json:"network_acl_id"`
+	Egress        bool   `json:"egress"`
+	RuleAction    string `json:"rule_action"`
 	CidrBlock     string `json:"cidr_block"`
 	FromPort      int    `json:"from_port"`
-	NetworkAclId  string `json:"network_acl_id"`
-	RuleNumber    int    `json:"rule_number"`
-	Egress        bool   `json:"egress"`
-	ToPort        int    `json:"to_port"`
 	IcmpType      string `json:"icmp_type"`
 	IcmpCode      string `json:"icmp_code"`
-	Protocol      string `json:"protocol"`
-	RuleAction    string `json:"rule_action"`
-	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsNetworkAclRuleList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsNetworkAclRule `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsNetworkAclRule `json:"items"`
 }

@@ -5,9 +5,9 @@ kind: AwsInspectorAssessmentTemplate
 metadata:
   name: example-aws-inspector-assessment-template
 spec:
+  rulespackagearns: ""
   name: ""
   targetarn: ""
   arn: ""
   duration: 0
-  rulespackagearns: ""
 

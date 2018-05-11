@@ -5,13 +5,13 @@ kind: AwsDbEventSubscription
 metadata:
   name: example-aws-db-event-subscription
 spec:
-  eventcategories: ""
   sourceids: ""
+  sourcetype: ""
+  enabled: false
   customerawsid: ""
-  tags: {}
   arn: ""
   name: ""
   snstopic: ""
-  sourcetype: ""
-  enabled: false
+  eventcategories: ""
+  tags: {}
 

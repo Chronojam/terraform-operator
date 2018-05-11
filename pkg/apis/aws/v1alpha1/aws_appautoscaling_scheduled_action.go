@@ -11,21 +11,21 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAppautoscalingScheduledAction struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAppautoscalingScheduledActionSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAppautoscalingScheduledActionSpec `json:"spec"`
 }
 
 type AwsAppautoscalingScheduledActionSpec struct {
+	ScalableDimension    string                                                     `json:"scalable_dimension"`
+	ScalableTargetAction []AwsAppautoscalingScheduledActionSpecScalableTargetAction `json:"scalable_target_action"`
 	Schedule             string                                                     `json:"schedule"`
-	StartTime            string                                                     `json:"start_time"`
+	EndTime              string                                                     `json:"end_time"`
+	Arn                  string                                                     `json:"arn"`
 	Name                 string                                                     `json:"name"`
 	ServiceNamespace     string                                                     `json:"service_namespace"`
 	ResourceId           string                                                     `json:"resource_id"`
-	ScalableDimension    string                                                     `json:"scalable_dimension"`
-	ScalableTargetAction []AwsAppautoscalingScheduledActionSpecScalableTargetAction `json:"scalable_target_action"`
-	EndTime              string                                                     `json:"end_time"`
-	Arn                  string                                                     `json:"arn"`
+	StartTime            string                                                     `json:"start_time"`
 }
 
 type AwsAppautoscalingScheduledActionSpecScalableTargetAction struct {
@@ -36,7 +36,7 @@ type AwsAppautoscalingScheduledActionSpecScalableTargetAction struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAppautoscalingScheduledActionList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAppautoscalingScheduledAction `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAppautoscalingScheduledAction `json:"items"`
 }

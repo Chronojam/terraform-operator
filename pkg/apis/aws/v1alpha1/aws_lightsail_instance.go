@@ -11,33 +11,33 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLightsailInstance struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLightsailInstanceSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLightsailInstanceSpec `json:"spec"`
 }
 
 type AwsLightsailInstanceSpec struct {
+	Name             string `json:"name"`
 	BundleId         string `json:"bundle_id"`
-	KeyPairName      string `json:"key_pair_name"`
-	Arn              string `json:"arn"`
-	CreatedAt        string `json:"created_at"`
-	CpuCount         int    `json:"cpu_count"`
+	RamSize          int    `json:"ram_size"`
 	Ipv6Address      string `json:"ipv6_address"`
 	IsStaticIp       bool   `json:"is_static_ip"`
-	PrivateIpAddress string `json:"private_ip_address"`
 	AvailabilityZone string `json:"availability_zone"`
-	RamSize          int    `json:"ram_size"`
-	Name             string `json:"name"`
 	BlueprintId      string `json:"blueprint_id"`
-	UserData         string `json:"user_data"`
+	CreatedAt        string `json:"created_at"`
+	KeyPairName      string `json:"key_pair_name"`
+	PrivateIpAddress string `json:"private_ip_address"`
 	PublicIpAddress  string `json:"public_ip_address"`
 	Username         string `json:"username"`
+	UserData         string `json:"user_data"`
+	Arn              string `json:"arn"`
+	CpuCount         int    `json:"cpu_count"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLightsailInstanceList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLightsailInstance `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLightsailInstance `json:"items"`
 }

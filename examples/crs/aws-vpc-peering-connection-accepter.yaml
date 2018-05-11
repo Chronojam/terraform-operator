@@ -6,19 +6,19 @@ metadata:
   name: example-aws-vpc-peering-connection-accepter
 spec:
   acceptstatus: ""
-  vpcid: ""
   accepter:
     allowremotevpcdnsresolution: false
     allowclassiclinktoremotevpc: false
     allowvpctoremoteclassiclink: false
-  vpcpeeringconnectionid: ""
-  autoaccept: false
-  peervpcid: ""
-  peerownerid: ""
-  peerregion: ""
   requester:
     allowremotevpcdnsresolution: false
     allowclassiclinktoremotevpc: false
     allowvpctoremoteclassiclink: false
+  peerregion: ""
   tags: {}
+  vpcpeeringconnectionid: ""
+  autoaccept: false
+  vpcid: ""
+  peervpcid: ""
+  peerownerid: ""
 

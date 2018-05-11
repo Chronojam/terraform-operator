@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRoute53Zone struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsRoute53ZoneSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsRoute53ZoneSpec `json:"spec"`
 }
 
 type AwsRoute53ZoneSpec struct {
-	Name            string            `json:"name"`
 	DelegationSetId string            `json:"delegation_set_id"`
 	NameServers     []string          `json:"name_servers"`
 	Tags            map[string]string `json:"tags"`
-	ForceDestroy    bool              `json:"force_destroy"`
+	Name            string            `json:"name"`
 	Comment         string            `json:"comment"`
 	VpcId           string            `json:"vpc_id"`
-	VpcRegion       string            `json:"vpc_region"`
 	ZoneId          string            `json:"zone_id"`
+	VpcRegion       string            `json:"vpc_region"`
+	ForceDestroy    bool              `json:"force_destroy"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRoute53ZoneList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsRoute53Zone `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsRoute53Zone `json:"items"`
 }

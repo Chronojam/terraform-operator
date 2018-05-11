@@ -11,44 +11,44 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsBatchComputeEnvironment struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsBatchComputeEnvironmentSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsBatchComputeEnvironmentSpec `json:"spec"`
 }
 
 type AwsBatchComputeEnvironmentSpec struct {
-	EccClusterArn          string                                           `json:"ecc_cluster_arn"`
+	ComputeEnvironmentName string                                           `json:"compute_environment_name"`
+	State                  string                                           `json:"state"`
+	Type                   string                                           `json:"type"`
+	StatusReason           string                                           `json:"status_reason"`
 	EcsClusterArn          string                                           `json:"ecs_cluster_arn"`
 	Status                 string                                           `json:"status"`
-	State                  string                                           `json:"state"`
 	ComputeResources       []AwsBatchComputeEnvironmentSpecComputeResources `json:"compute_resources"`
 	ServiceRole            string                                           `json:"service_role"`
-	Type                   string                                           `json:"type"`
 	Arn                    string                                           `json:"arn"`
-	StatusReason           string                                           `json:"status_reason"`
-	ComputeEnvironmentName string                                           `json:"compute_environment_name"`
+	EccClusterArn          string                                           `json:"ecc_cluster_arn"`
 }
 
 type AwsBatchComputeEnvironmentSpecComputeResources struct {
+	Tags             map[string]string `json:"tags"`
 	BidPercentage    int               `json:"bid_percentage"`
 	DesiredVcpus     int               `json:"desired_vcpus"`
 	Ec2KeyPair       string            `json:"ec2_key_pair"`
-	InstanceType     string            `json:"instance_type"`
-	MinVcpus         int               `json:"min_vcpus"`
-	SecurityGroupIds string            `json:"security_group_ids"`
-	Type             string            `json:"type"`
 	ImageId          string            `json:"image_id"`
-	InstanceRole     string            `json:"instance_role"`
 	MaxVcpus         int               `json:"max_vcpus"`
-	SpotIamFleetRole string            `json:"spot_iam_fleet_role"`
+	MinVcpus         int               `json:"min_vcpus"`
 	Subnets          string            `json:"subnets"`
-	Tags             map[string]string `json:"tags"`
+	Type             string            `json:"type"`
+	InstanceRole     string            `json:"instance_role"`
+	InstanceType     string            `json:"instance_type"`
+	SecurityGroupIds string            `json:"security_group_ids"`
+	SpotIamFleetRole string            `json:"spot_iam_fleet_role"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsBatchComputeEnvironmentList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsBatchComputeEnvironment `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsBatchComputeEnvironment `json:"items"`
 }

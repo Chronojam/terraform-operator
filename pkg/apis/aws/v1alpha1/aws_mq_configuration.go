@@ -11,25 +11,25 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsMqConfiguration struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsMqConfigurationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsMqConfigurationSpec `json:"spec"`
 }
 
 type AwsMqConfigurationSpec struct {
+	Name           string `json:"name"`
+	LatestRevision int    `json:"latest_revision"`
+	Arn            string `json:"arn"`
 	Data           string `json:"data"`
 	Description    string `json:"description"`
 	EngineType     string `json:"engine_type"`
 	EngineVersion  string `json:"engine_version"`
-	Name           string `json:"name"`
-	LatestRevision int    `json:"latest_revision"`
-	Arn            string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsMqConfigurationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsMqConfiguration `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsMqConfiguration `json:"items"`
 }

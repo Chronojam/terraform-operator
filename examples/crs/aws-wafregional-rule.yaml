@@ -5,10 +5,10 @@ kind: AwsWafregionalRule
 metadata:
   name: example-aws-wafregional-rule
 spec:
+  name: ""
   metricname: ""
   predicate:
     negated: false
     dataid: ""
     type: ""
-  name: ""
 

@@ -5,14 +5,14 @@ kind: AwsEip
 metadata:
   name: example-aws-eip
 spec:
-  networkinterface: ""
-  allocationid: ""
-  publicip: ""
   privateip: ""
+  vpc: false
+  allocationid: ""
+  associationid: ""
+  publicip: ""
   associatewithprivateip: ""
   tags: {}
-  vpc: false
   instance: ""
-  associationid: ""
+  networkinterface: ""
   domain: ""
 

@@ -5,6 +5,6 @@ kind: AwsOrganizationsPolicyAttachment
 metadata:
   name: example-aws-organizations-policy-attachment
 spec:
-  policyid: ""
   targetid: ""
+  policyid: ""
 

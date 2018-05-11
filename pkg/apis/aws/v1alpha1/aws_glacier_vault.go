@@ -11,18 +11,18 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsGlacierVault struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsGlacierVaultSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsGlacierVaultSpec `json:"spec"`
 }
 
 type AwsGlacierVaultSpec struct {
-	AccessPolicy string                            `json:"access_policy"`
-	Notification []AwsGlacierVaultSpecNotification `json:"notification"`
 	Tags         map[string]string                 `json:"tags"`
 	Name         string                            `json:"name"`
 	Location     string                            `json:"location"`
 	Arn          string                            `json:"arn"`
+	AccessPolicy string                            `json:"access_policy"`
+	Notification []AwsGlacierVaultSpecNotification `json:"notification"`
 }
 
 type AwsGlacierVaultSpecNotification struct {
@@ -33,7 +33,7 @@ type AwsGlacierVaultSpecNotification struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsGlacierVaultList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsGlacierVault `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsGlacierVault `json:"items"`
 }

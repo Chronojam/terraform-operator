@@ -11,15 +11,15 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElasticBeanstalkApplication struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsElasticBeanstalkApplicationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsElasticBeanstalkApplicationSpec `json:"spec"`
 }
 
 type AwsElasticBeanstalkApplicationSpec struct {
+	Name                string                                                  `json:"name"`
 	Description         string                                                  `json:"description"`
 	AppversionLifecycle []AwsElasticBeanstalkApplicationSpecAppversionLifecycle `json:"appversion_lifecycle"`
-	Name                string                                                  `json:"name"`
 }
 
 type AwsElasticBeanstalkApplicationSpecAppversionLifecycle struct {
@@ -32,7 +32,7 @@ type AwsElasticBeanstalkApplicationSpecAppversionLifecycle struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElasticBeanstalkApplicationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsElasticBeanstalkApplication `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsElasticBeanstalkApplication `json:"items"`
 }

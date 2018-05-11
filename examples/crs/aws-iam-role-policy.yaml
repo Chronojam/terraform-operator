@@ -5,8 +5,8 @@ kind: AwsIamRolePolicy
 metadata:
   name: example-aws-iam-role-policy
 spec:
-  policy: ""
   name: ""
   nameprefix: ""
   role: ""
+  policy: ""
 

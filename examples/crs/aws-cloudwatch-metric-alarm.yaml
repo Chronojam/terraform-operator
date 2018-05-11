@@ -5,23 +5,23 @@ kind: AwsCloudwatchMetricAlarm
 metadata:
   name: example-aws-cloudwatch-metric-alarm
 spec:
+  treatmissingdata: ""
+  evaluatelowsamplecountpercentiles: ""
+  threshold: 0
+  dimensions: {}
+  extendedstatistic: ""
+  namespace: ""
   insufficientdataactions: ""
+  alarmdescription: ""
+  datapointstoalarm: 0
+  okactions: ""
+  comparisonoperator: ""
+  alarmactions: ""
+  metricname: ""
+  period: 0
+  statistic: ""
+  actionsenabled: false
   unit: ""
   alarmname: ""
   evaluationperiods: 0
-  metricname: ""
-  period: 0
-  dimensions: {}
-  threshold: 0
-  alarmactions: ""
-  alarmdescription: ""
-  okactions: ""
-  extendedstatistic: ""
-  namespace: ""
-  datapointstoalarm: 0
-  treatmissingdata: ""
-  comparisonoperator: ""
-  statistic: ""
-  actionsenabled: false
-  evaluatelowsamplecountpercentiles: ""
 

@@ -5,19 +5,19 @@ kind: AwsVpc
 metadata:
   name: example-aws-vpc
 spec:
-  defaultnetworkaclid: ""
-  instancetenancy: ""
   enableclassiclink: false
-  tags: {}
-  cidrblock: ""
-  enablednshostnames: false
   mainroutetableid: ""
-  defaultsecuritygroupid: ""
-  ipv6associationid: ""
-  enablednssupport: false
-  assigngeneratedipv6cidrblock: false
+  dhcpoptionsid: ""
+  defaultnetworkaclid: ""
   defaultroutetableid: ""
   ipv6cidrblock: ""
+  tags: {}
+  cidrblock: ""
+  instancetenancy: ""
   enableclassiclinkdnssupport: false
-  dhcpoptionsid: ""
+  assigngeneratedipv6cidrblock: false
+  enablednssupport: false
+  enablednshostnames: false
+  defaultsecuritygroupid: ""
+  ipv6associationid: ""
 

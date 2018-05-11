@@ -11,53 +11,53 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElasticBeanstalkEnvironment struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsElasticBeanstalkEnvironmentSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsElasticBeanstalkEnvironmentSpec `json:"spec"`
 }
 
 type AwsElasticBeanstalkEnvironmentSpec struct {
-	Description          string                                        `json:"description"`
-	SolutionStackName    string                                        `json:"solution_stack_name"`
-	AutoscalingGroups    []string                                      `json:"autoscaling_groups"`
+	Triggers             []string                                      `json:"triggers"`
 	Tags                 map[string]string                             `json:"tags"`
 	Arn                  string                                        `json:"arn"`
-	Application          string                                        `json:"application"`
-	PollInterval         string                                        `json:"poll_interval"`
+	SolutionStackName    string                                        `json:"solution_stack_name"`
 	LaunchConfigurations []string                                      `json:"launch_configurations"`
-	LoadBalancers        []string                                      `json:"load_balancers"`
+	CnamePrefix          string                                        `json:"cname_prefix"`
 	Queues               []string                                      `json:"queues"`
-	WaitForReadyTimeout  string                                        `json:"wait_for_ready_timeout"`
-	Instances            []string                                      `json:"instances"`
 	Name                 string                                        `json:"name"`
+	Application          string                                        `json:"application"`
+	Description          string                                        `json:"description"`
+	PollInterval         string                                        `json:"poll_interval"`
+	AutoscalingGroups    []string                                      `json:"autoscaling_groups"`
+	Instances            []string                                      `json:"instances"`
+	Setting              AwsElasticBeanstalkEnvironmentSpecSetting     `json:"setting"`
+	TemplateName         string                                        `json:"template_name"`
+	WaitForReadyTimeout  string                                        `json:"wait_for_ready_timeout"`
+	AllSettings          AwsElasticBeanstalkEnvironmentSpecAllSettings `json:"all_settings"`
+	LoadBalancers        []string                                      `json:"load_balancers"`
 	VersionLabel         string                                        `json:"version_label"`
 	Cname                string                                        `json:"cname"`
-	CnamePrefix          string                                        `json:"cname_prefix"`
-	AllSettings          AwsElasticBeanstalkEnvironmentSpecAllSettings `json:"all_settings"`
-	TemplateName         string                                        `json:"template_name"`
-	Triggers             []string                                      `json:"triggers"`
 	Tier                 string                                        `json:"tier"`
-	Setting              AwsElasticBeanstalkEnvironmentSpecSetting     `json:"setting"`
-}
-
-type AwsElasticBeanstalkEnvironmentSpecAllSettings struct {
-	Value     string `json:"value"`
-	Resource  string `json:"resource"`
-	Namespace string `json:"namespace"`
-	Name      string `json:"name"`
 }
 
 type AwsElasticBeanstalkEnvironmentSpecSetting struct {
+	Namespace string `json:"namespace"`
+	Name      string `json:"name"`
+	Value     string `json:"value"`
+	Resource  string `json:"resource"`
+}
+
+type AwsElasticBeanstalkEnvironmentSpecAllSettings struct {
+	Name      string `json:"name"`
 	Value     string `json:"value"`
 	Resource  string `json:"resource"`
 	Namespace string `json:"namespace"`
-	Name      string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElasticBeanstalkEnvironmentList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsElasticBeanstalkEnvironment `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsElasticBeanstalkEnvironment `json:"items"`
 }

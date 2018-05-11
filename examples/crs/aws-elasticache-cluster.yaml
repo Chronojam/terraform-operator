@@ -5,29 +5,29 @@ kind: AwsElasticacheCluster
 metadata:
   name: example-aws-elasticache-cluster
 spec:
-  securitygroupnames: ""
-  maintenancewindow: ""
-  tags: {}
-  configurationendpoint: ""
-  cachenodes: []
-  engineversion: ""
-  snapshotarns: ""
-  snapshotwindow: ""
   snapshotname: ""
-  port: 0
   notificationtopicarn: ""
-  numcachenodes: 0
-  subnetgroupname: ""
-  snapshotretentionlimit: 0
-  applyimmediately: false
+  cachenodes: []
   azmode: ""
-  clusteraddress: ""
-  replicationgroupid: ""
-  availabilityzones: ""
   nodetype: ""
   engine: ""
-  parametergroupname: ""
   securitygroupids: ""
-  clusterid: ""
+  snapshotarns: ""
+  snapshotwindow: ""
+  maintenancewindow: ""
+  tags: {}
+  replicationgroupid: ""
+  subnetgroupname: ""
+  securitygroupnames: ""
+  port: 0
+  snapshotretentionlimit: 0
+  applyimmediately: false
   availabilityzone: ""
+  clusteraddress: ""
+  availabilityzones: ""
+  engineversion: ""
+  parametergroupname: ""
+  clusterid: ""
+  numcachenodes: 0
+  configurationendpoint: ""
 

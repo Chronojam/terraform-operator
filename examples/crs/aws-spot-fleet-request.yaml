@@ -5,52 +5,52 @@ kind: AwsSpotFleetRequest
 metadata:
   name: example-aws-spot-fleet-request
 spec:
-  replaceunhealthyinstances: false
-  clienttoken: ""
-  spotprice: ""
-  spotrequeststate: ""
+  iamfleetrole: ""
+  allocationstrategy: ""
   launchspecification:
+    vpcsecuritygroupids: ""
+    ephemeralblockdevice:
+      devicename: ""
+      virtualname: ""
+    placementtenancy: ""
+    ami: ""
+    instancetype: ""
+    placementgroup: ""
+    availabilityzone: ""
+    associatepublicipaddress: false
+    ebsblockdevice:
+      devicename: ""
+      encrypted: false
+      iops: 0
+      snapshotid: ""
+      volumesize: 0
+      volumetype: ""
+      deleteontermination: false
+    iaminstanceprofile: ""
+    weightedcapacity: ""
+    subnetid: ""
+    tags: {}
+    ebsoptimized: false
+    keyname: ""
+    userdata: ""
     rootblockdevice:
       deleteontermination: false
       iops: 0
       volumesize: 0
       volumetype: ""
     monitoring: false
-    availabilityzone: ""
-    vpcsecuritygroupids: ""
-    iaminstanceprofile: ""
-    weightedcapacity: ""
-    keyname: ""
     spotprice: ""
-    subnetid: ""
-    ephemeralblockdevice:
-      devicename: ""
-      virtualname: ""
-    ebsoptimized: false
-    ami: ""
-    placementgroup: ""
-    placementtenancy: ""
-    userdata: ""
-    tags: {}
-    associatepublicipaddress: false
-    ebsblockdevice:
-      snapshotid: ""
-      volumesize: 0
-      volumetype: ""
-      deleteontermination: false
-      devicename: ""
-      encrypted: false
-      iops: 0
-    instancetype: ""
-  targetcapacity: 0
-  allocationstrategy: ""
   excesscapacityterminationpolicy: ""
-  iamfleetrole: ""
-  terminateinstanceswithexpiration: false
-  validuntil: ""
-  loadbalancers: ""
-  waitforfulfillment: false
-  instanceinterruptionbehaviour: ""
+  spotprice: ""
   validfrom: ""
+  validuntil: ""
+  spotrequeststate: ""
+  replaceunhealthyinstances: false
+  waitforfulfillment: false
+  targetcapacity: 0
+  clienttoken: ""
+  loadbalancers: ""
+  instanceinterruptionbehaviour: ""
+  terminateinstanceswithexpiration: false
   targetgrouparns: ""
 

@@ -11,23 +11,23 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLambdaAlias struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLambdaAliasSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLambdaAliasSpec `json:"spec"`
 }
 
 type AwsLambdaAliasSpec struct {
-	Description     string `json:"description"`
 	FunctionName    string `json:"function_name"`
 	FunctionVersion string `json:"function_version"`
 	Name            string `json:"name"`
 	Arn             string `json:"arn"`
+	Description     string `json:"description"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLambdaAliasList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLambdaAlias `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLambdaAlias `json:"items"`
 }

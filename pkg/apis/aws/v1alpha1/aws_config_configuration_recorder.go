@@ -11,15 +11,15 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsConfigConfigurationRecorder struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsConfigConfigurationRecorderSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsConfigConfigurationRecorderSpec `json:"spec"`
 }
 
 type AwsConfigConfigurationRecorderSpec struct {
-	RecordingGroup []AwsConfigConfigurationRecorderSpecRecordingGroup `json:"recording_group"`
 	Name           string                                             `json:"name"`
 	RoleArn        string                                             `json:"role_arn"`
+	RecordingGroup []AwsConfigConfigurationRecorderSpecRecordingGroup `json:"recording_group"`
 }
 
 type AwsConfigConfigurationRecorderSpecRecordingGroup struct {
@@ -31,7 +31,7 @@ type AwsConfigConfigurationRecorderSpecRecordingGroup struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsConfigConfigurationRecorderList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsConfigConfigurationRecorder `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsConfigConfigurationRecorder `json:"items"`
 }

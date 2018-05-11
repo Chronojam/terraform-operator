@@ -11,21 +11,21 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSesDomainIdentity struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSesDomainIdentitySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSesDomainIdentitySpec `json:"spec"`
 }
 
 type AwsSesDomainIdentitySpec struct {
-	VerificationToken string `json:"verification_token"`
 	Arn               string `json:"arn"`
 	Domain            string `json:"domain"`
+	VerificationToken string `json:"verification_token"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSesDomainIdentityList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSesDomainIdentity `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSesDomainIdentity `json:"items"`
 }

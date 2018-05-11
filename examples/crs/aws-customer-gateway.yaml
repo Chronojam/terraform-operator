@@ -5,8 +5,8 @@ kind: AwsCustomerGateway
 metadata:
   name: example-aws-customer-gateway
 spec:
-  bgpasn: 0
-  ipaddress: ""
   type: ""
   tags: {}
+  bgpasn: 0
+  ipaddress: ""
 

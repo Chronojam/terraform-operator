@@ -5,17 +5,17 @@ kind: AwsDefaultRouteTable
 metadata:
   name: example-aws-default-route-table
 spec:
+  tags: {}
   defaultroutetableid: ""
   vpcid: ""
   propagatingvgws: ""
   route:
+    instanceid: ""
+    natgatewayid: ""
     vpcpeeringconnectionid: ""
     networkinterfaceid: ""
     cidrblock: ""
     ipv6cidrblock: ""
     egressonlygatewayid: ""
     gatewayid: ""
-    instanceid: ""
-    natgatewayid: ""
-  tags: {}
 

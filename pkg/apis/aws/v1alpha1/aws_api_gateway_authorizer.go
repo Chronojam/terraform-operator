@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayAuthorizer struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsApiGatewayAuthorizerSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsApiGatewayAuthorizerSpec `json:"spec"`
 }
 
 type AwsApiGatewayAuthorizerSpec struct {
 	IdentitySource               string `json:"identity_source"`
 	Name                         string `json:"name"`
+	Type                         string `json:"type"`
+	AuthorizerUri                string `json:"authorizer_uri"`
+	RestApiId                    string `json:"rest_api_id"`
+	AuthorizerCredentials        string `json:"authorizer_credentials"`
 	AuthorizerResultTtlInSeconds int    `json:"authorizer_result_ttl_in_seconds"`
 	IdentityValidationExpression string `json:"identity_validation_expression"`
 	ProviderArns                 string `json:"provider_arns"`
-	AuthorizerUri                string `json:"authorizer_uri"`
-	Type                         string `json:"type"`
-	AuthorizerCredentials        string `json:"authorizer_credentials"`
-	RestApiId                    string `json:"rest_api_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayAuthorizerList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsApiGatewayAuthorizer `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsApiGatewayAuthorizer `json:"items"`
 }

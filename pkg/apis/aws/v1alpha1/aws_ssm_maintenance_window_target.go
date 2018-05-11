@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmMaintenanceWindowTarget struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSsmMaintenanceWindowTargetSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSsmMaintenanceWindowTargetSpec `json:"spec"`
 }
 
 type AwsSsmMaintenanceWindowTargetSpec struct {
@@ -31,7 +31,7 @@ type AwsSsmMaintenanceWindowTargetSpecTargets struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmMaintenanceWindowTargetList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSsmMaintenanceWindowTarget `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSsmMaintenanceWindowTarget `json:"items"`
 }

@@ -11,13 +11,12 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDefaultSubnet struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDefaultSubnetSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDefaultSubnetSpec `json:"spec"`
 }
 
 type AwsDefaultSubnetSpec struct {
-	VpcId                       string            `json:"vpc_id"`
 	CidrBlock                   string            `json:"cidr_block"`
 	Ipv6CidrBlock               string            `json:"ipv6_cidr_block"`
 	AvailabilityZone            string            `json:"availability_zone"`
@@ -25,12 +24,13 @@ type AwsDefaultSubnetSpec struct {
 	AssignIpv6AddressOnCreation bool              `json:"assign_ipv6_address_on_creation"`
 	Ipv6CidrBlockAssociationId  string            `json:"ipv6_cidr_block_association_id"`
 	Tags                        map[string]string `json:"tags"`
+	VpcId                       string            `json:"vpc_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDefaultSubnetList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDefaultSubnet `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDefaultSubnet `json:"items"`
 }

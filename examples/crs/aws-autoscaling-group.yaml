@@ -5,43 +5,43 @@ kind: AwsAutoscalingGroup
 metadata:
   name: example-aws-autoscaling-group
 spec:
-  healthcheckgraceperiod: 0
+  vpczoneidentifier: ""
+  suspendedprocesses: ""
+  protectfromscalein: false
   initiallifecyclehook:
+    name: ""
+    defaultresult: ""
+    heartbeattimeout: 0
     lifecycletransition: ""
     notificationmetadata: ""
     notificationtargetarn: ""
     rolearn: ""
-    name: ""
-    defaultresult: ""
-    heartbeattimeout: 0
-  minelbcapacity: 0
-  terminationpolicies: []
-  suspendedprocesses: ""
+  minsize: 0
+  availabilityzones: ""
+  desiredcapacity: 0
+  forcedelete: false
+  loadbalancers: ""
+  targetgrouparns: ""
+  launchconfiguration: ""
   maxsize: 0
-  waitforcapacitytimeout: ""
+  servicelinkedrolearn: ""
+  metricsgranularity: ""
   arn: ""
+  tags: []
+  name: ""
+  placementgroup: ""
+  waitforcapacitytimeout: ""
+  waitforelbcapacity: 0
   tag:
+    propagateatlaunch: false
     key: ""
     value: ""
-    propagateatlaunch: false
-  minsize: 0
-  loadbalancers: ""
+  minelbcapacity: 0
+  healthchecktype: ""
+  nameprefix: ""
+  healthcheckgraceperiod: 0
+  terminationpolicies: []
   enabledmetrics: ""
-  servicelinkedrolearn: ""
-  desiredcapacity: 0
-  metricsgranularity: ""
-  name: ""
-  launchconfiguration: ""
   launchtemplate: []
   defaultcooldown: 0
-  healthchecktype: ""
-  targetgrouparns: ""
-  vpczoneidentifier: ""
-  protectfromscalein: false
-  nameprefix: ""
-  forcedelete: false
-  availabilityzones: ""
-  placementgroup: ""
-  waitforelbcapacity: 0
-  tags: []
 

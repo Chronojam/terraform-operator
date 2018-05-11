@@ -11,29 +11,29 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDaxCluster struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDaxClusterSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDaxClusterSpec `json:"spec"`
 }
 
 type AwsDaxClusterSpec struct {
-	IamRoleArn            string                   `json:"iam_role_arn"`
-	Description           string                   `json:"description"`
-	SecurityGroupIds      string                   `json:"security_group_ids"`
-	Tags                  map[string]string        `json:"tags"`
-	Port                  int                      `json:"port"`
-	Nodes                 []AwsDaxClusterSpecNodes `json:"nodes"`
-	Arn                   string                   `json:"arn"`
-	ReplicationFactor     int                      `json:"replication_factor"`
-	MaintenanceWindow     string                   `json:"maintenance_window"`
-	ClusterAddress        string                   `json:"cluster_address"`
 	ClusterName           string                   `json:"cluster_name"`
 	NodeType              string                   `json:"node_type"`
 	AvailabilityZones     string                   `json:"availability_zones"`
-	NotificationTopicArn  string                   `json:"notification_topic_arn"`
-	ParameterGroupName    string                   `json:"parameter_group_name"`
+	Description           string                   `json:"description"`
+	Port                  int                      `json:"port"`
+	Nodes                 []AwsDaxClusterSpecNodes `json:"nodes"`
+	ReplicationFactor     int                      `json:"replication_factor"`
 	SubnetGroupName       string                   `json:"subnet_group_name"`
+	ParameterGroupName    string                   `json:"parameter_group_name"`
 	ConfigurationEndpoint string                   `json:"configuration_endpoint"`
+	ClusterAddress        string                   `json:"cluster_address"`
+	Arn                   string                   `json:"arn"`
+	IamRoleArn            string                   `json:"iam_role_arn"`
+	NotificationTopicArn  string                   `json:"notification_topic_arn"`
+	MaintenanceWindow     string                   `json:"maintenance_window"`
+	SecurityGroupIds      string                   `json:"security_group_ids"`
+	Tags                  map[string]string        `json:"tags"`
 }
 
 type AwsDaxClusterSpecNodes struct {
@@ -46,7 +46,7 @@ type AwsDaxClusterSpecNodes struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDaxClusterList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDaxCluster `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDaxCluster `json:"items"`
 }

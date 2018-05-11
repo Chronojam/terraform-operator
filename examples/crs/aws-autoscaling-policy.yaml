@@ -5,20 +5,20 @@ kind: AwsAutoscalingPolicy
 metadata:
   name: example-aws-autoscaling-policy
 spec:
-  estimatedinstancewarmup: 0
   metricaggregationtype: ""
-  stepadjustment:
-    scalingadjustment: 0
-    metricintervallowerbound: ""
-    metricintervalupperbound: ""
+  minadjustmentmagnitude: 0
+  minadjustmentstep: 0
   arn: ""
   adjustmenttype: ""
   autoscalinggroupname: ""
-  minadjustmentmagnitude: 0
-  minadjustmentstep: 0
-  scalingadjustment: 0
-  targettrackingconfiguration: []
+  cooldown: 0
+  estimatedinstancewarmup: 0
+  stepadjustment:
+    metricintervalupperbound: ""
+    scalingadjustment: 0
+    metricintervallowerbound: ""
   name: ""
   policytype: ""
-  cooldown: 0
+  scalingadjustment: 0
+  targettrackingconfiguration: []
 

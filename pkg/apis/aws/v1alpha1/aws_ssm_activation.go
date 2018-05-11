@@ -11,13 +11,12 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmActivation struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSsmActivationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSsmActivationSpec `json:"spec"`
 }
 
 type AwsSsmActivationSpec struct {
-	Description       string `json:"description"`
 	Expired           string `json:"expired"`
 	ExpirationDate    string `json:"expiration_date"`
 	IamRole           string `json:"iam_role"`
@@ -25,12 +24,13 @@ type AwsSsmActivationSpec struct {
 	RegistrationCount int    `json:"registration_count"`
 	ActivationCode    string `json:"activation_code"`
 	Name              string `json:"name"`
+	Description       string `json:"description"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmActivationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSsmActivation `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSsmActivation `json:"items"`
 }

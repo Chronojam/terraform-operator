@@ -11,22 +11,22 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLightsailStaticIp struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLightsailStaticIpSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLightsailStaticIpSpec `json:"spec"`
 }
 
 type AwsLightsailStaticIpSpec struct {
-	Name        string `json:"name"`
-	IpAddress   string `json:"ip_address"`
 	Arn         string `json:"arn"`
 	SupportCode string `json:"support_code"`
+	Name        string `json:"name"`
+	IpAddress   string `json:"ip_address"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLightsailStaticIpList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLightsailStaticIp `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLightsailStaticIp `json:"items"`
 }

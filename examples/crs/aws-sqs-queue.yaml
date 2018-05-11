@@ -6,18 +6,18 @@ metadata:
   name: example-aws-sqs-queue
 spec:
   nameprefix: ""
-  messageretentionseconds: 0
-  visibilitytimeoutseconds: 0
-  name: ""
-  arn: ""
-  kmsdatakeyreuseperiodseconds: 0
-  delayseconds: 0
-  redrivepolicy: ""
-  kmsmasterkeyid: ""
-  contentbaseddeduplication: false
-  tags: {}
-  maxmessagesize: 0
-  receivewaittimeseconds: 0
   policy: ""
+  kmsmasterkeyid: ""
+  delayseconds: 0
+  maxmessagesize: 0
+  arn: ""
+  receivewaittimeseconds: 0
+  visibilitytimeoutseconds: 0
+  contentbaseddeduplication: false
+  kmsdatakeyreuseperiodseconds: 0
+  tags: {}
+  name: ""
+  messageretentionseconds: 0
+  redrivepolicy: ""
   fifoqueue: false
 

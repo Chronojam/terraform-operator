@@ -11,17 +11,17 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCodepipeline struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCodepipelineSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCodepipelineSpec `json:"spec"`
 }
 
 type AwsCodepipelineSpec struct {
+	Name          string                             `json:"name"`
+	RoleArn       string                             `json:"role_arn"`
 	ArtifactStore []AwsCodepipelineSpecArtifactStore `json:"artifact_store"`
 	Stage         []AwsCodepipelineSpecStage         `json:"stage"`
 	Arn           string                             `json:"arn"`
-	Name          string                             `json:"name"`
-	RoleArn       string                             `json:"role_arn"`
 }
 
 type AwsCodepipelineSpecArtifactStore struct {
@@ -43,20 +43,20 @@ type AwsCodepipelineSpecStage struct {
 type AwsCodepipelineSpecStageAction struct {
 	Category        string            `json:"category"`
 	Version         string            `json:"version"`
+	Name            string            `json:"name"`
+	Configuration   map[string]string `json:"configuration"`
+	Provider        string            `json:"provider"`
 	InputArtifacts  []string          `json:"input_artifacts"`
 	OutputArtifacts []string          `json:"output_artifacts"`
-	RunOrder        int               `json:"run_order"`
-	Configuration   map[string]string `json:"configuration"`
-	Owner           string            `json:"owner"`
-	Provider        string            `json:"provider"`
-	Name            string            `json:"name"`
 	RoleArn         string            `json:"role_arn"`
+	RunOrder        int               `json:"run_order"`
+	Owner           string            `json:"owner"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCodepipelineList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCodepipeline `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCodepipeline `json:"items"`
 }

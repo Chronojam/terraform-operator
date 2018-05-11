@@ -5,19 +5,19 @@ kind: AwsDirectoryServiceDirectory
 metadata:
   name: example-aws-directory-service-directory
 spec:
-  shortname: ""
-  type: ""
-  edition: ""
-  alias: ""
-  size: ""
-  tags: {}
-  enablesso: false
-  accessurl: ""
   name: ""
+  password: ""
+  description: ""
+  alias: ""
+  securitygroupid: ""
+  edition: ""
+  type: ""
+  size: ""
+  shortname: ""
+  tags: {}
   vpcsettings: []
   connectsettings: []
-  securitygroupid: ""
-  description: ""
+  enablesso: false
+  accessurl: ""
   dnsipaddresses: ""
-  password: ""
 

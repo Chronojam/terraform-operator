@@ -11,23 +11,23 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIamUser struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsIamUserSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsIamUserSpec `json:"spec"`
 }
 
 type AwsIamUserSpec struct {
-	Arn          string `json:"arn"`
-	UniqueId     string `json:"unique_id"`
 	Name         string `json:"name"`
 	Path         string `json:"path"`
 	ForceDestroy bool   `json:"force_destroy"`
+	Arn          string `json:"arn"`
+	UniqueId     string `json:"unique_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIamUserList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsIamUser `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsIamUser `json:"items"`
 }

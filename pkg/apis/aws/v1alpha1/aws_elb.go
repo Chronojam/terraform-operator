@@ -11,61 +11,61 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElb struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsElbSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsElbSpec `json:"spec"`
 }
 
 type AwsElbSpec struct {
-	Arn                       string                  `json:"arn"`
-	SecurityGroups            string                  `json:"security_groups"`
-	IdleTimeout               int                     `json:"idle_timeout"`
-	ConnectionDrainingTimeout int                     `json:"connection_draining_timeout"`
-	AccessLogs                []AwsElbSpecAccessLogs  `json:"access_logs"`
-	Listener                  AwsElbSpecListener      `json:"listener"`
-	HealthCheck               []AwsElbSpecHealthCheck `json:"health_check"`
-	Subnets                   string                  `json:"subnets"`
-	ZoneId                    string                  `json:"zone_id"`
-	CrossZoneLoadBalancing    bool                    `json:"cross_zone_load_balancing"`
-	AvailabilityZones         string                  `json:"availability_zones"`
-	Instances                 string                  `json:"instances"`
-	DnsName                   string                  `json:"dns_name"`
-	Tags                      map[string]string       `json:"tags"`
-	Name                      string                  `json:"name"`
 	NamePrefix                string                  `json:"name_prefix"`
-	Internal                  bool                    `json:"internal"`
-	SourceSecurityGroup       string                  `json:"source_security_group"`
 	SourceSecurityGroupId     string                  `json:"source_security_group_id"`
 	ConnectionDraining        bool                    `json:"connection_draining"`
+	AccessLogs                []AwsElbSpecAccessLogs  `json:"access_logs"`
+	Name                      string                  `json:"name"`
+	AvailabilityZones         string                  `json:"availability_zones"`
+	SourceSecurityGroup       string                  `json:"source_security_group"`
+	Subnets                   string                  `json:"subnets"`
+	Listener                  AwsElbSpecListener      `json:"listener"`
+	Internal                  bool                    `json:"internal"`
+	Instances                 string                  `json:"instances"`
+	ConnectionDrainingTimeout int                     `json:"connection_draining_timeout"`
+	Tags                      map[string]string       `json:"tags"`
+	DnsName                   string                  `json:"dns_name"`
+	ZoneId                    string                  `json:"zone_id"`
+	Arn                       string                  `json:"arn"`
+	CrossZoneLoadBalancing    bool                    `json:"cross_zone_load_balancing"`
+	SecurityGroups            string                  `json:"security_groups"`
+	IdleTimeout               int                     `json:"idle_timeout"`
+	HealthCheck               []AwsElbSpecHealthCheck `json:"health_check"`
 }
 
 type AwsElbSpecAccessLogs struct {
-	BucketPrefix string `json:"bucket_prefix"`
-	Enabled      bool   `json:"enabled"`
 	Interval     int    `json:"interval"`
 	Bucket       string `json:"bucket"`
+	BucketPrefix string `json:"bucket_prefix"`
+	Enabled      bool   `json:"enabled"`
 }
 
 type AwsElbSpecListener struct {
-	InstancePort     int    `json:"instance_port"`
-	InstanceProtocol string `json:"instance_protocol"`
 	LbPort           int    `json:"lb_port"`
 	LbProtocol       string `json:"lb_protocol"`
 	SslCertificateId string `json:"ssl_certificate_id"`
+	InstancePort     int    `json:"instance_port"`
+	InstanceProtocol string `json:"instance_protocol"`
 }
 
 type AwsElbSpecHealthCheck struct {
+	Timeout            int    `json:"timeout"`
 	HealthyThreshold   int    `json:"healthy_threshold"`
 	UnhealthyThreshold int    `json:"unhealthy_threshold"`
 	Target             string `json:"target"`
 	Interval           int    `json:"interval"`
-	Timeout            int    `json:"timeout"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElbList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsElb `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsElb `json:"items"`
 }

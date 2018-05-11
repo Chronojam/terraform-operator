@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsKmsKey struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsKmsKeySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsKmsKeySpec `json:"spec"`
 }
 
 type AwsKmsKeySpec struct {
-	DeletionWindowInDays int               `json:"deletion_window_in_days"`
+	Tags                 map[string]string `json:"tags"`
 	KeyId                string            `json:"key_id"`
 	Description          string            `json:"description"`
-	Policy               string            `json:"policy"`
-	EnableKeyRotation    bool              `json:"enable_key_rotation"`
-	Tags                 map[string]string `json:"tags"`
-	Arn                  string            `json:"arn"`
 	KeyUsage             string            `json:"key_usage"`
+	Policy               string            `json:"policy"`
 	IsEnabled            bool              `json:"is_enabled"`
+	DeletionWindowInDays int               `json:"deletion_window_in_days"`
+	Arn                  string            `json:"arn"`
+	EnableKeyRotation    bool              `json:"enable_key_rotation"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsKmsKeyList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsKmsKey `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsKmsKey `json:"items"`
 }

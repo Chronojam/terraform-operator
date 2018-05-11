@@ -11,23 +11,23 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDxConnection struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDxConnectionSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDxConnectionSpec `json:"spec"`
 }
 
 type AwsDxConnectionSpec struct {
+	Tags      map[string]string `json:"tags"`
 	Arn       string            `json:"arn"`
 	Name      string            `json:"name"`
 	Bandwidth string            `json:"bandwidth"`
 	Location  string            `json:"location"`
-	Tags      map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDxConnectionList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDxConnection `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDxConnection `json:"items"`
 }

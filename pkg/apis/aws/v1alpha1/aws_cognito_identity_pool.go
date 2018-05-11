@@ -11,19 +11,19 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCognitoIdentityPool struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCognitoIdentityPoolSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCognitoIdentityPoolSpec `json:"spec"`
 }
 
 type AwsCognitoIdentityPoolSpec struct {
+	SupportedLoginProviders        map[string]string                                  `json:"supported_login_providers"`
+	IdentityPoolName               string                                             `json:"identity_pool_name"`
 	CognitoIdentityProviders       AwsCognitoIdentityPoolSpecCognitoIdentityProviders `json:"cognito_identity_providers"`
 	DeveloperProviderName          string                                             `json:"developer_provider_name"`
 	AllowUnauthenticatedIdentities bool                                               `json:"allow_unauthenticated_identities"`
 	OpenidConnectProviderArns      []string                                           `json:"openid_connect_provider_arns"`
 	SamlProviderArns               []string                                           `json:"saml_provider_arns"`
-	SupportedLoginProviders        map[string]string                                  `json:"supported_login_providers"`
-	IdentityPoolName               string                                             `json:"identity_pool_name"`
 }
 
 type AwsCognitoIdentityPoolSpecCognitoIdentityProviders struct {
@@ -35,7 +35,7 @@ type AwsCognitoIdentityPoolSpecCognitoIdentityProviders struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCognitoIdentityPoolList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCognitoIdentityPool `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCognitoIdentityPool `json:"items"`
 }

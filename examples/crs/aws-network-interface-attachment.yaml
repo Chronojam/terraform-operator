@@ -5,9 +5,9 @@ kind: AwsNetworkInterfaceAttachment
 metadata:
   name: example-aws-network-interface-attachment
 spec:
+  deviceindex: 0
+  instanceid: ""
   networkinterfaceid: ""
   attachmentid: ""
   status: ""
-  deviceindex: 0
-  instanceid: ""
 

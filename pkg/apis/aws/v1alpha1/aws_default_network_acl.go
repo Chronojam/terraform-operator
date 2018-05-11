@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDefaultNetworkAcl struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDefaultNetworkAclSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDefaultNetworkAclSpec `json:"spec"`
 }
 
 type AwsDefaultNetworkAclSpec struct {
@@ -26,33 +26,33 @@ type AwsDefaultNetworkAclSpec struct {
 }
 
 type AwsDefaultNetworkAclSpecIngress struct {
-	Action        string `json:"action"`
-	CidrBlock     string `json:"cidr_block"`
-	FromPort      int    `json:"from_port"`
 	ToPort        int    `json:"to_port"`
 	RuleNo        int    `json:"rule_no"`
-	Protocol      string `json:"protocol"`
 	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
+	CidrBlock     string `json:"cidr_block"`
 	IcmpType      int    `json:"icmp_type"`
 	IcmpCode      int    `json:"icmp_code"`
+	FromPort      int    `json:"from_port"`
+	Action        string `json:"action"`
+	Protocol      string `json:"protocol"`
 }
 
 type AwsDefaultNetworkAclSpecEgress struct {
-	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
 	IcmpType      int    `json:"icmp_type"`
-	IcmpCode      int    `json:"icmp_code"`
-	RuleNo        int    `json:"rule_no"`
-	Action        string `json:"action"`
-	Protocol      string `json:"protocol"`
-	CidrBlock     string `json:"cidr_block"`
 	FromPort      int    `json:"from_port"`
 	ToPort        int    `json:"to_port"`
+	RuleNo        int    `json:"rule_no"`
+	Action        string `json:"action"`
+	CidrBlock     string `json:"cidr_block"`
+	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
+	Protocol      string `json:"protocol"`
+	IcmpCode      int    `json:"icmp_code"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDefaultNetworkAclList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDefaultNetworkAcl `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDefaultNetworkAcl `json:"items"`
 }

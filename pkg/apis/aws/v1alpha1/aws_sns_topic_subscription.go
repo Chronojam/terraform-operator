@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSnsTopicSubscription struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSnsTopicSubscriptionSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSnsTopicSubscriptionSpec `json:"spec"`
 }
 
 type AwsSnsTopicSubscriptionSpec struct {
-	DeliveryPolicy               string `json:"delivery_policy"`
 	FilterPolicy                 string `json:"filter_policy"`
-	Protocol                     string `json:"protocol"`
-	ConfirmationTimeoutInMinutes int    `json:"confirmation_timeout_in_minutes"`
-	TopicArn                     string `json:"topic_arn"`
-	Arn                          string `json:"arn"`
-	Endpoint                     string `json:"endpoint"`
 	EndpointAutoConfirms         bool   `json:"endpoint_auto_confirms"`
+	TopicArn                     string `json:"topic_arn"`
+	DeliveryPolicy               string `json:"delivery_policy"`
 	RawMessageDelivery           bool   `json:"raw_message_delivery"`
+	Protocol                     string `json:"protocol"`
+	Endpoint                     string `json:"endpoint"`
+	ConfirmationTimeoutInMinutes int    `json:"confirmation_timeout_in_minutes"`
+	Arn                          string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSnsTopicSubscriptionList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSnsTopicSubscription `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSnsTopicSubscription `json:"items"`
 }

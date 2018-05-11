@@ -5,20 +5,20 @@ kind: AwsApiGatewayIntegration
 metadata:
   name: example-aws-api-gateway-integration
 spec:
-  credentials: ""
-  integrationhttpmethod: ""
-  requestparametersinjson: ""
-  cachekeyparameters: ""
-  resourceid: ""
   httpmethod: ""
   uri: ""
-  passthroughbehavior: ""
-  connectionid: ""
-  requesttemplates: {}
+  cachenamespace: ""
+  requestparametersinjson: ""
+  integrationhttpmethod: ""
   requestparameters: {}
   contenthandling: ""
-  cachenamespace: ""
   restapiid: ""
-  type: ""
+  resourceid: ""
   connectiontype: ""
+  connectionid: ""
+  credentials: ""
+  type: ""
+  requesttemplates: {}
+  passthroughbehavior: ""
+  cachekeyparameters: ""
 

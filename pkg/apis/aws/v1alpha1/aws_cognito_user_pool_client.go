@@ -11,33 +11,33 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCognitoUserPoolClient struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCognitoUserPoolClientSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCognitoUserPoolClientSpec `json:"spec"`
 }
 
 type AwsCognitoUserPoolClientSpec struct {
-	Name                            string   `json:"name"`
-	ClientSecret                    string   `json:"client_secret"`
-	ExplicitAuthFlows               string   `json:"explicit_auth_flows"`
-	AllowedOauthFlows               string   `json:"allowed_oauth_flows"`
-	AllowedOauthScopes              string   `json:"allowed_oauth_scopes"`
+	AllowedOauthFlowsUserPoolClient bool     `json:"allowed_oauth_flows_user_pool_client"`
+	CallbackUrls                    []string `json:"callback_urls"`
 	DefaultRedirectUri              string   `json:"default_redirect_uri"`
-	SupportedIdentityProviders      []string `json:"supported_identity_providers"`
 	UserPoolId                      string   `json:"user_pool_id"`
 	ReadAttributes                  string   `json:"read_attributes"`
-	CallbackUrls                    []string `json:"callback_urls"`
+	SupportedIdentityProviders      []string `json:"supported_identity_providers"`
 	GenerateSecret                  bool     `json:"generate_secret"`
-	RefreshTokenValidity            int      `json:"refresh_token_validity"`
-	LogoutUrls                      []string `json:"logout_urls"`
+	ExplicitAuthFlows               string   `json:"explicit_auth_flows"`
 	WriteAttributes                 string   `json:"write_attributes"`
-	AllowedOauthFlowsUserPoolClient bool     `json:"allowed_oauth_flows_user_pool_client"`
+	AllowedOauthFlows               string   `json:"allowed_oauth_flows"`
+	Name                            string   `json:"name"`
+	ClientSecret                    string   `json:"client_secret"`
+	RefreshTokenValidity            int      `json:"refresh_token_validity"`
+	AllowedOauthScopes              string   `json:"allowed_oauth_scopes"`
+	LogoutUrls                      []string `json:"logout_urls"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCognitoUserPoolClientList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCognitoUserPoolClient `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCognitoUserPoolClient `json:"items"`
 }

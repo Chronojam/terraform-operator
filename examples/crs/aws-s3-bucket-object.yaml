@@ -5,22 +5,22 @@ kind: AwsS3BucketObject
 metadata:
   name: example-aws-s3-bucket-object
 spec:
-  contenttype: ""
+  bucket: ""
   key: ""
-  source: ""
-  versionid: ""
-  cachecontrol: ""
-  contentdisposition: ""
+  tags: {}
   contentlanguage: ""
   content: ""
+  kmskeyid: ""
+  versionid: ""
+  acl: ""
+  cachecontrol: ""
   contentbase64: ""
   storageclass: ""
-  bucket: ""
-  contentencoding: ""
   serversideencryption: ""
-  kmskeyid: ""
-  websiteredirect: ""
-  acl: ""
+  contentdisposition: ""
+  contentencoding: ""
+  contenttype: ""
+  source: ""
   etag: ""
-  tags: {}
+  websiteredirect: ""
 

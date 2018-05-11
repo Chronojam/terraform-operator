@@ -5,9 +5,9 @@ kind: AwsApiGatewayModel
 metadata:
   name: example-aws-api-gateway-model
 spec:
+  restapiid: ""
+  name: ""
   description: ""
   schema: ""
   contenttype: ""
-  restapiid: ""
-  name: ""
 

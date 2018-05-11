@@ -14,14 +14,12 @@ install-struct-generator:
 clean-generation:
 	rm -rf $(ABSOLUTE_PATH)/hack/*.go
 	rm -rf $(ABSOLUTE_PATH)/pkg/apis/aws/v1alpha1/*.go
-	rm -rf $(ABSOLUTE_PATH)/pkg/terraform/aws/v1alpha1/*.go
 
 generate-struct-types: install-struct-generator
 	mkdir -p $(ABSOLUTE_PATH)/pkg/apis/aws/v1alpha1
 	mkdir -p $(ABSOLUTE_PATH)/pkg/terraform/aws/v1alpha1
 	$(PWD)/.build/generator
 	go fmt $(ABSOLUTE_PATH)/pkg/apis/aws/v1alpha1/*.go
-	go fmt $(ABSOLUTE_PATH)/pkg/terraform/aws/v1alpha1/*.go
 	go fmt $(ABSOLUTE_PATH)/hack/*.go
 
 generate-k8s-funcs:

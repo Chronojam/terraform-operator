@@ -5,6 +5,6 @@ kind: AwsSnsTopicPolicy
 metadata:
   name: example-aws-sns-topic-policy
 spec:
-  policy: ""
   arn: ""
+  policy: ""
 

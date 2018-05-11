@@ -11,23 +11,23 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayModel struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsApiGatewayModelSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsApiGatewayModelSpec `json:"spec"`
 }
 
 type AwsApiGatewayModelSpec struct {
+	RestApiId   string `json:"rest_api_id"`
+	Name        string `json:"name"`
 	Description string `json:"description"`
 	Schema      string `json:"schema"`
 	ContentType string `json:"content_type"`
-	RestApiId   string `json:"rest_api_id"`
-	Name        string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayModelList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsApiGatewayModel `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsApiGatewayModel `json:"items"`
 }

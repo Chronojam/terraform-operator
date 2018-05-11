@@ -5,16 +5,16 @@ kind: AwsSnsPlatformApplication
 metadata:
   name: example-aws-sns-platform-application
 spec:
-  failurefeedbackrolearn: ""
-  successfeedbacksamplerate: ""
   arn: ""
-  eventendpointcreatedtopicarn: ""
-  eventendpointdeletedtopicarn: ""
   eventendpointupdatedtopicarn: ""
+  failurefeedbackrolearn: ""
+  eventendpointdeletedtopicarn: ""
   platformprincipal: ""
   successfeedbackrolearn: ""
   name: ""
   platform: ""
   platformcredential: ""
   eventdeliveryfailuretopicarn: ""
+  eventendpointcreatedtopicarn: ""
+  successfeedbacksamplerate: ""
 

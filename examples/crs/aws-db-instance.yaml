@@ -5,54 +5,54 @@ kind: AwsDbInstance
 metadata:
   name: example-aws-db-instance
 spec:
+  password: ""
+  port: 0
+  parametergroupname: ""
+  replicatesourcedb: ""
+  monitoringrolearn: ""
+  cacertidentifier: ""
+  tags: {}
+  name: ""
+  arn: ""
+  licensemodel: ""
   optiongroupname: ""
-  backupwindow: ""
-  snapshotidentifier: ""
+  iamdatabaseauthenticationenabled: false
   allowmajorversionupgrade: false
+  resourceid: ""
+  engine: ""
+  storagetype: ""
+  copytagstosnapshot: false
   dbsubnetgroupname: ""
   replicas: []
-  iamdatabaseauthenticationenabled: false
-  cacertidentifier: ""
-  storagetype: ""
-  backupretentionperiod: 0
-  multiaz: false
-  address: ""
-  autominorversionupgrade: false
-  monitoringrolearn: ""
+  status: ""
+  snapshotidentifier: ""
   monitoringinterval: 0
-  arn: ""
   username: ""
-  password: ""
-  copytagstosnapshot: false
-  hostedzoneid: ""
-  publiclyaccessible: false
-  vpcsecuritygroupids: ""
-  s3import: []
-  securitygroupnames: ""
-  parametergroupname: ""
-  applyimmediately: false
-  enabledcloudwatchlogsexports: []
-  engine: ""
-  identifierprefix: ""
-  availabilityzone: ""
-  endpoint: ""
-  replicatesourcedb: ""
-  timezone: ""
-  name: ""
-  licensemodel: ""
-  port: 0
-  instanceclass: ""
-  resourceid: ""
-  tags: {}
   engineversion: ""
-  storageencrypted: false
-  identifier: ""
+  iops: 0
   maintenancewindow: ""
   finalsnapshotidentifier: ""
+  identifier: ""
+  publiclyaccessible: false
+  applyimmediately: false
+  autominorversionupgrade: false
+  enabledcloudwatchlogsexports: []
+  backupretentionperiod: 0
+  backupwindow: ""
+  multiaz: false
+  securitygroupnames: ""
+  address: ""
+  identifierprefix: ""
+  instanceclass: ""
+  availabilityzone: ""
+  endpoint: ""
   skipfinalsnapshot: false
-  status: ""
+  hostedzoneid: ""
   kmskeyid: ""
   charactersetname: ""
+  storageencrypted: false
   allocatedstorage: 0
-  iops: 0
+  vpcsecuritygroupids: ""
+  s3import: []
+  timezone: ""
 

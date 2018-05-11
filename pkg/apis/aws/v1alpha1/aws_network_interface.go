@@ -11,22 +11,22 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsNetworkInterface struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsNetworkInterfaceSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsNetworkInterfaceSpec `json:"spec"`
 }
 
 type AwsNetworkInterfaceSpec struct {
-	SecurityGroups  string                            `json:"security_groups"`
-	Description     string                            `json:"description"`
-	Attachment      AwsNetworkInterfaceSpecAttachment `json:"attachment"`
-	PrivateIp       string                            `json:"private_ip"`
 	PrivateDnsName  string                            `json:"private_dns_name"`
 	PrivateIps      string                            `json:"private_ips"`
 	PrivateIpsCount int                               `json:"private_ips_count"`
-	SubnetId        string                            `json:"subnet_id"`
+	SecurityGroups  string                            `json:"security_groups"`
 	SourceDestCheck bool                              `json:"source_dest_check"`
+	Attachment      AwsNetworkInterfaceSpecAttachment `json:"attachment"`
+	SubnetId        string                            `json:"subnet_id"`
+	PrivateIp       string                            `json:"private_ip"`
 	Tags            map[string]string                 `json:"tags"`
+	Description     string                            `json:"description"`
 }
 
 type AwsNetworkInterfaceSpecAttachment struct {
@@ -38,7 +38,7 @@ type AwsNetworkInterfaceSpecAttachment struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsNetworkInterfaceList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsNetworkInterface `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsNetworkInterface `json:"items"`
 }

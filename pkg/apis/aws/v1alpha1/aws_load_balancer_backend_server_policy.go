@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLoadBalancerBackendServerPolicy struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLoadBalancerBackendServerPolicySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLoadBalancerBackendServerPolicySpec `json:"spec"`
 }
 
 type AwsLoadBalancerBackendServerPolicySpec struct {
@@ -25,7 +25,7 @@ type AwsLoadBalancerBackendServerPolicySpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLoadBalancerBackendServerPolicyList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLoadBalancerBackendServerPolicy `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLoadBalancerBackendServerPolicy `json:"items"`
 }

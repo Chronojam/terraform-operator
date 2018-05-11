@@ -11,23 +11,23 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksPermission struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsOpsworksPermissionSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsOpsworksPermissionSpec `json:"spec"`
 }
 
 type AwsOpsworksPermissionSpec struct {
-	Level     string `json:"level"`
-	StackId   string `json:"stack_id"`
 	AllowSsh  bool   `json:"allow_ssh"`
 	AllowSudo bool   `json:"allow_sudo"`
 	UserArn   string `json:"user_arn"`
+	Level     string `json:"level"`
+	StackId   string `json:"stack_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksPermissionList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsOpsworksPermission `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsOpsworksPermission `json:"items"`
 }

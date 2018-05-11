@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcEndpointServiceAllowedPrincipal struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsVpcEndpointServiceAllowedPrincipalSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsVpcEndpointServiceAllowedPrincipalSpec `json:"spec"`
 }
 
 type AwsVpcEndpointServiceAllowedPrincipalSpec struct {
@@ -24,7 +24,7 @@ type AwsVpcEndpointServiceAllowedPrincipalSpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcEndpointServiceAllowedPrincipalList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsVpcEndpointServiceAllowedPrincipal `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsVpcEndpointServiceAllowedPrincipal `json:"items"`
 }

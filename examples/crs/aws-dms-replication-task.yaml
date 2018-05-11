@@ -5,14 +5,14 @@ kind: AwsDmsReplicationTask
 metadata:
   name: example-aws-dms-replication-task
 spec:
-  migrationtype: ""
-  replicationinstancearn: ""
-  replicationtaskarn: ""
-  replicationtaskid: ""
-  replicationtasksettings: ""
-  tags: {}
-  targetendpointarn: ""
   cdcstarttime: ""
+  replicationinstancearn: ""
+  replicationtaskid: ""
   tablemappings: ""
+  tags: {}
+  migrationtype: ""
+  replicationtaskarn: ""
+  replicationtasksettings: ""
   sourceendpointarn: ""
+  targetendpointarn: ""
 

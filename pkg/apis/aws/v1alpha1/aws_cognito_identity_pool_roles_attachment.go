@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCognitoIdentityPoolRolesAttachment struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCognitoIdentityPoolRolesAttachmentSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCognitoIdentityPoolRolesAttachmentSpec `json:"spec"`
 }
 
 type AwsCognitoIdentityPoolRolesAttachmentSpec struct {
@@ -30,10 +30,10 @@ type AwsCognitoIdentityPoolRolesAttachmentSpecRoleMapping struct {
 }
 
 type AwsCognitoIdentityPoolRolesAttachmentSpecRoleMappingMappingRule struct {
-	RoleArn   string `json:"role_arn"`
-	Value     string `json:"value"`
 	Claim     string `json:"claim"`
 	MatchType string `json:"match_type"`
+	RoleArn   string `json:"role_arn"`
+	Value     string `json:"value"`
 }
 
 type AwsCognitoIdentityPoolRolesAttachmentSpecRoles struct {
@@ -44,7 +44,7 @@ type AwsCognitoIdentityPoolRolesAttachmentSpecRoles struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCognitoIdentityPoolRolesAttachmentList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCognitoIdentityPoolRolesAttachment `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCognitoIdentityPoolRolesAttachment `json:"items"`
 }

@@ -5,16 +5,16 @@ kind: AwsKmsGrant
 metadata:
   name: example-aws-kms-grant
 spec:
-  retiringprincipal: ""
-  grantcreationtokens: ""
-  grantid: ""
-  keyid: ""
-  granteeprincipal: ""
   operations: ""
   constraints:
     encryptioncontextequals: {}
     encryptioncontextsubset: {}
+  retiringprincipal: ""
   retireondelete: false
   granttoken: ""
   name: ""
+  keyid: ""
+  granteeprincipal: ""
+  grantcreationtokens: ""
+  grantid: ""
 

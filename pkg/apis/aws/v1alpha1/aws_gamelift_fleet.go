@@ -11,36 +11,36 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsGameliftFleet struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsGameliftFleetSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsGameliftFleetSpec `json:"spec"`
 }
 
 type AwsGameliftFleetSpec struct {
+	BuildId                        string                                            `json:"build_id"`
+	Ec2InstanceType                string                                            `json:"ec2_instance_type"`
+	Name                           string                                            `json:"name"`
+	Description                    string                                            `json:"description"`
 	MetricGroups                   []string                                          `json:"metric_groups"`
 	ResourceCreationLimitPolicy    []AwsGameliftFleetSpecResourceCreationLimitPolicy `json:"resource_creation_limit_policy"`
-	Ec2InstanceType                string                                            `json:"ec2_instance_type"`
-	Description                    string                                            `json:"description"`
+	Arn                            string                                            `json:"arn"`
 	Ec2InboundPermission           []AwsGameliftFleetSpecEc2InboundPermission        `json:"ec2_inbound_permission"`
 	LogPaths                       []string                                          `json:"log_paths"`
+	NewGameSessionProtectionPolicy string                                            `json:"new_game_session_protection_policy"`
 	OperatingSystem                string                                            `json:"operating_system"`
 	RuntimeConfiguration           []AwsGameliftFleetSpecRuntimeConfiguration        `json:"runtime_configuration"`
-	Arn                            string                                            `json:"arn"`
-	BuildId                        string                                            `json:"build_id"`
-	Name                           string                                            `json:"name"`
-	NewGameSessionProtectionPolicy string                                            `json:"new_game_session_protection_policy"`
 }
 
 type AwsGameliftFleetSpecResourceCreationLimitPolicy struct {
-	PolicyPeriodInMinutes     int `json:"policy_period_in_minutes"`
 	NewGameSessionsPerCreator int `json:"new_game_sessions_per_creator"`
+	PolicyPeriodInMinutes     int `json:"policy_period_in_minutes"`
 }
 
 type AwsGameliftFleetSpecEc2InboundPermission struct {
-	FromPort int    `json:"from_port"`
-	IpRange  string `json:"ip_range"`
 	Protocol string `json:"protocol"`
 	ToPort   int    `json:"to_port"`
+	FromPort int    `json:"from_port"`
+	IpRange  string `json:"ip_range"`
 }
 
 type AwsGameliftFleetSpecRuntimeConfiguration struct {
@@ -58,7 +58,7 @@ type AwsGameliftFleetSpecRuntimeConfigurationServerProcess struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsGameliftFleetList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsGameliftFleet `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsGameliftFleet `json:"items"`
 }

@@ -5,13 +5,13 @@ kind: AwsVpcEndpointService
 metadata:
   name: example-aws-vpc-endpoint-service
 spec:
+  networkloadbalancerarns: ""
   availabilityzones: ""
-  baseendpointdnsnames: ""
+  privatednsname: ""
+  acceptancerequired: false
   allowedprincipals: ""
   state: ""
   servicename: ""
-  privatednsname: ""
-  acceptancerequired: false
-  networkloadbalancerarns: ""
   servicetype: ""
+  baseendpointdnsnames: ""
 

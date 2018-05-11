@@ -6,12 +6,12 @@ metadata:
   name: example-aws-api-gateway-integration-response
 spec:
   httpmethod: ""
-  statuscode: ""
   selectionpattern: ""
-  responsetemplates: {}
-  responseparameters: {}
+  responseparametersinjson: ""
   contenthandling: ""
   restapiid: ""
   resourceid: ""
-  responseparametersinjson: ""
+  statuscode: ""
+  responsetemplates: {}
+  responseparameters: {}
 

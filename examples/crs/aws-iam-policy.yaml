@@ -5,10 +5,10 @@ kind: AwsIamPolicy
 metadata:
   name: example-aws-iam-policy
 spec:
+  policy: ""
   name: ""
   nameprefix: ""
   arn: ""
   description: ""
   path: ""
-  policy: ""
 

@@ -11,37 +11,37 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafWebAcl struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsWafWebAclSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsWafWebAclSpec `json:"spec"`
 }
 
 type AwsWafWebAclSpec struct {
+	Rules         AwsWafWebAclSpecRules         `json:"rules"`
 	Name          string                        `json:"name"`
 	DefaultAction AwsWafWebAclSpecDefaultAction `json:"default_action"`
 	MetricName    string                        `json:"metric_name"`
-	Rules         AwsWafWebAclSpecRules         `json:"rules"`
-}
-
-type AwsWafWebAclSpecDefaultAction struct {
-	Type string `json:"type"`
 }
 
 type AwsWafWebAclSpecRules struct {
-	RuleId   string                      `json:"rule_id"`
 	Action   AwsWafWebAclSpecRulesAction `json:"action"`
 	Priority int                         `json:"priority"`
 	Type     string                      `json:"type"`
+	RuleId   string                      `json:"rule_id"`
 }
 
 type AwsWafWebAclSpecRulesAction struct {
 	Type string `json:"type"`
 }
 
+type AwsWafWebAclSpecDefaultAction struct {
+	Type string `json:"type"`
+}
+
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafWebAclList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsWafWebAcl `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsWafWebAcl `json:"items"`
 }

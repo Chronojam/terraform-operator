@@ -9,6 +9,6 @@ spec:
   loadbalancer: ""
   lbport: 0
   attribute:
-    name: ""
     value: ""
+    name: ""
 

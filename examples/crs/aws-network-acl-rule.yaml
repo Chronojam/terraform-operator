@@ -5,15 +5,15 @@ kind: AwsNetworkAclRule
 metadata:
   name: example-aws-network-acl-rule
 spec:
-  ruleaction: ""
-  cidrblock: ""
-  icmptype: ""
-  icmpcode: ""
+  rulenumber: 0
+  protocol: ""
+  ipv6cidrblock: ""
+  toport: 0
   networkaclid: ""
   egress: false
-  protocol: ""
-  toport: 0
-  rulenumber: 0
-  ipv6cidrblock: ""
+  ruleaction: ""
+  cidrblock: ""
   fromport: 0
+  icmptype: ""
+  icmpcode: ""
 

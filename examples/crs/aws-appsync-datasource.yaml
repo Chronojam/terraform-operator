@@ -5,13 +5,13 @@ kind: AwsAppsyncDatasource
 metadata:
   name: example-aws-appsync-datasource
 spec:
-  name: ""
-  dynamodbconfig: []
-  elasticsearchconfig: []
+  apiid: ""
   lambdaconfig: []
   arn: ""
-  apiid: ""
-  description: ""
-  servicerolearn: ""
+  name: ""
   type: ""
+  description: ""
+  dynamodbconfig: []
+  elasticsearchconfig: []
+  servicerolearn: ""
 

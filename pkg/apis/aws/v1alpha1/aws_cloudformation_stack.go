@@ -11,32 +11,32 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudformationStack struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCloudformationStackSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCloudformationStackSpec `json:"spec"`
 }
 
 type AwsCloudformationStackSpec struct {
+	TimeoutInMinutes int               `json:"timeout_in_minutes"`
 	Tags             map[string]string `json:"tags"`
 	TemplateUrl      string            `json:"template_url"`
-	DisableRollback  bool              `json:"disable_rollback"`
+	OnFailure        string            `json:"on_failure"`
 	Parameters       map[string]string `json:"parameters"`
 	PolicyBody       string            `json:"policy_body"`
-	TimeoutInMinutes int               `json:"timeout_in_minutes"`
-	Capabilities     string            `json:"capabilities"`
 	PolicyUrl        string            `json:"policy_url"`
-	IamRoleArn       string            `json:"iam_role_arn"`
-	Name             string            `json:"name"`
 	TemplateBody     string            `json:"template_body"`
-	Outputs          map[string]string `json:"outputs"`
+	Capabilities     string            `json:"capabilities"`
+	Name             string            `json:"name"`
 	NotificationArns string            `json:"notification_arns"`
-	OnFailure        string            `json:"on_failure"`
+	Outputs          map[string]string `json:"outputs"`
+	IamRoleArn       string            `json:"iam_role_arn"`
+	DisableRollback  bool              `json:"disable_rollback"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudformationStackList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCloudformationStack `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCloudformationStack `json:"items"`
 }

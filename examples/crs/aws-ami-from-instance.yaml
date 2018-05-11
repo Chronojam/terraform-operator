@@ -5,9 +5,9 @@ kind: AwsAmiFromInstance
 metadata:
   name: example-aws-ami-from-instance
 spec:
+  architecture: ""
   rootdevicename: ""
   rootsnapshotid: ""
-  virtualizationtype: ""
   ebsblockdevice:
     snapshotid: ""
     volumesize: 0
@@ -16,18 +16,18 @@ spec:
     devicename: ""
     encrypted: false
     iops: 0
-  snapshotwithoutreboot: false
-  architecture: ""
+  imagelocation: ""
   description: ""
-  kernelid: ""
+  ramdiskid: ""
   sriovnetsupport: ""
-  tags: {}
-  manageebssnapshots: false
-  sourceinstanceid: ""
-  name: ""
   ephemeralblockdevice:
     devicename: ""
     virtualname: ""
-  imagelocation: ""
-  ramdiskid: ""
+  manageebssnapshots: false
+  kernelid: ""
+  sourceinstanceid: ""
+  snapshotwithoutreboot: false
+  name: ""
+  virtualizationtype: ""
+  tags: {}
 

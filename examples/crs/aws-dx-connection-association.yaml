@@ -5,6 +5,6 @@ kind: AwsDxConnectionAssociation
 metadata:
   name: example-aws-dx-connection-association
 spec:
-  lagid: ""
   connectionid: ""
+  lagid: ""
 

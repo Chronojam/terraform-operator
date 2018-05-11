@@ -5,62 +5,62 @@ kind: AwsIotTopicRule
 metadata:
   name: example-aws-iot-topic-rule
 spec:
-  name: ""
-  enabled: false
+  s3:
+    bucketname: ""
+    key: ""
+    rolearn: ""
   sns:
     messageformat: ""
     targetarn: ""
     rolearn: ""
-  republish:
-    rolearn: ""
-    topic: ""
-  arn: ""
-  sql: ""
-  cloudwatchalarm:
-    alarmname: ""
-    rolearn: ""
-    statereason: ""
-    statevalue: ""
-  firehose:
-    deliverystreamname: ""
-    rolearn: ""
-  lambda:
-    functionarn: ""
-  description: ""
   elasticsearch:
     endpoint: ""
     id: ""
     index: ""
     rolearn: ""
     type: ""
-  s3:
-    rolearn: ""
-    bucketname: ""
-    key: ""
-  sqs:
-    queueurl: ""
-    rolearn: ""
-    usebase64: false
-  sqlversion: ""
-  cloudwatchmetric:
-    metrictimestamp: ""
-    metricunit: ""
-    metricvalue: ""
-    rolearn: ""
-    metricname: ""
-    metricnamespace: ""
   dynamodb:
-    rangekeyfield: ""
-    tablename: ""
     payloadfield: ""
-    rangekeyvalue: ""
+    rangekeyfield: ""
     rangekeytype: ""
     rolearn: ""
+    tablename: ""
     hashkeyfield: ""
     hashkeyvalue: ""
     hashkeytype: ""
+    rangekeyvalue: ""
+  firehose:
+    deliverystreamname: ""
+    rolearn: ""
+  arn: ""
+  sql: ""
   kinesis:
     partitionkey: ""
     rolearn: ""
     streamname: ""
+  lambda:
+    functionarn: ""
+  enabled: false
+  description: ""
+  sqlversion: ""
+  cloudwatchalarm:
+    alarmname: ""
+    rolearn: ""
+    statereason: ""
+    statevalue: ""
+  cloudwatchmetric:
+    metricname: ""
+    metricnamespace: ""
+    metrictimestamp: ""
+    metricunit: ""
+    metricvalue: ""
+    rolearn: ""
+  republish:
+    rolearn: ""
+    topic: ""
+  sqs:
+    rolearn: ""
+    usebase64: false
+    queueurl: ""
+  name: ""
 

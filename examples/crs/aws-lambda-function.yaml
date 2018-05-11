@@ -5,30 +5,30 @@ kind: AwsLambdaFunction
 metadata:
   name: example-aws-lambda-function
 spec:
-  deadletterconfig: []
-  version: ""
-  lastmodified: ""
-  environment: []
-  tags: {}
-  role: ""
-  runtime: ""
-  vpcconfig: []
-  qualifiedarn: ""
   functionname: ""
-  arn: ""
-  sourcecodehash: ""
-  filename: ""
-  s3bucket: ""
-  s3key: ""
-  s3objectversion: ""
-  description: ""
-  sourcecodesize: 0
-  kmskeyarn: ""
-  invokearn: ""
-  tracingconfig: []
   handler: ""
   memorysize: 0
-  reservedconcurrentexecutions: 0
+  runtime: ""
+  s3key: ""
+  deadletterconfig: []
+  vpcconfig: []
+  arn: ""
+  qualifiedarn: ""
+  sourcecodehash: ""
+  sourcecodesize: 0
+  environment: []
   timeout: 0
   publish: false
+  tags: {}
+  tracingconfig: []
+  kmskeyarn: ""
+  description: ""
+  reservedconcurrentexecutions: 0
+  invokearn: ""
+  filename: ""
+  s3bucket: ""
+  version: ""
+  lastmodified: ""
+  s3objectversion: ""
+  role: ""
 

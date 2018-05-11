@@ -11,20 +11,20 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpnGatewayAttachment struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsVpnGatewayAttachmentSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsVpnGatewayAttachmentSpec `json:"spec"`
 }
 
 type AwsVpnGatewayAttachmentSpec struct {
-	VpnGatewayId string `json:"vpn_gateway_id"`
 	VpcId        string `json:"vpc_id"`
+	VpnGatewayId string `json:"vpn_gateway_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpnGatewayAttachmentList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsVpnGatewayAttachment `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsVpnGatewayAttachment `json:"items"`
 }

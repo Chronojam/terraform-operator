@@ -11,38 +11,38 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAmiFromInstance struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAmiFromInstanceSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAmiFromInstanceSpec `json:"spec"`
 }
 
 type AwsAmiFromInstanceSpec struct {
+	Architecture          string                                     `json:"architecture"`
+	RootDeviceName        string                                     `json:"root_device_name"`
+	RootSnapshotId        string                                     `json:"root_snapshot_id"`
+	EbsBlockDevice        AwsAmiFromInstanceSpecEbsBlockDevice       `json:"ebs_block_device"`
 	ImageLocation         string                                     `json:"image_location"`
 	Description           string                                     `json:"description"`
-	VirtualizationType    string                                     `json:"virtualization_type"`
-	EbsBlockDevice        AwsAmiFromInstanceSpecEbsBlockDevice       `json:"ebs_block_device"`
-	Tags                  map[string]string                          `json:"tags"`
-	Architecture          string                                     `json:"architecture"`
-	RootSnapshotId        string                                     `json:"root_snapshot_id"`
-	EphemeralBlockDevice  AwsAmiFromInstanceSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
-	Name                  string                                     `json:"name"`
 	RamdiskId             string                                     `json:"ramdisk_id"`
-	ManageEbsSnapshots    bool                                       `json:"manage_ebs_snapshots"`
-	SourceInstanceId      string                                     `json:"source_instance_id"`
-	KernelId              string                                     `json:"kernel_id"`
-	RootDeviceName        string                                     `json:"root_device_name"`
 	SriovNetSupport       string                                     `json:"sriov_net_support"`
+	EphemeralBlockDevice  AwsAmiFromInstanceSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
+	ManageEbsSnapshots    bool                                       `json:"manage_ebs_snapshots"`
+	KernelId              string                                     `json:"kernel_id"`
+	SourceInstanceId      string                                     `json:"source_instance_id"`
 	SnapshotWithoutReboot bool                                       `json:"snapshot_without_reboot"`
+	Name                  string                                     `json:"name"`
+	VirtualizationType    string                                     `json:"virtualization_type"`
+	Tags                  map[string]string                          `json:"tags"`
 }
 
 type AwsAmiFromInstanceSpecEbsBlockDevice struct {
+	SnapshotId          string `json:"snapshot_id"`
 	VolumeSize          int    `json:"volume_size"`
 	VolumeType          string `json:"volume_type"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	DeviceName          string `json:"device_name"`
 	Encrypted           bool   `json:"encrypted"`
 	Iops                int    `json:"iops"`
-	SnapshotId          string `json:"snapshot_id"`
 }
 
 type AwsAmiFromInstanceSpecEphemeralBlockDevice struct {
@@ -53,7 +53,7 @@ type AwsAmiFromInstanceSpecEphemeralBlockDevice struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAmiFromInstanceList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAmiFromInstance `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAmiFromInstance `json:"items"`
 }

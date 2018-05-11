@@ -5,9 +5,9 @@ kind: AwsApiGatewayUsagePlanKey
 metadata:
   name: example-aws-api-gateway-usage-plan-key
 spec:
-  keyid: ""
   keytype: ""
   usageplanid: ""
   name: ""
   value: ""
+  keyid: ""
 

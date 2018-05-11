@@ -11,28 +11,28 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsEip struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsEipSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsEipSpec `json:"spec"`
 }
 
 type AwsEipSpec struct {
-	AssociateWithPrivateIp string            `json:"associate_with_private_ip"`
-	Instance               string            `json:"instance"`
-	NetworkInterface       string            `json:"network_interface"`
-	AssociationId          string            `json:"association_id"`
 	PrivateIp              string            `json:"private_ip"`
-	Tags                   map[string]string `json:"tags"`
 	Vpc                    bool              `json:"vpc"`
 	AllocationId           string            `json:"allocation_id"`
-	Domain                 string            `json:"domain"`
+	AssociationId          string            `json:"association_id"`
 	PublicIp               string            `json:"public_ip"`
+	AssociateWithPrivateIp string            `json:"associate_with_private_ip"`
+	Tags                   map[string]string `json:"tags"`
+	Instance               string            `json:"instance"`
+	NetworkInterface       string            `json:"network_interface"`
+	Domain                 string            `json:"domain"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsEipList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsEip `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsEip `json:"items"`
 }

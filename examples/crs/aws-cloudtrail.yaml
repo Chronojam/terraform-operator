@@ -5,19 +5,19 @@ kind: AwsCloudtrail
 metadata:
   name: example-aws-cloudtrail
 spec:
-  tags: {}
   cloudwatchlogsgrouparn: ""
-  kmskeyid: ""
   homeregion: ""
-  eventselector: []
-  s3bucketname: ""
-  includeglobalserviceevents: false
-  enablelogfilevalidation: false
   name: ""
-  ismultiregiontrail: false
-  snstopicname: ""
-  arn: ""
-  enablelogging: false
+  s3bucketname: ""
+  kmskeyid: ""
   s3keyprefix: ""
+  ismultiregiontrail: false
+  arn: ""
+  tags: {}
+  enablelogfilevalidation: false
+  eventselector: []
+  includeglobalserviceevents: false
+  snstopicname: ""
+  enablelogging: false
   cloudwatchlogsrolearn: ""
 

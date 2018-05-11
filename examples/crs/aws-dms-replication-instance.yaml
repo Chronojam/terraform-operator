@@ -5,21 +5,21 @@ kind: AwsDmsReplicationInstance
 metadata:
   name: example-aws-dms-replication-instance
 spec:
-  vpcsecuritygroupids: ""
-  allocatedstorage: 0
-  replicationsubnetgroupid: ""
-  tags: {}
-  replicationinstanceprivateips: []
-  replicationinstancepublicips: []
-  applyimmediately: false
-  kmskeyarn: ""
-  publiclyaccessible: false
-  replicationinstanceid: ""
-  engineversion: ""
-  multiaz: false
-  replicationinstancearn: ""
-  replicationinstanceclass: ""
   autominorversionupgrade: false
-  availabilityzone: ""
+  multiaz: false
+  publiclyaccessible: false
+  replicationinstancearn: ""
+  replicationinstanceid: ""
+  replicationinstanceprivateips: []
+  replicationsubnetgroupid: ""
+  applyimmediately: false
+  vpcsecuritygroupids: ""
+  kmskeyarn: ""
+  replicationinstancepublicips: []
+  engineversion: ""
   preferredmaintenancewindow: ""
+  availabilityzone: ""
+  replicationinstanceclass: ""
+  tags: {}
+  allocatedstorage: 0
 

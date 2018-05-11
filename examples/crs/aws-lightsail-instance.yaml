@@ -5,19 +5,19 @@ kind: AwsLightsailInstance
 metadata:
   name: example-aws-lightsail-instance
 spec:
-  arn: ""
-  privateipaddress: ""
-  availabilityzone: ""
-  createdat: ""
-  cpucount: 0
-  ipv6address: ""
-  isstaticip: false
-  publicipaddress: ""
-  blueprintid: ""
-  keypairname: ""
-  userdata: ""
   name: ""
   bundleid: ""
   ramsize: 0
+  ipv6address: ""
+  isstaticip: false
+  availabilityzone: ""
+  blueprintid: ""
+  createdat: ""
+  keypairname: ""
+  privateipaddress: ""
+  publicipaddress: ""
   username: ""
+  userdata: ""
+  arn: ""
+  cpucount: 0
 

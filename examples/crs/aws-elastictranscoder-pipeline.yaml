@@ -5,29 +5,29 @@ kind: AwsElastictranscoderPipeline
 metadata:
   name: example-aws-elastictranscoder-pipeline
 spec:
+  role: ""
   thumbnailconfig:
-    bucket: ""
     storageclass: ""
+    bucket: ""
   arn: ""
-  awskmskeyarn: ""
   contentconfig:
     bucket: ""
     storageclass: ""
-  inputbucket: ""
+  name: ""
   notifications:
     completed: ""
     error: ""
     progressing: ""
     warning: ""
+  thumbnailconfigpermissions:
+    access: []
+    grantee: ""
+    granteetype: ""
+  awskmskeyarn: ""
   contentconfigpermissions:
     access: []
     grantee: ""
     granteetype: ""
-  name: ""
+  inputbucket: ""
   outputbucket: ""
-  role: ""
-  thumbnailconfigpermissions:
-    grantee: ""
-    granteetype: ""
-    access: []
 

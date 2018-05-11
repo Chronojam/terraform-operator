@@ -7,10 +7,10 @@ metadata:
 spec:
   name: ""
   bytematchtuples:
-    fieldtomatch:
-      type: ""
-      data: ""
     positionalconstraint: ""
     targetstring: ""
     texttransformation: ""
+    fieldtomatch:
+      type: ""
+      data: ""
 

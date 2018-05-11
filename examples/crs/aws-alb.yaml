@@ -5,25 +5,25 @@ kind: AwsAlb
 metadata:
   name: example-aws-alb
 spec:
-  nameprefix: ""
-  loadbalancertype: ""
-  dnsname: ""
-  arn: ""
-  arnsuffix: ""
-  idletimeout: 0
-  subnets: ""
-  subnetmapping:
-    allocationid: ""
-    subnetid: ""
   enabledeletionprotection: false
+  idletimeout: 0
   ipaddresstype: ""
+  arn: ""
+  nameprefix: ""
+  subnetmapping:
+    subnetid: ""
+    allocationid: ""
+  accesslogs: []
   enablecrosszoneloadbalancing: false
+  zoneid: ""
+  dnsname: ""
+  arnsuffix: ""
+  subnets: ""
   enablehttp2: false
   vpcid: ""
-  zoneid: ""
+  tags: {}
   name: ""
   internal: false
+  loadbalancertype: ""
   securitygroups: ""
-  accesslogs: []
-  tags: {}
 

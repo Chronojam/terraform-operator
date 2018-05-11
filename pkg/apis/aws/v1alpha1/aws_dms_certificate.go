@@ -11,22 +11,22 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDmsCertificate struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDmsCertificateSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDmsCertificateSpec `json:"spec"`
 }
 
 type AwsDmsCertificateSpec struct {
+	CertificatePem    string `json:"certificate_pem"`
 	CertificateWallet string `json:"certificate_wallet"`
 	CertificateArn    string `json:"certificate_arn"`
 	CertificateId     string `json:"certificate_id"`
-	CertificatePem    string `json:"certificate_pem"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDmsCertificateList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDmsCertificate `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDmsCertificate `json:"items"`
 }

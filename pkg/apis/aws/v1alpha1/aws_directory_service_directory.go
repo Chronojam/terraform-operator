@@ -11,34 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDirectoryServiceDirectory struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDirectoryServiceDirectorySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDirectoryServiceDirectorySpec `json:"spec"`
 }
 
 type AwsDirectoryServiceDirectorySpec struct {
-	ShortName       string                                            `json:"short_name"`
-	DnsIpAddresses  string                                            `json:"dns_ip_addresses"`
-	Type            string                                            `json:"type"`
-	Edition         string                                            `json:"edition"`
+	Name            string                                            `json:"name"`
 	Password        string                                            `json:"password"`
+	Description     string                                            `json:"description"`
 	Alias           string                                            `json:"alias"`
+	SecurityGroupId string                                            `json:"security_group_id"`
+	Edition         string                                            `json:"edition"`
+	Type            string                                            `json:"type"`
+	Size            string                                            `json:"size"`
+	ShortName       string                                            `json:"short_name"`
+	Tags            map[string]string                                 `json:"tags"`
+	VpcSettings     []AwsDirectoryServiceDirectorySpecVpcSettings     `json:"vpc_settings"`
 	ConnectSettings []AwsDirectoryServiceDirectorySpecConnectSettings `json:"connect_settings"`
 	EnableSso       bool                                              `json:"enable_sso"`
 	AccessUrl       string                                            `json:"access_url"`
-	Name            string                                            `json:"name"`
-	Size            string                                            `json:"size"`
-	Description     string                                            `json:"description"`
-	Tags            map[string]string                                 `json:"tags"`
-	VpcSettings     []AwsDirectoryServiceDirectorySpecVpcSettings     `json:"vpc_settings"`
-	SecurityGroupId string                                            `json:"security_group_id"`
-}
-
-type AwsDirectoryServiceDirectorySpecConnectSettings struct {
-	CustomerUsername string `json:"customer_username"`
-	CustomerDnsIps   string `json:"customer_dns_ips"`
-	SubnetIds        string `json:"subnet_ids"`
-	VpcId            string `json:"vpc_id"`
+	DnsIpAddresses  string                                            `json:"dns_ip_addresses"`
 }
 
 type AwsDirectoryServiceDirectorySpecVpcSettings struct {
@@ -46,10 +39,17 @@ type AwsDirectoryServiceDirectorySpecVpcSettings struct {
 	VpcId     string `json:"vpc_id"`
 }
 
+type AwsDirectoryServiceDirectorySpecConnectSettings struct {
+	SubnetIds        string `json:"subnet_ids"`
+	VpcId            string `json:"vpc_id"`
+	CustomerUsername string `json:"customer_username"`
+	CustomerDnsIps   string `json:"customer_dns_ips"`
+}
+
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDirectoryServiceDirectoryList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDirectoryServiceDirectory `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDirectoryServiceDirectory `json:"items"`
 }

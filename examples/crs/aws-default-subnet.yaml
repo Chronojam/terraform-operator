@@ -5,12 +5,12 @@ kind: AwsDefaultSubnet
 metadata:
   name: example-aws-default-subnet
 spec:
-  ipv6cidrblockassociationid: ""
-  tags: {}
-  vpcid: ""
   cidrblock: ""
   ipv6cidrblock: ""
   availabilityzone: ""
   mappubliciponlaunch: false
   assignipv6addressoncreation: false
+  ipv6cidrblockassociationid: ""
+  tags: {}
+  vpcid: ""
 

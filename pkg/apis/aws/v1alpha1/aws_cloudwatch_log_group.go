@@ -11,24 +11,24 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchLogGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCloudwatchLogGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCloudwatchLogGroupSpec `json:"spec"`
 }
 
 type AwsCloudwatchLogGroupSpec struct {
+	Tags            map[string]string `json:"tags"`
 	Name            string            `json:"name"`
 	NamePrefix      string            `json:"name_prefix"`
 	RetentionInDays int               `json:"retention_in_days"`
 	KmsKeyId        string            `json:"kms_key_id"`
 	Arn             string            `json:"arn"`
-	Tags            map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchLogGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCloudwatchLogGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCloudwatchLogGroup `json:"items"`
 }

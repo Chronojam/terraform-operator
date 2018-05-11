@@ -11,37 +11,37 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsEmrCluster struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsEmrClusterSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsEmrClusterSpec `json:"spec"`
 }
 
 type AwsEmrClusterSpec struct {
-	ClusterState                string                                `json:"cluster_state"`
-	MasterPublicDns             string                                `json:"master_public_dns"`
-	KeepJobFlowAliveWhenNoSteps bool                                  `json:"keep_job_flow_alive_when_no_steps"`
-	Ec2Attributes               []AwsEmrClusterSpecEc2Attributes      `json:"ec2_attributes"`
-	BootstrapAction             AwsEmrClusterSpecBootstrapAction      `json:"bootstrap_action"`
+	MasterInstanceType          string                                `json:"master_instance_type"`
 	Configurations              string                                `json:"configurations"`
-	Name                        string                                `json:"name"`
-	CoreInstanceCount           int                                   `json:"core_instance_count"`
-	AutoscalingRole             string                                `json:"autoscaling_role"`
-	Applications                string                                `json:"applications"`
-	ServiceRole                 string                                `json:"service_role"`
+	SecurityConfiguration       string                                `json:"security_configuration"`
+	ReleaseLabel                string                                `json:"release_label"`
+	ClusterState                string                                `json:"cluster_state"`
 	LogUri                      string                                `json:"log_uri"`
 	TerminationProtection       bool                                  `json:"termination_protection"`
+	Ec2Attributes               []AwsEmrClusterSpecEc2Attributes      `json:"ec2_attributes"`
 	KerberosAttributes          []AwsEmrClusterSpecKerberosAttributes `json:"kerberos_attributes"`
+	InstanceGroup               AwsEmrClusterSpecInstanceGroup        `json:"instance_group"`
+	AutoscalingRole             string                                `json:"autoscaling_role"`
 	VisibleToAllUsers           bool                                  `json:"visible_to_all_users"`
 	CustomAmiId                 string                                `json:"custom_ami_id"`
-	MasterInstanceType          string                                `json:"master_instance_type"`
-	CoreInstanceType            string                                `json:"core_instance_type"`
-	Step                        []AwsEmrClusterSpecStep               `json:"step"`
+	CoreInstanceCount           int                                   `json:"core_instance_count"`
+	MasterPublicDns             string                                `json:"master_public_dns"`
+	KeepJobFlowAliveWhenNoSteps bool                                  `json:"keep_job_flow_alive_when_no_steps"`
 	Tags                        map[string]string                     `json:"tags"`
-	ScaleDownBehavior           string                                `json:"scale_down_behavior"`
-	SecurityConfiguration       string                                `json:"security_configuration"`
 	EbsRootVolumeSize           int                                   `json:"ebs_root_volume_size"`
-	ReleaseLabel                string                                `json:"release_label"`
-	InstanceGroup               AwsEmrClusterSpecInstanceGroup        `json:"instance_group"`
+	Name                        string                                `json:"name"`
+	CoreInstanceType            string                                `json:"core_instance_type"`
+	Applications                string                                `json:"applications"`
+	BootstrapAction             AwsEmrClusterSpecBootstrapAction      `json:"bootstrap_action"`
+	Step                        []AwsEmrClusterSpecStep               `json:"step"`
+	ServiceRole                 string                                `json:"service_role"`
+	ScaleDownBehavior           string                                `json:"scale_down_behavior"`
 }
 
 type AwsEmrClusterSpecEc2Attributes struct {
@@ -55,18 +55,35 @@ type AwsEmrClusterSpecEc2Attributes struct {
 	AdditionalSlaveSecurityGroups  string `json:"additional_slave_security_groups"`
 }
 
-type AwsEmrClusterSpecBootstrapAction struct {
-	Name string   `json:"name"`
-	Path string   `json:"path"`
-	Args []string `json:"args"`
-}
-
 type AwsEmrClusterSpecKerberosAttributes struct {
-	Realm                            string `json:"realm"`
 	AdDomainJoinPassword             string `json:"ad_domain_join_password"`
 	AdDomainJoinUser                 string `json:"ad_domain_join_user"`
 	CrossRealmTrustPrincipalPassword string `json:"cross_realm_trust_principal_password"`
 	KdcAdminPassword                 string `json:"kdc_admin_password"`
+	Realm                            string `json:"realm"`
+}
+
+type AwsEmrClusterSpecInstanceGroup struct {
+	EbsConfig         AwsEmrClusterSpecInstanceGroupEbsConfig `json:"ebs_config"`
+	InstanceCount     int                                     `json:"instance_count"`
+	AutoscalingPolicy string                                  `json:"autoscaling_policy"`
+	InstanceRole      string                                  `json:"instance_role"`
+	InstanceType      string                                  `json:"instance_type"`
+	Name              string                                  `json:"name"`
+	BidPrice          string                                  `json:"bid_price"`
+}
+
+type AwsEmrClusterSpecInstanceGroupEbsConfig struct {
+	Type               string `json:"type"`
+	VolumesPerInstance int    `json:"volumes_per_instance"`
+	Iops               int    `json:"iops"`
+	Size               int    `json:"size"`
+}
+
+type AwsEmrClusterSpecBootstrapAction struct {
+	Name string   `json:"name"`
+	Path string   `json:"path"`
+	Args []string `json:"args"`
 }
 
 type AwsEmrClusterSpecStep struct {
@@ -82,27 +99,10 @@ type AwsEmrClusterSpecStepHadoopJarStep struct {
 	Properties map[string]string `json:"properties"`
 }
 
-type AwsEmrClusterSpecInstanceGroup struct {
-	BidPrice          string                                  `json:"bid_price"`
-	EbsConfig         AwsEmrClusterSpecInstanceGroupEbsConfig `json:"ebs_config"`
-	InstanceCount     int                                     `json:"instance_count"`
-	AutoscalingPolicy string                                  `json:"autoscaling_policy"`
-	InstanceRole      string                                  `json:"instance_role"`
-	InstanceType      string                                  `json:"instance_type"`
-	Name              string                                  `json:"name"`
-}
-
-type AwsEmrClusterSpecInstanceGroupEbsConfig struct {
-	VolumesPerInstance int    `json:"volumes_per_instance"`
-	Iops               int    `json:"iops"`
-	Size               int    `json:"size"`
-	Type               string `json:"type"`
-}
-
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsEmrClusterList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsEmrCluster `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsEmrCluster `json:"items"`
 }

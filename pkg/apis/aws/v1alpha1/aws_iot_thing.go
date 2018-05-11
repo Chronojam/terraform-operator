@@ -11,24 +11,24 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIotThing struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsIotThingSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsIotThingSpec `json:"spec"`
 }
 
 type AwsIotThingSpec struct {
+	Name            string            `json:"name"`
+	Attributes      map[string]string `json:"attributes"`
 	ThingTypeName   string            `json:"thing_type_name"`
 	DefaultClientId string            `json:"default_client_id"`
 	Version         int               `json:"version"`
 	Arn             string            `json:"arn"`
-	Name            string            `json:"name"`
-	Attributes      map[string]string `json:"attributes"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIotThingList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsIotThing `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsIotThing `json:"items"`
 }

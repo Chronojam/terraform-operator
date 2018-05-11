@@ -9,29 +9,35 @@ HANDLER_CONTENT='package LC
 
 import (
     log "github.com/Sirupsen/logrus"
+    "github.com/chronojam/terraform-operator/pkg/terraform"
+    "github.com/chronojam/terraform-operator/pkg/apis/aws/v1alpha1"
 )
 
+const ResourceName="RN"
 type Handler struct{}
 
 // Init is used for initialization logic
 func (t *Handler) Init() error {
-	log.Info("Handler.Init")
 	return nil
 }
 
 // ObjectCreated is called when an object is created
 func (t *Handler) ObjectCreated(obj interface{}) {
-	log.Info("Handler.ObjectCreated")
+    o := obj.(*v1alpha1.ST)
+	b, err := terraform.RenderToTerraform(o.Spec, ResourceName, string(o.GetUID()))
+	if err != nil {
+		log.Info(err)
+	}
+
+	log.Infof("%s", string(b))
 }
 
 // ObjectDeleted is called when an object is deleted
 func (t *Handler) ObjectDeleted(obj interface{}) {
-	log.Info("Handler.ObjectDeleted")
 }
 
 // ObjectUpdated is called when an object is updated
 func (t *Handler) ObjectUpdated(objOld, objNew interface{}) {
-	log.Info("Handler.ObjectUpdated")
 }'
 
 INFORMER_CONTENT='package LC
@@ -79,6 +85,8 @@ function write_file {
     LC=$(echo $LC | tr -d '\n')
     DIR=$WRITE_PATH/$LC
 
+    RN=$(echo $FN | sed -e 's/.go//g')
+
     PLURAL=$(.build/plural $LC)
 
     mkdir -p $DIR
@@ -87,10 +95,12 @@ function write_file {
     echo "$HANDLER_CONTENT" > $DIR/handler.go
     echo "$INFORMER_CONTENT" > $DIR/informer.go
     echo "$CRD_TEMPLATE" > crds/$LC.yaml
+    echo "RN==$RN"
 
     sed -i '' "s/LC/$LC/g" $DIR/handler.go $DIR/informer.go crds/$LC.yaml
     sed -i '' "s/ST/$ST/g" $DIR/handler.go $DIR/informer.go crds/$LC.yaml
     sed -i '' "s/PLURAL/$PLURAL/g" $DIR/handler.go $DIR/informer.go crds/$LC.yaml
+    sed -i '' "s/RN/$RN/g" $DIR/handler.go $DIR/informer.go crds/$LC.yaml
 
     echo "Written:  $DIR/handler.go"
     echo "Written:  $DIR/informer.go"

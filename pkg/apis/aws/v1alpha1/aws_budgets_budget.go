@@ -11,43 +11,43 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsBudgetsBudget struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsBudgetsBudgetSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsBudgetsBudgetSpec `json:"spec"`
 }
 
 type AwsBudgetsBudgetSpec struct {
-	AccountId       string                          `json:"account_id"`
 	Name            string                          `json:"name"`
-	LimitUnit       string                          `json:"limit_unit"`
+	NamePrefix      string                          `json:"name_prefix"`
+	BudgetType      string                          `json:"budget_type"`
 	CostTypes       []AwsBudgetsBudgetSpecCostTypes `json:"cost_types"`
 	TimeUnit        string                          `json:"time_unit"`
 	CostFilters     map[string]string               `json:"cost_filters"`
-	NamePrefix      string                          `json:"name_prefix"`
-	BudgetType      string                          `json:"budget_type"`
+	AccountId       string                          `json:"account_id"`
 	LimitAmount     string                          `json:"limit_amount"`
+	LimitUnit       string                          `json:"limit_unit"`
 	TimePeriodStart string                          `json:"time_period_start"`
 	TimePeriodEnd   string                          `json:"time_period_end"`
 }
 
 type AwsBudgetsBudgetSpecCostTypes struct {
-	IncludeOtherSubscription bool `json:"include_other_subscription"`
-	IncludeSubscription      bool `json:"include_subscription"`
-	UseBlended               bool `json:"use_blended"`
 	IncludeCredit            bool `json:"include_credit"`
-	IncludeRecurring         bool `json:"include_recurring"`
 	IncludeRefund            bool `json:"include_refund"`
+	IncludeSubscription      bool `json:"include_subscription"`
 	IncludeSupport           bool `json:"include_support"`
-	IncludeTax               bool `json:"include_tax"`
-	IncludeUpfront           bool `json:"include_upfront"`
 	UseAmortized             bool `json:"use_amortized"`
 	IncludeDiscount          bool `json:"include_discount"`
+	IncludeOtherSubscription bool `json:"include_other_subscription"`
+	IncludeRecurring         bool `json:"include_recurring"`
+	IncludeTax               bool `json:"include_tax"`
+	IncludeUpfront           bool `json:"include_upfront"`
+	UseBlended               bool `json:"use_blended"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsBudgetsBudgetList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsBudgetsBudget `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsBudgetsBudget `json:"items"`
 }

@@ -11,16 +11,16 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAppsyncGraphqlApi struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAppsyncGraphqlApiSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAppsyncGraphqlApiSpec `json:"spec"`
 }
 
 type AwsAppsyncGraphqlApiSpec struct {
-	Arn                string                                   `json:"arn"`
 	AuthenticationType string                                   `json:"authentication_type"`
 	Name               string                                   `json:"name"`
 	UserPoolConfig     []AwsAppsyncGraphqlApiSpecUserPoolConfig `json:"user_pool_config"`
+	Arn                string                                   `json:"arn"`
 }
 
 type AwsAppsyncGraphqlApiSpecUserPoolConfig struct {
@@ -33,7 +33,7 @@ type AwsAppsyncGraphqlApiSpecUserPoolConfig struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAppsyncGraphqlApiList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAppsyncGraphqlApi `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAppsyncGraphqlApi `json:"items"`
 }

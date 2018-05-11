@@ -5,7 +5,7 @@ kind: AwsDirectoryServiceConditionalForwarder
 metadata:
   name: example-aws-directory-service-conditional-forwarder
 spec:
+  directoryid: ""
   dnsips: []
   remotedomainname: ""
-  directoryid: ""
 

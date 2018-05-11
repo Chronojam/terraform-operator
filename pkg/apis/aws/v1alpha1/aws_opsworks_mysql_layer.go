@@ -11,49 +11,49 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksMysqlLayer struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsOpsworksMysqlLayerSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsOpsworksMysqlLayerSpec `json:"spec"`
 }
 
 type AwsOpsworksMysqlLayerSpec struct {
+	CustomConfigureRecipes     []string                           `json:"custom_configure_recipes"`
 	CustomDeployRecipes        []string                           `json:"custom_deploy_recipes"`
-	CustomShutdownRecipes      []string                           `json:"custom_shutdown_recipes"`
+	CustomJson                 string                             `json:"custom_json"`
 	AutoHealing                bool                               `json:"auto_healing"`
-	StackId                    string                             `json:"stack_id"`
-	RootPasswordOnAllInstances bool                               `json:"root_password_on_all_instances"`
-	AutoAssignPublicIps        bool                               `json:"auto_assign_public_ips"`
+	RootPassword               string                             `json:"root_password"`
+	Name                       string                             `json:"name"`
 	CustomInstanceProfileArn   string                             `json:"custom_instance_profile_arn"`
 	CustomSetupRecipes         []string                           `json:"custom_setup_recipes"`
-	InstallUpdatesOnBoot       bool                               `json:"install_updates_on_boot"`
-	UseEbsOptimizedInstances   bool                               `json:"use_ebs_optimized_instances"`
-	DrainElbOnShutdown         bool                               `json:"drain_elb_on_shutdown"`
-	RootPassword               string                             `json:"root_password"`
 	CustomUndeployRecipes      []string                           `json:"custom_undeploy_recipes"`
-	CustomSecurityGroupIds     string                             `json:"custom_security_group_ids"`
-	CustomJson                 string                             `json:"custom_json"`
-	InstanceShutdownTimeout    int                                `json:"instance_shutdown_timeout"`
+	CustomShutdownRecipes      []string                           `json:"custom_shutdown_recipes"`
+	InstallUpdatesOnBoot       bool                               `json:"install_updates_on_boot"`
 	SystemPackages             string                             `json:"system_packages"`
+	RootPasswordOnAllInstances bool                               `json:"root_password_on_all_instances"`
 	AutoAssignElasticIps       bool                               `json:"auto_assign_elastic_ips"`
 	ElasticLoadBalancer        string                             `json:"elastic_load_balancer"`
-	CustomConfigureRecipes     []string                           `json:"custom_configure_recipes"`
+	InstanceShutdownTimeout    int                                `json:"instance_shutdown_timeout"`
+	StackId                    string                             `json:"stack_id"`
+	UseEbsOptimizedInstances   bool                               `json:"use_ebs_optimized_instances"`
 	EbsVolume                  AwsOpsworksMysqlLayerSpecEbsVolume `json:"ebs_volume"`
-	Name                       string                             `json:"name"`
+	AutoAssignPublicIps        bool                               `json:"auto_assign_public_ips"`
+	CustomSecurityGroupIds     string                             `json:"custom_security_group_ids"`
+	DrainElbOnShutdown         bool                               `json:"drain_elb_on_shutdown"`
 }
 
 type AwsOpsworksMysqlLayerSpecEbsVolume struct {
-	NumberOfDisks int    `json:"number_of_disks"`
 	RaidLevel     string `json:"raid_level"`
 	Size          int    `json:"size"`
 	Type          string `json:"type"`
 	Iops          int    `json:"iops"`
 	MountPoint    string `json:"mount_point"`
+	NumberOfDisks int    `json:"number_of_disks"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksMysqlLayerList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsOpsworksMysqlLayer `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsOpsworksMysqlLayer `json:"items"`
 }

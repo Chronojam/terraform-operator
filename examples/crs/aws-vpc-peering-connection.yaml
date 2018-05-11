@@ -5,17 +5,17 @@ kind: AwsVpcPeeringConnection
 metadata:
   name: example-aws-vpc-peering-connection
 spec:
-  peervpcid: ""
-  accepter:
-    allowclassiclinktoremotevpc: false
-    allowvpctoremoteclassiclink: false
-    allowremotevpcdnsresolution: false
-  tags: {}
-  peerownerid: ""
-  vpcid: ""
   autoaccept: false
   acceptstatus: ""
   peerregion: ""
+  tags: {}
+  peerownerid: ""
+  peervpcid: ""
+  vpcid: ""
+  accepter:
+    allowremotevpcdnsresolution: false
+    allowclassiclinktoremotevpc: false
+    allowvpctoremoteclassiclink: false
   requester:
     allowremotevpcdnsresolution: false
     allowclassiclinktoremotevpc: false

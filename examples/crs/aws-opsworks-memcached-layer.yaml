@@ -5,31 +5,31 @@ kind: AwsOpsworksMemcachedLayer
 metadata:
   name: example-aws-opsworks-memcached-layer
 spec:
-  useebsoptimizedinstances: false
-  autoassignelasticips: false
-  autoassignpublicips: false
-  autohealing: false
-  installupdatesonboot: false
-  drainelbonshutdown: false
-  customsetuprecipes: []
-  customdeployrecipes: []
-  customshutdownrecipes: []
-  customjson: ""
-  stackid: ""
-  custominstanceprofilearn: ""
-  customundeployrecipes: []
-  systempackages: ""
-  name: ""
-  allocatedmemory: 0
   elasticloadbalancer: ""
   customconfigurerecipes: []
+  customundeployrecipes: []
   customsecuritygroupids: ""
+  customjson: ""
   instanceshutdowntimeout: 0
+  drainelbonshutdown: false
+  customsetuprecipes: []
+  systempackages: ""
   ebsvolume:
+    iops: 0
+    mountpoint: ""
     numberofdisks: 0
     raidlevel: ""
     size: 0
     type: ""
-    iops: 0
-    mountpoint: ""
+  name: ""
+  autoassignelasticips: false
+  customdeployrecipes: []
+  customshutdownrecipes: []
+  autohealing: false
+  installupdatesonboot: false
+  useebsoptimizedinstances: false
+  allocatedmemory: 0
+  autoassignpublicips: false
+  custominstanceprofilearn: ""
+  stackid: ""
 

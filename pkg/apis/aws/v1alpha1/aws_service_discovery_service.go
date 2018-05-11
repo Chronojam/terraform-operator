@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsServiceDiscoveryService struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsServiceDiscoveryServiceSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsServiceDiscoveryServiceSpec `json:"spec"`
 }
 
 type AwsServiceDiscoveryServiceSpec struct {
@@ -26,9 +26,9 @@ type AwsServiceDiscoveryServiceSpec struct {
 }
 
 type AwsServiceDiscoveryServiceSpecDnsConfig struct {
-	NamespaceId   string                                              `json:"namespace_id"`
 	DnsRecords    []AwsServiceDiscoveryServiceSpecDnsConfigDnsRecords `json:"dns_records"`
 	RoutingPolicy string                                              `json:"routing_policy"`
+	NamespaceId   string                                              `json:"namespace_id"`
 }
 
 type AwsServiceDiscoveryServiceSpecDnsConfigDnsRecords struct {
@@ -37,9 +37,9 @@ type AwsServiceDiscoveryServiceSpecDnsConfigDnsRecords struct {
 }
 
 type AwsServiceDiscoveryServiceSpecHealthCheckConfig struct {
+	FailureThreshold int    `json:"failure_threshold"`
 	ResourcePath     string `json:"resource_path"`
 	Type             string `json:"type"`
-	FailureThreshold int    `json:"failure_threshold"`
 }
 
 type AwsServiceDiscoveryServiceSpecHealthCheckCustomConfig struct {
@@ -49,7 +49,7 @@ type AwsServiceDiscoveryServiceSpecHealthCheckCustomConfig struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsServiceDiscoveryServiceList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsServiceDiscoveryService `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsServiceDiscoveryService `json:"items"`
 }

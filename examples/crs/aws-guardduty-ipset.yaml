@@ -5,9 +5,9 @@ kind: AwsGuarddutyIpset
 metadata:
   name: example-aws-guardduty-ipset
 spec:
+  detectorid: ""
+  name: ""
   format: ""
   location: ""
   activate: false
-  detectorid: ""
-  name: ""
 

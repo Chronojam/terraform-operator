@@ -11,60 +11,60 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLaunchConfiguration struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLaunchConfigurationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLaunchConfigurationSpec `json:"spec"`
 }
 
 type AwsLaunchConfigurationSpec struct {
-	VpcClassicLinkSecurityGroups string                                         `json:"vpc_classic_link_security_groups"`
-	AssociatePublicIpAddress     bool                                           `json:"associate_public_ip_address"`
-	SpotPrice                    string                                         `json:"spot_price"`
-	EnableMonitoring             bool                                           `json:"enable_monitoring"`
-	RootBlockDevice              []AwsLaunchConfigurationSpecRootBlockDevice    `json:"root_block_device"`
-	IamInstanceProfile           string                                         `json:"iam_instance_profile"`
-	NamePrefix                   string                                         `json:"name_prefix"`
 	UserDataBase64               string                                         `json:"user_data_base64"`
-	SecurityGroups               string                                         `json:"security_groups"`
-	EphemeralBlockDevice         AwsLaunchConfigurationSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
-	Name                         string                                         `json:"name"`
-	UserData                     string                                         `json:"user_data"`
-	VpcClassicLinkId             string                                         `json:"vpc_classic_link_id"`
-	PlacementTenancy             string                                         `json:"placement_tenancy"`
+	EbsOptimized                 bool                                           `json:"ebs_optimized"`
 	EbsBlockDevice               AwsLaunchConfigurationSpecEbsBlockDevice       `json:"ebs_block_device"`
+	RootBlockDevice              []AwsLaunchConfigurationSpecRootBlockDevice    `json:"root_block_device"`
 	ImageId                      string                                         `json:"image_id"`
 	KeyName                      string                                         `json:"key_name"`
-	EbsOptimized                 bool                                           `json:"ebs_optimized"`
+	Name                         string                                         `json:"name"`
+	NamePrefix                   string                                         `json:"name_prefix"`
+	UserData                     string                                         `json:"user_data"`
+	VpcClassicLinkId             string                                         `json:"vpc_classic_link_id"`
+	VpcClassicLinkSecurityGroups string                                         `json:"vpc_classic_link_security_groups"`
+	SpotPrice                    string                                         `json:"spot_price"`
+	EphemeralBlockDevice         AwsLaunchConfigurationSpecEphemeralBlockDevice `json:"ephemeral_block_device"`
 	InstanceType                 string                                         `json:"instance_type"`
-}
-
-type AwsLaunchConfigurationSpecRootBlockDevice struct {
-	DeleteOnTermination bool   `json:"delete_on_termination"`
-	Iops                int    `json:"iops"`
-	VolumeSize          int    `json:"volume_size"`
-	VolumeType          string `json:"volume_type"`
-}
-
-type AwsLaunchConfigurationSpecEphemeralBlockDevice struct {
-	DeviceName  string `json:"device_name"`
-	VirtualName string `json:"virtual_name"`
+	IamInstanceProfile           string                                         `json:"iam_instance_profile"`
+	PlacementTenancy             string                                         `json:"placement_tenancy"`
+	EnableMonitoring             bool                                           `json:"enable_monitoring"`
+	SecurityGroups               string                                         `json:"security_groups"`
+	AssociatePublicIpAddress     bool                                           `json:"associate_public_ip_address"`
 }
 
 type AwsLaunchConfigurationSpecEbsBlockDevice struct {
-	Encrypted           bool   `json:"encrypted"`
-	DeleteOnTermination bool   `json:"delete_on_termination"`
 	DeviceName          string `json:"device_name"`
 	NoDevice            bool   `json:"no_device"`
 	Iops                int    `json:"iops"`
 	SnapshotId          string `json:"snapshot_id"`
 	VolumeSize          int    `json:"volume_size"`
 	VolumeType          string `json:"volume_type"`
+	Encrypted           bool   `json:"encrypted"`
+	DeleteOnTermination bool   `json:"delete_on_termination"`
+}
+
+type AwsLaunchConfigurationSpecRootBlockDevice struct {
+	VolumeType          string `json:"volume_type"`
+	DeleteOnTermination bool   `json:"delete_on_termination"`
+	Iops                int    `json:"iops"`
+	VolumeSize          int    `json:"volume_size"`
+}
+
+type AwsLaunchConfigurationSpecEphemeralBlockDevice struct {
+	VirtualName string `json:"virtual_name"`
+	DeviceName  string `json:"device_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLaunchConfigurationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLaunchConfiguration `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLaunchConfiguration `json:"items"`
 }

@@ -11,21 +11,21 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmAssociation struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSsmAssociationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSsmAssociationSpec `json:"spec"`
 }
 
 type AwsSsmAssociationSpec struct {
+	ScheduleExpression string                                `json:"schedule_expression"`
 	OutputLocation     []AwsSsmAssociationSpecOutputLocation `json:"output_location"`
 	Targets            []AwsSsmAssociationSpecTargets        `json:"targets"`
-	AssociationId      string                                `json:"association_id"`
 	Name               string                                `json:"name"`
-	ScheduleExpression string                                `json:"schedule_expression"`
-	Parameters         map[string]string                     `json:"parameters"`
-	AssociationName    string                                `json:"association_name"`
+	AssociationId      string                                `json:"association_id"`
 	InstanceId         string                                `json:"instance_id"`
 	DocumentVersion    string                                `json:"document_version"`
+	Parameters         map[string]string                     `json:"parameters"`
+	AssociationName    string                                `json:"association_name"`
 }
 
 type AwsSsmAssociationSpecOutputLocation struct {
@@ -41,7 +41,7 @@ type AwsSsmAssociationSpecTargets struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmAssociationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSsmAssociation `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSsmAssociation `json:"items"`
 }

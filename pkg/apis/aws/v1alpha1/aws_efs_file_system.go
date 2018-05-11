@@ -11,25 +11,25 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsEfsFileSystem struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsEfsFileSystemSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsEfsFileSystemSpec `json:"spec"`
 }
 
 type AwsEfsFileSystemSpec struct {
+	ReferenceName   string            `json:"reference_name"`
+	PerformanceMode string            `json:"performance_mode"`
 	Encrypted       bool              `json:"encrypted"`
 	KmsKeyId        string            `json:"kms_key_id"`
 	DnsName         string            `json:"dns_name"`
 	Tags            map[string]string `json:"tags"`
 	CreationToken   string            `json:"creation_token"`
-	ReferenceName   string            `json:"reference_name"`
-	PerformanceMode string            `json:"performance_mode"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsEfsFileSystemList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsEfsFileSystem `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsEfsFileSystem `json:"items"`
 }

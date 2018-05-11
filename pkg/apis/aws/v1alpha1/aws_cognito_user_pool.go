@@ -11,33 +11,33 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCognitoUserPool struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCognitoUserPoolSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCognitoUserPoolSpec `json:"spec"`
 }
 
 type AwsCognitoUserPoolSpec struct {
+	UsernameAttributes          []string                                            `json:"username_attributes"`
 	AdminCreateUserConfig       []AwsCognitoUserPoolSpecAdminCreateUserConfig       `json:"admin_create_user_config"`
-	Arn                         string                                              `json:"arn"`
 	AutoVerifiedAttributes      string                                              `json:"auto_verified_attributes"`
 	CreationDate                string                                              `json:"creation_date"`
-	EmailConfiguration          []AwsCognitoUserPoolSpecEmailConfiguration          `json:"email_configuration"`
-	MfaConfiguration            string                                              `json:"mfa_configuration"`
 	DeviceConfiguration         []AwsCognitoUserPoolSpecDeviceConfiguration         `json:"device_configuration"`
-	LambdaConfig                []AwsCognitoUserPoolSpecLambdaConfig                `json:"lambda_config"`
+	Name                        string                                              `json:"name"`
 	PasswordPolicy              []AwsCognitoUserPoolSpecPasswordPolicy              `json:"password_policy"`
 	Schema                      AwsCognitoUserPoolSpecSchema                        `json:"schema"`
-	SmsVerificationMessage      string                                              `json:"sms_verification_message"`
-	UsernameAttributes          []string                                            `json:"username_attributes"`
-	EmailVerificationMessage    string                                              `json:"email_verification_message"`
-	LastModifiedDate            string                                              `json:"last_modified_date"`
+	VerificationMessageTemplate []AwsCognitoUserPoolSpecVerificationMessageTemplate `json:"verification_message_template"`
+	EmailVerificationSubject    string                                              `json:"email_verification_subject"`
+	LambdaConfig                []AwsCognitoUserPoolSpecLambdaConfig                `json:"lambda_config"`
+	MfaConfiguration            string                                              `json:"mfa_configuration"`
 	SmsAuthenticationMessage    string                                              `json:"sms_authentication_message"`
 	SmsConfiguration            []AwsCognitoUserPoolSpecSmsConfiguration            `json:"sms_configuration"`
-	Tags                        map[string]string                                   `json:"tags"`
-	VerificationMessageTemplate []AwsCognitoUserPoolSpecVerificationMessageTemplate `json:"verification_message_template"`
+	SmsVerificationMessage      string                                              `json:"sms_verification_message"`
+	EmailConfiguration          []AwsCognitoUserPoolSpecEmailConfiguration          `json:"email_configuration"`
+	EmailVerificationMessage    string                                              `json:"email_verification_message"`
+	LastModifiedDate            string                                              `json:"last_modified_date"`
 	AliasAttributes             string                                              `json:"alias_attributes"`
-	EmailVerificationSubject    string                                              `json:"email_verification_subject"`
-	Name                        string                                              `json:"name"`
+	Arn                         string                                              `json:"arn"`
+	Tags                        map[string]string                                   `json:"tags"`
 }
 
 type AwsCognitoUserPoolSpecAdminCreateUserConfig struct {
@@ -52,45 +52,27 @@ type AwsCognitoUserPoolSpecAdminCreateUserConfigInviteMessageTemplate struct {
 	SmsMessage   string `json:"sms_message"`
 }
 
-type AwsCognitoUserPoolSpecEmailConfiguration struct {
-	ReplyToEmailAddress string `json:"reply_to_email_address"`
-	SourceArn           string `json:"source_arn"`
-}
-
 type AwsCognitoUserPoolSpecDeviceConfiguration struct {
 	ChallengeRequiredOnNewDevice     bool `json:"challenge_required_on_new_device"`
 	DeviceOnlyRememberedOnUserPrompt bool `json:"device_only_remembered_on_user_prompt"`
 }
 
-type AwsCognitoUserPoolSpecLambdaConfig struct {
-	PreTokenGeneration          string `json:"pre_token_generation"`
-	CustomMessage               string `json:"custom_message"`
-	DefineAuthChallenge         string `json:"define_auth_challenge"`
-	PostConfirmation            string `json:"post_confirmation"`
-	PreAuthentication           string `json:"pre_authentication"`
-	PreSignUp                   string `json:"pre_sign_up"`
-	UserMigration               string `json:"user_migration"`
-	VerifyAuthChallengeResponse string `json:"verify_auth_challenge_response"`
-	CreateAuthChallenge         string `json:"create_auth_challenge"`
-	PostAuthentication          string `json:"post_authentication"`
-}
-
 type AwsCognitoUserPoolSpecPasswordPolicy struct {
-	RequireUppercase bool `json:"require_uppercase"`
-	MinimumLength    int  `json:"minimum_length"`
 	RequireLowercase bool `json:"require_lowercase"`
 	RequireNumbers   bool `json:"require_numbers"`
 	RequireSymbols   bool `json:"require_symbols"`
+	RequireUppercase bool `json:"require_uppercase"`
+	MinimumLength    int  `json:"minimum_length"`
 }
 
 type AwsCognitoUserPoolSpecSchema struct {
-	Mutable                    bool                                                     `json:"mutable"`
-	Name                       string                                                   `json:"name"`
 	NumberAttributeConstraints []AwsCognitoUserPoolSpecSchemaNumberAttributeConstraints `json:"number_attribute_constraints"`
 	Required                   bool                                                     `json:"required"`
 	StringAttributeConstraints []AwsCognitoUserPoolSpecSchemaStringAttributeConstraints `json:"string_attribute_constraints"`
 	AttributeDataType          string                                                   `json:"attribute_data_type"`
 	DeveloperOnlyAttribute     bool                                                     `json:"developer_only_attribute"`
+	Mutable                    bool                                                     `json:"mutable"`
+	Name                       string                                                   `json:"name"`
 }
 
 type AwsCognitoUserPoolSpecSchemaNumberAttributeConstraints struct {
@@ -103,24 +85,42 @@ type AwsCognitoUserPoolSpecSchemaStringAttributeConstraints struct {
 	MaxLength string `json:"max_length"`
 }
 
-type AwsCognitoUserPoolSpecSmsConfiguration struct {
-	ExternalId   string `json:"external_id"`
-	SnsCallerArn string `json:"sns_caller_arn"`
-}
-
 type AwsCognitoUserPoolSpecVerificationMessageTemplate struct {
+	EmailMessage       string `json:"email_message"`
 	EmailMessageByLink string `json:"email_message_by_link"`
 	EmailSubject       string `json:"email_subject"`
 	EmailSubjectByLink string `json:"email_subject_by_link"`
 	SmsMessage         string `json:"sms_message"`
 	DefaultEmailOption string `json:"default_email_option"`
-	EmailMessage       string `json:"email_message"`
+}
+
+type AwsCognitoUserPoolSpecLambdaConfig struct {
+	CreateAuthChallenge         string `json:"create_auth_challenge"`
+	CustomMessage               string `json:"custom_message"`
+	DefineAuthChallenge         string `json:"define_auth_challenge"`
+	PreSignUp                   string `json:"pre_sign_up"`
+	VerifyAuthChallengeResponse string `json:"verify_auth_challenge_response"`
+	PostAuthentication          string `json:"post_authentication"`
+	PostConfirmation            string `json:"post_confirmation"`
+	PreAuthentication           string `json:"pre_authentication"`
+	PreTokenGeneration          string `json:"pre_token_generation"`
+	UserMigration               string `json:"user_migration"`
+}
+
+type AwsCognitoUserPoolSpecSmsConfiguration struct {
+	ExternalId   string `json:"external_id"`
+	SnsCallerArn string `json:"sns_caller_arn"`
+}
+
+type AwsCognitoUserPoolSpecEmailConfiguration struct {
+	ReplyToEmailAddress string `json:"reply_to_email_address"`
+	SourceArn           string `json:"source_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCognitoUserPoolList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCognitoUserPool `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCognitoUserPool `json:"items"`
 }

@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafRegexMatchSet struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsWafRegexMatchSetSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsWafRegexMatchSetSpec `json:"spec"`
 }
 
 type AwsWafRegexMatchSetSpec struct {
@@ -22,9 +22,9 @@ type AwsWafRegexMatchSetSpec struct {
 }
 
 type AwsWafRegexMatchSetSpecRegexMatchTuple struct {
-	TextTransformation string                                               `json:"text_transformation"`
 	FieldToMatch       []AwsWafRegexMatchSetSpecRegexMatchTupleFieldToMatch `json:"field_to_match"`
 	RegexPatternSetId  string                                               `json:"regex_pattern_set_id"`
+	TextTransformation string                                               `json:"text_transformation"`
 }
 
 type AwsWafRegexMatchSetSpecRegexMatchTupleFieldToMatch struct {
@@ -35,7 +35,7 @@ type AwsWafRegexMatchSetSpecRegexMatchTupleFieldToMatch struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafRegexMatchSetList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsWafRegexMatchSet `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsWafRegexMatchSet `json:"items"`
 }

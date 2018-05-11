@@ -11,31 +11,31 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRoute struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsRouteSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsRouteSpec `json:"spec"`
 }
 
 type AwsRouteSpec struct {
-	RouteTableId             string `json:"route_table_id"`
+	DestinationPrefixListId  string `json:"destination_prefix_list_id"`
+	InstanceOwnerId          string `json:"instance_owner_id"`
+	Origin                   string `json:"origin"`
+	DestinationCidrBlock     string `json:"destination_cidr_block"`
 	DestinationIpv6CidrBlock string `json:"destination_ipv6_cidr_block"`
 	GatewayId                string `json:"gateway_id"`
-	NetworkInterfaceId       string `json:"network_interface_id"`
-	Origin                   string `json:"origin"`
-	InstanceId               string `json:"instance_id"`
-	InstanceOwnerId          string `json:"instance_owner_id"`
-	State                    string `json:"state"`
-	VpcPeeringConnectionId   string `json:"vpc_peering_connection_id"`
-	DestinationCidrBlock     string `json:"destination_cidr_block"`
-	DestinationPrefixListId  string `json:"destination_prefix_list_id"`
 	EgressOnlyGatewayId      string `json:"egress_only_gateway_id"`
 	NatGatewayId             string `json:"nat_gateway_id"`
+	InstanceId               string `json:"instance_id"`
+	NetworkInterfaceId       string `json:"network_interface_id"`
+	State                    string `json:"state"`
+	RouteTableId             string `json:"route_table_id"`
+	VpcPeeringConnectionId   string `json:"vpc_peering_connection_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRouteList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsRoute `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsRoute `json:"items"`
 }

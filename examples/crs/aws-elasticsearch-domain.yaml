@@ -5,22 +5,22 @@ kind: AwsElasticsearchDomain
 metadata:
   name: example-aws-elasticsearch-domain
 spec:
-  kibanaendpoint: ""
-  encryptatrest: []
-  elasticsearchversion: ""
-  tags: {}
-  accesspolicies: ""
-  arn: ""
-  endpoint: ""
-  domainname: ""
+  clusterconfig: []
   snapshotoptions: []
+  vpcoptions: []
+  accesspolicies: ""
+  domainid: ""
   logpublishingoptions:
+    logtype: ""
     cloudwatchloggrouparn: ""
     enabled: false
-    logtype: ""
-  advancedoptions: {}
-  domainid: ""
-  clusterconfig: []
+  tags: {}
+  domainname: ""
+  encryptatrest: []
+  elasticsearchversion: ""
   ebsoptions: []
-  vpcoptions: []
+  arn: ""
+  endpoint: ""
+  kibanaendpoint: ""
+  advancedoptions: {}
 

@@ -5,17 +5,17 @@ kind: AwsAcmpcaCertificateAuthority
 metadata:
   name: example-aws-acmpca-certificate-authority
 spec:
-  notbefore: ""
-  revocationconfiguration: []
+  tags: {}
   arn: ""
+  notbefore: ""
+  certificatechain: ""
   certificatesigningrequest: ""
   enabled: false
   notafter: ""
+  revocationconfiguration: []
   serial: ""
-  status: ""
-  tags: {}
-  type: ""
   certificate: ""
   certificateauthorityconfiguration: []
-  certificatechain: ""
+  status: ""
+  type: ""
 

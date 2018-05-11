@@ -5,11 +5,11 @@ kind: AwsAcmCertificate
 metadata:
   name: example-aws-acm-certificate
 spec:
-  validationmethod: ""
-  arn: ""
-  domainvalidationoptions: []
   validationemails: []
   tags: {}
   domainname: ""
   subjectalternativenames: []
+  validationmethod: ""
+  arn: ""
+  domainvalidationoptions: []
 

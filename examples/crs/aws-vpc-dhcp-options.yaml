@@ -5,10 +5,10 @@ kind: AwsVpcDhcpOptions
 metadata:
   name: example-aws-vpc-dhcp-options
 spec:
-  netbiosnameservers: []
-  tags: {}
-  domainname: ""
   domainnameservers: []
   ntpservers: []
   netbiosnodetype: ""
+  netbiosnameservers: []
+  tags: {}
+  domainname: ""
 

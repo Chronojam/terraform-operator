@@ -5,14 +5,14 @@ kind: AwsRdsClusterParameterGroup
 metadata:
   name: example-aws-rds-cluster-parameter-group
 spec:
-  family: ""
-  description: ""
-  parameter:
-    name: ""
-    value: ""
-    applymethod: ""
-  tags: {}
   arn: ""
   name: ""
   nameprefix: ""
+  family: ""
+  description: ""
+  parameter:
+    applymethod: ""
+    name: ""
+    value: ""
+  tags: {}
 

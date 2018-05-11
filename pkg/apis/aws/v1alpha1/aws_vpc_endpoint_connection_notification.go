@@ -11,24 +11,24 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcEndpointConnectionNotification struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsVpcEndpointConnectionNotificationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsVpcEndpointConnectionNotificationSpec `json:"spec"`
 }
 
 type AwsVpcEndpointConnectionNotificationSpec struct {
+	NotificationType          string `json:"notification_type"`
 	VpcEndpointServiceId      string `json:"vpc_endpoint_service_id"`
 	VpcEndpointId             string `json:"vpc_endpoint_id"`
 	ConnectionNotificationArn string `json:"connection_notification_arn"`
 	ConnectionEvents          string `json:"connection_events"`
 	State                     string `json:"state"`
-	NotificationType          string `json:"notification_type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcEndpointConnectionNotificationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsVpcEndpointConnectionNotification `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsVpcEndpointConnectionNotification `json:"items"`
 }

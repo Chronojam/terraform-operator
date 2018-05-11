@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAcmCertificate struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAcmCertificateSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAcmCertificateSpec `json:"spec"`
 }
 
 type AwsAcmCertificateSpec struct {
@@ -27,16 +27,16 @@ type AwsAcmCertificateSpec struct {
 }
 
 type AwsAcmCertificateSpecDomainValidationOptions struct {
+	ResourceRecordValue string `json:"resource_record_value"`
 	DomainName          string `json:"domain_name"`
 	ResourceRecordName  string `json:"resource_record_name"`
 	ResourceRecordType  string `json:"resource_record_type"`
-	ResourceRecordValue string `json:"resource_record_value"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAcmCertificateList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAcmCertificate `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAcmCertificate `json:"items"`
 }

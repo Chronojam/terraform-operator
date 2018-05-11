@@ -5,10 +5,10 @@ kind: AwsCloudwatchLogGroup
 metadata:
   name: example-aws-cloudwatch-log-group
 spec:
-  arn: ""
   tags: {}
   name: ""
   nameprefix: ""
   retentionindays: 0
   kmskeyid: ""
+  arn: ""
 

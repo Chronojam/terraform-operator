@@ -10,23 +10,23 @@ spec:
   subnetids: ""
   ingress:
     ruleno: 0
-    icmptype: 0
+    protocol: ""
     icmpcode: 0
     fromport: 0
-    toport: 0
-    cidrblock: ""
-    ipv6cidrblock: ""
     action: ""
-    protocol: ""
-  egress:
-    protocol: ""
-    icmptype: 0
-    icmpcode: 0
-    fromport: 0
-    toport: 0
     cidrblock: ""
     ipv6cidrblock: ""
+    icmptype: 0
+    toport: 0
+  egress:
+    cidrblock: ""
+    icmptype: 0
+    fromport: 0
+    toport: 0
     ruleno: 0
     action: ""
+    protocol: ""
+    ipv6cidrblock: ""
+    icmpcode: 0
   tags: {}
 

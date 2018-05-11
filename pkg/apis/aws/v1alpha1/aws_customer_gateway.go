@@ -11,22 +11,22 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCustomerGateway struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCustomerGatewaySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCustomerGatewaySpec `json:"spec"`
 }
 
 type AwsCustomerGatewaySpec struct {
-	IpAddress string            `json:"ip_address"`
 	Type      string            `json:"type"`
 	Tags      map[string]string `json:"tags"`
 	BgpAsn    int               `json:"bgp_asn"`
+	IpAddress string            `json:"ip_address"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCustomerGatewayList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCustomerGateway `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCustomerGateway `json:"items"`
 }

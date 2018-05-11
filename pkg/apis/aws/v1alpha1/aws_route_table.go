@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRouteTable struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsRouteTableSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsRouteTableSpec `json:"spec"`
 }
 
 type AwsRouteTableSpec struct {
@@ -24,20 +24,20 @@ type AwsRouteTableSpec struct {
 }
 
 type AwsRouteTableSpecRoute struct {
+	EgressOnlyGatewayId    string `json:"egress_only_gateway_id"`
+	GatewayId              string `json:"gateway_id"`
+	InstanceId             string `json:"instance_id"`
 	NatGatewayId           string `json:"nat_gateway_id"`
 	VpcPeeringConnectionId string `json:"vpc_peering_connection_id"`
 	NetworkInterfaceId     string `json:"network_interface_id"`
 	CidrBlock              string `json:"cidr_block"`
 	Ipv6CidrBlock          string `json:"ipv6_cidr_block"`
-	EgressOnlyGatewayId    string `json:"egress_only_gateway_id"`
-	GatewayId              string `json:"gateway_id"`
-	InstanceId             string `json:"instance_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRouteTableList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsRouteTable `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsRouteTable `json:"items"`
 }

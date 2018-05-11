@@ -5,8 +5,8 @@ kind: AwsDynamodbTableItem
 metadata:
   name: example-aws-dynamodb-table-item
 spec:
+  item: ""
   tablename: ""
   hashkey: ""
   rangekey: ""
-  item: ""
 

@@ -11,15 +11,15 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCodecommitTrigger struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCodecommitTriggerSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCodecommitTriggerSpec `json:"spec"`
 }
 
 type AwsCodecommitTriggerSpec struct {
+	RepositoryName  string                          `json:"repository_name"`
 	ConfigurationId string                          `json:"configuration_id"`
 	Trigger         AwsCodecommitTriggerSpecTrigger `json:"trigger"`
-	RepositoryName  string                          `json:"repository_name"`
 }
 
 type AwsCodecommitTriggerSpecTrigger struct {
@@ -33,7 +33,7 @@ type AwsCodecommitTriggerSpecTrigger struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCodecommitTriggerList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCodecommitTrigger `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCodecommitTrigger `json:"items"`
 }

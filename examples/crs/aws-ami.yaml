@@ -5,27 +5,27 @@ kind: AwsAmi
 metadata:
   name: example-aws-ami
 spec:
+  name: ""
+  rootsnapshotid: ""
   architecture: ""
   description: ""
-  virtualizationtype: ""
-  rootsnapshotid: ""
-  sriovnetsupport: ""
-  manageebssnapshots: false
-  imagelocation: ""
-  kernelid: ""
-  name: ""
-  ephemeralblockdevice:
-    devicename: ""
-    virtualname: ""
-  ramdiskid: ""
   rootdevicename: ""
+  virtualizationtype: ""
+  ephemeralblockdevice:
+    virtualname: ""
+    devicename: ""
+  imagelocation: ""
+  ramdiskid: ""
+  sriovnetsupport: ""
+  tags: {}
+  kernelid: ""
   ebsblockdevice:
+    deleteontermination: false
+    devicename: ""
+    encrypted: false
     iops: 0
     snapshotid: ""
     volumesize: 0
     volumetype: ""
-    deleteontermination: false
-    devicename: ""
-    encrypted: false
-  tags: {}
+  manageebssnapshots: false
 

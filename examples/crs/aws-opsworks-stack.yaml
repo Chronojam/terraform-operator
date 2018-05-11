@@ -5,28 +5,28 @@ kind: AwsOpsworksStack
 metadata:
   name: example-aws-opsworks-stack
 spec:
-  customjson: ""
-  defaultsshkeyname: ""
-  hostnametheme: ""
-  tags: {}
-  arn: ""
-  customcookbookssource: []
-  berkshelfversion: ""
-  useopsworkssecuritygroups: false
-  agentversion: ""
-  manageberkshelf: false
-  servicerolearn: ""
   color: ""
-  configurationmanagername: ""
-  configurationmanagerversion: ""
-  defaultrootdevicetype: ""
   defaultsubnetid: ""
+  usecustomcookbooks: false
+  agentversion: ""
   name: ""
+  defaultavailabilityzone: ""
+  hostnametheme: ""
+  servicerolearn: ""
+  berkshelfversion: ""
+  customcookbookssource: []
+  defaultrootdevicetype: ""
+  defaultsshkeyname: ""
+  useopsworkssecuritygroups: false
+  defaultinstanceprofilearn: ""
+  configurationmanagerversion: ""
+  configurationmanagername: ""
+  manageberkshelf: false
+  customjson: ""
+  defaultos: ""
+  tags: {}
+  vpcid: ""
+  arn: ""
   region: ""
   stackendpoint: ""
-  usecustomcookbooks: false
-  vpcid: ""
-  defaultos: ""
-  defaultinstanceprofilearn: ""
-  defaultavailabilityzone: ""
 

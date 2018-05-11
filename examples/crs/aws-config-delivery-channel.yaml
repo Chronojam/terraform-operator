@@ -5,9 +5,9 @@ kind: AwsConfigDeliveryChannel
 metadata:
   name: example-aws-config-delivery-channel
 spec:
-  snapshotdeliveryproperties: []
   name: ""
   s3bucketname: ""
   s3keyprefix: ""
   snstopicarn: ""
+  snapshotdeliveryproperties: []
 

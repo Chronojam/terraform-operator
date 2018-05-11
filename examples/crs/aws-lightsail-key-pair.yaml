@@ -6,12 +6,12 @@ metadata:
   name: example-aws-lightsail-key-pair
 spec:
   name: ""
+  pgpkey: ""
+  publickey: ""
+  encryptedprivatekey: ""
+  encryptedfingerprint: ""
   nameprefix: ""
   arn: ""
-  publickey: ""
-  privatekey: ""
-  encryptedprivatekey: ""
-  pgpkey: ""
   fingerprint: ""
-  encryptedfingerprint: ""
+  privatekey: ""
 

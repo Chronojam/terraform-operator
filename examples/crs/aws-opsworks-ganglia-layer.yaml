@@ -5,15 +5,14 @@ kind: AwsOpsworksGangliaLayer
 metadata:
   name: example-aws-opsworks-ganglia-layer
 spec:
-  customsecuritygroupids: ""
-  url: ""
-  autoassignelasticips: false
-  custominstanceprofilearn: ""
-  elasticloadbalancer: ""
+  customshutdownrecipes: []
   customjson: ""
-  instanceshutdowntimeout: 0
+  useebsoptimizedinstances: false
+  customsecuritygroupids: ""
   autohealing: false
+  installupdatesonboot: false
   stackid: ""
+  url: ""
   ebsvolume:
     iops: 0
     mountpoint: ""
@@ -21,17 +20,18 @@ spec:
     raidlevel: ""
     size: 0
     type: ""
-  customconfigurerecipes: []
-  customdeployrecipes: []
-  customundeployrecipes: []
-  installupdatesonboot: false
-  drainelbonshutdown: false
-  systempackages: ""
-  useebsoptimizedinstances: false
   name: ""
+  autoassignelasticips: false
   autoassignpublicips: false
   customsetuprecipes: []
-  customshutdownrecipes: []
+  customconfigurerecipes: []
+  drainelbonshutdown: false
+  systempackages: ""
   username: ""
+  custominstanceprofilearn: ""
+  elasticloadbalancer: ""
+  customdeployrecipes: []
+  customundeployrecipes: []
+  instanceshutdowntimeout: 0
   password: ""
 

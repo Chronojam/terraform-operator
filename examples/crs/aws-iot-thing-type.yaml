@@ -5,8 +5,8 @@ kind: AwsIotThingType
 metadata:
   name: example-aws-iot-thing-type
 spec:
+  arn: ""
   name: ""
   properties: []
   deprecated: false
-  arn: ""
 

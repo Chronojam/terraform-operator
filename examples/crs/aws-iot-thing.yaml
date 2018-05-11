@@ -5,10 +5,10 @@ kind: AwsIotThing
 metadata:
   name: example-aws-iot-thing
 spec:
-  version: 0
-  arn: ""
   name: ""
   attributes: {}
   thingtypename: ""
   defaultclientid: ""
+  version: 0
+  arn: ""
 

@@ -5,8 +5,8 @@ kind: AwsS3BucketNotification
 metadata:
   name: example-aws-s3-bucket-notification
 spec:
-  lambdafunction: []
   bucket: ""
   topic: []
   queue: []
+  lambdafunction: []
 

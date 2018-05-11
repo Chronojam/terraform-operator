@@ -11,25 +11,25 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSesEventDestination struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSesEventDestinationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSesEventDestinationSpec `json:"spec"`
 }
 
 type AwsSesEventDestinationSpec struct {
+	Name                  string                                          `json:"name"`
 	ConfigurationSetName  string                                          `json:"configuration_set_name"`
 	Enabled               bool                                            `json:"enabled"`
 	MatchingTypes         string                                          `json:"matching_types"`
 	CloudwatchDestination AwsSesEventDestinationSpecCloudwatchDestination `json:"cloudwatch_destination"`
 	KinesisDestination    AwsSesEventDestinationSpecKinesisDestination    `json:"kinesis_destination"`
 	SnsDestination        AwsSesEventDestinationSpecSnsDestination        `json:"sns_destination"`
-	Name                  string                                          `json:"name"`
 }
 
 type AwsSesEventDestinationSpecCloudwatchDestination struct {
+	ValueSource   string `json:"value_source"`
 	DefaultValue  string `json:"default_value"`
 	DimensionName string `json:"dimension_name"`
-	ValueSource   string `json:"value_source"`
 }
 
 type AwsSesEventDestinationSpecKinesisDestination struct {
@@ -44,7 +44,7 @@ type AwsSesEventDestinationSpecSnsDestination struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSesEventDestinationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSesEventDestination `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSesEventDestination `json:"items"`
 }

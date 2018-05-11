@@ -5,12 +5,12 @@ kind: AwsCloudwatchEventRule
 metadata:
   name: example-aws-cloudwatch-event-rule
 spec:
-  arn: ""
-  name: ""
-  nameprefix: ""
   scheduleexpression: ""
   eventpattern: ""
   description: ""
   rolearn: ""
   isenabled: false
+  arn: ""
+  name: ""
+  nameprefix: ""
 

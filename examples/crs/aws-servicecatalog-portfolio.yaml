@@ -5,10 +5,10 @@ kind: AwsServicecatalogPortfolio
 metadata:
   name: example-aws-servicecatalog-portfolio
 spec:
+  tags: {}
   arn: ""
   createdtime: ""
   name: ""
   description: ""
   providername: ""
-  tags: {}
 

@@ -5,7 +5,6 @@ kind: AwsCloud9EnvironmentEc2
 metadata:
   name: example-aws-cloud9-environment-ec2
 spec:
-  ownerarn: ""
   subnetid: ""
   arn: ""
   type: ""
@@ -13,4 +12,5 @@ spec:
   instancetype: ""
   automaticstoptimeminutes: 0
   description: ""
+  ownerarn: ""
 

@@ -11,20 +11,20 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcPeeringConnection struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsVpcPeeringConnectionSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsVpcPeeringConnectionSpec `json:"spec"`
 }
 
 type AwsVpcPeeringConnectionSpec struct {
-	PeerVpcId    string                               `json:"peer_vpc_id"`
-	VpcId        string                               `json:"vpc_id"`
 	AutoAccept   bool                                 `json:"auto_accept"`
+	AcceptStatus string                               `json:"accept_status"`
 	PeerRegion   string                               `json:"peer_region"`
-	Accepter     AwsVpcPeeringConnectionSpecAccepter  `json:"accepter"`
 	Tags         map[string]string                    `json:"tags"`
 	PeerOwnerId  string                               `json:"peer_owner_id"`
-	AcceptStatus string                               `json:"accept_status"`
+	PeerVpcId    string                               `json:"peer_vpc_id"`
+	VpcId        string                               `json:"vpc_id"`
+	Accepter     AwsVpcPeeringConnectionSpecAccepter  `json:"accepter"`
 	Requester    AwsVpcPeeringConnectionSpecRequester `json:"requester"`
 }
 
@@ -35,15 +35,15 @@ type AwsVpcPeeringConnectionSpecAccepter struct {
 }
 
 type AwsVpcPeeringConnectionSpecRequester struct {
+	AllowRemoteVpcDnsResolution bool `json:"allow_remote_vpc_dns_resolution"`
 	AllowClassicLinkToRemoteVpc bool `json:"allow_classic_link_to_remote_vpc"`
 	AllowVpcToRemoteClassicLink bool `json:"allow_vpc_to_remote_classic_link"`
-	AllowRemoteVpcDnsResolution bool `json:"allow_remote_vpc_dns_resolution"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcPeeringConnectionList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsVpcPeeringConnection `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsVpcPeeringConnection `json:"items"`
 }

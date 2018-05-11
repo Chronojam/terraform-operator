@@ -11,24 +11,24 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcDhcpOptions struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsVpcDhcpOptionsSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsVpcDhcpOptionsSpec `json:"spec"`
 }
 
 type AwsVpcDhcpOptionsSpec struct {
+	DomainNameServers  []string          `json:"domain_name_servers"`
 	NtpServers         []string          `json:"ntp_servers"`
 	NetbiosNodeType    string            `json:"netbios_node_type"`
 	NetbiosNameServers []string          `json:"netbios_name_servers"`
 	Tags               map[string]string `json:"tags"`
 	DomainName         string            `json:"domain_name"`
-	DomainNameServers  []string          `json:"domain_name_servers"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcDhcpOptionsList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsVpcDhcpOptions `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsVpcDhcpOptions `json:"items"`
 }

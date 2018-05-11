@@ -11,21 +11,21 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsInspectorAssessmentTarget struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsInspectorAssessmentTargetSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsInspectorAssessmentTargetSpec `json:"spec"`
 }
 
 type AwsInspectorAssessmentTargetSpec struct {
+	Arn              string `json:"arn"`
 	ResourceGroupArn string `json:"resource_group_arn"`
 	Name             string `json:"name"`
-	Arn              string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsInspectorAssessmentTargetList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsInspectorAssessmentTarget `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsInspectorAssessmentTarget `json:"items"`
 }

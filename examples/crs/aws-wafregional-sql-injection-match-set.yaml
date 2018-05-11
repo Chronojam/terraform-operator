@@ -5,8 +5,8 @@ kind: AwsWafregionalSqlInjectionMatchSet
 metadata:
   name: example-aws-wafregional-sql-injection-match-set
 spec:
+  name: ""
   sqlinjectionmatchtuple:
     fieldtomatch: []
     texttransformation: ""
-  name: ""
 

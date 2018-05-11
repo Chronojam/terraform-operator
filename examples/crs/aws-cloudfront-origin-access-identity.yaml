@@ -5,10 +5,10 @@ kind: AwsCloudfrontOriginAccessIdentity
 metadata:
   name: example-aws-cloudfront-origin-access-identity
 spec:
+  cloudfrontaccessidentitypath: ""
+  etag: ""
   iamarn: ""
   s3canonicaluserid: ""
   comment: ""
   callerreference: ""
-  cloudfrontaccessidentitypath: ""
-  etag: ""
 

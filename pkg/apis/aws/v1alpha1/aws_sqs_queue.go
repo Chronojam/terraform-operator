@@ -11,33 +11,33 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSqsQueue struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSqsQueueSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSqsQueueSpec `json:"spec"`
 }
 
 type AwsSqsQueueSpec struct {
-	VisibilityTimeoutSeconds     int               `json:"visibility_timeout_seconds"`
-	Arn                          string            `json:"arn"`
-	Name                         string            `json:"name"`
-	FifoQueue                    bool              `json:"fifo_queue"`
-	Tags                         map[string]string `json:"tags"`
-	MaxMessageSize               int               `json:"max_message_size"`
-	MessageRetentionSeconds      int               `json:"message_retention_seconds"`
-	Policy                       string            `json:"policy"`
-	KmsDataKeyReusePeriodSeconds int               `json:"kms_data_key_reuse_period_seconds"`
 	NamePrefix                   string            `json:"name_prefix"`
-	DelaySeconds                 int               `json:"delay_seconds"`
-	ReceiveWaitTimeSeconds       int               `json:"receive_wait_time_seconds"`
-	RedrivePolicy                string            `json:"redrive_policy"`
-	ContentBasedDeduplication    bool              `json:"content_based_deduplication"`
+	Policy                       string            `json:"policy"`
 	KmsMasterKeyId               string            `json:"kms_master_key_id"`
+	DelaySeconds                 int               `json:"delay_seconds"`
+	MaxMessageSize               int               `json:"max_message_size"`
+	Arn                          string            `json:"arn"`
+	ReceiveWaitTimeSeconds       int               `json:"receive_wait_time_seconds"`
+	VisibilityTimeoutSeconds     int               `json:"visibility_timeout_seconds"`
+	ContentBasedDeduplication    bool              `json:"content_based_deduplication"`
+	KmsDataKeyReusePeriodSeconds int               `json:"kms_data_key_reuse_period_seconds"`
+	Tags                         map[string]string `json:"tags"`
+	Name                         string            `json:"name"`
+	MessageRetentionSeconds      int               `json:"message_retention_seconds"`
+	RedrivePolicy                string            `json:"redrive_policy"`
+	FifoQueue                    bool              `json:"fifo_queue"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSqsQueueList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSqsQueue `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSqsQueue `json:"items"`
 }

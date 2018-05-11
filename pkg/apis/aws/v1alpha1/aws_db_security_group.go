@@ -11,17 +11,17 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDbSecurityGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDbSecurityGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDbSecurityGroupSpec `json:"spec"`
 }
 
 type AwsDbSecurityGroupSpec struct {
-	Tags        map[string]string             `json:"tags"`
 	Arn         string                        `json:"arn"`
 	Name        string                        `json:"name"`
 	Description string                        `json:"description"`
 	Ingress     AwsDbSecurityGroupSpecIngress `json:"ingress"`
+	Tags        map[string]string             `json:"tags"`
 }
 
 type AwsDbSecurityGroupSpecIngress struct {
@@ -34,7 +34,7 @@ type AwsDbSecurityGroupSpecIngress struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDbSecurityGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDbSecurityGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDbSecurityGroup `json:"items"`
 }

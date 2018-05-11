@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcEndpointService struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsVpcEndpointServiceSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsVpcEndpointServiceSpec `json:"spec"`
 }
 
 type AwsVpcEndpointServiceSpec struct {
 	NetworkLoadBalancerArns string `json:"network_load_balancer_arns"`
-	AllowedPrincipals       string `json:"allowed_principals"`
-	ServiceName             string `json:"service_name"`
-	AcceptanceRequired      bool   `json:"acceptance_required"`
-	ServiceType             string `json:"service_type"`
 	AvailabilityZones       string `json:"availability_zones"`
 	PrivateDnsName          string `json:"private_dns_name"`
-	BaseEndpointDnsNames    string `json:"base_endpoint_dns_names"`
+	AcceptanceRequired      bool   `json:"acceptance_required"`
+	AllowedPrincipals       string `json:"allowed_principals"`
 	State                   string `json:"state"`
+	ServiceName             string `json:"service_name"`
+	ServiceType             string `json:"service_type"`
+	BaseEndpointDnsNames    string `json:"base_endpoint_dns_names"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcEndpointServiceList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsVpcEndpointService `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsVpcEndpointService `json:"items"`
 }

@@ -5,10 +5,10 @@ kind: AwsElasticBeanstalkApplicationVersion
 metadata:
   name: example-aws-elastic-beanstalk-application-version
 spec:
+  bucket: ""
   key: ""
   name: ""
   forcedelete: false
   application: ""
   description: ""
-  bucket: ""
 

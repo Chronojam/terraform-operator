@@ -11,62 +11,62 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDbInstance struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDbInstanceSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDbInstanceSpec `json:"spec"`
 }
 
 type AwsDbInstanceSpec struct {
-	Username                         string                      `json:"username"`
+	Password                         string                      `json:"password"`
+	Port                             int                         `json:"port"`
+	ParameterGroupName               string                      `json:"parameter_group_name"`
+	ReplicateSourceDb                string                      `json:"replicate_source_db"`
+	MonitoringRoleArn                string                      `json:"monitoring_role_arn"`
+	CaCertIdentifier                 string                      `json:"ca_cert_identifier"`
+	Tags                             map[string]string           `json:"tags"`
+	Name                             string                      `json:"name"`
+	Arn                              string                      `json:"arn"`
+	LicenseModel                     string                      `json:"license_model"`
+	OptionGroupName                  string                      `json:"option_group_name"`
+	IamDatabaseAuthenticationEnabled bool                        `json:"iam_database_authentication_enabled"`
+	AllowMajorVersionUpgrade         bool                        `json:"allow_major_version_upgrade"`
+	ResourceId                       string                      `json:"resource_id"`
 	Engine                           string                      `json:"engine"`
-	AllocatedStorage                 int                         `json:"allocated_storage"`
+	StorageType                      string                      `json:"storage_type"`
+	CopyTagsToSnapshot               bool                        `json:"copy_tags_to_snapshot"`
+	DbSubnetGroupName                string                      `json:"db_subnet_group_name"`
+	Replicas                         []string                    `json:"replicas"`
+	Status                           string                      `json:"status"`
+	SnapshotIdentifier               string                      `json:"snapshot_identifier"`
+	MonitoringInterval               int                         `json:"monitoring_interval"`
+	Username                         string                      `json:"username"`
+	EngineVersion                    string                      `json:"engine_version"`
 	Iops                             int                         `json:"iops"`
 	MaintenanceWindow                string                      `json:"maintenance_window"`
-	CopyTagsToSnapshot               bool                        `json:"copy_tags_to_snapshot"`
+	FinalSnapshotIdentifier          string                      `json:"final_snapshot_identifier"`
+	Identifier                       string                      `json:"identifier"`
+	PubliclyAccessible               bool                        `json:"publicly_accessible"`
 	ApplyImmediately                 bool                        `json:"apply_immediately"`
-	KmsKeyId                         string                      `json:"kms_key_id"`
-	ResourceId                       string                      `json:"resource_id"`
-	StorageEncrypted                 bool                        `json:"storage_encrypted"`
-	VpcSecurityGroupIds              string                      `json:"vpc_security_group_ids"`
-	MonitoringRoleArn                string                      `json:"monitoring_role_arn"`
+	AutoMinorVersionUpgrade          bool                        `json:"auto_minor_version_upgrade"`
+	EnabledCloudwatchLogsExports     []string                    `json:"enabled_cloudwatch_logs_exports"`
+	BackupRetentionPeriod            int                         `json:"backup_retention_period"`
+	BackupWindow                     string                      `json:"backup_window"`
 	MultiAz                          bool                        `json:"multi_az"`
 	SecurityGroupNames               string                      `json:"security_group_names"`
-	FinalSnapshotIdentifier          string                      `json:"final_snapshot_identifier"`
-	MonitoringInterval               int                         `json:"monitoring_interval"`
-	Arn                              string                      `json:"arn"`
-	AvailabilityZone                 string                      `json:"availability_zone"`
-	BackupRetentionPeriod            int                         `json:"backup_retention_period"`
-	Port                             int                         `json:"port"`
-	SkipFinalSnapshot                bool                        `json:"skip_final_snapshot"`
-	ParameterGroupName               string                      `json:"parameter_group_name"`
-	Replicas                         []string                    `json:"replicas"`
-	AllowMajorVersionUpgrade         bool                        `json:"allow_major_version_upgrade"`
-	Timezone                         string                      `json:"timezone"`
-	IamDatabaseAuthenticationEnabled bool                        `json:"iam_database_authentication_enabled"`
-	Name                             string                      `json:"name"`
-	EngineVersion                    string                      `json:"engine_version"`
-	StorageType                      string                      `json:"storage_type"`
-	Identifier                       string                      `json:"identifier"`
-	InstanceClass                    string                      `json:"instance_class"`
-	BackupWindow                     string                      `json:"backup_window"`
-	Endpoint                         string                      `json:"endpoint"`
-	ReplicateSourceDb                string                      `json:"replicate_source_db"`
-	SnapshotIdentifier               string                      `json:"snapshot_identifier"`
-	LicenseModel                     string                      `json:"license_model"`
-	PubliclyAccessible               bool                        `json:"publicly_accessible"`
-	AutoMinorVersionUpgrade          bool                        `json:"auto_minor_version_upgrade"`
-	OptionGroupName                  string                      `json:"option_group_name"`
-	Password                         string                      `json:"password"`
-	S3Import                         []AwsDbInstanceSpecS3Import `json:"s3_import"`
-	DbSubnetGroupName                string                      `json:"db_subnet_group_name"`
 	Address                          string                      `json:"address"`
-	Status                           string                      `json:"status"`
-	EnabledCloudwatchLogsExports     []string                    `json:"enabled_cloudwatch_logs_exports"`
-	Tags                             map[string]string           `json:"tags"`
-	CharacterSetName                 string                      `json:"character_set_name"`
 	IdentifierPrefix                 string                      `json:"identifier_prefix"`
+	InstanceClass                    string                      `json:"instance_class"`
+	AvailabilityZone                 string                      `json:"availability_zone"`
+	Endpoint                         string                      `json:"endpoint"`
+	SkipFinalSnapshot                bool                        `json:"skip_final_snapshot"`
 	HostedZoneId                     string                      `json:"hosted_zone_id"`
-	CaCertIdentifier                 string                      `json:"ca_cert_identifier"`
+	KmsKeyId                         string                      `json:"kms_key_id"`
+	CharacterSetName                 string                      `json:"character_set_name"`
+	StorageEncrypted                 bool                        `json:"storage_encrypted"`
+	AllocatedStorage                 int                         `json:"allocated_storage"`
+	VpcSecurityGroupIds              string                      `json:"vpc_security_group_ids"`
+	S3Import                         []AwsDbInstanceSpecS3Import `json:"s3_import"`
+	Timezone                         string                      `json:"timezone"`
 }
 
 type AwsDbInstanceSpecS3Import struct {
@@ -80,7 +80,7 @@ type AwsDbInstanceSpecS3Import struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDbInstanceList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDbInstance `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDbInstance `json:"items"`
 }

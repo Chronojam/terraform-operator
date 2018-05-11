@@ -11,30 +11,40 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAmiCopy struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAmiCopySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAmiCopySpec `json:"spec"`
 }
 
 type AwsAmiCopySpec struct {
-	Encrypted            bool                               `json:"encrypted"`
-	SriovNetSupport      string                             `json:"sriov_net_support"`
+	EbsBlockDevice       AwsAmiCopySpecEbsBlockDevice       `json:"ebs_block_device"`
+	EphemeralBlockDevice AwsAmiCopySpecEphemeralBlockDevice `json:"ephemeral_block_device"`
 	ManageEbsSnapshots   bool                               `json:"manage_ebs_snapshots"`
 	SourceAmiId          string                             `json:"source_ami_id"`
-	SourceAmiRegion      string                             `json:"source_ami_region"`
+	KmsKeyId             string                             `json:"kms_key_id"`
 	ImageLocation        string                             `json:"image_location"`
+	Name                 string                             `json:"name"`
 	RamdiskId            string                             `json:"ramdisk_id"`
 	Tags                 map[string]string                  `json:"tags"`
-	EphemeralBlockDevice AwsAmiCopySpecEphemeralBlockDevice `json:"ephemeral_block_device"`
-	KmsKeyId             string                             `json:"kms_key_id"`
-	Architecture         string                             `json:"architecture"`
-	KernelId             string                             `json:"kernel_id"`
+	SourceAmiRegion      string                             `json:"source_ami_region"`
 	RootDeviceName       string                             `json:"root_device_name"`
-	VirtualizationType   string                             `json:"virtualization_type"`
-	EbsBlockDevice       AwsAmiCopySpecEbsBlockDevice       `json:"ebs_block_device"`
-	Description          string                             `json:"description"`
-	Name                 string                             `json:"name"`
 	RootSnapshotId       string                             `json:"root_snapshot_id"`
+	VirtualizationType   string                             `json:"virtualization_type"`
+	Architecture         string                             `json:"architecture"`
+	Description          string                             `json:"description"`
+	KernelId             string                             `json:"kernel_id"`
+	SriovNetSupport      string                             `json:"sriov_net_support"`
+	Encrypted            bool                               `json:"encrypted"`
+}
+
+type AwsAmiCopySpecEbsBlockDevice struct {
+	DeleteOnTermination bool   `json:"delete_on_termination"`
+	DeviceName          string `json:"device_name"`
+	Encrypted           bool   `json:"encrypted"`
+	Iops                int    `json:"iops"`
+	SnapshotId          string `json:"snapshot_id"`
+	VolumeSize          int    `json:"volume_size"`
+	VolumeType          string `json:"volume_type"`
 }
 
 type AwsAmiCopySpecEphemeralBlockDevice struct {
@@ -42,20 +52,10 @@ type AwsAmiCopySpecEphemeralBlockDevice struct {
 	VirtualName string `json:"virtual_name"`
 }
 
-type AwsAmiCopySpecEbsBlockDevice struct {
-	VolumeType          string `json:"volume_type"`
-	DeleteOnTermination bool   `json:"delete_on_termination"`
-	DeviceName          string `json:"device_name"`
-	Encrypted           bool   `json:"encrypted"`
-	Iops                int    `json:"iops"`
-	SnapshotId          string `json:"snapshot_id"`
-	VolumeSize          int    `json:"volume_size"`
-}
-
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAmiCopyList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAmiCopy `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAmiCopy `json:"items"`
 }

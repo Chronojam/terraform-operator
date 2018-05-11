@@ -11,37 +11,37 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRoute53HealthCheck struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsRoute53HealthCheckSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsRoute53HealthCheckSpec `json:"spec"`
 }
 
 type AwsRoute53HealthCheckSpec struct {
-	Fqdn                         string            `json:"fqdn"`
-	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
-	CloudwatchAlarmName          string            `json:"cloudwatch_alarm_name"`
-	RequestInterval              int               `json:"request_interval"`
-	SearchString                 string            `json:"search_string"`
+	Port                         int               `json:"port"`
 	ChildHealthThreshold         int               `json:"child_health_threshold"`
-	Tags                         map[string]string `json:"tags"`
+	RequestInterval              int               `json:"request_interval"`
 	IpAddress                    string            `json:"ip_address"`
-	ResourcePath                 string            `json:"resource_path"`
-	InsufficientDataHealthStatus string            `json:"insufficient_data_health_status"`
-	InvertHealthcheck            bool              `json:"invert_healthcheck"`
-	MeasureLatency               bool              `json:"measure_latency"`
+	Regions                      string            `json:"regions"`
+	Tags                         map[string]string `json:"tags"`
 	ChildHealthchecks            string            `json:"child_healthchecks"`
-	ReferenceName                string            `json:"reference_name"`
-	EnableSni                    bool              `json:"enable_sni"`
+	CloudwatchAlarmName          string            `json:"cloudwatch_alarm_name"`
+	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
+	InsufficientDataHealthStatus string            `json:"insufficient_data_health_status"`
 	Type                         string            `json:"type"`
 	FailureThreshold             int               `json:"failure_threshold"`
-	Port                         int               `json:"port"`
-	Regions                      string            `json:"regions"`
+	InvertHealthcheck            bool              `json:"invert_healthcheck"`
+	SearchString                 string            `json:"search_string"`
+	EnableSni                    bool              `json:"enable_sni"`
+	Fqdn                         string            `json:"fqdn"`
+	ResourcePath                 string            `json:"resource_path"`
+	MeasureLatency               bool              `json:"measure_latency"`
+	ReferenceName                string            `json:"reference_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRoute53HealthCheckList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsRoute53HealthCheck `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsRoute53HealthCheck `json:"items"`
 }

@@ -102,20 +102,6 @@ func main() {
 		`, generator.CamelAndTitle(k), generator.CamelAndTitle(k), strings.Replace(k, "_", "-", -1), generator.CamelAndTitle(k)))
 		crGenerator.WriteToBuffer(fmt.Sprintf(`
 		generator.ToFile(cr%s, "examples/crs/%s.yaml")`, generator.CamelAndTitle(k), strings.Replace(k, "_", "-", -1)))
-		tfResource, err := generator.NewFile("v1alpha1")
-		if err != nil {
-			panic(err)
-		}
-		tfResource.WriteToBuffer(fmt.Sprintf(`
-		import (
-			"github.com/chronojam/terraform-operator/pkg/apis/aws/v1alpha1"
-		)
-
-		type %sResource struct {
-			%s
-		}	
-		`, generator.CamelAndTitle(k), fmt.Sprintf("Resource v1alpha1.%sSpec `json:\"%s\"`", generator.CamelAndTitle(k), k)))
-
 		f, err := generator.NewFile("v1alpha1")
 		if err != nil {
 			panic(err)
@@ -126,9 +112,9 @@ func main() {
 		}
 		base := generator.NewStructType(k, v.Schema)
 		baseBytes, err := base.GenerateWithFields([]string{
-			"meta_v1.TypeMeta `json\",inline\"`",
-			"meta_v1.ObjectMeta `json\"metadata,omitempty\"`",
-			fmt.Sprintf("Spec %s `json\"spec\"`", generator.CamelAndTitle(k)+"Spec"),
+			"meta_v1.TypeMeta `json:\",inline\"`",
+			"meta_v1.ObjectMeta `json:\"metadata,omitempty\"`",
+			fmt.Sprintf("Spec %s `json:\"spec\"`", generator.CamelAndTitle(k)+"Spec"),
 		},
 			[]string{
 				"+genclient",
@@ -146,9 +132,9 @@ func main() {
 
 		list := generator.NewStructType(k+"List", v.Schema)
 		listBytes, err := list.GenerateWithFields([]string{
-			"meta_v1.TypeMeta `json\",inline\"`",
-			"meta_v1.ObjectMeta `json\"metadata,omitempty\"`",
-			fmt.Sprintf("Items []%s `json\"items\"`", generator.CamelAndTitle(k)),
+			"meta_v1.TypeMeta `json:\",inline\"`",
+			"meta_v1.ListMeta `json:\"metadata,omitempty\"`",
+			fmt.Sprintf("Items []%s `json:\"items\"`", generator.CamelAndTitle(k)),
 		}, []string{
 			"+k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object",
 		})
@@ -166,10 +152,6 @@ func main() {
 			panic(err)
 		}
 		err = f.WriteToFile(fmt.Sprintf("pkg/apis/aws/v1alpha1/%s.go", k))
-		if err != nil {
-			panic(err)
-		}
-		err = tfResource.WriteToFile(fmt.Sprintf("pkg/terraform/aws/v1alpha1/%s.go", k))
 		if err != nil {
 			panic(err)
 		}

@@ -11,21 +11,21 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAutoscalingAttachment struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAutoscalingAttachmentSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAutoscalingAttachmentSpec `json:"spec"`
 }
 
 type AwsAutoscalingAttachmentSpec struct {
-	AlbTargetGroupArn    string `json:"alb_target_group_arn"`
 	AutoscalingGroupName string `json:"autoscaling_group_name"`
 	Elb                  string `json:"elb"`
+	AlbTargetGroupArn    string `json:"alb_target_group_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAutoscalingAttachmentList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAutoscalingAttachment `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAutoscalingAttachment `json:"items"`
 }

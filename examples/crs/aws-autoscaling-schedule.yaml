@@ -5,13 +5,13 @@ kind: AwsAutoscalingSchedule
 metadata:
   name: example-aws-autoscaling-schedule
 spec:
+  endtime: ""
+  minsize: 0
+  maxsize: 0
   arn: ""
+  scheduledactionname: ""
   autoscalinggroupname: ""
   starttime: ""
   recurrence: ""
-  minsize: 0
-  scheduledactionname: ""
-  endtime: ""
-  maxsize: 0
   desiredcapacity: 0
 

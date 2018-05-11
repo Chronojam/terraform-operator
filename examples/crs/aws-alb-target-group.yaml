@@ -5,17 +5,17 @@ kind: AwsAlbTargetGroup
 metadata:
   name: example-aws-alb-target-group
 spec:
-  arnsuffix: ""
-  port: 0
-  protocol: ""
-  vpcid: ""
-  deregistrationdelay: 0
-  stickiness: []
-  healthcheck: []
   arn: ""
-  name: ""
-  nameprefix: ""
+  deregistrationdelay: 0
   proxyprotocolv2: false
   targettype: ""
+  stickiness: []
+  vpcid: ""
+  healthcheck: []
   tags: {}
+  arnsuffix: ""
+  name: ""
+  nameprefix: ""
+  port: 0
+  protocol: ""
 

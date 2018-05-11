@@ -9,17 +9,17 @@ spec:
     metricintervallowerbound: ""
     metricintervalupperbound: ""
     scalingadjustment: 0
-  targettrackingscalingpolicyconfiguration: []
-  policytype: ""
-  scalabledimension: ""
-  stepscalingpolicyconfiguration: []
-  cooldown: 0
-  alarms: []
-  minadjustmentmagnitude: 0
   name: ""
-  servicenamespace: ""
-  adjustmenttype: ""
-  metricaggregationtype: ""
   arn: ""
   resourceid: ""
+  targettrackingscalingpolicyconfiguration: []
+  policytype: ""
+  alarms: []
+  minadjustmentmagnitude: 0
+  scalabledimension: ""
+  cooldown: 0
+  metricaggregationtype: ""
+  servicenamespace: ""
+  stepscalingpolicyconfiguration: []
+  adjustmenttype: ""
 

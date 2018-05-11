@@ -6,13 +6,13 @@ metadata:
   name: example-aws-batch-compute-environment
 spec:
   computeenvironmentname: ""
-  computeresources: []
-  type: ""
-  arn: ""
-  statusreason: ""
-  servicerole: ""
   state: ""
-  eccclusterarn: ""
+  type: ""
+  statusreason: ""
   ecsclusterarn: ""
   status: ""
+  computeresources: []
+  servicerole: ""
+  arn: ""
+  eccclusterarn: ""
 

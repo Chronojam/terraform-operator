@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsEbsSnapshot struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsEbsSnapshotSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsEbsSnapshotSpec `json:"spec"`
 }
 
 type AwsEbsSnapshotSpec struct {
+	Description         string            `json:"description"`
 	VolumeSize          int               `json:"volume_size"`
 	KmsKeyId            string            `json:"kms_key_id"`
+	Tags                map[string]string `json:"tags"`
 	DataEncryptionKeyId string            `json:"data_encryption_key_id"`
-	Description         string            `json:"description"`
+	VolumeId            string            `json:"volume_id"`
 	OwnerId             string            `json:"owner_id"`
 	OwnerAlias          string            `json:"owner_alias"`
 	Encrypted           bool              `json:"encrypted"`
-	VolumeId            string            `json:"volume_id"`
-	Tags                map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsEbsSnapshotList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsEbsSnapshot `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsEbsSnapshot `json:"items"`
 }

@@ -5,12 +5,12 @@ kind: AwsIamInstanceProfile
 metadata:
   name: example-aws-iam-instance-profile
 spec:
+  name: ""
+  nameprefix: ""
+  path: ""
   roles: ""
   role: ""
   arn: ""
   createdate: ""
   uniqueid: ""
-  name: ""
-  nameprefix: ""
-  path: ""
 

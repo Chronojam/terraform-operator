@@ -11,44 +11,44 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRdsClusterInstance struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsRdsClusterInstanceSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsRdsClusterInstanceSpec `json:"spec"`
 }
 
 type AwsRdsClusterInstanceSpec struct {
-	AutoMinorVersionUpgrade     bool              `json:"auto_minor_version_upgrade"`
-	MonitoringRoleArn           string            `json:"monitoring_role_arn"`
-	Identifier                  string            `json:"identifier"`
 	DbSubnetGroupName           string            `json:"db_subnet_group_name"`
-	Writer                      bool              `json:"writer"`
-	ClusterIdentifier           string            `json:"cluster_identifier"`
-	Engine                      string            `json:"engine"`
-	StorageEncrypted            bool              `json:"storage_encrypted"`
-	PreferredMaintenanceWindow  string            `json:"preferred_maintenance_window"`
 	Port                        int               `json:"port"`
-	InstanceClass               string            `json:"instance_class"`
-	ApplyImmediately            bool              `json:"apply_immediately"`
-	KmsKeyId                    string            `json:"kms_key_id"`
-	DbiResourceId               string            `json:"dbi_resource_id"`
-	PerformanceInsightsEnabled  bool              `json:"performance_insights_enabled"`
-	IdentifierPrefix            string            `json:"identifier_prefix"`
-	Endpoint                    string            `json:"endpoint"`
+	Engine                      string            `json:"engine"`
 	DbParameterGroupName        string            `json:"db_parameter_group_name"`
 	PreferredBackupWindow       string            `json:"preferred_backup_window"`
-	PromotionTier               int               `json:"promotion_tier"`
-	Tags                        map[string]string `json:"tags"`
-	PubliclyAccessible          bool              `json:"publicly_accessible"`
-	EngineVersion               string            `json:"engine_version"`
-	MonitoringInterval          int               `json:"monitoring_interval"`
 	AvailabilityZone            string            `json:"availability_zone"`
+	ClusterIdentifier           string            `json:"cluster_identifier"`
+	InstanceClass               string            `json:"instance_class"`
+	EngineVersion               string            `json:"engine_version"`
+	ApplyImmediately            bool              `json:"apply_immediately"`
+	KmsKeyId                    string            `json:"kms_key_id"`
+	StorageEncrypted            bool              `json:"storage_encrypted"`
+	PreferredMaintenanceWindow  string            `json:"preferred_maintenance_window"`
+	Tags                        map[string]string `json:"tags"`
+	Endpoint                    string            `json:"endpoint"`
+	PubliclyAccessible          bool              `json:"publicly_accessible"`
+	PromotionTier               int               `json:"promotion_tier"`
 	PerformanceInsightsKmsKeyId string            `json:"performance_insights_kms_key_id"`
+	PerformanceInsightsEnabled  bool              `json:"performance_insights_enabled"`
+	Identifier                  string            `json:"identifier"`
+	IdentifierPrefix            string            `json:"identifier_prefix"`
+	Writer                      bool              `json:"writer"`
+	DbiResourceId               string            `json:"dbi_resource_id"`
+	AutoMinorVersionUpgrade     bool              `json:"auto_minor_version_upgrade"`
+	MonitoringRoleArn           string            `json:"monitoring_role_arn"`
+	MonitoringInterval          int               `json:"monitoring_interval"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRdsClusterInstanceList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsRdsClusterInstance `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsRdsClusterInstance `json:"items"`
 }

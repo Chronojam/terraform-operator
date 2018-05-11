@@ -5,12 +5,12 @@ kind: AwsWafRateBasedRule
 metadata:
   name: example-aws-waf-rate-based-rule
 spec:
+  ratelimit: 0
+  name: ""
+  metricname: ""
   predicates:
     negated: false
     dataid: ""
     type: ""
   ratekey: ""
-  ratelimit: 0
-  name: ""
-  metricname: ""
 

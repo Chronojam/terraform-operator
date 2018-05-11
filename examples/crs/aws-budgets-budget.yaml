@@ -5,15 +5,15 @@ kind: AwsBudgetsBudget
 metadata:
   name: example-aws-budgets-budget
 spec:
-  costfilters: {}
+  name: ""
   nameprefix: ""
   budgettype: ""
-  timeperiodstart: ""
-  timeperiodend: ""
+  costtypes: []
   timeunit: ""
+  costfilters: {}
   accountid: ""
-  name: ""
   limitamount: ""
   limitunit: ""
-  costtypes: []
+  timeperiodstart: ""
+  timeperiodend: ""
 

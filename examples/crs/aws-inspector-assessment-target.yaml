@@ -5,7 +5,7 @@ kind: AwsInspectorAssessmentTarget
 metadata:
   name: example-aws-inspector-assessment-target
 spec:
-  name: ""
   arn: ""
   resourcegrouparn: ""
+  name: ""
 

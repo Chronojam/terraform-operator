@@ -29,21 +29,18 @@ func main() {
 		inf.AddEventHandler(cache.ResourceEventHandlerFuncs{
 			AddFunc: func(obj interface{}) {
 				key, err := cache.MetaNamespaceKeyFunc(obj)
-				log.Infof("Add myresource: %s", key)
 				if err == nil {
 					queue.Add(key)
 				}
 			},
 			UpdateFunc: func(oldObj, newObj interface{}) {
 				key, err := cache.MetaNamespaceKeyFunc(newObj)
-				log.Infof("Update myresource: %s", key)
 				if err == nil {
 					queue.Add(key)
 				}
 			},
 			DeleteFunc: func(obj interface{}) {
 				key, err := cache.DeletionHandlingMetaNamespaceKeyFunc(obj)
-				log.Infof("Delete myresource: %s", key)
 				if err == nil {
 					queue.Add(key)
 				}

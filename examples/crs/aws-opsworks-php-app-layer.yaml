@@ -5,13 +5,19 @@ kind: AwsOpsworksPhpAppLayer
 metadata:
   name: example-aws-opsworks-php-app-layer
 spec:
+  name: ""
+  customdeployrecipes: []
+  customsecuritygroupids: ""
+  custominstanceprofilearn: ""
+  installupdatesonboot: false
+  customconfigurerecipes: []
+  customundeployrecipes: []
+  customshutdownrecipes: []
+  customjson: ""
   autohealing: false
   instanceshutdowntimeout: 0
-  drainelbonshutdown: false
-  customundeployrecipes: []
+  autoassignpublicips: false
   customsetuprecipes: []
-  customdeployrecipes: []
-  customshutdownrecipes: []
   ebsvolume:
     iops: 0
     mountpoint: ""
@@ -19,16 +25,10 @@ spec:
     raidlevel: ""
     size: 0
     type: ""
-  elasticloadbalancer: ""
-  customconfigurerecipes: []
-  customsecuritygroupids: ""
-  customjson: ""
-  useebsoptimizedinstances: false
-  name: ""
-  autoassignpublicips: false
-  custominstanceprofilearn: ""
-  installupdatesonboot: false
-  systempackages: ""
   stackid: ""
+  useebsoptimizedinstances: false
+  drainelbonshutdown: false
+  systempackages: ""
   autoassignelasticips: false
+  elasticloadbalancer: ""
 

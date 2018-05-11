@@ -5,11 +5,11 @@ kind: AwsMqConfiguration
 metadata:
   name: example-aws-mq-configuration
 spec:
+  name: ""
+  latestrevision: 0
+  arn: ""
   data: ""
   description: ""
   enginetype: ""
   engineversion: ""
-  name: ""
-  latestrevision: 0
-  arn: ""
 

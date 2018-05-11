@@ -5,6 +5,7 @@ kind: AwsSubnet
 metadata:
   name: example-aws-subnet
 spec:
+  cidrblock: ""
   ipv6cidrblock: ""
   availabilityzone: ""
   mappubliciponlaunch: false
@@ -12,5 +13,4 @@ spec:
   ipv6cidrblockassociationid: ""
   tags: {}
   vpcid: ""
-  cidrblock: ""
 

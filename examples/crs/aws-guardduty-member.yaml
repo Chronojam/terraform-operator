@@ -5,7 +5,7 @@ kind: AwsGuarddutyMember
 metadata:
   name: example-aws-guardduty-member
 spec:
-  accountid: ""
   detectorid: ""
   email: ""
+  accountid: ""
 

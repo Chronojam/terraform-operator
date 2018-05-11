@@ -11,36 +11,54 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDynamodbTable struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDynamodbTableSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDynamodbTableSpec `json:"spec"`
 }
 
 type AwsDynamodbTableSpec struct {
-	HashKey              string                                     `json:"hash_key"`
-	LocalSecondaryIndex  AwsDynamodbTableSpecLocalSecondaryIndex    `json:"local_secondary_index"`
-	GlobalSecondaryIndex AwsDynamodbTableSpecGlobalSecondaryIndex   `json:"global_secondary_index"`
-	ServerSideEncryption []AwsDynamodbTableSpecServerSideEncryption `json:"server_side_encryption"`
-	WriteCapacity        int                                        `json:"write_capacity"`
-	Ttl                  AwsDynamodbTableSpecTtl                    `json:"ttl"`
-	StreamArn            string                                     `json:"stream_arn"`
-	Tags                 map[string]string                          `json:"tags"`
+	RangeKey             string                                     `json:"range_key"`
 	Attribute            AwsDynamodbTableSpecAttribute              `json:"attribute"`
+	Ttl                  AwsDynamodbTableSpecTtl                    `json:"ttl"`
+	LocalSecondaryIndex  AwsDynamodbTableSpecLocalSecondaryIndex    `json:"local_secondary_index"`
 	StreamEnabled        bool                                       `json:"stream_enabled"`
-	StreamViewType       string                                     `json:"stream_view_type"`
-	StreamLabel          string                                     `json:"stream_label"`
+	StreamArn            string                                     `json:"stream_arn"`
+	ServerSideEncryption []AwsDynamodbTableSpecServerSideEncryption `json:"server_side_encryption"`
 	PointInTimeRecovery  []AwsDynamodbTableSpecPointInTimeRecovery  `json:"point_in_time_recovery"`
+	GlobalSecondaryIndex AwsDynamodbTableSpecGlobalSecondaryIndex   `json:"global_secondary_index"`
+	StreamViewType       string                                     `json:"stream_view_type"`
+	Tags                 map[string]string                          `json:"tags"`
 	Arn                  string                                     `json:"arn"`
 	Name                 string                                     `json:"name"`
-	RangeKey             string                                     `json:"range_key"`
+	HashKey              string                                     `json:"hash_key"`
+	WriteCapacity        int                                        `json:"write_capacity"`
 	ReadCapacity         int                                        `json:"read_capacity"`
+	StreamLabel          string                                     `json:"stream_label"`
+}
+
+type AwsDynamodbTableSpecAttribute struct {
+	Name string `json:"name"`
+	Type string `json:"type"`
+}
+
+type AwsDynamodbTableSpecTtl struct {
+	Enabled       bool   `json:"enabled"`
+	AttributeName string `json:"attribute_name"`
 }
 
 type AwsDynamodbTableSpecLocalSecondaryIndex struct {
-	NonKeyAttributes []string `json:"non_key_attributes"`
 	Name             string   `json:"name"`
 	RangeKey         string   `json:"range_key"`
 	ProjectionType   string   `json:"projection_type"`
+	NonKeyAttributes []string `json:"non_key_attributes"`
+}
+
+type AwsDynamodbTableSpecServerSideEncryption struct {
+	Enabled bool `json:"enabled"`
+}
+
+type AwsDynamodbTableSpecPointInTimeRecovery struct {
+	Enabled bool `json:"enabled"`
 }
 
 type AwsDynamodbTableSpecGlobalSecondaryIndex struct {
@@ -53,28 +71,10 @@ type AwsDynamodbTableSpecGlobalSecondaryIndex struct {
 	ProjectionType   string   `json:"projection_type"`
 }
 
-type AwsDynamodbTableSpecServerSideEncryption struct {
-	Enabled bool `json:"enabled"`
-}
-
-type AwsDynamodbTableSpecTtl struct {
-	AttributeName string `json:"attribute_name"`
-	Enabled       bool   `json:"enabled"`
-}
-
-type AwsDynamodbTableSpecAttribute struct {
-	Name string `json:"name"`
-	Type string `json:"type"`
-}
-
-type AwsDynamodbTableSpecPointInTimeRecovery struct {
-	Enabled bool `json:"enabled"`
-}
-
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDynamodbTableList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDynamodbTable `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDynamodbTable `json:"items"`
 }

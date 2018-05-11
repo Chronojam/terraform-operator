@@ -5,13 +5,13 @@ kind: AwsApiGatewayAuthorizer
 metadata:
   name: example-aws-api-gateway-authorizer
 spec:
-  restapiid: ""
-  identityvalidationexpression: ""
-  providerarns: ""
   identitysource: ""
   name: ""
   type: ""
+  authorizeruri: ""
+  restapiid: ""
   authorizercredentials: ""
   authorizerresultttlinseconds: 0
-  authorizeruri: ""
+  identityvalidationexpression: ""
+  providerarns: ""
 

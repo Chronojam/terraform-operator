@@ -11,29 +11,29 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLambdaEventSourceMapping struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLambdaEventSourceMappingSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLambdaEventSourceMappingSpec `json:"spec"`
 }
 
 type AwsLambdaEventSourceMappingSpec struct {
-	Enabled               bool   `json:"enabled"`
-	StartingPosition      string `json:"starting_position"`
-	BatchSize             int    `json:"batch_size"`
+	FunctionName          string `json:"function_name"`
 	FunctionArn           string `json:"function_arn"`
-	LastModified          string `json:"last_modified"`
+	StateTransitionReason string `json:"state_transition_reason"`
+	Uuid                  string `json:"uuid"`
 	LastProcessingResult  string `json:"last_processing_result"`
 	State                 string `json:"state"`
 	EventSourceArn        string `json:"event_source_arn"`
-	FunctionName          string `json:"function_name"`
-	StateTransitionReason string `json:"state_transition_reason"`
-	Uuid                  string `json:"uuid"`
+	StartingPosition      string `json:"starting_position"`
+	BatchSize             int    `json:"batch_size"`
+	Enabled               bool   `json:"enabled"`
+	LastModified          string `json:"last_modified"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLambdaEventSourceMappingList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLambdaEventSourceMapping `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLambdaEventSourceMapping `json:"items"`
 }

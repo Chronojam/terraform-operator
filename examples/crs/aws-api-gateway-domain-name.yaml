@@ -5,13 +5,13 @@ kind: AwsApiGatewayDomainName
 metadata:
   name: example-aws-api-gateway-domain-name
 spec:
-  certificatechain: ""
   domainname: ""
   cloudfrontdomainname: ""
   certificateuploaddate: ""
-  certificatebody: ""
+  cloudfrontzoneid: ""
+  certificatechain: ""
+  certificatename: ""
   certificateprivatekey: ""
   certificatearn: ""
-  cloudfrontzoneid: ""
-  certificatename: ""
+  certificatebody: ""
 

@@ -5,9 +5,9 @@ kind: AwsOrganizationsPolicy
 metadata:
   name: example-aws-organizations-policy
 spec:
+  type: ""
   arn: ""
   content: ""
   description: ""
   name: ""
-  type: ""
 

@@ -5,24 +5,24 @@ kind: AwsRoute53Record
 metadata:
   name: example-aws-route53-record
 spec:
-  weightedroutingpolicy: []
-  multivalueanswerroutingpolicy: false
-  name: ""
-  zoneid: ""
-  geolocationroutingpolicy: []
-  alias:
-    evaluatetargethealth: false
-    zoneid: ""
-    name: ""
-  allowoverwrite: false
-  type: ""
-  ttl: 0
-  setidentifier: ""
   healthcheckid: ""
-  fqdn: ""
-  weight: 0
+  allowoverwrite: false
+  geolocationroutingpolicy: []
+  weightedroutingpolicy: []
   latencyroutingpolicy: []
+  zoneid: ""
+  weight: 0
   failover: ""
   failoverroutingpolicy: []
+  name: ""
+  fqdn: ""
+  setidentifier: ""
+  alias:
+    zoneid: ""
+    name: ""
+    evaluatetargethealth: false
+  multivalueanswerroutingpolicy: false
   records: ""
+  type: ""
+  ttl: 0
 

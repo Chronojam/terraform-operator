@@ -5,10 +5,10 @@ kind: AwsFlowLog
 metadata:
   name: example-aws-flow-log
 spec:
+  iamrolearn: ""
+  loggroupname: ""
   vpcid: ""
   subnetid: ""
   eniid: ""
   traffictype: ""
-  iamrolearn: ""
-  loggroupname: ""
 

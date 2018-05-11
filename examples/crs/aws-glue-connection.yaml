@@ -5,11 +5,11 @@ kind: AwsGlueConnection
 metadata:
   name: example-aws-glue-connection
 spec:
+  physicalconnectionrequirements: []
   catalogid: ""
   connectionproperties: {}
   connectiontype: ""
   description: ""
   matchcriteria: []
   name: ""
-  physicalconnectionrequirements: []
 

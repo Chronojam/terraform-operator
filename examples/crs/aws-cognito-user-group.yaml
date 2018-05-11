@@ -5,9 +5,9 @@ kind: AwsCognitoUserGroup
 metadata:
   name: example-aws-cognito-user-group
 spec:
-  description: ""
   name: ""
   precedence: 0
   rolearn: ""
   userpoolid: ""
+  description: ""
 

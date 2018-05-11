@@ -5,8 +5,8 @@ kind: AwsKeyPair
 metadata:
   name: example-aws-key-pair
 spec:
-  keyname: ""
   keynameprefix: ""
   publickey: ""
   fingerprint: ""
+  keyname: ""
 

@@ -5,7 +5,6 @@ kind: AwsKinesisStream
 metadata:
   name: example-aws-kinesis-stream
 spec:
-  name: ""
   shardcount: 0
   retentionperiod: 0
   shardlevelmetrics: ""
@@ -13,4 +12,5 @@ spec:
   kmskeyid: ""
   arn: ""
   tags: {}
+  name: ""
 

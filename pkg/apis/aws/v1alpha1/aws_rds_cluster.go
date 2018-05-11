@@ -11,44 +11,44 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRdsCluster struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsRdsClusterSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsRdsClusterSpec `json:"spec"`
 }
 
 type AwsRdsClusterSpec struct {
-	MasterUsername                   string                      `json:"master_username"`
-	DbSubnetGroupName                string                      `json:"db_subnet_group_name"`
-	ReaderEndpoint                   string                      `json:"reader_endpoint"`
+	DbClusterParameterGroupName      string                      `json:"db_cluster_parameter_group_name"`
+	FinalSnapshotIdentifier          string                      `json:"final_snapshot_identifier"`
 	BackupRetentionPeriod            int                         `json:"backup_retention_period"`
+	Engine                           string                      `json:"engine"`
 	KmsKeyId                         string                      `json:"kms_key_id"`
-	ReplicationSourceIdentifier      string                      `json:"replication_source_identifier"`
+	IamDatabaseAuthenticationEnabled bool                        `json:"iam_database_authentication_enabled"`
+	ClusterResourceId                string                      `json:"cluster_resource_id"`
+	DatabaseName                     string                      `json:"database_name"`
+	DbSubnetGroupName                string                      `json:"db_subnet_group_name"`
+	HostedZoneId                     string                      `json:"hosted_zone_id"`
+	SnapshotIdentifier               string                      `json:"snapshot_identifier"`
+	PreferredBackupWindow            string                      `json:"preferred_backup_window"`
 	ClusterIdentifier                string                      `json:"cluster_identifier"`
+	ClusterIdentifierPrefix          string                      `json:"cluster_identifier_prefix"`
+	ClusterMembers                   string                      `json:"cluster_members"`
+	MasterPassword                   string                      `json:"master_password"`
+	EngineVersion                    string                      `json:"engine_version"`
+	AvailabilityZones                string                      `json:"availability_zones"`
+	Endpoint                         string                      `json:"endpoint"`
+	ReplicationSourceIdentifier      string                      `json:"replication_source_identifier"`
+	ReaderEndpoint                   string                      `json:"reader_endpoint"`
 	ApplyImmediately                 bool                        `json:"apply_immediately"`
+	VpcSecurityGroupIds              string                      `json:"vpc_security_group_ids"`
+	PreferredMaintenanceWindow       string                      `json:"preferred_maintenance_window"`
+	IamRoles                         string                      `json:"iam_roles"`
 	StorageEncrypted                 bool                        `json:"storage_encrypted"`
 	S3Import                         []AwsRdsClusterSpecS3Import `json:"s3_import"`
-	AvailabilityZones                string                      `json:"availability_zones"`
-	ClusterIdentifierPrefix          string                      `json:"cluster_identifier_prefix"`
-	HostedZoneId                     string                      `json:"hosted_zone_id"`
-	EngineVersion                    string                      `json:"engine_version"`
-	MasterPassword                   string                      `json:"master_password"`
-	IamRoles                         string                      `json:"iam_roles"`
-	ClusterResourceId                string                      `json:"cluster_resource_id"`
-	ClusterMembers                   string                      `json:"cluster_members"`
-	DatabaseName                     string                      `json:"database_name"`
-	FinalSnapshotIdentifier          string                      `json:"final_snapshot_identifier"`
 	SkipFinalSnapshot                bool                        `json:"skip_final_snapshot"`
-	PreferredBackupWindow            string                      `json:"preferred_backup_window"`
-	IamDatabaseAuthenticationEnabled bool                        `json:"iam_database_authentication_enabled"`
-	SourceRegion                     string                      `json:"source_region"`
-	DbClusterParameterGroupName      string                      `json:"db_cluster_parameter_group_name"`
-	Engine                           string                      `json:"engine"`
-	VpcSecurityGroupIds              string                      `json:"vpc_security_group_ids"`
-	Tags                             map[string]string           `json:"tags"`
-	Endpoint                         string                      `json:"endpoint"`
+	MasterUsername                   string                      `json:"master_username"`
 	Port                             int                         `json:"port"`
-	SnapshotIdentifier               string                      `json:"snapshot_identifier"`
-	PreferredMaintenanceWindow       string                      `json:"preferred_maintenance_window"`
+	SourceRegion                     string                      `json:"source_region"`
+	Tags                             map[string]string           `json:"tags"`
 }
 
 type AwsRdsClusterSpecS3Import struct {
@@ -62,7 +62,7 @@ type AwsRdsClusterSpecS3Import struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRdsClusterList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsRdsCluster `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsRdsCluster `json:"items"`
 }

@@ -5,13 +5,13 @@ kind: AwsAppautoscalingScheduledAction
 metadata:
   name: example-aws-appautoscaling-scheduled-action
 spec:
-  arn: ""
-  servicenamespace: ""
-  resourceid: ""
   scalabledimension: ""
   scalabletargetaction: []
   schedule: ""
-  starttime: ""
   endtime: ""
+  arn: ""
   name: ""
+  servicenamespace: ""
+  resourceid: ""
+  starttime: ""
 

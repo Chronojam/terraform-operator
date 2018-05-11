@@ -11,187 +11,102 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudfrontDistribution struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCloudfrontDistributionSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCloudfrontDistributionSpec `json:"spec"`
 }
 
 type AwsCloudfrontDistributionSpec struct {
-	CallerReference             string                                              `json:"caller_reference"`
-	RetainOnDelete              bool                                                `json:"retain_on_delete"`
-	IsIpv6Enabled               bool                                                `json:"is_ipv6_enabled"`
 	DefaultCacheBehavior        AwsCloudfrontDistributionSpecDefaultCacheBehavior   `json:"default_cache_behavior"`
-	DefaultRootObject           string                                              `json:"default_root_object"`
-	ViewerCertificate           AwsCloudfrontDistributionSpecViewerCertificate      `json:"viewer_certificate"`
-	DomainName                  string                                              `json:"domain_name"`
-	Etag                        string                                              `json:"etag"`
-	Aliases                     string                                              `json:"aliases"`
+	LoggingConfig               AwsCloudfrontDistributionSpecLoggingConfig          `json:"logging_config"`
+	PriceClass                  string                                              `json:"price_class"`
+	LastModifiedTime            string                                              `json:"last_modified_time"`
+	HostedZoneId                string                                              `json:"hosted_zone_id"`
+	OrderedCacheBehavior        []AwsCloudfrontDistributionSpecOrderedCacheBehavior `json:"ordered_cache_behavior"`
 	Origin                      AwsCloudfrontDistributionSpecOrigin                 `json:"origin"`
-	CustomErrorResponse         AwsCloudfrontDistributionSpecCustomErrorResponse    `json:"custom_error_response"`
+	DomainName                  string                                              `json:"domain_name"`
+	Comment                     string                                              `json:"comment"`
 	HttpVersion                 string                                              `json:"http_version"`
+	ActiveTrustedSigners        map[string]string                                   `json:"active_trusted_signers"`
+	CustomErrorResponse         AwsCloudfrontDistributionSpecCustomErrorResponse    `json:"custom_error_response"`
+	ViewerCertificate           AwsCloudfrontDistributionSpecViewerCertificate      `json:"viewer_certificate"`
+	CallerReference             string                                              `json:"caller_reference"`
+	Etag                        string                                              `json:"etag"`
+	IsIpv6Enabled               bool                                                `json:"is_ipv6_enabled"`
+	Arn                         string                                              `json:"arn"`
+	Aliases                     string                                              `json:"aliases"`
+	Enabled                     bool                                                `json:"enabled"`
+	DefaultRootObject           string                                              `json:"default_root_object"`
 	Restrictions                AwsCloudfrontDistributionSpecRestrictions           `json:"restrictions"`
 	Status                      string                                              `json:"status"`
-	InProgressValidationBatches int                                                 `json:"in_progress_validation_batches"`
-	CacheBehavior               AwsCloudfrontDistributionSpecCacheBehavior          `json:"cache_behavior"`
-	LoggingConfig               AwsCloudfrontDistributionSpecLoggingConfig          `json:"logging_config"`
-	Comment                     string                                              `json:"comment"`
-	ActiveTrustedSigners        map[string]string                                   `json:"active_trusted_signers"`
 	Tags                        map[string]string                                   `json:"tags"`
-	OrderedCacheBehavior        []AwsCloudfrontDistributionSpecOrderedCacheBehavior `json:"ordered_cache_behavior"`
-	Enabled                     bool                                                `json:"enabled"`
-	PriceClass                  string                                              `json:"price_class"`
+	CacheBehavior               AwsCloudfrontDistributionSpecCacheBehavior          `json:"cache_behavior"`
 	WebAclId                    string                                              `json:"web_acl_id"`
-	LastModifiedTime            string                                              `json:"last_modified_time"`
-	Arn                         string                                              `json:"arn"`
-	HostedZoneId                string                                              `json:"hosted_zone_id"`
+	InProgressValidationBatches int                                                 `json:"in_progress_validation_batches"`
+	RetainOnDelete              bool                                                `json:"retain_on_delete"`
 }
 
 type AwsCloudfrontDistributionSpecDefaultCacheBehavior struct {
-	CachedMethods             []string                                                                   `json:"cached_methods"`
 	Compress                  bool                                                                       `json:"compress"`
-	TargetOriginId            string                                                                     `json:"target_origin_id"`
-	TrustedSigners            []string                                                                   `json:"trusted_signers"`
 	LambdaFunctionAssociation AwsCloudfrontDistributionSpecDefaultCacheBehaviorLambdaFunctionAssociation `json:"lambda_function_association"`
 	MaxTtl                    int                                                                        `json:"max_ttl"`
-	MinTtl                    int                                                                        `json:"min_ttl"`
-	SmoothStreaming           bool                                                                       `json:"smooth_streaming"`
+	TargetOriginId            string                                                                     `json:"target_origin_id"`
+	ViewerProtocolPolicy      string                                                                     `json:"viewer_protocol_policy"`
+	TrustedSigners            []string                                                                   `json:"trusted_signers"`
 	AllowedMethods            []string                                                                   `json:"allowed_methods"`
+	CachedMethods             []string                                                                   `json:"cached_methods"`
 	DefaultTtl                int                                                                        `json:"default_ttl"`
 	FieldLevelEncryptionId    string                                                                     `json:"field_level_encryption_id"`
 	ForwardedValues           AwsCloudfrontDistributionSpecDefaultCacheBehaviorForwardedValues           `json:"forwarded_values"`
-	ViewerProtocolPolicy      string                                                                     `json:"viewer_protocol_policy"`
+	MinTtl                    int                                                                        `json:"min_ttl"`
+	SmoothStreaming           bool                                                                       `json:"smooth_streaming"`
 }
 
 type AwsCloudfrontDistributionSpecDefaultCacheBehaviorLambdaFunctionAssociation struct {
-	LambdaArn string `json:"lambda_arn"`
 	EventType string `json:"event_type"`
+	LambdaArn string `json:"lambda_arn"`
 }
 
 type AwsCloudfrontDistributionSpecDefaultCacheBehaviorForwardedValues struct {
-	QueryStringCacheKeys []string                                                                `json:"query_string_cache_keys"`
 	Cookies              AwsCloudfrontDistributionSpecDefaultCacheBehaviorForwardedValuesCookies `json:"cookies"`
 	Headers              []string                                                                `json:"headers"`
 	QueryString          bool                                                                    `json:"query_string"`
+	QueryStringCacheKeys []string                                                                `json:"query_string_cache_keys"`
 }
 
 type AwsCloudfrontDistributionSpecDefaultCacheBehaviorForwardedValuesCookies struct {
-	Forward          string   `json:"forward"`
 	WhitelistedNames []string `json:"whitelisted_names"`
-}
-
-type AwsCloudfrontDistributionSpecViewerCertificate struct {
-	IamCertificateId             string `json:"iam_certificate_id"`
-	MinimumProtocolVersion       string `json:"minimum_protocol_version"`
-	SslSupportMethod             string `json:"ssl_support_method"`
-	AcmCertificateArn            string `json:"acm_certificate_arn"`
-	CloudfrontDefaultCertificate bool   `json:"cloudfront_default_certificate"`
-}
-
-type AwsCloudfrontDistributionSpecOrigin struct {
-	CustomOriginConfig AwsCloudfrontDistributionSpecOriginCustomOriginConfig `json:"custom_origin_config"`
-	DomainName         string                                                `json:"domain_name"`
-	CustomHeader       AwsCloudfrontDistributionSpecOriginCustomHeader       `json:"custom_header"`
-	OriginId           string                                                `json:"origin_id"`
-	OriginPath         string                                                `json:"origin_path"`
-	S3OriginConfig     AwsCloudfrontDistributionSpecOriginS3OriginConfig     `json:"s3_origin_config"`
-}
-
-type AwsCloudfrontDistributionSpecOriginCustomOriginConfig struct {
-	OriginSslProtocols     []string `json:"origin_ssl_protocols"`
-	HttpPort               int      `json:"http_port"`
-	HttpsPort              int      `json:"https_port"`
-	OriginKeepaliveTimeout int      `json:"origin_keepalive_timeout"`
-	OriginReadTimeout      int      `json:"origin_read_timeout"`
-	OriginProtocolPolicy   string   `json:"origin_protocol_policy"`
-}
-
-type AwsCloudfrontDistributionSpecOriginCustomHeader struct {
-	Name  string `json:"name"`
-	Value string `json:"value"`
-}
-
-type AwsCloudfrontDistributionSpecOriginS3OriginConfig struct {
-	OriginAccessIdentity string `json:"origin_access_identity"`
-}
-
-type AwsCloudfrontDistributionSpecCustomErrorResponse struct {
-	ErrorCachingMinTtl int    `json:"error_caching_min_ttl"`
-	ErrorCode          int    `json:"error_code"`
-	ResponseCode       int    `json:"response_code"`
-	ResponsePagePath   string `json:"response_page_path"`
-}
-
-type AwsCloudfrontDistributionSpecRestrictions struct {
-	GeoRestriction AwsCloudfrontDistributionSpecRestrictionsGeoRestriction `json:"geo_restriction"`
-}
-
-type AwsCloudfrontDistributionSpecRestrictionsGeoRestriction struct {
-	Locations       []string `json:"locations"`
-	RestrictionType string   `json:"restriction_type"`
-}
-
-type AwsCloudfrontDistributionSpecCacheBehavior struct {
-	AllowedMethods            []string                                                            `json:"allowed_methods"`
-	Compress                  bool                                                                `json:"compress"`
-	TrustedSigners            []string                                                            `json:"trusted_signers"`
-	CachedMethods             []string                                                            `json:"cached_methods"`
-	DefaultTtl                int                                                                 `json:"default_ttl"`
-	FieldLevelEncryptionId    string                                                              `json:"field_level_encryption_id"`
-	ForwardedValues           AwsCloudfrontDistributionSpecCacheBehaviorForwardedValues           `json:"forwarded_values"`
-	LambdaFunctionAssociation AwsCloudfrontDistributionSpecCacheBehaviorLambdaFunctionAssociation `json:"lambda_function_association"`
-	TargetOriginId            string                                                              `json:"target_origin_id"`
-	ViewerProtocolPolicy      string                                                              `json:"viewer_protocol_policy"`
-	MaxTtl                    int                                                                 `json:"max_ttl"`
-	MinTtl                    int                                                                 `json:"min_ttl"`
-	PathPattern               string                                                              `json:"path_pattern"`
-	SmoothStreaming           bool                                                                `json:"smooth_streaming"`
-}
-
-type AwsCloudfrontDistributionSpecCacheBehaviorForwardedValues struct {
-	QueryStringCacheKeys []string                                                         `json:"query_string_cache_keys"`
-	Cookies              AwsCloudfrontDistributionSpecCacheBehaviorForwardedValuesCookies `json:"cookies"`
-	Headers              []string                                                         `json:"headers"`
-	QueryString          bool                                                             `json:"query_string"`
-}
-
-type AwsCloudfrontDistributionSpecCacheBehaviorForwardedValuesCookies struct {
 	Forward          string   `json:"forward"`
-	WhitelistedNames []string `json:"whitelisted_names"`
-}
-
-type AwsCloudfrontDistributionSpecCacheBehaviorLambdaFunctionAssociation struct {
-	EventType string `json:"event_type"`
-	LambdaArn string `json:"lambda_arn"`
 }
 
 type AwsCloudfrontDistributionSpecLoggingConfig struct {
-	Bucket         string `json:"bucket"`
 	IncludeCookies bool   `json:"include_cookies"`
 	Prefix         string `json:"prefix"`
+	Bucket         string `json:"bucket"`
 }
 
 type AwsCloudfrontDistributionSpecOrderedCacheBehavior struct {
 	TargetOriginId            string                                                                     `json:"target_origin_id"`
-	ForwardedValues           AwsCloudfrontDistributionSpecOrderedCacheBehaviorForwardedValues           `json:"forwarded_values"`
-	MinTtl                    int                                                                        `json:"min_ttl"`
-	MaxTtl                    int                                                                        `json:"max_ttl"`
+	Compress                  bool                                                                       `json:"compress"`
+	DefaultTtl                int                                                                        `json:"default_ttl"`
 	PathPattern               string                                                                     `json:"path_pattern"`
 	SmoothStreaming           bool                                                                       `json:"smooth_streaming"`
-	Compress                  bool                                                                       `json:"compress"`
+	ForwardedValues           AwsCloudfrontDistributionSpecOrderedCacheBehaviorForwardedValues           `json:"forwarded_values"`
 	LambdaFunctionAssociation AwsCloudfrontDistributionSpecOrderedCacheBehaviorLambdaFunctionAssociation `json:"lambda_function_association"`
-	TrustedSigners            []string                                                                   `json:"trusted_signers"`
-	ViewerProtocolPolicy      string                                                                     `json:"viewer_protocol_policy"`
-	CachedMethods             string                                                                     `json:"cached_methods"`
 	FieldLevelEncryptionId    string                                                                     `json:"field_level_encryption_id"`
+	MaxTtl                    int                                                                        `json:"max_ttl"`
+	MinTtl                    int                                                                        `json:"min_ttl"`
+	ViewerProtocolPolicy      string                                                                     `json:"viewer_protocol_policy"`
 	AllowedMethods            string                                                                     `json:"allowed_methods"`
-	DefaultTtl                int                                                                        `json:"default_ttl"`
+	CachedMethods             string                                                                     `json:"cached_methods"`
+	TrustedSigners            []string                                                                   `json:"trusted_signers"`
 }
 
 type AwsCloudfrontDistributionSpecOrderedCacheBehaviorForwardedValues struct {
+	QueryStringCacheKeys []string                                                                `json:"query_string_cache_keys"`
 	Cookies              AwsCloudfrontDistributionSpecOrderedCacheBehaviorForwardedValuesCookies `json:"cookies"`
 	Headers              []string                                                                `json:"headers"`
 	QueryString          bool                                                                    `json:"query_string"`
-	QueryStringCacheKeys []string                                                                `json:"query_string_cache_keys"`
 }
 
 type AwsCloudfrontDistributionSpecOrderedCacheBehaviorForwardedValuesCookies struct {
@@ -204,10 +119,95 @@ type AwsCloudfrontDistributionSpecOrderedCacheBehaviorLambdaFunctionAssociation 
 	LambdaArn string `json:"lambda_arn"`
 }
 
+type AwsCloudfrontDistributionSpecOrigin struct {
+	CustomOriginConfig AwsCloudfrontDistributionSpecOriginCustomOriginConfig `json:"custom_origin_config"`
+	DomainName         string                                                `json:"domain_name"`
+	CustomHeader       AwsCloudfrontDistributionSpecOriginCustomHeader       `json:"custom_header"`
+	OriginId           string                                                `json:"origin_id"`
+	OriginPath         string                                                `json:"origin_path"`
+	S3OriginConfig     AwsCloudfrontDistributionSpecOriginS3OriginConfig     `json:"s3_origin_config"`
+}
+
+type AwsCloudfrontDistributionSpecOriginCustomOriginConfig struct {
+	HttpPort               int      `json:"http_port"`
+	HttpsPort              int      `json:"https_port"`
+	OriginKeepaliveTimeout int      `json:"origin_keepalive_timeout"`
+	OriginReadTimeout      int      `json:"origin_read_timeout"`
+	OriginProtocolPolicy   string   `json:"origin_protocol_policy"`
+	OriginSslProtocols     []string `json:"origin_ssl_protocols"`
+}
+
+type AwsCloudfrontDistributionSpecOriginCustomHeader struct {
+	Name  string `json:"name"`
+	Value string `json:"value"`
+}
+
+type AwsCloudfrontDistributionSpecOriginS3OriginConfig struct {
+	OriginAccessIdentity string `json:"origin_access_identity"`
+}
+
+type AwsCloudfrontDistributionSpecCustomErrorResponse struct {
+	ResponsePagePath   string `json:"response_page_path"`
+	ErrorCachingMinTtl int    `json:"error_caching_min_ttl"`
+	ErrorCode          int    `json:"error_code"`
+	ResponseCode       int    `json:"response_code"`
+}
+
+type AwsCloudfrontDistributionSpecViewerCertificate struct {
+	CloudfrontDefaultCertificate bool   `json:"cloudfront_default_certificate"`
+	IamCertificateId             string `json:"iam_certificate_id"`
+	MinimumProtocolVersion       string `json:"minimum_protocol_version"`
+	SslSupportMethod             string `json:"ssl_support_method"`
+	AcmCertificateArn            string `json:"acm_certificate_arn"`
+}
+
+type AwsCloudfrontDistributionSpecRestrictions struct {
+	GeoRestriction AwsCloudfrontDistributionSpecRestrictionsGeoRestriction `json:"geo_restriction"`
+}
+
+type AwsCloudfrontDistributionSpecRestrictionsGeoRestriction struct {
+	Locations       []string `json:"locations"`
+	RestrictionType string   `json:"restriction_type"`
+}
+
+type AwsCloudfrontDistributionSpecCacheBehavior struct {
+	PathPattern               string                                                              `json:"path_pattern"`
+	TargetOriginId            string                                                              `json:"target_origin_id"`
+	TrustedSigners            []string                                                            `json:"trusted_signers"`
+	ViewerProtocolPolicy      string                                                              `json:"viewer_protocol_policy"`
+	DefaultTtl                int                                                                 `json:"default_ttl"`
+	FieldLevelEncryptionId    string                                                              `json:"field_level_encryption_id"`
+	MaxTtl                    int                                                                 `json:"max_ttl"`
+	ForwardedValues           AwsCloudfrontDistributionSpecCacheBehaviorForwardedValues           `json:"forwarded_values"`
+	SmoothStreaming           bool                                                                `json:"smooth_streaming"`
+	Compress                  bool                                                                `json:"compress"`
+	LambdaFunctionAssociation AwsCloudfrontDistributionSpecCacheBehaviorLambdaFunctionAssociation `json:"lambda_function_association"`
+	MinTtl                    int                                                                 `json:"min_ttl"`
+	AllowedMethods            []string                                                            `json:"allowed_methods"`
+	CachedMethods             []string                                                            `json:"cached_methods"`
+}
+
+type AwsCloudfrontDistributionSpecCacheBehaviorForwardedValues struct {
+	Cookies              AwsCloudfrontDistributionSpecCacheBehaviorForwardedValuesCookies `json:"cookies"`
+	Headers              []string                                                         `json:"headers"`
+	QueryString          bool                                                             `json:"query_string"`
+	QueryStringCacheKeys []string                                                         `json:"query_string_cache_keys"`
+}
+
+type AwsCloudfrontDistributionSpecCacheBehaviorForwardedValuesCookies struct {
+	Forward          string   `json:"forward"`
+	WhitelistedNames []string `json:"whitelisted_names"`
+}
+
+type AwsCloudfrontDistributionSpecCacheBehaviorLambdaFunctionAssociation struct {
+	EventType string `json:"event_type"`
+	LambdaArn string `json:"lambda_arn"`
+}
+
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudfrontDistributionList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCloudfrontDistribution `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCloudfrontDistribution `json:"items"`
 }

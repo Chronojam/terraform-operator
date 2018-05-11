@@ -5,10 +5,10 @@ kind: AwsSsmMaintenanceWindow
 metadata:
   name: example-aws-ssm-maintenance-window
 spec:
-  cutoff: 0
-  allowunassociatedtargets: false
-  enabled: false
   name: ""
   schedule: ""
   duration: 0
+  cutoff: 0
+  allowunassociatedtargets: false
+  enabled: false
 

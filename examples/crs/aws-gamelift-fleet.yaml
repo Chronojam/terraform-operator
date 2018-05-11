@@ -5,16 +5,16 @@ kind: AwsGameliftFleet
 metadata:
   name: example-aws-gamelift-fleet
 spec:
-  arn: ""
-  name: ""
-  metricgroups: []
-  newgamesessionprotectionpolicy: ""
-  resourcecreationlimitpolicy: []
-  operatingsystem: ""
-  runtimeconfiguration: []
   buildid: ""
   ec2instancetype: ""
+  name: ""
   description: ""
+  metricgroups: []
+  resourcecreationlimitpolicy: []
+  arn: ""
   ec2inboundpermission: []
   logpaths: []
+  newgamesessionprotectionpolicy: ""
+  operatingsystem: ""
+  runtimeconfiguration: []
 

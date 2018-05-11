@@ -5,33 +5,33 @@ kind: AwsElasticBeanstalkEnvironment
 metadata:
   name: example-aws-elastic-beanstalk-environment
 spec:
+  triggers: []
+  tags: {}
+  arn: ""
+  solutionstackname: ""
+  launchconfigurations: []
+  cnameprefix: ""
+  queues: []
+  name: ""
+  application: ""
+  description: ""
+  pollinterval: ""
+  autoscalinggroups: []
+  instances: []
   setting:
     namespace: ""
     name: ""
     value: ""
     resource: ""
-  autoscalinggroups: []
-  name: ""
-  cname: ""
-  tier: ""
+  templatename: ""
+  waitforreadytimeout: ""
   allsettings:
-    resource: ""
-    namespace: ""
     name: ""
     value: ""
-  solutionstackname: ""
-  templatename: ""
-  launchconfigurations: []
-  queues: []
-  arn: ""
-  versionlabel: ""
-  tags: {}
+    resource: ""
+    namespace: ""
   loadbalancers: []
-  triggers: []
-  cnameprefix: ""
-  waitforreadytimeout: ""
-  pollinterval: ""
-  instances: []
-  application: ""
-  description: ""
+  versionlabel: ""
+  cname: ""
+  tier: ""
 

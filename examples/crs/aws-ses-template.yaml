@@ -5,8 +5,8 @@ kind: AwsSesTemplate
 metadata:
   name: example-aws-ses-template
 spec:
+  text: ""
   name: ""
   html: ""
   subject: ""
-  text: ""
 

@@ -11,23 +11,23 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIamPolicyAttachment struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsIamPolicyAttachmentSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsIamPolicyAttachmentSpec `json:"spec"`
 }
 
 type AwsIamPolicyAttachmentSpec struct {
+	Name      string `json:"name"`
+	Users     string `json:"users"`
 	Roles     string `json:"roles"`
 	Groups    string `json:"groups"`
 	PolicyArn string `json:"policy_arn"`
-	Name      string `json:"name"`
-	Users     string `json:"users"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIamPolicyAttachmentList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsIamPolicyAttachment `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsIamPolicyAttachment `json:"items"`
 }

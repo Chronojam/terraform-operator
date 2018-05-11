@@ -5,7 +5,7 @@ kind: AwsSesIdentityNotificationTopic
 metadata:
   name: example-aws-ses-identity-notification-topic
 spec:
-  topicarn: ""
   notificationtype: ""
   identity: ""
+  topicarn: ""
 

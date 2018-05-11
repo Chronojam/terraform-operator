@@ -11,34 +11,29 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmDocument struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSsmDocumentSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSsmDocumentSpec `json:"spec"`
 }
 
 type AwsSsmDocumentSpec struct {
-	SchemaVersion  string                                   `json:"schema_version"`
-	CreatedDate    string                                   `json:"created_date"`
-	Description    string                                   `json:"description"`
-	Hash           string                                   `json:"hash"`
 	Arn            string                                   `json:"arn"`
-	Content        string                                   `json:"content"`
 	DocumentFormat string                                   `json:"document_format"`
-	LatestVersion  string                                   `json:"latest_version"`
-	Permissions    map[string]AwsSsmDocumentSpecPermissions `json:"permissions"`
 	DocumentType   string                                   `json:"document_type"`
+	SchemaVersion  string                                   `json:"schema_version"`
 	DefaultVersion string                                   `json:"default_version"`
-	Owner          string                                   `json:"owner"`
-	Status         string                                   `json:"status"`
 	PlatformTypes  []string                                 `json:"platform_types"`
 	Parameter      []AwsSsmDocumentSpecParameter            `json:"parameter"`
 	Name           string                                   `json:"name"`
 	HashType       string                                   `json:"hash_type"`
-}
-
-type AwsSsmDocumentSpecPermissions struct {
-	Type       string `json:"type"`
-	AccountIds string `json:"account_ids"`
+	Permissions    map[string]AwsSsmDocumentSpecPermissions `json:"permissions"`
+	CreatedDate    string                                   `json:"created_date"`
+	Description    string                                   `json:"description"`
+	Hash           string                                   `json:"hash"`
+	LatestVersion  string                                   `json:"latest_version"`
+	Owner          string                                   `json:"owner"`
+	Status         string                                   `json:"status"`
+	Content        string                                   `json:"content"`
 }
 
 type AwsSsmDocumentSpecParameter struct {
@@ -48,10 +43,15 @@ type AwsSsmDocumentSpecParameter struct {
 	DefaultValue string `json:"default_value"`
 }
 
+type AwsSsmDocumentSpecPermissions struct {
+	Type       string `json:"type"`
+	AccountIds string `json:"account_ids"`
+}
+
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmDocumentList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSsmDocument `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSsmDocument `json:"items"`
 }

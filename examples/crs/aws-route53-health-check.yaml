@@ -5,23 +5,23 @@ kind: AwsRoute53HealthCheck
 metadata:
   name: example-aws-route53-health-check
 spec:
-  enablesni: false
+  port: 0
+  childhealththreshold: 0
+  requestinterval: 0
+  ipaddress: ""
   regions: ""
-  resourcepath: ""
-  searchstring: ""
+  tags: {}
+  childhealthchecks: ""
   cloudwatchalarmname: ""
   cloudwatchalarmregion: ""
   insufficientdatahealthstatus: ""
-  tags: {}
   type: ""
-  inverthealthcheck: false
-  childhealththreshold: 0
-  referencename: ""
-  requestinterval: 0
-  measurelatency: false
-  fqdn: ""
-  port: 0
-  childhealthchecks: ""
   failurethreshold: 0
-  ipaddress: ""
+  inverthealthcheck: false
+  searchstring: ""
+  enablesni: false
+  fqdn: ""
+  resourcepath: ""
+  measurelatency: false
+  referencename: ""
 

@@ -11,20 +11,20 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSnapshotCreateVolumePermission struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSnapshotCreateVolumePermissionSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSnapshotCreateVolumePermissionSpec `json:"spec"`
 }
 
 type AwsSnapshotCreateVolumePermissionSpec struct {
-	AccountId  string `json:"account_id"`
 	SnapshotId string `json:"snapshot_id"`
+	AccountId  string `json:"account_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSnapshotCreateVolumePermissionList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSnapshotCreateVolumePermission `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSnapshotCreateVolumePermission `json:"items"`
 }

@@ -5,10 +5,10 @@ kind: AwsCognitoUserPoolDomain
 metadata:
   name: example-aws-cognito-user-pool-domain
 spec:
+  s3bucket: ""
+  version: ""
   domain: ""
   userpoolid: ""
   awsaccountid: ""
   cloudfrontdistributionarn: ""
-  s3bucket: ""
-  version: ""
 

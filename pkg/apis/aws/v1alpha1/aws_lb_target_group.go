@@ -11,34 +11,35 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbTargetGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLbTargetGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLbTargetGroupSpec `json:"spec"`
 }
 
 type AwsLbTargetGroupSpec struct {
-	Name                string                            `json:"name"`
-	NamePrefix          string                            `json:"name_prefix"`
-	Port                int                               `json:"port"`
-	Protocol            string                            `json:"protocol"`
-	VpcId               string                            `json:"vpc_id"`
+	ProxyProtocolV2     bool                              `json:"proxy_protocol_v2"`
+	TargetType          string                            `json:"target_type"`
 	Tags                map[string]string                 `json:"tags"`
 	Arn                 string                            `json:"arn"`
 	ArnSuffix           string                            `json:"arn_suffix"`
-	DeregistrationDelay int                               `json:"deregistration_delay"`
-	ProxyProtocolV2     bool                              `json:"proxy_protocol_v2"`
-	TargetType          string                            `json:"target_type"`
+	NamePrefix          string                            `json:"name_prefix"`
+	Protocol            string                            `json:"protocol"`
 	Stickiness          []AwsLbTargetGroupSpecStickiness  `json:"stickiness"`
 	HealthCheck         []AwsLbTargetGroupSpecHealthCheck `json:"health_check"`
+	Name                string                            `json:"name"`
+	Port                int                               `json:"port"`
+	VpcId               string                            `json:"vpc_id"`
+	DeregistrationDelay int                               `json:"deregistration_delay"`
 }
 
 type AwsLbTargetGroupSpecStickiness struct {
-	Enabled        bool   `json:"enabled"`
 	Type           string `json:"type"`
 	CookieDuration int    `json:"cookie_duration"`
+	Enabled        bool   `json:"enabled"`
 }
 
 type AwsLbTargetGroupSpecHealthCheck struct {
+	Port               string `json:"port"`
 	Protocol           string `json:"protocol"`
 	Timeout            int    `json:"timeout"`
 	HealthyThreshold   int    `json:"healthy_threshold"`
@@ -46,13 +47,12 @@ type AwsLbTargetGroupSpecHealthCheck struct {
 	UnhealthyThreshold int    `json:"unhealthy_threshold"`
 	Interval           int    `json:"interval"`
 	Path               string `json:"path"`
-	Port               string `json:"port"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbTargetGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLbTargetGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLbTargetGroup `json:"items"`
 }

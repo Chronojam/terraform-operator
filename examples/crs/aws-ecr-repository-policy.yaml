@@ -5,7 +5,7 @@ kind: AwsEcrRepositoryPolicy
 metadata:
   name: example-aws-ecr-repository-policy
 spec:
+  repository: ""
   policy: ""
   registryid: ""
-  repository: ""
 

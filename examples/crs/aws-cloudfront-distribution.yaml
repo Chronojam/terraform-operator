@@ -5,71 +5,37 @@ kind: AwsCloudfrontDistribution
 metadata:
   name: example-aws-cloudfront-distribution
 spec:
-  enabled: false
-  httpversion: ""
-  comment: ""
-  tags: {}
-  inprogressvalidationbatches: 0
-  retainondelete: false
-  arn: ""
-  defaultrootobject: ""
-  callerreference: ""
-  domainname: ""
-  cachebehavior:
-    pathpattern: ""
-    fieldlevelencryptionid: ""
-    forwardedvalues:
-      cookies:
-        forward: ""
-        whitelistednames: []
-      headers: []
-      querystring: false
-      querystringcachekeys: []
-    defaultttl: 0
-    minttl: 0
-    smoothstreaming: false
-    viewerprotocolpolicy: ""
-    allowedmethods: []
-    cachedmethods: []
-    lambdafunctionassociation:
-      eventtype: ""
-      lambdaarn: ""
-    maxttl: 0
-    trustedsigners: []
-    compress: false
-    targetoriginid: ""
   defaultcachebehavior:
+    compress: false
     lambdafunctionassociation:
       eventtype: ""
       lambdaarn: ""
-    minttl: 0
-    smoothstreaming: false
+    maxttl: 0
+    targetoriginid: ""
+    viewerprotocolpolicy: ""
+    trustedsigners: []
+    allowedmethods: []
     cachedmethods: []
-    compress: false
     defaultttl: 0
     fieldlevelencryptionid: ""
     forwardedvalues:
       cookies:
-        forward: ""
         whitelistednames: []
+        forward: ""
       headers: []
       querystring: false
       querystringcachekeys: []
-    targetoriginid: ""
-    allowedmethods: []
-    maxttl: 0
-    trustedsigners: []
-    viewerprotocolpolicy: ""
+    minttl: 0
+    smoothstreaming: false
   loggingconfig:
-    bucket: ""
     includecookies: false
     prefix: ""
-  etag: ""
+    bucket: ""
+  priceclass: ""
+  lastmodifiedtime: ""
+  hostedzoneid: ""
   orderedcachebehavior: []
   origin:
-    originpath: ""
-    s3originconfig:
-      originaccessidentity: ""
     customoriginconfig:
       httpport: 0
       httpsport: 0
@@ -82,27 +48,61 @@ spec:
       name: ""
       value: ""
     originid: ""
-  restrictions:
-    georestriction:
-      locations: []
-      restrictiontype: ""
-  isipv6enabled: false
+    originpath: ""
+    s3originconfig:
+      originaccessidentity: ""
+  domainname: ""
+  comment: ""
+  httpversion: ""
+  activetrustedsigners: {}
   customerrorresponse:
+    responsepagepath: ""
     errorcachingminttl: 0
     errorcode: 0
     responsecode: 0
-    responsepagepath: ""
-  priceclass: ""
   viewercertificate:
-    acmcertificatearn: ""
     cloudfrontdefaultcertificate: false
     iamcertificateid: ""
     minimumprotocolversion: ""
     sslsupportmethod: ""
-  status: ""
+    acmcertificatearn: ""
+  callerreference: ""
+  etag: ""
+  isipv6enabled: false
+  arn: ""
   aliases: ""
-  activetrustedsigners: {}
-  lastmodifiedtime: ""
-  hostedzoneid: ""
+  enabled: false
+  defaultrootobject: ""
+  restrictions:
+    georestriction:
+      locations: []
+      restrictiontype: ""
+  status: ""
+  tags: {}
+  cachebehavior:
+    pathpattern: ""
+    targetoriginid: ""
+    trustedsigners: []
+    viewerprotocolpolicy: ""
+    defaultttl: 0
+    fieldlevelencryptionid: ""
+    maxttl: 0
+    forwardedvalues:
+      cookies:
+        forward: ""
+        whitelistednames: []
+      headers: []
+      querystring: false
+      querystringcachekeys: []
+    smoothstreaming: false
+    compress: false
+    lambdafunctionassociation:
+      eventtype: ""
+      lambdaarn: ""
+    minttl: 0
+    allowedmethods: []
+    cachedmethods: []
   webaclid: ""
+  inprogressvalidationbatches: 0
+  retainondelete: false
 

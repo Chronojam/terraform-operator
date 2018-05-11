@@ -6,12 +6,12 @@ metadata:
   name: example-aws-kms-key
 spec:
   tags: {}
+  keyid: ""
   description: ""
   keyusage: ""
   policy: ""
+  isenabled: false
   deletionwindowindays: 0
   arn: ""
-  keyid: ""
-  isenabled: false
   enablekeyrotation: false
 

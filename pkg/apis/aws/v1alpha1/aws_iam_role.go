@@ -11,28 +11,28 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIamRole struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsIamRoleSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsIamRoleSpec `json:"spec"`
 }
 
 type AwsIamRoleSpec struct {
-	AssumeRolePolicy    string `json:"assume_role_policy"`
-	CreateDate          string `json:"create_date"`
-	Arn                 string `json:"arn"`
 	UniqueId            string `json:"unique_id"`
 	Name                string `json:"name"`
+	AssumeRolePolicy    string `json:"assume_role_policy"`
+	ForceDetachPolicies bool   `json:"force_detach_policies"`
+	CreateDate          string `json:"create_date"`
+	MaxSessionDuration  int    `json:"max_session_duration"`
+	Arn                 string `json:"arn"`
+	NamePrefix          string `json:"name_prefix"`
 	Path                string `json:"path"`
 	Description         string `json:"description"`
-	NamePrefix          string `json:"name_prefix"`
-	ForceDetachPolicies bool   `json:"force_detach_policies"`
-	MaxSessionDuration  int    `json:"max_session_duration"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIamRoleList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsIamRole `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsIamRole `json:"items"`
 }

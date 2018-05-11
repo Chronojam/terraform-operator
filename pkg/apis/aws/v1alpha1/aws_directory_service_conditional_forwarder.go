@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDirectoryServiceConditionalForwarder struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDirectoryServiceConditionalForwarderSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDirectoryServiceConditionalForwarderSpec `json:"spec"`
 }
 
 type AwsDirectoryServiceConditionalForwarderSpec struct {
@@ -25,7 +25,7 @@ type AwsDirectoryServiceConditionalForwarderSpec struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDirectoryServiceConditionalForwarderList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDirectoryServiceConditionalForwarder `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDirectoryServiceConditionalForwarder `json:"items"`
 }

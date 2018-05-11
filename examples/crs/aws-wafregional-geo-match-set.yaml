@@ -5,8 +5,8 @@ kind: AwsWafregionalGeoMatchSet
 metadata:
   name: example-aws-wafregional-geo-match-set
 spec:
+  name: ""
   geomatchconstraint:
     type: ""
     value: ""
-  name: ""
 

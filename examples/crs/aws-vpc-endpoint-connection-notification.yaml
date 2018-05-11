@@ -5,10 +5,10 @@ kind: AwsVpcEndpointConnectionNotification
 metadata:
   name: example-aws-vpc-endpoint-connection-notification
 spec:
-  connectionevents: ""
-  state: ""
   notificationtype: ""
   vpcendpointserviceid: ""
   vpcendpointid: ""
   connectionnotificationarn: ""
+  connectionevents: ""
+  state: ""
 

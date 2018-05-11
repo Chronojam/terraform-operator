@@ -5,17 +5,17 @@ kind: AwsRoute
 metadata:
   name: example-aws-route
 spec:
+  destinationprefixlistid: ""
+  instanceownerid: ""
+  origin: ""
+  destinationcidrblock: ""
+  destinationipv6cidrblock: ""
+  gatewayid: ""
   egressonlygatewayid: ""
+  natgatewayid: ""
   instanceid: ""
   networkinterfaceid: ""
-  origin: ""
-  vpcpeeringconnectionid: ""
-  destinationipv6cidrblock: ""
-  destinationprefixlistid: ""
-  natgatewayid: ""
-  instanceownerid: ""
   state: ""
   routetableid: ""
-  destinationcidrblock: ""
-  gatewayid: ""
+  vpcpeeringconnectionid: ""
 

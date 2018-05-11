@@ -5,35 +5,35 @@ kind: AwsOpsworksJavaAppLayer
 metadata:
   name: example-aws-opsworks-java-app-layer
 spec:
-  customconfigurerecipes: []
-  instanceshutdowntimeout: 0
-  systempackages: ""
-  useebsoptimizedinstances: false
-  name: ""
-  autoassignelasticips: false
-  autoassignpublicips: false
-  customdeployrecipes: []
-  customshutdownrecipes: []
-  autohealing: false
-  stackid: ""
-  appserverversion: ""
-  jvmtype: ""
-  jvmversion: ""
-  custominstanceprofilearn: ""
   elasticloadbalancer: ""
   customsetuprecipes: []
-  installupdatesonboot: false
+  autohealing: false
   drainelbonshutdown: false
+  appserverversion: ""
+  autoassignpublicips: false
+  custominstanceprofilearn: ""
+  customdeployrecipes: []
+  customshutdownrecipes: []
+  customsecuritygroupids: ""
+  customjson: ""
+  systempackages: ""
+  stackid: ""
+  jvmversion: ""
+  autoassignelasticips: false
+  installupdatesonboot: false
+  useebsoptimizedinstances: false
   ebsvolume:
-    numberofdisks: 0
-    raidlevel: ""
     size: 0
     type: ""
     iops: 0
     mountpoint: ""
+    numberofdisks: 0
+    raidlevel: ""
+  customconfigurerecipes: []
   customundeployrecipes: []
-  customsecuritygroupids: ""
-  customjson: ""
+  instanceshutdowntimeout: 0
+  name: ""
   jvmoptions: ""
   appserver: ""
+  jvmtype: ""
 

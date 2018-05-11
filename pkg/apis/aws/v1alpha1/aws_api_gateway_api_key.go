@@ -11,30 +11,30 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayApiKey struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsApiGatewayApiKeySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsApiGatewayApiKeySpec `json:"spec"`
 }
 
 type AwsApiGatewayApiKeySpec struct {
-	Description     string                          `json:"description"`
 	Enabled         bool                            `json:"enabled"`
 	StageKey        AwsApiGatewayApiKeySpecStageKey `json:"stage_key"`
 	CreatedDate     string                          `json:"created_date"`
 	LastUpdatedDate string                          `json:"last_updated_date"`
 	Value           string                          `json:"value"`
 	Name            string                          `json:"name"`
+	Description     string                          `json:"description"`
 }
 
 type AwsApiGatewayApiKeySpecStageKey struct {
-	StageName string `json:"stage_name"`
 	RestApiId string `json:"rest_api_id"`
+	StageName string `json:"stage_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayApiKeyList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsApiGatewayApiKey `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsApiGatewayApiKey `json:"items"`
 }

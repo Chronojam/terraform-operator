@@ -5,41 +5,41 @@ kind: AwsRedshiftCluster
 metadata:
   name: example-aws-redshift-cluster
 spec:
-  bucketname: ""
-  vpcsecuritygroupids: ""
-  clusterparametergroupname: ""
   port: 0
-  allowversionupgrade: false
-  finalsnapshotidentifier: ""
-  clusterpublickey: ""
-  clusterrevisionnumber: ""
-  snapshotidentifier: ""
-  owneraccount: ""
-  masterusername: ""
-  clustersecuritygroups: ""
-  clusterversion: ""
-  snapshotclusteridentifier: ""
-  clustersubnetgroupname: ""
-  enhancedvpcrouting: false
   elasticip: ""
-  endpoint: ""
-  iamroles: ""
-  databasename: ""
-  clusteridentifier: ""
-  clustertype: ""
   nodetype: ""
-  numberofnodes: 0
-  logging: []
-  preferredmaintenancewindow: ""
-  publiclyaccessible: false
-  snapshotcopy: []
-  tags: {}
+  masterusername: ""
   masterpassword: ""
+  logging: []
+  clusterversion: ""
+  iamroles: ""
+  snapshotcopy: []
+  endpoint: ""
+  clusterparametergroupname: ""
   automatedsnapshotretentionperiod: 0
+  numberofnodes: 0
+  enhancedvpcrouting: false
+  finalsnapshotidentifier: ""
+  bucketname: ""
+  enablelogging: false
+  tags: {}
+  clusteridentifier: ""
+  allowversionupgrade: false
+  publiclyaccessible: false
+  clusterrevisionnumber: ""
+  snapshotclusteridentifier: ""
+  databasename: ""
   encrypted: false
   kmskeyid: ""
+  owneraccount: ""
+  clustertype: ""
+  clustersubnetgroupname: ""
+  preferredmaintenancewindow: ""
   skipfinalsnapshot: false
-  enablelogging: false
-  availabilityzone: ""
+  clusterpublickey: ""
   s3keyprefix: ""
+  snapshotidentifier: ""
+  clustersecuritygroups: ""
+  vpcsecuritygroupids: ""
+  availabilityzone: ""
 

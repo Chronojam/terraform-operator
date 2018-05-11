@@ -5,13 +5,13 @@ kind: AwsEbsVolume
 metadata:
   name: example-aws-ebs-volume
 spec:
-  encrypted: false
-  size: 0
-  tags: {}
-  arn: ""
   availabilityzone: ""
-  snapshotid: ""
-  type: ""
-  iops: 0
   kmskeyid: ""
+  type: ""
+  arn: ""
+  iops: 0
+  size: 0
+  snapshotid: ""
+  tags: {}
+  encrypted: false
 

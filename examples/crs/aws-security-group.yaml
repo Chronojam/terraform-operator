@@ -5,31 +5,31 @@ kind: AwsSecurityGroup
 metadata:
   name: example-aws-security-group
 spec:
-  description: ""
-  ingress:
-    securitygroups: ""
-    self: false
-    description: ""
-    fromport: 0
-    toport: 0
-    protocol: ""
-    cidrblocks: []
-    ipv6cidrblocks: []
-  arn: ""
+  ownerid: ""
+  tags: {}
   revokerulesondelete: false
   name: ""
   nameprefix: ""
-  vpcid: ""
+  description: ""
   egress:
-    self: false
-    description: ""
     toport: 0
     protocol: ""
+    cidrblocks: []
+    self: false
+    description: ""
+    fromport: 0
     ipv6cidrblocks: []
     prefixlistids: []
     securitygroups: ""
-    fromport: 0
+  arn: ""
+  vpcid: ""
+  ingress:
+    toport: 0
+    protocol: ""
     cidrblocks: []
-  ownerid: ""
-  tags: {}
+    ipv6cidrblocks: []
+    securitygroups: ""
+    self: false
+    description: ""
+    fromport: 0
 

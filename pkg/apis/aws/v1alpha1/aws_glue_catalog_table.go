@@ -11,45 +11,45 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsGlueCatalogTable struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsGlueCatalogTableSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsGlueCatalogTableSpec `json:"spec"`
 }
 
 type AwsGlueCatalogTableSpec struct {
-	CatalogId         string                                     `json:"catalog_id"`
-	DatabaseName      string                                     `json:"database_name"`
-	Name              string                                     `json:"name"`
-	Retention         int                                        `json:"retention"`
-	ViewExpandedText  string                                     `json:"view_expanded_text"`
-	Description       string                                     `json:"description"`
 	Owner             string                                     `json:"owner"`
-	Parameters        map[string]string                          `json:"parameters"`
-	PartitionKeys     []AwsGlueCatalogTableSpecPartitionKeys     `json:"partition_keys"`
-	StorageDescriptor []AwsGlueCatalogTableSpecStorageDescriptor `json:"storage_descriptor"`
 	TableType         string                                     `json:"table_type"`
 	ViewOriginalText  string                                     `json:"view_original_text"`
-}
-
-type AwsGlueCatalogTableSpecPartitionKeys struct {
-	Comment string `json:"comment"`
-	Name    string `json:"name"`
-	Type    string `json:"type"`
+	CatalogId         string                                     `json:"catalog_id"`
+	DatabaseName      string                                     `json:"database_name"`
+	Description       string                                     `json:"description"`
+	Retention         int                                        `json:"retention"`
+	StorageDescriptor []AwsGlueCatalogTableSpecStorageDescriptor `json:"storage_descriptor"`
+	ViewExpandedText  string                                     `json:"view_expanded_text"`
+	Name              string                                     `json:"name"`
+	Parameters        map[string]string                          `json:"parameters"`
+	PartitionKeys     []AwsGlueCatalogTableSpecPartitionKeys     `json:"partition_keys"`
 }
 
 type AwsGlueCatalogTableSpecStorageDescriptor struct {
-	Compressed             bool                                                  `json:"compressed"`
-	Location               string                                                `json:"location"`
-	OutputFormat           string                                                `json:"output_format"`
-	SkewedInfo             []AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo  `json:"skewed_info"`
-	SortColumns            []AwsGlueCatalogTableSpecStorageDescriptorSortColumns `json:"sort_columns"`
-	StoredAsSubDirectories bool                                                  `json:"stored_as_sub_directories"`
-	BucketColumns          []string                                              `json:"bucket_columns"`
-	InputFormat            string                                                `json:"input_format"`
 	NumberOfBuckets        int                                                   `json:"number_of_buckets"`
-	Parameters             map[string]string                                     `json:"parameters"`
+	OutputFormat           string                                                `json:"output_format"`
 	SerDeInfo              []AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo   `json:"ser_de_info"`
+	SkewedInfo             []AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo  `json:"skewed_info"`
+	StoredAsSubDirectories bool                                                  `json:"stored_as_sub_directories"`
+	Location               string                                                `json:"location"`
 	Columns                []AwsGlueCatalogTableSpecStorageDescriptorColumns     `json:"columns"`
+	Compressed             bool                                                  `json:"compressed"`
+	InputFormat            string                                                `json:"input_format"`
+	Parameters             map[string]string                                     `json:"parameters"`
+	SortColumns            []AwsGlueCatalogTableSpecStorageDescriptorSortColumns `json:"sort_columns"`
+	BucketColumns          []string                                              `json:"bucket_columns"`
+}
+
+type AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo struct {
+	SerializationLibrary string            `json:"serialization_library"`
+	Name                 string            `json:"name"`
+	Parameters           map[string]string `json:"parameters"`
 }
 
 type AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo struct {
@@ -58,18 +58,18 @@ type AwsGlueCatalogTableSpecStorageDescriptorSkewedInfo struct {
 	SkewedColumnValueLocationMaps map[string]string `json:"skewed_column_value_location_maps"`
 }
 
+type AwsGlueCatalogTableSpecStorageDescriptorColumns struct {
+	Comment string `json:"comment"`
+	Name    string `json:"name"`
+	Type    string `json:"type"`
+}
+
 type AwsGlueCatalogTableSpecStorageDescriptorSortColumns struct {
 	Column    string `json:"column"`
 	SortOrder int    `json:"sort_order"`
 }
 
-type AwsGlueCatalogTableSpecStorageDescriptorSerDeInfo struct {
-	Name                 string            `json:"name"`
-	Parameters           map[string]string `json:"parameters"`
-	SerializationLibrary string            `json:"serialization_library"`
-}
-
-type AwsGlueCatalogTableSpecStorageDescriptorColumns struct {
+type AwsGlueCatalogTableSpecPartitionKeys struct {
 	Comment string `json:"comment"`
 	Name    string `json:"name"`
 	Type    string `json:"type"`
@@ -78,7 +78,7 @@ type AwsGlueCatalogTableSpecStorageDescriptorColumns struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsGlueCatalogTableList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsGlueCatalogTable `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsGlueCatalogTable `json:"items"`
 }

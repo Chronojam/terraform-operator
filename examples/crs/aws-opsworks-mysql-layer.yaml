@@ -5,32 +5,32 @@ kind: AwsOpsworksMysqlLayer
 metadata:
   name: example-aws-opsworks-mysql-layer
 spec:
-  elasticloadbalancer: ""
-  customsecuritygroupids: ""
-  instanceshutdowntimeout: 0
-  name: ""
-  autoassignpublicips: false
+  customconfigurerecipes: []
   customdeployrecipes: []
-  stackid: ""
-  useebsoptimizedinstances: false
-  autoassignelasticips: false
+  customjson: ""
+  autohealing: false
+  rootpassword: ""
+  name: ""
   custominstanceprofilearn: ""
   customsetuprecipes: []
   customundeployrecipes: []
   customshutdownrecipes: []
-  drainelbonshutdown: false
-  rootpassword: ""
-  rootpasswordonallinstances: false
-  customconfigurerecipes: []
-  customjson: ""
-  autohealing: false
   installupdatesonboot: false
   systempackages: ""
+  rootpasswordonallinstances: false
+  autoassignelasticips: false
+  elasticloadbalancer: ""
+  instanceshutdowntimeout: 0
+  stackid: ""
+  useebsoptimizedinstances: false
   ebsvolume:
-    iops: 0
-    mountpoint: ""
-    numberofdisks: 0
     raidlevel: ""
     size: 0
     type: ""
+    iops: 0
+    mountpoint: ""
+    numberofdisks: 0
+  autoassignpublicips: false
+  customsecuritygroupids: ""
+  drainelbonshutdown: false
 

@@ -5,14 +5,14 @@ kind: AwsApiGatewayMethod
 metadata:
   name: example-aws-api-gateway-method
 spec:
-  authorizerid: ""
-  requestparametersinjson: ""
-  requestvalidatorid: ""
-  restapiid: ""
-  resourceid: ""
-  httpmethod: ""
-  authorization: ""
   apikeyrequired: false
   requestmodels: {}
+  requestparametersinjson: ""
+  resourceid: ""
+  httpmethod: ""
+  authorizerid: ""
+  requestvalidatorid: ""
+  restapiid: ""
+  authorization: ""
   requestparameters: {}
 

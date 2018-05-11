@@ -5,6 +5,6 @@ kind: AwsApiGatewayAccount
 metadata:
   name: example-aws-api-gateway-account
 spec:
-  cloudwatchrolearn: ""
   throttlesettings: []
+  cloudwatchrolearn: ""
 

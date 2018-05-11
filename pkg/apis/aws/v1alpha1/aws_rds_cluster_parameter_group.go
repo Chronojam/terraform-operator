@@ -11,31 +11,31 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRdsClusterParameterGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsRdsClusterParameterGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsRdsClusterParameterGroupSpec `json:"spec"`
 }
 
 type AwsRdsClusterParameterGroupSpec struct {
+	Arn         string                                   `json:"arn"`
+	Name        string                                   `json:"name"`
+	NamePrefix  string                                   `json:"name_prefix"`
 	Family      string                                   `json:"family"`
 	Description string                                   `json:"description"`
 	Parameter   AwsRdsClusterParameterGroupSpecParameter `json:"parameter"`
 	Tags        map[string]string                        `json:"tags"`
-	Arn         string                                   `json:"arn"`
-	Name        string                                   `json:"name"`
-	NamePrefix  string                                   `json:"name_prefix"`
 }
 
 type AwsRdsClusterParameterGroupSpecParameter struct {
+	ApplyMethod string `json:"apply_method"`
 	Name        string `json:"name"`
 	Value       string `json:"value"`
-	ApplyMethod string `json:"apply_method"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRdsClusterParameterGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsRdsClusterParameterGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsRdsClusterParameterGroup `json:"items"`
 }

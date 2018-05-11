@@ -11,28 +11,46 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElastictranscoderPipeline struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsElastictranscoderPipelineSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsElastictranscoderPipelineSpec `json:"spec"`
 }
 
 type AwsElastictranscoderPipelineSpec struct {
-	ContentConfig              AwsElastictranscoderPipelineSpecContentConfig              `json:"content_config"`
-	InputBucket                string                                                     `json:"input_bucket"`
 	Role                       string                                                     `json:"role"`
+	ThumbnailConfig            AwsElastictranscoderPipelineSpecThumbnailConfig            `json:"thumbnail_config"`
 	Arn                        string                                                     `json:"arn"`
-	ContentConfigPermissions   AwsElastictranscoderPipelineSpecContentConfigPermissions   `json:"content_config_permissions"`
+	ContentConfig              AwsElastictranscoderPipelineSpecContentConfig              `json:"content_config"`
 	Name                       string                                                     `json:"name"`
 	Notifications              AwsElastictranscoderPipelineSpecNotifications              `json:"notifications"`
-	OutputBucket               string                                                     `json:"output_bucket"`
-	ThumbnailConfig            AwsElastictranscoderPipelineSpecThumbnailConfig            `json:"thumbnail_config"`
 	ThumbnailConfigPermissions AwsElastictranscoderPipelineSpecThumbnailConfigPermissions `json:"thumbnail_config_permissions"`
 	AwsKmsKeyArn               string                                                     `json:"aws_kms_key_arn"`
+	ContentConfigPermissions   AwsElastictranscoderPipelineSpecContentConfigPermissions   `json:"content_config_permissions"`
+	InputBucket                string                                                     `json:"input_bucket"`
+	OutputBucket               string                                                     `json:"output_bucket"`
+}
+
+type AwsElastictranscoderPipelineSpecThumbnailConfig struct {
+	StorageClass string `json:"storage_class"`
+	Bucket       string `json:"bucket"`
 }
 
 type AwsElastictranscoderPipelineSpecContentConfig struct {
 	Bucket       string `json:"bucket"`
 	StorageClass string `json:"storage_class"`
+}
+
+type AwsElastictranscoderPipelineSpecNotifications struct {
+	Completed   string `json:"completed"`
+	Error       string `json:"error"`
+	Progressing string `json:"progressing"`
+	Warning     string `json:"warning"`
+}
+
+type AwsElastictranscoderPipelineSpecThumbnailConfigPermissions struct {
+	Access      []string `json:"access"`
+	Grantee     string   `json:"grantee"`
+	GranteeType string   `json:"grantee_type"`
 }
 
 type AwsElastictranscoderPipelineSpecContentConfigPermissions struct {
@@ -41,28 +59,10 @@ type AwsElastictranscoderPipelineSpecContentConfigPermissions struct {
 	GranteeType string   `json:"grantee_type"`
 }
 
-type AwsElastictranscoderPipelineSpecNotifications struct {
-	Progressing string `json:"progressing"`
-	Warning     string `json:"warning"`
-	Completed   string `json:"completed"`
-	Error       string `json:"error"`
-}
-
-type AwsElastictranscoderPipelineSpecThumbnailConfig struct {
-	StorageClass string `json:"storage_class"`
-	Bucket       string `json:"bucket"`
-}
-
-type AwsElastictranscoderPipelineSpecThumbnailConfigPermissions struct {
-	GranteeType string   `json:"grantee_type"`
-	Access      []string `json:"access"`
-	Grantee     string   `json:"grantee"`
-}
-
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElastictranscoderPipelineList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsElastictranscoderPipeline `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsElastictranscoderPipeline `json:"items"`
 }

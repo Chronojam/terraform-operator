@@ -11,17 +11,17 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsConfigDeliveryChannel struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsConfigDeliveryChannelSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsConfigDeliveryChannelSpec `json:"spec"`
 }
 
 type AwsConfigDeliveryChannelSpec struct {
+	Name                       string                                                   `json:"name"`
+	S3BucketName               string                                                   `json:"s3_bucket_name"`
 	S3KeyPrefix                string                                                   `json:"s3_key_prefix"`
 	SnsTopicArn                string                                                   `json:"sns_topic_arn"`
 	SnapshotDeliveryProperties []AwsConfigDeliveryChannelSpecSnapshotDeliveryProperties `json:"snapshot_delivery_properties"`
-	Name                       string                                                   `json:"name"`
-	S3BucketName               string                                                   `json:"s3_bucket_name"`
 }
 
 type AwsConfigDeliveryChannelSpecSnapshotDeliveryProperties struct {
@@ -31,7 +31,7 @@ type AwsConfigDeliveryChannelSpecSnapshotDeliveryProperties struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsConfigDeliveryChannelList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsConfigDeliveryChannel `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsConfigDeliveryChannel `json:"items"`
 }

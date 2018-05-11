@@ -5,15 +5,15 @@ kind: AwsKinesisFirehoseDeliveryStream
 metadata:
   name: example-aws-kinesis-firehose-delivery-stream
 spec:
-  splunkconfiguration: []
-  versionid: ""
-  destinationid: ""
-  arn: ""
-  name: ""
-  kinesissourceconfiguration: []
   destination: ""
   s3configuration: []
+  splunkconfiguration: []
+  versionid: ""
+  name: ""
+  kinesissourceconfiguration: []
+  elasticsearchconfiguration: []
+  arn: ""
+  destinationid: ""
   extendeds3configuration: []
   redshiftconfiguration: []
-  elasticsearchconfiguration: []
 

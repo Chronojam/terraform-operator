@@ -5,31 +5,31 @@ kind: AwsCodedeployDeploymentGroup
 metadata:
   name: example-aws-codedeploy-deployment-group
 spec:
+  deploymentgroupname: ""
+  alarmconfiguration: []
+  triggerconfiguration:
+    triggerevents: ""
+    triggername: ""
+    triggertargetarn: ""
+  deploymentstyle: []
+  servicerolearn: ""
+  autorollbackconfiguration: []
+  deploymentconfigname: ""
   ec2tagset:
     ec2tagfilter:
       key: ""
       type: ""
       value: ""
-  onpremisesinstancetagfilter:
-    key: ""
-    type: ""
-    value: ""
   appname: ""
-  deploymentgroupname: ""
-  deploymentstyle: []
-  servicerolearn: ""
-  alarmconfiguration: []
   bluegreendeploymentconfig: []
-  loadbalancerinfo: []
+  autoscalinggroups: ""
   ec2tagfilter:
     key: ""
     type: ""
     value: ""
-  autorollbackconfiguration: []
-  autoscalinggroups: ""
-  deploymentconfigname: ""
-  triggerconfiguration:
-    triggerevents: ""
-    triggername: ""
-    triggertargetarn: ""
+  loadbalancerinfo: []
+  onpremisesinstancetagfilter:
+    type: ""
+    value: ""
+    key: ""
 

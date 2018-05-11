@@ -11,22 +11,22 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsKmsGrant struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsKmsGrantSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsKmsGrantSpec `json:"spec"`
 }
 
 type AwsKmsGrantSpec struct {
+	Operations          string                     `json:"operations"`
+	Constraints         AwsKmsGrantSpecConstraints `json:"constraints"`
 	RetiringPrincipal   string                     `json:"retiring_principal"`
 	RetireOnDelete      bool                       `json:"retire_on_delete"`
-	GrantId             string                     `json:"grant_id"`
 	GrantToken          string                     `json:"grant_token"`
 	Name                string                     `json:"name"`
-	GranteePrincipal    string                     `json:"grantee_principal"`
-	Constraints         AwsKmsGrantSpecConstraints `json:"constraints"`
 	KeyId               string                     `json:"key_id"`
-	Operations          string                     `json:"operations"`
+	GranteePrincipal    string                     `json:"grantee_principal"`
 	GrantCreationTokens string                     `json:"grant_creation_tokens"`
+	GrantId             string                     `json:"grant_id"`
 }
 
 type AwsKmsGrantSpecConstraints struct {
@@ -37,7 +37,7 @@ type AwsKmsGrantSpecConstraints struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsKmsGrantList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsKmsGrant `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsKmsGrant `json:"items"`
 }

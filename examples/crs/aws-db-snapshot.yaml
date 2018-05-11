@@ -5,23 +5,23 @@ kind: AwsDbSnapshot
 metadata:
   name: example-aws-db-snapshot
 spec:
+  encrypted: false
+  engine: ""
+  iops: 0
+  optiongroupname: ""
+  sourcedbsnapshotidentifier: ""
+  snapshottype: ""
+  dbsnapshotidentifier: ""
+  dbinstanceidentifier: ""
+  allocatedstorage: 0
+  kmskeyid: ""
+  licensemodel: ""
   sourceregion: ""
   status: ""
-  allocatedstorage: 0
-  engineversion: ""
-  optiongroupname: ""
-  dbsnapshotidentifier: ""
-  snapshottype: ""
-  iops: 0
-  sourcedbsnapshotidentifier: ""
-  vpcid: ""
-  dbinstanceidentifier: ""
-  dbsnapshotarn: ""
-  engine: ""
-  licensemodel: ""
-  port: 0
   storagetype: ""
+  vpcid: ""
   availabilityzone: ""
-  encrypted: false
-  kmskeyid: ""
+  dbsnapshotarn: ""
+  engineversion: ""
+  port: 0
 

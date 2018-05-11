@@ -11,29 +11,29 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayDocumentationPart struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsApiGatewayDocumentationPartSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsApiGatewayDocumentationPartSpec `json:"spec"`
 }
 
 type AwsApiGatewayDocumentationPartSpec struct {
+	RestApiId  string                                       `json:"rest_api_id"`
 	Location   []AwsApiGatewayDocumentationPartSpecLocation `json:"location"`
 	Properties string                                       `json:"properties"`
-	RestApiId  string                                       `json:"rest_api_id"`
 }
 
 type AwsApiGatewayDocumentationPartSpecLocation struct {
-	Type       string `json:"type"`
 	Method     string `json:"method"`
 	Name       string `json:"name"`
 	Path       string `json:"path"`
 	StatusCode string `json:"status_code"`
+	Type       string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsApiGatewayDocumentationPartList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsApiGatewayDocumentationPart `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsApiGatewayDocumentationPart `json:"items"`
 }

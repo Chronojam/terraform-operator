@@ -5,43 +5,43 @@ kind: AwsEmrCluster
 metadata:
   name: example-aws-emr-cluster
 spec:
-  clusterstate: ""
-  tags: {}
-  securityconfiguration: ""
-  step: []
+  masterinstancetype: ""
   configurations: ""
+  securityconfiguration: ""
   releaselabel: ""
-  coreinstancetype: ""
+  clusterstate: ""
   loguri: ""
   terminationprotection: false
+  ec2attributes: []
   kerberosattributes: []
   instancegroup:
-    bidprice: ""
     ebsconfig:
-      iops: 0
-      size: 0
       type: ""
       volumesperinstance: 0
+      iops: 0
+      size: 0
     instancecount: 0
     autoscalingpolicy: ""
     instancerole: ""
     instancetype: ""
     name: ""
-  servicerole: ""
-  customamiid: ""
-  name: ""
-  masterpublicdns: ""
-  applications: ""
-  ec2attributes: []
+    bidprice: ""
+  autoscalingrole: ""
   visibletoallusers: false
-  ebsrootvolumesize: 0
-  masterinstancetype: ""
+  customamiid: ""
   coreinstancecount: 0
+  masterpublicdns: ""
   keepjobflowalivewhennosteps: false
+  tags: {}
+  ebsrootvolumesize: 0
+  name: ""
+  coreinstancetype: ""
+  applications: ""
   bootstrapaction:
     name: ""
     path: ""
     args: []
+  step: []
+  servicerole: ""
   scaledownbehavior: ""
-  autoscalingrole: ""
 

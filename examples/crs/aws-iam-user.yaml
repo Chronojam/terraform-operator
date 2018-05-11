@@ -5,9 +5,9 @@ kind: AwsIamUser
 metadata:
   name: example-aws-iam-user
 spec:
-  arn: ""
-  uniqueid: ""
   name: ""
   path: ""
   forcedestroy: false
+  arn: ""
+  uniqueid: ""
 

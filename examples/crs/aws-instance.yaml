@@ -5,55 +5,55 @@ kind: AwsInstance
 metadata:
   name: example-aws-instance
 spec:
-  ipv6addresses: []
-  tags: {}
-  volumetags: {}
-  ami: ""
-  placementgroup: ""
-  primarynetworkinterfaceid: ""
-  disableapitermination: false
-  instanceinitiatedshutdownbehavior: ""
-  iaminstanceprofile: ""
-  ipv6addresscount: 0
-  creditspecification: []
-  availabilityzone: ""
-  getpassworddata: false
+  subnetid: ""
   userdata: ""
   securitygroups: ""
   publicdns: ""
-  subnetid: ""
-  sourcedestcheck: false
-  vpcsecuritygroupids: ""
-  associatepublicipaddress: false
-  blockdevice: {}
-  userdatabase64: ""
-  publicip: ""
-  passworddata: ""
-  networkinterface:
-    deleteontermination: false
-    networkinterfaceid: ""
-    deviceindex: 0
-  ephemeralblockdevice:
-    devicename: ""
-    virtualname: ""
-    nodevice: false
   rootblockdevice: []
+  vpcsecuritygroupids: ""
+  networkinterfaceid: ""
+  primarynetworkinterfaceid: ""
+  volumetags: {}
   instancetype: ""
-  keyname: ""
   privatedns: ""
   monitoring: false
-  tenancy: ""
-  privateip: ""
-  networkinterfaceid: ""
   instancestate: ""
+  instanceinitiatedshutdownbehavior: ""
+  tenancy: ""
+  passworddata: ""
   ebsoptimized: false
+  tags: {}
+  blockdevice: {}
   ebsblockdevice:
+    volumesize: 0
+    volumetype: ""
+    volumeid: ""
     deleteontermination: false
     devicename: ""
     encrypted: false
     iops: 0
     snapshotid: ""
-    volumesize: 0
-    volumetype: ""
-    volumeid: ""
+  ephemeralblockdevice:
+    devicename: ""
+    virtualname: ""
+    nodevice: false
+  associatepublicipaddress: false
+  privateip: ""
+  sourcedestcheck: false
+  networkinterface:
+    deviceindex: 0
+    deleteontermination: false
+    networkinterfaceid: ""
+  disableapitermination: false
+  ipv6addresses: []
+  ami: ""
+  availabilityzone: ""
+  placementgroup: ""
+  keyname: ""
+  publicip: ""
+  creditspecification: []
+  getpassworddata: false
+  userdatabase64: ""
+  iaminstanceprofile: ""
+  ipv6addresscount: 0
 

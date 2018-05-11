@@ -5,8 +5,8 @@ kind: AwsSsmMaintenanceWindowTarget
 metadata:
   name: example-aws-ssm-maintenance-window-target
 spec:
+  windowid: ""
   resourcetype: ""
   targets: []
   ownerinformation: ""
-  windowid: ""
 

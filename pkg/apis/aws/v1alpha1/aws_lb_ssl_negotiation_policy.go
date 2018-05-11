@@ -11,16 +11,16 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbSslNegotiationPolicy struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLbSslNegotiationPolicySpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLbSslNegotiationPolicySpec `json:"spec"`
 }
 
 type AwsLbSslNegotiationPolicySpec struct {
-	LbPort       int                                    `json:"lb_port"`
-	Attribute    AwsLbSslNegotiationPolicySpecAttribute `json:"attribute"`
 	Name         string                                 `json:"name"`
 	LoadBalancer string                                 `json:"load_balancer"`
+	LbPort       int                                    `json:"lb_port"`
+	Attribute    AwsLbSslNegotiationPolicySpecAttribute `json:"attribute"`
 }
 
 type AwsLbSslNegotiationPolicySpecAttribute struct {
@@ -31,7 +31,7 @@ type AwsLbSslNegotiationPolicySpecAttribute struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbSslNegotiationPolicyList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLbSslNegotiationPolicy `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLbSslNegotiationPolicy `json:"items"`
 }

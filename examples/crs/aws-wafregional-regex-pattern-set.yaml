@@ -5,6 +5,6 @@ kind: AwsWafregionalRegexPatternSet
 metadata:
   name: example-aws-wafregional-regex-pattern-set
 spec:
-  regexpatternstrings: ""
   name: ""
+  regexpatternstrings: ""
 

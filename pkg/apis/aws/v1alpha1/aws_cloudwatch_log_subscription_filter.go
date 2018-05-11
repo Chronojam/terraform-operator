@@ -11,24 +11,24 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchLogSubscriptionFilter struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsCloudwatchLogSubscriptionFilterSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsCloudwatchLogSubscriptionFilterSpec `json:"spec"`
 }
 
 type AwsCloudwatchLogSubscriptionFilterSpec struct {
+	LogGroupName   string `json:"log_group_name"`
 	RoleArn        string `json:"role_arn"`
 	Distribution   string `json:"distribution"`
 	Name           string `json:"name"`
 	DestinationArn string `json:"destination_arn"`
 	FilterPattern  string `json:"filter_pattern"`
-	LogGroupName   string `json:"log_group_name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsCloudwatchLogSubscriptionFilterList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsCloudwatchLogSubscriptionFilter `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsCloudwatchLogSubscriptionFilter `json:"items"`
 }

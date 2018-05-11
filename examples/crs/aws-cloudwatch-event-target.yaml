@@ -5,16 +5,16 @@ kind: AwsCloudwatchEventTarget
 metadata:
   name: example-aws-cloudwatch-event-target
 spec:
+  input: ""
+  batchtarget: []
   sqstarget: []
+  inputtransformer: []
   rule: ""
   targetid: ""
+  arn: ""
+  ecstarget: []
+  kinesistarget: []
   inputpath: ""
   rolearn: ""
   runcommandtargets: []
-  batchtarget: []
-  arn: ""
-  input: ""
-  ecstarget: []
-  kinesistarget: []
-  inputtransformer: []
 

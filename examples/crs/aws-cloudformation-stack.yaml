@@ -5,18 +5,18 @@ kind: AwsCloudformationStack
 metadata:
   name: example-aws-cloudformation-stack
 spec:
-  name: ""
-  policybody: ""
   timeoutinminutes: 0
-  iamrolearn: ""
-  outputs: {}
-  templatebody: ""
-  templateurl: ""
-  notificationarns: ""
-  onfailure: ""
   tags: {}
-  capabilities: ""
-  disablerollback: false
+  templateurl: ""
+  onfailure: ""
   parameters: {}
+  policybody: ""
   policyurl: ""
+  templatebody: ""
+  capabilities: ""
+  name: ""
+  notificationarns: ""
+  outputs: {}
+  iamrolearn: ""
+  disablerollback: false
 

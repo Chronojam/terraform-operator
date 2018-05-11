@@ -5,36 +5,36 @@ kind: AwsRdsCluster
 metadata:
   name: example-aws-rds-cluster
 spec:
-  clusterresourceid: ""
-  clusteridentifierprefix: ""
-  databasename: ""
-  readerendpoint: ""
-  skipfinalsnapshot: false
-  engineversion: ""
-  storageencrypted: false
-  finalsnapshotidentifier: ""
-  preferredmaintenancewindow: ""
   dbclusterparametergroupname: ""
-  replicationsourceidentifier: ""
-  kmskeyid: ""
-  endpoint: ""
-  s3import: []
-  masterusername: ""
-  masterpassword: ""
-  sourceregion: ""
-  tags: {}
-  clusteridentifier: ""
-  port: 0
-  iamroles: ""
-  iamdatabaseauthenticationenabled: false
+  finalsnapshotidentifier: ""
   backupretentionperiod: 0
-  snapshotidentifier: ""
-  applyimmediately: false
-  vpcsecuritygroupids: ""
-  preferredbackupwindow: ""
   engine: ""
-  availabilityzones: ""
-  clustermembers: ""
+  kmskeyid: ""
+  iamdatabaseauthenticationenabled: false
+  clusterresourceid: ""
+  databasename: ""
   dbsubnetgroupname: ""
   hostedzoneid: ""
+  snapshotidentifier: ""
+  preferredbackupwindow: ""
+  clusteridentifier: ""
+  clusteridentifierprefix: ""
+  clustermembers: ""
+  masterpassword: ""
+  engineversion: ""
+  availabilityzones: ""
+  endpoint: ""
+  replicationsourceidentifier: ""
+  readerendpoint: ""
+  applyimmediately: false
+  vpcsecuritygroupids: ""
+  preferredmaintenancewindow: ""
+  iamroles: ""
+  storageencrypted: false
+  s3import: []
+  skipfinalsnapshot: false
+  masterusername: ""
+  port: 0
+  sourceregion: ""
+  tags: {}
 

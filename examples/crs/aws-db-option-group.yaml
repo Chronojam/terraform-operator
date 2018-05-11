@@ -5,13 +5,7 @@ kind: AwsDbOptionGroup
 metadata:
   name: example-aws-db-option-group
 spec:
-  name: ""
-  nameprefix: ""
-  enginename: ""
-  majorengineversion: ""
-  optiongroupdescription: ""
   option:
-    version: ""
     optionname: ""
     optionsettings:
       name: ""
@@ -19,6 +13,12 @@ spec:
     port: 0
     dbsecuritygroupmemberships: ""
     vpcsecuritygroupmemberships: ""
+    version: ""
   tags: {}
   arn: ""
+  name: ""
+  nameprefix: ""
+  enginename: ""
+  majorengineversion: ""
+  optiongroupdescription: ""
 

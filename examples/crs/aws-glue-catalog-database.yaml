@@ -5,9 +5,9 @@ kind: AwsGlueCatalogDatabase
 metadata:
   name: example-aws-glue-catalog-database
 spec:
-  locationuri: ""
-  parameters: {}
   catalogid: ""
   name: ""
   description: ""
+  locationuri: ""
+  parameters: {}
 

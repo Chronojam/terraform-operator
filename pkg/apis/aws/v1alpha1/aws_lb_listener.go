@@ -11,19 +11,19 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbListener struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLbListenerSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLbListenerSpec `json:"spec"`
 }
 
 type AwsLbListenerSpec struct {
-	CertificateArn  string                           `json:"certificate_arn"`
 	DefaultAction   []AwsLbListenerSpecDefaultAction `json:"default_action"`
 	Arn             string                           `json:"arn"`
 	LoadBalancerArn string                           `json:"load_balancer_arn"`
 	Port            int                              `json:"port"`
 	Protocol        string                           `json:"protocol"`
 	SslPolicy       string                           `json:"ssl_policy"`
+	CertificateArn  string                           `json:"certificate_arn"`
 }
 
 type AwsLbListenerSpecDefaultAction struct {
@@ -34,7 +34,7 @@ type AwsLbListenerSpecDefaultAction struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbListenerList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLbListener `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLbListener `json:"items"`
 }

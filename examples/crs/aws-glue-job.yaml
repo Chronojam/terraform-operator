@@ -5,14 +5,14 @@ kind: AwsGlueJob
 metadata:
   name: example-aws-glue-job
 spec:
-  rolearn: ""
+  name: ""
   timeout: 0
-  defaultarguments: {}
   command: []
   connections: []
+  defaultarguments: {}
+  maxretries: 0
+  allocatedcapacity: 0
   description: ""
   executionproperty: []
-  maxretries: 0
-  name: ""
-  allocatedcapacity: 0
+  rolearn: ""
 

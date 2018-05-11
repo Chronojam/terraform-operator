@@ -5,14 +5,14 @@ kind: AwsSsmMaintenanceWindowTask
 metadata:
   name: example-aws-ssm-maintenance-window-task
 spec:
+  maxconcurrency: ""
+  tasktype: ""
   taskarn: ""
   priority: 0
-  windowid: ""
-  maxconcurrency: ""
-  maxerrors: ""
   logginginfo: []
   taskparameters: []
-  tasktype: ""
+  windowid: ""
+  maxerrors: ""
   servicerolearn: ""
   targets: []
 

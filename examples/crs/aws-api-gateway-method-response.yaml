@@ -5,11 +5,11 @@ kind: AwsApiGatewayMethodResponse
 metadata:
   name: example-aws-api-gateway-method-response
 spec:
+  httpmethod: ""
   statuscode: ""
   responsemodels: {}
   responseparameters: {}
   responseparametersinjson: ""
   restapiid: ""
   resourceid: ""
-  httpmethod: ""
 

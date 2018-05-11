@@ -5,31 +5,31 @@ kind: AwsOpsworksCustomLayer
 metadata:
   name: example-aws-opsworks-custom-layer
 spec:
+  elasticloadbalancer: ""
+  customshutdownrecipes: []
+  customjson: ""
+  useebsoptimizedinstances: false
+  customsecuritygroupids: ""
   installupdatesonboot: false
-  drainelbonshutdown: false
-  systempackages: ""
+  instanceshutdowntimeout: 0
   ebsvolume:
-    iops: 0
-    mountpoint: ""
     numberofdisks: 0
     raidlevel: ""
     size: 0
     type: ""
-  shortname: ""
-  elasticloadbalancer: ""
-  customconfigurerecipes: []
-  customjson: ""
+    iops: 0
+    mountpoint: ""
+  autoassignelasticips: false
+  autoassignpublicips: false
+  custominstanceprofilearn: ""
+  customdeployrecipes: []
   autohealing: false
-  useebsoptimizedinstances: false
+  systempackages: ""
   name: ""
   customsetuprecipes: []
-  customdeployrecipes: []
-  customshutdownrecipes: []
-  autoassignpublicips: false
-  customsecuritygroupids: ""
-  instanceshutdowntimeout: 0
-  stackid: ""
-  autoassignelasticips: false
-  custominstanceprofilearn: ""
+  customconfigurerecipes: []
   customundeployrecipes: []
+  drainelbonshutdown: false
+  stackid: ""
+  shortname: ""
 

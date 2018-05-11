@@ -11,9 +11,9 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsS3BucketNotification struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsS3BucketNotificationSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsS3BucketNotificationSpec `json:"spec"`
 }
 
 type AwsS3BucketNotificationSpec struct {
@@ -24,19 +24,19 @@ type AwsS3BucketNotificationSpec struct {
 }
 
 type AwsS3BucketNotificationSpecTopic struct {
-	Events       string `json:"events"`
 	Id           string `json:"id"`
 	FilterPrefix string `json:"filter_prefix"`
 	FilterSuffix string `json:"filter_suffix"`
 	TopicArn     string `json:"topic_arn"`
+	Events       string `json:"events"`
 }
 
 type AwsS3BucketNotificationSpecQueue struct {
+	Events       string `json:"events"`
+	Id           string `json:"id"`
 	FilterPrefix string `json:"filter_prefix"`
 	FilterSuffix string `json:"filter_suffix"`
 	QueueArn     string `json:"queue_arn"`
-	Events       string `json:"events"`
-	Id           string `json:"id"`
 }
 
 type AwsS3BucketNotificationSpecLambdaFunction struct {
@@ -50,7 +50,7 @@ type AwsS3BucketNotificationSpecLambdaFunction struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsS3BucketNotificationList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsS3BucketNotification `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsS3BucketNotification `json:"items"`
 }

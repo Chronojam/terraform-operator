@@ -5,29 +5,29 @@ kind: AwsEcsService
 metadata:
   name: example-aws-ecs-service
 spec:
-  deploymentmaximumpercent: 0
-  deploymentminimumhealthypercent: 0
-  iamrole: ""
-  networkconfiguration: []
-  placementstrategy:
-    type: ""
-    field: ""
-  placementconstraints:
-    type: ""
-    expression: ""
-  cluster: ""
-  taskdefinition: ""
-  launchtype: ""
-  name: ""
-  healthcheckgraceperiodseconds: 0
   loadbalancer:
     elbname: ""
     targetgrouparn: ""
     containername: ""
     containerport: 0
+  launchtype: ""
+  deploymentmaximumpercent: 0
+  iamrole: ""
+  deploymentminimumhealthypercent: 0
+  networkconfiguration: []
   orderedplacementstrategy: []
+  placementconstraints:
+    type: ""
+    expression: ""
   serviceregistries:
     port: 0
     registryarn: ""
+  name: ""
   desiredcount: 0
+  healthcheckgraceperiodseconds: 0
+  placementstrategy:
+    type: ""
+    field: ""
+  cluster: ""
+  taskdefinition: ""
 

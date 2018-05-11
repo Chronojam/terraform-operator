@@ -5,9 +5,9 @@ kind: AwsDaxParameterGroup
 metadata:
   name: example-aws-dax-parameter-group
 spec:
-  name: ""
-  description: ""
   parameters:
     name: ""
     value: ""
+  name: ""
+  description: ""
 

@@ -11,15 +11,15 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDaxParameterGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDaxParameterGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDaxParameterGroupSpec `json:"spec"`
 }
 
 type AwsDaxParameterGroupSpec struct {
-	Description string                             `json:"description"`
 	Parameters  AwsDaxParameterGroupSpecParameters `json:"parameters"`
 	Name        string                             `json:"name"`
+	Description string                             `json:"description"`
 }
 
 type AwsDaxParameterGroupSpecParameters struct {
@@ -30,7 +30,7 @@ type AwsDaxParameterGroupSpecParameters struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDaxParameterGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDaxParameterGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDaxParameterGroup `json:"items"`
 }

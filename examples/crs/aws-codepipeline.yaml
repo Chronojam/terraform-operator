@@ -5,9 +5,9 @@ kind: AwsCodepipeline
 metadata:
   name: example-aws-codepipeline
 spec:
+  name: ""
+  rolearn: ""
   artifactstore: []
   stage: []
   arn: ""
-  name: ""
-  rolearn: ""
 

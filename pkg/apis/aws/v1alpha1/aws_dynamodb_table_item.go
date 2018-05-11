@@ -11,22 +11,22 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDynamodbTableItem struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsDynamodbTableItemSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsDynamodbTableItemSpec `json:"spec"`
 }
 
 type AwsDynamodbTableItemSpec struct {
+	Item      string `json:"item"`
 	TableName string `json:"table_name"`
 	HashKey   string `json:"hash_key"`
 	RangeKey  string `json:"range_key"`
-	Item      string `json:"item"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsDynamodbTableItemList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsDynamodbTableItem `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsDynamodbTableItem `json:"items"`
 }

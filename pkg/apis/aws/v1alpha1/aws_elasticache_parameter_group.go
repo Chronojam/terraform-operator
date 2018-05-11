@@ -11,27 +11,27 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElasticacheParameterGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsElasticacheParameterGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsElasticacheParameterGroupSpec `json:"spec"`
 }
 
 type AwsElasticacheParameterGroupSpec struct {
-	Description string                                    `json:"description"`
-	Parameter   AwsElasticacheParameterGroupSpecParameter `json:"parameter"`
 	Name        string                                    `json:"name"`
 	Family      string                                    `json:"family"`
+	Description string                                    `json:"description"`
+	Parameter   AwsElasticacheParameterGroupSpecParameter `json:"parameter"`
 }
 
 type AwsElasticacheParameterGroupSpecParameter struct {
-	Name  string `json:"name"`
 	Value string `json:"value"`
+	Name  string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElasticacheParameterGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsElasticacheParameterGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsElasticacheParameterGroup `json:"items"`
 }

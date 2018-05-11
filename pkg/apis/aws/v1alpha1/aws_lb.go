@@ -11,31 +11,36 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLb struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLbSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLbSpec `json:"spec"`
 }
 
 type AwsLbSpec struct {
 	SecurityGroups               string                 `json:"security_groups"`
-	EnableDeletionProtection     bool                   `json:"enable_deletion_protection"`
-	EnableCrossZoneLoadBalancing bool                   `json:"enable_cross_zone_load_balancing"`
-	IpAddressType                string                 `json:"ip_address_type"`
-	LoadBalancerType             string                 `json:"load_balancer_type"`
-	Internal                     bool                   `json:"internal"`
-	AccessLogs                   []AwsLbSpecAccessLogs  `json:"access_logs"`
-	IdleTimeout                  int                    `json:"idle_timeout"`
-	DnsName                      string                 `json:"dns_name"`
-	Tags                         map[string]string      `json:"tags"`
-	ArnSuffix                    string                 `json:"arn_suffix"`
-	SubnetMapping                AwsLbSpecSubnetMapping `json:"subnet_mapping"`
-	EnableHttp2                  bool                   `json:"enable_http2"`
-	VpcId                        string                 `json:"vpc_id"`
-	ZoneId                       string                 `json:"zone_id"`
-	Name                         string                 `json:"name"`
-	NamePrefix                   string                 `json:"name_prefix"`
 	Subnets                      string                 `json:"subnets"`
+	IdleTimeout                  int                    `json:"idle_timeout"`
+	EnableCrossZoneLoadBalancing bool                   `json:"enable_cross_zone_load_balancing"`
+	EnableHttp2                  bool                   `json:"enable_http2"`
+	ZoneId                       string                 `json:"zone_id"`
+	DnsName                      string                 `json:"dns_name"`
+	LoadBalancerType             string                 `json:"load_balancer_type"`
+	SubnetMapping                AwsLbSpecSubnetMapping `json:"subnet_mapping"`
+	EnableDeletionProtection     bool                   `json:"enable_deletion_protection"`
+	ArnSuffix                    string                 `json:"arn_suffix"`
+	Internal                     bool                   `json:"internal"`
+	IpAddressType                string                 `json:"ip_address_type"`
+	Tags                         map[string]string      `json:"tags"`
 	Arn                          string                 `json:"arn"`
+	NamePrefix                   string                 `json:"name_prefix"`
+	AccessLogs                   []AwsLbSpecAccessLogs  `json:"access_logs"`
+	VpcId                        string                 `json:"vpc_id"`
+	Name                         string                 `json:"name"`
+}
+
+type AwsLbSpecSubnetMapping struct {
+	SubnetId     string `json:"subnet_id"`
+	AllocationId string `json:"allocation_id"`
 }
 
 type AwsLbSpecAccessLogs struct {
@@ -44,15 +49,10 @@ type AwsLbSpecAccessLogs struct {
 	Enabled bool   `json:"enabled"`
 }
 
-type AwsLbSpecSubnetMapping struct {
-	SubnetId     string `json:"subnet_id"`
-	AllocationId string `json:"allocation_id"`
-}
-
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLbList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLb `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLb `json:"items"`
 }

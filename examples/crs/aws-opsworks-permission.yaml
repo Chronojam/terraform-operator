@@ -5,9 +5,9 @@ kind: AwsOpsworksPermission
 metadata:
   name: example-aws-opsworks-permission
 spec:
+  allowssh: false
   allowsudo: false
   userarn: ""
   level: ""
   stackid: ""
-  allowssh: false
 

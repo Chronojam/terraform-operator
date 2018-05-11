@@ -11,54 +11,62 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLaunchTemplate struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsLaunchTemplateSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsLaunchTemplateSpec `json:"spec"`
 }
 
 type AwsLaunchTemplateSpec struct {
-	UserData                          string                                          `json:"user_data"`
-	BlockDeviceMappings               []AwsLaunchTemplateSpecBlockDeviceMappings      `json:"block_device_mappings"`
-	InstanceInitiatedShutdownBehavior string                                          `json:"instance_initiated_shutdown_behavior"`
-	InstanceMarketOptions             []AwsLaunchTemplateSpecInstanceMarketOptions    `json:"instance_market_options"`
-	Placement                         []AwsLaunchTemplateSpecPlacement                `json:"placement"`
-	VpcSecurityGroupIds               string                                          `json:"vpc_security_group_ids"`
-	TagSpecifications                 []AwsLaunchTemplateSpecTagSpecifications        `json:"tag_specifications"`
 	Name                              string                                          `json:"name"`
-	Description                       string                                          `json:"description"`
-	DefaultVersion                    int                                             `json:"default_version"`
-	DisableApiTermination             bool                                            `json:"disable_api_termination"`
-	KernelId                          string                                          `json:"kernel_id"`
-	KeyName                           string                                          `json:"key_name"`
-	NamePrefix                        string                                          `json:"name_prefix"`
-	LatestVersion                     int                                             `json:"latest_version"`
+	BlockDeviceMappings               []AwsLaunchTemplateSpecBlockDeviceMappings      `json:"block_device_mappings"`
 	CreditSpecification               []AwsLaunchTemplateSpecCreditSpecification      `json:"credit_specification"`
 	EbsOptimized                      bool                                            `json:"ebs_optimized"`
 	ElasticGpuSpecifications          []AwsLaunchTemplateSpecElasticGpuSpecifications `json:"elastic_gpu_specifications"`
 	ImageId                           string                                          `json:"image_id"`
-	Monitoring                        []AwsLaunchTemplateSpecMonitoring               `json:"monitoring"`
+	InstanceMarketOptions             []AwsLaunchTemplateSpecInstanceMarketOptions    `json:"instance_market_options"`
 	NetworkInterfaces                 []AwsLaunchTemplateSpecNetworkInterfaces        `json:"network_interfaces"`
-	RamDiskId                         string                                          `json:"ram_disk_id"`
-	IamInstanceProfile                []AwsLaunchTemplateSpecIamInstanceProfile       `json:"iam_instance_profile"`
+	Placement                         []AwsLaunchTemplateSpecPlacement                `json:"placement"`
+	InstanceInitiatedShutdownBehavior string                                          `json:"instance_initiated_shutdown_behavior"`
 	InstanceType                      string                                          `json:"instance_type"`
+	Monitoring                        []AwsLaunchTemplateSpecMonitoring               `json:"monitoring"`
+	UserData                          string                                          `json:"user_data"`
+	Description                       string                                          `json:"description"`
+	LatestVersion                     int                                             `json:"latest_version"`
+	DisableApiTermination             bool                                            `json:"disable_api_termination"`
+	IamInstanceProfile                []AwsLaunchTemplateSpecIamInstanceProfile       `json:"iam_instance_profile"`
+	KeyName                           string                                          `json:"key_name"`
+	RamDiskId                         string                                          `json:"ram_disk_id"`
 	SecurityGroupNames                string                                          `json:"security_group_names"`
+	NamePrefix                        string                                          `json:"name_prefix"`
+	DefaultVersion                    int                                             `json:"default_version"`
+	KernelId                          string                                          `json:"kernel_id"`
+	VpcSecurityGroupIds               string                                          `json:"vpc_security_group_ids"`
+	TagSpecifications                 []AwsLaunchTemplateSpecTagSpecifications        `json:"tag_specifications"`
 }
 
 type AwsLaunchTemplateSpecBlockDeviceMappings struct {
+	Ebs         []AwsLaunchTemplateSpecBlockDeviceMappingsEbs `json:"ebs"`
 	DeviceName  string                                        `json:"device_name"`
 	NoDevice    string                                        `json:"no_device"`
 	VirtualName string                                        `json:"virtual_name"`
-	Ebs         []AwsLaunchTemplateSpecBlockDeviceMappingsEbs `json:"ebs"`
 }
 
 type AwsLaunchTemplateSpecBlockDeviceMappingsEbs struct {
-	VolumeSize          int    `json:"volume_size"`
 	VolumeType          string `json:"volume_type"`
 	DeleteOnTermination bool   `json:"delete_on_termination"`
 	Encrypted           bool   `json:"encrypted"`
 	Iops                int    `json:"iops"`
 	KmsKeyId            string `json:"kms_key_id"`
 	SnapshotId          string `json:"snapshot_id"`
+	VolumeSize          int    `json:"volume_size"`
+}
+
+type AwsLaunchTemplateSpecCreditSpecification struct {
+	CpuCredits string `json:"cpu_credits"`
+}
+
+type AwsLaunchTemplateSpecElasticGpuSpecifications struct {
+	Type string `json:"type"`
 }
 
 type AwsLaunchTemplateSpecInstanceMarketOptions struct {
@@ -67,11 +75,26 @@ type AwsLaunchTemplateSpecInstanceMarketOptions struct {
 }
 
 type AwsLaunchTemplateSpecInstanceMarketOptionsSpotOptions struct {
+	InstanceInterruptionBehavior string `json:"instance_interruption_behavior"`
 	MaxPrice                     string `json:"max_price"`
 	SpotInstanceType             string `json:"spot_instance_type"`
 	ValidUntil                   string `json:"valid_until"`
 	BlockDurationMinutes         int    `json:"block_duration_minutes"`
-	InstanceInterruptionBehavior string `json:"instance_interruption_behavior"`
+}
+
+type AwsLaunchTemplateSpecNetworkInterfaces struct {
+	AssociatePublicIpAddress bool   `json:"associate_public_ip_address"`
+	DeviceIndex              int    `json:"device_index"`
+	SecurityGroups           string `json:"security_groups"`
+	Ipv6AddressCount         int    `json:"ipv6_address_count"`
+	PrivateIpAddress         string `json:"private_ip_address"`
+	Ipv4Addresses            string `json:"ipv4_addresses"`
+	Ipv4AddressCount         int    `json:"ipv4_address_count"`
+	SubnetId                 string `json:"subnet_id"`
+	DeleteOnTermination      bool   `json:"delete_on_termination"`
+	Description              string `json:"description"`
+	Ipv6Addresses            string `json:"ipv6_addresses"`
+	NetworkInterfaceId       string `json:"network_interface_id"`
 }
 
 type AwsLaunchTemplateSpecPlacement struct {
@@ -83,36 +106,8 @@ type AwsLaunchTemplateSpecPlacement struct {
 	Tenancy          string `json:"tenancy"`
 }
 
-type AwsLaunchTemplateSpecTagSpecifications struct {
-	ResourceType string            `json:"resource_type"`
-	Tags         map[string]string `json:"tags"`
-}
-
-type AwsLaunchTemplateSpecCreditSpecification struct {
-	CpuCredits string `json:"cpu_credits"`
-}
-
-type AwsLaunchTemplateSpecElasticGpuSpecifications struct {
-	Type string `json:"type"`
-}
-
 type AwsLaunchTemplateSpecMonitoring struct {
 	Enabled bool `json:"enabled"`
-}
-
-type AwsLaunchTemplateSpecNetworkInterfaces struct {
-	SecurityGroups           string `json:"security_groups"`
-	PrivateIpAddress         string `json:"private_ip_address"`
-	DeviceIndex              int    `json:"device_index"`
-	Ipv6AddressCount         int    `json:"ipv6_address_count"`
-	Ipv6Addresses            string `json:"ipv6_addresses"`
-	NetworkInterfaceId       string `json:"network_interface_id"`
-	Ipv4Addresses            string `json:"ipv4_addresses"`
-	AssociatePublicIpAddress bool   `json:"associate_public_ip_address"`
-	DeleteOnTermination      bool   `json:"delete_on_termination"`
-	Description              string `json:"description"`
-	Ipv4AddressCount         int    `json:"ipv4_address_count"`
-	SubnetId                 string `json:"subnet_id"`
 }
 
 type AwsLaunchTemplateSpecIamInstanceProfile struct {
@@ -120,10 +115,15 @@ type AwsLaunchTemplateSpecIamInstanceProfile struct {
 	Name string `json:"name"`
 }
 
+type AwsLaunchTemplateSpecTagSpecifications struct {
+	ResourceType string            `json:"resource_type"`
+	Tags         map[string]string `json:"tags"`
+}
+
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsLaunchTemplateList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsLaunchTemplate `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsLaunchTemplate `json:"items"`
 }

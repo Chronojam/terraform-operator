@@ -5,17 +5,17 @@ kind: AwsApiGatewayStage
 metadata:
   name: example-aws-api-gateway-stage
 spec:
-  invokeurl: ""
-  restapiid: ""
-  tags: {}
-  cacheclusterenabled: false
-  clientcertificateid: ""
+  stagename: ""
+  accesslogsettings: []
   deploymentid: ""
   description: ""
-  documentationversion: ""
   executionarn: ""
-  stagename: ""
-  variables: {}
-  accesslogsettings: []
+  invokeurl: ""
+  restapiid: ""
+  cacheclusterenabled: false
   cacheclustersize: ""
+  clientcertificateid: ""
+  documentationversion: ""
+  variables: {}
+  tags: {}
 

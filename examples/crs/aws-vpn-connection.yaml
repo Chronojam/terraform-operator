@@ -5,34 +5,34 @@ kind: AwsVpnConnection
 metadata:
   name: example-aws-vpn-connection
 spec:
-  vpngatewayid: ""
-  tunnel1presharedkey: ""
-  tags: {}
-  tunnel1cgwinsideaddress: ""
-  tunnel2vgwinsideaddress: ""
+  tunnel2insidecidr: ""
   customergatewayconfiguration: ""
   tunnel1address: ""
-  tunnel1vgwinsideaddress: ""
-  tunnel2cgwinsideaddress: ""
-  customergatewayid: ""
-  type: ""
-  staticroutesonly: false
   tunnel1insidecidr: ""
-  tunnel1bgpasn: ""
-  tunnel1bgpholdtime: 0
+  tags: {}
+  tunnel1cgwinsideaddress: ""
+  tunnel1vgwinsideaddress: ""
   tunnel2address: ""
-  tunnel2bgpasn: ""
-  routes:
-    source: ""
-    state: ""
-    destinationcidrblock: ""
   vgwtelemetry:
+    laststatuschange: ""
     outsideipaddress: ""
     status: ""
     statusmessage: ""
     acceptedroutecount: 0
-    laststatuschange: ""
-  tunnel2insidecidr: ""
+  customergatewayid: ""
   tunnel2presharedkey: ""
+  tunnel1bgpasn: ""
   tunnel2bgpholdtime: 0
+  staticroutesonly: false
+  type: ""
+  tunnel1presharedkey: ""
+  tunnel1bgpholdtime: 0
+  tunnel2cgwinsideaddress: ""
+  tunnel2vgwinsideaddress: ""
+  tunnel2bgpasn: ""
+  routes:
+    state: ""
+    destinationcidrblock: ""
+    source: ""
+  vpngatewayid: ""
 

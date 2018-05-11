@@ -5,13 +5,13 @@ kind: AwsRoute53Zone
 metadata:
   name: example-aws-route53-zone
 spec:
-  name: ""
-  vpcid: ""
   delegationsetid: ""
-  forcedestroy: false
-  comment: ""
-  vpcregion: ""
-  zoneid: ""
   nameservers: []
   tags: {}
+  name: ""
+  comment: ""
+  vpcid: ""
+  zoneid: ""
+  vpcregion: ""
+  forcedestroy: false
 

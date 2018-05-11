@@ -9,12 +9,12 @@ spec:
   tags: {}
   propagatingvgws: ""
   route:
-    vpcpeeringconnectionid: ""
-    networkinterfaceid: ""
-    cidrblock: ""
-    ipv6cidrblock: ""
     egressonlygatewayid: ""
     gatewayid: ""
     instanceid: ""
     natgatewayid: ""
+    vpcpeeringconnectionid: ""
+    networkinterfaceid: ""
+    cidrblock: ""
+    ipv6cidrblock: ""
 

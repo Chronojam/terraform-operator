@@ -5,27 +5,27 @@ kind: AwsS3Bucket
 metadata:
   name: example-aws-s3-bucket
 spec:
-  versioning: []
-  serversideencryptionconfiguration: []
-  bucket: ""
-  websitedomain: ""
-  acl: ""
-  region: ""
-  websiteendpoint: ""
-  lifecyclerule: []
-  forcedestroy: false
-  tags: {}
-  bucketdomainname: ""
   arn: ""
-  hostedzoneid: ""
-  logging:
-    targetbucket: ""
-    targetprefix: ""
-  accelerationstatus: ""
-  policy: ""
-  corsrule: []
-  requestpayer: ""
   replicationconfiguration: []
   bucketprefix: ""
   website: []
+  logging:
+    targetbucket: ""
+    targetprefix: ""
+  serversideencryptionconfiguration: []
+  bucketdomainname: ""
+  policy: ""
+  websiteendpoint: ""
+  websitedomain: ""
+  lifecyclerule: []
+  forcedestroy: false
+  requestpayer: ""
+  acl: ""
+  corsrule: []
+  hostedzoneid: ""
+  region: ""
+  versioning: []
+  accelerationstatus: ""
+  tags: {}
+  bucket: ""
 

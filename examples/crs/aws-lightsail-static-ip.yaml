@@ -5,8 +5,8 @@ kind: AwsLightsailStaticIp
 metadata:
   name: example-aws-lightsail-static-ip
 spec:
-  name: ""
-  ipaddress: ""
   arn: ""
   supportcode: ""
+  name: ""
+  ipaddress: ""
 

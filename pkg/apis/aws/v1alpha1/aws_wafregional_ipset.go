@@ -11,14 +11,14 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafregionalIpset struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsWafregionalIpsetSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsWafregionalIpsetSpec `json:"spec"`
 }
 
 type AwsWafregionalIpsetSpec struct {
-	IpSetDescriptor AwsWafregionalIpsetSpecIpSetDescriptor `json:"ip_set_descriptor"`
 	Name            string                                 `json:"name"`
+	IpSetDescriptor AwsWafregionalIpsetSpecIpSetDescriptor `json:"ip_set_descriptor"`
 }
 
 type AwsWafregionalIpsetSpecIpSetDescriptor struct {
@@ -29,7 +29,7 @@ type AwsWafregionalIpsetSpecIpSetDescriptor struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsWafregionalIpsetList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsWafregionalIpset `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsWafregionalIpset `json:"items"`
 }

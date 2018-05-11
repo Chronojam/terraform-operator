@@ -11,55 +11,49 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRedshiftCluster struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsRedshiftClusterSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsRedshiftClusterSpec `json:"spec"`
 }
 
 type AwsRedshiftClusterSpec struct {
-	MasterUsername                   string                               `json:"master_username"`
-	ClusterSecurityGroups            string                               `json:"cluster_security_groups"`
-	Encrypted                        bool                                 `json:"encrypted"`
-	DatabaseName                     string                               `json:"database_name"`
-	AvailabilityZone                 string                               `json:"availability_zone"`
 	Port                             int                                  `json:"port"`
-	ClusterType                      string                               `json:"cluster_type"`
-	ClusterVersion                   string                               `json:"cluster_version"`
-	EnhancedVpcRouting               bool                                 `json:"enhanced_vpc_routing"`
 	ElasticIp                        string                               `json:"elastic_ip"`
-	FinalSnapshotIdentifier          string                               `json:"final_snapshot_identifier"`
+	NodeType                         string                               `json:"node_type"`
+	MasterUsername                   string                               `json:"master_username"`
+	MasterPassword                   string                               `json:"master_password"`
+	Logging                          []AwsRedshiftClusterSpecLogging      `json:"logging"`
+	ClusterVersion                   string                               `json:"cluster_version"`
 	IamRoles                         string                               `json:"iam_roles"`
 	SnapshotCopy                     []AwsRedshiftClusterSpecSnapshotCopy `json:"snapshot_copy"`
-	Logging                          []AwsRedshiftClusterSpecLogging      `json:"logging"`
-	NodeType                         string                               `json:"node_type"`
-	AllowVersionUpgrade              bool                                 `json:"allow_version_upgrade"`
+	Endpoint                         string                               `json:"endpoint"`
+	ClusterParameterGroupName        string                               `json:"cluster_parameter_group_name"`
+	AutomatedSnapshotRetentionPeriod int                                  `json:"automated_snapshot_retention_period"`
+	NumberOfNodes                    int                                  `json:"number_of_nodes"`
+	EnhancedVpcRouting               bool                                 `json:"enhanced_vpc_routing"`
+	FinalSnapshotIdentifier          string                               `json:"final_snapshot_identifier"`
 	BucketName                       string                               `json:"bucket_name"`
+	EnableLogging                    bool                                 `json:"enable_logging"`
+	Tags                             map[string]string                    `json:"tags"`
+	ClusterIdentifier                string                               `json:"cluster_identifier"`
+	AllowVersionUpgrade              bool                                 `json:"allow_version_upgrade"`
+	PubliclyAccessible               bool                                 `json:"publicly_accessible"`
+	ClusterRevisionNumber            string                               `json:"cluster_revision_number"`
+	SnapshotClusterIdentifier        string                               `json:"snapshot_cluster_identifier"`
+	DatabaseName                     string                               `json:"database_name"`
+	Encrypted                        bool                                 `json:"encrypted"`
+	KmsKeyId                         string                               `json:"kms_key_id"`
+	OwnerAccount                     string                               `json:"owner_account"`
+	ClusterType                      string                               `json:"cluster_type"`
+	ClusterSubnetGroupName           string                               `json:"cluster_subnet_group_name"`
 	PreferredMaintenanceWindow       string                               `json:"preferred_maintenance_window"`
 	SkipFinalSnapshot                bool                                 `json:"skip_final_snapshot"`
 	ClusterPublicKey                 string                               `json:"cluster_public_key"`
-	ClusterRevisionNumber            string                               `json:"cluster_revision_number"`
-	EnableLogging                    bool                                 `json:"enable_logging"`
-	OwnerAccount                     string                               `json:"owner_account"`
-	Tags                             map[string]string                    `json:"tags"`
-	ClusterParameterGroupName        string                               `json:"cluster_parameter_group_name"`
-	AutomatedSnapshotRetentionPeriod int                                  `json:"automated_snapshot_retention_period"`
-	KmsKeyId                         string                               `json:"kms_key_id"`
-	SnapshotIdentifier               string                               `json:"snapshot_identifier"`
-	ClusterIdentifier                string                               `json:"cluster_identifier"`
-	Endpoint                         string                               `json:"endpoint"`
-	SnapshotClusterIdentifier        string                               `json:"snapshot_cluster_identifier"`
-	ClusterSubnetGroupName           string                               `json:"cluster_subnet_group_name"`
-	VpcSecurityGroupIds              string                               `json:"vpc_security_group_ids"`
-	NumberOfNodes                    int                                  `json:"number_of_nodes"`
-	PubliclyAccessible               bool                                 `json:"publicly_accessible"`
 	S3KeyPrefix                      string                               `json:"s3_key_prefix"`
-	MasterPassword                   string                               `json:"master_password"`
-}
-
-type AwsRedshiftClusterSpecSnapshotCopy struct {
-	DestinationRegion string `json:"destination_region"`
-	RetentionPeriod   int    `json:"retention_period"`
-	GrantName         string `json:"grant_name"`
+	SnapshotIdentifier               string                               `json:"snapshot_identifier"`
+	ClusterSecurityGroups            string                               `json:"cluster_security_groups"`
+	VpcSecurityGroupIds              string                               `json:"vpc_security_group_ids"`
+	AvailabilityZone                 string                               `json:"availability_zone"`
 }
 
 type AwsRedshiftClusterSpecLogging struct {
@@ -68,10 +62,16 @@ type AwsRedshiftClusterSpecLogging struct {
 	S3KeyPrefix string `json:"s3_key_prefix"`
 }
 
+type AwsRedshiftClusterSpecSnapshotCopy struct {
+	RetentionPeriod   int    `json:"retention_period"`
+	GrantName         string `json:"grant_name"`
+	DestinationRegion string `json:"destination_region"`
+}
+
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsRedshiftClusterList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsRedshiftCluster `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsRedshiftCluster `json:"items"`
 }

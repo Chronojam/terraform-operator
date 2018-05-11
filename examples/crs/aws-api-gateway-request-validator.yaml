@@ -5,8 +5,8 @@ kind: AwsApiGatewayRequestValidator
 metadata:
   name: example-aws-api-gateway-request-validator
 spec:
+  restapiid: ""
   name: ""
   validaterequestbody: false
   validaterequestparameters: false
-  restapiid: ""
 

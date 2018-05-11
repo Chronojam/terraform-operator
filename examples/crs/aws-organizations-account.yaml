@@ -5,12 +5,12 @@ kind: AwsOrganizationsAccount
 metadata:
   name: example-aws-organizations-account
 spec:
-  joinedtimestamp: ""
-  status: ""
   name: ""
   email: ""
   iamuseraccesstobilling: ""
   rolename: ""
   arn: ""
   joinedmethod: ""
+  joinedtimestamp: ""
+  status: ""
 

@@ -5,19 +5,19 @@ kind: AwsCognitoUserPoolClient
 metadata:
   name: example-aws-cognito-user-pool-client
 spec:
-  readattributes: ""
-  allowedoauthflows: ""
-  writeattributes: ""
   allowedoauthflowsuserpoolclient: false
-  supportedidentityproviders: []
-  userpoolid: ""
-  explicitauthflows: ""
-  refreshtokenvalidity: 0
-  allowedoauthscopes: ""
   callbackurls: []
   defaultredirecturi: ""
-  logouturls: []
-  name: ""
+  userpoolid: ""
+  readattributes: ""
+  supportedidentityproviders: []
   generatesecret: false
+  explicitauthflows: ""
+  writeattributes: ""
+  allowedoauthflows: ""
+  name: ""
   clientsecret: ""
+  refreshtokenvalidity: 0
+  allowedoauthscopes: ""
+  logouturls: []
 

@@ -5,23 +5,23 @@ kind: AwsMqBroker
 metadata:
   name: example-aws-mq-broker
 spec:
-  brokername: ""
-  configuration: []
-  engineversion: ""
-  subnetids: ""
-  enginetype: ""
-  securitygroups: ""
   user:
     consoleaccess: false
     groups: ""
     password: ""
     username: ""
-  maintenancewindowstarttime: []
+  instances: []
+  autominorversionupgrade: false
+  brokername: ""
+  enginetype: ""
+  hostinstancetype: ""
   arn: ""
   applyimmediately: false
-  autominorversionupgrade: false
-  deploymentmode: ""
-  hostinstancetype: ""
+  configuration: []
+  engineversion: ""
+  maintenancewindowstarttime: []
   publiclyaccessible: false
-  instances: []
+  deploymentmode: ""
+  securitygroups: ""
+  subnetids: ""
 

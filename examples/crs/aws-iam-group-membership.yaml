@@ -5,7 +5,7 @@ kind: AwsIamGroupMembership
 metadata:
   name: example-aws-iam-group-membership
 spec:
-  group: ""
   name: ""
   users: ""
+  group: ""
 

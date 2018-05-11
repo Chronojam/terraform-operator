@@ -11,26 +11,26 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOrganizationsAccount struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsOrganizationsAccountSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsOrganizationsAccountSpec `json:"spec"`
 }
 
 type AwsOrganizationsAccountSpec struct {
-	Arn                    string `json:"arn"`
-	JoinedMethod           string `json:"joined_method"`
-	JoinedTimestamp        string `json:"joined_timestamp"`
-	Status                 string `json:"status"`
 	Name                   string `json:"name"`
 	Email                  string `json:"email"`
 	IamUserAccessToBilling string `json:"iam_user_access_to_billing"`
 	RoleName               string `json:"role_name"`
+	Arn                    string `json:"arn"`
+	JoinedMethod           string `json:"joined_method"`
+	JoinedTimestamp        string `json:"joined_timestamp"`
+	Status                 string `json:"status"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOrganizationsAccountList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsOrganizationsAccount `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsOrganizationsAccount `json:"items"`
 }

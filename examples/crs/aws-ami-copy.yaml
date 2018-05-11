@@ -5,31 +5,31 @@ kind: AwsAmiCopy
 metadata:
   name: example-aws-ami-copy
 spec:
-  ramdiskid: ""
-  virtualizationtype: ""
   ebsblockdevice:
-    volumesize: 0
-    volumetype: ""
     deleteontermination: false
     devicename: ""
     encrypted: false
     iops: 0
     snapshotid: ""
-  tags: {}
-  manageebssnapshots: false
-  architecture: ""
-  kernelid: ""
-  name: ""
-  encrypted: false
-  kmskeyid: ""
-  imagelocation: ""
-  description: ""
-  rootdevicename: ""
-  rootsnapshotid: ""
-  sriovnetsupport: ""
+    volumesize: 0
+    volumetype: ""
   ephemeralblockdevice:
     devicename: ""
     virtualname: ""
+  manageebssnapshots: false
   sourceamiid: ""
+  kmskeyid: ""
+  imagelocation: ""
+  name: ""
+  ramdiskid: ""
+  tags: {}
   sourceamiregion: ""
+  rootdevicename: ""
+  rootsnapshotid: ""
+  virtualizationtype: ""
+  architecture: ""
+  description: ""
+  kernelid: ""
+  sriovnetsupport: ""
+  encrypted: false
 

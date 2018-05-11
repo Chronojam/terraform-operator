@@ -5,9 +5,9 @@ kind: AwsDxConnection
 metadata:
   name: example-aws-dx-connection
 spec:
+  tags: {}
   arn: ""
   name: ""
   bandwidth: ""
   location: ""
-  tags: {}
 

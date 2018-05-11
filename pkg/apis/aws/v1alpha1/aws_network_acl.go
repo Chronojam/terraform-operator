@@ -11,48 +11,48 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsNetworkAcl struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsNetworkAclSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsNetworkAclSpec `json:"spec"`
 }
 
 type AwsNetworkAclSpec struct {
+	VpcId     string                   `json:"vpc_id"`
+	SubnetId  string                   `json:"subnet_id"`
 	SubnetIds string                   `json:"subnet_ids"`
 	Ingress   AwsNetworkAclSpecIngress `json:"ingress"`
 	Egress    AwsNetworkAclSpecEgress  `json:"egress"`
 	Tags      map[string]string        `json:"tags"`
-	VpcId     string                   `json:"vpc_id"`
-	SubnetId  string                   `json:"subnet_id"`
 }
 
 type AwsNetworkAclSpecIngress struct {
+	RuleNo        int    `json:"rule_no"`
 	Protocol      string `json:"protocol"`
+	IcmpCode      int    `json:"icmp_code"`
+	FromPort      int    `json:"from_port"`
+	Action        string `json:"action"`
 	CidrBlock     string `json:"cidr_block"`
 	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
-	FromPort      int    `json:"from_port"`
-	ToPort        int    `json:"to_port"`
-	RuleNo        int    `json:"rule_no"`
-	Action        string `json:"action"`
 	IcmpType      int    `json:"icmp_type"`
-	IcmpCode      int    `json:"icmp_code"`
+	ToPort        int    `json:"to_port"`
 }
 
 type AwsNetworkAclSpecEgress struct {
-	Action        string `json:"action"`
+	CidrBlock     string `json:"cidr_block"`
 	IcmpType      int    `json:"icmp_type"`
 	FromPort      int    `json:"from_port"`
 	ToPort        int    `json:"to_port"`
-	CidrBlock     string `json:"cidr_block"`
+	RuleNo        int    `json:"rule_no"`
+	Action        string `json:"action"`
+	Protocol      string `json:"protocol"`
 	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
 	IcmpCode      int    `json:"icmp_code"`
-	RuleNo        int    `json:"rule_no"`
-	Protocol      string `json:"protocol"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsNetworkAclList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsNetworkAcl `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsNetworkAcl `json:"items"`
 }

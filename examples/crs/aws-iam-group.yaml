@@ -5,8 +5,8 @@ kind: AwsIamGroup
 metadata:
   name: example-aws-iam-group
 spec:
+  uniqueid: ""
   name: ""
   path: ""
   arn: ""
-  uniqueid: ""
 

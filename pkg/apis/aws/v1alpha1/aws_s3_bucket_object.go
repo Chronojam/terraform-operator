@@ -11,36 +11,36 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsS3BucketObject struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsS3BucketObjectSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsS3BucketObjectSpec `json:"spec"`
 }
 
 type AwsS3BucketObjectSpec struct {
-	ContentType          string            `json:"content_type"`
-	Content              string            `json:"content"`
-	StorageClass         string            `json:"storage_class"`
-	VersionId            string            `json:"version_id"`
 	Bucket               string            `json:"bucket"`
-	Acl                  string            `json:"acl"`
-	ContentLanguage      string            `json:"content_language"`
-	Source               string            `json:"source"`
-	KmsKeyId             string            `json:"kms_key_id"`
-	Tags                 map[string]string `json:"tags"`
-	ContentDisposition   string            `json:"content_disposition"`
 	Key                  string            `json:"key"`
+	Tags                 map[string]string `json:"tags"`
+	ContentLanguage      string            `json:"content_language"`
+	Content              string            `json:"content"`
+	KmsKeyId             string            `json:"kms_key_id"`
+	VersionId            string            `json:"version_id"`
+	Acl                  string            `json:"acl"`
+	CacheControl         string            `json:"cache_control"`
+	ContentBase64        string            `json:"content_base64"`
+	StorageClass         string            `json:"storage_class"`
+	ServerSideEncryption string            `json:"server_side_encryption"`
+	ContentDisposition   string            `json:"content_disposition"`
+	ContentEncoding      string            `json:"content_encoding"`
+	ContentType          string            `json:"content_type"`
+	Source               string            `json:"source"`
 	Etag                 string            `json:"etag"`
 	WebsiteRedirect      string            `json:"website_redirect"`
-	CacheControl         string            `json:"cache_control"`
-	ContentEncoding      string            `json:"content_encoding"`
-	ContentBase64        string            `json:"content_base64"`
-	ServerSideEncryption string            `json:"server_side_encryption"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsS3BucketObjectList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsS3BucketObject `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsS3BucketObject `json:"items"`
 }

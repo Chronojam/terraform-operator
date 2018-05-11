@@ -5,6 +5,6 @@ kind: AwsConfigConfigurationRecorderStatus
 metadata:
   name: example-aws-config-configuration-recorder-status
 spec:
-  name: ""
   isenabled: false
+  name: ""
 

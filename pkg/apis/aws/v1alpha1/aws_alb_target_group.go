@@ -11,25 +11,25 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAlbTargetGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsAlbTargetGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsAlbTargetGroupSpec `json:"spec"`
 }
 
 type AwsAlbTargetGroupSpec struct {
 	Arn                 string                             `json:"arn"`
-	ArnSuffix           string                             `json:"arn_suffix"`
-	Name                string                             `json:"name"`
-	NamePrefix          string                             `json:"name_prefix"`
-	Stickiness          []AwsAlbTargetGroupSpecStickiness  `json:"stickiness"`
-	HealthCheck         []AwsAlbTargetGroupSpecHealthCheck `json:"health_check"`
-	Tags                map[string]string                  `json:"tags"`
-	Port                int                                `json:"port"`
-	Protocol            string                             `json:"protocol"`
-	VpcId               string                             `json:"vpc_id"`
 	DeregistrationDelay int                                `json:"deregistration_delay"`
 	ProxyProtocolV2     bool                               `json:"proxy_protocol_v2"`
 	TargetType          string                             `json:"target_type"`
+	Stickiness          []AwsAlbTargetGroupSpecStickiness  `json:"stickiness"`
+	VpcId               string                             `json:"vpc_id"`
+	HealthCheck         []AwsAlbTargetGroupSpecHealthCheck `json:"health_check"`
+	Tags                map[string]string                  `json:"tags"`
+	ArnSuffix           string                             `json:"arn_suffix"`
+	Name                string                             `json:"name"`
+	NamePrefix          string                             `json:"name_prefix"`
+	Port                int                                `json:"port"`
+	Protocol            string                             `json:"protocol"`
 }
 
 type AwsAlbTargetGroupSpecStickiness struct {
@@ -52,7 +52,7 @@ type AwsAlbTargetGroupSpecHealthCheck struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsAlbTargetGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsAlbTargetGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsAlbTargetGroup `json:"items"`
 }

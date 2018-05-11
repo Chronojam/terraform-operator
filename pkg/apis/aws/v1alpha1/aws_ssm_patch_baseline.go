@@ -11,12 +11,13 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmPatchBaseline struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSsmPatchBaselineSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSsmPatchBaselineSpec `json:"spec"`
 }
 
 type AwsSsmPatchBaselineSpec struct {
+	ApprovalRule                   []AwsSsmPatchBaselineSpecApprovalRule `json:"approval_rule"`
 	ApprovedPatches                string                                `json:"approved_patches"`
 	RejectedPatches                string                                `json:"rejected_patches"`
 	OperatingSystem                string                                `json:"operating_system"`
@@ -24,18 +25,12 @@ type AwsSsmPatchBaselineSpec struct {
 	Name                           string                                `json:"name"`
 	Description                    string                                `json:"description"`
 	GlobalFilter                   []AwsSsmPatchBaselineSpecGlobalFilter `json:"global_filter"`
-	ApprovalRule                   []AwsSsmPatchBaselineSpecApprovalRule `json:"approval_rule"`
-}
-
-type AwsSsmPatchBaselineSpecGlobalFilter struct {
-	Key    string   `json:"key"`
-	Values []string `json:"values"`
 }
 
 type AwsSsmPatchBaselineSpecApprovalRule struct {
-	ComplianceLevel  string                                           `json:"compliance_level"`
 	PatchFilter      []AwsSsmPatchBaselineSpecApprovalRulePatchFilter `json:"patch_filter"`
 	ApproveAfterDays int                                              `json:"approve_after_days"`
+	ComplianceLevel  string                                           `json:"compliance_level"`
 }
 
 type AwsSsmPatchBaselineSpecApprovalRulePatchFilter struct {
@@ -43,10 +38,15 @@ type AwsSsmPatchBaselineSpecApprovalRulePatchFilter struct {
 	Values []string `json:"values"`
 }
 
+type AwsSsmPatchBaselineSpecGlobalFilter struct {
+	Key    string   `json:"key"`
+	Values []string `json:"values"`
+}
+
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSsmPatchBaselineList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSsmPatchBaseline `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSsmPatchBaseline `json:"items"`
 }

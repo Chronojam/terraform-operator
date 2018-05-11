@@ -11,53 +11,53 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksHaproxyLayer struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsOpsworksHaproxyLayerSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsOpsworksHaproxyLayerSpec `json:"spec"`
 }
 
 type AwsOpsworksHaproxyLayerSpec struct {
-	CustomJson               string                               `json:"custom_json"`
-	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
-	StatsEnabled             bool                                 `json:"stats_enabled"`
 	StatsPassword            string                               `json:"stats_password"`
-	CustomSetupRecipes       []string                             `json:"custom_setup_recipes"`
-	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
-	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
-	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
 	SystemPackages           string                               `json:"system_packages"`
-	EbsVolume                AwsOpsworksHaproxyLayerSpecEbsVolume `json:"ebs_volume"`
-	StatsUrl                 string                               `json:"stats_url"`
-	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
-	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
-	StackId                  string                               `json:"stack_id"`
-	HealthcheckUrl           string                               `json:"healthcheck_url"`
-	HealthcheckMethod        string                               `json:"healthcheck_method"`
-	StatsUser                string                               `json:"stats_user"`
-	CustomConfigureRecipes   []string                             `json:"custom_configure_recipes"`
+	Name                     string                               `json:"name"`
+	StatsEnabled             bool                                 `json:"stats_enabled"`
 	CustomShutdownRecipes    []string                             `json:"custom_shutdown_recipes"`
-	AutoHealing              bool                                 `json:"auto_healing"`
+	CustomJson               string                               `json:"custom_json"`
 	InstallUpdatesOnBoot     bool                                 `json:"install_updates_on_boot"`
 	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
+	HealthcheckUrl           string                               `json:"healthcheck_url"`
+	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
+	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
+	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
+	HealthcheckMethod        string                               `json:"healthcheck_method"`
+	AutoHealing              bool                                 `json:"auto_healing"`
 	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
-	Name                     string                               `json:"name"`
+	EbsVolume                AwsOpsworksHaproxyLayerSpecEbsVolume `json:"ebs_volume"`
 	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
+	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
+	CustomSetupRecipes       []string                             `json:"custom_setup_recipes"`
+	StackId                  string                               `json:"stack_id"`
+	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
+	StatsUrl                 string                               `json:"stats_url"`
+	StatsUser                string                               `json:"stats_user"`
+	CustomConfigureRecipes   []string                             `json:"custom_configure_recipes"`
+	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
 	CustomSecurityGroupIds   string                               `json:"custom_security_group_ids"`
 }
 
 type AwsOpsworksHaproxyLayerSpecEbsVolume struct {
+	Iops          int    `json:"iops"`
+	MountPoint    string `json:"mount_point"`
 	NumberOfDisks int    `json:"number_of_disks"`
 	RaidLevel     string `json:"raid_level"`
 	Size          int    `json:"size"`
 	Type          string `json:"type"`
-	Iops          int    `json:"iops"`
-	MountPoint    string `json:"mount_point"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsOpsworksHaproxyLayerList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsOpsworksHaproxyLayer `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsOpsworksHaproxyLayer `json:"items"`
 }

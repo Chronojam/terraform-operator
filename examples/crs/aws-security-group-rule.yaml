@@ -7,13 +7,13 @@ metadata:
 spec:
   prefixlistids: []
   securitygroupid: ""
-  fromport: 0
-  toport: 0
-  protocol: ""
-  sourcesecuritygroupid: ""
   self: false
   description: ""
-  type: ""
+  fromport: 0
+  toport: 0
   cidrblocks: []
   ipv6cidrblocks: []
+  type: ""
+  protocol: ""
+  sourcesecuritygroupid: ""
 

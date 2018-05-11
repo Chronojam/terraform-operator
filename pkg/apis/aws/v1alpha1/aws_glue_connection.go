@@ -11,19 +11,19 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsGlueConnection struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsGlueConnectionSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsGlueConnectionSpec `json:"spec"`
 }
 
 type AwsGlueConnectionSpec struct {
+	PhysicalConnectionRequirements []AwsGlueConnectionSpecPhysicalConnectionRequirements `json:"physical_connection_requirements"`
+	CatalogId                      string                                                `json:"catalog_id"`
 	ConnectionProperties           map[string]string                                     `json:"connection_properties"`
 	ConnectionType                 string                                                `json:"connection_type"`
 	Description                    string                                                `json:"description"`
 	MatchCriteria                  []string                                              `json:"match_criteria"`
 	Name                           string                                                `json:"name"`
-	PhysicalConnectionRequirements []AwsGlueConnectionSpecPhysicalConnectionRequirements `json:"physical_connection_requirements"`
-	CatalogId                      string                                                `json:"catalog_id"`
 }
 
 type AwsGlueConnectionSpecPhysicalConnectionRequirements struct {
@@ -34,7 +34,7 @@ type AwsGlueConnectionSpecPhysicalConnectionRequirements struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsGlueConnectionList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsGlueConnection `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsGlueConnection `json:"items"`
 }

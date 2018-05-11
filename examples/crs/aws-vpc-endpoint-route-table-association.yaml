@@ -5,6 +5,6 @@ kind: AwsVpcEndpointRouteTableAssociation
 metadata:
   name: example-aws-vpc-endpoint-route-table-association
 spec:
-  routetableid: ""
   vpcendpointid: ""
+  routetableid: ""
 

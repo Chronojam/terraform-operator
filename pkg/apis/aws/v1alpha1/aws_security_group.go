@@ -11,51 +11,51 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSecurityGroup struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSecurityGroupSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSecurityGroupSpec `json:"spec"`
 }
 
 type AwsSecurityGroupSpec struct {
-	NamePrefix          string                      `json:"name_prefix"`
-	Description         string                      `json:"description"`
-	Ingress             AwsSecurityGroupSpecIngress `json:"ingress"`
-	Arn                 string                      `json:"arn"`
 	OwnerId             string                      `json:"owner_id"`
-	Name                string                      `json:"name"`
-	VpcId               string                      `json:"vpc_id"`
-	Egress              AwsSecurityGroupSpecEgress  `json:"egress"`
 	Tags                map[string]string           `json:"tags"`
 	RevokeRulesOnDelete bool                        `json:"revoke_rules_on_delete"`
-}
-
-type AwsSecurityGroupSpecIngress struct {
-	Protocol       string   `json:"protocol"`
-	CidrBlocks     []string `json:"cidr_blocks"`
-	Ipv6CidrBlocks []string `json:"ipv6_cidr_blocks"`
-	SecurityGroups string   `json:"security_groups"`
-	Self           bool     `json:"self"`
-	Description    string   `json:"description"`
-	FromPort       int      `json:"from_port"`
-	ToPort         int      `json:"to_port"`
+	Name                string                      `json:"name"`
+	NamePrefix          string                      `json:"name_prefix"`
+	Description         string                      `json:"description"`
+	Egress              AwsSecurityGroupSpecEgress  `json:"egress"`
+	Arn                 string                      `json:"arn"`
+	VpcId               string                      `json:"vpc_id"`
+	Ingress             AwsSecurityGroupSpecIngress `json:"ingress"`
 }
 
 type AwsSecurityGroupSpecEgress struct {
 	ToPort         int      `json:"to_port"`
-	SecurityGroups string   `json:"security_groups"`
+	Protocol       string   `json:"protocol"`
+	CidrBlocks     []string `json:"cidr_blocks"`
 	Self           bool     `json:"self"`
-	PrefixListIds  []string `json:"prefix_list_ids"`
 	Description    string   `json:"description"`
 	FromPort       int      `json:"from_port"`
+	Ipv6CidrBlocks []string `json:"ipv6_cidr_blocks"`
+	PrefixListIds  []string `json:"prefix_list_ids"`
+	SecurityGroups string   `json:"security_groups"`
+}
+
+type AwsSecurityGroupSpecIngress struct {
+	ToPort         int      `json:"to_port"`
 	Protocol       string   `json:"protocol"`
 	CidrBlocks     []string `json:"cidr_blocks"`
 	Ipv6CidrBlocks []string `json:"ipv6_cidr_blocks"`
+	SecurityGroups string   `json:"security_groups"`
+	Self           bool     `json:"self"`
+	Description    string   `json:"description"`
+	FromPort       int      `json:"from_port"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSecurityGroupList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSecurityGroup `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSecurityGroup `json:"items"`
 }

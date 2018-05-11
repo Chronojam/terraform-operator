@@ -5,9 +5,9 @@ kind: AwsApiGatewayGatewayResponse
 metadata:
   name: example-aws-api-gateway-gateway-response
 spec:
+  restapiid: ""
+  responsetype: ""
   statuscode: ""
   responsetemplates: {}
   responseparameters: {}
-  restapiid: ""
-  responsetype: ""
 

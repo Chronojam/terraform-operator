@@ -5,14 +5,14 @@ kind: AwsWafWebAcl
 metadata:
   name: example-aws-waf-web-acl
 spec:
-  name: ""
-  defaultaction:
-    type: ""
-  metricname: ""
   rules:
     action:
       type: ""
     priority: 0
     type: ""
     ruleid: ""
+  name: ""
+  defaultaction:
+    type: ""
+  metricname: ""
 

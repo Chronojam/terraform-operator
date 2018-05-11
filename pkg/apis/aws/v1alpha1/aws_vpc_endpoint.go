@@ -11,26 +11,26 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcEndpoint struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsVpcEndpointSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsVpcEndpointSpec `json:"spec"`
 }
 
 type AwsVpcEndpointSpec struct {
-	CidrBlocks          []string                     `json:"cidr_blocks"`
-	VpcEndpointType     string                       `json:"vpc_endpoint_type"`
-	State               string                       `json:"state"`
-	PrivateDnsEnabled   bool                         `json:"private_dns_enabled"`
-	VpcId               string                       `json:"vpc_id"`
-	Policy              string                       `json:"policy"`
-	PrefixListId        string                       `json:"prefix_list_id"`
-	NetworkInterfaceIds string                       `json:"network_interface_ids"`
-	DnsEntry            []AwsVpcEndpointSpecDnsEntry `json:"dns_entry"`
-	AutoAccept          bool                         `json:"auto_accept"`
-	SubnetIds           string                       `json:"subnet_ids"`
-	SecurityGroupIds    string                       `json:"security_group_ids"`
 	ServiceName         string                       `json:"service_name"`
+	SecurityGroupIds    string                       `json:"security_group_ids"`
+	PrivateDnsEnabled   bool                         `json:"private_dns_enabled"`
+	NetworkInterfaceIds string                       `json:"network_interface_ids"`
+	AutoAccept          bool                         `json:"auto_accept"`
+	VpcEndpointType     string                       `json:"vpc_endpoint_type"`
+	Policy              string                       `json:"policy"`
+	State               string                       `json:"state"`
+	PrefixListId        string                       `json:"prefix_list_id"`
+	CidrBlocks          []string                     `json:"cidr_blocks"`
+	VpcId               string                       `json:"vpc_id"`
 	RouteTableIds       string                       `json:"route_table_ids"`
+	SubnetIds           string                       `json:"subnet_ids"`
+	DnsEntry            []AwsVpcEndpointSpecDnsEntry `json:"dns_entry"`
 }
 
 type AwsVpcEndpointSpecDnsEntry struct {
@@ -41,7 +41,7 @@ type AwsVpcEndpointSpecDnsEntry struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsVpcEndpointList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsVpcEndpoint `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsVpcEndpoint `json:"items"`
 }

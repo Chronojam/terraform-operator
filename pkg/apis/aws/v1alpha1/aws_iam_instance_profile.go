@@ -11,12 +11,13 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIamInstanceProfile struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsIamInstanceProfileSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsIamInstanceProfileSpec `json:"spec"`
 }
 
 type AwsIamInstanceProfileSpec struct {
+	Name       string `json:"name"`
 	NamePrefix string `json:"name_prefix"`
 	Path       string `json:"path"`
 	Roles      string `json:"roles"`
@@ -24,13 +25,12 @@ type AwsIamInstanceProfileSpec struct {
 	Arn        string `json:"arn"`
 	CreateDate string `json:"create_date"`
 	UniqueId   string `json:"unique_id"`
-	Name       string `json:"name"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsIamInstanceProfileList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsIamInstanceProfile `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsIamInstanceProfile `json:"items"`
 }

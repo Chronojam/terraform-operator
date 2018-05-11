@@ -7,10 +7,10 @@ metadata:
 spec:
   name: ""
   sizeconstraints:
+    texttransformation: ""
     fieldtomatch:
-      data: ""
       type: ""
+      data: ""
     comparisonoperator: ""
     size: 0
-    texttransformation: ""
 

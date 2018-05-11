@@ -6,14 +6,14 @@ metadata:
   name: example-aws-lambda-event-source-mapping
 spec:
   functionname: ""
-  enabled: false
-  lastprocessingresult: ""
+  functionarn: ""
   statetransitionreason: ""
-  state: ""
   uuid: ""
+  lastprocessingresult: ""
+  state: ""
   eventsourcearn: ""
   startingposition: ""
   batchsize: 0
-  functionarn: ""
+  enabled: false
   lastmodified: ""
 

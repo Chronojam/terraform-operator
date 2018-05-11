@@ -11,36 +11,36 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSnsTopic struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSnsTopicSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSnsTopicSpec `json:"spec"`
 }
 
 type AwsSnsTopicSpec struct {
+	Policy                               string `json:"policy"`
+	ApplicationFailureFeedbackRoleArn    string `json:"application_failure_feedback_role_arn"`
 	HttpSuccessFeedbackRoleArn           string `json:"http_success_feedback_role_arn"`
-	Arn                                  string `json:"arn"`
+	LambdaSuccessFeedbackRoleArn         string `json:"lambda_success_feedback_role_arn"`
+	NamePrefix                           string `json:"name_prefix"`
 	DisplayName                          string `json:"display_name"`
 	DeliveryPolicy                       string `json:"delivery_policy"`
 	ApplicationSuccessFeedbackSampleRate int    `json:"application_success_feedback_sample_rate"`
-	SqsFailureFeedbackRoleArn            string `json:"sqs_failure_feedback_role_arn"`
-	NamePrefix                           string `json:"name_prefix"`
-	LambdaSuccessFeedbackRoleArn         string `json:"lambda_success_feedback_role_arn"`
-	SqsSuccessFeedbackSampleRate         int    `json:"sqs_success_feedback_sample_rate"`
 	LambdaSuccessFeedbackSampleRate      int    `json:"lambda_success_feedback_sample_rate"`
-	LambdaFailureFeedbackRoleArn         string `json:"lambda_failure_feedback_role_arn"`
+	SqsSuccessFeedbackSampleRate         int    `json:"sqs_success_feedback_sample_rate"`
 	Name                                 string `json:"name"`
-	ApplicationFailureFeedbackRoleArn    string `json:"application_failure_feedback_role_arn"`
-	HttpSuccessFeedbackSampleRate        int    `json:"http_success_feedback_sample_rate"`
-	SqsSuccessFeedbackRoleArn            string `json:"sqs_success_feedback_role_arn"`
-	Policy                               string `json:"policy"`
+	LambdaFailureFeedbackRoleArn         string `json:"lambda_failure_feedback_role_arn"`
+	SqsFailureFeedbackRoleArn            string `json:"sqs_failure_feedback_role_arn"`
+	Arn                                  string `json:"arn"`
 	ApplicationSuccessFeedbackRoleArn    string `json:"application_success_feedback_role_arn"`
+	HttpSuccessFeedbackSampleRate        int    `json:"http_success_feedback_sample_rate"`
 	HttpFailureFeedbackRoleArn           string `json:"http_failure_feedback_role_arn"`
+	SqsSuccessFeedbackRoleArn            string `json:"sqs_success_feedback_role_arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSnsTopicList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSnsTopic `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSnsTopic `json:"items"`
 }

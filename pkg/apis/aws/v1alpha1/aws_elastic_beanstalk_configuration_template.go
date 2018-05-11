@@ -11,31 +11,31 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElasticBeanstalkConfigurationTemplate struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsElasticBeanstalkConfigurationTemplateSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsElasticBeanstalkConfigurationTemplateSpec `json:"spec"`
 }
 
 type AwsElasticBeanstalkConfigurationTemplateSpec struct {
+	Setting           AwsElasticBeanstalkConfigurationTemplateSpecSetting `json:"setting"`
+	SolutionStackName string                                              `json:"solution_stack_name"`
 	Name              string                                              `json:"name"`
 	Application       string                                              `json:"application"`
 	Description       string                                              `json:"description"`
 	EnvironmentId     string                                              `json:"environment_id"`
-	Setting           AwsElasticBeanstalkConfigurationTemplateSpecSetting `json:"setting"`
-	SolutionStackName string                                              `json:"solution_stack_name"`
 }
 
 type AwsElasticBeanstalkConfigurationTemplateSpecSetting struct {
-	Namespace string `json:"namespace"`
 	Name      string `json:"name"`
 	Value     string `json:"value"`
 	Resource  string `json:"resource"`
+	Namespace string `json:"namespace"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsElasticBeanstalkConfigurationTemplateList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsElasticBeanstalkConfigurationTemplate `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsElasticBeanstalkConfigurationTemplate `json:"items"`
 }

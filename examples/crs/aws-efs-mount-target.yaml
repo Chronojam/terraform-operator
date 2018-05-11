@@ -5,10 +5,10 @@ kind: AwsEfsMountTarget
 metadata:
   name: example-aws-efs-mount-target
 spec:
+  subnetid: ""
   networkinterfaceid: ""
   dnsname: ""
   filesystemid: ""
   ipaddress: ""
   securitygroups: ""
-  subnetid: ""
 

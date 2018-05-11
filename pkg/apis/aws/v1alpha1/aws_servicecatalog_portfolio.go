@@ -11,24 +11,24 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsServicecatalogPortfolio struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsServicecatalogPortfolioSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsServicecatalogPortfolioSpec `json:"spec"`
 }
 
 type AwsServicecatalogPortfolioSpec struct {
+	Tags         map[string]string `json:"tags"`
 	Arn          string            `json:"arn"`
 	CreatedTime  string            `json:"created_time"`
 	Name         string            `json:"name"`
 	Description  string            `json:"description"`
 	ProviderName string            `json:"provider_name"`
-	Tags         map[string]string `json:"tags"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsServicecatalogPortfolioList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsServicecatalogPortfolio `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsServicecatalogPortfolio `json:"items"`
 }

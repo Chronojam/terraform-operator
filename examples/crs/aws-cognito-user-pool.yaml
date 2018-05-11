@@ -5,32 +5,32 @@ kind: AwsCognitoUserPool
 metadata:
   name: example-aws-cognito-user-pool
 spec:
-  autoverifiedattributes: ""
-  emailconfiguration: []
-  lastmodifieddate: ""
-  tags: {}
-  aliasattributes: ""
-  emailverificationmessage: ""
-  mfaconfiguration: ""
-  smsauthenticationmessage: ""
-  smsconfiguration: []
   usernameattributes: []
-  verificationmessagetemplate: []
   admincreateuserconfig: []
+  autoverifiedattributes: ""
+  creationdate: ""
   deviceconfiguration: []
   name: ""
+  passwordpolicy: []
   schema:
-    mutable: false
-    name: ""
     numberattributeconstraints: []
     required: false
     stringattributeconstraints: []
     attributedatatype: ""
     developeronlyattribute: false
-  arn: ""
+    mutable: false
+    name: ""
+  verificationmessagetemplate: []
   emailverificationsubject: ""
   lambdaconfig: []
-  passwordpolicy: []
+  mfaconfiguration: ""
+  smsauthenticationmessage: ""
+  smsconfiguration: []
   smsverificationmessage: ""
-  creationdate: ""
+  emailconfiguration: []
+  emailverificationmessage: ""
+  lastmodifieddate: ""
+  aliasattributes: ""
+  arn: ""
+  tags: {}
 

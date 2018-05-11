@@ -5,8 +5,8 @@ kind: AwsLbTargetGroupAttachment
 metadata:
   name: example-aws-lb-target-group-attachment
 spec:
+  availabilityzone: ""
   targetgrouparn: ""
   targetid: ""
   port: 0
-  availabilityzone: ""
 

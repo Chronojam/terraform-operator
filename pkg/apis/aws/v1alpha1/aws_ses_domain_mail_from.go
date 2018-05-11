@@ -11,21 +11,21 @@ import (
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSesDomainMailFrom struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Spec               AwsSesDomainMailFromSpec `json"spec"`
+	meta_v1.TypeMeta   `json:",inline"`
+	meta_v1.ObjectMeta `json:"metadata,omitempty"`
+	Spec               AwsSesDomainMailFromSpec `json:"spec"`
 }
 
 type AwsSesDomainMailFromSpec struct {
+	BehaviorOnMxFailure string `json:"behavior_on_mx_failure"`
 	Domain              string `json:"domain"`
 	MailFromDomain      string `json:"mail_from_domain"`
-	BehaviorOnMxFailure string `json:"behavior_on_mx_failure"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type AwsSesDomainMailFromList struct {
-	meta_v1.TypeMeta   `json",inline"`
-	meta_v1.ObjectMeta `json"metadata,omitempty"`
-	Items              []AwsSesDomainMailFrom `json"items"`
+	meta_v1.TypeMeta `json:",inline"`
+	meta_v1.ListMeta `json:"metadata,omitempty"`
+	Items            []AwsSesDomainMailFrom `json:"items"`
 }
