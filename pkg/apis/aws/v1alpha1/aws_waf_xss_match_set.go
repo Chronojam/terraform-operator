@@ -22,8 +22,8 @@ type AwsWafXssMatchSetSpec struct {
 }
 
 type AwsWafXssMatchSetSpecXssMatchTuples struct {
-	TextTransformation string                                          `json:"text_transformation"`
 	FieldToMatch       AwsWafXssMatchSetSpecXssMatchTuplesFieldToMatch `json:"field_to_match"`
+	TextTransformation string                                          `json:"text_transformation"`
 }
 
 type AwsWafXssMatchSetSpecXssMatchTuplesFieldToMatch struct {

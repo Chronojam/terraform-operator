@@ -17,7 +17,6 @@ type AwsApiGatewayRestApi struct {
 }
 
 type AwsApiGatewayRestApiSpec struct {
-	CreatedDate            string   `json:"created_date"`
 	Name                   string   `json:"name"`
 	Description            string   `json:"description"`
 	Policy                 string   `json:"policy"`
@@ -25,6 +24,7 @@ type AwsApiGatewayRestApiSpec struct {
 	Body                   string   `json:"body"`
 	MinimumCompressionSize int      `json:"minimum_compression_size"`
 	RootResourceId         string   `json:"root_resource_id"`
+	CreatedDate            string   `json:"created_date"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,15 +17,15 @@ type AwsRoute53Zone struct {
 }
 
 type AwsRoute53ZoneSpec struct {
+	Name            string            `json:"name"`
+	VpcId           string            `json:"vpc_id"`
+	DelegationSetId string            `json:"delegation_set_id"`
+	ForceDestroy    bool              `json:"force_destroy"`
+	Comment         string            `json:"comment"`
 	VpcRegion       string            `json:"vpc_region"`
 	ZoneId          string            `json:"zone_id"`
 	NameServers     []string          `json:"name_servers"`
-	Name            string            `json:"name"`
-	Comment         string            `json:"comment"`
-	VpcId           string            `json:"vpc_id"`
-	DelegationSetId string            `json:"delegation_set_id"`
 	Tags            map[string]string `json:"tags"`
-	ForceDestroy    bool              `json:"force_destroy"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

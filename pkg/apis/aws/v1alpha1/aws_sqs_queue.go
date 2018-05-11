@@ -17,21 +17,21 @@ type AwsSqsQueue struct {
 }
 
 type AwsSqsQueueSpec struct {
-	ReceiveWaitTimeSeconds       int               `json:"receive_wait_time_seconds"`
-	FifoQueue                    bool              `json:"fifo_queue"`
-	RedrivePolicy                string            `json:"redrive_policy"`
-	ContentBasedDeduplication    bool              `json:"content_based_deduplication"`
-	DelaySeconds                 int               `json:"delay_seconds"`
-	VisibilityTimeoutSeconds     int               `json:"visibility_timeout_seconds"`
-	KmsMasterKeyId               string            `json:"kms_master_key_id"`
-	KmsDataKeyReusePeriodSeconds int               `json:"kms_data_key_reuse_period_seconds"`
-	Policy                       string            `json:"policy"`
-	Arn                          string            `json:"arn"`
-	Tags                         map[string]string `json:"tags"`
-	Name                         string            `json:"name"`
 	NamePrefix                   string            `json:"name_prefix"`
-	MaxMessageSize               int               `json:"max_message_size"`
 	MessageRetentionSeconds      int               `json:"message_retention_seconds"`
+	VisibilityTimeoutSeconds     int               `json:"visibility_timeout_seconds"`
+	Name                         string            `json:"name"`
+	Arn                          string            `json:"arn"`
+	KmsDataKeyReusePeriodSeconds int               `json:"kms_data_key_reuse_period_seconds"`
+	DelaySeconds                 int               `json:"delay_seconds"`
+	RedrivePolicy                string            `json:"redrive_policy"`
+	KmsMasterKeyId               string            `json:"kms_master_key_id"`
+	ContentBasedDeduplication    bool              `json:"content_based_deduplication"`
+	Tags                         map[string]string `json:"tags"`
+	MaxMessageSize               int               `json:"max_message_size"`
+	ReceiveWaitTimeSeconds       int               `json:"receive_wait_time_seconds"`
+	Policy                       string            `json:"policy"`
+	FifoQueue                    bool              `json:"fifo_queue"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

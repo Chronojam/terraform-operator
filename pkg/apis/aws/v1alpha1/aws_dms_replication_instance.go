@@ -17,23 +17,23 @@ type AwsDmsReplicationInstance struct {
 }
 
 type AwsDmsReplicationInstanceSpec struct {
+	VpcSecurityGroupIds           string            `json:"vpc_security_group_ids"`
+	AllocatedStorage              int               `json:"allocated_storage"`
+	ReplicationSubnetGroupId      string            `json:"replication_subnet_group_id"`
+	Tags                          map[string]string `json:"tags"`
+	ReplicationInstancePrivateIps []string          `json:"replication_instance_private_ips"`
+	ReplicationInstancePublicIps  []string          `json:"replication_instance_public_ips"`
+	ApplyImmediately              bool              `json:"apply_immediately"`
+	KmsKeyArn                     string            `json:"kms_key_arn"`
+	PubliclyAccessible            bool              `json:"publicly_accessible"`
+	ReplicationInstanceId         string            `json:"replication_instance_id"`
+	EngineVersion                 string            `json:"engine_version"`
+	MultiAz                       bool              `json:"multi_az"`
+	ReplicationInstanceArn        string            `json:"replication_instance_arn"`
+	ReplicationInstanceClass      string            `json:"replication_instance_class"`
 	AutoMinorVersionUpgrade       bool              `json:"auto_minor_version_upgrade"`
 	AvailabilityZone              string            `json:"availability_zone"`
-	MultiAz                       bool              `json:"multi_az"`
 	PreferredMaintenanceWindow    string            `json:"preferred_maintenance_window"`
-	Tags                          map[string]string `json:"tags"`
-	KmsKeyArn                     string            `json:"kms_key_arn"`
-	ReplicationInstanceClass      string            `json:"replication_instance_class"`
-	ReplicationInstancePublicIps  []string          `json:"replication_instance_public_ips"`
-	AllocatedStorage              int               `json:"allocated_storage"`
-	ReplicationInstancePrivateIps []string          `json:"replication_instance_private_ips"`
-	ReplicationSubnetGroupId      string            `json:"replication_subnet_group_id"`
-	VpcSecurityGroupIds           string            `json:"vpc_security_group_ids"`
-	ApplyImmediately              bool              `json:"apply_immediately"`
-	EngineVersion                 string            `json:"engine_version"`
-	PubliclyAccessible            bool              `json:"publicly_accessible"`
-	ReplicationInstanceArn        string            `json:"replication_instance_arn"`
-	ReplicationInstanceId         string            `json:"replication_instance_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

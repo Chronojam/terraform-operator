@@ -82,8 +82,8 @@ func main() {
 	}
 
 	func main() {
-	`, "ApiVersion	string	`json\"apiVersion\"`",
-		"Kind     string `json\"kind\"`",
+	`, "ApiVersion	string	`json:\"apiVersion\"`",
+		"Kind     string `json:\"kind\"`",
 		"Metadata	map[string]interface{} `json:\"metadata\"`",
 		"Spec interface{} `json:\"spec\"`"))
 

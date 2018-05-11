@@ -17,13 +17,13 @@ type AwsIamServerCertificate struct {
 }
 
 type AwsIamServerCertificateSpec struct {
-	NamePrefix       string `json:"name_prefix"`
-	Arn              string `json:"arn"`
 	CertificateBody  string `json:"certificate_body"`
 	CertificateChain string `json:"certificate_chain"`
 	Path             string `json:"path"`
 	PrivateKey       string `json:"private_key"`
 	Name             string `json:"name"`
+	NamePrefix       string `json:"name_prefix"`
+	Arn              string `json:"arn"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

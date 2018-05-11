@@ -17,42 +17,42 @@ type AwsVpnConnection struct {
 }
 
 type AwsVpnConnectionSpec struct {
+	VpnGatewayId                 string                           `json:"vpn_gateway_id"`
 	Tunnel1PresharedKey          string                           `json:"tunnel1_preshared_key"`
-	Tunnel1Address               string                           `json:"tunnel1_address"`
+	Tags                         map[string]string                `json:"tags"`
 	Tunnel1CgwInsideAddress      string                           `json:"tunnel1_cgw_inside_address"`
+	Tunnel2VgwInsideAddress      string                           `json:"tunnel2_vgw_inside_address"`
+	CustomerGatewayConfiguration string                           `json:"customer_gateway_configuration"`
+	Tunnel1Address               string                           `json:"tunnel1_address"`
 	Tunnel1VgwInsideAddress      string                           `json:"tunnel1_vgw_inside_address"`
-	Tunnel1BgpAsn                string                           `json:"tunnel1_bgp_asn"`
-	Tunnel2Address               string                           `json:"tunnel2_address"`
+	Tunnel2CgwInsideAddress      string                           `json:"tunnel2_cgw_inside_address"`
+	CustomerGatewayId            string                           `json:"customer_gateway_id"`
 	Type                         string                           `json:"type"`
 	StaticRoutesOnly             bool                             `json:"static_routes_only"`
-	Tunnel2InsideCidr            string                           `json:"tunnel2_inside_cidr"`
-	VgwTelemetry                 AwsVpnConnectionSpecVgwTelemetry `json:"vgw_telemetry"`
 	Tunnel1InsideCidr            string                           `json:"tunnel1_inside_cidr"`
+	Tunnel1BgpAsn                string                           `json:"tunnel1_bgp_asn"`
 	Tunnel1BgpHoldtime           int                              `json:"tunnel1_bgp_holdtime"`
-	Tunnel2CgwInsideAddress      string                           `json:"tunnel2_cgw_inside_address"`
-	Tunnel2BgpHoldtime           int                              `json:"tunnel2_bgp_holdtime"`
-	VpnGatewayId                 string                           `json:"vpn_gateway_id"`
-	CustomerGatewayId            string                           `json:"customer_gateway_id"`
-	Tunnel2PresharedKey          string                           `json:"tunnel2_preshared_key"`
-	Tags                         map[string]string                `json:"tags"`
-	CustomerGatewayConfiguration string                           `json:"customer_gateway_configuration"`
-	Tunnel2VgwInsideAddress      string                           `json:"tunnel2_vgw_inside_address"`
+	Tunnel2Address               string                           `json:"tunnel2_address"`
 	Tunnel2BgpAsn                string                           `json:"tunnel2_bgp_asn"`
 	Routes                       AwsVpnConnectionSpecRoutes       `json:"routes"`
-}
-
-type AwsVpnConnectionSpecVgwTelemetry struct {
-	StatusMessage      string `json:"status_message"`
-	AcceptedRouteCount int    `json:"accepted_route_count"`
-	LastStatusChange   string `json:"last_status_change"`
-	OutsideIpAddress   string `json:"outside_ip_address"`
-	Status             string `json:"status"`
+	VgwTelemetry                 AwsVpnConnectionSpecVgwTelemetry `json:"vgw_telemetry"`
+	Tunnel2InsideCidr            string                           `json:"tunnel2_inside_cidr"`
+	Tunnel2PresharedKey          string                           `json:"tunnel2_preshared_key"`
+	Tunnel2BgpHoldtime           int                              `json:"tunnel2_bgp_holdtime"`
 }
 
 type AwsVpnConnectionSpecRoutes struct {
-	DestinationCidrBlock string `json:"destination_cidr_block"`
 	Source               string `json:"source"`
 	State                string `json:"state"`
+	DestinationCidrBlock string `json:"destination_cidr_block"`
+}
+
+type AwsVpnConnectionSpecVgwTelemetry struct {
+	OutsideIpAddress   string `json:"outside_ip_address"`
+	Status             string `json:"status"`
+	StatusMessage      string `json:"status_message"`
+	AcceptedRouteCount int    `json:"accepted_route_count"`
+	LastStatusChange   string `json:"last_status_change"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

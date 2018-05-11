@@ -29,8 +29,8 @@ type AwsWafSizeConstraintSetSpecSizeConstraints struct {
 }
 
 type AwsWafSizeConstraintSetSpecSizeConstraintsFieldToMatch struct {
-	Type string `json:"type"`
 	Data string `json:"data"`
+	Type string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

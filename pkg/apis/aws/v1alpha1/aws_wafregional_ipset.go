@@ -17,8 +17,8 @@ type AwsWafregionalIpset struct {
 }
 
 type AwsWafregionalIpsetSpec struct {
-	IpSetDescriptor AwsWafregionalIpsetSpecIpSetDescriptor `json:"ip_set_descriptor"`
 	Name            string                                 `json:"name"`
+	IpSetDescriptor AwsWafregionalIpsetSpecIpSetDescriptor `json:"ip_set_descriptor"`
 }
 
 type AwsWafregionalIpsetSpecIpSetDescriptor struct {

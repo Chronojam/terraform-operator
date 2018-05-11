@@ -17,10 +17,10 @@ type AwsIamSamlProvider struct {
 }
 
 type AwsIamSamlProviderSpec struct {
-	Name                 string `json:"name"`
-	SamlMetadataDocument string `json:"saml_metadata_document"`
 	Arn                  string `json:"arn"`
 	ValidUntil           string `json:"valid_until"`
+	Name                 string `json:"name"`
+	SamlMetadataDocument string `json:"saml_metadata_document"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

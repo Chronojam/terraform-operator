@@ -17,16 +17,16 @@ type AwsIamRole struct {
 }
 
 type AwsIamRoleSpec struct {
-	Arn                 string `json:"arn"`
-	UniqueId            string `json:"unique_id"`
-	Path                string `json:"path"`
-	Description         string `json:"description"`
-	AssumeRolePolicy    string `json:"assume_role_policy"`
+	CreateDate          string `json:"create_date"`
 	MaxSessionDuration  int    `json:"max_session_duration"`
 	Name                string `json:"name"`
 	NamePrefix          string `json:"name_prefix"`
+	Path                string `json:"path"`
+	Description         string `json:"description"`
+	AssumeRolePolicy    string `json:"assume_role_policy"`
 	ForceDetachPolicies bool   `json:"force_detach_policies"`
-	CreateDate          string `json:"create_date"`
+	Arn                 string `json:"arn"`
+	UniqueId            string `json:"unique_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

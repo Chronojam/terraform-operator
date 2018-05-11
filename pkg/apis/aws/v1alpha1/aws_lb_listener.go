@@ -17,18 +17,18 @@ type AwsLbListener struct {
 }
 
 type AwsLbListenerSpec struct {
+	Protocol        string                           `json:"protocol"`
+	SslPolicy       string                           `json:"ssl_policy"`
+	CertificateArn  string                           `json:"certificate_arn"`
 	DefaultAction   []AwsLbListenerSpecDefaultAction `json:"default_action"`
 	Arn             string                           `json:"arn"`
 	LoadBalancerArn string                           `json:"load_balancer_arn"`
 	Port            int                              `json:"port"`
-	Protocol        string                           `json:"protocol"`
-	SslPolicy       string                           `json:"ssl_policy"`
-	CertificateArn  string                           `json:"certificate_arn"`
 }
 
 type AwsLbListenerSpecDefaultAction struct {
-	Type           string `json:"type"`
 	TargetGroupArn string `json:"target_group_arn"`
+	Type           string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

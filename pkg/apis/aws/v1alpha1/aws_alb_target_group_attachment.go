@@ -17,10 +17,10 @@ type AwsAlbTargetGroupAttachment struct {
 }
 
 type AwsAlbTargetGroupAttachmentSpec struct {
-	TargetId         string `json:"target_id"`
 	Port             int    `json:"port"`
 	AvailabilityZone string `json:"availability_zone"`
 	TargetGroupArn   string `json:"target_group_arn"`
+	TargetId         string `json:"target_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

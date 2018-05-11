@@ -17,14 +17,14 @@ type AwsSsmPatchBaseline struct {
 }
 
 type AwsSsmPatchBaselineSpec struct {
-	ApprovedPatchesComplianceLevel string                                `json:"approved_patches_compliance_level"`
-	Name                           string                                `json:"name"`
 	Description                    string                                `json:"description"`
 	GlobalFilter                   []AwsSsmPatchBaselineSpecGlobalFilter `json:"global_filter"`
 	ApprovalRule                   []AwsSsmPatchBaselineSpecApprovalRule `json:"approval_rule"`
 	ApprovedPatches                string                                `json:"approved_patches"`
 	RejectedPatches                string                                `json:"rejected_patches"`
 	OperatingSystem                string                                `json:"operating_system"`
+	ApprovedPatchesComplianceLevel string                                `json:"approved_patches_compliance_level"`
+	Name                           string                                `json:"name"`
 }
 
 type AwsSsmPatchBaselineSpecGlobalFilter struct {

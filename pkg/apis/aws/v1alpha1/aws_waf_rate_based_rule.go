@@ -17,17 +17,17 @@ type AwsWafRateBasedRule struct {
 }
 
 type AwsWafRateBasedRuleSpec struct {
+	Predicates AwsWafRateBasedRuleSpecPredicates `json:"predicates"`
+	RateKey    string                            `json:"rate_key"`
 	RateLimit  int                               `json:"rate_limit"`
 	Name       string                            `json:"name"`
 	MetricName string                            `json:"metric_name"`
-	Predicates AwsWafRateBasedRuleSpecPredicates `json:"predicates"`
-	RateKey    string                            `json:"rate_key"`
 }
 
 type AwsWafRateBasedRuleSpecPredicates struct {
+	Negated bool   `json:"negated"`
 	DataId  string `json:"data_id"`
 	Type    string `json:"type"`
-	Negated bool   `json:"negated"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

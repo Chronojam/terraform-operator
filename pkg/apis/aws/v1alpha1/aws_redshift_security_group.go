@@ -23,9 +23,9 @@ type AwsRedshiftSecurityGroupSpec struct {
 }
 
 type AwsRedshiftSecurityGroupSpecIngress struct {
-	SecurityGroupOwnerId string `json:"security_group_owner_id"`
 	Cidr                 string `json:"cidr"`
 	SecurityGroupName    string `json:"security_group_name"`
+	SecurityGroupOwnerId string `json:"security_group_owner_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

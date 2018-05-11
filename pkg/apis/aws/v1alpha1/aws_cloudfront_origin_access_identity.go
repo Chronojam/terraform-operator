@@ -17,12 +17,12 @@ type AwsCloudfrontOriginAccessIdentity struct {
 }
 
 type AwsCloudfrontOriginAccessIdentitySpec struct {
+	IamArn                       string `json:"iam_arn"`
+	S3CanonicalUserId            string `json:"s3_canonical_user_id"`
 	Comment                      string `json:"comment"`
 	CallerReference              string `json:"caller_reference"`
 	CloudfrontAccessIdentityPath string `json:"cloudfront_access_identity_path"`
 	Etag                         string `json:"etag"`
-	IamArn                       string `json:"iam_arn"`
-	S3CanonicalUserId            string `json:"s3_canonical_user_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

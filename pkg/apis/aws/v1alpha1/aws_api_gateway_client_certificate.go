@@ -17,10 +17,10 @@ type AwsApiGatewayClientCertificate struct {
 }
 
 type AwsApiGatewayClientCertificateSpec struct {
+	PemEncodedCertificate string `json:"pem_encoded_certificate"`
 	Description           string `json:"description"`
 	CreatedDate           string `json:"created_date"`
 	ExpirationDate        string `json:"expiration_date"`
-	PemEncodedCertificate string `json:"pem_encoded_certificate"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

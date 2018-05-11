@@ -17,10 +17,10 @@ type AwsRouteTable struct {
 }
 
 type AwsRouteTableSpec struct {
-	PropagatingVgws string                 `json:"propagating_vgws"`
-	Route           AwsRouteTableSpecRoute `json:"route"`
 	VpcId           string                 `json:"vpc_id"`
 	Tags            map[string]string      `json:"tags"`
+	PropagatingVgws string                 `json:"propagating_vgws"`
+	Route           AwsRouteTableSpecRoute `json:"route"`
 }
 
 type AwsRouteTableSpecRoute struct {

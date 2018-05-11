@@ -17,21 +17,27 @@ type AwsEcsService struct {
 }
 
 type AwsEcsServiceSpec struct {
-	DesiredCount                    int                                         `json:"desired_count"`
-	HealthCheckGracePeriodSeconds   int                                         `json:"health_check_grace_period_seconds"`
-	IamRole                         string                                      `json:"iam_role"`
+	DeploymentMaximumPercent        int                                         `json:"deployment_maximum_percent"`
 	DeploymentMinimumHealthyPercent int                                         `json:"deployment_minimum_healthy_percent"`
+	IamRole                         string                                      `json:"iam_role"`
+	NetworkConfiguration            []AwsEcsServiceSpecNetworkConfiguration     `json:"network_configuration"`
 	PlacementStrategy               AwsEcsServiceSpecPlacementStrategy          `json:"placement_strategy"`
 	PlacementConstraints            AwsEcsServiceSpecPlacementConstraints       `json:"placement_constraints"`
-	Name                            string                                      `json:"name"`
-	LaunchType                      string                                      `json:"launch_type"`
-	DeploymentMaximumPercent        int                                         `json:"deployment_maximum_percent"`
-	LoadBalancer                    AwsEcsServiceSpecLoadBalancer               `json:"load_balancer"`
-	OrderedPlacementStrategy        []AwsEcsServiceSpecOrderedPlacementStrategy `json:"ordered_placement_strategy"`
 	Cluster                         string                                      `json:"cluster"`
 	TaskDefinition                  string                                      `json:"task_definition"`
-	NetworkConfiguration            []AwsEcsServiceSpecNetworkConfiguration     `json:"network_configuration"`
+	LaunchType                      string                                      `json:"launch_type"`
+	Name                            string                                      `json:"name"`
+	HealthCheckGracePeriodSeconds   int                                         `json:"health_check_grace_period_seconds"`
+	LoadBalancer                    AwsEcsServiceSpecLoadBalancer               `json:"load_balancer"`
+	OrderedPlacementStrategy        []AwsEcsServiceSpecOrderedPlacementStrategy `json:"ordered_placement_strategy"`
 	ServiceRegistries               AwsEcsServiceSpecServiceRegistries          `json:"service_registries"`
+	DesiredCount                    int                                         `json:"desired_count"`
+}
+
+type AwsEcsServiceSpecNetworkConfiguration struct {
+	SecurityGroups string `json:"security_groups"`
+	Subnets        string `json:"subnets"`
+	AssignPublicIp bool   `json:"assign_public_ip"`
 }
 
 type AwsEcsServiceSpecPlacementStrategy struct {
@@ -45,21 +51,15 @@ type AwsEcsServiceSpecPlacementConstraints struct {
 }
 
 type AwsEcsServiceSpecLoadBalancer struct {
-	ContainerPort  int    `json:"container_port"`
 	ElbName        string `json:"elb_name"`
 	TargetGroupArn string `json:"target_group_arn"`
 	ContainerName  string `json:"container_name"`
+	ContainerPort  int    `json:"container_port"`
 }
 
 type AwsEcsServiceSpecOrderedPlacementStrategy struct {
 	Type  string `json:"type"`
 	Field string `json:"field"`
-}
-
-type AwsEcsServiceSpecNetworkConfiguration struct {
-	SecurityGroups string `json:"security_groups"`
-	Subnets        string `json:"subnets"`
-	AssignPublicIp bool   `json:"assign_public_ip"`
 }
 
 type AwsEcsServiceSpecServiceRegistries struct {

@@ -17,8 +17,8 @@ type AwsDxConnectionAssociation struct {
 }
 
 type AwsDxConnectionAssociationSpec struct {
-	ConnectionId string `json:"connection_id"`
 	LagId        string `json:"lag_id"`
+	ConnectionId string `json:"connection_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

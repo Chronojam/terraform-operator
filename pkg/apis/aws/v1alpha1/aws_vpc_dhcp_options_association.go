@@ -17,8 +17,8 @@ type AwsVpcDhcpOptionsAssociation struct {
 }
 
 type AwsVpcDhcpOptionsAssociationSpec struct {
-	DhcpOptionsId string `json:"dhcp_options_id"`
 	VpcId         string `json:"vpc_id"`
+	DhcpOptionsId string `json:"dhcp_options_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

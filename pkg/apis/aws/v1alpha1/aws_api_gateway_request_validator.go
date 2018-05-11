@@ -17,10 +17,10 @@ type AwsApiGatewayRequestValidator struct {
 }
 
 type AwsApiGatewayRequestValidatorSpec struct {
-	ValidateRequestParameters bool   `json:"validate_request_parameters"`
-	RestApiId                 string `json:"rest_api_id"`
 	Name                      string `json:"name"`
 	ValidateRequestBody       bool   `json:"validate_request_body"`
+	ValidateRequestParameters bool   `json:"validate_request_parameters"`
+	RestApiId                 string `json:"rest_api_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

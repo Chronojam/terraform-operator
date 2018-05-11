@@ -17,24 +17,24 @@ type AwsRoute53HealthCheck struct {
 }
 
 type AwsRoute53HealthCheckSpec struct {
-	InvertHealthcheck            bool              `json:"invert_healthcheck"`
-	ReferenceName                string            `json:"reference_name"`
+	EnableSni                    bool              `json:"enable_sni"`
 	Regions                      string            `json:"regions"`
-	FailureThreshold             int               `json:"failure_threshold"`
-	Fqdn                         string            `json:"fqdn"`
-	MeasureLatency               bool              `json:"measure_latency"`
-	ChildHealthchecks            string            `json:"child_healthchecks"`
-	ChildHealthThreshold         int               `json:"child_health_threshold"`
-	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
-	InsufficientDataHealthStatus string            `json:"insufficient_data_health_status"`
 	ResourcePath                 string            `json:"resource_path"`
 	SearchString                 string            `json:"search_string"`
-	EnableSni                    bool              `json:"enable_sni"`
-	Tags                         map[string]string `json:"tags"`
-	RequestInterval              int               `json:"request_interval"`
 	CloudwatchAlarmName          string            `json:"cloudwatch_alarm_name"`
-	Port                         int               `json:"port"`
+	CloudwatchAlarmRegion        string            `json:"cloudwatch_alarm_region"`
+	InsufficientDataHealthStatus string            `json:"insufficient_data_health_status"`
+	Tags                         map[string]string `json:"tags"`
 	Type                         string            `json:"type"`
+	InvertHealthcheck            bool              `json:"invert_healthcheck"`
+	ChildHealthThreshold         int               `json:"child_health_threshold"`
+	ReferenceName                string            `json:"reference_name"`
+	RequestInterval              int               `json:"request_interval"`
+	MeasureLatency               bool              `json:"measure_latency"`
+	Fqdn                         string            `json:"fqdn"`
+	Port                         int               `json:"port"`
+	ChildHealthchecks            string            `json:"child_healthchecks"`
+	FailureThreshold             int               `json:"failure_threshold"`
 	IpAddress                    string            `json:"ip_address"`
 }
 

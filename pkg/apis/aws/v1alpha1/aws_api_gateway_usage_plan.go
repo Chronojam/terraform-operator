@@ -17,28 +17,28 @@ type AwsApiGatewayUsagePlan struct {
 }
 
 type AwsApiGatewayUsagePlanSpec struct {
-	QuotaSettings    AwsApiGatewayUsagePlanSpecQuotaSettings    `json:"quota_settings"`
-	ThrottleSettings AwsApiGatewayUsagePlanSpecThrottleSettings `json:"throttle_settings"`
 	ProductCode      string                                     `json:"product_code"`
 	Name             string                                     `json:"name"`
 	Description      string                                     `json:"description"`
 	ApiStages        []AwsApiGatewayUsagePlanSpecApiStages      `json:"api_stages"`
-}
-
-type AwsApiGatewayUsagePlanSpecQuotaSettings struct {
-	Limit  int    `json:"limit"`
-	Offset int    `json:"offset"`
-	Period string `json:"period"`
-}
-
-type AwsApiGatewayUsagePlanSpecThrottleSettings struct {
-	BurstLimit int     `json:"burst_limit"`
-	RateLimit  float64 `json:"rate_limit"`
+	QuotaSettings    AwsApiGatewayUsagePlanSpecQuotaSettings    `json:"quota_settings"`
+	ThrottleSettings AwsApiGatewayUsagePlanSpecThrottleSettings `json:"throttle_settings"`
 }
 
 type AwsApiGatewayUsagePlanSpecApiStages struct {
 	ApiId string `json:"api_id"`
 	Stage string `json:"stage"`
+}
+
+type AwsApiGatewayUsagePlanSpecQuotaSettings struct {
+	Period string `json:"period"`
+	Limit  int    `json:"limit"`
+	Offset int    `json:"offset"`
+}
+
+type AwsApiGatewayUsagePlanSpecThrottleSettings struct {
+	BurstLimit int     `json:"burst_limit"`
+	RateLimit  float64 `json:"rate_limit"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

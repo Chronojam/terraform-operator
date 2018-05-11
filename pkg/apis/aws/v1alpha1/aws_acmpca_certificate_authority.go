@@ -17,19 +17,19 @@ type AwsAcmpcaCertificateAuthority struct {
 }
 
 type AwsAcmpcaCertificateAuthoritySpec struct {
+	NotBefore                         string                                                               `json:"not_before"`
 	RevocationConfiguration           []AwsAcmpcaCertificateAuthoritySpecRevocationConfiguration           `json:"revocation_configuration"`
 	Arn                               string                                                               `json:"arn"`
+	CertificateSigningRequest         string                                                               `json:"certificate_signing_request"`
+	Enabled                           bool                                                                 `json:"enabled"`
+	NotAfter                          string                                                               `json:"not_after"`
+	Serial                            string                                                               `json:"serial"`
+	Status                            string                                                               `json:"status"`
+	Tags                              map[string]string                                                    `json:"tags"`
+	Type                              string                                                               `json:"type"`
 	Certificate                       string                                                               `json:"certificate"`
 	CertificateAuthorityConfiguration []AwsAcmpcaCertificateAuthoritySpecCertificateAuthorityConfiguration `json:"certificate_authority_configuration"`
 	CertificateChain                  string                                                               `json:"certificate_chain"`
-	CertificateSigningRequest         string                                                               `json:"certificate_signing_request"`
-	NotAfter                          string                                                               `json:"not_after"`
-	NotBefore                         string                                                               `json:"not_before"`
-	Status                            string                                                               `json:"status"`
-	Tags                              map[string]string                                                    `json:"tags"`
-	Enabled                           bool                                                                 `json:"enabled"`
-	Serial                            string                                                               `json:"serial"`
-	Type                              string                                                               `json:"type"`
 }
 
 type AwsAcmpcaCertificateAuthoritySpecRevocationConfiguration struct {
@@ -37,10 +37,10 @@ type AwsAcmpcaCertificateAuthoritySpecRevocationConfiguration struct {
 }
 
 type AwsAcmpcaCertificateAuthoritySpecRevocationConfigurationCrlConfiguration struct {
-	CustomCname      string `json:"custom_cname"`
-	Enabled          bool   `json:"enabled"`
 	ExpirationInDays int    `json:"expiration_in_days"`
 	S3BucketName     string `json:"s3_bucket_name"`
+	CustomCname      string `json:"custom_cname"`
+	Enabled          bool   `json:"enabled"`
 }
 
 type AwsAcmpcaCertificateAuthoritySpecCertificateAuthorityConfiguration struct {
@@ -50,19 +50,19 @@ type AwsAcmpcaCertificateAuthoritySpecCertificateAuthorityConfiguration struct {
 }
 
 type AwsAcmpcaCertificateAuthoritySpecCertificateAuthorityConfigurationSubject struct {
-	Surname                    string `json:"surname"`
-	CommonName                 string `json:"common_name"`
-	Organization               string `json:"organization"`
-	OrganizationalUnit         string `json:"organizational_unit"`
-	State                      string `json:"state"`
-	Initials                   string `json:"initials"`
-	Locality                   string `json:"locality"`
-	Pseudonym                  string `json:"pseudonym"`
-	Title                      string `json:"title"`
-	Country                    string `json:"country"`
 	DistinguishedNameQualifier string `json:"distinguished_name_qualifier"`
+	Locality                   string `json:"locality"`
+	Organization               string `json:"organization"`
+	Pseudonym                  string `json:"pseudonym"`
+	Surname                    string `json:"surname"`
+	Title                      string `json:"title"`
+	CommonName                 string `json:"common_name"`
+	Country                    string `json:"country"`
 	GenerationQualifier        string `json:"generation_qualifier"`
 	GivenName                  string `json:"given_name"`
+	Initials                   string `json:"initials"`
+	OrganizationalUnit         string `json:"organizational_unit"`
+	State                      string `json:"state"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

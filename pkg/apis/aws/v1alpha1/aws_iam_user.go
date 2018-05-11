@@ -17,11 +17,11 @@ type AwsIamUser struct {
 }
 
 type AwsIamUserSpec struct {
-	Path         string `json:"path"`
-	ForceDestroy bool   `json:"force_destroy"`
 	Arn          string `json:"arn"`
 	UniqueId     string `json:"unique_id"`
 	Name         string `json:"name"`
+	Path         string `json:"path"`
+	ForceDestroy bool   `json:"force_destroy"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

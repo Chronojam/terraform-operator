@@ -17,32 +17,32 @@ type AwsOpsworksHaproxyLayer struct {
 }
 
 type AwsOpsworksHaproxyLayerSpec struct {
-	CustomShutdownRecipes    []string                             `json:"custom_shutdown_recipes"`
-	CustomJson               string                               `json:"custom_json"`
-	StackId                  string                               `json:"stack_id"`
-	StatsEnabled             bool                                 `json:"stats_enabled"`
 	HealthcheckUrl           string                               `json:"healthcheck_url"`
+	HealthcheckMethod        string                               `json:"healthcheck_method"`
+	StatsUser                string                               `json:"stats_user"`
+	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
+	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
+	CustomJson               string                               `json:"custom_json"`
 	InstanceShutdownTimeout  int                                  `json:"instance_shutdown_timeout"`
-	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
-	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
+	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
+	CustomConfigureRecipes   []string                             `json:"custom_configure_recipes"`
+	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
+	CustomShutdownRecipes    []string                             `json:"custom_shutdown_recipes"`
+	CustomSecurityGroupIds   string                               `json:"custom_security_group_ids"`
+	Name                     string                               `json:"name"`
+	StatsPassword            string                               `json:"stats_password"`
+	StatsEnabled             bool                                 `json:"stats_enabled"`
+	StatsUrl                 string                               `json:"stats_url"`
 	ElasticLoadBalancer      string                               `json:"elastic_load_balancer"`
 	CustomSetupRecipes       []string                             `json:"custom_setup_recipes"`
-	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
-	CustomSecurityGroupIds   string                               `json:"custom_security_group_ids"`
 	InstallUpdatesOnBoot     bool                                 `json:"install_updates_on_boot"`
-	EbsVolume                AwsOpsworksHaproxyLayerSpecEbsVolume `json:"ebs_volume"`
-	StatsUrl                 string                               `json:"stats_url"`
-	StatsPassword            string                               `json:"stats_password"`
-	AutoAssignPublicIps      bool                                 `json:"auto_assign_public_ips"`
-	CustomDeployRecipes      []string                             `json:"custom_deploy_recipes"`
-	DrainElbOnShutdown       bool                                 `json:"drain_elb_on_shutdown"`
-	HealthcheckMethod        string                               `json:"healthcheck_method"`
-	CustomInstanceProfileArn string                               `json:"custom_instance_profile_arn"`
-	CustomConfigureRecipes   []string                             `json:"custom_configure_recipes"`
-	AutoHealing              bool                                 `json:"auto_healing"`
 	SystemPackages           string                               `json:"system_packages"`
-	Name                     string                               `json:"name"`
-	StatsUser                string                               `json:"stats_user"`
+	UseEbsOptimizedInstances bool                                 `json:"use_ebs_optimized_instances"`
+	AutoAssignElasticIps     bool                                 `json:"auto_assign_elastic_ips"`
+	CustomUndeployRecipes    []string                             `json:"custom_undeploy_recipes"`
+	AutoHealing              bool                                 `json:"auto_healing"`
+	StackId                  string                               `json:"stack_id"`
+	EbsVolume                AwsOpsworksHaproxyLayerSpecEbsVolume `json:"ebs_volume"`
 }
 
 type AwsOpsworksHaproxyLayerSpecEbsVolume struct {

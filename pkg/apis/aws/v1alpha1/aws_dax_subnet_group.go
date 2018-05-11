@@ -17,10 +17,10 @@ type AwsDaxSubnetGroup struct {
 }
 
 type AwsDaxSubnetGroupSpec struct {
-	SubnetIds   string `json:"subnet_ids"`
-	VpcId       string `json:"vpc_id"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
+	SubnetIds   string `json:"subnet_ids"`
+	VpcId       string `json:"vpc_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

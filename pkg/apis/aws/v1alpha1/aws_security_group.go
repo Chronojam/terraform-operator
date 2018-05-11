@@ -18,38 +18,38 @@ type AwsSecurityGroup struct {
 
 type AwsSecurityGroupSpec struct {
 	Description         string                      `json:"description"`
-	VpcId               string                      `json:"vpc_id"`
-	OwnerId             string                      `json:"owner_id"`
-	Tags                map[string]string           `json:"tags"`
-	Name                string                      `json:"name"`
 	Ingress             AwsSecurityGroupSpecIngress `json:"ingress"`
-	Egress              AwsSecurityGroupSpecEgress  `json:"egress"`
 	Arn                 string                      `json:"arn"`
 	RevokeRulesOnDelete bool                        `json:"revoke_rules_on_delete"`
+	Name                string                      `json:"name"`
 	NamePrefix          string                      `json:"name_prefix"`
+	VpcId               string                      `json:"vpc_id"`
+	Egress              AwsSecurityGroupSpecEgress  `json:"egress"`
+	OwnerId             string                      `json:"owner_id"`
+	Tags                map[string]string           `json:"tags"`
 }
 
 type AwsSecurityGroupSpecIngress struct {
-	CidrBlocks     []string `json:"cidr_blocks"`
-	Ipv6CidrBlocks []string `json:"ipv6_cidr_blocks"`
 	SecurityGroups string   `json:"security_groups"`
 	Self           bool     `json:"self"`
 	Description    string   `json:"description"`
 	FromPort       int      `json:"from_port"`
 	ToPort         int      `json:"to_port"`
 	Protocol       string   `json:"protocol"`
+	CidrBlocks     []string `json:"cidr_blocks"`
+	Ipv6CidrBlocks []string `json:"ipv6_cidr_blocks"`
 }
 
 type AwsSecurityGroupSpecEgress struct {
-	FromPort       int      `json:"from_port"`
+	Self           bool     `json:"self"`
+	Description    string   `json:"description"`
 	ToPort         int      `json:"to_port"`
 	Protocol       string   `json:"protocol"`
-	CidrBlocks     []string `json:"cidr_blocks"`
 	Ipv6CidrBlocks []string `json:"ipv6_cidr_blocks"`
 	PrefixListIds  []string `json:"prefix_list_ids"`
 	SecurityGroups string   `json:"security_groups"`
-	Self           bool     `json:"self"`
-	Description    string   `json:"description"`
+	FromPort       int      `json:"from_port"`
+	CidrBlocks     []string `json:"cidr_blocks"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

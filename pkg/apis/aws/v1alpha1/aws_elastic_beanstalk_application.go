@@ -23,10 +23,10 @@ type AwsElasticBeanstalkApplicationSpec struct {
 }
 
 type AwsElasticBeanstalkApplicationSpecAppversionLifecycle struct {
+	DeleteSourceFromS3 bool   `json:"delete_source_from_s3"`
 	ServiceRole        string `json:"service_role"`
 	MaxAgeInDays       int    `json:"max_age_in_days"`
 	MaxCount           int    `json:"max_count"`
-	DeleteSourceFromS3 bool   `json:"delete_source_from_s3"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

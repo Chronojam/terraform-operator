@@ -17,15 +17,15 @@ type AwsKmsKey struct {
 }
 
 type AwsKmsKeySpec struct {
-	Arn                  string            `json:"arn"`
-	IsEnabled            bool              `json:"is_enabled"`
 	Tags                 map[string]string `json:"tags"`
-	KeyId                string            `json:"key_id"`
 	Description          string            `json:"description"`
 	KeyUsage             string            `json:"key_usage"`
 	Policy               string            `json:"policy"`
-	EnableKeyRotation    bool              `json:"enable_key_rotation"`
 	DeletionWindowInDays int               `json:"deletion_window_in_days"`
+	Arn                  string            `json:"arn"`
+	KeyId                string            `json:"key_id"`
+	IsEnabled            bool              `json:"is_enabled"`
+	EnableKeyRotation    bool              `json:"enable_key_rotation"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

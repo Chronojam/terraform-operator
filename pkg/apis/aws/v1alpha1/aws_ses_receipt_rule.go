@@ -17,25 +17,20 @@ type AwsSesReceiptRule struct {
 }
 
 type AwsSesReceiptRuleSpec struct {
-	SnsAction       AwsSesReceiptRuleSpecSnsAction       `json:"sns_action"`
 	After           string                               `json:"after"`
-	Recipients      string                               `json:"recipients"`
-	AddHeaderAction AwsSesReceiptRuleSpecAddHeaderAction `json:"add_header_action"`
-	BounceAction    AwsSesReceiptRuleSpecBounceAction    `json:"bounce_action"`
-	WorkmailAction  AwsSesReceiptRuleSpecWorkmailAction  `json:"workmail_action"`
-	RuleSetName     string                               `json:"rule_set_name"`
-	LambdaAction    AwsSesReceiptRuleSpecLambdaAction    `json:"lambda_action"`
-	S3Action        AwsSesReceiptRuleSpecS3Action        `json:"s3_action"`
-	StopAction      AwsSesReceiptRuleSpecStopAction      `json:"stop_action"`
-	Name            string                               `json:"name"`
 	Enabled         bool                                 `json:"enabled"`
 	ScanEnabled     bool                                 `json:"scan_enabled"`
+	AddHeaderAction AwsSesReceiptRuleSpecAddHeaderAction `json:"add_header_action"`
+	Name            string                               `json:"name"`
+	BounceAction    AwsSesReceiptRuleSpecBounceAction    `json:"bounce_action"`
+	StopAction      AwsSesReceiptRuleSpecStopAction      `json:"stop_action"`
+	S3Action        AwsSesReceiptRuleSpecS3Action        `json:"s3_action"`
+	RuleSetName     string                               `json:"rule_set_name"`
+	Recipients      string                               `json:"recipients"`
 	TlsPolicy       string                               `json:"tls_policy"`
-}
-
-type AwsSesReceiptRuleSpecSnsAction struct {
-	TopicArn string `json:"topic_arn"`
-	Position int    `json:"position"`
+	LambdaAction    AwsSesReceiptRuleSpecLambdaAction    `json:"lambda_action"`
+	SnsAction       AwsSesReceiptRuleSpecSnsAction       `json:"sns_action"`
+	WorkmailAction  AwsSesReceiptRuleSpecWorkmailAction  `json:"workmail_action"`
 }
 
 type AwsSesReceiptRuleSpecAddHeaderAction struct {
@@ -45,18 +40,26 @@ type AwsSesReceiptRuleSpecAddHeaderAction struct {
 }
 
 type AwsSesReceiptRuleSpecBounceAction struct {
-	Position      int    `json:"position"`
 	Message       string `json:"message"`
 	Sender        string `json:"sender"`
 	SmtpReplyCode string `json:"smtp_reply_code"`
 	StatusCode    string `json:"status_code"`
 	TopicArn      string `json:"topic_arn"`
+	Position      int    `json:"position"`
 }
 
-type AwsSesReceiptRuleSpecWorkmailAction struct {
-	TopicArn        string `json:"topic_arn"`
+type AwsSesReceiptRuleSpecStopAction struct {
+	Scope    string `json:"scope"`
+	TopicArn string `json:"topic_arn"`
+	Position int    `json:"position"`
+}
+
+type AwsSesReceiptRuleSpecS3Action struct {
 	Position        int    `json:"position"`
-	OrganizationArn string `json:"organization_arn"`
+	BucketName      string `json:"bucket_name"`
+	KmsKeyArn       string `json:"kms_key_arn"`
+	ObjectKeyPrefix string `json:"object_key_prefix"`
+	TopicArn        string `json:"topic_arn"`
 }
 
 type AwsSesReceiptRuleSpecLambdaAction struct {
@@ -66,18 +69,15 @@ type AwsSesReceiptRuleSpecLambdaAction struct {
 	Position       int    `json:"position"`
 }
 
-type AwsSesReceiptRuleSpecS3Action struct {
-	BucketName      string `json:"bucket_name"`
-	KmsKeyArn       string `json:"kms_key_arn"`
-	ObjectKeyPrefix string `json:"object_key_prefix"`
-	TopicArn        string `json:"topic_arn"`
-	Position        int    `json:"position"`
+type AwsSesReceiptRuleSpecSnsAction struct {
+	Position int    `json:"position"`
+	TopicArn string `json:"topic_arn"`
 }
 
-type AwsSesReceiptRuleSpecStopAction struct {
-	Scope    string `json:"scope"`
-	TopicArn string `json:"topic_arn"`
-	Position int    `json:"position"`
+type AwsSesReceiptRuleSpecWorkmailAction struct {
+	OrganizationArn string `json:"organization_arn"`
+	TopicArn        string `json:"topic_arn"`
+	Position        int    `json:"position"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

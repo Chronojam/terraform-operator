@@ -32,8 +32,8 @@ type AwsServiceDiscoveryServiceSpecDnsConfig struct {
 }
 
 type AwsServiceDiscoveryServiceSpecDnsConfigDnsRecords struct {
-	Type string `json:"type"`
 	Ttl  int    `json:"ttl"`
+	Type string `json:"type"`
 }
 
 type AwsServiceDiscoveryServiceSpecHealthCheckConfig struct {

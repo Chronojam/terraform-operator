@@ -17,31 +17,31 @@ type AwsSsmMaintenanceWindowTask struct {
 }
 
 type AwsSsmMaintenanceWindowTaskSpec struct {
-	Targets        []AwsSsmMaintenanceWindowTaskSpecTargets        `json:"targets"`
-	LoggingInfo    []AwsSsmMaintenanceWindowTaskSpecLoggingInfo    `json:"logging_info"`
-	TaskParameters []AwsSsmMaintenanceWindowTaskSpecTaskParameters `json:"task_parameters"`
-	MaxConcurrency string                                          `json:"max_concurrency"`
-	MaxErrors      string                                          `json:"max_errors"`
-	TaskType       string                                          `json:"task_type"`
 	TaskArn        string                                          `json:"task_arn"`
-	ServiceRoleArn string                                          `json:"service_role_arn"`
 	Priority       int                                             `json:"priority"`
 	WindowId       string                                          `json:"window_id"`
-}
-
-type AwsSsmMaintenanceWindowTaskSpecTargets struct {
-	Values []string `json:"values"`
-	Key    string   `json:"key"`
+	MaxConcurrency string                                          `json:"max_concurrency"`
+	MaxErrors      string                                          `json:"max_errors"`
+	LoggingInfo    []AwsSsmMaintenanceWindowTaskSpecLoggingInfo    `json:"logging_info"`
+	TaskParameters []AwsSsmMaintenanceWindowTaskSpecTaskParameters `json:"task_parameters"`
+	TaskType       string                                          `json:"task_type"`
+	ServiceRoleArn string                                          `json:"service_role_arn"`
+	Targets        []AwsSsmMaintenanceWindowTaskSpecTargets        `json:"targets"`
 }
 
 type AwsSsmMaintenanceWindowTaskSpecLoggingInfo struct {
-	S3BucketName   string `json:"s3_bucket_name"`
 	S3Region       string `json:"s3_region"`
 	S3BucketPrefix string `json:"s3_bucket_prefix"`
+	S3BucketName   string `json:"s3_bucket_name"`
 }
 
 type AwsSsmMaintenanceWindowTaskSpecTaskParameters struct {
 	Name   string   `json:"name"`
+	Values []string `json:"values"`
+}
+
+type AwsSsmMaintenanceWindowTaskSpecTargets struct {
+	Key    string   `json:"key"`
 	Values []string `json:"values"`
 }
 

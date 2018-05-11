@@ -17,12 +17,12 @@ type AwsIamPolicy struct {
 }
 
 type AwsIamPolicySpec struct {
-	Description string `json:"description"`
-	Path        string `json:"path"`
-	Policy      string `json:"policy"`
 	Name        string `json:"name"`
 	NamePrefix  string `json:"name_prefix"`
 	Arn         string `json:"arn"`
+	Description string `json:"description"`
+	Path        string `json:"path"`
+	Policy      string `json:"policy"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

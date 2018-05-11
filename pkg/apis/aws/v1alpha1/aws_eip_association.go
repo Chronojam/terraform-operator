@@ -17,12 +17,12 @@ type AwsEipAssociation struct {
 }
 
 type AwsEipAssociationSpec struct {
-	PrivateIpAddress   string `json:"private_ip_address"`
-	PublicIp           string `json:"public_ip"`
 	AllocationId       string `json:"allocation_id"`
 	AllowReassociation bool   `json:"allow_reassociation"`
 	InstanceId         string `json:"instance_id"`
 	NetworkInterfaceId string `json:"network_interface_id"`
+	PrivateIpAddress   string `json:"private_ip_address"`
+	PublicIp           string `json:"public_ip"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

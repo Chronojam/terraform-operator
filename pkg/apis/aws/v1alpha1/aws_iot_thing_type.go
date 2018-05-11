@@ -17,10 +17,10 @@ type AwsIotThingType struct {
 }
 
 type AwsIotThingTypeSpec struct {
+	Name       string                          `json:"name"`
 	Properties []AwsIotThingTypeSpecProperties `json:"properties"`
 	Deprecated bool                            `json:"deprecated"`
 	Arn        string                          `json:"arn"`
-	Name       string                          `json:"name"`
 }
 
 type AwsIotThingTypeSpecProperties struct {

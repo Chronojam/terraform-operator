@@ -17,27 +17,27 @@ type AwsCloudtrail struct {
 }
 
 type AwsCloudtrailSpec struct {
-	KmsKeyId                   string                           `json:"kms_key_id"`
-	S3KeyPrefix                string                           `json:"s3_key_prefix"`
-	CloudWatchLogsRoleArn      string                           `json:"cloud_watch_logs_role_arn"`
+	Tags                       map[string]string                `json:"tags"`
 	CloudWatchLogsGroupArn     string                           `json:"cloud_watch_logs_group_arn"`
+	KmsKeyId                   string                           `json:"kms_key_id"`
+	HomeRegion                 string                           `json:"home_region"`
+	EventSelector              []AwsCloudtrailSpecEventSelector `json:"event_selector"`
+	S3BucketName               string                           `json:"s3_bucket_name"`
 	IncludeGlobalServiceEvents bool                             `json:"include_global_service_events"`
+	EnableLogFileValidation    bool                             `json:"enable_log_file_validation"`
+	Name                       string                           `json:"name"`
 	IsMultiRegionTrail         bool                             `json:"is_multi_region_trail"`
 	SnsTopicName               string                           `json:"sns_topic_name"`
-	HomeRegion                 string                           `json:"home_region"`
-	Name                       string                           `json:"name"`
-	Tags                       map[string]string                `json:"tags"`
-	EnableLogFileValidation    bool                             `json:"enable_log_file_validation"`
-	S3BucketName               string                           `json:"s3_bucket_name"`
-	EventSelector              []AwsCloudtrailSpecEventSelector `json:"event_selector"`
 	Arn                        string                           `json:"arn"`
 	EnableLogging              bool                             `json:"enable_logging"`
+	S3KeyPrefix                string                           `json:"s3_key_prefix"`
+	CloudWatchLogsRoleArn      string                           `json:"cloud_watch_logs_role_arn"`
 }
 
 type AwsCloudtrailSpecEventSelector struct {
+	ReadWriteType           string                                       `json:"read_write_type"`
 	IncludeManagementEvents bool                                         `json:"include_management_events"`
 	DataResource            []AwsCloudtrailSpecEventSelectorDataResource `json:"data_resource"`
-	ReadWriteType           string                                       `json:"read_write_type"`
 }
 
 type AwsCloudtrailSpecEventSelectorDataResource struct {

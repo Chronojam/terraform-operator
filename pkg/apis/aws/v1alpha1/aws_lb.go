@@ -17,36 +17,36 @@ type AwsLb struct {
 }
 
 type AwsLbSpec struct {
-	SecurityGroups               string                 `json:"security_groups"`
-	DnsName                      string                 `json:"dns_name"`
-	Subnets                      string                 `json:"subnets"`
-	VpcId                        string                 `json:"vpc_id"`
-	Arn                          string                 `json:"arn"`
-	ArnSuffix                    string                 `json:"arn_suffix"`
-	Internal                     bool                   `json:"internal"`
-	ZoneId                       string                 `json:"zone_id"`
-	Name                         string                 `json:"name"`
 	NamePrefix                   string                 `json:"name_prefix"`
+	ZoneId                       string                 `json:"zone_id"`
+	DnsName                      string                 `json:"dns_name"`
+	Tags                         map[string]string      `json:"tags"`
+	ArnSuffix                    string                 `json:"arn_suffix"`
+	Name                         string                 `json:"name"`
+	AccessLogs                   []AwsLbSpecAccessLogs  `json:"access_logs"`
 	IdleTimeout                  int                    `json:"idle_timeout"`
-	EnableDeletionProtection     bool                   `json:"enable_deletion_protection"`
+	Internal                     bool                   `json:"internal"`
+	SecurityGroups               string                 `json:"security_groups"`
 	EnableCrossZoneLoadBalancing bool                   `json:"enable_cross_zone_load_balancing"`
 	EnableHttp2                  bool                   `json:"enable_http2"`
 	IpAddressType                string                 `json:"ip_address_type"`
-	Tags                         map[string]string      `json:"tags"`
+	VpcId                        string                 `json:"vpc_id"`
+	Arn                          string                 `json:"arn"`
 	LoadBalancerType             string                 `json:"load_balancer_type"`
+	EnableDeletionProtection     bool                   `json:"enable_deletion_protection"`
+	Subnets                      string                 `json:"subnets"`
 	SubnetMapping                AwsLbSpecSubnetMapping `json:"subnet_mapping"`
-	AccessLogs                   []AwsLbSpecAccessLogs  `json:"access_logs"`
+}
+
+type AwsLbSpecAccessLogs struct {
+	Bucket  string `json:"bucket"`
+	Prefix  string `json:"prefix"`
+	Enabled bool   `json:"enabled"`
 }
 
 type AwsLbSpecSubnetMapping struct {
 	SubnetId     string `json:"subnet_id"`
 	AllocationId string `json:"allocation_id"`
-}
-
-type AwsLbSpecAccessLogs struct {
-	Enabled bool   `json:"enabled"`
-	Bucket  string `json:"bucket"`
-	Prefix  string `json:"prefix"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

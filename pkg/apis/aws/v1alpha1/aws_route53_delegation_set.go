@@ -17,8 +17,8 @@ type AwsRoute53DelegationSet struct {
 }
 
 type AwsRoute53DelegationSetSpec struct {
-	NameServers   []string `json:"name_servers"`
 	ReferenceName string   `json:"reference_name"`
+	NameServers   []string `json:"name_servers"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

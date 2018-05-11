@@ -17,36 +17,36 @@ type AwsOpsworksNodejsAppLayer struct {
 }
 
 type AwsOpsworksNodejsAppLayerSpec struct {
-	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
-	CustomConfigureRecipes   []string                               `json:"custom_configure_recipes"`
-	StackId                  string                                 `json:"stack_id"`
-	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
-	CustomSetupRecipes       []string                               `json:"custom_setup_recipes"`
-	CustomUndeployRecipes    []string                               `json:"custom_undeploy_recipes"`
-	AutoHealing              bool                                   `json:"auto_healing"`
-	InstallUpdatesOnBoot     bool                                   `json:"install_updates_on_boot"`
-	InstanceShutdownTimeout  int                                    `json:"instance_shutdown_timeout"`
-	EbsVolume                AwsOpsworksNodejsAppLayerSpecEbsVolume `json:"ebs_volume"`
-	AutoAssignPublicIps      bool                                   `json:"auto_assign_public_ips"`
-	ElasticLoadBalancer      string                                 `json:"elastic_load_balancer"`
-	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
-	CustomShutdownRecipes    []string                               `json:"custom_shutdown_recipes"`
 	DrainElbOnShutdown       bool                                   `json:"drain_elb_on_shutdown"`
-	NodejsVersion            string                                 `json:"nodejs_version"`
-	CustomSecurityGroupIds   string                                 `json:"custom_security_group_ids"`
-	CustomJson               string                                 `json:"custom_json"`
 	SystemPackages           string                                 `json:"system_packages"`
+	StackId                  string                                 `json:"stack_id"`
 	UseEbsOptimizedInstances bool                                   `json:"use_ebs_optimized_instances"`
 	Name                     string                                 `json:"name"`
+	CustomDeployRecipes      []string                               `json:"custom_deploy_recipes"`
+	CustomShutdownRecipes    []string                               `json:"custom_shutdown_recipes"`
+	InstallUpdatesOnBoot     bool                                   `json:"install_updates_on_boot"`
+	CustomSetupRecipes       []string                               `json:"custom_setup_recipes"`
+	CustomUndeployRecipes    []string                               `json:"custom_undeploy_recipes"`
+	ElasticLoadBalancer      string                                 `json:"elastic_load_balancer"`
+	CustomConfigureRecipes   []string                               `json:"custom_configure_recipes"`
+	CustomSecurityGroupIds   string                                 `json:"custom_security_group_ids"`
+	InstanceShutdownTimeout  int                                    `json:"instance_shutdown_timeout"`
+	AutoAssignElasticIps     bool                                   `json:"auto_assign_elastic_ips"`
+	AutoAssignPublicIps      bool                                   `json:"auto_assign_public_ips"`
+	CustomInstanceProfileArn string                                 `json:"custom_instance_profile_arn"`
+	NodejsVersion            string                                 `json:"nodejs_version"`
+	CustomJson               string                                 `json:"custom_json"`
+	AutoHealing              bool                                   `json:"auto_healing"`
+	EbsVolume                AwsOpsworksNodejsAppLayerSpecEbsVolume `json:"ebs_volume"`
 }
 
 type AwsOpsworksNodejsAppLayerSpecEbsVolume struct {
+	Type          string `json:"type"`
 	Iops          int    `json:"iops"`
 	MountPoint    string `json:"mount_point"`
 	NumberOfDisks int    `json:"number_of_disks"`
 	RaidLevel     string `json:"raid_level"`
 	Size          int    `json:"size"`
-	Type          string `json:"type"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

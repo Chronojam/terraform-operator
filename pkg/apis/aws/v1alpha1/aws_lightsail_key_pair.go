@@ -17,15 +17,15 @@ type AwsLightsailKeyPair struct {
 }
 
 type AwsLightsailKeyPairSpec struct {
-	EncryptedPrivateKey  string `json:"encrypted_private_key"`
 	Name                 string `json:"name"`
-	PgpKey               string `json:"pgp_key"`
-	PublicKey            string `json:"public_key"`
-	PrivateKey           string `json:"private_key"`
-	EncryptedFingerprint string `json:"encrypted_fingerprint"`
 	NamePrefix           string `json:"name_prefix"`
 	Arn                  string `json:"arn"`
+	PublicKey            string `json:"public_key"`
+	PrivateKey           string `json:"private_key"`
+	EncryptedPrivateKey  string `json:"encrypted_private_key"`
+	PgpKey               string `json:"pgp_key"`
 	Fingerprint          string `json:"fingerprint"`
+	EncryptedFingerprint string `json:"encrypted_fingerprint"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,23 +17,50 @@ type AwsIotTopicRule struct {
 }
 
 type AwsIotTopicRuleSpec struct {
-	Sql              string                              `json:"sql"`
-	SqlVersion       string                              `json:"sql_version"`
-	Elasticsearch    AwsIotTopicRuleSpecElasticsearch    `json:"elasticsearch"`
-	Firehose         AwsIotTopicRuleSpecFirehose         `json:"firehose"`
-	Lambda           AwsIotTopicRuleSpecLambda           `json:"lambda"`
-	Sqs              AwsIotTopicRuleSpecSqs              `json:"sqs"`
 	Name             string                              `json:"name"`
 	Enabled          bool                                `json:"enabled"`
-	S3               AwsIotTopicRuleSpecS3               `json:"s3"`
+	Sns              AwsIotTopicRuleSpecSns              `json:"sns"`
+	Republish        AwsIotTopicRuleSpecRepublish        `json:"republish"`
 	Arn              string                              `json:"arn"`
+	Sql              string                              `json:"sql"`
+	CloudwatchAlarm  AwsIotTopicRuleSpecCloudwatchAlarm  `json:"cloudwatch_alarm"`
+	Firehose         AwsIotTopicRuleSpecFirehose         `json:"firehose"`
+	Lambda           AwsIotTopicRuleSpecLambda           `json:"lambda"`
 	Description      string                              `json:"description"`
+	Elasticsearch    AwsIotTopicRuleSpecElasticsearch    `json:"elasticsearch"`
+	S3               AwsIotTopicRuleSpecS3               `json:"s3"`
+	Sqs              AwsIotTopicRuleSpecSqs              `json:"sqs"`
+	SqlVersion       string                              `json:"sql_version"`
 	CloudwatchMetric AwsIotTopicRuleSpecCloudwatchMetric `json:"cloudwatch_metric"`
 	Dynamodb         AwsIotTopicRuleSpecDynamodb         `json:"dynamodb"`
 	Kinesis          AwsIotTopicRuleSpecKinesis          `json:"kinesis"`
-	Republish        AwsIotTopicRuleSpecRepublish        `json:"republish"`
-	Sns              AwsIotTopicRuleSpecSns              `json:"sns"`
-	CloudwatchAlarm  AwsIotTopicRuleSpecCloudwatchAlarm  `json:"cloudwatch_alarm"`
+}
+
+type AwsIotTopicRuleSpecSns struct {
+	MessageFormat string `json:"message_format"`
+	TargetArn     string `json:"target_arn"`
+	RoleArn       string `json:"role_arn"`
+}
+
+type AwsIotTopicRuleSpecRepublish struct {
+	RoleArn string `json:"role_arn"`
+	Topic   string `json:"topic"`
+}
+
+type AwsIotTopicRuleSpecCloudwatchAlarm struct {
+	AlarmName   string `json:"alarm_name"`
+	RoleArn     string `json:"role_arn"`
+	StateReason string `json:"state_reason"`
+	StateValue  string `json:"state_value"`
+}
+
+type AwsIotTopicRuleSpecFirehose struct {
+	DeliveryStreamName string `json:"delivery_stream_name"`
+	RoleArn            string `json:"role_arn"`
+}
+
+type AwsIotTopicRuleSpecLambda struct {
+	FunctionArn string `json:"function_arn"`
 }
 
 type AwsIotTopicRuleSpecElasticsearch struct {
@@ -44,70 +71,43 @@ type AwsIotTopicRuleSpecElasticsearch struct {
 	Type     string `json:"type"`
 }
 
-type AwsIotTopicRuleSpecFirehose struct {
-	RoleArn            string `json:"role_arn"`
-	DeliveryStreamName string `json:"delivery_stream_name"`
-}
-
-type AwsIotTopicRuleSpecLambda struct {
-	FunctionArn string `json:"function_arn"`
+type AwsIotTopicRuleSpecS3 struct {
+	RoleArn    string `json:"role_arn"`
+	BucketName string `json:"bucket_name"`
+	Key        string `json:"key"`
 }
 
 type AwsIotTopicRuleSpecSqs struct {
-	UseBase64 bool   `json:"use_base64"`
 	QueueUrl  string `json:"queue_url"`
 	RoleArn   string `json:"role_arn"`
-}
-
-type AwsIotTopicRuleSpecS3 struct {
-	BucketName string `json:"bucket_name"`
-	Key        string `json:"key"`
-	RoleArn    string `json:"role_arn"`
+	UseBase64 bool   `json:"use_base64"`
 }
 
 type AwsIotTopicRuleSpecCloudwatchMetric struct {
-	RoleArn         string `json:"role_arn"`
-	MetricName      string `json:"metric_name"`
-	MetricNamespace string `json:"metric_namespace"`
 	MetricTimestamp string `json:"metric_timestamp"`
 	MetricUnit      string `json:"metric_unit"`
 	MetricValue     string `json:"metric_value"`
+	RoleArn         string `json:"role_arn"`
+	MetricName      string `json:"metric_name"`
+	MetricNamespace string `json:"metric_namespace"`
 }
 
 type AwsIotTopicRuleSpecDynamodb struct {
-	HashKeyType   string `json:"hash_key_type"`
-	PayloadField  string `json:"payload_field"`
 	RangeKeyField string `json:"range_key_field"`
+	TableName     string `json:"table_name"`
+	PayloadField  string `json:"payload_field"`
 	RangeKeyValue string `json:"range_key_value"`
-	HashKeyField  string `json:"hash_key_field"`
-	HashKeyValue  string `json:"hash_key_value"`
 	RangeKeyType  string `json:"range_key_type"`
 	RoleArn       string `json:"role_arn"`
-	TableName     string `json:"table_name"`
+	HashKeyField  string `json:"hash_key_field"`
+	HashKeyValue  string `json:"hash_key_value"`
+	HashKeyType   string `json:"hash_key_type"`
 }
 
 type AwsIotTopicRuleSpecKinesis struct {
 	PartitionKey string `json:"partition_key"`
 	RoleArn      string `json:"role_arn"`
 	StreamName   string `json:"stream_name"`
-}
-
-type AwsIotTopicRuleSpecRepublish struct {
-	RoleArn string `json:"role_arn"`
-	Topic   string `json:"topic"`
-}
-
-type AwsIotTopicRuleSpecSns struct {
-	MessageFormat string `json:"message_format"`
-	TargetArn     string `json:"target_arn"`
-	RoleArn       string `json:"role_arn"`
-}
-
-type AwsIotTopicRuleSpecCloudwatchAlarm struct {
-	AlarmName   string `json:"alarm_name"`
-	RoleArn     string `json:"role_arn"`
-	StateReason string `json:"state_reason"`
-	StateValue  string `json:"state_value"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

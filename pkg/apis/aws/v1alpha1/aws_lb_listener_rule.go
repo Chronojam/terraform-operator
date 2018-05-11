@@ -25,8 +25,8 @@ type AwsLbListenerRuleSpec struct {
 }
 
 type AwsLbListenerRuleSpecAction struct {
-	Type           string `json:"type"`
 	TargetGroupArn string `json:"target_group_arn"`
+	Type           string `json:"type"`
 }
 
 type AwsLbListenerRuleSpecCondition struct {

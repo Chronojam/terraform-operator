@@ -17,23 +17,23 @@ type AwsDynamodbTable struct {
 }
 
 type AwsDynamodbTableSpec struct {
+	LocalSecondaryIndex  AwsDynamodbTableSpecLocalSecondaryIndex    `json:"local_secondary_index"`
 	StreamViewType       string                                     `json:"stream_view_type"`
 	Tags                 map[string]string                          `json:"tags"`
-	HashKey              string                                     `json:"hash_key"`
-	ReadCapacity         int                                        `json:"read_capacity"`
-	LocalSecondaryIndex  AwsDynamodbTableSpecLocalSecondaryIndex    `json:"local_secondary_index"`
+	Attribute            AwsDynamodbTableSpecAttribute              `json:"attribute"`
 	GlobalSecondaryIndex AwsDynamodbTableSpecGlobalSecondaryIndex   `json:"global_secondary_index"`
-	StreamArn            string                                     `json:"stream_arn"`
-	PointInTimeRecovery  []AwsDynamodbTableSpecPointInTimeRecovery  `json:"point_in_time_recovery"`
-	Arn                  string                                     `json:"arn"`
-	Name                 string                                     `json:"name"`
 	WriteCapacity        int                                        `json:"write_capacity"`
 	RangeKey             string                                     `json:"range_key"`
-	Attribute            AwsDynamodbTableSpecAttribute              `json:"attribute"`
-	Ttl                  AwsDynamodbTableSpecTtl                    `json:"ttl"`
 	StreamEnabled        bool                                       `json:"stream_enabled"`
+	StreamArn            string                                     `json:"stream_arn"`
+	HashKey              string                                     `json:"hash_key"`
+	Name                 string                                     `json:"name"`
+	ReadCapacity         int                                        `json:"read_capacity"`
+	Ttl                  AwsDynamodbTableSpecTtl                    `json:"ttl"`
 	StreamLabel          string                                     `json:"stream_label"`
 	ServerSideEncryption []AwsDynamodbTableSpecServerSideEncryption `json:"server_side_encryption"`
+	PointInTimeRecovery  []AwsDynamodbTableSpecPointInTimeRecovery  `json:"point_in_time_recovery"`
+	Arn                  string                                     `json:"arn"`
 }
 
 type AwsDynamodbTableSpecLocalSecondaryIndex struct {
@@ -43,23 +43,19 @@ type AwsDynamodbTableSpecLocalSecondaryIndex struct {
 	NonKeyAttributes []string `json:"non_key_attributes"`
 }
 
+type AwsDynamodbTableSpecAttribute struct {
+	Name string `json:"name"`
+	Type string `json:"type"`
+}
+
 type AwsDynamodbTableSpecGlobalSecondaryIndex struct {
-	HashKey          string   `json:"hash_key"`
-	RangeKey         string   `json:"range_key"`
 	ProjectionType   string   `json:"projection_type"`
 	NonKeyAttributes []string `json:"non_key_attributes"`
 	Name             string   `json:"name"`
 	WriteCapacity    int      `json:"write_capacity"`
 	ReadCapacity     int      `json:"read_capacity"`
-}
-
-type AwsDynamodbTableSpecPointInTimeRecovery struct {
-	Enabled bool `json:"enabled"`
-}
-
-type AwsDynamodbTableSpecAttribute struct {
-	Name string `json:"name"`
-	Type string `json:"type"`
+	HashKey          string   `json:"hash_key"`
+	RangeKey         string   `json:"range_key"`
 }
 
 type AwsDynamodbTableSpecTtl struct {
@@ -68,6 +64,10 @@ type AwsDynamodbTableSpecTtl struct {
 }
 
 type AwsDynamodbTableSpecServerSideEncryption struct {
+	Enabled bool `json:"enabled"`
+}
+
+type AwsDynamodbTableSpecPointInTimeRecovery struct {
 	Enabled bool `json:"enabled"`
 }
 

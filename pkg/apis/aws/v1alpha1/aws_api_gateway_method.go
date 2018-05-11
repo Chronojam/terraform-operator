@@ -17,15 +17,15 @@ type AwsApiGatewayMethod struct {
 }
 
 type AwsApiGatewayMethodSpec struct {
+	AuthorizerId            string            `json:"authorizer_id"`
+	RequestParametersInJson string            `json:"request_parameters_in_json"`
 	RequestValidatorId      string            `json:"request_validator_id"`
 	RestApiId               string            `json:"rest_api_id"`
 	ResourceId              string            `json:"resource_id"`
 	HttpMethod              string            `json:"http_method"`
+	Authorization           string            `json:"authorization"`
 	ApiKeyRequired          bool              `json:"api_key_required"`
 	RequestModels           map[string]string `json:"request_models"`
-	RequestParametersInJson string            `json:"request_parameters_in_json"`
-	Authorization           string            `json:"authorization"`
-	AuthorizerId            string            `json:"authorizer_id"`
 	RequestParameters       map[string]string `json:"request_parameters"`
 }
 

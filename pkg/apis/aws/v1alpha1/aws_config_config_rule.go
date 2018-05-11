@@ -17,14 +17,14 @@ type AwsConfigConfigRule struct {
 }
 
 type AwsConfigConfigRuleSpec struct {
-	InputParameters           string                          `json:"input_parameters"`
-	MaximumExecutionFrequency string                          `json:"maximum_execution_frequency"`
-	Scope                     []AwsConfigConfigRuleSpecScope  `json:"scope"`
-	Source                    []AwsConfigConfigRuleSpecSource `json:"source"`
 	Name                      string                          `json:"name"`
 	RuleId                    string                          `json:"rule_id"`
 	Arn                       string                          `json:"arn"`
 	Description               string                          `json:"description"`
+	InputParameters           string                          `json:"input_parameters"`
+	MaximumExecutionFrequency string                          `json:"maximum_execution_frequency"`
+	Scope                     []AwsConfigConfigRuleSpecScope  `json:"scope"`
+	Source                    []AwsConfigConfigRuleSpecSource `json:"source"`
 }
 
 type AwsConfigConfigRuleSpecScope struct {

@@ -17,32 +17,32 @@ type AwsRdsClusterInstance struct {
 }
 
 type AwsRdsClusterInstanceSpec struct {
-	Endpoint                    string            `json:"endpoint"`
-	Port                        int               `json:"port"`
-	MonitoringRoleArn           string            `json:"monitoring_role_arn"`
+	DbiResourceId               string            `json:"dbi_resource_id"`
 	AvailabilityZone            string            `json:"availability_zone"`
+	InstanceClass               string            `json:"instance_class"`
+	Engine                      string            `json:"engine"`
+	ApplyImmediately            bool              `json:"apply_immediately"`
+	StorageEncrypted            bool              `json:"storage_encrypted"`
+	PreferredMaintenanceWindow  string            `json:"preferred_maintenance_window"`
+	PromotionTier               int               `json:"promotion_tier"`
 	PerformanceInsightsEnabled  bool              `json:"performance_insights_enabled"`
-	Tags                        map[string]string `json:"tags"`
+	PerformanceInsightsKmsKeyId string            `json:"performance_insights_kms_key_id"`
+	DbSubnetGroupName           string            `json:"db_subnet_group_name"`
+	ClusterIdentifier           string            `json:"cluster_identifier"`
+	PubliclyAccessible          bool              `json:"publicly_accessible"`
+	MonitoringRoleArn           string            `json:"monitoring_role_arn"`
+	KmsKeyId                    string            `json:"kms_key_id"`
+	AutoMinorVersionUpgrade     bool              `json:"auto_minor_version_upgrade"`
+	PreferredBackupWindow       string            `json:"preferred_backup_window"`
+	MonitoringInterval          int               `json:"monitoring_interval"`
 	Identifier                  string            `json:"identifier"`
 	IdentifierPrefix            string            `json:"identifier_prefix"`
-	Engine                      string            `json:"engine"`
+	Port                        int               `json:"port"`
 	EngineVersion               string            `json:"engine_version"`
-	DbiResourceId               string            `json:"dbi_resource_id"`
-	DbSubnetGroupName           string            `json:"db_subnet_group_name"`
-	PubliclyAccessible          bool              `json:"publicly_accessible"`
-	StorageEncrypted            bool              `json:"storage_encrypted"`
-	AutoMinorVersionUpgrade     bool              `json:"auto_minor_version_upgrade"`
-	PerformanceInsightsKmsKeyId string            `json:"performance_insights_kms_key_id"`
-	KmsKeyId                    string            `json:"kms_key_id"`
-	PreferredMaintenanceWindow  string            `json:"preferred_maintenance_window"`
-	PreferredBackupWindow       string            `json:"preferred_backup_window"`
+	Tags                        map[string]string `json:"tags"`
 	Writer                      bool              `json:"writer"`
-	ClusterIdentifier           string            `json:"cluster_identifier"`
-	InstanceClass               string            `json:"instance_class"`
+	Endpoint                    string            `json:"endpoint"`
 	DbParameterGroupName        string            `json:"db_parameter_group_name"`
-	ApplyImmediately            bool              `json:"apply_immediately"`
-	MonitoringInterval          int               `json:"monitoring_interval"`
-	PromotionTier               int               `json:"promotion_tier"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

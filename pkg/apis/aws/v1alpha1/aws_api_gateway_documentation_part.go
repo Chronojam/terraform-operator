@@ -17,17 +17,17 @@ type AwsApiGatewayDocumentationPart struct {
 }
 
 type AwsApiGatewayDocumentationPartSpec struct {
+	RestApiId  string                                       `json:"rest_api_id"`
 	Location   []AwsApiGatewayDocumentationPartSpecLocation `json:"location"`
 	Properties string                                       `json:"properties"`
-	RestApiId  string                                       `json:"rest_api_id"`
 }
 
 type AwsApiGatewayDocumentationPartSpecLocation struct {
-	Method     string `json:"method"`
 	Name       string `json:"name"`
 	Path       string `json:"path"`
 	StatusCode string `json:"status_code"`
 	Type       string `json:"type"`
+	Method     string `json:"method"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,13 +17,13 @@ type AwsSesEventDestination struct {
 }
 
 type AwsSesEventDestinationSpec struct {
+	ConfigurationSetName  string                                          `json:"configuration_set_name"`
 	Enabled               bool                                            `json:"enabled"`
 	MatchingTypes         string                                          `json:"matching_types"`
 	CloudwatchDestination AwsSesEventDestinationSpecCloudwatchDestination `json:"cloudwatch_destination"`
 	KinesisDestination    AwsSesEventDestinationSpecKinesisDestination    `json:"kinesis_destination"`
 	SnsDestination        AwsSesEventDestinationSpecSnsDestination        `json:"sns_destination"`
 	Name                  string                                          `json:"name"`
-	ConfigurationSetName  string                                          `json:"configuration_set_name"`
 }
 
 type AwsSesEventDestinationSpecCloudwatchDestination struct {

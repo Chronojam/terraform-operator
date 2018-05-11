@@ -17,16 +17,16 @@ type AwsVpcPeeringConnectionAccepter struct {
 }
 
 type AwsVpcPeeringConnectionAccepterSpec struct {
-	VpcPeeringConnectionId string                                       `json:"vpc_peering_connection_id"`
-	Tags                   map[string]string                            `json:"tags"`
-	Accepter               AwsVpcPeeringConnectionAccepterSpecAccepter  `json:"accepter"`
-	Requester              AwsVpcPeeringConnectionAccepterSpecRequester `json:"requester"`
-	AutoAccept             bool                                         `json:"auto_accept"`
 	AcceptStatus           string                                       `json:"accept_status"`
 	VpcId                  string                                       `json:"vpc_id"`
+	Accepter               AwsVpcPeeringConnectionAccepterSpecAccepter  `json:"accepter"`
+	VpcPeeringConnectionId string                                       `json:"vpc_peering_connection_id"`
+	AutoAccept             bool                                         `json:"auto_accept"`
 	PeerVpcId              string                                       `json:"peer_vpc_id"`
 	PeerOwnerId            string                                       `json:"peer_owner_id"`
 	PeerRegion             string                                       `json:"peer_region"`
+	Requester              AwsVpcPeeringConnectionAccepterSpecRequester `json:"requester"`
+	Tags                   map[string]string                            `json:"tags"`
 }
 
 type AwsVpcPeeringConnectionAccepterSpecAccepter struct {
@@ -36,9 +36,9 @@ type AwsVpcPeeringConnectionAccepterSpecAccepter struct {
 }
 
 type AwsVpcPeeringConnectionAccepterSpecRequester struct {
+	AllowRemoteVpcDnsResolution bool `json:"allow_remote_vpc_dns_resolution"`
 	AllowClassicLinkToRemoteVpc bool `json:"allow_classic_link_to_remote_vpc"`
 	AllowVpcToRemoteClassicLink bool `json:"allow_vpc_to_remote_classic_link"`
-	AllowRemoteVpcDnsResolution bool `json:"allow_remote_vpc_dns_resolution"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

@@ -17,15 +17,15 @@ type AwsNetworkAclRule struct {
 }
 
 type AwsNetworkAclRuleSpec struct {
-	Egress        bool   `json:"egress"`
-	Protocol      string `json:"protocol"`
 	RuleAction    string `json:"rule_action"`
-	ToPort        int    `json:"to_port"`
+	CidrBlock     string `json:"cidr_block"`
 	IcmpType      string `json:"icmp_type"`
 	IcmpCode      string `json:"icmp_code"`
 	NetworkAclId  string `json:"network_acl_id"`
+	Egress        bool   `json:"egress"`
+	Protocol      string `json:"protocol"`
+	ToPort        int    `json:"to_port"`
 	RuleNumber    int    `json:"rule_number"`
-	CidrBlock     string `json:"cidr_block"`
 	Ipv6CidrBlock string `json:"ipv6_cidr_block"`
 	FromPort      int    `json:"from_port"`
 }

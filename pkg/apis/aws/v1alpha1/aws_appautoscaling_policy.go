@@ -17,26 +17,26 @@ type AwsAppautoscalingPolicy struct {
 }
 
 type AwsAppautoscalingPolicySpec struct {
-	ScalableDimension                        string                                                                `json:"scalable_dimension"`
-	ResourceId                               string                                                                `json:"resource_id"`
 	StepAdjustment                           AwsAppautoscalingPolicySpecStepAdjustment                             `json:"step_adjustment"`
 	TargetTrackingScalingPolicyConfiguration []AwsAppautoscalingPolicySpecTargetTrackingScalingPolicyConfiguration `json:"target_tracking_scaling_policy_configuration"`
-	Arn                                      string                                                                `json:"arn"`
-	Alarms                                   []string                                                              `json:"alarms"`
-	Cooldown                                 int                                                                   `json:"cooldown"`
-	MinAdjustmentMagnitude                   int                                                                   `json:"min_adjustment_magnitude"`
-	MetricAggregationType                    string                                                                `json:"metric_aggregation_type"`
-	Name                                     string                                                                `json:"name"`
 	PolicyType                               string                                                                `json:"policy_type"`
-	ServiceNamespace                         string                                                                `json:"service_namespace"`
+	ScalableDimension                        string                                                                `json:"scalable_dimension"`
 	StepScalingPolicyConfiguration           []AwsAppautoscalingPolicySpecStepScalingPolicyConfiguration           `json:"step_scaling_policy_configuration"`
+	Cooldown                                 int                                                                   `json:"cooldown"`
+	Alarms                                   []string                                                              `json:"alarms"`
+	MinAdjustmentMagnitude                   int                                                                   `json:"min_adjustment_magnitude"`
+	Name                                     string                                                                `json:"name"`
+	ServiceNamespace                         string                                                                `json:"service_namespace"`
 	AdjustmentType                           string                                                                `json:"adjustment_type"`
+	MetricAggregationType                    string                                                                `json:"metric_aggregation_type"`
+	Arn                                      string                                                                `json:"arn"`
+	ResourceId                               string                                                                `json:"resource_id"`
 }
 
 type AwsAppautoscalingPolicySpecStepAdjustment struct {
+	MetricIntervalLowerBound string `json:"metric_interval_lower_bound"`
 	MetricIntervalUpperBound string `json:"metric_interval_upper_bound"`
 	ScalingAdjustment        int    `json:"scaling_adjustment"`
-	MetricIntervalLowerBound string `json:"metric_interval_lower_bound"`
 }
 
 type AwsAppautoscalingPolicySpecTargetTrackingScalingPolicyConfiguration struct {
@@ -49,29 +49,29 @@ type AwsAppautoscalingPolicySpecTargetTrackingScalingPolicyConfiguration struct 
 }
 
 type AwsAppautoscalingPolicySpecTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecification struct {
-	Namespace  string                                                                                                     `json:"namespace"`
 	Statistic  string                                                                                                     `json:"statistic"`
 	Unit       string                                                                                                     `json:"unit"`
 	Dimensions AwsAppautoscalingPolicySpecTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationDimensions `json:"dimensions"`
 	MetricName string                                                                                                     `json:"metric_name"`
+	Namespace  string                                                                                                     `json:"namespace"`
 }
 
 type AwsAppautoscalingPolicySpecTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationDimensions struct {
-	Name  string `json:"name"`
 	Value string `json:"value"`
+	Name  string `json:"name"`
 }
 
 type AwsAppautoscalingPolicySpecTargetTrackingScalingPolicyConfigurationPredefinedMetricSpecification struct {
-	ResourceLabel        string `json:"resource_label"`
 	PredefinedMetricType string `json:"predefined_metric_type"`
+	ResourceLabel        string `json:"resource_label"`
 }
 
 type AwsAppautoscalingPolicySpecStepScalingPolicyConfiguration struct {
+	StepAdjustment         AwsAppautoscalingPolicySpecStepScalingPolicyConfigurationStepAdjustment `json:"step_adjustment"`
 	AdjustmentType         string                                                                  `json:"adjustment_type"`
 	Cooldown               int                                                                     `json:"cooldown"`
 	MetricAggregationType  string                                                                  `json:"metric_aggregation_type"`
 	MinAdjustmentMagnitude int                                                                     `json:"min_adjustment_magnitude"`
-	StepAdjustment         AwsAppautoscalingPolicySpecStepScalingPolicyConfigurationStepAdjustment `json:"step_adjustment"`
 }
 
 type AwsAppautoscalingPolicySpecStepScalingPolicyConfigurationStepAdjustment struct {

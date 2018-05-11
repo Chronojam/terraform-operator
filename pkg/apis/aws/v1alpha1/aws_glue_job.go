@@ -17,16 +17,16 @@ type AwsGlueJob struct {
 }
 
 type AwsGlueJobSpec struct {
-	AllocatedCapacity int                               `json:"allocated_capacity"`
+	RoleArn           string                            `json:"role_arn"`
+	Timeout           int                               `json:"timeout"`
+	DefaultArguments  map[string]string                 `json:"default_arguments"`
+	Command           []AwsGlueJobSpecCommand           `json:"command"`
 	Connections       []string                          `json:"connections"`
 	Description       string                            `json:"description"`
-	RoleArn           string                            `json:"role_arn"`
-	Command           []AwsGlueJobSpecCommand           `json:"command"`
-	DefaultArguments  map[string]string                 `json:"default_arguments"`
 	ExecutionProperty []AwsGlueJobSpecExecutionProperty `json:"execution_property"`
 	MaxRetries        int                               `json:"max_retries"`
 	Name              string                            `json:"name"`
-	Timeout           int                               `json:"timeout"`
+	AllocatedCapacity int                               `json:"allocated_capacity"`
 }
 
 type AwsGlueJobSpecCommand struct {

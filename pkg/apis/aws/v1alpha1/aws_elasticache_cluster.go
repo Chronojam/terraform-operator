@@ -17,38 +17,38 @@ type AwsElasticacheCluster struct {
 }
 
 type AwsElasticacheClusterSpec struct {
-	SnapshotWindow         string                                `json:"snapshot_window"`
-	NotificationTopicArn   string                                `json:"notification_topic_arn"`
-	ApplyImmediately       bool                                  `json:"apply_immediately"`
-	AzMode                 string                                `json:"az_mode"`
-	Engine                 string                                `json:"engine"`
-	SubnetGroupName        string                                `json:"subnet_group_name"`
-	SecurityGroupIds       string                                `json:"security_group_ids"`
-	SnapshotRetentionLimit int                                   `json:"snapshot_retention_limit"`
-	NumCacheNodes          int                                   `json:"num_cache_nodes"`
-	ClusterAddress         string                                `json:"cluster_address"`
-	ReplicationGroupId     string                                `json:"replication_group_id"`
-	EngineVersion          string                                `json:"engine_version"`
 	SecurityGroupNames     string                                `json:"security_group_names"`
-	SnapshotName           string                                `json:"snapshot_name"`
 	MaintenanceWindow      string                                `json:"maintenance_window"`
-	AvailabilityZone       string                                `json:"availability_zone"`
-	ParameterGroupName     string                                `json:"parameter_group_name"`
-	NodeType               string                                `json:"node_type"`
-	SnapshotArns           string                                `json:"snapshot_arns"`
-	Port                   int                                   `json:"port"`
 	Tags                   map[string]string                     `json:"tags"`
-	ClusterId              string                                `json:"cluster_id"`
 	ConfigurationEndpoint  string                                `json:"configuration_endpoint"`
 	CacheNodes             []AwsElasticacheClusterSpecCacheNodes `json:"cache_nodes"`
+	EngineVersion          string                                `json:"engine_version"`
+	SnapshotArns           string                                `json:"snapshot_arns"`
+	SnapshotWindow         string                                `json:"snapshot_window"`
+	SnapshotName           string                                `json:"snapshot_name"`
+	Port                   int                                   `json:"port"`
+	NotificationTopicArn   string                                `json:"notification_topic_arn"`
+	NumCacheNodes          int                                   `json:"num_cache_nodes"`
+	SubnetGroupName        string                                `json:"subnet_group_name"`
+	SnapshotRetentionLimit int                                   `json:"snapshot_retention_limit"`
+	ApplyImmediately       bool                                  `json:"apply_immediately"`
+	AzMode                 string                                `json:"az_mode"`
+	ClusterAddress         string                                `json:"cluster_address"`
+	ReplicationGroupId     string                                `json:"replication_group_id"`
 	AvailabilityZones      string                                `json:"availability_zones"`
+	NodeType               string                                `json:"node_type"`
+	Engine                 string                                `json:"engine"`
+	ParameterGroupName     string                                `json:"parameter_group_name"`
+	SecurityGroupIds       string                                `json:"security_group_ids"`
+	ClusterId              string                                `json:"cluster_id"`
+	AvailabilityZone       string                                `json:"availability_zone"`
 }
 
 type AwsElasticacheClusterSpecCacheNodes struct {
-	AvailabilityZone string `json:"availability_zone"`
 	Id               string `json:"id"`
 	Address          string `json:"address"`
 	Port             int    `json:"port"`
+	AvailabilityZone string `json:"availability_zone"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

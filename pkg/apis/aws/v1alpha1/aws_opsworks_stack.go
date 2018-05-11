@@ -17,39 +17,39 @@ type AwsOpsworksStack struct {
 }
 
 type AwsOpsworksStackSpec struct {
-	DefaultOs                   string                                      `json:"default_os"`
-	VpcId                       string                                      `json:"vpc_id"`
-	StackEndpoint               string                                      `json:"stack_endpoint"`
-	Region                      string                                      `json:"region"`
-	ConfigurationManagerVersion string                                      `json:"configuration_manager_version"`
-	DefaultInstanceProfileArn   string                                      `json:"default_instance_profile_arn"`
-	ConfigurationManagerName    string                                      `json:"configuration_manager_name"`
-	BerkshelfVersion            string                                      `json:"berkshelf_version"`
-	CustomCookbooksSource       []AwsOpsworksStackSpecCustomCookbooksSource `json:"custom_cookbooks_source"`
-	DefaultAvailabilityZone     string                                      `json:"default_availability_zone"`
-	DefaultRootDeviceType       string                                      `json:"default_root_device_type"`
-	Arn                         string                                      `json:"arn"`
-	ServiceRoleArn              string                                      `json:"service_role_arn"`
-	UseCustomCookbooks          bool                                        `json:"use_custom_cookbooks"`
-	ManageBerkshelf             bool                                        `json:"manage_berkshelf"`
+	CustomJson                  string                                      `json:"custom_json"`
 	DefaultSshKeyName           string                                      `json:"default_ssh_key_name"`
 	HostnameTheme               string                                      `json:"hostname_theme"`
 	Tags                        map[string]string                           `json:"tags"`
+	Arn                         string                                      `json:"arn"`
+	CustomCookbooksSource       []AwsOpsworksStackSpecCustomCookbooksSource `json:"custom_cookbooks_source"`
+	BerkshelfVersion            string                                      `json:"berkshelf_version"`
 	UseOpsworksSecurityGroups   bool                                        `json:"use_opsworks_security_groups"`
 	AgentVersion                string                                      `json:"agent_version"`
+	ManageBerkshelf             bool                                        `json:"manage_berkshelf"`
+	ServiceRoleArn              string                                      `json:"service_role_arn"`
 	Color                       string                                      `json:"color"`
+	ConfigurationManagerName    string                                      `json:"configuration_manager_name"`
+	ConfigurationManagerVersion string                                      `json:"configuration_manager_version"`
+	DefaultRootDeviceType       string                                      `json:"default_root_device_type"`
 	DefaultSubnetId             string                                      `json:"default_subnet_id"`
 	Name                        string                                      `json:"name"`
-	CustomJson                  string                                      `json:"custom_json"`
+	Region                      string                                      `json:"region"`
+	StackEndpoint               string                                      `json:"stack_endpoint"`
+	UseCustomCookbooks          bool                                        `json:"use_custom_cookbooks"`
+	VpcId                       string                                      `json:"vpc_id"`
+	DefaultOs                   string                                      `json:"default_os"`
+	DefaultInstanceProfileArn   string                                      `json:"default_instance_profile_arn"`
+	DefaultAvailabilityZone     string                                      `json:"default_availability_zone"`
 }
 
 type AwsOpsworksStackSpecCustomCookbooksSource struct {
+	Revision string `json:"revision"`
 	SshKey   string `json:"ssh_key"`
 	Type     string `json:"type"`
 	Url      string `json:"url"`
 	Username string `json:"username"`
 	Password string `json:"password"`
-	Revision string `json:"revision"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

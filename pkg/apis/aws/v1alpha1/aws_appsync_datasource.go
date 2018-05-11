@@ -18,25 +18,25 @@ type AwsAppsyncDatasource struct {
 
 type AwsAppsyncDatasourceSpec struct {
 	Name                string                                        `json:"name"`
-	Description         string                                        `json:"description"`
+	DynamodbConfig      []AwsAppsyncDatasourceSpecDynamodbConfig      `json:"dynamodb_config"`
 	ElasticsearchConfig []AwsAppsyncDatasourceSpecElasticsearchConfig `json:"elasticsearch_config"`
-	ServiceRoleArn      string                                        `json:"service_role_arn"`
+	LambdaConfig        []AwsAppsyncDatasourceSpecLambdaConfig        `json:"lambda_config"`
 	Arn                 string                                        `json:"arn"`
 	ApiId               string                                        `json:"api_id"`
+	Description         string                                        `json:"description"`
+	ServiceRoleArn      string                                        `json:"service_role_arn"`
 	Type                string                                        `json:"type"`
-	DynamodbConfig      []AwsAppsyncDatasourceSpecDynamodbConfig      `json:"dynamodb_config"`
-	LambdaConfig        []AwsAppsyncDatasourceSpecLambdaConfig        `json:"lambda_config"`
-}
-
-type AwsAppsyncDatasourceSpecElasticsearchConfig struct {
-	Endpoint string `json:"endpoint"`
-	Region   string `json:"region"`
 }
 
 type AwsAppsyncDatasourceSpecDynamodbConfig struct {
-	TableName            string `json:"table_name"`
 	UseCallerCredentials bool   `json:"use_caller_credentials"`
 	Region               string `json:"region"`
+	TableName            string `json:"table_name"`
+}
+
+type AwsAppsyncDatasourceSpecElasticsearchConfig struct {
+	Region   string `json:"region"`
+	Endpoint string `json:"endpoint"`
 }
 
 type AwsAppsyncDatasourceSpecLambdaConfig struct {

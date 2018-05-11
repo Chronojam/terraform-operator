@@ -17,15 +17,15 @@ type AwsDbEventSubscription struct {
 }
 
 type AwsDbEventSubscriptionSpec struct {
-	Arn             string            `json:"arn"`
-	Name            string            `json:"name"`
-	Enabled         bool              `json:"enabled"`
-	Tags            map[string]string `json:"tags"`
-	SnsTopic        string            `json:"sns_topic"`
 	EventCategories string            `json:"event_categories"`
 	SourceIds       string            `json:"source_ids"`
-	SourceType      string            `json:"source_type"`
 	CustomerAwsId   string            `json:"customer_aws_id"`
+	Tags            map[string]string `json:"tags"`
+	Arn             string            `json:"arn"`
+	Name            string            `json:"name"`
+	SnsTopic        string            `json:"sns_topic"`
+	SourceType      string            `json:"source_type"`
+	Enabled         bool              `json:"enabled"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

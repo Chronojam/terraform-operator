@@ -17,13 +17,13 @@ type AwsAcmCertificate struct {
 }
 
 type AwsAcmCertificateSpec struct {
-	SubjectAlternativeNames []string                                       `json:"subject_alternative_names"`
 	ValidationMethod        string                                         `json:"validation_method"`
 	Arn                     string                                         `json:"arn"`
 	DomainValidationOptions []AwsAcmCertificateSpecDomainValidationOptions `json:"domain_validation_options"`
 	ValidationEmails        []string                                       `json:"validation_emails"`
 	Tags                    map[string]string                              `json:"tags"`
 	DomainName              string                                         `json:"domain_name"`
+	SubjectAlternativeNames []string                                       `json:"subject_alternative_names"`
 }
 
 type AwsAcmCertificateSpecDomainValidationOptions struct {

@@ -17,10 +17,10 @@ type AwsEmrSecurityConfiguration struct {
 }
 
 type AwsEmrSecurityConfigurationSpec struct {
+	CreationDate  string `json:"creation_date"`
 	Name          string `json:"name"`
 	NamePrefix    string `json:"name_prefix"`
 	Configuration string `json:"configuration"`
-	CreationDate  string `json:"creation_date"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

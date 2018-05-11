@@ -17,25 +17,25 @@ type AwsDbSnapshot struct {
 }
 
 type AwsDbSnapshotSpec struct {
-	Encrypted                  bool   `json:"encrypted"`
-	Engine                     string `json:"engine"`
-	KmsKeyId                   string `json:"kms_key_id"`
-	VpcId                      string `json:"vpc_id"`
-	AllocatedStorage           int    `json:"allocated_storage"`
-	LicenseModel               string `json:"license_model"`
-	SourceDbSnapshotIdentifier string `json:"source_db_snapshot_identifier"`
-	SnapshotType               string `json:"snapshot_type"`
-	DbInstanceIdentifier       string `json:"db_instance_identifier"`
-	AvailabilityZone           string `json:"availability_zone"`
-	DbSnapshotArn              string `json:"db_snapshot_arn"`
-	EngineVersion              string `json:"engine_version"`
-	Iops                       int    `json:"iops"`
-	OptionGroupName            string `json:"option_group_name"`
 	SourceRegion               string `json:"source_region"`
 	Status                     string `json:"status"`
-	StorageType                string `json:"storage_type"`
+	AllocatedStorage           int    `json:"allocated_storage"`
+	EngineVersion              string `json:"engine_version"`
+	OptionGroupName            string `json:"option_group_name"`
 	DbSnapshotIdentifier       string `json:"db_snapshot_identifier"`
+	SnapshotType               string `json:"snapshot_type"`
+	Iops                       int    `json:"iops"`
+	SourceDbSnapshotIdentifier string `json:"source_db_snapshot_identifier"`
+	VpcId                      string `json:"vpc_id"`
+	DbInstanceIdentifier       string `json:"db_instance_identifier"`
+	DbSnapshotArn              string `json:"db_snapshot_arn"`
+	Engine                     string `json:"engine"`
+	LicenseModel               string `json:"license_model"`
 	Port                       int    `json:"port"`
+	StorageType                string `json:"storage_type"`
+	AvailabilityZone           string `json:"availability_zone"`
+	Encrypted                  bool   `json:"encrypted"`
+	KmsKeyId                   string `json:"kms_key_id"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

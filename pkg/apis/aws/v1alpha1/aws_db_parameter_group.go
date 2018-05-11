@@ -17,13 +17,13 @@ type AwsDbParameterGroup struct {
 }
 
 type AwsDbParameterGroupSpec struct {
-	NamePrefix  string                           `json:"name_prefix"`
 	Family      string                           `json:"family"`
 	Description string                           `json:"description"`
 	Parameter   AwsDbParameterGroupSpecParameter `json:"parameter"`
 	Tags        map[string]string                `json:"tags"`
 	Arn         string                           `json:"arn"`
 	Name        string                           `json:"name"`
+	NamePrefix  string                           `json:"name_prefix"`
 }
 
 type AwsDbParameterGroupSpecParameter struct {
